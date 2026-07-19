@@ -2804,6 +2804,11 @@ i[class*=fa] {
     top: 90px;
   }
 }
+@media (max-width: 1600px) {
+  .site-header.boarding-header {
+    top: 70px;
+  }
+}
 @media (max-width: 1400px) {
   .site-header.boarding-header {
     top: 50px;
@@ -9125,7 +9130,7 @@ i[class*=fa] {
 }
 @media (max-width: 768px) {
   .boarding-hero {
-    padding-top: 190px;
+    padding-top: 170px;
   }
 }
 .boarding-hero .container {
@@ -9199,7 +9204,7 @@ i[class*=fa] {
 }
 .boarding-hero__bg-2 {
   position: relative;
-  top: -0.5%;
+  top: -9.5%;
   -o-object-fit: cover;
      object-fit: cover;
   z-index: 2;
@@ -9213,13 +9218,13 @@ i[class*=fa] {
 @media (max-width: 1600px) {
   .boarding-hero__bg-2 {
     width: 94%;
-    top: -12.5%;
+    top: -13%;
   }
 }
 @media (max-width: 1400px) {
   .boarding-hero__bg-2 {
-    width: 95%;
-    top: -13.5%;
+    width: 96%;
+    top: -13%;
   }
 }
 @media (max-width: 1200px) {
@@ -9338,6 +9343,7 @@ i[class*=fa] {
 }
 @media (max-width: 768px) {
   .boarding-hero__title {
+    max-width: 450px;
     font-size: 44px;
   }
 }

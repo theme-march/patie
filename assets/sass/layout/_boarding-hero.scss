@@ -21,7 +21,7 @@
     padding-top: 200px;
   }
   @include respond(md) {
-    padding-top: 190px;
+    padding-top: 170px;
   }
 
 
@@ -83,7 +83,7 @@
 
   &__bg-2 {
     position: relative;
-    top: -.5%;
+    top: -9.5%;
     object-fit: cover;
     z-index: 2;
 
@@ -94,11 +94,11 @@
 
     @include respond(xxxl) {
       width: 94%;
-      top: -12.5%;
+      top: -13%;
     }
     @include respond(xxl) {
-      width: 95%;
-      top: -13.5%;
+      width: 96%;
+      top: -13%;
     }
     @include respond(xl) {
       position: absolute;
@@ -186,6 +186,7 @@
       font-size: 56px;
     }
     @include respond(md) {
+      max-width: 450px;
       font-size: 44px;
     }
     @include respond(sm) {

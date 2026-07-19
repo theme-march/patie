@@ -625,6 +625,9 @@
     @include respond(xxxxl) {
         top: 90px;
     }
+    @include respond(xxxl) {
+        top: 70px;
+    }
 
     @include respond(xxl) {
         top: 50px;

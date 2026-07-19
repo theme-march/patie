@@ -1,0 +1,271 @@
+@use "../abstracts" as *;
+
+.choose-us {
+  position: relative;
+  z-index: 1;
+
+  &__triangle-bg {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: -1;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    margin-top: 140px;
+    @include respond(md) {
+      margin-top: 125px;
+    }
+  }
+
+  &__main-wrapper {
+    position: relative;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    padding: 60px;
+    overflow: visible;
+
+    @include respond(md) {
+      padding: 40px 30px 0;
+    }
+  }
+
+  &__abstract-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  &__top-pet-wrap {
+    position: absolute;
+    top: -26.2%;
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+    z-index: 2;
+    width: auto;
+    display: flex;
+    justify-content: center;
+
+    @include respond(xxxl) {
+      top: -23.5%;
+    }
+
+    @include respond(xxl) {
+      top: -18.4%;
+    }
+
+    @include respond(xl) {
+      top: -12.6%;
+    }
+
+    @include respond(lg) {
+      top: -122px;
+    }
+
+    @include respond(md) {
+      top: -91px;
+    }
+
+    @include respond(sm) {
+      top: -67px;
+    }
+  }
+
+  &__top-pet {
+    width: min(38vw, 563px);
+    max-width: 563px;
+    height: auto;
+
+    @include respond(xxxl) {
+      width: min(36vw, 500px);
+      max-width: 500px;
+    }
+
+    @include respond(xxl) {
+      width: min(34vw, 440px);
+      max-width: 440px;
+    }
+
+    @include respond(xl) {
+      width: min(32vw, 400px);
+      max-width: 400px;
+    }
+
+    @include respond(lg) {
+      width: 100%;
+      max-width: 360px;
+    }
+
+    @include respond(md) {
+      max-width: 280px;
+    }
+
+    @include respond(sm) {
+      max-width: 260px;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__header {
+    text-align: center;
+
+    @include respond(md) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__layout {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__features {
+    width: 27%;
+    display: flex;
+    flex-direction: column;
+    gap: 200px;
+    z-index: 2;
+
+    &--left {
+      text-align: left;
+
+      .choose-us__line {
+        left: 100%;
+      }
+    }
+
+    &--right {
+      text-align: right;
+
+      .choose-us__line {
+        right: 100%;
+      }
+    }
+  }
+
+  &__feature {
+    position: relative;
+  }
+
+  &__feature-title {
+    color: var(--white-color);
+    font-size: 30px;
+    margin-bottom: 50px;
+
+    @include respond(md) {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__feature-text {
+    color: var(--white-color);
+  }
+
+  &__line {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+
+
+    &--tl {
+      top: 10%;
+      left: 0%;
+    }
+
+    &--bl {
+      bottom: 19%;
+      left: 0%;
+    }
+
+    &--tr {
+      top: 10%;
+      right: 0%;
+    }
+
+    &--br {
+      bottom: 19%;
+      right: 0%;
+    }
+  }
+
+  &__center-ring {
+    max-width: 415px;
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+    margin: 0 -40px;
+  }
+
+  &__center-pet-bg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  &__center-pet {
+    position: absolute;
+    top: 48.3%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 413px;
+    height: auto;
+    display: block;
+
+    @include respond(lg) {
+      top: 54%;
+      max-width: 480px;
+    }
+
+    @include respond(md) {
+      top: 49%;
+      max-width: 480px;
+    }
+  }
+
+  @include respond(lg) {
+    &__features {
+      width: 100%;
+      gap: 40px;
+      margin-bottom: 40px;
+
+      &--left,
+      &--right {
+        text-align: center;
+      }
+    }
+
+    &__layout {
+      flex-direction: column;
+    }
+
+    &__line {
+      display: none;
+    }
+
+    &__center-ring {
+      width: 100%;
+      max-width: 530px;
+      margin: 5px auto 35px;
+    }
+
+  }
+}

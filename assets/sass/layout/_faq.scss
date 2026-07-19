@@ -1,0 +1,155 @@
+@use "../abstracts" as *;
+
+.faq {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__col {
+        width: 50%;
+        position: relative;
+
+        @include respond(lg) {
+            width: 100%;
+        }
+
+        &--bg {
+            background-color: var(--primary-color);
+            z-index: 1;
+            padding: 100px 150px 100px 100px;
+            
+            @include respond(xxxxl) {
+              padding: 90px 90px 90px 60px;
+            }
+            @include respond(xxxl) {
+              padding: 80px 80px 80px 60px;
+            }
+            @include respond(xl) {
+              padding: 60px 60px 60px 60px;
+            }
+            @include respond(lg) {
+              padding: 60px;
+            }
+            @include respond(md) {
+              padding: 40px 20px;
+            }
+        }
+    }
+
+    &__bg-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    &__video {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+    }
+}
+
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 40px;
+
+    &__item {
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    &__header {
+        position: relative;
+        z-index: 2;
+        background-color: var(--white-color);
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 15px 15px 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    &__title {
+        color: var(--primary-color);
+        font-size: 24px;
+        font-family: var(--heading-font-family);
+        margin: 0;
+        font-weight: 700;
+        text-transform: uppercase;
+
+        @include respond(xxxl) {
+           font-size: 20px;
+        }
+        @include respond(md) {
+           font-size: 18px;
+        }
+    }
+
+    &__icon {
+        @include circle-icon(40px);
+        font-size: 16px;
+
+        &-i {
+            line-height: normal;
+        }
+    }
+
+    &__body {
+        position: relative;
+        z-index: 1;
+        margin-top: -37px;
+        margin-bottom: 30px;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.4s ease, margin-bottom 0.4s ease;
+    }
+
+    &__text {
+        background-color: var(--secondary-color);
+        border-radius: 0 0 20px 20px;
+        color: var(--white-color);
+        padding: 50px 30px 16px 30px;
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.6;
+        
+        @include respond(md) {
+           font-size: 14px;
+        }
+    }
+
+    &__item--active {
+        .faq-accordion__body {
+            margin-bottom: 0px;
+        }
+
+        .faq-accordion__icon {
+            background-color: var(--secondary-color);
+        }
+    }
+}
+
+.faq .section-header__label {
+    color: var(--white-color);
+}
+.faq .section-header__title {
+    color: var(--white-color);
+}
+.faq .section-header__paw {
+    filter: brightness(0) invert(1);
+}

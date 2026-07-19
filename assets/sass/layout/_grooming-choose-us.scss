@@ -1,0 +1,230 @@
+@use "../abstracts" as *;
+
+.grooming-choose-us {
+  margin-bottom: 120px;
+  @include respond(md) {
+      margin-bottom: 60px;
+    }
+  position: relative;
+  &__heading {
+    margin-bottom: 60px;
+
+    @include respond(md) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+
+    @include respond(xl) {
+      gap: 10px;
+    }
+
+    @include respond(lg) {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+  }
+
+  &__col {
+
+    &--left,
+    &--right {
+      width: 32%;
+      display: flex;
+      flex-direction: column;
+      gap: 100px;
+
+      @include respond(xl) {
+        gap: 60px;
+      }
+
+      @include respond(lg) {
+        width: calc(50% - 15px);
+        gap: 30px;
+        align-items: center;
+        text-align: center;
+      }
+
+      @include respond(sm) {
+        width: 100%;
+        align-items: flex-start;
+        text-align: left;
+      }
+    }
+
+    &--center {
+      width: 35%;
+      display: flex;
+      justify-content: center;
+
+      @include respond(lg) {
+        width: 100%;
+        max-width: 350px;
+        order: -1;
+      }
+
+      @include respond(sm) {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  }
+
+  &__image-wrap {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__img-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &__img {
+    position: relative;
+    max-width: 100%;
+    top: 2%;
+    right: 1%;
+    z-index: 2;
+    height: auto;
+    display: block;
+  }
+
+  &__feature {
+    display: flex;
+    align-items: self-start;
+    gap: 20px;
+
+    @include respond(lg) {
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      transform: none !important;
+    }
+
+    @include respond(sm) {
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    &--right-align {
+      justify-content: flex-end;
+      text-align: right;
+
+      @include respond(lg) {
+        justify-content: center;
+        text-align: left;
+      }
+
+      @include respond(sm) {
+        justify-content: flex-start;
+        text-align: left;
+      }
+    }
+
+    &--left-align {
+      justify-content: flex-start;
+      text-align: left;
+
+      @include respond(lg) {
+        justify-content: center;
+        flex-direction: column-reverse;
+      }
+
+      @include respond(sm) {
+        justify-content: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    &--1 {
+      transform: translateX(45px);
+    }
+
+    &--2 {
+      transform: translateX(-40px);
+    }
+
+    &--3 {
+      transform: translateX(45px);
+    }
+
+    &--4 {
+      transform: translateX(-70px);
+    }
+
+    &--5 {
+      transform: translateX(40px);
+    }
+
+    &--6 {
+      transform: translateX(-100px);
+    }
+  }
+
+  &__feature-content {
+    flex: 1;
+  }
+
+  &__feature-icon-wrap {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include respond(lg) {
+      display: none;
+    }
+  }
+
+  &__feature-icon {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  &__feature-title {
+    font-size: 30px;
+    margin-bottom: 10px;
+
+    @include respond(xxxl) {
+      font-size: 26px;
+    }
+    @include respond(xxxl) {
+      font-size: 24px;
+    }
+  }
+
+  &__feature-text {
+    margin: 0;
+  }
+
+  &__dog {
+    position: absolute;
+    bottom: -120px;
+    right: 0;
+    z-index: -1;
+    max-width: 320px;
+    height: auto;
+    pointer-events: none;
+
+    @include respond(xxxl) {
+        display: none;
+    }
+  }
+}

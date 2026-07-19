@@ -1,0 +1,81 @@
+@use "../abstracts" as *;
+
+.common-banner {
+    position: relative;
+    padding: 250px 0 100px;
+    z-index: 1;
+    overflow: hidden;
+    margin-top: 0;
+    transition: margin-top 0.4s ease;
+
+ 
+    @include respond(xl) {
+        padding: 100px 0 60px;
+    }
+    @include respond(lg) {
+        padding: 80px 0 50px;
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 90px;
+
+        @include respond(lg) {
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
+        }
+    }
+
+    &__content {
+        max-width: 679px;
+        flex: 1;
+    }
+
+    &__img-wrap {
+        position: absolute;
+        bottom: 0;
+        right: 7%;
+        max-width: 620px;
+        line-height: 0;
+        display: block;
+
+
+
+        @include respond(xxxl) {
+            max-width: 500px;
+        }
+
+        @include respond(xxl) {
+            max-width: 460px;
+        }
+
+        @include respond(xl) {
+            max-width: 400px;
+        }
+
+        @include respond(lg) {
+            position: relative;
+            width: 100%;
+            right: -6%;
+        }
+
+        @include respond(md) {
+            max-width: 300px;
+            margin-top: 28px;
+        }
+
+        @include respond(sm) {
+            max-width: 240px;
+            margin-top: 24px;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+}

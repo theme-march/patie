@@ -1,0 +1,68 @@
+/* 
+|......................................................................
+| Template Name: CRAS
+| Author: Thememarch
+| Version: 1.0.0
+|--------------------------------------------------------------------------
+|--------------------------------------------------------------------------
+| TABLE OF CONTENTS:
+|--------------------------------------------------------------------------
+| 1. Basic Color Variable
+| 2. Typography
+
+ ................................................................*/
+@use "abstracts" as *;
+
+@use "base/typography";
+@use "base/general";
+@use "base/spacing";
+
+@use "components/buttons";
+@use "components/section-header";
+@use "components/pagination";
+@use "components/common-banner";
+@use "components/sidebar";
+@use "components/scrollup";
+
+@use "layout/header";
+@use "layout/mobile-sidebar";
+@use "layout/hero";
+@use "layout/about";
+@use "layout/service";
+@use "layout/pet-grooming-services";
+@use "layout/video";
+@use "layout/testimonial";
+@use "layout/team";
+@use "layout/working-process";
+@use "layout/pricing";
+@use "layout/grooming-pricing-card";
+@use "layout/choose-us";
+@use "layout/product";
+@use "layout/blog";
+@use "layout/blog-standard";
+@use "layout/footer";
+@use "layout/hero-grooming";
+@use "layout/about-grooming";
+@use "layout/parent-testimonial";
+@use "layout/faq";
+@use "layout/partner-marquee";
+@use "layout/grooming-choose-us";
+@use "layout/grooming-team";
+@use "layout/before-and-after";
+@use "layout/grooming-blog";
+@use "layout/boarding-hero";
+@use "layout/boarding-about";
+@use "layout/boarding-service";
+@use "layout/boarding-testimonial";
+@use "layout/boarding-choose-us";
+@use "layout/boarding-pricing";
+@use "layout/boarding-blog";
+@use "layout/service-details";
+@use "layout/team-details";
+@use "layout/blog-details";
+@use "layout/shop";
+@use "layout/shop-details";
+@use "layout/cart";
+@use "layout/checkout";
+@use "layout/contact";
+@use "layout/error";

@@ -1,0 +1,97 @@
+@use "../abstracts" as *;
+
+.common-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  &__dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &--active {
+      width: 60px;
+      border-radius: 10px;
+      background-color: var(--secondary-color);
+    }
+
+    &--purple {
+      background-color: var(--primary-color);
+    }
+
+    &--orange {
+      background-color: var(--secondary-color);
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  line-height: normal;
+
+  &--left {
+    justify-content: flex-start;
+  }
+
+  &__item {
+    &--active {
+      .pagination__link {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        border-color: var(--primary-color);
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--smoke-bg-color);
+    border: 1px solid var(--primary-color);
+    color: var(--heading-color);
+    font-size: 20px;
+    font-weight: 400;
+    font-family: var(--heading-font-family);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: var(--primary-color);
+      color: var(--white-color);
+      border-color: var(--primary-color);
+
+      .pagination__icon {
+        color: var(--white-color);
+      }
+    }
+  }
+
+  &__icon {
+    font-size: 18px;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+  }
+
+  @include respond(sm) {
+    gap: 10px;
+    &__link {
+      width: 45px;
+      height: 45px;
+      font-size: 16px;
+    }
+    .pagination__icon {
+      font-size: 14px;
+    }
+  }
+}

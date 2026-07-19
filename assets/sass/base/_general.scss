@@ -1,0 +1,250 @@
+/*--------------------------------------------------------------
+  5. General
+----------------------------------------------------------------*/
+@use "../abstracts" as *;
+
+.ak-light {
+  font-weight: 300;
+}
+
+.ak-normal {
+  font-weight: 400;
+}
+
+.ak-medium {
+  font-weight: 500;
+}
+
+.ak-semi-bold {
+  font-weight: 600;
+}
+
+.ak-bold {
+  font-weight: 700;
+}
+
+.ak-extra-bold {
+  font-weight: 800;
+}
+
+.ak-black {
+  font-weight: 900;
+}
+
+.ak-radius-3 {
+  border-radius: 3px;
+}
+
+.ak-radius-5 {
+  border-radius: 5px;
+}
+
+.ak-radius-7 {
+  border-radius: 7px;
+}
+
+.ak-radius-10 {
+  border-radius: 10px;
+}
+
+.ak-radius-15 {
+  border-radius: 15px;
+}
+
+.ak-line-height-1 {
+  line-height: 1.2em;
+}
+
+.ak-line-height-2 {
+  line-height: 1.25em;
+}
+
+.ak-line-height-3 {
+  line-height: 1.3em;
+}
+
+.ak-line-height-4 {
+  line-height: 1.4em;
+}
+
+.ak-line-height-5 {
+  line-height: 1.5em;
+}
+
+.ak-line-height-6 {
+  line-height: 1.6em;
+}
+
+.ak-line-height-7 {
+  line-height: 1.7em;
+}
+
+.ak-line-height-39 {
+  line-height: 39px;
+}
+
+.ak-line-height-54 {
+  line-height: 54px;
+}
+
+.ak-line-height-85 {
+  line-height: 85px;
+}
+
+.ak-font-14 {
+  font-size: 14px;
+}
+
+.ak-font-16 {
+  font-size: 16px;
+}
+
+.ak-font-18 {
+  font-size: 18px;
+}
+
+.ak-font-20 {
+  font-size: 20px;
+}
+
+.ak-font-22 {
+  font-size: 22px;
+}
+.ak-font-24 {
+  font-size: 24px;
+}
+
+.ak-font-26 {
+  font-size: 26px;
+}
+
+.ak-font-28 {
+  font-size: 28px;
+}
+
+.ak-font-30 {
+  font-size: 28px;
+}
+
+.ak-font-38 {
+  font-size: 38px;
+}
+
+.ak-font-42 {
+  font-size: 42px;
+}
+
+.ak-font-50 {
+  font-size: 50px;
+}
+
+.ak-bg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.object-cover {
+  object-fit: cover;
+}
+
+.ak-vertical-middle {
+  display: flex;
+  align-items: center;
+  min-height: 100%;
+}
+
+.ak-vertical-middle-in {
+  flex: none;
+  width: 100%;
+}
+
+.ak-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ak-primary-font {
+  font-family: var(--heading-font-family);
+}
+
+
+.ak-secondary-font {
+  font-family: var(--body-font-family);
+}
+
+.ak-white-color,
+.ak-white-color-hover:hover {
+  color: var(--white-color);
+}
+
+.ak-primary-color {
+  color: var(--primary-color);
+}
+
+.ak-white-color,
+.ak-white-color-hover:hover {
+  color: var(--white-color);
+}
+
+.ak-white-bg {
+  background-color: var(--white-color);
+}
+
+.ak-gray-bg-20 {
+  background: rgba(217, 217, 217, 0.2);
+}
+
+.ak-white-bg-1,
+.ak-white-bg-1-hover:hover {
+  background-color: rgba(var(--white-color), 25%);
+}
+
+.ak-white-bg,
+.ak-white-bg-hover:hover {
+  background-color: var(--white-color);
+}
+
+.ak-primary-bg,
+.ak-primary-bg-hover:hover {
+  background-color: rgba(var(--primary-color), 70%);
+}
+
+@include respond(lg) {
+  .ak-left-space-30 {
+    padding-left: 0px;
+  }
+  .ak-font-14-sm {
+    font-size: 14px;
+  }
+  .ak-font-16-sm {
+    font-size: 16px;
+  }
+  .ak-font-18-sm {
+    font-size: 18px;
+  }
+  .ak-font-20-sm {
+    font-size: 20px;
+  }
+  .ak-font-22-sm {
+    font-size: 22px;
+  }
+  .ak-font-24-sm {
+    font-size: 24px;
+  }
+  .ak-font-26-sm {
+    font-size: 26px;
+  }
+  .ak-font-28-sm {
+    font-size: 28px;
+  }
+  .ak-font-36-sm {
+    font-size: 36px;
+  }
+  .ak-font-42-sm {
+    font-size: 42px;
+  }
+}
+
+// .ak-dentist-dental {
+//   padding: 20px;
+// }

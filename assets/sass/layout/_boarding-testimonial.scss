@@ -1,0 +1,252 @@
+@use "../abstracts" as *;
+
+.boarding-testimonial {
+  position: relative;
+  z-index: 5;
+
+  &__box {
+    background-color: var(--heading-color);
+    border-radius: 6px;
+    padding: 80px;
+    display: flex;
+    position: relative;
+    z-index: 2;
+    margin-bottom: -250px;
+    align-items: center;
+
+    @include respond(md) {
+      flex-direction: column;
+      padding: 40px 20px;
+      margin-bottom: -50px;
+    }
+  }
+
+  &__left {
+    flex: 1;
+    position: relative;
+
+    @include respond(md) {
+      padding-right: 0;
+      padding-bottom: 40px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid color-mix(in srgb, var(--white-color), transparent 80%);
+    }
+  }
+
+  &__divider {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: color-mix(in srgb, var(--white-color), transparent 85%);
+
+    @include respond(md) {
+      display: none;
+    }
+  }
+
+  &__quote-icon {
+    position: absolute;
+    right: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 65px;
+    height: 65px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+
+    @include respond(md) {
+      right: 50%;
+      top: auto;
+      bottom: -65px;
+      transform: translateX(50%);
+    }
+  }
+    
+  &__quote-img {
+    width: 25px;
+    filter: brightness(0) invert(1);
+  }
+
+  &__rating {
+    margin-top: 50px;
+  }
+
+  &__rating-number {
+    font-size: 48px;
+    font-weight: 400;
+    font-family: var(--heading-font-family);
+    color: var(--white-color);
+    margin-bottom: 20px;
+  }
+
+  &__rating-text {
+    color: var(--white-color)
+  }
+
+  &__right {
+    flex: 1;
+    padding-left: 95px;
+
+    @include respond(md) {
+      padding-left: 0;
+    }
+  }
+
+  &__stars {
+    color: var(--rating-color);
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    color: var(--white-color);
+    margin-bottom: 60px;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    @include respond(lg) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+  }
+
+  &__user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__avatar {
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__name {
+    color: var(--white-color);
+    margin-bottom: 5px;
+  }
+
+  &__role {
+    color: var(--white-color);
+  }
+
+  &__nav {
+    display: flex;
+    gap: 10px;
+  }
+  
+  &__nav-btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:hover,
+    &--active {
+      background-color: var(--secondary-color);
+    }
+  }
+
+  &__nav-icon {
+    line-height: 0;
+  }
+
+
+
+
+
+  &__stats-wrap {
+    position: relative;
+    padding-top: 350px;
+    padding-bottom: 150px;
+    
+    @include respond(md) {
+      padding-top: 150px;
+      padding-bottom: 80px;
+    }
+  }
+
+  &__stats-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  &__stats-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 100px;
+
+    @include respond(lg) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    @include respond(md) {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+
+  &__stat-item {
+    position: relative;
+  }
+
+  &__stat-divider {
+    position: absolute;
+    right: -35px;
+    top: 10%;
+    bottom: 10%;
+    width: 1px;
+    background-color: color-mix(in srgb, var(--white-color), transparent 90%);
+    z-index: 20;
+
+    @include respond(lg) {
+      display: none;
+    }
+  }
+
+  &__stat-number {
+    font-family: var(--heading-font-family);
+    color: var(--white-color);
+    font-size: 64px;
+    font-weight:400;
+    line-height: 0.6;
+    margin-bottom: 20px;
+  }
+
+  &__stat-title {
+    color: var(--white-color);
+    font-weight: 700;
+    margin-bottom: 60px;
+  }
+
+  &__stat-desc {
+    color: var(--white-color);
+    font-family: var(--body-font-family);
+    font-weight: 500;
+  }
+}

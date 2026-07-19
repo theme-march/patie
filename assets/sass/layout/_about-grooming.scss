@@ -1,0 +1,168 @@
+@use "../abstracts" as *;
+
+.about-grooming {
+
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: 90px;
+
+    @include respond(lg) {
+      flex-direction: column;
+      gap: 50px;
+    }
+  }
+
+  &__image-col {
+    width: 42%;
+
+    @include respond(lg) {
+      display: none;
+    }
+  }
+
+  &__content-col {
+    flex: 1;
+
+    @include respond(lg) {
+      width: 100%;
+    }
+  }
+
+  &__image-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    margin-right: auto;
+  }
+
+  &__bg {
+    position: absolute;
+    // top: 0%;
+    // left: 5%;
+    z-index: -1;
+  }
+
+  &__img {
+    position: relative;
+    left: -5%;
+    max-width: 100%;
+    z-index: 1;
+  }
+
+  &__desc {
+    color: var(--body-color);
+    line-height: 1.9;
+    margin-bottom: 40px;
+  }
+
+  &__features-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 40px;
+
+    @include respond(sm) {
+      flex-direction: column;
+    }
+  }
+
+  &__feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-grow: 1;
+  }
+
+  &__feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+
+  &__video {
+    position: relative;
+    border-radius: 10px;
+    left: -25%;
+    overflow: hidden;
+    width: 170px;
+    flex-shrink: 0;
+
+    @include respond(xxl) {
+      left: 0;
+      width: 200px;
+    }
+    @include respond(lg) {
+      left: -15%;
+      width: 215px;
+    }
+    @include respond(md) {
+      left: 0;
+      width: 240px;
+    }
+
+    &-img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+
+    .play-btn {
+      width: 55px;
+      height: 55px;
+
+      &__inner {
+        width: 35px;
+        height: 35px;
+        font-size: 12px;
+      }
+    }
+  }
+
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    &-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--primary-color);
+      padding: 5px;
+    }
+
+    &-info {
+      display: flex;
+      gap: 5px;
+      flex-direction: column;
+    }
+
+    &-name {
+      font-size: 18px;
+      color: var(--primary-color);
+      margin: 0;
+      font-family: var(--heading-font-family);
+      line-height: 1.2;
+    }
+
+    &-role {
+      font-size: 14px;
+      color: var(--body-color);
+      font-weight: 500;
+    }
+  }
+}

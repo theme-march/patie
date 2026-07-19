@@ -1,0 +1,154 @@
+@use "../abstracts" as *;
+
+.boarding-service {
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    @include respond(md) {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__header-left {
+    max-width: 712px;
+  }
+
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+
+    @include respond(xl) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include respond(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include respond(md) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
+.boarding-service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  
+  &__img-wrap {
+    position: relative;
+    width: 100%;
+    margin-bottom: 60px;
+  }
+
+  &__bg-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+  }
+
+  &__img {
+    position: relative;
+    max-width: 100%;
+    top: 9%;
+    left: 3%;
+    z-index: 2;
+    width: 93%;
+    height: auto;
+    transition: all 0.4s ease;
+  }
+
+  &__title {
+    color: var(--title-color);
+    font-size: 30px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: block;
+  }
+
+  &:hover {
+    .boarding-service-card__img {
+      transform: translateX(10px);
+    }
+    .boarding-service-card__title {
+      color: var(--theme-color);
+    }
+  }
+
+  &__desc {
+    margin-bottom: 20px;
+  }
+
+
+
+  /* Modifiers */
+  &--purple {
+    --theme-color: var(--primary-color);
+    .boarding-service-card__bg-svg path {
+      fill: var(--primary-color);
+    }
+    .service-btn__icon {
+      background-color: var(--primary-color);
+      color: var(--white-color);
+    }
+    .service-btn__dashed-circle {
+      border-color: var(--primary-color);
+    }
+  }
+
+  &--orange {
+    --theme-color: var(--secondary-color);
+    .boarding-service-card__bg-svg path {
+      fill: var(--secondary-color);
+    }
+    .service-btn__icon {
+      background-color: var(--secondary-color);
+      color: var(--white-color);
+    }
+    .service-btn__dashed-circle {
+      border-color: var(--secondary-color);
+    }
+  }
+
+  &--pink {
+    --theme-color: var(--other-color-1);
+    .boarding-service-card__bg-svg path {
+      fill: var(--other-color-1);
+    }
+    .service-btn__icon {
+      background-color: var(--other-color-1);
+      color: var(--white-color);
+    }
+    .service-btn__dashed-circle {
+      border-color: var(--other-color-1);
+    }
+  }
+
+  &--green {
+    --theme-color: var(--other-color-2);
+    .boarding-service-card__bg-svg path {
+      fill: var(--other-color-2);
+    }
+    .service-btn__icon {
+      background-color: var(--other-color-2);
+      color: var(--white-color);
+    }
+    .service-btn__dashed-circle {
+      border-color: var(--other-color-2);
+    }
+  }
+}

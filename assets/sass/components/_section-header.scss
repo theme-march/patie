@@ -1,0 +1,114 @@
+@use "../abstracts" as *;
+
+
+.section-header {
+  display: flex;
+  align-items: normal;
+  gap: 10px;
+  color: var(--primary-color);
+  font-size: 20px;
+  font-weight: 400;
+  font-family: var(--heading-font-family);
+  margin-bottom: 20px;
+
+  @include respond(xl) {
+    font-size: 18px;
+  }
+  @include respond(md) {
+    font-size: 16px;
+  }
+
+
+  &__paw {
+    width: 16px;
+    height: 15px;
+    display: block;
+    flex-shrink: 0;
+
+    @include respond(md) {
+      width: 14px;
+      height: 13px;
+    }
+  }
+
+  &--light {
+    color: var(--white-color);
+
+    .section-header__paw {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+
+  &--center {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__title {
+    font-weight: 400;
+    color: var(--primary-color);
+    font-family: var(--heading-font-family);
+    font-size: 64px;
+    line-height: 1.1;
+
+    span {
+      color: var(--secondary-color);
+    }
+
+    @include respond(xxxl) {
+      font-size: 60px;
+    }
+    @include respond(xxl) {
+      font-size: 56px;
+    }
+    @include respond(xl) {
+      font-size: 52px;
+    }
+
+    @include respond(lg) {
+      font-size: 48px;
+    }
+
+    @include respond(md) {
+      font-size: 36px;
+    }
+
+    &--light {
+      color: var(--white-color);
+    }
+
+    &--center {
+      text-align: center;
+    }
+  }
+
+  &__breadcrumb {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &-item {
+      color: var(--secondary-color);
+      transition: all 0.3s ease;
+      text-transform: capitalize;
+
+      &--dark {
+        color: var(--heading-color);
+      }
+    }
+
+    &-separator {
+      color: var(--secondary-color);
+    }
+  }
+}
+
+.ak-br-desktop {
+  @include respond(md) {
+    display: none;
+  }
+}

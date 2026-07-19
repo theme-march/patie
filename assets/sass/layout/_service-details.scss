@@ -1,0 +1,103 @@
+@use "../abstracts" as *;
+
+.service-details {
+    &__layout {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 30px;
+        align-items: start;
+
+        @include respond(lg) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__content {
+        background-color: var(--smoke-bg-color);
+        border-radius: 20px;
+        padding: 40px;
+
+        @include respond(md) {
+            padding: 30px;
+        }
+    }
+
+    &__main-img {
+        max-width: 100%;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        object-fit: cover;
+    }
+
+    &__title {
+        color: var(--primary-color);
+        font-size: 48px;
+        margin-bottom: 25px;
+    }
+
+    &__desc {
+        margin-bottom: 25px;
+        line-height: 1.8;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__subtitle {
+        color: var(--primary-color);
+        font-size: 48px;
+        margin-top: 80px;
+        margin-bottom: 25px;
+    }
+
+    &__subsubtitle {
+        color: var(--primary-color);
+        font-size: 36px;
+        margin-top: 60px;
+        margin-bottom: 25px;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px 30px;
+
+        &--2col {
+            grid-template-columns: repeat(2, 1fr);
+
+            @include respond(md) {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        &-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            
+            &-icon {
+                color: var(--primary-color);
+                font-size: 16px;
+            }
+        }
+    }
+
+    &__sub-images {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        margin: 55px 0;
+
+        @include respond(sm) {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+    }
+
+    &__sub-img {
+        max-width: 100%;
+        border-radius: 15px;
+        object-fit: cover;
+    }
+}

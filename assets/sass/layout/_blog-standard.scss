@@ -1,0 +1,69 @@
+@use "../abstracts" as *;
+
+.blog:has(.blog__standard-container) {
+    overflow: visible;
+}
+
+.blog__standard-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: start;
+
+    @include respond(lg) {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+}
+
+.blog__standard-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+
+    @include respond(lg) {
+        gap: 30px;
+    }
+
+    .blog-card--lg {
+        width: 100% !important;
+        background-color: var(--smoke-bg-color);
+        border-radius: 20px;
+
+        &:hover {
+            background-color: var(--smoke-bg-color);
+        }
+
+        .blog-card__img-wrap {
+            padding: 0;
+            margin-bottom: 40px;
+        }
+
+        .blog-card__img {
+            border-radius: 0;
+        }
+
+        .blog-card__date {
+            top: 30px;
+            left: 30px;
+        }
+
+        .blog-card__title {
+            font-size: 36px;
+
+            @include respond(sm) {
+                font-size: 28px;
+            }
+        }
+
+        .blog-card__desc {
+            margin-bottom: 40px;
+        }
+
+
+    }
+}

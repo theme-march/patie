@@ -1,0 +1,40 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-column-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin circle-icon($size: 40px) {
+  width: $size;
+  height: $size;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-radius: 50%;
+  @include flex-center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+@mixin transition {
+  transition: all 0.3s ease;
+}
+
+@mixin header-bg {
+  border-radius: 20px;
+  background: var(--BG-color-Smoke-BG-color-1, #f1f2ff);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}

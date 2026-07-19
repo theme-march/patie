@@ -1,0 +1,336 @@
+@use "../abstracts" as *;
+
+.pricing {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    @include respond(md) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__header-left {
+    max-width: 550px;
+  }
+
+  &__toggle {
+    display: inline-flex;
+    background: var(--primary-color);
+    border: 2px dashed var(--white-color);
+    border-radius: 100px;
+    overflow: hidden;
+
+    @include respond(md) {
+      border-width: 1px;
+    }
+
+    &-btn {
+      padding: 20px 25px;
+      font-family: var(--heading-font-family);
+      color: var(--white-color);
+      cursor: pointer;
+      display: inline-block;
+
+      @include respond(md) {
+        padding: 12px 18px;
+        font-size: 14px;
+      }
+
+      @include respond(sm) {
+        padding: 10px 14px;
+        font-size: 13px;
+      }
+
+      &--active {
+        background: var(--secondary-color);
+        border-radius: 100px;
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+
+    @include respond(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.pricing-col {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  @include respond(sm) {
+     gap: 10px;
+    }
+
+  &--basic {
+    --card-color: var(--primary-color);
+    --card-bg: color-mix(in srgb, var(--smoke-bg-color), transparent 50%);
+    --info-bg: var(--smoke-bg-color);
+    --text-color: var(--body-color);
+    --btn-text: var(--primary-color);
+    --icon-bg: var(--primary-color);
+    --icon-color: var(--white-color);
+    --ribbon-bg: var(--primary-color);
+    --ribbon-color: var(--white-color);
+  }
+
+  &--standard {
+    --card-color: var(--white-color);
+    --card-bg: var(--secondary-color);
+    --info-bg: var(--white-color);
+    --text-color: var(--white-color);
+    --btn-bg: var(--white-color);
+    --btn-text: var(--secondary-color);
+    --icon-bg: var(--white-color);
+    --icon-color: var(--secondary-color);
+    --ribbon-bg: var(--white-color);
+    --ribbon-color: var(--secondary-color);
+    --info-title-color: var(--secondary-color);
+    --info-text-color: var(--white-color);
+
+    .pricing-btn {
+      background: color-mix(in srgb, var(--smoke-bg-color), transparent 50%);
+      border: 1px solid var(--secondary-color);
+
+      &:hover {
+        background: var(--card-bg);
+        color: var(--card-color);
+      }
+    }
+  }
+
+  &--premium {
+    --card-color: var(--other-color-1);
+    --card-bg: color-mix(in srgb, var(--smoke-bg-color), transparent 50%);
+    --info-bg: var(--smoke-bg-color);
+    --text-color: var(--body-color);
+    --btn-bg: transparent;
+    --btn-text: var(--other-color-1);
+    --icon-bg: var(--other-color-1);
+    --icon-color: var(--white-color);
+    --ribbon-bg: var(--other-color-1);
+    --ribbon-color: var(--white-color);
+  }
+}
+
+.pricing-card {
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--card-color);
+  border-radius: 10px;
+  padding: 40px 0;
+  overflow: hidden;
+  flex-grow: 1;
+
+  &__ribbon {
+    position: absolute;
+    top: 24px;
+    right: -35px;
+    background: var(--ribbon-bg);
+    color: var(--ribbon-color);
+    padding: 6px 40px;
+    transform: rotate(45deg);
+    z-index: 1;
+    @include respond(md) {
+      font-size: 12px;
+    }
+  }
+
+  &__price {
+    font-size: 64px;
+    font-weight: 400;
+    color: var(--card-color);
+    font-family: var(--heading-font-family);
+    padding: 10px 30px;
+    margin-bottom: 30px;
+
+    @include respond(xl) {
+      font-size: 52px;
+      padding: 10px 20px;
+    }
+
+    @include respond(md) {
+      font-size: 46px;
+    }
+
+  }
+
+  &__info {
+    background: var(--info-bg);
+    margin: 30px;
+    padding: 20px;
+    border-radius: 5px;
+
+    &-title {
+      color: var(--info-title-color, var(--heading-color));
+      font-size: 24px;
+      margin-bottom: 15px;
+
+      @include respond(md) {
+        font-size: 22px;
+      }
+    }
+  }
+
+  &__list {
+    padding: 0 30px;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+      color: var(--text-color);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--icon-bg);
+      color: var(--icon-color);
+      font-size: 10px;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.pricing-btn {
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 25px 30px;
+  border-radius: 10px;
+  background: var(--card-bg);
+  color: var(--btn-text);
+  border: 1px solid var(--card-color);
+  font-family: var(--heading-font-family);
+
+  &:hover {
+    background: var(--card-color);
+    color: var(--white-color);
+  }
+}
+
+.grooming-pricing {
+  position: relative;
+  padding: 120px 0;
+
+  @include respond(md) {
+    padding: 60px 0;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    @include respond(xl) {
+      margin-bottom: 50px;
+    }
+
+    @include respond(lg) {
+      margin-bottom: 40px;
+    }
+
+    @include respond(md) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__toggle {
+    display: inline-flex;
+    background: var(--white-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 100px;
+
+    &-btn {
+      padding: 20px 30px;
+      font-weight: 700;
+      color: var(--primary-color);
+      cursor: pointer;
+      display: inline-block;
+      border-radius: 100px;
+      transition: all 0.3s ease;
+
+      @include respond(xl) {
+        padding: 15px 25px;
+        font-size: 15px;
+      }
+
+      @include respond(md) {
+        padding: 12px 20px;
+        font-size: 14px;
+      }
+
+      @include respond(sm) {
+        padding: 10px 16px;
+        font-size: 13px;
+      }
+
+      &--active {
+        background: var(--primary-color);
+        color: var(--white-color);
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    @include respond(xl) {
+      gap: 20px;
+    }
+
+    @include respond(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(md) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

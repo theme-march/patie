@@ -1,0 +1,43 @@
+@use "../abstracts" as *;
+
+.ak-scrollup {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px color-mix(in srgb, var(--black-color), transparent 80%);
+
+  &.ak-scrollup-show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px color-mix(in srgb, var(--black-color), transparent 70%);
+  }
+
+  &__icon {
+    font-size: 16px;
+  }
+
+  @include respond(md) {
+    display: none;
+  }
+}

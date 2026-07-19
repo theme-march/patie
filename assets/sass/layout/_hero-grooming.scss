@@ -1,0 +1,389 @@
+@use "../abstracts" as *;
+
+.hero-grooming {
+  position: relative;
+  padding: 190px 20px 0;
+  overflow: hidden;
+  z-index: 1;
+
+  @include respond(lg) {
+    padding: 50px 30px 0;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  &__container {
+    position: relative;
+    max-width: 1360px;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__title-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  &__title {
+    font-size: 170px;
+    color: var(--white-color);
+
+    @include respond(xxxl) {
+      font-size: 150px;
+    }
+
+    @include respond(xxl) {
+      font-size: 120px;
+    }
+
+    @include respond(xl) {
+      font-size: 110px;
+    }
+
+    @include respond(lg) {
+      font-size: 85px;
+    }
+
+    @include respond(md) {
+      font-size: 64px;
+      margin-bottom: 20px;
+    }
+
+    @include respond(sm) {
+      font-size: 50px;
+    }
+  }
+
+  &__title-highlight {
+    display: block;
+  }
+
+  &__badge {
+    position: absolute;
+    top: 70%;
+    left: 11%;
+    width: 170px;
+    height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%) rotate(-25deg);
+
+    @include respond(xxxl) {
+      width: 140px;
+      top: 70%;
+      left: 15%;
+    }
+
+    @include respond(xxl) {
+      width: 110px;
+      top: 72%;
+      left: 19%;
+    }
+
+    @include respond(xl) {
+      width: 100px;
+      top: 70%;
+      left: 18%;
+    }
+
+    @include respond(lg) {
+      width: 90px;
+      top: 73%;
+      left: 18%;
+    }
+
+    @include respond(md) {
+      display: none;
+    }
+
+    @include respond(sm) {
+      display: none;
+    }
+  }
+
+  &__badge-bg {
+    position: absolute;
+  }
+
+  &__badge-text {
+    z-index: 2;
+    color: var(--white-color);
+    font-size: 50px;
+    font-weight: 400;
+    font-family: var(--heading-font-family);
+
+    @include respond(xxl) {
+      font-size: 35px;
+    }
+
+    @include respond(md) {
+      font-size: 27px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    @include respond(lg) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+    @include respond(sm) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__right-col {
+    display: contents;
+
+    @include respond(lg) {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    @include respond(sm) {
+      display: none;
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    max-width: 735px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    order: 2;
+
+    @include respond(lg) {
+      order: unset;
+      max-width: 535px;
+    }
+    @include respond(sm) {
+      order: unset;
+      max-width: 365px;
+    }
+  }
+
+  &__dog-img {
+    max-width: 100%;
+    display: block;
+    position: relative;
+    bottom: 1px;
+    right: -30px;
+    object-fit: contain;
+    object-position: bottom;
+    @include respond(lg) {
+      bottom: -25px;
+    }
+    @include respond(sm) {
+      bottom: 0px;
+      right: 0px;
+    }
+  }
+
+  &__offer-box {
+    position: relative;
+    background-color: var(--white-color);
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 415px;
+    text-align: left;
+    box-shadow: 0 10px 30px color-mix(in srgb, var(--heading-color), transparent 90%);
+    z-index: 10;
+    order: 1;
+
+    @include respond(xxl) {
+      max-width: 370px;
+    }
+
+    @include respond(xl) {
+      max-width: 330px;
+    }
+
+    @include respond(lg) {
+      max-width: 100%;
+      order: unset;
+      padding: 20px;
+    }
+    @include respond(sm) {
+      display: none;
+    }
+  }
+
+  &__offer-price {
+    position: absolute;
+    top: -22%;
+    right: 10%;
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    font-family: var(--heading-font-family);
+    font-size: 30px;
+    padding: 32px 25px;
+    border-radius: 50px 50px 0 0;
+
+    @include respond(xxl) {
+      top: -27%;
+    }
+
+    @include respond(lg) {
+      display: none;
+    }
+
+  }
+
+
+  &__offer-title {
+    color: var(--heading-color);
+    font-size: 36px;
+    margin-bottom: 25px;
+    text-transform: none;
+
+    @include respond(xxl) {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    @include respond(md) {
+      font-size: 24px;
+    }
+  }
+
+  &__offer-desc {
+    @include respond(md) {
+      font-size: 13px;
+      line-height: 20px;
+    }
+  }
+
+  &__specialist-box {
+    position: relative;
+    background-color: transparent;
+    padding: 40px 40px 40px 65px;
+    max-width: 490px;
+    text-align: left;
+    z-index: 10;
+    order: 3;
+
+    @include respond(xxl) {
+      max-width: 400px;
+      padding: 25px 20px 20px 55px;
+    }
+
+    @include respond(xl) {
+      max-width: 365px;
+    }
+
+    @include respond(lg) {
+      max-width: 100%;
+      padding: 35px 45px;
+      order: unset;
+    }
+
+    @include respond(md) {
+      display: none;
+    }
+  }
+
+  &__specialist-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: fill;
+    z-index: -1;
+    pointer-events: none;
+
+    @include respond(lg) {
+      width: 100%;
+      height: 175px;
+    }
+  }
+
+
+
+  &__specialist-title {
+    font-size: 36px;
+    color: var(--white-color);
+    margin-bottom: 20px;
+
+    @include respond(xxl) {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    @include respond(xl) {
+      font-size: 24px;
+    }
+  }
+
+  &__specialist-body {
+    display: flex;
+    align-items: center;
+    gap: 75px;
+    margin-bottom: 25px;
+
+    @include respond(xxl) {
+      margin-bottom: 10px;
+    }
+
+    @include respond(sm) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+  }
+
+  &__specialist-avatars {
+    display: flex;
+    align-items: center;
+  }
+
+  &__specialist-btn {
+    width: fit-content;
+
+    @include respond(xl) {
+      display: none;
+    }
+  }
+
+  &__avatar-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid var(--secondary-color);
+    margin-left: -15px;
+
+    @include respond(xl) {
+      width: 45px;
+      height: 45px;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__specialist-desc {
+    color: var(--white-color);
+    
+  }
+
+
+}

@@ -1,0 +1,130 @@
+@use "../abstracts" as *;
+
+.boarding-pricing {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+
+    @include respond(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.boarding-pricing-card {
+  position: relative;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+
+  &:hover {
+    .boarding-pricing-card__price-wrap {
+      background: var(--heading-color);
+      color: var(--white-color);
+    }
+  }
+
+  &--purple {
+    --theme-color: var(--primary-color);
+  }
+
+  &--orange {
+    --theme-color: var(--secondary-color);
+  }
+
+  &--pink {
+    --theme-color: var(--other-color-1);
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: -1;
+  }
+
+  &__title {
+    color: var(--heading-color);
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+
+  &__price-wrap {
+    width: 105px;
+    height: 105px;
+    background: var(--theme-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+    transition: all 0.3s ease;
+  }
+
+  &__price {
+    font-size: 48px;
+    font-weight: 400;
+    font-family: var(--heading-font-family);
+    color: var(--white-color);
+  }
+
+  &__list {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  &__list-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    color: var(--heading-color);
+  }
+
+  &__list-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--theme-color);
+    color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  &__btn {
+    width: 100%;
+    padding: 18px 20px;
+    margin-bottom: 50px;
+    background: var(--theme-color);
+    color: var(--white-color);
+    font-family: var(--heading-font-family);
+    border-radius: 100px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: var(--heading-color);
+      color: var(--white-color);
+    }
+  }
+}

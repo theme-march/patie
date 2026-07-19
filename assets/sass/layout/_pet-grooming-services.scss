@@ -1,0 +1,170 @@
+@use "../abstracts" as *;
+
+.pet-grooming-service {
+  position: relative;
+  padding: 120px 0;
+  overflow: hidden;
+
+  @include respond(lg) {
+    padding: 80px 0;
+  }
+  @include respond(lg) {
+    padding: 60px 0;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  &__heading {
+    max-width: 640px;
+
+    @include respond(md) {
+      max-width: 100%;
+    }
+  }
+
+  &__slider {
+    width: 100%;
+    overflow: hidden;
+
+    .swiper-slide {
+      height: auto;
+      display: flex;
+      justify-content: center;
+
+      .pet-grooming-card {
+        height: 100%;
+      }
+    }
+  }
+
+  &__pagination {
+    margin-top: 60px;
+  }
+}
+
+.pet-grooming-card {
+  position: relative;
+  width: 100%;
+  padding: 40px 30px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+  z-index: 1;
+
+  @include respond(md) {
+    padding: 45px 70px 40px 80px;
+  }
+
+  &__bg-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  &__bg-path {
+    fill: currentColor;
+  }
+
+  &__img-wrap {
+    margin-bottom: 25px;
+    overflow: hidden;
+    position: relative;
+    left: 15px;
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.5s ease;
+  }
+
+  &__title-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+  }
+
+  &__title {
+    color: var(--white-color);
+    font-size: 30px;
+    margin-bottom: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  &__desc {
+    color: var(--white-color);
+    margin-bottom: 25px;
+    font-weight: 500;
+  }
+
+  .service-btn {
+    margin-top: auto;
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    .pet-grooming-card__img {
+      transform: scale(0.95);
+    }
+
+    .pet-grooming-card__title {
+      transform: scale(0.95);
+    }
+  }
+
+  &--orange {
+    color: var(--secondary-color);
+
+    .service-btn__icon {
+      color: var(--secondary-color);
+    }
+  }
+
+  &--purple {
+    color: var(--primary-color);
+
+    .service-btn__icon {
+      color: var(--primary-color);
+    }
+  }
+
+  &--pink {
+    color: var(--other-color-1);
+
+    .service-btn__icon {
+      color: var(--other-color-1);
+    }
+  }
+
+  &--green {
+    color: var(--other-color-2);
+
+    .service-btn__icon {
+      color: var(--other-color-2);
+    }
+  }
+}

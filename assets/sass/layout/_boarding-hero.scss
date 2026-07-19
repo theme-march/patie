@@ -1,0 +1,373 @@
+@use "../abstracts" as *;
+
+
+.boarding-hero {
+  position: relative;
+  z-index: 1;
+  padding-top: 200px;
+  padding-bottom: 0;
+  overflow: hidden;
+
+  @include respond(xxxxl) {
+    padding-top: 175px;
+  }
+  @include respond(xxxl) {
+    padding-top: 190px;
+  }
+  @include respond(xl) {
+    padding-top: 130px;
+  }
+  @include respond(lg) {
+    padding-top: 200px;
+  }
+  @include respond(md) {
+    padding-top: 190px;
+  }
+
+
+  .container {
+    max-width: 1580px;
+
+    @include respond(xxxxl) {
+      max-width: 1450px;
+    }
+
+    @include respond(xxxl) {
+      max-width: 1400px;
+    }
+    @include respond(xxl) {
+      max-width: 1240px;
+    }
+    @include respond(xl) {
+      max-width: 1050px;
+    }
+    @include respond(lg) {
+      max-width: 960px;
+    }
+    @include respond(md) {
+      max-width: 720px;
+    }
+    @include respond(sm) {
+      max-width: 540px;
+    }
+  }
+
+  &__bgs {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__bg-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    z-index: 1;
+
+    @include respond(xxxxl) {
+      top: 1%;
+    }
+    @include respond(xl) {
+      display: none;
+    }
+  }
+
+  &__bg-2 {
+    position: relative;
+    top: -.5%;
+    object-fit: cover;
+    z-index: 2;
+
+    @include respond(xxxxl) {
+      width: 97%;
+      top: -8.5%;
+    }
+
+    @include respond(xxxl) {
+      width: 94%;
+      top: -12.5%;
+    }
+    @include respond(xxl) {
+      width: 95%;
+      top: -13.5%;
+    }
+    @include respond(xl) {
+      position: absolute;
+      top: -20%;
+      left: 0;
+      width: 100%;
+      height: 107%;
+      object-fit: cover;
+    }
+    @include respond(lg) {
+      width: 100%;
+    }
+    @include respond(md) {
+      top: -120px;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+
+    @include respond(xxxxl) {
+      height: 703px;
+    }
+    @include respond(xxxl) {
+      height: 630px;
+    }
+    @include respond(xxl) {
+      height: 520px;
+    }
+    @include respond(xl) {
+      height: 520px;
+    }
+    @include respond(lg) {
+      height: 100%;
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+    width: 50%;
+    align-self: center;
+
+    @include respond(xxxl) {
+      margin-top: -85px;
+    }
+    @include respond(xxl) {
+      margin-top: -115px;
+    }
+    @include respond(xl) {
+      margin-top: -50px;
+    }
+    @include respond(lg) {
+      width: 100%;
+      text-align: center;
+      padding-bottom: 60px;
+      align-self: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    @include respond(md) {
+      margin-bottom: 40px;
+    }
+    @include respond(sm) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    margin-top: -10px;
+
+    @include respond(xxxxl) {
+      font-size: 75px;
+    }
+    @include respond(xxl) {
+      font-size: 64px;
+    }
+    @include respond(xl) {
+      max-width: 570px;
+      font-size: 56px;
+    }
+    @include respond(md) {
+      font-size: 44px;
+    }
+    @include respond(sm) {
+      max-width: 350px;
+      font-size: 34px;
+    }
+
+    &-highlight {
+      color: var(--secondary-color);
+    }
+  }
+
+  &__desc {
+    font-size: 18px;
+    color: var(--body-color);
+    margin-bottom: 30px;
+    max-width: 650px;
+
+    @include respond(xxl) {
+      font-size: 16px;
+    }
+    @include respond(md) {
+      font-size: 16px;
+    }
+    @include respond(sm) {
+      font-size: 15px;
+    }
+  }
+
+
+  &__images {
+    width: 52%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    margin-bottom: 25px;
+
+    @include respond(xxxxl) {
+      width: 43%;
+      right: 4%;
+    }
+    @include respond(xl) {
+      width: 50%;
+      right: -3%;
+    }
+    @include respond(lg) {
+      width: 50%;
+      align-self: center;
+      right: 0;
+    }
+    @include respond(md) {
+      display: none;
+    }
+  }
+
+  &__girl {
+    position: relative;
+    z-index: 3;
+    max-width: 100%;
+    left: 8%;
+    bottom: -4px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+
+    @include respond(xxxxl) {
+      bottom: -11px;
+    }
+
+    @include respond(xxxl) {
+      max-width: 100%;
+      bottom: 14px;
+    }
+    @include respond(xxl) {
+      bottom: 6px;
+    }
+    @include respond(xl) {
+      bottom: -25px;
+    }
+    @include respond(xl) {
+      bottom: 15px;
+    }
+  }
+
+  &__line {
+    position: absolute;
+    top: 51%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    z-index: 1;
+
+    @include respond(xxxxl) {
+      max-width: 90%;
+      top: 45%;
+    }
+
+    @include respond(xxxl) {
+      top: 43%;
+    }
+    @include respond(xl) {
+      top: 46%;
+    }
+    @include respond(lg) {
+      width: 100%;
+      left: 50%;
+    }
+  } 
+
+  &__floating {
+    position: absolute;
+    z-index: 4;
+
+    &--cat {
+      left: 0%;
+      top: 48%;
+      transform: translateY(-50%);
+
+      @include respond(xxxxl) {
+        max-width: 90%;
+        top: 42%;
+      }
+
+      @include respond(xxxl) {
+        top: 38%;
+      }
+      @include respond(xxl) {
+        top: 35%;
+      }
+      @include respond(xl) {
+        top: 42%;
+        width: 90px;
+      }
+      @include respond(lg) {
+        left: -5%;
+        width: 80px;
+        top: 40%;
+      }
+      @include respond(md) {
+        width: 60px;
+      }
+      @include respond(sm) {
+        width: 45px;
+        left: 5%;
+      }
+    }
+
+    &--dog {
+      right: 9%;
+      top: 3%;
+
+      @include respond(xxxxl) {
+        max-width: 90%;
+        top: -2%;
+      }
+
+      @include respond(xxxl) {
+        top: -3%;
+      }
+      @include respond(xl) {
+        top: 0%;
+        width: 60px;
+      }
+      @include respond(lg) {
+        right: 10%;
+        width: 60px;
+        top: -1%;
+      }
+      @include respond(md) {
+        width: 50px;
+      }
+      @include respond(sm) {
+        width: 38px;
+        right: 5%;
+      }
+    }
+  }
+
+  &__pet-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}

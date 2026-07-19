@@ -1,0 +1,35 @@
+/*--------------------------------------------------------------
+2. Breakpoints
+----------------------------------------------------------------*/
+@use "sass:map";
+
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1600px,
+  xxxxl: 1700px,
+  xxxxxl: 1920px,
+);
+
+@mixin respond($breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    $size: map.get($breakpoints, $breakpoint);
+
+    @media (max-width: $size) {
+      @content;
+    }
+  }
+}
+
+@mixin respond-min($breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    $size: map.get($breakpoints, $breakpoint);
+
+    @media (min-width: $size) {
+      @content;
+    }
+  }
+}

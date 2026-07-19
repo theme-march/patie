@@ -1,0 +1,211 @@
+@use "../abstracts" as *;
+
+.grooming-team {
+  overflow: hidden;
+  position: relative;
+
+  &__row {
+    display: flex;
+    gap: 65px;
+    align-items: flex-start;
+
+    @include respond(lg) {
+      gap: 30px;
+    }
+
+    @include respond(xxl) {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+
+    @include respond(md) {
+      flex-direction: column;
+    }
+  }
+
+  &__left {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include respond(lg) {
+      flex-basis: 360px;
+    }
+
+    @include respond(xxl) {
+      flex-basis: auto;
+      width: 100%;
+      align-items: center;
+      text-align: center;
+    }
+
+    @include respond(md) {
+      flex-grow: 1;
+      flex-basis: 100%;
+    }
+  }
+
+  &__desc {
+    margin: 30px 0 40px;
+  }
+
+  &__text {
+    @include respond(xxl) {
+      text-align: center;
+      max-width: 750px;
+
+      .section-header {
+        justify-content: center;
+      }
+    }
+  }
+
+  &__right {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    overflow: visible;
+
+    @include respond(xxl) {
+      flex-basis: auto;
+      width: 100%;
+    }
+  }
+
+  &__thumb {
+    position: absolute;
+    max-width: 100%;
+    bottom: 0;
+    left: -50px;
+    z-index: 10;
+    pointer-events: none;
+
+    @include respond(xxl) {
+      display: none;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 307px);
+    gap: 60px 30px;
+    justify-content: center;
+
+    @include respond(xxl) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+  }
+}
+
+.grooming-team__card {
+  position: relative;
+  width: 307px;
+  height: 500px;
+  flex-shrink: 0;
+  text-decoration: none;
+  display: block;
+
+  &--1 {
+    align-self: flex-end;
+
+    @include respond(xxl) {
+      display: none;
+    }
+  }
+
+  &--1-clone {
+    display: none;
+
+    @include respond(xxl) {
+      display: block;
+    }
+  }
+
+  &-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 307px;
+    height: 500px;
+    z-index: 1;
+
+    &-svg {
+      display: block;
+    }
+
+    &-path {
+      fill: currentColor;
+    }
+  }
+
+  &-info {
+    text-align: center;
+    z-index: 3;
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    transition: all 0.3s ease;
+  }
+
+  &-name {
+    font-size: 30px;
+    color: var(--white-color);
+  }
+
+  &-role {
+    color: var(--white-color);
+  }
+
+  &-img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    max-width: 100%;
+    max-height: 380px;
+    width: auto;
+    object-fit: contain;
+    object-position: bottom center;
+    display: block;
+    transition: all 0.4s ease;
+  }
+
+  &:hover {
+    .grooming-team__card-img {
+      transform: translateX(-50%) translateY(-15px);
+    }
+    .grooming-team__card-info {
+      transform: translateX(-50%) translateY(-10px);
+    }
+  }
+
+  &--orange &-bg {
+    color: var(--secondary-color);
+  }
+
+  &--purple &-bg {
+    color: var(--primary-color);
+  }
+
+  &--magenta &-bg {
+    color: var(--other-color-1);
+  }
+
+  &--coral &-bg {
+    color: var(--other-color-4);
+  }
+
+  &--green &-bg {
+    color: var(--other-color-2);
+  }
+}

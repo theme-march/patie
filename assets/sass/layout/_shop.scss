@@ -1,0 +1,107 @@
+@use "../abstracts" as *;
+
+.shop {
+  &__layout {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+
+    @include respond(lg) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__main {
+    grid-column: span 9;
+
+    @include respond(lg) {
+      grid-column: span 1;
+    }
+  }
+
+  &__sidebar {
+    grid-column: span 3;
+
+    @include respond(lg) {
+      grid-column: span 1;
+    }
+  }
+
+  &__top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+
+
+  &__sort {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+
+    &-select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-color: transparent;
+      color: var(--white-color);
+      font-family: var(--body-font-family);
+      font-weight: 600;
+      padding: 25px 35px 25px 25px;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      z-index: 2;
+
+      option {
+        background-color: var(--white-color);
+        color: var(--heading-color);
+      }
+
+      &:focus + .shop__sort-icon-wrap {
+        .shop__sort-icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    &-icon-wrap {
+      position: absolute;
+      right: 1px;
+      top: 1px;
+      bottom: 1px;
+      padding: 0 25px;
+      background-color: var(--white-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      pointer-events: none;
+      z-index: 1;
+      border-radius: 0 5px 5px 0;
+    }
+
+    &-icon {
+      color: var(--body-color);
+      font-size: 14px;
+      transition: transform 0.3s ease;
+    }
+  }
+}
+
+.product__grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+
+  @include respond(lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond(sm) {
+    grid-template-columns: 1fr;
+  }
+}

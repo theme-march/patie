@@ -1,0 +1,230 @@
+@use "../abstracts" as *;
+
+.team-details {
+  &__img-wrap {
+    background-color: var(--smoke-bg-color);
+    padding: 30px;
+    border-radius: 20px;
+  }
+
+  &__img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+
+    @include respond(lg) {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+
+  &__img-col {
+    width: 52%;
+    
+    @include respond(lg) {
+      width: 100%;
+    }
+  }
+
+  &__content-col {
+    width: 54%;
+
+    @include respond(lg) {
+      width: 100%;
+    }
+  }
+
+  &__content {
+    @include respond(lg) {
+      margin-top: 50px;
+    }
+  }
+
+  &__title {
+    color: var(--primary-color);
+    font-size: 48px;
+    margin-bottom: 10px;
+  }
+
+  &__designation {
+    font-family: var(--body-font-family);
+    color: var(--body-color);
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 25px;
+  }
+
+  &__desc {
+    margin-bottom: 30px;
+    line-height: 1.8;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+
+    &-item {
+      font-family: var(--heading-font-family);
+      width: calc(50% - 15px);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--heading-color);
+      font-weight: 400;
+      font-size: 20px;
+
+      @include respond(sm) {
+         width: 100%;
+      }
+    }
+      
+    &-icon {
+      color: var(--primary-color);
+      font-size: 10px;
+    }
+  }
+
+  &__contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 90px;
+    margin-bottom: 40px;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    &-icon {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-color);
+      font-size: 16px;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-label {
+      font-size: 14px;
+      color: var(--body-color);
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    &-link {
+      font-family: var(--heading-font-family);
+      color: var(--heading-color);
+      font-weight: 400;
+      font-size: 20px;
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 45px;
+
+    &-link {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s ease;
+
+      &:hover,
+      &--active {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        color: var(--white-color);
+      }
+    }
+
+    &-icon {
+      font-size: 13px;
+    }
+  }
+
+  &__skills {
+    &-title {
+      color: var(--primary-color);
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.ak-progress {
+  margin-bottom: 30px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 13px;
+  }
+
+  &-title {
+    font-size: 18px;
+    color: var(--heading-color);
+  }
+
+  &-percentage {
+    font-family: var(--heading-font-family);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--heading-color);
+  }
+
+  &-bar-wrap {
+    width: 100%;
+    height: 10px;
+    background-color: var(--heading-color);
+    border-radius: 10px;
+    position: relative;
+  }
+
+  &-bar {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &-dot {
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary-color);
+    border: 5px solid var(--smoke-bg-color);
+    border-radius: 50%;
+    position: absolute;
+  }
+}

@@ -7,12 +7,15 @@
     gap: 30px;
     margin-top: 60px;
 
-    @include respond(md) {
+    @include respond(lg) {
       grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin-top: 40px;
     }
 
-    @include respond(sm) {
+    @include respond(md) {
       grid-template-columns: 1fr;
+      margin-top: 30px;
     }
   }
 }
@@ -25,6 +28,13 @@
   align-items: center;
   text-align: center;
   z-index: 1;
+
+  @include respond(xl) {
+    padding: 40px 30px 20px;
+  }
+  @include respond(md) {
+    padding: 50px 50px 30px;
+  }
 
   &:hover {
     .boarding-pricing-card__price-wrap {
@@ -59,8 +69,17 @@
     color: var(--heading-color);
     font-size: 24px;
     margin-bottom: 15px;
+
+    @include respond(xl) {
+      font-size: 22px;
+    }
   }
 
+  &__desc {
+    @include respond(xl) {
+      font-size: 14px;
+    }
+  }
 
   &__price-wrap {
     width: 105px;
@@ -72,6 +91,12 @@
     align-items: center;
     margin: 40px 0;
     transition: all 0.3s ease;
+
+    @include respond(xl) {
+      width: 80px;
+      height: 80px;
+      margin: 20px 0;
+    }
   }
 
   &__price {
@@ -79,6 +104,10 @@
     font-weight: 400;
     font-family: var(--heading-font-family);
     color: var(--white-color);
+
+    @include respond(xl) {
+      font-size: 32px;
+    }
   }
 
   &__list {
@@ -89,6 +118,12 @@
     flex-direction: column;
     gap: 20px;
     padding: 0 20px;
+
+    @include respond(xl) {
+      gap: 15px;
+      padding: 0 15px;
+      font-size: 14px;
+    }
   }
 
   &__list-item {
@@ -110,6 +145,12 @@
     align-items: center;
     font-size: 12px;
     flex-shrink: 0;
+
+    @include respond(xl) {
+      font-size: 10px;
+      width: 20px;
+      height: 20px;
+    }
   }
 
   &__btn {
@@ -125,6 +166,10 @@
     &:hover {
       background: var(--heading-color);
       color: var(--white-color);
+    }
+    @include respond(xl) {
+      padding: 12px;
+      font-size: 14px;
     }
   }
 }

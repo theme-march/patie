@@ -10,6 +10,7 @@
 
     @include respond(lg) {
       grid-template-columns: repeat(2, 1fr);
+      margin-top: 40px;
     }
 
     @include respond(md) {
@@ -28,6 +29,10 @@
   display: flex;
   flex-direction: column;
 
+  @include respond(xxl) {
+    padding: 20px 20px 30px;
+  }
+
   &__img-wrap {
     position: relative;
     border-radius: 12px;
@@ -40,14 +45,15 @@
   }
 
   &__img {
-    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
     display: block;
     transition: all 0.5s ease;
   }
 
   &__date {
     position: absolute;
-    padding:15px;
+    padding: 15px;
     right: 20px;
     bottom: 20px;
     background-color: var(--primary-color);
@@ -83,6 +89,17 @@
     align-items: center;
     gap: 20px;
     margin-bottom: 30px;
+
+    @include respond(xxl) {
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+    @include respond(xl) {
+      font-size: 12px;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
   }
 
   &__meta-item {
@@ -102,6 +119,15 @@
     font-size: 30px;
     margin-bottom: 30px;
     line-height: 1.4;
+
+    @include respond(xxl) {
+      font-size: 26px;
+      margin-bottom: 25px;
+    }
+    @include respond(xl) {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
   }
 
   &__title-link {
@@ -132,7 +158,7 @@
     position: relative;
     z-index: 2;
   }
-  
+
   &__share-link {
     width: 40px;
     height: 40px;
@@ -150,7 +176,7 @@
   &__share-icon {
     line-height: normal;
   }
-  
+
   .service-btn {
     position: relative;
     z-index: 2;
@@ -160,16 +186,16 @@
     background-color: var(--primary-color);
 
     .boarding-blog-card__img {
-        transform: scale(1.05);
+      transform: scale(1.05);
     }
-    
+
     .boarding-blog-card__meta-item,
     .boarding-blog-card__title-link {
       color: var(--white-color);
     }
 
     .boarding-blog-card__meta-icon {
-        color: var(--white-color);
+      color: var(--white-color);
     }
 
     .boarding-blog-card__divider {
@@ -177,14 +203,14 @@
     }
 
     .boarding-blog-card__share-link {
-        border-color: var(--white-color);
-        color: var(--white-color);
+      border-color: var(--white-color);
+      color: var(--white-color);
 
-        &:hover {
-            background-color: var(--white-color);
-            color: var(--primary-color);
-            border-style: solid;
-        }
+      &:hover {
+        background-color: var(--white-color);
+        color: var(--primary-color);
+        border-style: solid;
+      }
     }
 
     .service-btn {
@@ -192,9 +218,11 @@
         background-color: var(--white-color);
         color: var(--primary-color);
       }
+
       &__dashed-circle {
         border-color: var(--white-color);
       }
+
       &__text {
         color: var(--white-color);
       }

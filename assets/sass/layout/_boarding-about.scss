@@ -231,7 +231,7 @@
     }
 
     @include respond(xxl) {
-      gap: 15px;
+      gap: 30px;
     }
 
     @include respond(sm) {
@@ -354,26 +354,21 @@
     z-index: 3;
     position: absolute;
     bottom: 0px;
-    left: calc(100% - 290px);
+    left: calc(100% - 266px);
 
     @include respond(xxxxl) {
       width: 290px;
-      left: calc(100% - 305px);
+      left: calc(100% - 274px);
       padding: 20px;
     }
 
     @include respond(xxxl) {
       width: 290px;
-      left: calc(100% - 310px);
+      left: calc(100% - 280px);
     }
+
 
     @include respond(xxl) {
-      width: 280px;
-      left: calc(100% - 315px);
-      padding: 17px;
-    }
-
-    @include respond(xl) {
       display: none;
     }
 
@@ -391,9 +386,12 @@
     text-transform: uppercase;
 
     @include respond(xxxxl) {
-      margin-bottom: 86px;
+      margin-bottom: 90px;
     }
 
+    @include respond(xxxl) {
+      margin-bottom: 95px;
+    }
     @include respond(xxl) {
       margin-bottom: 93px;
     }

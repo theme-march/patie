@@ -18,6 +18,9 @@
         background-color: var(--secondary-color);
         z-index: 2;
 
+        @include respond(xxl) {
+            padding: 25px 45px;
+        }
         @include respond(lg) {
             padding: 20px 30px;
         }

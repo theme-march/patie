@@ -27,12 +27,28 @@
         border-radius: 20px;
         margin-bottom: 40px;
         object-fit: cover;
+
+        @include respond(xxl) {
+            margin-bottom: 30px;
+        }
     }
 
     &__title {
         color: var(--primary-color);
         font-size: 48px;
         margin-bottom: 25px;
+
+        @include respond(xxxl) {
+            font-size: 42px;
+        }
+
+        @include respond(xxl) {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+        @include respond(lg) {
+            font-size: 36px;
+        }
     }
 
     &__desc {
@@ -49,6 +65,22 @@
         font-size: 48px;
         margin-top: 80px;
         margin-bottom: 25px;
+
+        @include respond(xxxl) {
+            font-size: 42px;
+        }
+
+        @include respond(xxl) {
+            font-size: 38px;
+            margin-bottom: 20px;
+            margin-top: 60px;
+        }
+        @include respond(lg) {
+            font-size: 36px;
+        }
+        @include respond(lg) {
+            margin-top: 40px;
+        }
     }
 
     &__subsubtitle {
@@ -56,6 +88,14 @@
         font-size: 36px;
         margin-top: 60px;
         margin-bottom: 25px;
+
+        @include respond(xxl) {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        @include respond(lg) {
+            font-size: 32px;
+        }
     }
 
     &__list {
@@ -75,7 +115,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            
+
             &-icon {
                 color: var(--primary-color);
                 font-size: 16px;
@@ -89,9 +129,13 @@
         gap: 40px;
         margin: 55px 0;
 
+        @include respond(xxl) {
+            gap: 30px;
+            margin: 40px 0;
+        }
+
         @include respond(sm) {
             grid-template-columns: 1fr;
-            gap: 20px;
         }
     }
 

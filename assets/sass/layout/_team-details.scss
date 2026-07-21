@@ -5,29 +5,68 @@
     background-color: var(--smoke-bg-color);
     padding: 30px;
     border-radius: 20px;
+
+    @include respond(xxxl) {
+      padding: 25px;
+    }
+    @include respond(xxl) {
+      padding: 20px;
+      border-radius: 15px;
+    }
+    @include respond(xl) {
+      padding: 15px;
+    }
+    @include respond(sm) {
+      padding: 10px;
+    }
   }
 
   &__img {
+    width: 100%;
     max-width: 100%;
     border-radius: 10px;
   }
 
   &__wrapper {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 60px;
+
+    @include respond(xxxl) {
+      gap: 50px;
+    }
+
+    @include respond(xxl) {
+      gap: 40px;
+    }
 
     @include respond(lg) {
       flex-direction: column;
-      gap: 40px;
+      align-items: center;
+      gap: 30px;
+    }
+
+    @include respond(sm) {
+      gap: 20px;
     }
   }
 
   &__img-col {
     width: 52%;
-    
+
+    @include respond(xxxl) {
+      width: 48%;
+    }
+
+    @include respond(xxl) {
+      width: 45%;
+    }
+
     @include respond(lg) {
       width: 100%;
+      max-width: 450px;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 
@@ -49,6 +88,19 @@
     color: var(--primary-color);
     font-size: 48px;
     margin-bottom: 10px;
+
+    @include respond(xxxl) {
+      font-size: 44px;
+    }
+    @include respond(xxl) {
+      font-size: 40px;
+    }
+    @include respond(xl) {
+      font-size: 32px;
+    }
+    @include respond(lg) {
+      font-size: 24px;
+    }
   }
 
   &__designation {

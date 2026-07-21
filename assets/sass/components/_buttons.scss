@@ -25,14 +25,10 @@
   }
 
   @include respond(lg) {
-    font-size: 15px;
-  }
-
-  @include respond(md) {
     font-size: 14px;
   }
 
-  @include respond(sm) {
+  @include respond(md) {
     font-size: 13px;
   }
 

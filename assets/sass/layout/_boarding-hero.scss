@@ -110,6 +110,7 @@
     }
     @include respond(lg) {
       width: 100%;
+      height: 115%;
     }
     @include respond(md) {
       top: -120px;
@@ -157,17 +158,13 @@
     @include respond(lg) {
       width: 100%;
       text-align: center;
-      padding-bottom: 60px;
       align-self: auto;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
     @include respond(md) {
-      margin-bottom: 40px;
-    }
-    @include respond(sm) {
-      margin-bottom: 30px;
+      margin-bottom: 60px;
     }
   }
 
@@ -266,9 +263,6 @@
     }
     @include respond(xl) {
       bottom: -25px;
-    }
-    @include respond(xl) {
-      bottom: 15px;
     }
   }
 

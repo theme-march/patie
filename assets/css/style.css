@@ -979,15 +979,10 @@ i[class*=fa] {
 }
 @media (max-width: 992px) {
   .common-btn {
-    font-size: 15px;
-  }
-}
-@media (max-width: 768px) {
-  .common-btn {
     font-size: 14px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .common-btn {
     font-size: 13px;
   }
@@ -9173,6 +9168,7 @@ i[class*=fa] {
 @media (max-width: 992px) {
   .boarding-hero__bg-2 {
     width: 100%;
+    height: 115%;
   }
 }
 @media (max-width: 768px) {
@@ -9236,7 +9232,6 @@ i[class*=fa] {
   .boarding-hero__content {
     width: 100%;
     text-align: center;
-    padding-bottom: 60px;
     align-self: auto;
     display: flex;
     flex-direction: column;
@@ -9245,12 +9240,7 @@ i[class*=fa] {
 }
 @media (max-width: 768px) {
   .boarding-hero__content {
-    margin-bottom: 40px;
-  }
-}
-@media (max-width: 576px) {
-  .boarding-hero__content {
-    margin-bottom: 30px;
+    margin-bottom: 60px;
   }
 }
 .boarding-hero__title {
@@ -9370,11 +9360,6 @@ i[class*=fa] {
 @media (max-width: 1200px) {
   .boarding-hero__girl {
     bottom: -25px;
-  }
-}
-@media (max-width: 1200px) {
-  .boarding-hero__girl {
-    bottom: 15px;
   }
 }
 .boarding-hero__line {
@@ -9541,10 +9526,22 @@ i[class*=fa] {
   top: 38%;
   z-index: 1;
 }
+@media (max-width: 1700px) {
+  .boarding-about__deco-left {
+    left: 4%;
+    width: 300px;
+  }
+}
+@media (max-width: 1600px) {
+  .boarding-about__deco-left {
+    width: 250px;
+  }
+}
 @media (max-width: 1400px) {
   .boarding-about__deco-left {
-    left: -80px;
-    width: 250px;
+    left: 6%;
+    top: 31%;
+    width: 220px;
   }
 }
 @media (max-width: 1200px) {
@@ -9559,9 +9556,24 @@ i[class*=fa] {
   top: 23%;
   z-index: 1;
 }
+@media (max-width: 1700px) {
+  .boarding-about__deco-right {
+    top: 18%;
+    right: 2%;
+    width: 285px;
+  }
+}
+@media (max-width: 1600px) {
+  .boarding-about__deco-right {
+    top: 18%;
+    right: 4%;
+    width: 230px;
+  }
+}
 @media (max-width: 1400px) {
   .boarding-about__deco-right {
-    right: -60px;
+    top: 18%;
+    right: 6%;
     width: 200px;
   }
 }
@@ -9575,10 +9587,59 @@ i[class*=fa] {
   max-width: 1005px;
   margin: 0 auto;
 }
+@media (max-width: 1700px) {
+  .boarding-about__main-title {
+    font-size: 44px;
+    max-width: 950px;
+  }
+}
+@media (max-width: 1600px) {
+  .boarding-about__main-title {
+    font-size: 40px;
+    max-width: 900px;
+  }
+}
+@media (max-width: 1400px) {
+  .boarding-about__main-title {
+    font-size: 36px;
+    max-width: 850px;
+  }
+}
+@media (max-width: 1200px) {
+  .boarding-about__main-title {
+    font-size: 32px;
+    max-width: 700px;
+  }
+}
+@media (max-width: 992px) {
+  .boarding-about__main-title {
+    font-size: 28px;
+    max-width: 600px;
+    line-height: 1.3;
+  }
+}
+@media (max-width: 768px) {
+  .boarding-about__main-title {
+    font-size: 24px;
+    line-height: 1.35;
+  }
+}
 .boarding-about__btn-wrap {
   text-align: center;
   margin-top: 40px;
   margin-bottom: 60px;
+}
+@media (max-width: 992px) {
+  .boarding-about__btn-wrap {
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 576px) {
+  .boarding-about__btn-wrap {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
 }
 .boarding-about__content-area {
   position: relative;
@@ -9589,10 +9650,16 @@ i[class*=fa] {
   margin: 0 auto;
   z-index: 2;
 }
+@media (max-width: 1200px) {
+  .boarding-about__content-area {
+    gap: 20px;
+  }
+}
 @media (max-width: 992px) {
   .boarding-about__content-area {
     flex-direction: column;
     align-items: center;
+    gap: 30px;
   }
 }
 .boarding-about__combine {
@@ -9602,6 +9669,11 @@ i[class*=fa] {
   z-index: 2;
 }
 @media (max-width: 992px) {
+  .boarding-about__combine {
+    max-width: 700px;
+  }
+}
+@media (max-width: 768px) {
   .boarding-about__combine {
     max-width: 100%;
   }
@@ -9613,7 +9685,6 @@ i[class*=fa] {
 }
 @media (max-width: 576px) {
   .boarding-about__icons {
-    flex-direction: column;
     gap: 30px;
     align-items: center;
   }
@@ -9632,34 +9703,77 @@ i[class*=fa] {
   margin: 0 auto 15px;
   background-color: transparent;
 }
+@media (max-width: 768px) {
+  .boarding-about__icon-circle {
+    width: 65px;
+    height: 65px;
+  }
+}
 .boarding-about__icon-img {
   width: 38px;
   height: 38px;
 }
+@media (max-width: 768px) {
+  .boarding-about__icon-img {
+    width: 30px;
+    height: 30px;
+  }
+}
 .boarding-about__icon-title {
   font-size: 18px;
   color: var(--heading-color);
+}
+@media (max-width: 768px) {
+  .boarding-about__icon-title {
+    font-size: 15px;
+  }
 }
 .boarding-about__cards {
   display: flex;
   gap: 30px;
   align-items: stretch;
 }
-@media (max-width: 768px) {
+@media (max-width: 1700px) {
   .boarding-about__cards {
-    flex-direction: column;
+    gap: 22px;
+  }
+}
+@media (max-width: 1600px) {
+  .boarding-about__cards {
+    gap: 18px;
+  }
+}
+@media (max-width: 1400px) {
+  .boarding-about__cards {
+    gap: 15px;
+  }
+}
+@media (max-width: 576px) {
+  .boarding-about__cards {
+    align-items: center;
   }
 }
 .boarding-about__dark-card {
   background-color: var(--heading-color);
   border-radius: 20px;
   padding: 30px;
+  flex: 1 1 0%;
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-@media (max-width: 768px) {
+@media (max-width: 1700px) {
+  .boarding-about__dark-card {
+    padding: 25px;
+  }
+}
+@media (max-width: 1400px) {
+  .boarding-about__dark-card {
+    padding: 20px;
+  }
+}
+@media (max-width: 576px) {
   .boarding-about__dark-card {
     width: 100%;
   }
@@ -9667,6 +9781,11 @@ i[class*=fa] {
 .boarding-about__dark-avatars {
   display: flex;
   margin-bottom: 50px;
+}
+@media (max-width: 768px) {
+  .boarding-about__dark-avatars {
+    margin-bottom: 30px;
+  }
 }
 .boarding-about__dark-avatar {
   max-width: 50px;
@@ -9679,12 +9798,23 @@ i[class*=fa] {
 .boarding-about__dark-avatar:first-child {
   margin-left: 0;
 }
+@media (max-width: 992px) {
+  .boarding-about__dark-avatar {
+    max-width: 45px;
+    max-height: 45px;
+  }
+}
 .boarding-about__dark-title {
   font-size: 18px;
   color: var(--white-color);
   font-family: var(--body-font-family);
   font-weight: 700;
   margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .boarding-about__dark-title {
+    font-size: 16px;
+  }
 }
 .boarding-about__dark-btn {
   align-self: flex-start;
@@ -9705,17 +9835,19 @@ i[class*=fa] {
   border-color: var(--secondary-color);
 }
 .boarding-about__main-img-wrap {
+  flex: 1 1 0%;
   width: 50%;
   border-radius: 12px;
   overflow: hidden;
 }
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   .boarding-about__main-img-wrap {
-    width: 100%;
-    height: 300px;
+    display: none;
   }
 }
 .boarding-about__main-img {
+  width: 100%;
+  height: 100%;
   max-width: 100%;
   max-height: 100%;
   object-fit: cover;
@@ -9735,13 +9867,34 @@ i[class*=fa] {
   bottom: 0px;
   left: calc(100% - 290px);
 }
+@media (max-width: 1700px) {
+  .boarding-about__white-card {
+    width: 290px;
+    left: calc(100% - 305px);
+    padding: 20px;
+  }
+}
+@media (max-width: 1600px) {
+  .boarding-about__white-card {
+    width: 290px;
+    left: calc(100% - 310px);
+  }
+}
+@media (max-width: 1400px) {
+  .boarding-about__white-card {
+    width: 280px;
+    left: calc(100% - 315px);
+    padding: 17px;
+  }
+}
+@media (max-width: 1200px) {
+  .boarding-about__white-card {
+    display: none;
+  }
+}
 @media (max-width: 992px) {
   .boarding-about__white-card {
-    height: auto;
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-    margin-top: 30px;
+    display: none;
   }
 }
 .boarding-about__white-title {
@@ -9752,6 +9905,21 @@ i[class*=fa] {
   margin-bottom: 90px;
   text-transform: uppercase;
 }
+@media (max-width: 1700px) {
+  .boarding-about__white-title {
+    margin-bottom: 86px;
+  }
+}
+@media (max-width: 1400px) {
+  .boarding-about__white-title {
+    margin-bottom: 93px;
+  }
+}
+@media (max-width: 992px) {
+  .boarding-about__white-title {
+    margin-bottom: 30px;
+  }
+}
 .boarding-about__white-number {
   font-size: 70px;
   font-family: var(--heading-font-family);
@@ -9759,6 +9927,11 @@ i[class*=fa] {
   line-height: 1;
   margin-bottom: 15px;
   font-weight: 400;
+}
+@media (max-width: 768px) {
+  .boarding-about__white-number {
+    font-size: 50px;
+  }
 }
 .boarding-about__white-text {
   font-size: 14px;

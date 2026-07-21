@@ -459,6 +459,8 @@
             transform: translateX(-50%) translateY(0);
             visibility: visible;
             transition: transform 0.4s ease, visibility 0.4s ease;
+            background-color: var(--primary-color) !important;
+            box-shadow: 0 10px 30px color-mix(in srgb, var(--black-color), transparent 90%);
         }
 
         @include respond(lg) {
@@ -682,6 +684,16 @@
     &.ak-gescout_show {
         transform: translateY(0);
         visibility: visible;
+        background-color: var(--primary-color) !important;
+        box-shadow: 0 10px 30px color-mix(in srgb, var(--black-color), transparent 90%);
+
+        .site-header__menu-link {
+            color: var(--white-color);
+        }
+
+        .site-header__mobile-btn {
+            color: var(--white-color);
+        }
     }
 
     .site-header__menu-link {
@@ -708,5 +720,19 @@
         .site-header__mobile-btn {
             color: var(--black-color);
         }
+    }
+}
+
+// Pill variant: boarding-header sticky show — primary background
+.site-header--pill.boarding-header.ak-gescout_sticky.ak-gescout_show {
+    background-color: var(--primary-color) !important;
+    box-shadow: 0 10px 30px color-mix(in srgb, var(--black-color), transparent 90%);
+
+    .site-header__menu-link {
+        color: var(--white-color);
+    }
+
+    .site-header__mobile-btn {
+        color: var(--white-color);
     }
 }

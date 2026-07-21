@@ -14,6 +14,10 @@
     margin-bottom: -250px;
     align-items: center;
 
+    @include respond(xxl) {
+      padding: 70px;
+    }
+
     @include respond(md) {
       flex-direction: column;
       padding: 40px 20px;
@@ -26,10 +30,21 @@
     position: relative;
 
     @include respond(md) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 60px;
       padding-right: 0;
       padding-bottom: 40px;
       margin-bottom: 40px;
       border-bottom: 1px solid color-mix(in srgb, var(--white-color), transparent 80%);
+    }
+
+    @include respond(sm) {
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 30px;
     }
   }
 
@@ -48,7 +63,7 @@
 
   &__quote-icon {
     position: absolute;
-    right: -25px;
+    right: -35px;
     top: 50%;
     transform: translateY(-50%);
     width: 65px;
@@ -61,20 +76,35 @@
     z-index: 1;
 
     @include respond(md) {
+      width: 45px;
+      height: 45px;
       right: 50%;
       top: auto;
-      bottom: -65px;
+      bottom: -25px;
       transform: translateX(50%);
     }
   }
-    
+
   &__quote-img {
     width: 25px;
     filter: brightness(0) invert(1);
+
+    @include respond(md) {
+      width: 18px;
+    }
   }
 
   &__rating {
     margin-top: 50px;
+
+    @include respond(md) {
+      margin-top: 0;
+      flex-shrink: 0;
+    }
+
+    @include respond(sm) {
+      justify-items: right;
+    }
   }
 
   &__rating-number {
@@ -83,10 +113,19 @@
     font-family: var(--heading-font-family);
     color: var(--white-color);
     margin-bottom: 20px;
+
+    @include respond(md) {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
   }
 
   &__rating-text {
-    color: var(--white-color)
+    color: var(--white-color);
+
+    @include respond(md) {
+      font-size: 14px;
+    }
   }
 
   &__right {
@@ -107,17 +146,21 @@
   &__text {
     color: var(--white-color);
     margin-bottom: 60px;
+
+    @include respond(lg) {
+      font-size: 14px;
+    }
   }
 
   &__user {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+
     @include respond(lg) {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
     }
   }
 
@@ -144,8 +187,9 @@
   &__nav {
     display: flex;
     gap: 10px;
+    margin-left: 80px;
   }
-  
+
   &__nav-btn {
     width: 55px;
     height: 55px;
@@ -158,7 +202,12 @@
     color: var(--white-color);
     cursor: pointer;
     transition: all 0.3s ease;
-    
+
+    @include respond(xl) {
+      width: 40px;
+      height: 40px;
+    }
+
     &:hover,
     &--active {
       background-color: var(--secondary-color);
@@ -166,7 +215,7 @@
   }
 
   &__nav-icon {
-    line-height: 0;
+    font-size: 12px;
   }
 
 
@@ -177,7 +226,12 @@
     position: relative;
     padding-top: 350px;
     padding-bottom: 150px;
-    
+
+    @include respond(lg) {
+      padding-top: 330px;
+      padding-bottom: 120px;
+    }
+
     @include respond(md) {
       padding-top: 150px;
       padding-bottom: 80px;
@@ -201,14 +255,13 @@
     gap: 100px;
 
     @include respond(lg) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
+      gap: 60px;
     }
 
     @include respond(md) {
-      grid-template-columns: 1fr;
-      gap: 30px;
+      grid-template-columns: repeat(2, 1fr);
     }
+
   }
 
   &__stat-item {
@@ -233,20 +286,48 @@
     font-family: var(--heading-font-family);
     color: var(--white-color);
     font-size: 64px;
-    font-weight:400;
+    font-weight: 400;
     line-height: 0.6;
     margin-bottom: 20px;
+
+    @include respond(lg) {
+      font-size: 42px;
+    }
+
+    @include respond(md) {
+      margin-bottom: 15px;
+    }
+
+    @include respond(sm) {
+      font-size: 36px;
+    }
   }
 
   &__stat-title {
     color: var(--white-color);
     font-weight: 700;
     margin-bottom: 60px;
+
+    @include respond(lg) {
+      margin-bottom: 50px;
+    }
+
+    @include respond(md) {
+      margin-bottom: 30px;
+    }
+
+    @include respond(sm) {
+      font-size: 14px;
+    }
   }
 
   &__stat-desc {
     color: var(--white-color);
     font-family: var(--body-font-family);
     font-weight: 500;
+
+    @include respond(sm) {
+      font-size: 14px;
+    }
   }
 }

@@ -10048,14 +10048,10 @@ i[class*=fa] {
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
-@media (max-width: 1200px) {
-  .boarding-service__grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 @media (max-width: 992px) {
   .boarding-service__grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
   }
 }
 @media (max-width: 768px) {
@@ -10072,7 +10068,7 @@ i[class*=fa] {
 }
 .boarding-service-card__img-wrap {
   position: relative;
-  width: 100%;
+  max-width: 100%;
   margin-bottom: 60px;
 }
 .boarding-service-card__bg-svg {
@@ -10100,6 +10096,17 @@ i[class*=fa] {
   transition: all 0.3s ease;
   text-decoration: none;
   display: block;
+}
+@media (max-width: 1400px) {
+  .boarding-service-card__title {
+    font-size: 26px;
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 1200px) {
+  .boarding-service-card__title {
+    font-size: 24px;
+  }
 }
 .boarding-service-card:hover .boarding-service-card__img {
   transform: translateX(10px);
@@ -10193,6 +10200,11 @@ i[class*=fa] {
   margin-bottom: -250px;
   align-items: center;
 }
+@media (max-width: 1400px) {
+  .boarding-testimonial__box {
+    padding: 70px;
+  }
+}
 @media (max-width: 768px) {
   .boarding-testimonial__box {
     flex-direction: column;
@@ -10206,10 +10218,22 @@ i[class*=fa] {
 }
 @media (max-width: 768px) {
   .boarding-testimonial__left {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
     padding-right: 0;
     padding-bottom: 40px;
     margin-bottom: 40px;
     border-bottom: 1px solid color-mix(in srgb, var(--white-color), transparent 80%);
+  }
+}
+@media (max-width: 576px) {
+  .boarding-testimonial__left {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 30px;
   }
 }
 .boarding-testimonial__divider {
@@ -10227,7 +10251,7 @@ i[class*=fa] {
 }
 .boarding-testimonial__quote-icon {
   position: absolute;
-  right: -25px;
+  right: -35px;
   top: 50%;
   transform: translateY(-50%);
   width: 65px;
@@ -10241,9 +10265,11 @@ i[class*=fa] {
 }
 @media (max-width: 768px) {
   .boarding-testimonial__quote-icon {
+    width: 45px;
+    height: 45px;
     right: 50%;
     top: auto;
-    bottom: -65px;
+    bottom: -25px;
     transform: translateX(50%);
   }
 }
@@ -10251,8 +10277,24 @@ i[class*=fa] {
   width: 25px;
   filter: brightness(0) invert(1);
 }
+@media (max-width: 768px) {
+  .boarding-testimonial__quote-img {
+    width: 18px;
+  }
+}
 .boarding-testimonial__rating {
   margin-top: 50px;
+}
+@media (max-width: 768px) {
+  .boarding-testimonial__rating {
+    margin-top: 0;
+    flex-shrink: 0;
+  }
+}
+@media (max-width: 576px) {
+  .boarding-testimonial__rating {
+    justify-items: right;
+  }
 }
 .boarding-testimonial__rating-number {
   font-size: 48px;
@@ -10261,8 +10303,19 @@ i[class*=fa] {
   color: var(--white-color);
   margin-bottom: 20px;
 }
+@media (max-width: 768px) {
+  .boarding-testimonial__rating-number {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+}
 .boarding-testimonial__rating-text {
   color: var(--white-color);
+}
+@media (max-width: 768px) {
+  .boarding-testimonial__rating-text {
+    font-size: 14px;
+  }
 }
 .boarding-testimonial__right {
   flex: 1;
@@ -10281,6 +10334,11 @@ i[class*=fa] {
 .boarding-testimonial__text {
   color: var(--white-color);
   margin-bottom: 60px;
+}
+@media (max-width: 992px) {
+  .boarding-testimonial__text {
+    font-size: 14px;
+  }
 }
 .boarding-testimonial__user {
   display: flex;
@@ -10314,6 +10372,7 @@ i[class*=fa] {
 .boarding-testimonial__nav {
   display: flex;
   gap: 10px;
+  margin-left: 80px;
 }
 .boarding-testimonial__nav-btn {
   width: 55px;
@@ -10328,16 +10387,28 @@ i[class*=fa] {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+@media (max-width: 1200px) {
+  .boarding-testimonial__nav-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
 .boarding-testimonial__nav-btn:hover, .boarding-testimonial__nav-btn--active {
   background-color: var(--secondary-color);
 }
 .boarding-testimonial__nav-icon {
-  line-height: 0;
+  font-size: 12px;
 }
 .boarding-testimonial__stats-wrap {
   position: relative;
   padding-top: 350px;
   padding-bottom: 150px;
+}
+@media (max-width: 992px) {
+  .boarding-testimonial__stats-wrap {
+    padding-top: 330px;
+    padding-bottom: 120px;
+  }
 }
 @media (max-width: 768px) {
   .boarding-testimonial__stats-wrap {
@@ -10362,14 +10433,12 @@ i[class*=fa] {
 }
 @media (max-width: 992px) {
   .boarding-testimonial__stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    gap: 60px;
   }
 }
 @media (max-width: 768px) {
   .boarding-testimonial__stats-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 .boarding-testimonial__stat-item {
@@ -10397,15 +10466,50 @@ i[class*=fa] {
   line-height: 0.6;
   margin-bottom: 20px;
 }
+@media (max-width: 992px) {
+  .boarding-testimonial__stat-number {
+    font-size: 42px;
+  }
+}
+@media (max-width: 768px) {
+  .boarding-testimonial__stat-number {
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 576px) {
+  .boarding-testimonial__stat-number {
+    font-size: 36px;
+  }
+}
 .boarding-testimonial__stat-title {
   color: var(--white-color);
   font-weight: 700;
   margin-bottom: 60px;
 }
+@media (max-width: 992px) {
+  .boarding-testimonial__stat-title {
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: 768px) {
+  .boarding-testimonial__stat-title {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 576px) {
+  .boarding-testimonial__stat-title {
+    font-size: 14px;
+  }
+}
 .boarding-testimonial__stat-desc {
   color: var(--white-color);
   font-family: var(--body-font-family);
   font-weight: 500;
+}
+@media (max-width: 576px) {
+  .boarding-testimonial__stat-desc {
+    font-size: 14px;
+  }
 }
 
 /* 
@@ -10431,8 +10535,14 @@ i[class*=fa] {
 }
 @media (max-width: 992px) {
   .boarding-choose-us {
-    padding-top: 200px;
+    padding-top: 230px;
     padding-bottom: 80px;
+  }
+}
+@media (max-width: 768px) {
+  .boarding-choose-us {
+    padding-top: 230px;
+    padding-bottom: 45px;
   }
 }
 .boarding-choose-us__shape {
@@ -10443,6 +10553,11 @@ i[class*=fa] {
   height: 100%;
   z-index: -1;
 }
+@media (max-width: 768px) {
+  .boarding-choose-us__shape {
+    display: none;
+  }
+}
 .boarding-choose-us__left {
   width: 60%;
   max-width: 645px;
@@ -10450,6 +10565,12 @@ i[class*=fa] {
   z-index: 2;
 }
 @media (max-width: 992px) {
+  .boarding-choose-us__left {
+    width: 55%;
+    max-width: 520px;
+  }
+}
+@media (max-width: 768px) {
   .boarding-choose-us__left {
     width: 100%;
     max-width: none;
@@ -10465,12 +10586,23 @@ i[class*=fa] {
   display: flex;
   justify-content: flex-end;
 }
+@media (max-width: 1400px) {
+  .boarding-choose-us__right {
+    width: 41%;
+  }
+}
 @media (max-width: 992px) {
   .boarding-choose-us__right {
-    position: static;
-    transform: none;
-    width: 100%;
-    margin-top: 40px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 44%;
+  }
+}
+@media (max-width: 768px) {
+  .boarding-choose-us__right {
+    display: none;
   }
 }
 .boarding-choose-us__list {
@@ -10478,6 +10610,16 @@ i[class*=fa] {
   list-style: none;
   padding-left: 0;
   margin-bottom: 0;
+}
+@media (max-width: 992px) {
+  .boarding-choose-us__list {
+    margin-top: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .boarding-choose-us__list {
+    margin-top: 30px;
+  }
 }
 .boarding-choose-us__item {
   display: flex;
@@ -10515,6 +10657,12 @@ i[class*=fa] {
   background-color: transparent;
   flex-shrink: 0;
 }
+@media (max-width: 1200px) {
+  .boarding-choose-us__icon-outer {
+    width: 60px;
+    height: 60px;
+  }
+}
 .boarding-choose-us__icon-inner {
   width: 60px;
   height: 60px;
@@ -10524,11 +10672,23 @@ i[class*=fa] {
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 1200px) {
+  .boarding-choose-us__icon-inner {
+    width: 40px;
+    height: 40px;
+  }
+}
 .boarding-choose-us__icon {
   width: 30px;
   height: 30px;
   -o-object-fit: contain;
      object-fit: contain;
+}
+@media (max-width: 1200px) {
+  .boarding-choose-us__icon {
+    width: 25px;
+    height: 25px;
+  }
 }
 .boarding-choose-us__line {
   flex-grow: 1;
@@ -10549,6 +10709,11 @@ i[class*=fa] {
 .boarding-choose-us__title {
   font-size: 30px;
   margin-bottom: 15px;
+}
+@media (max-width: 1200px) {
+  .boarding-choose-us__title {
+    font-size: 26px;
+  }
 }
 .boarding-choose-us__desc {
   max-width: 440px;

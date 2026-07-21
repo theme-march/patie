@@ -27,12 +27,11 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 
-    @include respond(xl) {
-      grid-template-columns: repeat(3, 1fr);
-    }
     @include respond(lg) {
       grid-template-columns: repeat(2, 1fr);
+      gap: 60px;
     }
+
     @include respond(md) {
       grid-template-columns: repeat(1, 1fr);
     }
@@ -44,10 +43,10 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  
+
   &__img-wrap {
     position: relative;
-    width: 100%;
+    max-width: 100%;
     margin-bottom: 60px;
   }
 
@@ -78,12 +77,21 @@
     transition: all 0.3s ease;
     text-decoration: none;
     display: block;
+
+    @include respond(xxl) {
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+    @include respond(xl) {
+      font-size: 24px;
+    }
   }
 
   &:hover {
     .boarding-service-card__img {
       transform: translateX(10px);
     }
+
     .boarding-service-card__title {
       color: var(--theme-color);
     }
@@ -98,13 +106,16 @@
   /* Modifiers */
   &--purple {
     --theme-color: var(--primary-color);
+
     .boarding-service-card__bg-svg path {
       fill: var(--primary-color);
     }
+
     .service-btn__icon {
       background-color: var(--primary-color);
       color: var(--white-color);
     }
+
     .service-btn__dashed-circle {
       border-color: var(--primary-color);
     }
@@ -112,13 +123,16 @@
 
   &--orange {
     --theme-color: var(--secondary-color);
+
     .boarding-service-card__bg-svg path {
       fill: var(--secondary-color);
     }
+
     .service-btn__icon {
       background-color: var(--secondary-color);
       color: var(--white-color);
     }
+
     .service-btn__dashed-circle {
       border-color: var(--secondary-color);
     }
@@ -126,13 +140,16 @@
 
   &--pink {
     --theme-color: var(--other-color-1);
+
     .boarding-service-card__bg-svg path {
       fill: var(--other-color-1);
     }
+
     .service-btn__icon {
       background-color: var(--other-color-1);
       color: var(--white-color);
     }
+
     .service-btn__dashed-circle {
       border-color: var(--other-color-1);
     }
@@ -140,13 +157,16 @@
 
   &--green {
     --theme-color: var(--other-color-2);
+
     .boarding-service-card__bg-svg path {
       fill: var(--other-color-2);
     }
+
     .service-btn__icon {
       background-color: var(--other-color-2);
       color: var(--white-color);
     }
+
     .service-btn__dashed-circle {
       border-color: var(--other-color-2);
     }

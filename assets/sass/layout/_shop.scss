@@ -34,6 +34,10 @@
     margin-bottom: 60px;
     flex-wrap: wrap;
     gap: 20px;
+
+    @include respond(md) {
+      margin-bottom: 40px;
+    }
   }
 
 
@@ -59,12 +63,16 @@
       position: relative;
       z-index: 2;
 
+      @include respond(lg) {
+        padding: 15px 30px 15px 20px;
+      }
+
       option {
         background-color: var(--white-color);
         color: var(--heading-color);
       }
 
-      &:focus + .shop__sort-icon-wrap {
+      &:focus+.shop__sort-icon-wrap {
         .shop__sort-icon {
           transform: rotate(180deg);
         }

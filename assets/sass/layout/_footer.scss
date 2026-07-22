@@ -358,10 +358,8 @@
     margin-left: calc(-50vw + 50%);
 
     @include respond(lg) {
-      width: 100%;
-      margin-left: 0;
+      padding: 40px 0;
     }
-
     @include respond(md) {
       padding: 20px 0;
     }
@@ -378,7 +376,7 @@
     width: max-content;
 
     @include respond(lg) {
-      font-size: clamp(60px, 10vw, 100px);
+      font-size: clamp(60px, 10vw, 80px);
     }
 
     @include respond(md) {

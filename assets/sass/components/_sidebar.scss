@@ -11,7 +11,7 @@
         gap: 25px;
     }
 
-    @include respond(xxl) {
+    @include respond(lg) {
         gap: 20px;
     }
 
@@ -31,7 +31,7 @@
             padding: 30px;
         }
 
-        @include respond(xxl) {
+        @include respond(lg) {
             padding: 25px;
         }
 
@@ -62,7 +62,7 @@
             font-size: 26px;
         }
 
-        @include respond(xxl) {
+        @include respond(lg) {
             font-size: 24px;
             margin-bottom: 15px;
         }
@@ -120,7 +120,7 @@
             padding: 10px 10px 10px 20px;
         }
 
-        @include respond(xxl) {
+        @include respond(lg) {
             font-size: 20px;
             padding: 9px 9px 9px 20px;
         }
@@ -162,7 +162,7 @@
             flex-direction: column;
             gap: 20px;
 
-            @include respond(xxl) {
+            @include respond(lg) {
                 gap: 15px;
             }
         }
@@ -180,9 +180,9 @@
                 padding: 18px 24px;
             }
 
-            @include respond(xxl) {
+            @include respond(lg) {
                 padding: 15px 20px;
-                font-size: 13px;
+                font-size: 14px;
             }
 
             &::placeholder {
@@ -207,9 +207,9 @@
                 font-size: 16px;
             }
 
-            @include respond(xxl) {
+            @include respond(lg) {
                 padding: 13px 24px;
-                font-size: 15px;
+                font-size: 14px;
             }
 
             &:hover {
@@ -225,7 +225,7 @@
             flex-direction: column;
             gap: 20px;
 
-            @include respond(xxl) {
+            @include respond(lg) {
                 gap: 15px;
             }
         }
@@ -235,7 +235,7 @@
             align-items: center;
             gap: 20px;
 
-            @include respond(xxl) {
+            @include respond(lg) {
                 gap: 15px;
             }
         }
@@ -258,7 +258,7 @@
             flex-direction: column;
             gap: 15px;
 
-            @include respond(xxl) {
+            @include respond(lg) {
                 gap: 10px;
             }
         }
@@ -314,7 +314,7 @@
         margin-bottom: 30px;
         line-height: 1.6;
 
-        @include respond(xxl) {
+        @include respond(lg) {
             font-size: 14px;
             margin-bottom: 20px;
         }
@@ -325,7 +325,7 @@
         flex-direction: column;
         gap: 20px;
 
-        @include respond(xxl) {
+        @include respond(lg) {
             gap: 15px;
         }
     }
@@ -338,9 +338,9 @@
         font-size: 14px;
         font-weight: 500;
 
-        @include respond(xxl) {
+        @include respond(lg) {
             padding: 14px 22px;
-            font-size: 13px;
+            font-size: 14px;
         }
 
         &::placeholder {
@@ -362,10 +362,9 @@
 
         @include respond(xxxl) {
             padding: 13px 50px 13px 24px;
-            font-size: 15px;
         }
 
-        @include respond(xxl) {
+        @include respond(lg) {
             padding: 12px 40px 12px 20px;
             font-size: 14px;
         }
@@ -380,15 +379,10 @@
 
 
 
-
-
-
-
-    // Shop Sidebar Specific Widgets
     &__filter {
         margin-bottom: 40px;
 
-        @include respond(xxl) {
+        @include respond(lg) {
             margin-bottom: 30px;
         }
 
@@ -398,15 +392,15 @@
             justify-content: space-between;
             margin-bottom: 30px;
 
-            @include respond(xxl) {
+            @include respond(lg) {
                 margin-bottom: 20px;
             }
 
             &-icon {
                 font-size: 20px;
 
-                @include respond(xxl) {
-                    font-size: 17px;
+                @include respond(lg) {
+                    font-size: 16px;
                 }
             }
         }
@@ -418,7 +412,7 @@
             margin-bottom: 30px;
             width: 100%;
 
-            @include respond(xxl) {
+            @include respond(lg) {
                 margin-bottom: 20px;
             }
         }
@@ -459,7 +453,7 @@
             gap: 20px;
             margin-bottom: 25px;
 
-            @include respond(xxl) {
+            @include respond(lg) {
                 gap: 15px;
                 margin-bottom: 20px;
             }
@@ -475,7 +469,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
 
-            @include respond(xxl) {
+            @include respond(lg) {
                 font-size: 14px;
                 padding: 8px 18px;
             }
@@ -488,8 +482,8 @@
         &-price {
             line-height: 1.4;
 
-            @include respond(xxl) {
-                font-size: 13px;
+            @include respond(lg) {
+                font-size: 14px;
             }
         }
 
@@ -505,7 +499,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
 
-            @include respond(xxl) {
+            @include respond(lg) {
                 font-size: 16px;
                 gap: 8px;
             }
@@ -525,13 +519,17 @@
 
         &--sm {
             margin: 10px 0;
+
+            @include respond(md) {
+                margin: 5px 0;
+            }
         }
     }
 
     &__category {
         margin-bottom: 40px;
 
-        @include respond(xxl) {
+        @include respond(lg) {
             margin-bottom: 30px;
         }
 
@@ -540,7 +538,7 @@
             flex-direction: column;
             gap: 25px;
 
-            @include respond(xxl) {
+            @include respond(lg) {
                 gap: 18px;
             }
 
@@ -556,7 +554,7 @@
             cursor: pointer;
             transition: color 0.3s ease;
 
-            @include respond(xxl) {
+            @include respond(lg) {
                 font-size: 14px;
             }
 
@@ -578,7 +576,7 @@
             align-items: center;
             gap: 15px;
 
-            @include respond(xxl) {
+            @include respond(lg) {
                 gap: 10px;
             }
         }
@@ -590,7 +588,7 @@
             border-radius: 2px;
             transition: background-color 0.3s ease;
 
-            @include respond(xxl) {
+            @include respond(lg) {
                 width: 15px;
                 height: 15px;
             }
@@ -604,7 +602,7 @@
     &__product {
         margin-bottom: 40px;
 
-        @include respond(xxl) {
+        @include respond(lg) {
             margin-bottom: 30px;
         }
 
@@ -613,7 +611,7 @@
             flex-direction: column;
             gap: 20px;
 
-            @include respond(xxl) {
+            @include respond(lg) {
                 gap: 15px;
             }
         }
@@ -624,7 +622,7 @@
             gap: 15px;
             transition: all 0.3s ease;
 
-            @include respond(xxl) {
+            @include respond(lg) {
                 gap: 12px;
             }
 
@@ -644,7 +642,7 @@
             flex-shrink: 0;
             padding: 7px;
 
-            @include respond(xxl) {
+            @include respond(lg) {
                 width: 54px;
                 height: 60px;
                 padding: 5px;
@@ -666,7 +664,7 @@
             max-height: 50px;
             object-fit: contain;
 
-            @include respond(xxl) {
+            @include respond(lg) {
                 max-width: 30px;
                 max-height: 38px;
             }
@@ -683,8 +681,8 @@
             font-weight: 400;
             color: var(--primary-color);
 
-            @include respond(xxl) {
-                font-size: 13px;
+            @include respond(lg) {
+                font-size: 14px;
             }
         }
 
@@ -694,7 +692,7 @@
             color: var(--body-color);
             font-family: var(--heading-font-family);
 
-            @include respond(xxl) {
+            @include respond(lg) {
                 font-size: 13px;
             }
         }
@@ -709,7 +707,7 @@
             gap: 15px;
         }
 
-        @include respond(xxl) {
+        @include respond(lg) {
             gap: 12px;
         }
 

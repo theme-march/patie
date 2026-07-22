@@ -56,12 +56,21 @@
     margin-bottom: 25px;
     transition: all 0.3s ease;
 
-    @include respond(md) {
-      margin-bottom: 20px;
-    }
-
     &:hover {
       transform: translateY(-5px);
+    }
+
+    @include respond(lg) {
+      margin-bottom: 35px;
+    }
+    @include respond(md) {
+      margin-bottom: 30px;
+    }
+
+    @include respond(sm) {
+      max-width: 315px;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 
@@ -78,6 +87,12 @@
         visibility: visible;
         transform: translate(-50%, -50%) scale(1);
       }
+    }
+  }
+
+  &__img {
+    @include respond(xl) {
+      max-width: 55%;
     }
   }
 

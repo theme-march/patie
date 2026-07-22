@@ -54,9 +54,9 @@
     &--active {
       border-color: color-mix(in srgb, var(--primary-color), transparent 50%);
     }
-    
+
     &:hover {
-        border-color: var(--primary-color);
+      border-color: var(--primary-color);
     }
   }
 
@@ -76,9 +76,21 @@
     padding: 40px;
     max-height: 550px;
 
-    @include respond(md) {
-        min-height: 350px;
-        padding: 20px;
+    @include respond(xxl) {
+      max-height: 480px;
+    }
+
+    @include respond(xl) {
+      max-height: 420px;
+    }
+
+    @include respond(lg) {
+      max-height: 442px;
+    }
+
+    @include respond(sm) {
+      padding: 50px 0;
+      margin: 0px 50px;
     }
   }
 
@@ -86,6 +98,14 @@
     width: 65%;
     height: auto;
     object-fit: contain;
+
+    @include respond(xl) {
+      width: 75%;
+    }
+
+    @include respond(lg) {
+      width: 65%;
+    }
   }
 
   &__info {
@@ -108,6 +128,10 @@
       display: flex;
       gap: 3px;
       font-size: 14px;
+
+      @include respond(lg) {
+        font-size: 12px;
+      }
     }
 
     &-divider {
@@ -115,15 +139,32 @@
       color: var(--body-color);
     }
 
- 
+    &-text {
+      @include respond(lg) {
+        font-size: 14px;
+      }
+    }
+
   }
 
   &__title {
     font-size: 48px;
     margin-bottom: 30px;
 
-    @include respond(sm) {
-        font-size: 32px;
+    @include respond(xxl) {
+      font-size: 44px;
+    }
+
+    @include respond(xl) {
+      font-size: 38px;
+    }
+
+    @include respond(lg) {
+      margin-bottom: 20px;
+    }
+
+    @include respond(lg) {
+      font-size: 34px;
     }
   }
 
@@ -139,6 +180,10 @@
     font-weight: 400;
     color: var(--heading-color);
     font-family: var(--heading-font-family);
+
+    @include respond(xxl) {
+      font-size: 32px;
+    }
   }
 
   &__stock-divider {
@@ -155,6 +200,10 @@
     color: var(--secondary-color);
     display: flex;
     align-items: center;
+
+    @include respond(xxl) {
+      font-size: 18px;
+    }
   }
 
   &__desc {
@@ -202,7 +251,7 @@
       }
 
       &--blue {
-        background-color:var(--other-color-5);
+        background-color: var(--other-color-5);
       }
     }
 
@@ -227,12 +276,6 @@
     align-items: center;
     gap: 20px;
     margin-bottom: 30px;
-
-    @include respond(sm) {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-    }
   }
 
   &__quantity {
@@ -244,14 +287,16 @@
     gap: 20px;
 
     @include respond(sm) {
-        width: 100%;
-        justify-content: space-between;
+      width: 30%;
+      gap: 10px;
+      padding: 10px;
+      justify-content: center;
     }
 
     &-controls {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
     }
 
     &-btn {
@@ -269,7 +314,7 @@
       transition: all 0.3s ease;
 
       &:hover {
-          opacity: 0.7;
+        opacity: 0.7;
       }
     }
 
@@ -302,12 +347,12 @@
     transition: all 0.3s ease;
 
     @include respond(sm) {
-        width: 100%;
-        flex: none;
+      width: 70%;
+      flex: none;
     }
 
     &:hover {
-        background-color: var(--heading-color);
+      background-color: var(--heading-color);
     }
   }
 
@@ -324,11 +369,11 @@
     transition: all 0.3s ease;
 
     &-icon {
-        font-size: 18px;
+      font-size: 18px;
     }
 
     &:hover {
-        color: var(--primary-color);
+      color: var(--primary-color);
     }
   }
 
@@ -356,15 +401,15 @@
       display: flex;
       gap: 20px;
     }
-    
-    &-social-link {
-        color: var(--body-color);
-        font-size: 14px;
-        transition: all 0.3s ease;
 
-        &:hover {
-            color: var(--primary-color);
-        }
+    &-social-link {
+      color: var(--body-color);
+      font-size: 14px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: var(--primary-color);
+      }
     }
   }
 }

@@ -199,6 +199,10 @@
     margin-bottom: 20px;
     line-height: 1.6;
     font-size: 16px;
+
+    @include respond(lg) {
+      font-size: 14px;
+    }
   }
 
   &__form {
@@ -220,6 +224,11 @@
       color: color-mix(in srgb, var(--heading-color), transparent 40%);
       font-weight: 500;
     }
+
+    @include respond(lg) {
+      font-size: 14px;
+    }
+
   }
 
   &__submit {
@@ -291,6 +300,11 @@
     &:hover {
       color: var(--secondary-color);
     }
+
+    @include respond(lg) {
+      font-size: 14px;
+    }
+
   }
 
   &__list-icon {
@@ -328,6 +342,11 @@
     font-weight: 600;
     font-size: 15px;
     line-height: 1.6;
+
+    @include respond(lg) {
+      font-size: 14px;
+    }
+
   }
 
   &__middle {
@@ -808,9 +827,10 @@
     @include respond(lg) {
       margin-bottom: 25px;
     }
+
     @include respond(sm) {
-        max-width: 215px;
-      }
+      max-width: 215px;
+    }
   }
 
   &__input {

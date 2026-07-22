@@ -41,6 +41,13 @@
         .blog-card__img-wrap {
             padding: 0;
             margin-bottom: 40px;
+
+            @include respond(xl) {
+                margin-bottom: 20px;
+            }
+            @include respond(md) {
+                margin-bottom: 0px;
+            }
         }
 
         .blog-card__img {
@@ -55,13 +62,22 @@
         .blog-card__title {
             font-size: 36px;
 
-            @include respond(sm) {
-                font-size: 28px;
+            @include respond(xl) {
+                font-size: 30px;
+            }
+
+            @include respond(md) {
+                font-size: 26px;
+                line-height: 1.2;
             }
         }
 
         .blog-card__desc {
             margin-bottom: 40px;
+
+            @include respond(md) {
+                margin-bottom: 25px;
+            }
         }
 
 

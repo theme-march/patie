@@ -67,8 +67,9 @@
             margin-bottom: 15px;
         }
 
-        @include respond(sm) {
+        @include respond(md) {
             font-size: 22px;
+            margin-bottom: 10px;
         }
 
         &--white {
@@ -83,6 +84,11 @@
     &__divider {
         margin-bottom: 30px;
         display: block;
+
+        @include respond(lg) {
+            margin-bottom: 20px;
+        }
+
 
         &--white {
             filter: brightness(0) invert(1);
@@ -213,7 +219,6 @@
         }
     }
 
-    // Latest News Widget
     &__news {
         &-list {
             display: flex;
@@ -263,9 +268,25 @@
             align-items: center;
             gap: 10px;
 
+            @include respond(lg) {
+                font-size: 14px;
+            }
+
+            @include respond(md) {
+                font-size: 12px;
+            }
+
             &-icon {
                 color: var(--primary-color);
                 font-size: 16px;
+
+                @include respond(lg) {
+                    font-size: 14px;
+                }
+
+                @include respond(md) {
+                    font-size: 12px;
+                }
             }
         }
 
@@ -277,12 +298,8 @@
             line-height: 1.4;
             transition: all 0.3s ease;
 
-            @include respond(xxxl) {
+            @include respond(lg) {
                 font-size: 16px;
-            }
-
-            @include respond(xxl) {
-                font-size: 15px;
             }
 
             &:hover {
@@ -291,7 +308,7 @@
         }
     }
 
-    // newsletter widget
+
     &__desc {
         color: var(--white-color);
         margin-bottom: 30px;

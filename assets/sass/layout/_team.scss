@@ -17,10 +17,6 @@
   &__header--style2 {
     margin-bottom: 50px;
 
-    @include respond(md) {
-      margin-bottom: 30px;
-    }
-
     .section-header {
       margin-bottom: 10px;
     }

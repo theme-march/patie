@@ -9,13 +9,16 @@
     @include respond(xxxl) {
       padding: 25px;
     }
+
     @include respond(xxl) {
       padding: 20px;
       border-radius: 15px;
     }
+
     @include respond(xl) {
       padding: 15px;
     }
+
     @include respond(sm) {
       padding: 10px;
     }
@@ -32,22 +35,10 @@
     align-items: flex-start;
     gap: 60px;
 
-    @include respond(xxxl) {
-      gap: 50px;
-    }
-
-    @include respond(xxl) {
-      gap: 40px;
-    }
-
     @include respond(lg) {
       flex-direction: column;
       align-items: center;
-      gap: 30px;
-    }
-
-    @include respond(sm) {
-      gap: 20px;
+      gap: 15px;
     }
   }
 
@@ -80,7 +71,7 @@
 
   &__content {
     @include respond(lg) {
-      margin-top: 50px;
+      margin-top: 30px;
     }
   }
 
@@ -92,14 +83,21 @@
     @include respond(xxxl) {
       font-size: 44px;
     }
+
     @include respond(xxl) {
       font-size: 40px;
     }
+
     @include respond(xl) {
+      font-size: 36px;
+    }
+
+    @include respond(lg) {
       font-size: 32px;
     }
-    @include respond(lg) {
-      font-size: 24px;
+
+    @include respond(md) {
+      margin-bottom: 5px;
     }
   }
 
@@ -109,6 +107,10 @@
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 25px;
+
+    @include respond(md) {
+      margin-bottom: 15px;
+    }
   }
 
   &__desc {
@@ -133,10 +135,10 @@
       font-size: 20px;
 
       @include respond(sm) {
-         width: 100%;
+        width: 100%;
       }
     }
-      
+
     &-icon {
       color: var(--primary-color);
       font-size: 10px;
@@ -184,6 +186,7 @@
       color: var(--heading-color);
       font-weight: 400;
       font-size: 20px;
+
       &:hover {
         color: var(--primary-color);
       }
@@ -223,6 +226,15 @@
       color: var(--primary-color);
       font-size: 36px;
       margin-bottom: 40px;
+
+      @include respond(xl) {
+        font-size: 32px;
+      }
+
+      @include respond(lg) {
+        font-size: 28px;
+      }
+
     }
   }
 }

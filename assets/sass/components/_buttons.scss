@@ -139,6 +139,11 @@
     .common-btn__inner {
       border: none;
       padding: 20px 30px;
+
+      @include respond(md) {
+        padding: 15px 20px;
+        font-size: 14px;
+      }
     }
   }
 }
@@ -154,6 +159,7 @@
   @include respond(xxl) {
     gap: 12px;
   }
+
   @include respond(lg) {
     gap: 10px;
   }
@@ -235,9 +241,11 @@
     @include respond(xxl) {
       font-size: 15px;
     }
+
     @include respond(xl) {
       font-size: 14px;
     }
+
     @include respond(lg) {
       font-size: 13px;
     }

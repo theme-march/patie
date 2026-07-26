@@ -63,7 +63,7 @@
       font-size: 56px;
     }
     @include respond(xl) {
-      font-size: 52px;
+      font-size: 48px;
     }
 
     @include respond(lg) {
@@ -71,7 +71,7 @@
     }
 
     @include respond(md) {
-      font-size: 36px;
+      font-size: 40px;
     }
 
     &--light {

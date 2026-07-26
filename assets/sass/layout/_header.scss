@@ -25,7 +25,7 @@
     }
 
     &__container {
-        max-width: 1540px;
+        max-width: 16000px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -179,6 +179,7 @@
 
         &--left {
             left: -37%;
+            top: 182%;
         }
 
         &-item {

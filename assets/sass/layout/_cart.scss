@@ -41,12 +41,26 @@
       font-weight: 400;
       color: var(--heading-color);
       border-bottom: 1px solid var(--border-color);
+
+      @include respond(md) {
+        padding: 20px;
+      }
+
     }
 
     td {
       padding: 30px;
       vertical-align: middle;
       border-bottom: 1px solid var(--border-color);
+
+      @include respond(xl) {
+        padding: 20px;
+      }
+
+      @include respond(md) {
+        padding: 10px;
+        font-size: 14px;
+      }
     }
 
 
@@ -60,6 +74,10 @@
     cursor: pointer;
     transition: all 0.3s ease;
 
+    @include respond(md) {
+      font-size: 12px;
+    }
+
     &:hover {
       color: var(--secondary-color);
     }
@@ -67,6 +85,7 @@
 
   &__product-item-wrap {
     display: flex;
+    gap: 10px;
     align-items: center;
     justify-content: space-between;
   }
@@ -75,6 +94,15 @@
     max-width: 125px;
     max-height: 110px;
     border-radius: 10px;
+
+    @include respond(lg) {
+      max-width: 60px;
+    }
+
+    @include respond(md) {
+      max-width: 50px;
+    }
+
 
     &__product-img {
       max-width: 100%;
@@ -94,6 +122,10 @@
     @include respond(xl) {
       font-size: 18px;
     }
+
+    @include respond(md) {
+      font-size: 16px;
+    }
   }
 
 
@@ -107,6 +139,24 @@
     width: fit-content;
     gap: 15px;
 
+    @include respond(xl) {
+      height: 44px;
+      padding: 5px 20px;
+      gap: 10px;
+    }
+
+    @include respond(md) {
+      height: 40px;
+      padding: 4px 15px;
+      gap: 8px;
+    }
+
+    @include respond(sm) {
+      height: 36px;
+      padding: 3px 12px;
+      gap: 6px;
+    }
+
     &-input {
       background: none;
       border: none;
@@ -115,6 +165,16 @@
       font-weight: 600;
       color: var(--heading-color);
       outline: none;
+
+      @include respond(md) {
+        width: 20px;
+        font-size: 14px;
+      }
+
+      @include respond(sm) {
+        width: 18px;
+        font-size: 13px;
+      }
 
       &::-webkit-outer-spin-button,
       &::-webkit-inner-spin-button {
@@ -129,6 +189,21 @@
       gap: 5px;
       border-left: 1px solid var(--border-color);
       padding-left: 20px;
+
+      @include respond(xl) {
+        padding-left: 15px;
+        gap: 3px;
+      }
+
+      @include respond(md) {
+        padding-left: 10px;
+        gap: 2px;
+      }
+
+      @include respond(sm) {
+        padding-left: 8px;
+        gap: 1px;
+      }
     }
 
     &-btn {
@@ -143,6 +218,14 @@
       align-items: center;
       justify-content: center;
       width: 100%;
+
+      @include respond(md) {
+        font-size: 9px;
+      }
+
+      @include respond(sm) {
+        font-size: 8px;
+      }
 
       &:hover {
         color: var(--primary-color);
@@ -190,6 +273,10 @@
       .cart__promo-input {
         grid-column: 1 / -span 2;
         width: 100%;
+
+        @include respond(sm) {
+          width: 90%;
+        }
       }
 
       &-left {

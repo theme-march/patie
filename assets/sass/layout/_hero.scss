@@ -92,12 +92,7 @@
     @include respond(xxxl) {
       max-width: 660px;
     }
-    @include respond(xxl) {
-      max-width: 650px;
-    }
-    @include respond(xl) {
-      max-width: 500px;
-    }
+ 
   }
 
   &__paws-rating {
@@ -127,6 +122,11 @@
       margin-left: 0;
     }
 
+    @include respond(xl) {
+      max-width: 40px;
+      margin-left: -15px;
+      border: 3px solid var(--primary-color);
+    }
     @include respond(md) {
       max-width: 28px;
       margin-left: -10px;
@@ -138,6 +138,9 @@
     margin-bottom: 0;
     color: var(--body-color);
 
+    @include respond(xl) {
+      font-size: 16px;
+    }
     @include respond(md) {
       font-size: 12px;
     }
@@ -150,6 +153,9 @@
 
     @include respond(xxxl) {
       font-size: 72px;
+    }
+    @include respond(xxxl) {
+      font-size: 68px;
     }
     @include respond(xl) {
       font-size: 64px;
@@ -179,7 +185,7 @@
     max-width: 650px;
     margin: 0 auto 35px;
 
-    @include respond(md) {
+    @include respond(xxl) {
       font-size: 17px;
     }
   }
@@ -212,13 +218,13 @@
     }
 
     @include respond(xxxl) {
-      max-width: 470px;
+      max-width: 435px;
     }
     @include respond(xxl) {
-      max-width: 425px;
+      max-width: 350px;
     }
     @include respond(xl) {
-      max-width: 300px;
+      max-width: 270px;
     }
   }
 
@@ -229,13 +235,13 @@
       max-width: 470px;
     }
     @include respond(xxxl) {
-      max-width: 470px;
+      max-width: 425px;
     }
     @include respond(xxl) {
-      max-width: 410px;
+      max-width: 340px;
     }
     @include respond(xl) {
-      max-width: 290px;
+      max-width: 260px;
     }
   }
 

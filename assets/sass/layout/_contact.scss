@@ -3,24 +3,23 @@
 .contact-section {
 
   &__layout {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 30px;
-    row-gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
     align-items: center;
-    justify-content: space-between;
 
-    @include respond(md) {
-      flex-direction: column;
+    @include respond(xl) {
+      gap: 20px;
+    }
+
+    @include respond(lg) {
+      grid-template-columns: 1fr;
+      gap: 30px;
     }
   }
 
   &__content {
-    width: calc(46% - 25px);
-
-    @include respond(md) {
-      width: 100%;
-    }
+    width: 100%;
   }
 
   &__title {
@@ -41,21 +40,33 @@
     display: flex;
     gap: 25px;
 
+    @include respond(xl) {
+      gap: 15px;
+    }
+
     @include respond(sm) {
       flex-direction: column;
+      margin: 0 60px;
     }
+
   }
 
   &__info-card {
     background-color: var(--smoke-bg-color);
     border-radius: 20px;
-    flex: 1;
+    flex: 1 1 0%;
+    min-width: 0;
+    word-break: break-word;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 40px;
+    padding: 40px 20px;
     transition: all 0.3s ease;
+
+    @include respond(xl) {
+      padding: 30px 15px;
+    }
 
     &:hover {
       background-color: var(--white-color);
@@ -77,33 +88,45 @@
     align-items: center;
     margin-bottom: 30px;
     transition: all 0.3s ease;
+
+    @include respond(sm) {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 20px;
+    }
+
   }
 
   &__icon {
     font-size: 30px;
     color: var(--primary-color);
+
+    @include respond(sm) {
+      font-size: 25px;
+    }
   }
 
   &__info-title {
     font-size: 20px;
     margin-bottom: 15px;
+
+
+
   }
 
   &__info-text {
     line-height: 1.6;
+
+
   }
 
   &__form-wrap {
-    width: calc(50% - 25px);
-
-    @include respond(md) {
-      width: 100%;
-    }
+    width: 100%;
   }
 
   &__form-box {
     border-radius: 20px;
-    padding: 40px;
+    padding: 0 40px 40px 40px;
     box-shadow: 0px 10px 50px 0px color-mix(in srgb, var(--black-color), transparent 92%);
 
     @include respond(lg) {

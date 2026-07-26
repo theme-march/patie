@@ -55,13 +55,13 @@
       padding: 8px 16px;
     }
 
-    @include respond(md) {
-      padding: 6px 12px;
-    }
+    // @include respond(md) {
+    //   padding: 6px 12px;
+    // }
 
-    @include respond(sm) {
-      padding: 5px 10px;
-    }
+    // @include respond(sm) {
+    //   padding: 5px 10px;
+    // }
   }
 
   &:hover {

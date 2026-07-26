@@ -29,6 +29,19 @@
     font-size: 36px;
     margin-bottom: 40px;
 
+    @include respond(xl) {
+      font-size: 32px;
+    }
+
+    @include respond(lg) {
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+
+    @include respond(md) {
+      font-size: 28px;
+    }
+
     &--shipping {
       margin-top: 10px;
       margin-bottom: 0px;
@@ -56,7 +69,7 @@
   &__row {
     display: flex;
     gap: 30px;
-    
+
     @include respond(md) {
       flex-direction: column;
     }
@@ -76,6 +89,10 @@
 
     &:focus {
       border-color: none;
+    }
+
+    @include respond(md) {
+      padding: 20px ;
     }
   }
 
@@ -152,7 +169,7 @@
     transform: scale(0);
     transition: all 0.3s ease;
 
-    .checkout-section__checkbox:checked + & {
+    .checkout-section__checkbox:checked+& {
       transform: scale(1);
     }
   }
@@ -165,7 +182,7 @@
     border: 1px solid var(--border-color);
     border-radius: 5px;
     padding: 40px;
-    
+
     @include respond(md) {
       padding: 20px;
     }
@@ -224,6 +241,7 @@
 
     &--final {
       margin-top: 5px;
+
       .checkout-section__order-total-label,
       .checkout-section__order-total-value {
         color: var(--heading-color);
@@ -293,13 +311,13 @@
     transform: scale(0);
     transition: all 0.3s ease;
 
-    .checkout-section__radio-input:checked + .checkout-section__radio-circle & {
+    .checkout-section__radio-input:checked+.checkout-section__radio-circle & {
       transform: scale(1);
     }
   }
-  
-  .checkout-section__radio-input:checked + .checkout-section__radio-circle {
-      border-color: var(--primary-color);
+
+  .checkout-section__radio-input:checked+.checkout-section__radio-circle {
+    border-color: var(--primary-color);
   }
 
   &__radio-text {
@@ -310,7 +328,7 @@
 
   &__submit-btn {
     width: 100%;
-    
+
     .common-btn__inner {
       border: none;
     }

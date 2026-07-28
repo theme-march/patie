@@ -161,8 +161,9 @@
     -webkit-appearance: none;
     -moz-appearance: none;
 
-    @include respond(sm) {
-      padding: 18px;
+    @include respond(md) {
+      padding: 15px;
+      font-size: 14px;
     }
 
     option {
@@ -184,8 +185,9 @@
       height: 200px;
       padding-top: 30px;
 
-      @include respond(sm) {
+      @include respond(md) {
         height: 140px;
+        padding-top: 25px;
       }
     }
   }

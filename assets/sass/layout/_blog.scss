@@ -178,6 +178,9 @@
 
         @include respond(md) {
           width: 100%;
+          max-height: 250px;
+        }
+        @include respond(sm) {
           max-height: 200px;
         }
       }

@@ -6445,6 +6445,11 @@ i[class*=fa] {
 @media (max-width: 768px) {
   .blog .blog-card--sm .blog-card__img-wrap {
     width: 100%;
+    max-height: 250px;
+  }
+}
+@media (max-width: 576px) {
+  .blog .blog-card--sm .blog-card__img-wrap {
     max-height: 200px;
   }
 }

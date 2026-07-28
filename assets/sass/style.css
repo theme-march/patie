@@ -3417,7 +3417,7 @@ i[class*=fa] {
 }
 @media (max-width: 992px) {
   .hero {
-    padding: 60px 0 0;
+    padding: 60px 0;
   }
 }
 .hero__shape {

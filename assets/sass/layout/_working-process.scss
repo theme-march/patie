@@ -110,6 +110,7 @@
 
     @include respond(md) {
       flex-direction: column;
+      gap: 20px;
     }
   }
 
@@ -128,8 +129,8 @@
         color: var(--primary-color);
         transition: transform 0.3s ease;
 
-        @include respond(md) {
-          right: 45px;
+        @include respond(sm) {
+          right: 18px;
         }
       }
 
@@ -143,6 +144,7 @@
 
   &__input {
     width: 100%;
+    box-sizing: border-box;
     padding: 25px;
     border-radius: 5px;
     font-weight: 600;

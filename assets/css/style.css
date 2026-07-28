@@ -5015,6 +5015,7 @@ i[class*=fa] {
 @media (max-width: 768px) {
   .working-process__form-row {
     flex-direction: column;
+    gap: 20px;
   }
 }
 .working-process__form-group {
@@ -5031,9 +5032,9 @@ i[class*=fa] {
   color: var(--primary-color);
   transition: transform 0.3s ease;
 }
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   .working-process__form-group--select .working-process__select-icon {
-    right: 45px;
+    right: 18px;
   }
 }
 .working-process__form-group--select:focus-within .working-process__select-icon {
@@ -5041,6 +5042,7 @@ i[class*=fa] {
 }
 .working-process__input {
   width: 100%;
+  box-sizing: border-box;
   padding: 25px;
   border-radius: 5px;
   font-weight: 600;

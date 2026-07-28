@@ -37,7 +37,7 @@
     overflow: visible;
 
     @include respond(md) {
-      padding: 40px 30px 0;
+      padding: 40px 15px 0;
     }
   }
 
@@ -54,62 +54,50 @@
 
   &__top-pet-wrap {
     position: absolute;
-    top: -26.2%;
+    top: -98px;
     left: 50%;
-    transform: translateX(-50%);
-    right: auto;
-    z-index: 2;
-    width: auto;
-    display: flex;
-    justify-content: center;
-
+    transform: translate(-50%, -50%);
+    z-index: -10;
+    pointer-events: none;
     @include respond(xxxl) {
-      top: -23.5%;
+      top: -86px;
     }
-
     @include respond(xxl) {
-      top: -18.4%;
+      top: -75px;
     }
-
     @include respond(xl) {
-      top: -12.6%;
+      top: -68px;
     }
-
     @include respond(lg) {
-      top: -122px;
+      top: -60px;
     }
-
     @include respond(md) {
-      top: -91px;
+      top: -45px;
     }
-
     @include respond(sm) {
-      top: -67px;
+      top: -25px;
     }
   }
 
   &__top-pet {
-    width: min(38vw, 563px);
+    width: 100%;
     max-width: 563px;
     height: auto;
+    display: block;
 
     @include respond(xxxl) {
-      width: min(36vw, 500px);
       max-width: 500px;
     }
 
     @include respond(xxl) {
-      width: min(34vw, 440px);
       max-width: 440px;
     }
 
     @include respond(xl) {
-      width: min(32vw, 400px);
       max-width: 400px;
     }
 
     @include respond(lg) {
-      width: 100%;
       max-width: 360px;
     }
 
@@ -118,7 +106,7 @@
     }
 
     @include respond(sm) {
-      max-width: 260px;
+      max-width: 240px;
     }
   }
 
@@ -243,7 +231,7 @@
       max-width: 60%;
       margin: 5px auto 35px;
     }
-    @include respond(lg) {
+    @include respond(md) {
       max-width: 70%;
     }
   }

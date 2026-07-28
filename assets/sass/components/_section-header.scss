@@ -14,9 +14,10 @@
   @include respond(xl) {
     font-size: 18px;
   }
-  @include respond(md) {
-    font-size: 16px;
+  @include respond(lg) {
+    margin-bottom: 10px;
   }
+
 
 
   &__paw {

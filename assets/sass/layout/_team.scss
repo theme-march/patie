@@ -9,8 +9,8 @@
     flex-wrap: wrap;
     gap: 30px;
 
-    @include respond(md) {
-      margin-bottom: 50px;
+    @include respond(lg) {
+      margin-bottom: 30px;
     }
   }
 
@@ -25,7 +25,7 @@
   &__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    gap: 25px;
 
     @include respond(xl) {
       grid-template-columns: repeat(3, 1fr);
@@ -35,9 +35,8 @@
       grid-template-columns: repeat(2, 1fr);
     }
 
-    @include respond(md) {
+    @include respond(sm) {
       grid-template-columns: repeat(1, 1fr);
-      gap: 60px;
     }
   }
 }
@@ -51,29 +50,19 @@
     margin-top: 50px;
   }
 
-  @include respond(md) {
-    margin-top: 40px;
+  @include respond(lg) {
+    margin: 80px auto 0;
   }
+
+
 
   &__social {
     position: absolute;
     bottom: 30px;
-    left: 15%;
+    left: 10px;
     display: flex;
     align-items: center;
     z-index: 12;
-
-    @include respond(xl) {
-      left: 10%;
-    }
-
-    @include respond(lg) {
-      left: 15%;
-    }
-
-    @include respond(md) {
-      left: 20%;
-    }
 
     &-trigger {
       width: 50px;
@@ -85,11 +74,21 @@
       cursor: pointer;
       position: relative;
       z-index: 1;
+
+      @include respond(lg) {
+        width: 35px;
+        height: 35px;
+        top: 10px;
+      }
     }
 
     &-icon {
       position: relative;
       z-index: 2;
+
+      @include respond(lg) {
+        font-size: 12px;
+      }
     }
 
     &-bg {
@@ -97,7 +96,6 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
       object-fit: contain;
       z-index: 1;
       transition: all 0.3s ease;
@@ -118,43 +116,39 @@
       height: 45px;
       transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 
+      @include respond(lg) {
+        height: 35px;
+        position: relative;
+        top: 10px;
+        margin-left: -35px;
+        gap: 10px;
+      }
+
       &-link {
         color: var(--black-color);
         font-size: 14px;
         transition: all 0.3s ease;
+
+        @include respond(lg) {
+          font-size: 12px;
+        }
       }
     }
   }
 
   &__img-wrap {
     position: relative;
+    max-width: min(250px, calc(100% - 60px));
     margin: -60px auto -110px;
     z-index: 10;
   }
 
   &__img {
-    max-width: 248px;
+    max-width: 100%;
     display: block;
-    margin: -60px auto;
     position: relative;
     z-index: 10;
     transition: transform 0.5s ease;
-
-    @include respond(xl) {
-      max-width: 210px;
-    }
-
-    @include respond(lg) {
-      max-width: 248px;
-    }
-
-    @include respond(md) {
-      max-width: 220px;
-    }
-
-    @include respond(sm) {
-      max-width: 248px;
-    }
   }
 
   &__content {
@@ -162,6 +156,10 @@
     position: relative;
     z-index: 1;
     padding-top: 80px;
+
+    @include respond(lg) {
+      margin: 25px auto 0;
+    }
   }
 
   &--purple {
@@ -254,16 +252,13 @@
     }
 
     @include respond(xl) {
-      padding: 45px 15px 25px;
+      padding: 45px 20px 25px;
     }
 
     @include respond(lg) {
-      padding: 60px 35px 30px;
+      padding: 30px 20px;
     }
 
-    @include respond(md) {
-      padding: 50px 25px 25px;
-    }
 
     &:hover {
 
@@ -279,6 +274,10 @@
     font-size: 24px;
     margin-bottom: 10px;
     transition: transform 0.3s ease;
+
+    @include respond(lg) {
+      margin-bottom: 5px;
+    }
   }
 
   &__designation {
@@ -300,6 +299,11 @@
       visibility: visible;
       width: 180px;
       padding: 0 20px 0 60px;
+
+      @include respond(lg) {
+        width: 145px;
+        padding: 0 12px 0 42px;
+      }
     }
 
     // Dynamic color shifts on hover based on modifier

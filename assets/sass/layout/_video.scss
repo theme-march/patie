@@ -11,14 +11,10 @@
         display: block;
         z-index: -2;
 
-        @include respond(md) {
-            min-height: 450px;
+        @include respond(lg) {
+            min-height: 360px;
             object-fit: cover;
-        }
-
-        @include respond(sm) {
-            min-height: 400px;
-        }
+        } 
     }
 
     &__bg-text {
@@ -36,9 +32,26 @@
         width: 100%;
         text-align: center;
 
-        @include respond(lg) {
+        @include respond(xxxl) {
+            font-size: 230px;
+            bottom: -30px;
+        }
+        @include respond(xxxl) {
+            font-size: 200px;
+        }
+        @include respond(xxl) {
             font-size: 180px;
+        }
+        @include respond(xl) {
+            font-size: 160px;
+            bottom: -25px;
+        }
+        @include respond(lg) {
+            font-size: 140px;
             bottom: -20px;
+        }
+        @include respond(md) {
+            font-size: 130px;
         }
         @include respond(md) {
             font-size: 114px;
@@ -48,7 +61,7 @@
 
     &__content {
         position: absolute;
-        top: -60px;
+        top: 0;
         left: 0;
         width: 100%;
         height: 100%;

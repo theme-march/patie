@@ -9,8 +9,8 @@
     gap: 20px;
     margin-bottom: 50px;
 
-    @include respond(md) {
-      margin-bottom: 40px;
+    @include respond(lg) {
+      margin-bottom: 30px;
     }
 
     &--center {

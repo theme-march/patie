@@ -1,6 +1,12 @@
 @use "../abstracts" as *;
 
 .choose-us {
+  padding-bottom: 120px;
+
+  @include respond(xxxl) {
+    padding-bottom: 0;
+  }
+
   position: relative;
   z-index: 1;
 
@@ -17,6 +23,7 @@
     position: relative;
     z-index: 1;
     margin-top: 140px;
+
     @include respond(md) {
       margin-top: 125px;
     }
@@ -134,6 +141,10 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+
+    @include respond(lg) {
+      flex-direction: column;
+    }
   }
 
   &__features {
@@ -142,6 +153,17 @@
     flex-direction: column;
     gap: 200px;
     z-index: 2;
+
+    @include respond(lg) {
+      width: 100%;
+      gap: 40px;
+      margin-bottom: 40px;
+
+      &--left,
+      &--right {
+        text-align: center;
+      }
+    }
 
     &--left {
       text-align: left;
@@ -184,6 +206,10 @@
     pointer-events: none;
     z-index: 1;
 
+    @include respond(lg) {
+      display: none;
+    }
+
 
     &--tl {
       top: 10%;
@@ -212,6 +238,14 @@
     z-index: 2;
     flex-shrink: 0;
     margin: 0 -40px;
+
+    @include respond(lg) {
+      max-width: 60%;
+      margin: 5px auto 35px;
+    }
+    @include respond(lg) {
+      max-width: 70%;
+    }
   }
 
   &__center-pet-bg {
@@ -231,7 +265,7 @@
     display: block;
 
     @include respond(lg) {
-      top: 54%;
+      top: 48%;
       max-width: 480px;
     }
 
@@ -241,31 +275,5 @@
     }
   }
 
-  @include respond(lg) {
-    &__features {
-      width: 100%;
-      gap: 40px;
-      margin-bottom: 40px;
 
-      &--left,
-      &--right {
-        text-align: center;
-      }
-    }
-
-    &__layout {
-      flex-direction: column;
-    }
-
-    &__line {
-      display: none;
-    }
-
-    &__center-ring {
-      width: 100%;
-      max-width: 530px;
-      margin: 5px auto 35px;
-    }
-
-  }
 }

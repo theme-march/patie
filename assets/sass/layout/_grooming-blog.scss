@@ -4,7 +4,7 @@
   &__heading {
     margin-bottom: 50px;
 
-    @include respond(md) {
+    @include respond(lg) {
       margin-bottom: 30px;
     }
   }
@@ -28,10 +28,23 @@
   position: relative;
   isolation: isolate;
   background-color: transparent;
-  aspect-ratio: 420 / 518;
+  max-width: 100%;
+  height: 520px;
   display: flex;
   flex-direction: column;
   transition: all 0.4s ease;
+
+  @include respond(xxl) {
+    height: 440px;
+  }
+
+  @include respond(xl) {
+    height: 370px;
+  }
+  @include respond(sm) {
+    width: 300px;
+    margin: 0 auto;
+  }
 
   &__bg-svg {
     position: absolute;
@@ -46,11 +59,16 @@
     @include respond(md) {
       max-height: 440px;
     }
+
+    @include respond(sm) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   &__img-wrap {
     position: absolute;
-    top: 5.5%;
+    top: 6.5%;
     left: 8.1%;
     width: 84.76%;
     height: 47.68%;
@@ -58,8 +76,27 @@
     overflow: hidden;
     z-index: 1;
 
+    @include respond(xxl) {
+      top: 6.5%;
+    }
+
+    @include respond(xl) {
+      top: 7%;
+    }
+
+    @include respond(lg) {
+      top: 6%;
+      width: 80%;
+    }
+
     @include respond(md) {
-      width: 81%;
+      width: 52%;
+      top: 5.5%;
+      left: 23%;
+    }
+    @include respond(sm) {
+      width: 87%;
+      left: 6%;
     }
   }
 
@@ -91,8 +128,21 @@
     align-items: center;
     justify-content: center;
 
-    @include respond(xl) {
+    @include respond(xxl) {
       padding: 16px 8px 11px;
+    }
+
+    @include respond(xl) {
+      bottom: 58%;
+    }
+
+    @include respond(md) {
+      left: 16%;
+      bottom: 62%;
+      padding: 10px 5px 8px;
+    }
+    @include respond(sm) {
+      left: -2%;
     }
 
     &-day {
@@ -101,9 +151,14 @@
       font-family: var(--heading-font-family);
       margin-bottom: 15px;
 
-      @include respond(xl) {
+      @include respond(xxl) {
         font-size: 25px;
         margin-bottom: 10px;
+      }
+
+      @include respond(md) {
+        font-size: 20px;
+        margin-bottom: 5px;
       }
     }
 
@@ -111,21 +166,47 @@
       font-size: 14px;
       font-weight: 600;
 
-      @include respond(xl) {
+      @include respond(xxl) {
         font-size: 12px;
+      }
+
+      @include respond(md) {
+        font-size: 10px;
       }
     }
   }
 
   &__content {
     position: absolute;
-    top: 55.56%;
-    left: 9.002%;
-    right: 10.19%;
-    bottom: 5.79%;
+    top: 54.5%;
+    left: 9%;
+    right: 10.2%;
+    bottom: 5.8%;
     display: flex;
     flex-direction: column;
     z-index: 1;
+
+    @include respond(xxl) {
+      top: 57%;
+    }
+
+    @include respond(xl) {
+      top: 55%;
+    }
+
+    @include respond(lg) {
+      top: 56%;
+    }
+
+    @include respond(md) {
+      top: 55.5%;
+      left: 25%;
+      max-width: 255px;
+    }
+    @include respond(sm) {
+      top: 55.5%;
+      left: 10%;
+    }
   }
 
   &__meta {
@@ -134,7 +215,7 @@
     align-items: center;
     gap: 20px;
 
-    @include respond(xl) {
+    @include respond(xxl) {
       margin: 10px 0;
       font-size: 12px;
     }

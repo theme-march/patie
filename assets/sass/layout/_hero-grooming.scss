@@ -95,13 +95,13 @@
     @include respond(xl) {
       width: 100px;
       top: 70%;
-      left: 18%;
+      left: 16%;
     }
 
     @include respond(lg) {
       width: 90px;
-      top: 73%;
-      left: 18%;
+      top: 77%;
+      left: 12%;
     }
 
     @include respond(md) {
@@ -128,6 +128,10 @@
       font-size: 35px;
     }
 
+    @include respond(xl) {
+      font-size: 30px;
+    }
+
     @include respond(md) {
       font-size: 27px;
     }
@@ -135,6 +139,7 @@
 
   &__content {
     display: flex;
+    gap: 20px;
     align-items: center;
     justify-content: space-around;
 
@@ -178,6 +183,7 @@
       order: unset;
       max-width: 535px;
     }
+
     @include respond(sm) {
       order: unset;
       max-width: 365px;
@@ -192,9 +198,11 @@
     right: -30px;
     object-fit: contain;
     object-position: bottom;
+
     @include respond(lg) {
       bottom: -25px;
     }
+
     @include respond(sm) {
       bottom: 0px;
       right: 0px;
@@ -225,6 +233,7 @@
       order: unset;
       padding: 20px;
     }
+
     @include respond(sm) {
       display: none;
     }
@@ -240,6 +249,7 @@
     font-size: 30px;
     padding: 32px 25px;
     border-radius: 50px 50px 0 0;
+    z-index: -10;
 
     @include respond(xxl) {
       top: -27%;
@@ -262,12 +272,23 @@
       font-size: 28px;
       margin-bottom: 10px;
     }
+
+    @include respond(xl) {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
     @include respond(md) {
       font-size: 24px;
     }
   }
 
   &__offer-desc {
+    @include respond(xl) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
     @include respond(md) {
       font-size: 13px;
       line-height: 20px;
@@ -277,7 +298,7 @@
   &__specialist-box {
     position: relative;
     background-color: transparent;
-    padding: 40px 40px 40px 65px;
+    padding: 40px 20px 40px 65px;
     max-width: 490px;
     text-align: left;
     z-index: 10;
@@ -328,6 +349,7 @@
       font-size: 28px;
       margin-bottom: 10px;
     }
+
     @include respond(xl) {
       font-size: 24px;
     }
@@ -341,6 +363,7 @@
 
     @include respond(xxl) {
       margin-bottom: 10px;
+      gap: 60px;
     }
 
     @include respond(sm) {
@@ -358,8 +381,25 @@
   &__specialist-btn {
     width: fit-content;
 
+    @include respond(xxl) {
+      .common-btn {
+        font-size: 14px;
+
+        &__inner {
+          padding: 3px 14px;
+        }
+      }
+    }
     @include respond(xl) {
       display: none;
+    }
+  }
+
+  &__specialist-desc {
+    color: var(--white-color);
+
+    @include respond(xxl) {
+      font-size: 14px;
     }
   }
 
@@ -379,11 +419,4 @@
       margin-left: 0;
     }
   }
-
-  &__specialist-desc {
-    color: var(--white-color);
-    
-  }
-
-
 }

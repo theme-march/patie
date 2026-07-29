@@ -78,8 +78,8 @@
     font-family: var(--heading-font-family);
     color: var(--theme-color);
 
-    @include respond(md) {
-      font-size: 50px;
+    @include respond(lg) {
+      font-size: 40px;
     }
   }
 

@@ -180,6 +180,7 @@
           width: 100%;
           max-height: 250px;
         }
+
         @include respond(sm) {
           max-height: 200px;
         }
@@ -246,6 +247,11 @@
       overflow: hidden;
       max-width: 60px;
       max-height: 70px;
+
+      @include respond(md) {
+        top: 15px;
+        left: 15px;
+      }
 
       &-day {
         background-color: var(--primary-color);

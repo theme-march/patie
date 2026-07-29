@@ -7173,7 +7173,7 @@ i[class*=fa] {
   padding: 120px 0 0 0;
   overflow: hidden;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .footer-v2__main {
     padding: 60px 0 0 0;
   }
@@ -7200,12 +7200,14 @@ i[class*=fa] {
 @media (max-width: 992px) {
   .footer-v2__top {
     grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 40px;
   }
 }
 @media (max-width: 768px) {
   .footer-v2__top {
     grid-template-columns: 1fr;
     gap: 40px;
+    margin-bottom: 25px;
   }
 }
 .footer-v2__logo {
@@ -7310,14 +7312,16 @@ i[class*=fa] {
 }
 @media (max-width: 1200px) {
   .footer-v2__info-bar {
-    gap: 30px;
+    gap: 20px;
   }
 }
 @media (max-width: 992px) {
   .footer-v2__info-bar {
     flex-wrap: wrap;
-    padding-top: 40px;
+    padding-top: 20px;
     border-top: 2px solid var(--secondary-color);
+    gap: 5px;
+    margin-bottom: 20px;
   }
 }
 @media (max-width: 768px) {
@@ -7333,6 +7337,12 @@ i[class*=fa] {
 .footer-v2__info-item--location {
   align-items: stretch;
   gap: 20px;
+  margin-top: 10px;
+}
+@media (max-width: 992px) {
+  .footer-v2__info-item--location {
+    margin-top: 0;
+  }
 }
 .footer-v2__info-icon-box {
   display: flex;
@@ -7352,6 +7362,12 @@ i[class*=fa] {
   height: 80px;
   border-radius: 0;
   border: 2px dashed var(--primary-color);
+}
+@media (max-width: 1200px) {
+  .footer-v2__info-icon-box--solid {
+    width: 60px;
+    height: 60px;
+  }
 }
 .footer-v2__info-icon {
   height: auto;
@@ -9087,6 +9103,11 @@ i[class*=fa] {
 .grooming-team__desc {
   margin: 30px 0 40px;
 }
+@media (max-width: 992px) {
+  .grooming-team__desc {
+    margin: 20px 0 30px;
+  }
+}
 @media (max-width: 1400px) {
   .grooming-team__text {
     text-align: center;
@@ -9132,7 +9153,7 @@ i[class*=fa] {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    gap: 40px;
   }
 }
 
@@ -9265,13 +9286,14 @@ i[class*=fa] {
 }
 @media (max-width: 992px) {
   .before-and-after__left-wrap {
+    padding: 60px;
     width: 100%;
     justify-content: center;
   }
 }
 @media (max-width: 768px) {
   .before-and-after__left-wrap {
-    padding: 60px 15px;
+    padding: 60px 20px;
   }
 }
 .before-and-after__bg {
@@ -9468,7 +9490,7 @@ i[class*=fa] {
 .grooming-blog__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 40px;
 }
 @media (max-width: 992px) {
   .grooming-blog__grid {

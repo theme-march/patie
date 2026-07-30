@@ -22,10 +22,28 @@
   &__container {
     position: relative;
     z-index: 1;
-    margin-top: 140px;
+    margin-top: 185px;
 
+    @include respond(xxxl) {
+      margin-top: 160px;
+    }
+
+    @include respond(xxl) {
+      margin-top: 140px;
+    }
+
+    @include respond(xl) {
+      margin-top: 130px;
+    }
+
+    @include respond(lg) {
+      margin-top: 115px;
+    }
     @include respond(md) {
-      margin-top: 125px;
+      margin-top: 85px;
+    }
+    @include respond(sm) {
+      margin-top: 60px;
     }
   }
 
@@ -59,21 +77,27 @@
     transform: translate(-50%, -50%);
     z-index: -10;
     pointer-events: none;
+
     @include respond(xxxl) {
       top: -86px;
     }
+
     @include respond(xxl) {
       top: -75px;
     }
+
     @include respond(xl) {
       top: -68px;
     }
+
     @include respond(lg) {
       top: -60px;
     }
+
     @include respond(md) {
       top: -45px;
     }
+
     @include respond(sm) {
       top: -25px;
     }
@@ -231,6 +255,7 @@
       max-width: 60%;
       margin: 5px auto 35px;
     }
+
     @include respond(md) {
       max-width: 70%;
     }

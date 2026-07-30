@@ -10,22 +10,14 @@
 
   @include respond(xl) {
     padding: 80px 0;
-    margin: 20px;
+    margin: 0 20px;
   }
   @include respond(lg) {
     padding: 60px 0;
-    margin: 10px;
+    margin: 0 10px;
   }
 
-  @include respond(md) {
-    padding: 40px 0;
-    margin: 10px;
-  }
 
-  @include respond(sm) {
-    padding: 35px 0;
-    margin: 10px 8px;
-  }
 
   .container {
     max-width: 1680px;
@@ -61,7 +53,7 @@
     }
     @include respond(lg) {
       grid-template-columns: 1fr;
-      gap: 40px;
+      gap: 60px;
     }
   }
 
@@ -162,8 +154,7 @@
     -moz-appearance: none;
 
     @include respond(md) {
-      padding: 15px;
-      font-size: 14px;
+      padding: 20px;
     }
 
     option {

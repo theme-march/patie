@@ -3,15 +3,6 @@
 .blog {
   position: relative;
   overflow: hidden;
-  padding: 120px 0;
-
-  @include respond(lg) {
-    padding: 60px 0 40px;
-  }
-
-  &--no-padding {
-    padding: 0;
-  }
 
   &__bg {
     position: absolute;
@@ -24,7 +15,7 @@
   }
 
   &__header {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 
     @include respond(md) {
       margin-bottom: 20px;
@@ -33,12 +24,12 @@
 
   &__grid {
     display: flex;
-    gap: 30px;
+    gap: 20px;
     align-items: stretch;
 
     @include respond(xl) {
       flex-direction: column;
-      gap: 15px;
+      gap: 0;
     }
   }
 
@@ -55,14 +46,139 @@
   &__sub-col {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
+    width: 50%;
+
+    @include respond(xl) {
+      width: 100%;
+      gap: 10px;
+    }
+  }
+}
+
+.blog-card {
+  background-color: var(--smoke-bg-color);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: var(--white-color);
+  }
+
+  &--lg {
     width: 50%;
 
     @include respond(xl) {
       width: 100%;
     }
 
-    .blog-card--sm .blog-card__date {
+    .blog-card__img-wrap {
+      max-height: 300px;
+
+      &:hover {
+        .blog-card__img {
+          transform: scale(1.02) translateY(-10px);
+        }
+      }
+
+      @include respond(xl) {
+        margin-bottom: 20px;
+      }
+
+      @include respond(md) {
+        min-height: 250px;
+        height: 250px;
+      }
+    }
+
+    .blog-card__title {
+      line-height: 1.4;
+    }
+
+    .blog-card__date {
+      top: 40px;
+      left: 30px;
+
+      @include respond(xxl) {
+        top: 65px;
+        left: 30px;
+      }
+
+      @include respond(xl) {
+        top: 30px;
+        left: 30px;
+      }
+
+      @include respond(lg) {
+        top: 30px;
+        left: 30px;
+      }
+
+      @include respond(md) {
+        top: 10px;
+        left: 10px;
+      }
+
+      @include respond(sm) {
+        top: 15px;
+        left: 10px;
+      }
+    }
+  }
+
+  &--sm {
+    flex-direction: row;
+    flex: 1;
+
+    @include respond(md) {
+      flex-direction: column;
+    }
+
+    .blog-card__img-wrap {
+      width: 45%;
+      flex-shrink: 0;
+
+      &:hover {
+        .blog-card__img {
+          transform: scale(1.04) translateY(-5px);
+        }
+      }
+
+      @include respond(xl) {
+        width: 28%;
+      }
+
+      @include respond(lg) {
+        width: 35%;
+      }
+
+      @include respond(md) {
+        width: auto;
+        max-height: 250px;
+      }
+    }
+
+    .blog-card__content {
+      padding: 30px 30px 30px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+
+      @include respond(md) {
+        padding: 0 15px 15px 15px;
+      }
+    }
+
+    .blog-card__title {
+      line-height: 1.4;
+    }
+
+    .blog-card__date {
       top: 30px;
       left: 30px;
 
@@ -73,296 +189,171 @@
     }
   }
 
-  .blog-card {
-    background-color: var(--smoke-bg-color);
-    border-radius: 10px;
+  &__img-wrap {
+    position: relative;
     overflow: hidden;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+
+    @include respond(md) {
+      padding: 0;
+    }
+  }
+
+  &__img-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     height: 100%;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: all 0.4s ease;
+  }
+
+  &__date {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: var(--white-color);
     display: flex;
     flex-direction: column;
-    transition: all 0.3s ease;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    z-index: 1;
+    overflow: hidden;
+    max-width: 60px;
+    max-height: 70px;
 
-    &:hover {
-      background-color: var(--white-color);
-
+    @include respond(md) {
+      top: 15px;
+      left: 15px;
     }
 
-    &--lg {
-      width: 50%;
+    &-day {
+      background-color: var(--primary-color);
+      width: 100%;
+      text-align: center;
+      padding: 10px 20px;
+      font-family: var(--heading-font-family);
+      font-size: 24px;
+      font-weight: 400;
+
+      @include respond(xxl) {
+        font-size: 18px;
+        padding: 6px 8px;
+      }
 
       @include respond(xl) {
-        width: 100%;
-      }
-
-      .blog-card__img-wrap {
-        height: 60%;
-        min-height: 380px;
-
-        &:hover {
-          .blog-card__img {
-            transform: scale(1.02) translateY(-10px);
-          }
-        }
-
-        @include respond(md) {
-          min-height: 250px;
-          height: 250px;
-        }
-      }
-
-      .blog-card__title {
-        line-height: 1.4;
-      }
-
-      .blog-card__date {
-        top: 40px;
-        left: 30px;
-
-        @include respond(xxl) {
-          top: 65px;
-          left: 30px;
-        }
-
-        @include respond(xl) {
-          top: 30px;
-          left: 30px;
-        }
-
-        @include respond(lg) {
-          top: 30px;
-          left: 30px;
-        }
-
-        @include respond(md) {
-          top: 10px;
-          left: 10px;
-        }
-
-        @include respond(sm) {
-          top: 15px;
-          left: 10px;
-        }
+        font-size: 16px;
+        padding: 4px 8px;
       }
     }
 
-    &--sm {
-      flex-direction: row;
-      flex: 1;
+    &-month {
+      background-color: var(--secondary-color);
+      text-align: center;
+      padding: 10px 20px;
+      font-weight: 700;
 
-      @include respond(md) {
-        flex-direction: column;
+      @include respond(xxl) {
+        font-size: 14px;
+        padding: 6px 8px;
       }
 
-      .blog-card__img-wrap {
-        width: 45%;
-        flex-shrink: 0;
-
-        &:hover {
-          .blog-card__img {
-            transform: scale(1.04) translateY(-5px);
-          }
-        }
-
-        @include respond(xl) {
-          width: 28%;
-        }
-
-        @include respond(lg) {
-          width: 35%;
-        }
-
-        @include respond(md) {
-          width: 100%;
-          max-height: 250px;
-        }
-      }
-
-      .blog-card__content {
-        padding: 30px 30px 30px 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-
-        @include respond(md) {
-          padding: 15px 15px 0 15px;
-        }
-      }
-
-      .blog-card__title {
-        line-height: 1.4;
+      @include respond(xl) {
+        font-size: 12px;
+        font-weight: 600;
+        padding: 4px 8px;
       }
     }
+  }
 
-    &__img-wrap {
-      position: relative;
-      overflow: hidden;
-      padding: 20px;
+  &__content {
+    padding: 0 40px 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: flex-start;
+
+    @include respond(md) {
+      padding: 0 20px 20px 20px;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 15px;
+
+    @include respond(lg) {
+      margin-bottom: 10px;
+    }
+
+    &-item {
       display: flex;
       align-items: center;
-      justify-content: center;
-      border-radius: 10px;
+      gap: 8px;
+      font-size: 15px;
+      color: var(--body-color);
+      font-weight: 500;
+
+      @include respond(xxl) {
+        font-size: 14px;
+      }
 
       @include respond(md) {
-        padding: 0;
-      }
-
-      .blog-card__img-link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
+        font-size: 13px;
       }
     }
 
-    &__img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 5px;
-      transition: all 0.4s ease;
+    &-icon {
+      color: var(--primary-color);
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: var(--heading-color);
+    transition: all 0.3s ease;
+
+    @include respond(xxl) {
+      font-size: 28px;
+      margin-bottom: 5px;
     }
 
-    &__date {
-      position: absolute;
-      top: 30px;
-      left: 30px;
-      color: var(--white-color);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      border-radius: 5px;
-      z-index: 1;
-      overflow: hidden;
-      max-width: 60px;
-      max-height: 70px;
-
-      @include respond(md) {
-        top: 15px;
-        left: 15px;
-      }
-
-      &-day {
-        background-color: var(--primary-color);
-        width: 100%;
-        text-align: center;
-        padding: 10px 20px;
-        font-family: var(--heading-font-family);
-        font-size: 24px;
-        font-weight: 400;
-
-        @include respond(xxl) {
-          font-size: 18px;
-          padding: 6px 8px;
-        }
-
-        @include respond(xl) {
-          font-size: 16px;
-          padding: 4px 8px;
-        }
-      }
-
-      &-month {
-        background-color: var(--secondary-color);
-        text-align: center;
-        padding: 10px 20px;
-        font-weight: 700;
-
-        @include respond(xxl) {
-          font-size: 14px;
-          padding: 6px 8px;
-        }
-
-        @include respond(xl) {
-          font-size: 12px;
-          font-weight: 600;
-          padding: 4px 8px;
-        }
-      }
+    @include respond(md) {
+      font-size: 24px;
     }
 
+    &-link {
+      color: inherit;
+      text-decoration: none;
+      transition: all 0.3s ease;
 
-    &__content {
-      padding: 0 40px 30px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      align-items: flex-start;
-
-      @include respond(md) {
-        padding: 20px;
-      }
-
-
-    }
-
-    &__meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-bottom: 15px;
-
-      @include respond(lg) {
-        margin-bottom: 10px;
-      }
-
-      &-item {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 15px;
-        color: var(--body-color);
-        font-weight: 500;
-
-        @include respond(xxl) {
-          font-size: 14px;
-        }
-
-        @include respond(md) {
-          font-size: 13px;
-        }
-      }
-
-      &-icon {
+      &:hover {
         color: var(--primary-color);
       }
     }
+  }
 
-    &__title {
+  &__desc {
+    margin-bottom: 30px;
+    line-height: 1.6;
+
+    @include respond(xxl) {
       margin-bottom: 20px;
-      font-size: 30px;
-      color: var(--heading-color);
-      transition: all 0.3s ease;
-
-      @include respond(xxl) {
-        font-size: 28px;
-        margin-bottom: 5px;
-      }
-
-      @include respond(md) {
-        font-size: 24px;
-      }
-
-      .blog-card__title-link {
-        color: inherit;
-        text-decoration: none;
-        transition: all 0.3s ease;
-
-        &:hover {
-          color: var(--primary-color);
-        }
-      }
-    }
-
-    &__desc {
-      margin-bottom: 30px;
-      line-height: 1.6;
-
-      @include respond(xxl) {
-        margin-bottom: 20px;
-      }
     }
   }
 }

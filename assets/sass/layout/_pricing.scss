@@ -72,8 +72,8 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  @include respond(sm) {
-     gap: 10px;
+  @include respond(lg) {
+     gap: 15px;
     }
 
   &--basic {

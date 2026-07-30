@@ -5,6 +5,9 @@
   &__section-title {
     margin-bottom: 60px;
 
+    @include respond(xl) {
+      margin-bottom: 50px;
+    }
     @include respond(lg) {
       margin-bottom: 30px;
     }
@@ -14,7 +17,7 @@
   &__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    gap: 40px;
 
     @include respond(xl) {
       grid-template-columns: repeat(3, 1fr);
@@ -41,7 +44,7 @@
   @include respond(md) {
     padding: 20px 15px;
     width: 100%;
-    max-width: 302px;
+    max-width: 310px;
     margin-inline: auto;
   }
 

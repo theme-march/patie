@@ -41,6 +41,9 @@
     &__content {
         max-width: 679px;
         flex: 1;
+        @include respond(xl) {
+            max-width: 660px;
+        }
     }
 
     &__img-wrap {
@@ -72,7 +75,7 @@
         @include respond(lg) {
             position: relative;
             width: 100%;
-            right: -2%;
+            right: -3%;
             margin-top: 30px;
         }
 

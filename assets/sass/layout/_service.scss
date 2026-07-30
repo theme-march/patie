@@ -5,9 +5,10 @@
   &__section-title {
     margin-bottom: 60px;
 
-    @include respond(md) {
-      margin-bottom: 40px;
+    @include respond(lg) {
+      margin-bottom: 30px;
     }
+
   }
 
   &__grid {
@@ -36,6 +37,13 @@
   flex-direction: column;
   height: 100%;
   transition: all 0.3s ease;
+
+  @include respond(md) {
+    padding: 20px 15px;
+    width: 100%;
+    max-width: 302px;
+    margin-inline: auto;
+  }
 
   &__img-wrapper {
     display: block;
@@ -74,12 +82,19 @@
     @include respond(lg) {
       max-width: 262px;
     }
+    @include respond(md) {
+      right: -15px;
+    }
 
     @at-root .service-card:nth-child(even) & {
       margin-left: 0;
       margin-right: auto;
       right: auto;
       left: -30px;
+
+      @include respond(md) {
+        left: -15px;
+      }
     }
   }
 
@@ -111,6 +126,9 @@
     @include respond(lg) {
       width: 260px;
     }
+    @include respond(md) {
+      right: 0;
+    }
 
     &--flip {
       transform: translateY(-50%) scaleX(-1);
@@ -119,6 +137,9 @@
     @at-root .service-card:nth-child(even) & {
       right: auto;
       left: -15px;
+      @include respond(md) {
+        left: 0;
+      }
     }
   }
 

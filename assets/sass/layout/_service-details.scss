@@ -17,8 +17,8 @@
         border-radius: 20px;
         padding: 40px;
 
-        @include respond(md) {
-            padding: 30px;
+        @include respond(lg) {
+            padding: 20px;
         }
     }
 
@@ -30,6 +30,10 @@
 
         @include respond(xxl) {
             margin-bottom: 30px;
+        }
+
+        @include respond(sm) {
+            margin-bottom: 20px;
         }
     }
 
@@ -46,8 +50,13 @@
             font-size: 38px;
             margin-bottom: 20px;
         }
+
         @include respond(lg) {
             font-size: 36px;
+        }
+
+        @include respond(sm) {
+            margin-bottom: 15px;
         }
     }
 
@@ -57,6 +66,10 @@
 
         &:last-child {
             margin-bottom: 0;
+        }
+
+        @include respond(sm) {
+            margin-bottom: 20px;
         }
     }
 
@@ -75,11 +88,15 @@
             margin-bottom: 20px;
             margin-top: 60px;
         }
+
         @include respond(lg) {
             font-size: 36px;
-        }
-        @include respond(lg) {
             margin-top: 40px;
+        }
+
+        @include respond(md) {
+            font-size: 33px;
+            margin-bottom: 15px;
         }
     }
 
@@ -93,8 +110,12 @@
             margin-top: 20px;
             margin-bottom: 20px;
         }
+
         @include respond(lg) {
             font-size: 32px;
+        }
+        @include respond(md) {
+            margin-bottom: 15px;
         }
     }
 
@@ -132,6 +153,9 @@
         @include respond(xxl) {
             gap: 30px;
             margin: 40px 0;
+        }
+        @include respond(md) {
+            margin: 30px 0;
         }
 
         @include respond(sm) {

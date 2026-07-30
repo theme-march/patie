@@ -23,7 +23,7 @@
 
     @include respond(lg) {
       width: 100%;
-      max-width: 600px;
+      max-width: 400px;
       margin: 0 auto;
     }
   }
@@ -72,6 +72,7 @@
       @include respond(lg) {
         font-size: 26px;
       }
+
       @include respond(md) {
         font-size: 24px;
       }
@@ -86,9 +87,16 @@
     left: 0;
     z-index: -1;
 
+    @include respond(xxxl) {
+      max-width: 460px;
+    }
+
+    @include respond(xxl) {
+      max-width: 400px;
+    }
+
     @include respond(xl) {
-      left: -150px;
-      max-width: 450px;
+      max-width: 350px;
     }
 
     @include respond(lg) {
@@ -136,6 +144,7 @@
       @include respond(xl) {
         font-size: 60px;
       }
+
       @include respond(md) {
         font-size: 50px;
       }
@@ -200,6 +209,22 @@
       border: 1px solid var(--primary-color);
       padding: 10px 10px 0 10px;
       border-bottom: none;
+
+      @include respond(xxxl) {
+        max-width: 350px;
+      }
+
+      @include respond(xxl) {
+        max-width: 300px;
+      }
+
+      @include respond(xl) {
+        max-width: 260px;
+      }
+    }
+
+    @include respond(xxxl) {
+      right: -1%;
     }
 
     @include respond(lg) {

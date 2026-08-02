@@ -21,6 +21,9 @@
     margin-bottom: 60px;
     flex-wrap: wrap;
     gap: 30px;
+    @include respond(md) {
+      margin-bottom: 50px;
+    }
   }
 
   &__heading {
@@ -52,13 +55,16 @@
     @include respond(md) {
       margin-top: 40px;
     }
+    @include respond(sm) {
+      margin-top: 30px;
+    }
   }
 }
 
 .pet-grooming-card {
   position: relative;
   width: 100%;
-  padding: 40px 30px 40px 40px;
+  padding: 50px 30px 30px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,9 +72,19 @@
   transition: all 0.3s ease;
   z-index: 1;
 
-  @include respond(md) {
-    padding: 45px 70px 40px 80px;
+  @include respond(xxl) {
+    padding: 35px 25px 35px 35px;
   }
+
+  @include respond(xl) {
+    padding: 30px 30px 20px 40px;
+  }
+
+  @include respond(lg) {
+    padding: 35px 25px 25px 35px;
+  }
+
+
 
   &__bg-svg {
     position: absolute;
@@ -85,10 +101,19 @@
   }
 
   &__img-wrap {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     overflow: hidden;
     position: relative;
     left: 15px;
+
+    @include respond(xxl) {
+      margin-bottom: 18px;
+      left: 12px;
+    }
+
+    @include respond(xl) {
+      margin-bottom: 14px;
+    }
   }
 
   &__img {
@@ -96,6 +121,10 @@
     object-fit: cover;
     border-radius: 12px;
     transition: transform 0.5s ease;
+
+    @include respond(xl) {
+      width: 85%;
+    }
   }
 
   &__title-link {
@@ -107,14 +136,49 @@
   &__title {
     color: var(--white-color);
     font-size: 30px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     transition: color 0.3s ease, transform 0.3s ease;
+
+    @include respond(xxl) {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    @include respond(xl) {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    @include respond(lg) {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
   }
 
   &__desc {
     color: var(--white-color);
     margin-bottom: 25px;
     font-weight: 500;
+
+    @include respond(xxl) {
+      font-size: 14px;
+      line-height: 1.4;
+      margin-bottom: 18px;
+      
+    }
+
+    @include respond(xl) {
+      font-size: 13px;
+      line-height: 1.7;
+      max-width: 180px;
+      margin-bottom: 14px;
+    }
+
+    @include respond(lg) {
+      font-size: 14px;
+      line-height: 1.4;
+      margin-bottom: 18px;
+    }
   }
 
   .service-btn {

@@ -4197,6 +4197,11 @@ i[class*=fa] {
   flex-wrap: wrap;
   gap: 30px;
 }
+@media (max-width: 768px) {
+  .pet-grooming-service__top {
+    margin-bottom: 50px;
+  }
+}
 .pet-grooming-service__heading {
   max-width: 640px;
 }
@@ -4225,11 +4230,16 @@ i[class*=fa] {
     margin-top: 40px;
   }
 }
+@media (max-width: 576px) {
+  .pet-grooming-service__pagination {
+    margin-top: 30px;
+  }
+}
 
 .pet-grooming-card {
   position: relative;
   width: 100%;
-  padding: 40px 30px 40px 40px;
+  padding: 50px 30px 30px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -4237,9 +4247,19 @@ i[class*=fa] {
   transition: all 0.3s ease;
   z-index: 1;
 }
-@media (max-width: 768px) {
+@media (max-width: 1400px) {
   .pet-grooming-card {
-    padding: 45px 70px 40px 80px;
+    padding: 35px 25px 35px 35px;
+  }
+}
+@media (max-width: 1200px) {
+  .pet-grooming-card {
+    padding: 30px 30px 20px 40px;
+  }
+}
+@media (max-width: 992px) {
+  .pet-grooming-card {
+    padding: 35px 25px 25px 35px;
   }
 }
 .pet-grooming-card__bg-svg {
@@ -4255,16 +4275,32 @@ i[class*=fa] {
   fill: currentColor;
 }
 .pet-grooming-card__img-wrap {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   overflow: hidden;
   position: relative;
   left: 15px;
+}
+@media (max-width: 1400px) {
+  .pet-grooming-card__img-wrap {
+    margin-bottom: 18px;
+    left: 12px;
+  }
+}
+@media (max-width: 1200px) {
+  .pet-grooming-card__img-wrap {
+    margin-bottom: 14px;
+  }
 }
 .pet-grooming-card__img {
   width: 100%;
   object-fit: cover;
   border-radius: 12px;
   transition: transform 0.5s ease;
+}
+@media (max-width: 1200px) {
+  .pet-grooming-card__img {
+    width: 85%;
+  }
 }
 .pet-grooming-card__title-link {
   text-decoration: none;
@@ -4274,13 +4310,53 @@ i[class*=fa] {
 .pet-grooming-card__title {
   color: var(--white-color);
   font-size: 30px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   transition: color 0.3s ease, transform 0.3s ease;
+}
+@media (max-width: 1400px) {
+  .pet-grooming-card__title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 1200px) {
+  .pet-grooming-card__title {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+}
+@media (max-width: 992px) {
+  .pet-grooming-card__title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
 }
 .pet-grooming-card__desc {
   color: var(--white-color);
   margin-bottom: 25px;
   font-weight: 500;
+}
+@media (max-width: 1400px) {
+  .pet-grooming-card__desc {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 18px;
+  }
+}
+@media (max-width: 1200px) {
+  .pet-grooming-card__desc {
+    font-size: 13px;
+    line-height: 1.7;
+    max-width: 180px;
+    margin-bottom: 14px;
+  }
+}
+@media (max-width: 992px) {
+  .pet-grooming-card__desc {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 18px;
+  }
 }
 .pet-grooming-card .service-btn {
   margin-top: auto;

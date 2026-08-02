@@ -38,7 +38,7 @@
 
   &__wrap {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 285px;
     align-items: center;
 
@@ -51,7 +51,7 @@
     }
 
     @include respond(lg) {
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
       gap: 60px;
     }
   }

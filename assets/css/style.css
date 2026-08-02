@@ -5079,7 +5079,7 @@ i[class*=fa] {
 }
 .working-process__wrap {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 285px;
   align-items: center;
 }
@@ -5095,7 +5095,7 @@ i[class*=fa] {
 }
 @media (max-width: 992px) {
   .working-process__wrap {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 60px;
   }
 }

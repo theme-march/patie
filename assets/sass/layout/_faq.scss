@@ -16,21 +16,21 @@
             background-color: var(--primary-color);
             z-index: 1;
             padding: 100px 150px 100px 100px;
-            
+
             @include respond(xxxxl) {
-              padding: 90px 90px 90px 60px;
+                padding: 90px 90px 90px 60px;
             }
+
             @include respond(xxxl) {
-              padding: 80px 80px 80px 60px;
+                padding: 80px 80px 80px 60px;
             }
+
             @include respond(xl) {
-              padding: 60px 60px 60px 60px;
+                padding: 60px;
             }
-            @include respond(lg) {
-              padding: 60px;
-            }
+
             @include respond(md) {
-              padding: 40px 20px;
+                padding: 60px 20px;
             }
         }
     }
@@ -66,6 +66,10 @@
     gap: 25px;
     margin-top: 40px;
 
+    @include respond(md) {
+        margin-top: 30px;
+    }
+
     &__item {
         position: relative;
         transition: all 0.3s ease;
@@ -93,10 +97,11 @@
         text-transform: uppercase;
 
         @include respond(xxxl) {
-           font-size: 20px;
+            font-size: 20px;
         }
+
         @include respond(md) {
-           font-size: 18px;
+            font-size: 18px;
         }
     }
 
@@ -127,9 +132,9 @@
         margin: 0;
         font-size: 16px;
         line-height: 1.6;
-        
+
         @include respond(md) {
-           font-size: 14px;
+            font-size: 14px;
         }
     }
 
@@ -147,9 +152,11 @@
 .faq .section-header__label {
     color: var(--white-color);
 }
+
 .faq .section-header__title {
     color: var(--white-color);
 }
+
 .faq .section-header__paw {
     filter: brightness(0) invert(1);
 }

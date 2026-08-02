@@ -1,16 +1,12 @@
 @use "../abstracts" as *;
 
 .grooming-choose-us {
-  margin-bottom: 120px;
-  @include respond(md) {
-      margin-bottom: 60px;
-    }
   position: relative;
   &__heading {
     margin-bottom: 60px;
 
     @include respond(md) {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
   }
 

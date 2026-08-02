@@ -18,7 +18,7 @@
         z-index: 1;
 
         @include respond(xxxl) {
-            padding: 80px 60px;
+            padding: 120px 60px;
         }
 
         @include respond(lg) {
@@ -26,10 +26,10 @@
             width: 100%;
             justify-content: center;
         }
-
         @include respond(md) {
             padding: 60px 20px;
         }
+
     }
 
     &__bg {
@@ -46,7 +46,11 @@
         position: relative;
         z-index: 1;
         width: 100%;
-        max-width: 680px;
+
+        @include respond(xxxl) {
+            max-width: 680px;
+        }
+
     }
 
     &__desc {
@@ -54,6 +58,11 @@
         color: var(--white-color);
         margin-top: 30px;
         margin-bottom: 40px;
+
+        @include respond(md) {
+            margin-top: 25px;
+            margin-bottom: 35px;
+        }
     }
 
     &__list {
@@ -65,12 +74,21 @@
         @include respond(xxxl) {
             padding: 0 0 0 20px;
         }
+
+        @include respond(md) {
+            gap: 30px;
+            padding: 0;
+        }
     }
 
     &__item {
         display: flex;
         align-items: center;
         gap: 20px;
+
+        @include respond(md) {
+            align-items: flex-start;
+        }
     }
 
     &__icon-wrap {
@@ -85,6 +103,11 @@
         @include respond(xl) {
             width: 60px;
             height: 70px;
+        }
+
+        @include respond(md) {
+            width: 50px;
+            height: 60px;
         }
     }
 
@@ -117,6 +140,7 @@
         @include respond(xl) {
             font-size: 24px;
         }
+
         @include respond(md) {
             font-size: 20px;
         }

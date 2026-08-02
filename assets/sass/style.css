@@ -4194,18 +4194,7 @@ i[class*=fa] {
  ................................................................*/
 .pet-grooming-service {
   position: relative;
-  padding: 120px 0;
   overflow: hidden;
-}
-@media (max-width: 992px) {
-  .pet-grooming-service {
-    padding: 80px 0;
-  }
-}
-@media (max-width: 992px) {
-  .pet-grooming-service {
-    padding: 60px 0;
-  }
 }
 .pet-grooming-service__bg {
   position: absolute;
@@ -4247,6 +4236,11 @@ i[class*=fa] {
 }
 .pet-grooming-service__pagination {
   margin-top: 60px;
+}
+@media (max-width: 768px) {
+  .pet-grooming-service__pagination {
+    margin-top: 40px;
+  }
 }
 
 .pet-grooming-card {
@@ -5665,12 +5659,6 @@ i[class*=fa] {
 
 .grooming-pricing {
   position: relative;
-  padding: 120px 0;
-}
-@media (max-width: 768px) {
-  .grooming-pricing {
-    padding: 60px 0;
-  }
 }
 .grooming-pricing__bg {
   position: absolute;
@@ -8564,14 +8552,10 @@ i[class*=fa] {
 }
 @media (max-width: 768px) {
   .parent-testimonial__wrapper {
-    padding: 40px 20px;
+    padding: 40px;
     border-radius: 20px;
     margin: 0 15px;
-    /* So it doesn't touch the very edges of screen */
   }
-}
-.parent-testimonial {
-  /* Navigation arrows attached to edges of card */
 }
 .parent-testimonial__nav {
   position: absolute;
@@ -8589,6 +8573,13 @@ i[class*=fa] {
   cursor: pointer;
   z-index: 10;
   transition: all 0.3s ease;
+}
+@media (max-width: 768px) {
+  .parent-testimonial__nav {
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+  }
 }
 .parent-testimonial__nav--prev {
   left: -25px;
@@ -8611,15 +8602,12 @@ i[class*=fa] {
 @media (max-width: 768px) {
   .parent-testimonial__nav--prev {
     left: -10px;
-    top: 40%;
+    top: 50%;
   }
   .parent-testimonial__nav--next {
     right: -10px;
-    top: 40%;
+    top: 50%;
   }
-}
-.parent-testimonial {
-  /* Top line and avatars */
 }
 .parent-testimonial__top-line {
   display: flex;
@@ -8645,7 +8633,6 @@ i[class*=fa] {
   gap: 10px;
 }
 .parent-testimonial__avatar {
-  max-width: 100%;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -8653,15 +8640,18 @@ i[class*=fa] {
   transition: all 0.3s ease;
   cursor: pointer;
   border: 2px solid transparent;
+  flex-shrink: 0;
 }
 .parent-testimonial__avatar--side {
-  transform: scale(0.85);
+  width: 60px;
+  height: 60px;
   opacity: 0.6;
 }
 .parent-testimonial__avatar--center {
-  transform: scale(1.1);
+  width: 80px;
+  height: 80px;
   border-color: var(--primary-color);
-  padding: 5px;
+  padding: 3px;
   z-index: 2;
 }
 .parent-testimonial__name {
@@ -8725,17 +8715,12 @@ i[class*=fa] {
 }
 @media (max-width: 1200px) {
   .faq__col--bg {
-    padding: 60px 60px 60px 60px;
-  }
-}
-@media (max-width: 992px) {
-  .faq__col--bg {
     padding: 60px;
   }
 }
 @media (max-width: 768px) {
   .faq__col--bg {
-    padding: 40px 20px;
+    padding: 60px 20px;
   }
 }
 .faq__bg-img {
@@ -8766,6 +8751,11 @@ i[class*=fa] {
   flex-direction: column;
   gap: 25px;
   margin-top: 40px;
+}
+@media (max-width: 768px) {
+  .faq-accordion {
+    margin-top: 30px;
+  }
 }
 .faq-accordion__item {
   position: relative;
@@ -8974,14 +8964,6 @@ i[class*=fa] {
 
  ................................................................*/
 .grooming-choose-us {
-  margin-bottom: 120px;
-}
-@media (max-width: 768px) {
-  .grooming-choose-us {
-    margin-bottom: 60px;
-  }
-}
-.grooming-choose-us {
   position: relative;
 }
 .grooming-choose-us__heading {
@@ -8989,7 +8971,7 @@ i[class*=fa] {
 }
 @media (max-width: 768px) {
   .grooming-choose-us__heading {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 }
 .grooming-choose-us__row {
@@ -9450,7 +9432,7 @@ i[class*=fa] {
 }
 @media (max-width: 1600px) {
   .before-and-after__left-wrap {
-    padding: 80px 60px;
+    padding: 120px 60px;
   }
 }
 @media (max-width: 992px) {
@@ -9479,13 +9461,23 @@ i[class*=fa] {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 680px;
+}
+@media (max-width: 1600px) {
+  .before-and-after__left-content {
+    max-width: 680px;
+  }
 }
 .before-and-after__desc {
   max-width: 535px;
   color: var(--white-color);
   margin-top: 30px;
   margin-bottom: 40px;
+}
+@media (max-width: 768px) {
+  .before-and-after__desc {
+    margin-top: 25px;
+    margin-bottom: 35px;
+  }
 }
 .before-and-after__list {
   display: flex;
@@ -9498,10 +9490,21 @@ i[class*=fa] {
     padding: 0 0 0 20px;
   }
 }
+@media (max-width: 768px) {
+  .before-and-after__list {
+    gap: 30px;
+    padding: 0;
+  }
+}
 .before-and-after__item {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+@media (max-width: 768px) {
+  .before-and-after__item {
+    align-items: flex-start;
+  }
 }
 .before-and-after__icon-wrap {
   position: relative;
@@ -9516,6 +9519,12 @@ i[class*=fa] {
   .before-and-after__icon-wrap {
     width: 60px;
     height: 70px;
+  }
+}
+@media (max-width: 768px) {
+  .before-and-after__icon-wrap {
+    width: 50px;
+    height: 60px;
   }
 }
 .before-and-after__icon-bg {

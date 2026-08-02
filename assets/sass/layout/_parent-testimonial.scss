@@ -8,13 +8,10 @@
   @include respond(lg) {
     padding: 60px 0;
   }
+
   @include respond(lg) {
     padding: 0 0;
   }
-
-  // &__heading {
-  //   margin-bottom: 60px;
-  // }
 
   &__wrapper {
     position: relative;
@@ -32,14 +29,12 @@
     }
 
     @include respond(md) {
-      padding: 40px 20px;
+      padding: 40px;
       border-radius: 20px;
       margin: 0 15px;
-      /* So it doesn't touch the very edges of screen */
     }
   }
 
-  /* Navigation arrows attached to edges of card */
   &__nav {
     position: absolute;
     top: 50%;
@@ -56,6 +51,12 @@
     cursor: pointer;
     z-index: 10;
     @include transition;
+
+    @include respond(md) {
+      width: 40px;
+      height: 40px;
+      font-size: 12px;
+    }
 
     &--prev {
       left: -25px;
@@ -83,17 +84,16 @@
 
       &--prev {
         left: -10px;
-        top: 40%;
+        top: 50%;
       }
 
       &--next {
         right: -10px;
-        top: 40%;
+        top: 50%;
       }
     }
   }
 
-  /* Top line and avatars */
   &__top-line {
     display: flex;
     align-items: center;
@@ -121,30 +121,28 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-
-    @include respond(md) {
-      // gap: 15px;
-    }
   }
 
   &__avatar {
-    max-width: 100%;
     border-radius: 50%;
     object-fit: cover;
     background-color: var(--white-color);
     transition: all 0.3s ease;
     cursor: pointer;
     border: 2px solid transparent;
+    flex-shrink: 0;
 
     &--side {
-      transform: scale(0.85);
+      width: 60px;
+      height: 60px;
       opacity: 0.6;
     }
 
     &--center {
-      transform: scale(1.1);
+      width: 80px;
+      height: 80px;
       border-color: var(--primary-color);
-      padding: 5px;
+      padding: 3px;
       z-index: 2;
     }
   }

@@ -2,15 +2,7 @@
 
 .pet-grooming-service {
   position: relative;
-  padding: 120px 0;
   overflow: hidden;
-
-  @include respond(lg) {
-    padding: 80px 0;
-  }
-  @include respond(lg) {
-    padding: 60px 0;
-  }
 
   &__bg {
     position: absolute;
@@ -56,6 +48,10 @@
 
   &__pagination {
     margin-top: 60px;
+
+    @include respond(md) {
+      margin-top: 40px;
+    }
   }
 }
 

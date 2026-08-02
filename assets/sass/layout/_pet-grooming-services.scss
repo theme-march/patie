@@ -55,9 +55,6 @@
     @include respond(md) {
       margin-top: 40px;
     }
-    @include respond(sm) {
-      margin-top: 30px;
-    }
   }
 }
 

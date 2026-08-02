@@ -56,6 +56,11 @@
     color: var(--body-color);
     line-height: 1.9;
     margin-bottom: 40px;
+    margin-top: 20px;
+
+    @include respond(md) {
+      margin-bottom: 30px;
+    }
   }
 
   &__features-row {
@@ -74,6 +79,10 @@
     flex-direction: column;
     gap: 20px;
     flex-grow: 1;
+
+    @include respond(md) {
+      gap: 15px;
+    }
   }
 
   &__feature-item {
@@ -95,13 +104,31 @@
       left: 0;
       width: 200px;
     }
+
     @include respond(lg) {
       left: -15%;
       width: 215px;
     }
+
     @include respond(md) {
       left: 0;
       width: 240px;
+    }
+
+    @include respond(sm) {
+      width: 100%;
+      left: 0;
+
+      .play-btn--sm {
+        width: 90px;
+        height: 90px;
+
+        .play-btn__inner {
+          width: 60px;
+          height: 60px;
+          font-size: 15px;
+        }
+      }
     }
 
     &-img {
@@ -109,17 +136,6 @@
       height: auto;
       object-fit: cover;
       display: block;
-    }
-
-    .play-btn {
-      width: 55px;
-      height: 55px;
-
-      &__inner {
-        width: 35px;
-        height: 35px;
-        font-size: 12px;
-      }
     }
   }
 

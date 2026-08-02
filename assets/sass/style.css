@@ -3497,7 +3497,7 @@ i[class*=fa] {
 @media (max-width: 768px) {
   .hero__shape--ball {
     width: 35px;
-    top: 73%;
+    top: 80%;
   }
 }
 .hero__container {
@@ -5101,7 +5101,7 @@ i[class*=fa] {
 }
 .working-process__wrap {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 285px;
   align-items: center;
 }
@@ -5117,7 +5117,7 @@ i[class*=fa] {
 }
 @media (max-width: 992px) {
   .working-process__wrap {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 60px;
   }
 }
@@ -5651,6 +5651,7 @@ i[class*=fa] {
   color: var(--btn-text);
   border: 1px solid var(--card-color);
   font-family: var(--heading-font-family);
+  line-height: normal;
 }
 @media (max-width: 992px) {
   .pricing-btn {
@@ -7918,7 +7919,7 @@ i[class*=fa] {
 }
 @media (max-width: 992px) {
   .hero-grooming {
-    padding: 50px 30px 0;
+    padding: 40px 30px 0;
   }
 }
 .hero-grooming__bg {

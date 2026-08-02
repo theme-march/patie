@@ -330,6 +330,7 @@
   @include respond(xl) {
     padding: 20px 45px;
   }
+
   @include respond(md) {
     padding: 15px 30px;
     font-size: 14px;

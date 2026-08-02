@@ -12,16 +12,13 @@
     padding: 80px 0;
     margin: 0 20px;
   }
+
   @include respond(lg) {
     padding: 60px 0;
     margin: 0 10px;
   }
 
 
-
-  .container {
-    max-width: 1680px;
-  }
 
   &__bg-vector {
     position: absolute;
@@ -48,9 +45,11 @@
     @include respond(xxxl) {
       gap: 180px;
     }
+
     @include respond(xxl) {
       gap: 100px;
     }
+
     @include respond(lg) {
       grid-template-columns: 1fr;
       gap: 60px;
@@ -59,6 +58,7 @@
 
   &__left {
     width: 100%;
+    min-width: 0;
   }
 
   &__divider {
@@ -100,11 +100,14 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    min-width: 0;
+    width: 100%;
   }
 
   &__form-row {
     display: flex;
     gap: 30px;
+    min-width: 0;
 
     @include respond(md) {
       flex-direction: column;
@@ -114,6 +117,7 @@
 
   &__form-group {
     flex: 1;
+    min-width: 0;
     position: relative;
 
     &--select {
@@ -142,6 +146,7 @@
 
   &__input {
     width: 100%;
+    min-width: 0;
     box-sizing: border-box;
     padding: 25px;
     border-radius: 5px;

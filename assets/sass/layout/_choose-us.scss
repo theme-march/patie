@@ -142,9 +142,6 @@
   &__header {
     text-align: center;
 
-    @include respond(md) {
-      margin-bottom: 30px;
-    }
   }
 
   &__layout {

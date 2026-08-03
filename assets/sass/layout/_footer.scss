@@ -189,7 +189,11 @@
     display: block;
     width: 81px;
     height: 2px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+
+    @include respond(md) {
+      margin-bottom: 20px;
+    }
   }
 
   &__desc {
@@ -527,6 +531,10 @@
   &__title-line {
     margin-bottom: 30px;
     display: block;
+
+    @include respond(md) {
+      margin-bottom: 20px;
+    }
   }
 
   &__list {
@@ -786,6 +794,10 @@
 
     @include respond(lg) {
       grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    @include respond(md) {
+      margin-bottom: 40px;
     }
 
     @include respond(sm) {
@@ -831,6 +843,10 @@
   &__title-line {
     display: block;
     margin-bottom: 30px;
+
+    @include respond(md) {
+      margin-bottom: 20px;
+    }
   }
 
   &__form {
@@ -895,9 +911,24 @@
     }
   }
 
+  &__privacy-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__checkbox {
+    accent-color: var(--primary-color);
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+  }
+
   &__privacy {
     color: var(--white-color);
     font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 0;
 
     @include respond(xl) {
       font-size: 14px;
@@ -906,6 +937,10 @@
 
   &__list-item {
     margin-bottom: 20px;
+
+    @include respond(md) {
+      margin-bottom: 15px;
+    }
 
     &:last-child {
       margin-bottom: 0;
@@ -974,6 +1009,7 @@
 
     @include respond(md) {
       padding: 20px;
+      margin-bottom: 20px;
     }
   }
 

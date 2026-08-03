@@ -15,6 +15,7 @@
 
     @include respond(md) {
       grid-template-columns: 1fr;
+      margin-top: 30px;
     }
   }
 }
@@ -31,6 +32,9 @@
 
   @include respond(xxl) {
     padding: 20px 20px 30px;
+  }
+  @include respond(md) {
+    padding: 15px 15px 30px;
   }
 
   &__img-wrap {

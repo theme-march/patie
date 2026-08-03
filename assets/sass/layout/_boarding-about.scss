@@ -3,12 +3,7 @@
 .boarding-about {
   position: relative;
   overflow: hidden;
-  padding: 120px 0;
   background-color: color-mix(in srgb, var(--primary-color) 10%, transparent);
-
-  @include respond(lg) {
-    padding: 60px 0;
-  }
 
   &__bg {
     position: absolute;
@@ -124,8 +119,8 @@
       margin-bottom: 40px;
     }
 
-    @include respond(sm) {
-      margin-top: 20px;
+    @include respond(md) {
+      margin-top: 30px;
       margin-bottom: 30px;
     }
   }
@@ -171,9 +166,10 @@
     margin-bottom: 60px;
 
 
-    @include respond(sm) {
+    @include respond(md) {
       gap: 30px;
       align-items: center;
+      margin-bottom: 40px;
     }
   }
 

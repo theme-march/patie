@@ -11,15 +11,19 @@
   @include respond(xxxxl) {
     padding-top: 175px;
   }
+
   @include respond(xxxl) {
     padding-top: 190px;
   }
+
   @include respond(xl) {
     padding-top: 130px;
   }
+
   @include respond(lg) {
     padding-top: 200px;
   }
+
   @include respond(md) {
     padding-top: 170px;
   }
@@ -35,18 +39,23 @@
     @include respond(xxxl) {
       max-width: 1400px;
     }
+
     @include respond(xxl) {
       max-width: 1240px;
     }
+
     @include respond(xl) {
       max-width: 1050px;
     }
+
     @include respond(lg) {
       max-width: 960px;
     }
+
     @include respond(md) {
       max-width: 720px;
     }
+
     @include respond(sm) {
       max-width: 540px;
     }
@@ -70,12 +79,14 @@
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
     object-fit: cover;
     z-index: 1;
 
     @include respond(xxxxl) {
       top: 1%;
     }
+
     @include respond(xl) {
       display: none;
     }
@@ -96,10 +107,12 @@
       width: 94%;
       top: -13%;
     }
+
     @include respond(xxl) {
       width: 96%;
       top: -13%;
     }
+
     @include respond(xl) {
       position: absolute;
       top: -20%;
@@ -108,10 +121,12 @@
       height: 107%;
       object-fit: cover;
     }
+
     @include respond(lg) {
       width: 100%;
       height: 115%;
     }
+
     @include respond(md) {
       top: -120px;
     }
@@ -127,15 +142,19 @@
     @include respond(xxxxl) {
       height: 703px;
     }
+
     @include respond(xxxl) {
       height: 630px;
     }
+
     @include respond(xxl) {
       height: 520px;
     }
+
     @include respond(xl) {
       height: 520px;
     }
+
     @include respond(lg) {
       height: 100%;
       flex-direction: column;
@@ -149,12 +168,15 @@
     @include respond(xxxl) {
       margin-top: -85px;
     }
+
     @include respond(xxl) {
       margin-top: -115px;
     }
+
     @include respond(xl) {
       margin-top: -50px;
     }
+
     @include respond(lg) {
       width: 100%;
       text-align: center;
@@ -163,6 +185,7 @@
       flex-direction: column;
       align-items: center;
     }
+
     @include respond(md) {
       margin-bottom: 60px;
     }
@@ -175,17 +198,21 @@
     @include respond(xxxxl) {
       font-size: 75px;
     }
+
     @include respond(xxl) {
       font-size: 64px;
     }
+
     @include respond(xl) {
       max-width: 570px;
       font-size: 56px;
     }
+
     @include respond(md) {
       max-width: 450px;
       font-size: 44px;
     }
+
     @include respond(sm) {
       max-width: 350px;
       font-size: 34px;
@@ -205,9 +232,11 @@
     @include respond(xxl) {
       font-size: 16px;
     }
+
     @include respond(md) {
       font-size: 16px;
     }
+
     @include respond(sm) {
       font-size: 15px;
     }
@@ -226,15 +255,18 @@
       width: 43%;
       right: 4%;
     }
+
     @include respond(xl) {
       width: 50%;
       right: -3%;
     }
+
     @include respond(lg) {
       width: 50%;
       align-self: center;
       right: 0;
     }
+
     @include respond(md) {
       display: none;
     }
@@ -258,9 +290,11 @@
       max-width: 100%;
       bottom: 14px;
     }
+
     @include respond(xxl) {
       bottom: 6px;
     }
+
     @include respond(xl) {
       bottom: -25px;
     }
@@ -282,14 +316,16 @@
     @include respond(xxxl) {
       top: 43%;
     }
+
     @include respond(xl) {
       top: 46%;
     }
+
     @include respond(lg) {
       width: 100%;
       left: 50%;
     }
-  } 
+  }
 
   &__floating {
     position: absolute;
@@ -308,21 +344,26 @@
       @include respond(xxxl) {
         top: 38%;
       }
+
       @include respond(xxl) {
         top: 35%;
       }
+
       @include respond(xl) {
         top: 42%;
         width: 90px;
       }
+
       @include respond(lg) {
         left: -5%;
         width: 80px;
         top: 40%;
       }
+
       @include respond(md) {
         width: 60px;
       }
+
       @include respond(sm) {
         width: 45px;
         left: 5%;
@@ -341,18 +382,22 @@
       @include respond(xxxl) {
         top: -3%;
       }
+
       @include respond(xl) {
         top: 0%;
         width: 60px;
       }
+
       @include respond(lg) {
         right: 10%;
         width: 60px;
         top: -1%;
       }
+
       @include respond(md) {
         width: 50px;
       }
+
       @include respond(sm) {
         width: 38px;
         right: 5%;

@@ -36,8 +36,8 @@
     display: flex;
     gap: 25px;
 
-    @include respond(xl) {
-      gap: 15px;
+    @include respond(lg) {
+      gap: 20px;
     }
 
     @include respond(sm) {

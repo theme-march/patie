@@ -14688,9 +14688,9 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
   display: flex;
   gap: 25px;
 }
-@media (max-width: 1200px) {
+@media (max-width: 992px) {
   .contact-section__info-cards {
-    gap: 15px;
+    gap: 20px;
   }
 }
 @media (max-width: 576px) {

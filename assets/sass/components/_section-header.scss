@@ -11,10 +11,6 @@
   font-family: var(--heading-font-family);
   margin-bottom: 20px;
 
-  @include respond(xl) {
-    font-size: 18px;
-  }
-
   @include respond(lg) {
     margin-bottom: 10px;
   }
@@ -27,10 +23,6 @@
     display: block;
     flex-shrink: 0;
 
-    @include respond(md) {
-      width: 14px;
-      height: 13px;
-    }
   }
 
   &--light {

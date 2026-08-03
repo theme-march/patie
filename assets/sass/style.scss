@@ -23,9 +23,8 @@
 @use "components/common-banner";
 @use "components/sidebar";
 @use "components/scrollup";
-
-@use "layout/header";
-@use "layout/mobile-sidebar";
+@use "components/header";
+@use "components/mobile-sidebar";
 @use "layout/hero";
 @use "layout/about";
 @use "layout/service";

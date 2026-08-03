@@ -7,7 +7,7 @@
 .blog__standard-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 30px;
+    gap: 60px;
     align-items: start;
 
     @include respond(lg) {

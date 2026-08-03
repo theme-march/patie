@@ -7,14 +7,6 @@
     position: sticky;
     top: 30px;
 
-    @include respond(xxxl) {
-        gap: 25px;
-    }
-
-    @include respond(lg) {
-        gap: 20px;
-    }
-
     @include respond(lg) {
         position: static;
     }

@@ -258,6 +258,9 @@
     @include respond(lg) {
       padding: 30px 20px;
     }
+    @include respond(md) {
+      padding: 30px 15px;
+    }
 
 
     &:hover {

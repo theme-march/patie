@@ -10,7 +10,7 @@
   &__layout {
     display: grid;
     grid-template-columns: 8fr 4fr;
-    gap: 25px;
+    gap: 30px;
     align-items: flex-start;
 
     @include respond(lg) {
@@ -353,6 +353,9 @@
 
     &-label {
       color: var(--heading-color);
+      @include respond(lg) {
+      font-size: 18px;
+    }
     }
 
     &-value {

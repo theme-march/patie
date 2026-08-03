@@ -1417,11 +1417,6 @@ i[class*=fa] {
   font-family: var(--heading-font-family);
   margin-bottom: 20px;
 }
-@media (max-width: 1200px) {
-  .section-header {
-    font-size: 18px;
-  }
-}
 @media (max-width: 992px) {
   .section-header {
     margin-bottom: 10px;
@@ -1432,12 +1427,6 @@ i[class*=fa] {
   height: 15px;
   display: block;
   flex-shrink: 0;
-}
-@media (max-width: 768px) {
-  .section-header__paw {
-    width: 14px;
-    height: 13px;
-  }
 }
 .section-header--light {
   color: var(--white-color);
@@ -1591,6 +1580,20 @@ i[class*=fa] {
   font-family: var(--heading-font-family);
   transition: all 0.3s ease;
 }
+@media (max-width: 992px) {
+  .pagination__link {
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .pagination__link {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+}
 .pagination__link:hover {
   background-color: var(--primary-color);
   color: var(--white-color);
@@ -1603,6 +1606,11 @@ i[class*=fa] {
   font-size: 18px;
   color: var(--primary-color);
   transition: all 0.3s ease;
+}
+@media (max-width: 992px) {
+  .pagination__icon {
+    font-size: 14px;
+  }
 }
 @media (max-width: 576px) {
   .pagination {
@@ -1759,16 +1767,6 @@ i[class*=fa] {
   gap: 30px;
   position: sticky;
   top: 30px;
-}
-@media (max-width: 1600px) {
-  .sidebar {
-    gap: 25px;
-  }
-}
-@media (max-width: 992px) {
-  .sidebar {
-    gap: 20px;
-  }
 }
 @media (max-width: 992px) {
   .sidebar {
@@ -3358,7 +3356,7 @@ i[class*=fa] {
   color: var(--white-color);
   font-family: var(--heading-font-family);
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   letter-spacing: 0.5px;
   transition: color 0.3s ease;
 }
@@ -5015,6 +5013,11 @@ i[class*=fa] {
     padding: 30px 20px;
   }
 }
+@media (max-width: 768px) {
+  .team-card__info-link {
+    padding: 30px 15px;
+  }
+}
 .team-card__info-link:hover .team-card__name,
 .team-card__info-link:hover .team-card__designation {
   transform: translateY(-5px);
@@ -5509,7 +5512,7 @@ i[class*=fa] {
 .pricing__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 40px;
 }
 @media (max-width: 992px) {
   .pricing__grid {
@@ -6623,7 +6626,7 @@ i[class*=fa] {
 }
 @media (max-width: 768px) {
   .blog-card--sm .blog-card__content {
-    padding: 0 15px 15px 15px;
+    padding: 0 15px 30px 15px;
   }
 }
 .blog-card--sm .blog-card__title {
@@ -6737,7 +6740,7 @@ i[class*=fa] {
 }
 @media (max-width: 768px) {
   .blog-card__content {
-    padding: 0 20px 20px 20px;
+    padding: 20px 20px 30px;
   }
 }
 .blog-card__meta {
@@ -6778,10 +6781,10 @@ i[class*=fa] {
   color: var(--heading-color);
   transition: all 0.3s ease;
 }
-@media (max-width: 1400px) {
+@media (max-width: 992px) {
   .blog-card__title {
     font-size: 28px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
 }
 @media (max-width: 768px) {
@@ -6827,7 +6830,7 @@ i[class*=fa] {
 .blog__standard-container {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 30px;
+  gap: 60px;
   align-items: start;
 }
 @media (max-width: 992px) {
@@ -12983,12 +12986,12 @@ i[class*=fa] {
 }
 @media (max-width: 992px) {
   .blog-details__tags-title {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 @media (max-width: 768px) {
   .blog-details__tags-title {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 .blog-details__tags-link {
@@ -13016,12 +13019,12 @@ i[class*=fa] {
 }
 @media (max-width: 992px) {
   .blog-details__share-title {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 @media (max-width: 768px) {
   .blog-details__share-title {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 .blog-details__share-link {
@@ -13234,7 +13237,7 @@ i[class*=fa] {
 .blog-details__form-row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  gap: 20px;
   margin-bottom: 20px;
 }
 @media (max-width: 576px) {
@@ -13776,6 +13779,11 @@ i[class*=fa] {
   margin-bottom: 40px;
   transition: all 0.3s ease;
 }
+@media (max-width: 768px) {
+  .shop-details__wishlist {
+    margin-bottom: 30px;
+  }
+}
 .shop-details__wishlist-icon {
   font-size: 18px;
 }
@@ -13834,7 +13842,7 @@ i[class*=fa] {
 .cart__layout {
   display: grid;
   grid-template-columns: 8fr 4fr;
-  gap: 25px;
+  gap: 30px;
   align-items: flex-start;
 }
 @media (max-width: 992px) {
@@ -14160,6 +14168,11 @@ i[class*=fa] {
 }
 .cart__summary-label {
   color: var(--heading-color);
+}
+@media (max-width: 992px) {
+  .cart__summary-label {
+    font-size: 18px;
+  }
 }
 .cart__summary-value {
   color: var(--heading-color);
@@ -14552,15 +14565,9 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
   gap: 40px;
   align-items: center;
 }
-@media (max-width: 1200px) {
-  .contact-section__layout {
-    gap: 20px;
-  }
-}
 @media (max-width: 992px) {
   .contact-section__layout {
     grid-template-columns: 1fr;
-    gap: 30px;
   }
 }
 .contact-section__content {
@@ -14573,6 +14580,7 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 @media (max-width: 992px) {
   .contact-section__title {
     font-size: 36px;
+    margin-bottom: 20px;
   }
 }
 .contact-section__text {
@@ -14663,17 +14671,28 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 }
 @media (max-width: 992px) {
   .contact-section__form-box {
-    padding: 40px 30px;
+    padding: 0 30px 40px 30px;
   }
 }
 .contact-section__form-title {
   font-size: 36px;
   margin-bottom: 40px;
 }
+@media (max-width: 992px) {
+  .contact-section__form-title {
+    margin-bottom: 25px;
+    font-size: 26px;
+  }
+}
 .contact-section__form {
   display: flex;
   flex-direction: column;
   gap: 30px;
+}
+@media (max-width: 992px) {
+  .contact-section__form {
+    gap: 20px;
+  }
 }
 .contact-section__input-group {
   position: relative;
@@ -14720,7 +14739,7 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 }
 .contact-section__submit-btn {
   width: 100%;
-  margin-top: 10px;
+  margin-top: 15px;
   border-radius: 10px;
 }
 .contact-section__submit-btn .common-btn__inner {

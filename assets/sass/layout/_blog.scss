@@ -100,8 +100,8 @@
     }
 
     .blog-card__date {
-      top: 40px;
-      left: 30px;
+      top: 20px;
+      left: 20px;
 
       @include respond(xxl) {
         top: 65px;
@@ -179,8 +179,8 @@
     }
 
     .blog-card__date {
-      top: 30px;
-      left: 30px;
+      top: 20px;
+      left: 20px;
 
       @include respond(md) {
         top: 15px;
@@ -354,6 +354,14 @@
 
     @include respond(xxl) {
       margin-bottom: 20px;
+    }
+  }
+
+  .pagination {
+    margin-top: 80px;
+
+    @include respond(md) {
+      margin-top: 50px;
     }
   }
 }

@@ -36,10 +36,21 @@
     }
   }
 
+  &__container {
+    max-width: 1650px;
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 30px;
+
+    @include respond(xxxxl) {
+      max-width: 1450px;
+    }
+  }
+
   &__wrap {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 285px;
+    gap: 180px;
     align-items: center;
 
     @include respond(xxxl) {
@@ -196,10 +207,8 @@
 
   &__right {
     width: 100%;
-    padding-left: 20px;
 
     @include respond(lg) {
-      padding-left: 0;
       display: flex;
       flex-direction: column;
       align-items: center;

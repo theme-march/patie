@@ -55,9 +55,16 @@
     aspect-ratio: 1;
     margin-bottom: 25px;
     transition: all 0.3s ease;
+    overflow: hidden;
 
     &:hover {
       transform: translateY(-5px);
+
+      .product-card__blur-overlay {
+        opacity: 1;
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+      }
     }
 
     @include respond(lg) {
@@ -91,9 +98,7 @@
   }
 
   &__img {
-    @include respond(xl) {
-      max-width: 55%;
-    }
+      width: 65%;
   }
 
   &__overlay {
@@ -110,10 +115,24 @@
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
+    z-index: 3;
 
     @include respond(md) {
       display: none;
     }
+  }
+
+  &__blur-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: color-mix(in srgb, var(--black-color) 12%, transparent);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.35s ease, backdrop-filter 0.35s ease, -webkit-backdrop-filter 0.35s ease;
+    pointer-events: none;
+    z-index: 1;
   }
 
   &__badges {
@@ -122,7 +141,7 @@
     left: 0px;
     display: flex;
     gap: 5px;
-    z-index: 1;
+    z-index: 3;
   }
 
   &__badge {

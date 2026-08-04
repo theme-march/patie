@@ -6047,9 +6047,9 @@ i[class*=fa] {
 
  ................................................................*/
 .choose-us {
-  padding-bottom: 120px;
+  padding-bottom: 100px;
 }
-@media (max-width: 1600px) {
+@media (max-width: 1700px) {
   .choose-us {
     padding-bottom: 0;
   }
@@ -6098,7 +6098,7 @@ i[class*=fa] {
 }
 @media (max-width: 576px) {
   .choose-us__container {
-    margin-top: 120px;
+    margin-top: 100px;
   }
 }
 .choose-us__main-wrapper {
@@ -6161,7 +6161,7 @@ i[class*=fa] {
 }
 @media (max-width: 576px) {
   .choose-us__top-pet-wrap {
-    top: -60px;
+    top: -45px;
   }
 }
 .choose-us__top-pet {
@@ -6193,7 +6193,7 @@ i[class*=fa] {
 @media (max-width: 768px) {
   .choose-us__top-pet {
     width: 380px;
-    max-width: 100%;
+    max-width: 95%;
   }
 }
 .choose-us__content {
@@ -6398,9 +6398,15 @@ i[class*=fa] {
   aspect-ratio: 1;
   margin-bottom: 25px;
   transition: all 0.3s ease;
+  overflow: hidden;
 }
 .product-card__img-wrap:hover {
   transform: translateY(-5px);
+}
+.product-card__img-wrap:hover .product-card__blur-overlay {
+  opacity: 1;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 @media (max-width: 992px) {
   .product-card__img-wrap {
@@ -6433,10 +6439,8 @@ i[class*=fa] {
   visibility: visible;
   transform: translate(-50%, -50%) scale(1);
 }
-@media (max-width: 1200px) {
-  .product-card__img {
-    max-width: 55%;
-  }
+.product-card__img {
+  width: 65%;
 }
 .product-card__overlay {
   position: absolute;
@@ -6452,11 +6456,24 @@ i[class*=fa] {
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
+  z-index: 3;
 }
 @media (max-width: 768px) {
   .product-card__overlay {
     display: none;
   }
+}
+.product-card__blur-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: color-mix(in srgb, var(--black-color) 12%, transparent);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.35s ease, backdrop-filter 0.35s ease;
+  pointer-events: none;
+  z-index: 1;
 }
 .product-card__badges {
   position: absolute;
@@ -6464,7 +6481,7 @@ i[class*=fa] {
   left: 0px;
   display: flex;
   gap: 5px;
-  z-index: 1;
+  z-index: 3;
 }
 .product-card__badge {
   font-family: var(--body-font-family);
@@ -6571,7 +6588,7 @@ i[class*=fa] {
 @media (max-width: 1200px) {
   .blog__grid {
     flex-direction: column;
-    gap: 0;
+    gap: 30px;
   }
 }
 .blog__list {
@@ -6593,12 +6610,12 @@ i[class*=fa] {
 @media (max-width: 1200px) {
   .blog__sub-col {
     width: 100%;
-    gap: 10px;
+    gap: 30px;
   }
 }
 
 .blog-card {
-  background-color: var(--smoke-bg-color);
+  background-color: var(--white-color);
   border-radius: 10px;
   overflow: hidden;
   height: 100%;
@@ -6607,7 +6624,7 @@ i[class*=fa] {
   transition: all 0.3s ease;
 }
 .blog-card:hover {
-  background-color: var(--white-color);
+  background-color: var(--smoke-bg-color);
 }
 .blog-card--lg {
   width: 50%;
@@ -6623,11 +6640,6 @@ i[class*=fa] {
 .blog-card--lg .blog-card__img-wrap:hover .blog-card__img {
   transform: scale(1.02) translateY(-10px);
 }
-@media (max-width: 1200px) {
-  .blog-card--lg .blog-card__img-wrap {
-    margin-bottom: 20px;
-  }
-}
 @media (max-width: 768px) {
   .blog-card--lg .blog-card__img-wrap {
     min-height: 250px;
@@ -6635,7 +6647,7 @@ i[class*=fa] {
   }
 }
 .blog-card--lg .blog-card__title {
-  line-height: 1.4;
+  line-height: 30px;
 }
 .blog-card--lg .blog-card__date {
   top: 20px;
@@ -6716,7 +6728,7 @@ i[class*=fa] {
   }
 }
 .blog-card--sm .blog-card__title {
-  line-height: 1.4;
+  line-height: 30px;
 }
 .blog-card--sm .blog-card__date {
   top: 20px;
@@ -6731,7 +6743,7 @@ i[class*=fa] {
 .blog-card__img-wrap {
   position: relative;
   overflow: hidden;
-  margin: 20px;
+  margin: 20px 20px 30px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6739,7 +6751,7 @@ i[class*=fa] {
 }
 @media (max-width: 768px) {
   .blog-card__img-wrap {
-    padding: 0;
+    margin: 15px 15px 25px 15px;
   }
 }
 .blog-card__img-link {
@@ -6827,7 +6839,7 @@ i[class*=fa] {
 }
 @media (max-width: 768px) {
   .blog-card__content {
-    padding: 20px 20px 30px;
+    padding: 0 20px 30px 20px;
   }
 }
 .blog-card__meta {
@@ -6876,7 +6888,7 @@ i[class*=fa] {
 }
 @media (max-width: 768px) {
   .blog-card__title {
-    font-size: 24px;
+    font-size: 26px;
   }
 }
 .blog-card__title-link {

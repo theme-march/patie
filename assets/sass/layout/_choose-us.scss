@@ -1,9 +1,9 @@
 @use "../abstracts" as *;
 
 .choose-us {
-  padding-bottom: 120px;
+  padding-bottom: 100px;
 
-  @include respond(xxxl) {
+  @include respond(xxxxl) {
     padding-bottom: 0;
   }
 
@@ -45,7 +45,7 @@
     }
 
     @include respond(sm) {
-      margin-top: 120px;
+      margin-top: 100px;
     }
   }
 
@@ -104,7 +104,7 @@
     }
 
     @include respond(sm) {
-      top: -60px;
+      top: -45px;
     }
   }
 
@@ -132,7 +132,7 @@
 
     @include respond(md) {
       width: 380px;
-      max-width: 100%;
+      max-width: 95%;
     }
   }
 

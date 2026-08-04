@@ -29,7 +29,7 @@
 
     @include respond(xl) {
       flex-direction: column;
-      gap: 0;
+      gap: 30px;
     }
   }
 
@@ -51,13 +51,13 @@
 
     @include respond(xl) {
       width: 100%;
-      gap: 10px;
+      gap: 30px;
     }
   }
 }
 
 .blog-card {
-  background-color: var(--smoke-bg-color);
+  background-color: var(--white-color);
   border-radius: 10px;
   overflow: hidden;
   height: 100%;
@@ -66,7 +66,7 @@
   transition: all 0.3s ease;
 
   &:hover {
-    background-color: var(--white-color);
+    background-color: var(--smoke-bg-color);
   }
 
   &--lg {
@@ -85,9 +85,7 @@
         }
       }
 
-      @include respond(xl) {
-        margin-bottom: 20px;
-      }
+      
 
       @include respond(md) {
         min-height: 250px;
@@ -96,7 +94,7 @@
     }
 
     .blog-card__title {
-      line-height: 1.4;
+      line-height: 30px;
     }
 
     .blog-card__date {
@@ -175,7 +173,7 @@
     }
 
     .blog-card__title {
-      line-height: 1.4;
+      line-height: 30px;
     }
 
     .blog-card__date {
@@ -192,14 +190,14 @@
   &__img-wrap {
     position: relative;
     overflow: hidden;
-    margin: 20px;
+    margin: 20px 20px 30px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
 
     @include respond(md) {
-      padding: 0;
+      margin: 15px 15px 25px 15px;
     }
   }
 
@@ -286,7 +284,7 @@
     align-items: flex-start;
 
     @include respond(md) {
-      padding: 20px 20px 30px;
+      padding: 0 20px 30px 20px;
     }
   }
 
@@ -334,7 +332,7 @@
     }
 
     @include respond(md) {
-      font-size: 24px;
+      font-size: 26px;
     }
 
     &-link {

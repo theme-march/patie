@@ -356,7 +356,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -70%);
   width: 130px;
   height: 130px;
   background-color: color-mix(in srgb, var(--primary-color), transparent 70%);
@@ -369,10 +369,6 @@
   cursor: pointer;
   z-index: 2;
 
-
-  @include respond(md) {
-    top: 53%
-  }
 
   &__inner {
     @include circle-icon(90px);

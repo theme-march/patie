@@ -42,9 +42,8 @@
   transition: all 0.3s ease;
 
   @include respond(md) {
-    padding: 20px 15px;
+    padding: 20px 15px 30px;
     width: 100%;
-    max-width: 310px;
     margin-inline: auto;
   }
 

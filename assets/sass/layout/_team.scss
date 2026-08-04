@@ -15,7 +15,7 @@
   }
 
   &__header--style2 {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 
     .section-header {
       margin-bottom: 10px;
@@ -45,6 +45,7 @@
   position: relative;
   transition: all 0.4s ease;
   margin-top: 60px;
+  width: 100%;
 
   @include respond(xl) {
     margin-top: 50px;
@@ -52,6 +53,7 @@
 
   @include respond(lg) {
     margin: 60px auto 0;
+    width: 100%;
   }
 
 
@@ -76,9 +78,10 @@
       z-index: 1;
 
       @include respond(lg) {
-        width: 35px;
-        height: 35px;
+        width: 40px;
+        height: 40px;
         top: 10px;
+        left: 10px;
       }
     }
 
@@ -138,13 +141,20 @@
 
   &__img-wrap {
     position: relative;
-    max-width: min(250px, calc(100% - 60px));
-    margin: -60px auto -110px;
+    max-width: min(270px, calc(100% - 50px));
+    margin: -60px auto -100px;
     z-index: 10;
+    width: 100%;
+
+    // @include respond(lg) {
+    //   max-width: 100%;
+    // }
   }
 
   &__img {
     max-width: 100%;
+    width: 100%;
+    height: auto;
     display: block;
     position: relative;
     z-index: 10;
@@ -156,9 +166,9 @@
     position: relative;
     z-index: 1;
     padding-top: 80px;
-
+    width: 100%;
     @include respond(lg) {
-      margin: 25px auto 0;
+      padding-top: 100px;
     }
   }
 
@@ -244,7 +254,7 @@
 
   &__info-link {
     display: block;
-    padding: 60px 35px 30px;
+    padding: 50px 35px 30px;
     text-decoration: none;
 
     @include respond(xxl) {
@@ -257,9 +267,6 @@
 
     @include respond(lg) {
       padding: 30px 20px;
-    }
-    @include respond(md) {
-      padding: 30px 15px;
     }
 
 

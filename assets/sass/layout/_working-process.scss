@@ -45,6 +45,9 @@
     @include respond(xxxxl) {
       max-width: 1450px;
     }
+    @include respond(lg) {
+      padding-inline: 15px;
+    }
   }
 
   &__wrap {
@@ -291,9 +294,11 @@
   &__slide-desc {
     color: var(--white-color);
     margin-bottom: 40px;
+    max-width: 400px;
 
-    @include respond(md) {
+    @include respond(lg) {
       margin-bottom: 20px;
+      max-width: 100%;
     }
   }
 

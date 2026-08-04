@@ -18,13 +18,13 @@
 
   &__bg {
     position: absolute;
-    top: 49%;
+    top: 46%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -1;
 
     @include respond(xl) {
-      top: 60%;
+      top: 45%;
     }
 
     @include respond(lg) {
@@ -113,6 +113,10 @@
     padding: 60px 40px 25px;
 
 
+    @include respond(xl) {
+      padding: 60px 40px 0;
+    }
+
     @include respond(lg) {
       padding: 40px 60px 0;
     }
@@ -122,11 +126,14 @@
     color: var(--primary-color);
     font-size: 20px;
     margin-bottom: 25px;
-    background: #fff;
     display: inline-flex;
     padding: 5px 15px;
     border-radius: 5px;
     box-shadow: 0 4px 15px rgba(var(--primary-color-rgb, 104, 57, 204), 0.05);
+
+    @include respond(xl) {
+      margin-bottom: 15px;
+    }
 
     i {
       margin: 0 2px;
@@ -137,6 +144,10 @@
     margin-bottom: 40px;
 
 
+    @include respond(xl) {
+      margin-bottom: 30px;
+    }
+
     @include respond(lg) {
       font-size: 14px;
     }
@@ -145,8 +156,8 @@
   &__quote-icon {
     margin-bottom: 40px;
 
-    @include respond(md) {
-      margin-bottom: 25px;
+    @include respond(xl) {
+      margin-bottom: 30px;
     }
   }
 
@@ -163,9 +174,12 @@
     font-size: 30px;
     margin-bottom: 10px;
 
+    @include respond(xl) {
+      margin-bottom: 5px;
+    }
+
     @include respond(lg) {
       font-size: 26px;
-      margin-bottom: 5px;
     }
   }
 
@@ -215,6 +229,7 @@
         max-width: 80px;
         max-height: 80px;
       }
+
       @include respond(md) {
         max-width: 75px;
         max-height: 75px;

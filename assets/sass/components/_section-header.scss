@@ -10,6 +10,7 @@
   font-weight: 400;
   font-family: var(--heading-font-family);
   margin-bottom: 15px;
+  letter-spacing: 0.5px;
 
   @include respond(xl) {
     margin-bottom: 10px;

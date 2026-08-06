@@ -25,6 +25,10 @@
     max-width: 700px;
   }
 
+  &__header-right {
+    margin-bottom: 15px;
+  }
+
   &__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -70,6 +74,7 @@
     @include respond(lg) {
       margin-bottom: 35px;
     }
+
     @include respond(md) {
       margin-bottom: 30px;
     }
@@ -98,7 +103,7 @@
   }
 
   &__img {
-      width: 65%;
+    width: 65%;
   }
 
   &__overlay {

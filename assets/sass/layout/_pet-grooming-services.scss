@@ -10,7 +10,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
     z-index: -1;
   }
 
@@ -18,11 +18,12 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     flex-wrap: wrap;
     gap: 30px;
+
     @include respond(md) {
-      margin-bottom: 50px;
+      margin-bottom: 30px;
     }
   }
 
@@ -32,6 +33,10 @@
     @include respond(md) {
       max-width: 100%;
     }
+  }
+
+  &__btn-wrap {
+    margin-bottom: 15px;
   }
 
   &__slider {
@@ -61,7 +66,7 @@
 .pet-grooming-card {
   position: relative;
   width: 100%;
-  padding: 50px 30px 30px 40px;
+  padding: 50px 30px 45px 45px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -89,6 +94,7 @@
     left: 0;
     width: 100%;
     height: 100%;
+    object-fit: fill;
     z-index: -1;
     pointer-events: none;
   }
@@ -104,7 +110,7 @@
     left: 15px;
 
     @include respond(xxl) {
-      margin-bottom: 18px;
+      margin-bottom: 15px;
       left: 12px;
     }
 
@@ -160,8 +166,8 @@
     @include respond(xxl) {
       font-size: 14px;
       line-height: 1.4;
-      margin-bottom: 18px;
-      
+      margin-bottom: 15px;
+
     }
 
     @include respond(xl) {
@@ -174,7 +180,7 @@
     @include respond(lg) {
       font-size: 14px;
       line-height: 1.4;
-      margin-bottom: 18px;
+      margin-bottom: 15px;
     }
   }
 

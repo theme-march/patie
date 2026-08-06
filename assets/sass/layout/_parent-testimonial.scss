@@ -13,41 +13,62 @@
     padding: 0 0;
   }
 
+  &__heading {
+    margin-bottom: 80px;
+
+  }
+
   &__wrapper {
     position: relative;
-    max-width: 1200px;
     margin: 0 auto;
-    background-color: var(--white-color);
-    border-radius: 30px;
-    box-shadow: 0px 20px 15px -15px color-mix(in srgb, var(--black-color), transparent 93%);
-    padding: 70px 60px;
     text-align: center;
-    z-index: 1;
+  }
 
-    @include respond(lg) {
-      max-width: 900px;
+  &__body {
+    position: relative;
+    border-radius: 40px;
+    box-shadow: 0px 10px 50px 0px color-mix(in srgb, var(--black-color), transparent 92%);
+    padding: 90px 0 80px;
+    display: flex;
+    align-items: center;
+    gap: 120px;
+    overflow: visible;
+
+    @include respond(xxl) {
+      gap: 60px;
     }
-
+    @include respond(lg) {
+      gap: 40px;
+    }
     @include respond(md) {
-      padding: 40px;
-      border-radius: 20px;
-      margin: 0 15px;
+      padding: 80px 5px 40px;
+      gap: 30px;
     }
   }
 
-  &__nav {
+  &__bg {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  &__nav {
+    position: relative;
+    flex-shrink: 0;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     border: none;
     outline: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: 22px;
     cursor: pointer;
     z-index: 10;
     @include transition;
@@ -59,9 +80,9 @@
     }
 
     &--prev {
-      left: -25px;
       background-color: var(--white-color);
       color: var(--heading-color);
+      left: -25px;
 
       &:hover {
         background-color: var(--primary-color);
@@ -70,36 +91,28 @@
     }
 
     &--next {
-      right: -25px;
       background-color: var(--white-color);
       color: var(--heading-color);
+      right: -25px;
 
       &:hover {
         background-color: var(--primary-color);
         color: var(--white-color);
       }
     }
-
-    @include respond(md) {
-
-      &--prev {
-        left: -10px;
-        top: 50%;
-      }
-
-      &--next {
-        right: -10px;
-        top: 50%;
-      }
-    }
   }
 
   &__top-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 40px;
     gap: 50px;
+    white-space: nowrap;
+    z-index: 2;
 
     @include respond(md) {
       padding: 0;
@@ -133,14 +146,14 @@
     flex-shrink: 0;
 
     &--side {
-      width: 60px;
-      height: 60px;
-      opacity: 0.6;
+      width: 80px;
+      height: 80px;
+      opacity: 0.8;
     }
 
     &--center {
-      width: 80px;
-      height: 80px;
+      width: 100px;
+      height: 100px;
       border-color: var(--primary-color);
       padding: 3px;
       z-index: 2;
@@ -156,17 +169,17 @@
   &__designation {
     display: block;
     color: var(--heading-color);
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 
   &__text {
-    line-height: 1.9;
-    margin-bottom: 40px;
+    line-height: 26px;
+    margin-bottom: 30px;
   }
 
   &__rating {
     color: var(--rating-color);
-    font-size: 20px;
+    font-size: 22px;
 
   }
 }

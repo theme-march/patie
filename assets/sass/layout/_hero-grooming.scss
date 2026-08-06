@@ -37,6 +37,7 @@
 
   &__title {
     font-size: 170px;
+    line-height: 144px;
     color: var(--white-color);
 
     @include respond(xxxl) {
@@ -71,7 +72,7 @@
 
   &__badge {
     position: absolute;
-    top: 70%;
+    top: 78%;
     left: 11%;
     width: 170px;
     height: 170px;
@@ -140,7 +141,7 @@
   &__content {
     display: flex;
     gap: 20px;
-    align-items: center;
+    align-items: end;
     justify-content: space-around;
 
     @include respond(lg) {
@@ -211,8 +212,9 @@
 
   &__offer-box {
     position: relative;
+    bottom: 70px;
     background-color: var(--white-color);
-    padding: 30px;
+    padding: 60px 30px 30px 30px;
     border-radius: 20px;
     max-width: 415px;
     text-align: left;
@@ -241,13 +243,13 @@
 
   &__offer-price {
     position: absolute;
-    top: -22%;
+    top: -20%;
     right: 10%;
     background-color: var(--white-color);
     color: var(--primary-color);
     font-family: var(--heading-font-family);
     font-size: 30px;
-    padding: 32px 25px;
+    padding: 32px 18px;
     border-radius: 50px 50px 0 0;
     z-index: -10;
 
@@ -265,7 +267,7 @@
   &__offer-title {
     color: var(--heading-color);
     font-size: 36px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     text-transform: none;
 
     @include respond(xxl) {
@@ -297,8 +299,9 @@
 
   &__specialist-box {
     position: relative;
+    bottom: 70px;
     background-color: transparent;
-    padding: 40px 20px 40px 65px;
+    padding: 40px 20px 45px 65px;
     max-width: 490px;
     text-align: left;
     z-index: 10;

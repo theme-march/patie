@@ -2,7 +2,7 @@
 
 .grooming-blog {
   &__heading {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 
     @include respond(lg) {
       margin-bottom: 30px;
@@ -28,19 +28,12 @@
   position: relative;
   isolation: isolate;
   background-color: transparent;
-  max-width: 100%;
-  height: 520px;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   transition: all 0.4s ease;
 
-  @include respond(xxl) {
-    height: 440px;
-  }
-
-  @include respond(xl) {
-    height: 370px;
-  }
   @include respond(sm) {
     width: 300px;
     margin: 0 auto;
@@ -52,56 +45,30 @@
     left: 0;
     width: 100%;
     height: 100%;
+    object-fit: fill;
     z-index: -1;
     pointer-events: none;
     display: block;
-
-    @include respond(md) {
-      max-height: 440px;
-    }
-
-    @include respond(sm) {
-      left: 50%;
-      transform: translateX(-50%);
-    }
   }
 
   &__img-wrap {
-    position: absolute;
-    top: 6.5%;
-    left: 8.1%;
-    width: 84.76%;
-    height: 47.68%;
+    position: relative;
+    margin: 25px 35px 0;
     border-radius: 20px;
     overflow: hidden;
     z-index: 1;
 
     @include respond(xxl) {
-      top: 6.5%;
-    }
-
-    @include respond(xl) {
-      top: 7%;
-    }
-
-    @include respond(lg) {
-      top: 6%;
-      width: 80%;
+      margin: 20px 25px 0;
     }
 
     @include respond(md) {
-      width: 52%;
-      top: 5.5%;
-      left: 23%;
-    }
-    @include respond(sm) {
-      width: 87%;
-      left: 6%;
+      margin: 20px 20px 0;
     }
   }
 
   &__img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     object-fit: cover;
     display: block;
@@ -116,10 +83,10 @@
 
   &__date {
     position: absolute;
-    bottom: 63%;
-    left: -2%;
+    top: 35px;
+    left: 15px;
     z-index: 2;
-    padding: 20px 15px 15px;
+    padding: 15px 12px;
     border-radius: 10px;
     color: var(--white-color);
     text-align: center;
@@ -129,20 +96,13 @@
     justify-content: center;
 
     @include respond(xxl) {
-      padding: 16px 8px 11px;
-    }
-
-    @include respond(xl) {
-      bottom: 58%;
+      padding: 12px 8px;
     }
 
     @include respond(md) {
-      left: 16%;
-      bottom: 62%;
-      padding: 10px 5px 8px;
-    }
-    @include respond(sm) {
-      left: -2%;
+      top: 25px;
+      left: 10px;
+      padding: 10px 5px;
     }
 
     &-day {
@@ -177,35 +137,17 @@
   }
 
   &__content {
-    position: absolute;
-    top: 54.5%;
-    left: 9%;
-    right: 10.2%;
-    bottom: 5.8%;
+    padding: 10px 45px 35px;
     display: flex;
     flex-direction: column;
-    z-index: 1;
+    flex-grow: 1;
 
     @include respond(xxl) {
-      top: 57%;
-    }
-
-    @include respond(xl) {
-      top: 55%;
-    }
-
-    @include respond(lg) {
-      top: 56%;
+      padding: 10px 35px 30px;
     }
 
     @include respond(md) {
-      top: 55.5%;
-      left: 25%;
-      max-width: 255px;
-    }
-    @include respond(sm) {
-      top: 55.5%;
-      left: 10%;
+      padding: 10px 25px 25px;
     }
   }
 
@@ -265,6 +207,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: auto;
   }
 
   &__btn-wrap {

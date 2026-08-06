@@ -1321,6 +1321,7 @@ i[class*=fa] {
 .play-btn--sm {
   width: 50px;
   height: 50px;
+  transform: translate(-50%, -50%);
   background-color: color-mix(in srgb, var(--white-color), transparent 75%);
 }
 .play-btn--sm .play-btn__inner {
@@ -1406,6 +1407,7 @@ i[class*=fa] {
   font-weight: 400;
   font-family: var(--heading-font-family);
   margin-bottom: 15px;
+  letter-spacing: 0.5px;
 }
 @media (max-width: 1200px) {
   .section-header {
@@ -4210,20 +4212,20 @@ i[class*=fa] {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
   z-index: -1;
 }
 .pet-grooming-service__top {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
   flex-wrap: wrap;
   gap: 30px;
 }
 @media (max-width: 768px) {
   .pet-grooming-service__top {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
 }
 .pet-grooming-service__heading {
@@ -4233,6 +4235,9 @@ i[class*=fa] {
   .pet-grooming-service__heading {
     max-width: 100%;
   }
+}
+.pet-grooming-service__btn-wrap {
+  margin-bottom: 15px;
 }
 .pet-grooming-service__slider {
   width: 100%;
@@ -4258,7 +4263,7 @@ i[class*=fa] {
 .pet-grooming-card {
   position: relative;
   width: 100%;
-  padding: 50px 30px 30px 40px;
+  padding: 50px 30px 45px 45px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -4287,6 +4292,7 @@ i[class*=fa] {
   left: 0;
   width: 100%;
   height: 100%;
+  object-fit: fill;
   z-index: -1;
   pointer-events: none;
 }
@@ -4301,7 +4307,7 @@ i[class*=fa] {
 }
 @media (max-width: 1400px) {
   .pet-grooming-card__img-wrap {
-    margin-bottom: 18px;
+    margin-bottom: 15px;
     left: 12px;
   }
 }
@@ -4359,7 +4365,7 @@ i[class*=fa] {
   .pet-grooming-card__desc {
     font-size: 14px;
     line-height: 1.4;
-    margin-bottom: 18px;
+    margin-bottom: 15px;
   }
 }
 @media (max-width: 1200px) {
@@ -4374,7 +4380,7 @@ i[class*=fa] {
   .pet-grooming-card__desc {
     font-size: 14px;
     line-height: 1.4;
-    margin-bottom: 18px;
+    margin-bottom: 15px;
   }
 }
 .pet-grooming-card .service-btn {
@@ -4837,7 +4843,7 @@ i[class*=fa] {
   }
 }
 .team__header-right {
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 }
 .team__header--style2 {
   margin-bottom: 60px;
@@ -5196,7 +5202,7 @@ i[class*=fa] {
   }
 }
 .working-process__container {
-  max-width: calc(100% - 180px);
+  max-width: calc(100% - 160px);
   width: 100%;
   margin-inline: auto;
   padding-inline: 20px;
@@ -5538,7 +5544,7 @@ i[class*=fa] {
   background: var(--primary-color);
   border: 2px dashed var(--white-color);
   border-radius: 100px;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
   overflow: hidden;
 }
 @media (max-width: 768px) {
@@ -5724,7 +5730,7 @@ i[class*=fa] {
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   color: var(--text-color);
 }
 .pricing-card__list-item:last-child {
@@ -5785,6 +5791,101 @@ i[class*=fa] {
 | 2. Typography
 
  ................................................................*/
+.grooming-pricing {
+  position: relative;
+}
+.grooming-pricing__bg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.grooming-pricing__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+@media (max-width: 1200px) {
+  .grooming-pricing__header {
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: 992px) {
+  .grooming-pricing__header {
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .grooming-pricing__header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+.grooming-pricing__toggle {
+  display: inline-flex;
+  background: var(--white-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 100px;
+  margin-bottom: 15px;
+}
+.grooming-pricing__toggle-btn {
+  padding: 20px 30px;
+  font-weight: 700;
+  color: var(--primary-color);
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+}
+@media (max-width: 1200px) {
+  .grooming-pricing__toggle-btn {
+    padding: 15px 25px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .grooming-pricing__toggle-btn {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 576px) {
+  .grooming-pricing__toggle-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}
+.grooming-pricing__toggle-btn--active {
+  background: var(--primary-color);
+  color: var(--white-color);
+}
+.grooming-pricing__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+@media (max-width: 1200px) {
+  .grooming-pricing__grid {
+    gap: 20px;
+  }
+}
+@media (max-width: 992px) {
+  .grooming-pricing__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .grooming-pricing__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .grooming-pricing-card {
   background: var(--white-color);
   border-radius: 10px;
@@ -5864,13 +5965,13 @@ i[class*=fa] {
   }
 }
 .grooming-pricing-card__list {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .grooming-pricing-card__list-item {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 20px 0 20px 10px;
+  padding: 15px 10px;
   border-top: 1px solid color-mix(in srgb, var(--body-color), transparent 85%);
 }
 .grooming-pricing-card__list-item:first-child {
@@ -5899,113 +6000,6 @@ i[class*=fa] {
 .grooming-pricing-card__btn:hover {
   background: var(--heading-color);
   color: var(--white-color);
-}
-
-/* 
-|......................................................................
-| Template Name: CRAS
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
-
- ................................................................*/
-.grooming-pricing {
-  position: relative;
-}
-.grooming-pricing__bg {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-.grooming-pricing__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 60px;
-  flex-wrap: wrap;
-  gap: 30px;
-}
-@media (max-width: 1200px) {
-  .grooming-pricing__header {
-    margin-bottom: 50px;
-  }
-}
-@media (max-width: 992px) {
-  .grooming-pricing__header {
-    margin-bottom: 40px;
-  }
-}
-@media (max-width: 768px) {
-  .grooming-pricing__header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-}
-.grooming-pricing__toggle {
-  display: inline-flex;
-  background: var(--white-color);
-  border: 1px solid var(--primary-color);
-  border-radius: 100px;
-}
-.grooming-pricing__toggle-btn {
-  padding: 20px 30px;
-  font-weight: 700;
-  color: var(--primary-color);
-  cursor: pointer;
-  display: inline-block;
-  border-radius: 100px;
-  transition: all 0.3s ease;
-}
-@media (max-width: 1200px) {
-  .grooming-pricing__toggle-btn {
-    padding: 15px 25px;
-    font-size: 15px;
-  }
-}
-@media (max-width: 768px) {
-  .grooming-pricing__toggle-btn {
-    padding: 12px 20px;
-    font-size: 14px;
-  }
-}
-@media (max-width: 576px) {
-  .grooming-pricing__toggle-btn {
-    padding: 10px 16px;
-    font-size: 13px;
-  }
-}
-.grooming-pricing__toggle-btn--active {
-  background: var(--primary-color);
-  color: var(--white-color);
-}
-.grooming-pricing__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
-@media (max-width: 1200px) {
-  .grooming-pricing__grid {
-    gap: 20px;
-  }
-}
-@media (max-width: 992px) {
-  .grooming-pricing__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 768px) {
-  .grooming-pricing__grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* 
@@ -6343,6 +6337,9 @@ i[class*=fa] {
 }
 .product__header-left {
   max-width: 700px;
+}
+.product__header-right {
+  margin-bottom: 15px;
 }
 .product__grid {
   display: grid;
@@ -8088,6 +8085,7 @@ i[class*=fa] {
 }
 .hero-grooming__title {
   font-size: 170px;
+  line-height: 144px;
   color: var(--white-color);
 }
 @media (max-width: 1600px) {
@@ -8126,7 +8124,7 @@ i[class*=fa] {
 }
 .hero-grooming__badge {
   position: absolute;
-  top: 70%;
+  top: 78%;
   left: 11%;
   width: 170px;
   height: 170px;
@@ -8201,7 +8199,7 @@ i[class*=fa] {
 .hero-grooming__content {
   display: flex;
   gap: 20px;
-  align-items: center;
+  align-items: end;
   justify-content: space-around;
 }
 @media (max-width: 992px) {
@@ -8276,8 +8274,9 @@ i[class*=fa] {
 }
 .hero-grooming__offer-box {
   position: relative;
+  bottom: 70px;
   background-color: var(--white-color);
-  padding: 30px;
+  padding: 60px 30px 30px 30px;
   border-radius: 20px;
   max-width: 415px;
   text-align: left;
@@ -8309,13 +8308,13 @@ i[class*=fa] {
 }
 .hero-grooming__offer-price {
   position: absolute;
-  top: -22%;
+  top: -20%;
   right: 10%;
   background-color: var(--white-color);
   color: var(--primary-color);
   font-family: var(--heading-font-family);
   font-size: 30px;
-  padding: 32px 25px;
+  padding: 32px 18px;
   border-radius: 50px 50px 0 0;
   z-index: -10;
 }
@@ -8332,7 +8331,7 @@ i[class*=fa] {
 .hero-grooming__offer-title {
   color: var(--heading-color);
   font-size: 36px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   text-transform: none;
 }
 @media (max-width: 1400px) {
@@ -8366,8 +8365,9 @@ i[class*=fa] {
 }
 .hero-grooming__specialist-box {
   position: relative;
+  bottom: 70px;
   background-color: transparent;
-  padding: 40px 20px 40px 65px;
+  padding: 40px 20px 45px 65px;
   max-width: 490px;
   text-align: left;
   z-index: 10;
@@ -8550,13 +8550,13 @@ i[class*=fa] {
 }
 .about-grooming__desc {
   color: var(--body-color);
-  line-height: 1.9;
-  margin-bottom: 40px;
-  margin-top: 20px;
+  line-height: 26px;
+  margin-bottom: 30px;
+  margin-top: 10px;
 }
 @media (max-width: 768px) {
   .about-grooming__desc {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 }
 .about-grooming__features-row {
@@ -8591,14 +8591,9 @@ i[class*=fa] {
   border-radius: 10px;
   left: -25%;
   overflow: hidden;
-  width: 170px;
+  width: 100%;
+  max-width: 200px;
   flex-shrink: 0;
-}
-@media (max-width: 1400px) {
-  .about-grooming__video {
-    left: 0;
-    width: 200px;
-  }
 }
 @media (max-width: 992px) {
   .about-grooming__video {
@@ -8698,42 +8693,62 @@ i[class*=fa] {
     padding: 0 0;
   }
 }
+.parent-testimonial__heading {
+  margin-bottom: 80px;
+}
 .parent-testimonial__wrapper {
   position: relative;
-  max-width: 1200px;
   margin: 0 auto;
-  background-color: var(--white-color);
-  border-radius: 30px;
-  box-shadow: 0px 20px 15px -15px color-mix(in srgb, var(--black-color), transparent 93%);
-  padding: 70px 60px;
   text-align: center;
-  z-index: 1;
+}
+.parent-testimonial__body {
+  position: relative;
+  border-radius: 40px;
+  box-shadow: 0px 10px 50px 0px color-mix(in srgb, var(--black-color), transparent 92%);
+  padding: 90px 0 80px;
+  display: flex;
+  align-items: center;
+  gap: 120px;
+  overflow: visible;
+}
+@media (max-width: 1400px) {
+  .parent-testimonial__body {
+    gap: 60px;
+  }
 }
 @media (max-width: 992px) {
-  .parent-testimonial__wrapper {
-    max-width: 900px;
+  .parent-testimonial__body {
+    gap: 40px;
   }
 }
 @media (max-width: 768px) {
-  .parent-testimonial__wrapper {
-    padding: 40px;
-    border-radius: 20px;
-    margin: 0 15px;
+  .parent-testimonial__body {
+    padding: 80px 5px 40px;
+    gap: 30px;
   }
 }
-.parent-testimonial__nav {
+.parent-testimonial__bg {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  border-radius: inherit;
+}
+.parent-testimonial__nav {
+  position: relative;
+  flex-shrink: 0;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   border: none;
   outline: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 22px;
   cursor: pointer;
   z-index: 10;
   transition: all 0.3s ease;
@@ -8746,39 +8761,34 @@ i[class*=fa] {
   }
 }
 .parent-testimonial__nav--prev {
-  left: -25px;
   background-color: var(--white-color);
   color: var(--heading-color);
+  left: -25px;
 }
 .parent-testimonial__nav--prev:hover {
   background-color: var(--primary-color);
   color: var(--white-color);
 }
 .parent-testimonial__nav--next {
-  right: -25px;
   background-color: var(--white-color);
   color: var(--heading-color);
+  right: -25px;
 }
 .parent-testimonial__nav--next:hover {
   background-color: var(--primary-color);
   color: var(--white-color);
 }
-@media (max-width: 768px) {
-  .parent-testimonial__nav--prev {
-    left: -10px;
-    top: 50%;
-  }
-  .parent-testimonial__nav--next {
-    right: -10px;
-    top: 50%;
-  }
-}
 .parent-testimonial__top-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 40px;
   gap: 50px;
+  white-space: nowrap;
+  z-index: 2;
 }
 @media (max-width: 768px) {
   .parent-testimonial__top-line {
@@ -8806,13 +8816,13 @@ i[class*=fa] {
   flex-shrink: 0;
 }
 .parent-testimonial__avatar--side {
-  width: 60px;
-  height: 60px;
-  opacity: 0.6;
-}
-.parent-testimonial__avatar--center {
   width: 80px;
   height: 80px;
+  opacity: 0.8;
+}
+.parent-testimonial__avatar--center {
+  width: 100px;
+  height: 100px;
   border-color: var(--primary-color);
   padding: 3px;
   z-index: 2;
@@ -8824,15 +8834,15 @@ i[class*=fa] {
 .parent-testimonial__designation {
   display: block;
   color: var(--heading-color);
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 .parent-testimonial__text {
-  line-height: 1.9;
-  margin-bottom: 40px;
+  line-height: 26px;
+  margin-bottom: 30px;
 }
 .parent-testimonial__rating {
   color: var(--rating-color);
-  font-size: 20px;
+  font-size: 22px;
 }
 
 /* 
@@ -9409,11 +9419,11 @@ i[class*=fa] {
   }
 }
 .grooming-team__desc {
-  margin: 30px 0 40px;
+  margin: 15px 0 35px;
 }
 @media (max-width: 992px) {
   .grooming-team__desc {
-    margin: 20px 0 30px;
+    margin: 10px 0 25px;
   }
 }
 @media (max-width: 1400px) {
@@ -9439,9 +9449,9 @@ i[class*=fa] {
 }
 .grooming-team__thumb {
   position: absolute;
-  max-width: 100%;
+  width: 100%;
+  max-width: 530px;
   bottom: 0;
-  left: -50px;
   z-index: 10;
   pointer-events: none;
 }
@@ -9582,14 +9592,14 @@ i[class*=fa] {
 .before-and-after__left-wrap {
   width: 50%;
   position: relative;
-  padding: 120px;
+  padding: 120px 180px 120px 220px;
   display: flex;
   justify-content: flex-end;
   z-index: 1;
 }
 @media (max-width: 1600px) {
   .before-and-after__left-wrap {
-    padding: 120px 60px;
+    padding: 120px 140px 120px 180px;
   }
 }
 @media (max-width: 992px) {
@@ -9624,15 +9634,14 @@ i[class*=fa] {
   }
 }
 .before-and-after__desc {
-  max-width: 535px;
   color: var(--white-color);
-  margin-top: 30px;
-  margin-bottom: 40px;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 @media (max-width: 768px) {
   .before-and-after__desc {
-    margin-top: 25px;
-    margin-bottom: 35px;
+    margin-top: 10px;
+    margin-bottom: 20px;
   }
 }
 .before-and-after__list {
@@ -9815,7 +9824,7 @@ i[class*=fa] {
 
  ................................................................*/
 .grooming-blog__heading {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 @media (max-width: 992px) {
   .grooming-blog__heading {
@@ -9842,21 +9851,11 @@ i[class*=fa] {
   position: relative;
   isolation: isolate;
   background-color: transparent;
-  max-width: 100%;
-  height: 520px;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   transition: all 0.4s ease;
-}
-@media (max-width: 1400px) {
-  .grooming-blog-card {
-    height: 440px;
-  }
-}
-@media (max-width: 1200px) {
-  .grooming-blog-card {
-    height: 370px;
-  }
 }
 @media (max-width: 576px) {
   .grooming-blog-card {
@@ -9870,62 +9869,30 @@ i[class*=fa] {
   left: 0;
   width: 100%;
   height: 100%;
+  object-fit: fill;
   z-index: -1;
   pointer-events: none;
   display: block;
 }
-@media (max-width: 768px) {
-  .grooming-blog-card__bg-svg {
-    max-height: 440px;
-  }
-}
-@media (max-width: 576px) {
-  .grooming-blog-card__bg-svg {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
 .grooming-blog-card__img-wrap {
-  position: absolute;
-  top: 6.5%;
-  left: 8.1%;
-  width: 84.76%;
-  height: 47.68%;
+  position: relative;
+  margin: 25px 35px 0;
   border-radius: 20px;
   overflow: hidden;
   z-index: 1;
 }
 @media (max-width: 1400px) {
   .grooming-blog-card__img-wrap {
-    top: 6.5%;
-  }
-}
-@media (max-width: 1200px) {
-  .grooming-blog-card__img-wrap {
-    top: 7%;
-  }
-}
-@media (max-width: 992px) {
-  .grooming-blog-card__img-wrap {
-    top: 6%;
-    width: 80%;
+    margin: 20px 25px 0;
   }
 }
 @media (max-width: 768px) {
   .grooming-blog-card__img-wrap {
-    width: 52%;
-    top: 5.5%;
-    left: 23%;
-  }
-}
-@media (max-width: 576px) {
-  .grooming-blog-card__img-wrap {
-    width: 87%;
-    left: 6%;
+    margin: 20px 20px 0;
   }
 }
 .grooming-blog-card__img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   object-fit: cover;
   display: block;
@@ -9936,10 +9903,10 @@ i[class*=fa] {
 }
 .grooming-blog-card__date {
   position: absolute;
-  bottom: 63%;
-  left: -2%;
+  top: 35px;
+  left: 15px;
   z-index: 2;
-  padding: 20px 15px 15px;
+  padding: 15px 12px;
   border-radius: 10px;
   color: var(--white-color);
   text-align: center;
@@ -9950,24 +9917,14 @@ i[class*=fa] {
 }
 @media (max-width: 1400px) {
   .grooming-blog-card__date {
-    padding: 16px 8px 11px;
-  }
-}
-@media (max-width: 1200px) {
-  .grooming-blog-card__date {
-    bottom: 58%;
+    padding: 12px 8px;
   }
 }
 @media (max-width: 768px) {
   .grooming-blog-card__date {
-    left: 16%;
-    bottom: 62%;
-    padding: 10px 5px 8px;
-  }
-}
-@media (max-width: 576px) {
-  .grooming-blog-card__date {
-    left: -2%;
+    top: 25px;
+    left: 10px;
+    padding: 10px 5px;
   }
 }
 .grooming-blog-card__date-day {
@@ -10003,41 +9960,19 @@ i[class*=fa] {
   }
 }
 .grooming-blog-card__content {
-  position: absolute;
-  top: 54.5%;
-  left: 9%;
-  right: 10.2%;
-  bottom: 5.8%;
+  padding: 10px 45px 35px;
   display: flex;
   flex-direction: column;
-  z-index: 1;
+  flex-grow: 1;
 }
 @media (max-width: 1400px) {
   .grooming-blog-card__content {
-    top: 57%;
-  }
-}
-@media (max-width: 1200px) {
-  .grooming-blog-card__content {
-    top: 55%;
-  }
-}
-@media (max-width: 992px) {
-  .grooming-blog-card__content {
-    top: 56%;
+    padding: 10px 35px 30px;
   }
 }
 @media (max-width: 768px) {
   .grooming-blog-card__content {
-    top: 55.5%;
-    left: 25%;
-    max-width: 255px;
-  }
-}
-@media (max-width: 576px) {
-  .grooming-blog-card__content {
-    top: 55.5%;
-    left: 10%;
+    padding: 10px 25px 25px;
   }
 }
 .grooming-blog-card__meta {
@@ -10091,6 +10026,7 @@ i[class*=fa] {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: auto;
 }
 .grooming-blog-card__btn-wrap {
   display: flex;
@@ -14256,7 +14192,7 @@ i[class*=fa] {
   font-size: 18px;
   font-weight: 700;
   display: block;
-  margin-bottom: 18px;
+  margin-bottom: 15px;
 }
 .cart__summary-shipping-options {
   display: flex;

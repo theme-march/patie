@@ -50,10 +50,11 @@
   }
 
   &__desc {
-    margin: 30px 0 40px;
+    margin: 15px 0 35px;
+
     @include respond(lg) {
-        margin: 20px 0 30px;
-      }
+      margin: 10px 0 25px;
+    }
   }
 
   &__text {
@@ -81,9 +82,9 @@
 
   &__thumb {
     position: absolute;
-    max-width: 100%;
+    width: 100%;
+    max-width: 530px;
     bottom: 0;
-    left: -50px;
     z-index: 10;
     pointer-events: none;
 
@@ -187,6 +188,7 @@
     .grooming-team__card-img {
       transform: translateX(-50%) translateY(-15px);
     }
+
     .grooming-team__card-info {
       transform: translateX(-50%) translateY(-10px);
     }

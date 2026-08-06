@@ -15,7 +15,7 @@
   }
 
   &__header-right {
-    margin-bottom: 12px;
+    margin-bottom: 15px;
   }
 
   &__header--style2 {
@@ -170,6 +170,7 @@
     width: 100%;
     max-width: 308px;
     margin: 0 auto;
+
     @include respond(lg) {
       padding-top: 100px;
     }

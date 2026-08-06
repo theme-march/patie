@@ -54,12 +54,12 @@
 
   &__desc {
     color: var(--body-color);
-    line-height: 1.9;
-    margin-bottom: 40px;
-    margin-top: 20px;
+    line-height: 26px;
+    margin-bottom: 30px;
+    margin-top: 10px;
 
     @include respond(md) {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
   }
 
@@ -97,13 +97,9 @@
     border-radius: 10px;
     left: -25%;
     overflow: hidden;
-    width: 170px;
+    width: 100%;
+    max-width: 200px;
     flex-shrink: 0;
-
-    @include respond(xxl) {
-      left: 0;
-      width: 200px;
-    }
 
     @include respond(lg) {
       left: -15%;

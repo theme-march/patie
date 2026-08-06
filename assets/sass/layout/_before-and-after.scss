@@ -12,13 +12,13 @@
     &__left-wrap {
         width: 50%;
         position: relative;
-        padding: 120px;
+        padding: 120px 180px 120px 220px;
         display: flex;
         justify-content: flex-end;
         z-index: 1;
 
         @include respond(xxxl) {
-            padding: 120px 60px;
+            padding: 120px 140px 120px 180px;
         }
 
         @include respond(lg) {
@@ -54,14 +54,13 @@
     }
 
     &__desc {
-        max-width: 535px;
         color: var(--white-color);
-        margin-top: 30px;
-        margin-bottom: 40px;
+        margin-top: 20px;
+        margin-bottom: 30px;
 
         @include respond(md) {
-            margin-top: 25px;
-            margin-bottom: 35px;
+            margin-top: 10px;
+            margin-bottom: 20px;
         }
     }
 

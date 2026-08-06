@@ -23,7 +23,7 @@
     background: var(--primary-color);
     border: 2px dashed var(--white-color);
     border-radius: 100px;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
     overflow: hidden;
 
     @include respond(md) {
@@ -63,6 +63,7 @@
     @include respond(lg) {
       grid-template-columns: repeat(2, 1fr);
     }
+
     @include respond(md) {
       grid-template-columns: 1fr;
     }
@@ -73,9 +74,10 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
+
   @include respond(lg) {
-     gap: 15px;
-    }
+    gap: 15px;
+  }
 
   &--basic {
     --card-color: var(--primary-color);
@@ -136,9 +138,10 @@
   padding: 40px 0;
   overflow: hidden;
   flex-grow: 1;
+
   @include respond(lg) {
-      padding: 30px 0;
-    }
+    padding: 30px 0;
+  }
 
   &__ribbon {
     position: absolute;
@@ -149,6 +152,7 @@
     padding: 6px 40px;
     transform: rotate(45deg);
     z-index: 1;
+
     @include respond(md) {
       font-size: 12px;
     }
@@ -179,6 +183,7 @@
     margin: 30px;
     padding: 20px;
     border-radius: 5px;
+
     @include respond(lg) {
       margin: 20px;
       padding: 15px;
@@ -197,6 +202,7 @@
 
   &__list {
     padding: 0 30px;
+
     @include respond(lg) {
       padding: 0 20px;
     }
@@ -205,7 +211,7 @@
       display: flex;
       align-items: center;
       gap: 15px;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       color: var(--text-color);
 
       &:last-child {
@@ -224,6 +230,7 @@
       color: var(--icon-color);
       font-size: 10px;
       flex-shrink: 0;
+
       @include respond(lg) {
         width: 18px;
         height: 18px;
@@ -244,9 +251,11 @@
   border: 1px solid var(--card-color);
   font-family: var(--heading-font-family);
   line-height: normal;
-@include respond(lg) {
-      padding: 15px 20px;
-    }
+
+  @include respond(lg) {
+    padding: 15px 20px;
+  }
+
   &:hover {
     background: var(--card-color);
     color: var(--white-color);

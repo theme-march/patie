@@ -2,7 +2,7 @@
 
 .working-process {
   padding: 120px 0;
-  margin: 0 25px;
+  margin: 0 20px;
   border-radius: 20px;
   background-color: var(--primary-color);
   position: relative;
@@ -10,7 +10,6 @@
 
   @include respond(xl) {
     padding: 80px 0;
-    margin: 0 20px;
   }
 
   @include respond(lg) {
@@ -37,27 +36,29 @@
   }
 
   &__container {
-    max-width: 1650px;
+    max-width: calc(100% - 180px);
     width: 100%;
     margin-inline: auto;
-    padding-inline: 30px;
+    padding-inline: 20px;
 
-    @include respond(xxxxl) {
-      max-width: 1450px;
+    @include respond(xxl) {
+      max-width: calc(100% - 120px);
     }
+
     @include respond(lg) {
+      max-width: 100%;
       padding-inline: 15px;
     }
   }
 
   &__wrap {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 180px;
+    grid-template-columns: minmax(0, 6fr) minmax(0, 4fr);
+    gap: 240px;
     align-items: center;
 
     @include respond(xxxl) {
-      gap: 180px;
+      gap: 200px;
     }
 
     @include respond(xxl) {
@@ -80,7 +81,7 @@
     height: 100%;
     position: absolute;
     top: 0;
-    left: 50%;
+    left: 57%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;

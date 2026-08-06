@@ -29,6 +29,7 @@
   }
 
   &__images-col {
+    width: 100%;
     max-width: 355px;
     position: relative;
 
@@ -74,7 +75,7 @@
 
     .mission-title {
       font-size: 30px;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
 
       @include respond(xl) {
         margin-bottom: 15px;

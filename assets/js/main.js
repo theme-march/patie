@@ -604,7 +604,7 @@
       const $this = $(this);
       const isGrooming = $this.hasClass("grooming-pricing__toggle-btn");
       const btnClass = isGrooming ? "grooming-pricing__toggle-btn" : "pricing__toggle-btn";
-      const priceClass = isGrooming ? ".grooming-pricing-card__price" : ".pricing-card__price";
+      const sectionClass = isGrooming ? ".grooming-pricing" : ".pricing";
 
       if ($this.hasClass(`${btnClass}--active`)) return;
 
@@ -613,11 +613,18 @@
       $this.removeClass(`${btnClass}--inactive`).addClass(`${btnClass}--active`);
 
       const isYearly = $this.text().trim() === "YEARLY";
+      const $section = $this.closest(sectionClass);
 
-      // Update Prices with Animation
-      $(priceClass).fadeOut(200, function () {
-        const newPrice = isYearly ? $(this).data("yearly") : $(this).data("monthly");
-        $(this).text(newPrice).fadeIn(200);
+      // 1. Update elements with explicit data-monthly and data-yearly attributes
+      $section.find("[data-monthly][data-yearly]").fadeOut(200, function () {
+        const newValue = isYearly ? $(this).attr("data-yearly") : $(this).attr("data-monthly");
+        $(this).text(newValue).fadeIn(200);
+      });
+
+      // 2. Update period text (/ Per Month vs / Per Year) for elements without explicit data attributes
+      $section.find(".pricing-card__period, .grooming-pricing-card__period").not("[data-monthly]").fadeOut(200, function () {
+        const newPeriod = isYearly ? "/ Per Year" : "/ Per Month";
+        $(this).text(newPeriod).fadeIn(200);
       });
     });
   }

@@ -53,7 +53,7 @@
 
   &__img-wrap {
     position: relative;
-    margin: 25px 35px 0;
+    margin: 30px 30px 0;
     border-radius: 20px;
     overflow: hidden;
     z-index: 1;
@@ -83,8 +83,8 @@
 
   &__date {
     position: absolute;
-    top: 35px;
-    left: 15px;
+    top: 115px;
+    left: 0px;
     z-index: 2;
     padding: 15px 12px;
     border-radius: 10px;
@@ -137,18 +137,11 @@
   }
 
   &__content {
-    padding: 10px 45px 35px;
+    padding: 10px 30px 30px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 
-    @include respond(xxl) {
-      padding: 10px 35px 30px;
-    }
-
-    @include respond(md) {
-      padding: 10px 25px 25px;
-    }
   }
 
   &__meta {
@@ -176,7 +169,8 @@
 
   &__title {
     font-size: 30px;
-    margin: 15px 0 30px;
+    line-height: 40px;
+    margin: 5px 0 30px;
     color: var(--heading-color);
     transition: all 0.3s ease;
     text-decoration: none;

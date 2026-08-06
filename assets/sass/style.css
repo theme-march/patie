@@ -10650,7 +10650,6 @@ i[class*=fa] {
 .boarding-about {
   position: relative;
   overflow: hidden;
-  background-color: color-mix(in srgb, var(--primary-color) 10%, transparent);
 }
 .boarding-about__bg {
   position: absolute;

@@ -15,10 +15,10 @@
         &--bg {
             background-color: var(--primary-color);
             z-index: 1;
-            padding: 100px 150px 100px 100px;
+            padding: 120px 150px 120px 100px;
 
             @include respond(xxxxl) {
-                padding: 90px 90px 90px 60px;
+                padding: 100px 90px 100px 70px;
             }
 
             @include respond(xxxl) {

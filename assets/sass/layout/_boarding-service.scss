@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     flex-wrap: wrap;
     gap: 30px;
 
@@ -19,6 +19,9 @@
 
   &__header-left {
     max-width: 712px;
+  }
+  &__header-right {
+    margin-bottom: 15px;
   }
 
 
@@ -73,7 +76,7 @@
   &__title {
     color: var(--title-color);
     font-size: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     transition: all 0.3s ease;
     text-decoration: none;
     display: block;

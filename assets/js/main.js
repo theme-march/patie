@@ -616,9 +616,13 @@
       const $section = $this.closest(sectionClass);
 
       // 1. Update elements with explicit data-monthly and data-yearly attributes
-      $section.find("[data-monthly][data-yearly]").fadeOut(200, function () {
+      $section.find("[data-monthly][data-yearly], .grooming-pricing-card__desc").fadeOut(200, function () {
         const newValue = isYearly ? $(this).attr("data-yearly") : $(this).attr("data-monthly");
-        $(this).text(newValue).fadeIn(200);
+        if (newValue !== undefined && newValue !== false) {
+          $(this).text(newValue).fadeIn(200);
+        } else {
+          $(this).fadeIn(200);
+        }
       });
 
       // 2. Update period text (/ Per Month vs / Per Year) for elements without explicit data attributes

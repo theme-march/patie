@@ -45,7 +45,7 @@
     max-width: 100%;
     position: absolute;
     right: 8%;
-    top: 23%;
+    top: 18%;
     z-index: 1;
 
     @include respond(xxxxl) {
@@ -73,8 +73,10 @@
 
   &__main-title {
     font-size: 48px;
+    line-height: 54px;
     max-width: 1005px;
     margin: 0 auto;
+    text-transform: none;
 
     @include respond(xxxxl) {
       font-size: 44px;
@@ -110,7 +112,7 @@
 
   &__btn-wrap {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 30px;
     margin-bottom: 60px;
 
     @include respond(lg) {
@@ -239,7 +241,8 @@
     border-radius: 20px;
     padding: 30px;
     flex: 1 1 0%;
-    width: 50%;
+    width: 100%;
+    max-width: 340px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -300,14 +303,13 @@
   &__dark-btn {
     align-self: flex-start;
     display: inline-block;
-    padding: 6px 20px;
-    border: 1px solid color-mix(in srgb, var(--secondary-color), transparent 20%);
+    padding: 8px 20px;
+    border: 1px solid color-mix(in srgb, var(--white-color), transparent 80%);
     border-radius: 50px;
     color: var(--secondary-color);
-    font-size: 13px;
+    font-family: var(--heading-font-family);
+    font-size: 16px;
     font-weight: 700;
-    text-transform: uppercase;
-    text-decoration: none;
     transition: all 0.3s ease;
 
     &:hover {
@@ -338,7 +340,6 @@
   }
 
   &__white-card {
-    max-height: 290px;
     background-color: var(--white-color);
     border-radius: 20px;
     padding: 30px;
@@ -387,6 +388,7 @@
     @include respond(xxxl) {
       margin-bottom: 95px;
     }
+
     @include respond(xxl) {
       margin-bottom: 93px;
     }

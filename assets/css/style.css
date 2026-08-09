@@ -57,7 +57,7 @@
 
  ................................................................*/
 html {
-  overflow-x: hidden;
+  overflow-x: clip;
   scroll-behavior: auto;
 }
 
@@ -68,7 +68,7 @@ body {
   font-size: 16px;
   font-weight: 600;
   line-height: 16px;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 h1,
@@ -1698,11 +1698,15 @@ i[class*=fa] {
     max-width: 5500px;
   }
 }
+.common-banner__content .section-header__breadcrumb {
+  margin-bottom: 15px;
+}
 .common-banner__img-wrap {
   position: absolute;
   bottom: 0;
   right: 7%;
-  max-width: 620px;
+  width: 100%;
+  max-width: 680px;
   line-height: 0;
   display: block;
 }
@@ -2929,7 +2933,7 @@ i[class*=fa] {
   width: calc(100% - 40px);
   max-width: 1840px;
   border-radius: 80px;
-  padding: 20px 100px;
+  padding: 20px 50px;
   transform: translateX(-50%) translateY(-120%);
   background-color: color-mix(in srgb, var(--white-color), transparent 90%);
   box-shadow: 0 10px 30px color-mix(in srgb, var(--black-color), transparent 90%);
@@ -4602,7 +4606,6 @@ i[class*=fa] {
   top: 46%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: -1;
 }
 @media (max-width: 1200px) {
   .testimonial__bg {
@@ -6532,7 +6535,7 @@ i[class*=fa] {
  ................................................................*/
 .blog {
   position: relative;
-  overflow: hidden;
+  overflow: clip;
 }
 .blog__bg {
   position: absolute;
@@ -7026,7 +7029,7 @@ i[class*=fa] {
   position: absolute;
   bottom: 0px;
   left: -21%;
-  width: 10vw;
+  width: 100%;
   max-width: 196px;
   height: auto;
   z-index: 10;
@@ -7045,8 +7048,8 @@ i[class*=fa] {
   position: absolute;
   bottom: 0px;
   right: -23%;
-  width: 15vw;
-  max-width: 280px;
+  width: 100%;
+  max-width: 225px;
   height: auto;
   z-index: 10;
 }
@@ -7340,7 +7343,7 @@ i[class*=fa] {
 }
 .footer__big-text {
   font-size: clamp(72px, 6.7vw, 128px);
-  line-height: 1;
+  line-height: 84px;
   color: var(--white-color);
   letter-spacing: 1px;
   white-space: nowrap;
@@ -12269,7 +12272,7 @@ i[class*=fa] {
 .service-details__title {
   color: var(--primary-color);
   font-size: 48px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 @media (max-width: 1600px) {
   .service-details__title {
@@ -12294,7 +12297,7 @@ i[class*=fa] {
 }
 .service-details__desc {
   margin-bottom: 25px;
-  line-height: 1.8;
+  line-height: 26px;
 }
 .service-details__desc:last-child {
   margin-bottom: 0;

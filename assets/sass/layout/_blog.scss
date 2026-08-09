@@ -2,7 +2,7 @@
 
 .blog {
   position: relative;
-  overflow: hidden;
+  overflow: clip;
 
   &__bg {
     position: absolute;

@@ -40,7 +40,7 @@
     position: absolute;
     bottom: 0px;
     left: -21%;
-    width: 10vw;
+    width: 100%;
     max-width: 196px;
     height: auto;
     z-index: 10;
@@ -59,8 +59,8 @@
     position: absolute;
     bottom: 0px;
     right: -23%;
-    width: 15vw;
-    max-width: 280px;
+    width: 100%;
+    max-width: 225px;
     height: auto;
     z-index: 10;
 
@@ -372,7 +372,7 @@
 
   &__big-text {
     font-size: clamp(72px, 6.7vw, 128px);
-    line-height: 1;
+    line-height: 84px;
     color: var(--white-color);
     letter-spacing: 1px;
     white-space: nowrap;

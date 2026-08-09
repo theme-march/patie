@@ -44,13 +44,18 @@
         @include respond(xl) {
             max-width: 5500px;
         }
+
+        .section-header__breadcrumb {
+            margin-bottom: 15px;
+        }
     }
 
     &__img-wrap {
         position: absolute;
         bottom: 0;
         right: 7%;
-        max-width: 620px;
+        width: 100%;
+        max-width: 680px;
         line-height: 0;
         display: block;
 

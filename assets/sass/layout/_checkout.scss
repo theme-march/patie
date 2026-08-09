@@ -43,8 +43,8 @@
     }
 
     &--shipping {
-      margin-top: 10px;
-      margin-bottom: 0px;
+      margin-top: 25px;
+      margin-bottom: -5px;
     }
 
     &--order {
@@ -56,8 +56,8 @@
   &__order-title-wrap {
     position: relative;
     border-bottom: 1px solid var(--border-color);
-    margin-bottom: 25px;
-    padding-bottom: 25px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
   }
 
   &__form {
@@ -130,7 +130,7 @@
     align-items: center;
     gap: 10px;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 30px;
   }
 
   &__checkbox-inner {
@@ -201,7 +201,7 @@
     display: flex;
     justify-content: space-between;
     color: var(--heading-color);
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 
   &__order-item {
@@ -250,7 +250,7 @@
   }
 
   &__payment-text {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     color: color-mix(in srgb, var(--heading-color), transparent 30%);
     margin-bottom: 15px;
@@ -258,7 +258,7 @@
 
   &__payment-cards {
     background-color: var(--smoke-bg-color);
-    padding: 15px;
+    padding: 20px 15px;
     border-radius: 5px;
     display: flex;
     margin-bottom: 25px;
@@ -321,8 +321,9 @@
   }
 
   &__radio-text {
+     font-family: var(--heading-font-family);
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 100;
     color: color-mix(in srgb, var(--heading-color), transparent 30%);
   }
 

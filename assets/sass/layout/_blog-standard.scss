@@ -17,6 +17,25 @@
     .sidebar {
         width: 100%;
     }
+
+    .blog-card__img-wrap {
+        margin: 0;
+    }
+
+    .blog-card__content {
+        padding: 0px 40px 30px;
+
+        @include respond(md) {
+            padding: 0 20px 25px;
+        }
+    }
+    .blog-card__meta {
+        margin-bottom: 20px;
+    }
+
+    .pagination {
+        margin-top: 50px;
+    }
 }
 
 .blog__standard-list {
@@ -40,6 +59,7 @@
 
         .blog-card__img-wrap {
             padding: 0;
+            border-radius: 0;
             margin-bottom: 40px;
 
             @include respond(xl) {

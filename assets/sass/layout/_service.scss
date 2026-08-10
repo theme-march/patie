@@ -1,6 +1,7 @@
 @use "../abstracts" as *;
 
 .service {
+  overflow: hidden;
 
   &__section-title {
     margin-bottom: 50px;
@@ -17,7 +18,7 @@
   &__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
+    gap: 30px;
 
     @include respond(xl) {
       grid-template-columns: repeat(3, 1fr);
@@ -56,6 +57,7 @@
 
 
   &__img {
+    width: 100%;
     max-width: 262px;
     position: relative;
     display: block;

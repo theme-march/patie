@@ -3960,6 +3960,9 @@ i[class*=fa] {
 | 2. Typography
 
  ................................................................*/
+.service {
+  overflow: hidden;
+}
 .service__section-title {
   margin-bottom: 50px;
 }
@@ -3976,7 +3979,7 @@ i[class*=fa] {
 .service__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  gap: 30px;
 }
 @media (max-width: 1200px) {
   .service__grid {
@@ -4016,6 +4019,7 @@ i[class*=fa] {
   width: 100%;
 }
 .service-card__img {
+  width: 100%;
   max-width: 262px;
   position: relative;
   display: block;

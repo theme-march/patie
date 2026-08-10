@@ -208,6 +208,8 @@
   &__icon-title {
     font-size: 18px;
     color: var(--heading-color);
+    line-height: 24px;
+    max-width: 170px;
 
     @include respond(md) {
       font-size: 15px;
@@ -242,7 +244,7 @@
     padding: 30px;
     flex: 1 1 0%;
     width: 100%;
-    max-width: 340px;
+    max-width: 335px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -289,10 +291,11 @@
 
   &__dark-title {
     font-size: 18px;
+    text-transform: none;
     color: var(--white-color);
 
     font-family: var(--body-font-family);
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 20px;
 
     @include respond(md) {

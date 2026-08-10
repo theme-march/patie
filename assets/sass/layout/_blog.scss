@@ -53,6 +53,20 @@
       gap: 30px;
     }
   }
+
+  &--homepage {
+    @include respond(md) {
+      .blog-card--sm {
+        .blog-card__img-wrap {
+          width: auto;
+          max-width: none;
+          height: 250px;
+          max-height: 250px;
+          flex-shrink: 0;
+        }
+      }
+    }
+  }
 }
 
 .blog-card {
@@ -81,7 +95,7 @@
       }
 
       @include respond(md) {
-        min-height: 250px;
+        max-height: 250px;
         height: 250px;
       }
     }
@@ -150,7 +164,10 @@
 
       @include respond(md) {
         width: auto;
+        max-width: none;
+        height: 250px;
         max-height: 250px;
+        flex-shrink: 0;
       }
     }
 

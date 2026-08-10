@@ -33,6 +33,10 @@
   &__title-wrapper {
     position: relative;
     display: inline-block;
+
+    @include respond(lg) {
+      margin-bottom: 20px;
+    }
   }
 
   &__title {
@@ -46,6 +50,7 @@
 
     @include respond(xxl) {
       font-size: 120px;
+      line-height: 120px;
     }
 
     @include respond(xl) {
@@ -54,15 +59,17 @@
 
     @include respond(lg) {
       font-size: 85px;
+      line-height: 70px;
     }
 
     @include respond(md) {
       font-size: 64px;
-      margin-bottom: 20px;
+      line-height: 70px;
     }
 
     @include respond(sm) {
       font-size: 50px;
+      line-height: 55px;
     }
   }
 
@@ -148,7 +155,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
-      gap: 50px;
+      gap: 30px;
     }
 
     @include respond(sm) {
@@ -164,7 +171,7 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     @include respond(sm) {
@@ -182,12 +189,12 @@
 
     @include respond(lg) {
       order: unset;
-      max-width: 535px;
+      max-width: 375px;
+      bottom: -15px;
     }
 
-    @include respond(sm) {
-      order: unset;
-      max-width: 365px;
+    @include respond(md) {
+      bottom: 0;
     }
   }
 
@@ -224,6 +231,8 @@
 
     @include respond(xxl) {
       max-width: 370px;
+      padding: 40px 20px 20px 20px;
+      bottom: 30px;
     }
 
     @include respond(xl) {
@@ -233,6 +242,7 @@
     @include respond(lg) {
       max-width: 100%;
       order: unset;
+      bottom: 0;
       padding: 20px;
     }
 
@@ -308,17 +318,20 @@
     order: 3;
 
     @include respond(xxl) {
-      max-width: 400px;
-      padding: 25px 20px 20px 55px;
+      max-width: 380px;
+      bottom: 30px;
+      padding: 25px 20px 30px 55px;
     }
 
     @include respond(xl) {
       max-width: 365px;
+      padding: 25px 10px 10px 40px;
     }
 
     @include respond(lg) {
       max-width: 100%;
-      padding: 35px 45px;
+      padding: 25px 45px 15px;
+      bottom: 0;
       order: unset;
     }
 
@@ -331,14 +344,11 @@
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: fill;
     z-index: -1;
     pointer-events: none;
-
-    @include respond(lg) {
-      width: 100%;
-      height: 175px;
-    }
   }
 
 
@@ -393,6 +403,7 @@
         }
       }
     }
+
     @include respond(xl) {
       display: none;
     }
@@ -413,7 +424,7 @@
     border: 1px solid var(--secondary-color);
     margin-left: -15px;
 
-    @include respond(xl) {
+    @include respond(xxl) {
       width: 45px;
       height: 45px;
     }

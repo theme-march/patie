@@ -66,7 +66,6 @@
 .pet-grooming-card {
   position: relative;
   width: 100%;
-  padding: 50px 30px 45px 45px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,17 +73,25 @@
   transition: all 0.3s ease;
   z-index: 1;
 
-  @include respond(xxl) {
-    padding: 35px 25px 35px 35px;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    padding: 0 30px 45px 45px;
+
+    @include respond(xxl) {
+      padding: 0 30px 35px 40px;
+    }
+    @include respond(xl) {
+      padding: 0 20px 40px 30px;
+    }
+    @include respond(lg) {
+      padding: 0 60px 40px 60px;
+    }
   }
 
-  @include respond(xl) {
-    padding: 30px 30px 20px 40px;
-  }
-
-  @include respond(lg) {
-    padding: 35px 25px 25px 35px;
-  }
 
 
 
@@ -104,18 +111,26 @@
   }
 
   &__img-wrap {
+    width: 100%;
     margin-bottom: 20px;
+    padding: 50px 30px 0 45px;
     overflow: hidden;
     position: relative;
     left: 15px;
 
     @include respond(xxl) {
       margin-bottom: 15px;
+      padding: 35px 30px 0 40px;
       left: 12px;
     }
 
     @include respond(xl) {
       margin-bottom: 14px;
+      padding: 35px 20px 0 30px;
+    }
+
+    @include respond(lg) {
+      padding: 45px 35px 0 55px;
     }
   }
 
@@ -127,6 +142,9 @@
 
     @include respond(xl) {
       width: 85%;
+    }
+    @include respond(lg) {
+      width: 100%;
     }
   }
 
@@ -171,16 +189,15 @@
     }
 
     @include respond(xl) {
-      font-size: 13px;
-      line-height: 1.7;
-      max-width: 180px;
+      max-width: 210px;
       margin-bottom: 14px;
     }
 
     @include respond(lg) {
-      font-size: 14px;
-      line-height: 1.4;
-      margin-bottom: 15px;
+      max-width: 210px;
+    }
+    @include respond(md) {
+      max-width: none;
     }
   }
 

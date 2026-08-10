@@ -129,9 +129,7 @@
       @include respond(md) {
         line-height: 48px;
       }
-
     }
-
   }
 
   &__stats {
@@ -139,13 +137,13 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 35px;
     margin-top: 50px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 
     @include respond(md) {
       grid-template-columns: repeat(2, 1fr);
       gap: 30px;
       margin-top: 30px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
   }
 
@@ -186,7 +184,7 @@
   }
 
   &__description {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 
   &__bottom-flex {

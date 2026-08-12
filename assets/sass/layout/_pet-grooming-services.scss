@@ -12,6 +12,10 @@
     height: 100%;
     object-fit: fill;
     z-index: -1;
+
+    @include respond(xl) {
+      object-fit: cover;
+    }
   }
 
   &__top {

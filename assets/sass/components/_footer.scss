@@ -481,6 +481,10 @@
     height: 100%;
     object-fit: fill;
     z-index: 1;
+
+    @include respond(xl) {
+      object-fit: cover;
+    }
   }
 
   &__container {
@@ -796,6 +800,7 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 30px;
     }
+
     @include respond(md) {
       margin-bottom: 40px;
     }
@@ -968,7 +973,7 @@
       border-color: var(--primary-color);
     }
 
-    &:checked + .footer-v3__checkbox-icon {
+    &:checked+.footer-v3__checkbox-icon {
       opacity: 1;
     }
   }

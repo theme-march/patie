@@ -4223,6 +4223,11 @@ i[class*=fa] {
   object-fit: fill;
   z-index: -1;
 }
+@media (max-width: 1200px) {
+  .pet-grooming-service__bg {
+    object-fit: cover;
+  }
+}
 .pet-grooming-service__top {
   display: flex;
   justify-content: space-between;
@@ -4755,7 +4760,7 @@ i[class*=fa] {
 }
 @media (max-width: 992px) {
   .testimonial__card {
-    padding: 40px 60px 0;
+    padding: 40px 45px 0;
   }
 }
 .testimonial__rating {
@@ -5869,13 +5874,12 @@ i[class*=fa] {
 @media (max-width: 992px) {
   .grooming-pricing__header {
     margin-bottom: 40px;
-  }
-}
-@media (max-width: 768px) {
-  .grooming-pricing__header {
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+  .grooming-pricing__header .section-header {
+    justify-content: center;
   }
 }
 .grooming-pricing__toggle {
@@ -7526,6 +7530,11 @@ i[class*=fa] {
   height: 100%;
   object-fit: fill;
   z-index: 1;
+}
+@media (max-width: 1200px) {
+  .footer-v2 .footer__bg {
+    object-fit: cover;
+  }
 }
 .footer-v2__container {
   position: relative;
@@ -10029,7 +10038,6 @@ i[class*=fa] {
 }
 @media (max-width: 576px) {
   .grooming-blog-card {
-    width: 300px;
     margin: 0 auto;
   }
 }
@@ -10053,12 +10061,17 @@ i[class*=fa] {
 }
 @media (max-width: 1400px) {
   .grooming-blog-card__img-wrap {
-    margin: 20px 25px 0;
+    margin: 25px 25px 0;
   }
 }
 @media (max-width: 768px) {
   .grooming-blog-card__img-wrap {
-    margin: 20px 20px 0;
+    margin: 30px 37px 0;
+  }
+}
+@media (max-width: 576px) {
+  .grooming-blog-card__img-wrap {
+    margin: 28px 28px 0;
   }
 }
 .grooming-blog-card__img {
@@ -10145,6 +10158,17 @@ i[class*=fa] {
   .grooming-blog-card__meta {
     margin: 10px 0;
     font-size: 12px;
+    gap: 10px;
+  }
+}
+@media (max-width: 1200px) {
+  .grooming-blog-card__meta {
+    gap: 10px;
+  }
+}
+@media (max-width: 992px) {
+  .grooming-blog-card__meta {
+    gap: 20px;
   }
 }
 .grooming-blog-card__meta-item {
@@ -10168,13 +10192,19 @@ i[class*=fa] {
 @media (max-width: 1400px) {
   .grooming-blog-card__title {
     font-size: 26px;
+    line-height: 34px;
     margin: 5px 0 15px;
   }
 }
 @media (max-width: 1200px) {
   .grooming-blog-card__title {
-    font-size: 22px;
+    font-size: 24px;
     margin: 5px 0 15px;
+  }
+}
+@media (max-width: 992px) {
+  .grooming-blog-card__title {
+    line-height: 30px;
   }
 }
 .grooming-blog-card:hover .grooming-blog-card__img {

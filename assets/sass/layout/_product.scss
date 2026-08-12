@@ -123,7 +123,7 @@
     z-index: 3;
 
     @include respond(md) {
-      display: none;
+      font-size: 60px;
     }
   }
 

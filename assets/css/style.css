@@ -6464,7 +6464,7 @@ i[class*=fa] {
 }
 @media (max-width: 768px) {
   .product-card__overlay {
-    display: none;
+    font-size: 60px;
   }
 }
 .product-card__blur-overlay {

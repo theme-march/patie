@@ -4957,6 +4957,36 @@ i[class*=fa] {
   align-items: center;
   z-index: 12;
 }
+@media (max-width: 1400px) {
+  .team-card__social {
+    bottom: 25px;
+    left: 15px;
+  }
+}
+@media (max-width: 1200px) {
+  .team-card__social {
+    bottom: 35px;
+    left: 20px;
+  }
+}
+@media (max-width: 992px) {
+  .team-card__social {
+    bottom: 43px;
+    left: 25px;
+  }
+}
+@media (max-width: 768px) {
+  .team-card__social {
+    bottom: 27px;
+    left: 15px;
+  }
+}
+@media (max-width: 576px) {
+  .team-card__social {
+    bottom: 50px;
+    left: 25px;
+  }
+}
 .team-card__social-trigger {
   width: 50px;
   height: 50px;
@@ -4968,15 +4998,20 @@ i[class*=fa] {
   position: relative;
   z-index: 1;
 }
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .team-card__social-trigger {
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
   }
 }
 .team-card__social-icon {
   position: relative;
   z-index: 2;
+}
+@media (max-width: 1400px) {
+  .team-card__social-icon {
+    font-size: 14px;
+  }
 }
 @media (max-width: 992px) {
   .team-card__social-icon {
@@ -5007,12 +5042,21 @@ i[class*=fa] {
   height: 45px;
   transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
+@media (max-width: 1400px) {
+  .team-card__social-links {
+    margin-left: -48px;
+  }
+}
 @media (max-width: 992px) {
   .team-card__social-links {
-    height: 35px;
     position: relative;
     margin-left: -30px;
     gap: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .team-card__social-links {
+    height: 38px;
   }
 }
 .team-card__social-links-link {
@@ -5027,13 +5071,17 @@ i[class*=fa] {
 }
 .team-card__img-wrap {
   position: relative;
-  max-width: min(250px, 100% - 60px);
-  margin: -60px auto -100px;
-  z-index: 10;
   width: 100%;
+  max-width: calc(100% - 60px);
+  margin: -60px auto -110px;
+  z-index: 10;
+}
+@media (max-width: 1400px) {
+  .team-card__img-wrap {
+    margin: -60px auto -90px;
+  }
 }
 .team-card__img {
-  max-width: 100%;
   width: 100%;
   height: auto;
   display: block;
@@ -5045,14 +5093,23 @@ i[class*=fa] {
   border-radius: 20px;
   position: relative;
   z-index: 1;
-  padding-top: 80px;
+  padding-top: 85px;
   width: 100%;
-  max-width: 308px;
   margin: 0 auto;
+}
+@media (max-width: 1400px) {
+  .team-card__content {
+    padding-top: 65px;
+  }
 }
 @media (max-width: 992px) {
   .team-card__content {
-    padding-top: 100px;
+    padding-top: 90px;
+  }
+}
+@media (max-width: 768px) {
+  .team-card__content {
+    padding-top: 85px;
   }
 }
 .team-card--purple .team-card__content {

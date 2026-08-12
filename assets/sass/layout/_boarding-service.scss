@@ -20,6 +20,7 @@
   &__header-left {
     max-width: 712px;
   }
+
   &__header-right {
     margin-bottom: 15px;
   }
@@ -49,8 +50,23 @@
 
   &__img-wrap {
     position: relative;
-    max-width: 100%;
+    width: 100%;
     margin-bottom: 60px;
+
+    @include respond(xl) {
+      margin-bottom: 45px;
+    }
+    @include respond(lg) {
+      margin-bottom: 80px;
+      max-width: 85%;
+    }
+    @include respond(md) {
+      margin-bottom: 80px;
+      max-width: 80%;
+    }
+    @include respond(sm) {
+      margin-bottom: 60px;
+    }
   }
 
   &__bg-svg {
@@ -64,11 +80,11 @@
 
   &__img {
     position: relative;
-    max-width: 100%;
+    width: 100%;
     top: 9%;
     left: 3%;
     z-index: 2;
-    width: 93%;
+    max-width: 93%;
     height: auto;
     transition: all 0.4s ease;
   }
@@ -85,8 +101,15 @@
       font-size: 26px;
       margin-bottom: 15px;
     }
+
     @include respond(xl) {
       font-size: 24px;
+    }
+    @include respond(lg) {
+      font-size: 26px;
+    }
+    @include respond(md) {
+      margin-bottom: 10px;
     }
   }
 
@@ -102,6 +125,7 @@
 
   &__desc {
     margin-bottom: 20px;
+    padding: 0 30px;
   }
 
 

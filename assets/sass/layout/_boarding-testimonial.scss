@@ -222,6 +222,7 @@
       width: 40px;
       height: 40px;
     }
+
     @include respond(md) {
       width: 30px;
       height: 30px;
@@ -235,6 +236,10 @@
 
   &__nav-icon {
     font-size: 20px;
+
+    @include respond(xl) {
+      font-size: 14px;
+    }
   }
 
   &__stats-wrap {
@@ -255,6 +260,7 @@
 
   &__stats-bg {
     position: absolute;
+    object-fit: cover;
     top: 0;
     left: 0;
     width: 100%;

@@ -96,16 +96,16 @@
     bottom: 40px;
     width: calc(100% - 80px);
     height: calc(100% - 70px);
-    object-fit: cover;
+    object-fit: none;
     border-radius: 20px;
     z-index: 2;
 
     @include respond(xl) {
       left: 20px;
       right: 20px;
-      bottom: 20px;
+      top: 20px;
       width: calc(100% - 40px);
-      height: calc(100% - 40px);
+      height: calc(100% - 45px);
     }
 
     @include respond(md) {
@@ -143,6 +143,7 @@
     @include respond(lg) {
       height: 100%;
       flex-direction: column;
+      gap: 30px;
     }
   }
 
@@ -186,21 +187,22 @@
 
     @include respond(xxl) {
       font-size: 64px;
+      line-height: 70px;
     }
 
     @include respond(xl) {
-      max-width: 570px;
       font-size: 56px;
+      line-height: 60px;
+    }
+
+    @include respond(lg) {
+      margin-bottom: 15px;
     }
 
     @include respond(md) {
       max-width: 450px;
       font-size: 44px;
-    }
-
-    @include respond(sm) {
-      max-width: 350px;
-      font-size: 34px;
+      line-height: 50px;
     }
 
     &-highlight {
@@ -248,7 +250,7 @@
     @include respond(lg) {
       width: 50%;
       align-self: center;
-      right: 0;
+      bottom: 5px;
     }
 
     @include respond(md) {
@@ -265,22 +267,6 @@
     display: block;
     margin: 0 auto;
 
-    @include respond(xxxxl) {
-      bottom: -11px;
-    }
-
-    @include respond(xxxl) {
-      max-width: 100%;
-      bottom: 14px;
-    }
-
-    @include respond(xxl) {
-      bottom: 6px;
-    }
-
-    @include respond(xl) {
-      bottom: -25px;
-    }
   }
 
   &__line {

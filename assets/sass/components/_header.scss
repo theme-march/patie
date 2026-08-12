@@ -285,7 +285,7 @@
         border: none;
         transition: transform 0.3s ease;
 
-        @include respond(md) {
+        @include respond(xl) {
             display: none;
         }
 
@@ -474,11 +474,13 @@
     z-index: 1001;
 
     @include respond(xxxxl) {
-        top: 40px;
+        top: 30px;
     }
+
     @include respond(xxxl) {
-        top: 16px;
+        top: 28px;
     }
+
     @include respond(xl) {
         display: none;
     }
@@ -493,11 +495,9 @@
         margin: 0 auto;
 
         @include respond(xxxxl) {
-            width: calc(100% - 75px);
+            width: calc(100% - 80px);
         }
-        @include respond(xxxl) {
-            width: calc(100% - 120px);
-        }
+
         @include respond(xl) {
             width: calc(100% - 40px);
         }
@@ -511,6 +511,10 @@
         color: var(--heading-color);
         font-family: var(--body-font-family);
         font-weight: 500;
+
+        @include respond(xxxxl) {
+            padding-left: 20px;
+        }
 
         @include respond(xxl) {
             font-size: 12px;
@@ -538,10 +542,12 @@
         @include respond(xxxxl) {
             gap: 50px;
         }
+
         @include respond(xxxl) {
             padding: 9px 16px;
             gap: 30px
         }
+
         @include respond(xl) {
             gap: 30px;
         }
@@ -555,9 +561,11 @@
         @include respond(xxxxl) {
             gap: 20px;
         }
+
         @include respond(xxl) {
             gap: 10px;
         }
+
         @include respond(xl) {
             gap: 15px;
         }
@@ -570,6 +578,7 @@
         @include respond(xxxxl) {
             font-size: 14px;
         }
+
         @include respond(xxl) {
             font-size: 12px;
         }
@@ -587,6 +596,7 @@
             font-size: 12px;
             gap: 15px;
         }
+
         @include respond(xl) {
             gap: 15px;
         }
@@ -613,6 +623,7 @@
     @include respond(xxxxl) {
         top: 90px;
     }
+
     @include respond(xxxl) {
         top: 70px;
     }
@@ -620,8 +631,9 @@
     @include respond(xxl) {
         top: 50px;
     }
+
     @include respond(xl) {
-        top: 10px;
+        top: 20px;
     }
 
     .site-header__container {
@@ -630,6 +642,7 @@
         @include respond(xxxxl) {
             max-width: 1400px;
         }
+
         @include respond(xxl) {
             max-width: 1300px;
         }
@@ -649,7 +662,7 @@
     }
 
     @include respond(lg) {
-        top: 0;
+        top: 10px;
     }
 }
 

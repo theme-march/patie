@@ -84,11 +84,13 @@
     @include respond(xxl) {
       padding: 0 30px 35px 40px;
     }
+
     @include respond(xl) {
       padding: 0 20px 40px 30px;
     }
+
     @include respond(lg) {
-      padding: 0 60px 40px 60px;
+      padding: 0 70px 40px 80px;
     }
   }
 
@@ -104,6 +106,10 @@
     object-fit: fill;
     z-index: -1;
     pointer-events: none;
+
+    @include respond(md) {
+      padding: 0 20px;
+    }
   }
 
   &__bg-path {
@@ -130,7 +136,7 @@
     }
 
     @include respond(lg) {
-      padding: 45px 40px 0 60px;
+      padding: 45px 50px 0 70px;
     }
   }
 
@@ -143,6 +149,7 @@
     @include respond(xl) {
       width: 85%;
     }
+
     @include respond(lg) {
       width: 100%;
     }
@@ -196,6 +203,7 @@
     @include respond(lg) {
       max-width: 210px;
     }
+
     @include respond(md) {
       max-width: none;
     }

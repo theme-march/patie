@@ -4316,7 +4316,7 @@ i[class*=fa] {
 }
 @media (max-width: 992px) {
   .pet-grooming-card__content {
-    padding: 0 60px 40px 60px;
+    padding: 0 70px 40px 80px;
   }
 }
 .pet-grooming-card__bg-svg {
@@ -4329,6 +4329,11 @@ i[class*=fa] {
      object-fit: fill;
   z-index: -1;
   pointer-events: none;
+}
+@media (max-width: 768px) {
+  .pet-grooming-card__bg-svg {
+    padding: 0 20px;
+  }
 }
 .pet-grooming-card__bg-path {
   fill: currentColor;
@@ -4356,7 +4361,7 @@ i[class*=fa] {
 }
 @media (max-width: 992px) {
   .pet-grooming-card__img-wrap {
-    padding: 45px 40px 0 60px;
+    padding: 45px 50px 0 70px;
   }
 }
 .pet-grooming-card__img {

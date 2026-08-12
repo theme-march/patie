@@ -4967,8 +4967,6 @@ i[class*=fa] {
   .team-card__social-trigger {
     width: 40px;
     height: 40px;
-    top: 10px;
-    left: 10px;
   }
 }
 .team-card__social-icon {
@@ -5009,8 +5007,7 @@ i[class*=fa] {
   .team-card__social-links {
     height: 35px;
     position: relative;
-    top: 10px;
-    margin-left: -35px;
+    margin-left: -30px;
     gap: 10px;
   }
 }
@@ -5155,8 +5152,8 @@ i[class*=fa] {
 }
 @media (max-width: 992px) {
   .team-card:hover .team-card__social-links {
-    width: 145px;
-    padding: 0 12px 0 42px;
+    width: 160px;
+    padding: 2px 12px 0 42px;
   }
 }
 .team-card:hover.team-card--purple .team-card__social-links {

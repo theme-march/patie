@@ -85,8 +85,6 @@
       @include respond(lg) {
         width: 40px;
         height: 40px;
-        top: 10px;
-        left: 10px;
       }
     }
 
@@ -127,8 +125,7 @@
       @include respond(lg) {
         height: 35px;
         position: relative;
-        top: 10px;
-        margin-left: -35px;
+        margin-left: -30px;
         gap: 10px;
       }
 
@@ -302,7 +299,6 @@
     transition: transform 0.3s ease;
   }
 
-  // Hover Effects
   &:hover {
     .team-card__img {
       transform: translateY(-5px);
@@ -315,12 +311,11 @@
       padding: 0 20px 0 60px;
 
       @include respond(lg) {
-        width: 145px;
-        padding: 0 12px 0 42px;
+        width: 160px;
+        padding: 2px 12px 0 42px;
       }
     }
 
-    // Dynamic color shifts on hover based on modifier
     &.team-card--purple {
       .team-card__social-links {
         border: 2px dashed var(--primary-color);

@@ -107,31 +107,6 @@
     .blog-card__date {
       top: 0;
       left: 0;
-
-      @include respond(xxl) {
-        top: 65px;
-        left: 30px;
-      }
-
-      @include respond(xl) {
-        top: 30px;
-        left: 30px;
-      }
-
-      @include respond(lg) {
-        top: 30px;
-        left: 30px;
-      }
-
-      @include respond(md) {
-        top: 10px;
-        left: 10px;
-      }
-
-      @include respond(sm) {
-        top: 15px;
-        left: 10px;
-      }
     }
   }
 
@@ -190,11 +165,6 @@
     .blog-card__date {
       top: 0;
       left: 0;
-
-      @include respond(md) {
-        top: 15px;
-        left: 10px;
-      }
     }
   }
 

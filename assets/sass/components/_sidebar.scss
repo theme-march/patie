@@ -14,7 +14,7 @@
 
     &__widget {
         border-radius: 20px;
-        padding: 40px;
+        padding: 30px;
 
         @include respond(xxxxl) {
             padding: 35px;
@@ -256,7 +256,7 @@
             flex-direction: column;
             gap: 15px;
 
-            @include respond(lg) {
+            @include respond(xl) {
                 gap: 10px;
             }
         }
@@ -266,7 +266,7 @@
             align-items: center;
             gap: 10px;
 
-            @include respond(lg) {
+            @include respond(xl) {
                 font-size: 14px;
             }
 
@@ -378,11 +378,8 @@
 
 
     &__filter {
-        margin-bottom: 40px;
+        margin-bottom: 30px;
 
-        @include respond(lg) {
-            margin-bottom: 30px;
-        }
 
         &-range {
             display: flex;
@@ -449,11 +446,10 @@
             display: flex;
             align-items: center;
             gap: 20px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
 
             @include respond(lg) {
                 gap: 15px;
-                margin-bottom: 20px;
             }
         }
 
@@ -525,11 +521,7 @@
     }
 
     &__category {
-        margin-bottom: 40px;
-
-        @include respond(lg) {
-            margin-bottom: 30px;
-        }
+        margin-bottom: 30px;
 
         &-list {
             display: flex;
@@ -630,8 +622,8 @@
         }
 
         &-img-wrap {
-            width: 66px;
-            height: 74px;
+            width: 100%;
+            max-width: 30%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -640,16 +632,23 @@
             flex-shrink: 0;
             padding: 7px;
 
+            @include respond(xxl) {
+                max-width: 35%;
+            }
+            @include respond(xl) {
+                max-width: 40%;
+            }
             @include respond(lg) {
-                width: 54px;
-                height: 60px;
-                padding: 5px;
+                max-width: 18%;
+            }
+            @include respond(sm) {
+                max-width: 20%;
             }
         }
 
         &-img-box {
             width: 100%;
-            height: 100%;
+            padding: 8px;
             background-color: var(--primary-color);
             display: flex;
             justify-content: center;
@@ -658,14 +657,10 @@
         }
 
         &-img {
-            max-width: 40px;
-            max-height: 50px;
+            width: 100%;
             object-fit: contain;
 
-            @include respond(lg) {
-                max-width: 30px;
-                max-height: 38px;
-            }
+            
         }
 
         &-info {
@@ -675,8 +670,9 @@
         }
 
         &-title {
-            font-size: 20px;
+            font-size: 16px;
             font-weight: 400;
+            text-transform: none;
             color: var(--primary-color);
 
             @include respond(lg) {

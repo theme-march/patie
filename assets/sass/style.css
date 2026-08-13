@@ -1554,7 +1554,7 @@ i[class*=fa] {
 }
 @media (max-width: 992px) {
   .pagination {
-    margin-top: 50px;
+    margin-top: 40px;
   }
 }
 @media (max-width: 768px) {
@@ -1780,6 +1780,7 @@ i[class*=fa] {
 @media (max-width: 992px) {
   .sidebar {
     position: static;
+    margin-top: 30px;
   }
 }
 .sidebar__widget {
@@ -2429,7 +2430,7 @@ i[class*=fa] {
   gap: 2px;
 }
 .sidebar__product-title {
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 400;
   color: var(--primary-color);
 }
@@ -2453,22 +2454,6 @@ i[class*=fa] {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-}
-@media (max-width: 1600px) {
-  .sidebar__instagram {
-    gap: 15px;
-  }
-}
-@media (max-width: 992px) {
-  .sidebar__instagram {
-    gap: 12px;
-  }
-}
-@media (max-width: 576px) {
-  .sidebar__instagram {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-  }
 }
 .sidebar__instagram-img {
   width: 100%;
@@ -6590,7 +6575,6 @@ i[class*=fa] {
 }
 @media (max-width: 576px) {
   .product-card__img-wrap {
-    max-width: 315px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -6610,7 +6594,8 @@ i[class*=fa] {
   transform: translate(-50%, -50%) scale(1);
 }
 .product-card__img {
-  max-width: 100%;
+  width: 100%;
+  max-width: 60%;
 }
 .product-card__overlay {
   position: absolute;
@@ -7103,6 +7088,16 @@ i[class*=fa] {
 .blog__standard-container .pagination {
   margin-top: 50px;
 }
+@media (max-width: 992px) {
+  .blog__standard-container .pagination {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .blog__standard-container .pagination {
+    margin-top: 10px;
+  }
+}
 
 .blog__standard-list {
   display: flex;
@@ -7131,11 +7126,6 @@ i[class*=fa] {
 @media (max-width: 1200px) {
   .blog__standard-list .blog-card--lg .blog-card__img-wrap {
     margin-bottom: 20px;
-  }
-}
-@media (max-width: 768px) {
-  .blog__standard-list .blog-card--lg .blog-card__img-wrap {
-    margin-bottom: 0px;
   }
 }
 .blog__standard-list .blog-card--lg .blog-card__img {
@@ -12769,7 +12759,6 @@ i[class*=fa] {
 }
 .team-details__img {
   width: 100%;
-  max-width: 100%;
   border-radius: 10px;
 }
 .team-details__wrapper {
@@ -12777,30 +12766,30 @@ i[class*=fa] {
   align-items: flex-start;
   gap: 60px;
 }
+@media (max-width: 1200px) {
+  .team-details__wrapper {
+    gap: 30px;
+  }
+}
 @media (max-width: 992px) {
   .team-details__wrapper {
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 0;
   }
 }
 .team-details__img-col {
-  width: 52%;
+  width: 100%;
+  max-width: 50%;
 }
 @media (max-width: 1600px) {
   .team-details__img-col {
-    width: 48%;
-  }
-}
-@media (max-width: 1400px) {
-  .team-details__img-col {
-    width: 45%;
+    max-width: 45%;
   }
 }
 @media (max-width: 992px) {
   .team-details__img-col {
-    width: 100%;
-    max-width: 450px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -12812,6 +12801,7 @@ i[class*=fa] {
 @media (max-width: 992px) {
   .team-details__content-col {
     width: 100%;
+    margin-top: 0;
   }
 }
 @media (max-width: 992px) {
@@ -12896,6 +12886,11 @@ i[class*=fa] {
   flex-wrap: wrap;
   gap: 90px;
   margin-bottom: 40px;
+}
+@media (max-width: 576px) {
+  .team-details__contact {
+    gap: 30px;
+  }
 }
 .team-details__contact-item {
   display: flex;
@@ -13148,16 +13143,19 @@ i[class*=fa] {
 @media (max-width: 1400px) {
   .blog-details__title {
     font-size: 56px;
+    line-height: 64px;
   }
 }
 @media (max-width: 1200px) {
   .blog-details__title {
     font-size: 48px;
+    line-height: 54px;
   }
 }
 @media (max-width: 992px) {
   .blog-details__title {
     font-size: 40px;
+    line-height: 44px;
     margin-bottom: 15px;
   }
 }
@@ -13188,6 +13186,12 @@ i[class*=fa] {
   margin-bottom: 40px;
 }
 @media (max-width: 1200px) {
+  .blog-details__list {
+    gap: 15px;
+    margin-top: 15px;
+  }
+}
+@media (max-width: 768px) {
   .blog-details__list {
     margin-bottom: 30px;
   }
@@ -14664,7 +14668,7 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
   }
 }
 .checkout-section__title--shipping {
-  margin-top: 25px;
+  margin-top: 30px;
   margin-bottom: -5px;
 }
 .checkout-section__title--order {

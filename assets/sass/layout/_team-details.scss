@@ -26,7 +26,6 @@
 
   &__img {
     width: 100%;
-    max-width: 100%;
     border-radius: 10px;
   }
 
@@ -35,27 +34,27 @@
     align-items: flex-start;
     gap: 60px;
 
+    @include respond(xl) {
+      gap: 30px;
+    }
+
     @include respond(lg) {
       flex-direction: column;
       align-items: center;
-      gap: 15px;
+      gap: 0;
     }
   }
 
   &__img-col {
-    width: 52%;
+    width: 100%;
+    max-width: 50%;
 
     @include respond(xxxl) {
-      width: 48%;
-    }
-
-    @include respond(xxl) {
-      width: 45%;
+      max-width: 45%;
     }
 
     @include respond(lg) {
-      width: 100%;
-      max-width: 450px;
+      max-width: 100%;
       margin-left: auto;
       margin-right: auto;
     }
@@ -67,6 +66,7 @@
 
     @include respond(lg) {
       width: 100%;
+      margin-top: 0;
     }
   }
 
@@ -152,6 +152,10 @@
     flex-wrap: wrap;
     gap: 90px;
     margin-bottom: 40px;
+
+    @include respond(sm) {
+      gap: 30px;
+    }
 
     &-item {
       display: flex;

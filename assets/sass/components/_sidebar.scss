@@ -9,6 +9,7 @@
 
     @include respond(lg) {
         position: static;
+        margin-top: 30px;
     }
 
     &__widget {
@@ -153,7 +154,6 @@
         }
     }
 
-    // Search Widget
     &__search {
         &-form {
             display: flex;
@@ -675,7 +675,7 @@
         }
 
         &-title {
-            font-size: 15px;
+            font-size: 20px;
             font-weight: 400;
             color: var(--primary-color);
 
@@ -700,19 +700,6 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-
-        @include respond(xxxl) {
-            gap: 15px;
-        }
-
-        @include respond(lg) {
-            gap: 12px;
-        }
-
-        @include respond(sm) {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-        }
 
         &-img {
             width: 100%;

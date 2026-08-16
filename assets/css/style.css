@@ -7444,6 +7444,12 @@ i[class*=fa] {
   align-items: center;
   margin-bottom: 20px;
 }
+@media (max-width: 992px) {
+  .footer__contact-item {
+    gap: 15px;
+    margin-bottom: 10px;
+  }
+}
 .footer__contact-item:last-child {
   margin-bottom: 0;
 }

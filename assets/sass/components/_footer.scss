@@ -320,6 +320,11 @@
     align-items: center;
     margin-bottom: 20px;
 
+    @include respond(lg) {
+      gap: 15px;
+      margin-bottom: 10px;
+    }
+
     &:last-child {
       margin-bottom: 0;
     }

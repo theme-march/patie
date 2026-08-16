@@ -7449,8 +7449,7 @@ i[class*=fa] {
 }
 .footer__contact-icon {
   color: var(--secondary-color);
-  width: 30px;
-  height: 30px;
+  padding: 8px;
   background: color-mix(in srgb, var(--white-color), transparent 90%);
   border-radius: 5px;
   display: flex;
@@ -7461,8 +7460,8 @@ i[class*=fa] {
   color: var(--white-color);
   font-family: var(--body-font-family);
   font-weight: 600;
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 26px;
 }
 @media (max-width: 992px) {
   .footer__contact-text {
@@ -8134,7 +8133,7 @@ i[class*=fa] {
 .footer-v3__contact-text {
   color: var(--white-color);
   font-weight: 500;
-  line-height: 1.6;
+  line-height: 26px;
 }
 .footer-v3__bottom {
   background: var(--primary-color);

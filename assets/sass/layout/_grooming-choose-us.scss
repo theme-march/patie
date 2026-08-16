@@ -201,8 +201,8 @@
     @include respond(xxxl) {
       font-size: 26px;
     }
-    @include respond(xxxl) {
-      font-size: 24px;
+    @include respond(md) {
+      margin-bottom: 5px;
     }
   }
 

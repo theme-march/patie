@@ -69,6 +69,10 @@
     gap: 40px;
     margin-bottom: 40px;
 
+    @include respond(lg) {
+      gap: 30px;
+      margin-bottom: 30px;
+    }
     @include respond(sm) {
       flex-direction: column;
     }
@@ -148,6 +152,10 @@
     align-items: center;
     gap: 20px;
 
+    @include respond(lg) {
+      gap: 10px;
+    }
+
     &-img {
       width: 60px;
       height: 60px;
@@ -161,6 +169,9 @@
       display: flex;
       gap: 5px;
       flex-direction: column;
+      @include respond(lg) {
+      gap: 2px;
+    }
     }
 
     &-name {

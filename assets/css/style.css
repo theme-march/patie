@@ -4231,8 +4231,9 @@ i[class*=fa] {
   flex-wrap: wrap;
   gap: 30px;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .pet-grooming-service__top {
+    gap: 20px;
     margin-bottom: 30px;
   }
 }
@@ -4894,6 +4895,7 @@ i[class*=fa] {
 @media (max-width: 992px) {
   .team__header {
     margin-bottom: 30px;
+    gap: 20px;
   }
 }
 .team__header-right {
@@ -5694,9 +5696,10 @@ i[class*=fa] {
   flex-wrap: wrap;
   gap: 30px;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .pricing__header {
     margin-bottom: 40px;
+    gap: 20px;
   }
 }
 .pricing__header-left {
@@ -5969,18 +5972,14 @@ i[class*=fa] {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
   flex-wrap: wrap;
   gap: 30px;
 }
-@media (max-width: 1200px) {
-  .grooming-pricing__header {
-    margin-bottom: 50px;
-  }
-}
 @media (max-width: 992px) {
   .grooming-pricing__header {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    gap: 20px;
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -6098,9 +6097,9 @@ i[class*=fa] {
   color: var(--theme-color);
   font-size: 30px;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .grooming-pricing-card__title {
-    font-size: 24px;
+    font-size: 26px;
   }
 }
 .grooming-pricing-card__price-wrap {
@@ -6488,6 +6487,7 @@ i[class*=fa] {
 }
 @media (max-width: 992px) {
   .product__header {
+    gap: 20px;
     margin-bottom: 40px;
   }
 }
@@ -7635,13 +7635,13 @@ i[class*=fa] {
 @media (max-width: 992px) {
   .footer-v2__top {
     grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    gap: 30px;
   }
 }
 @media (max-width: 768px) {
   .footer-v2__top {
     grid-template-columns: 1fr;
-    gap: 40px;
     margin-bottom: 25px;
   }
 }
@@ -8814,6 +8814,12 @@ i[class*=fa] {
   gap: 40px;
   margin-bottom: 40px;
 }
+@media (max-width: 992px) {
+  .about-grooming__features-row {
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+}
 @media (max-width: 576px) {
   .about-grooming__features-row {
     flex-direction: column;
@@ -8888,6 +8894,11 @@ i[class*=fa] {
   align-items: center;
   gap: 20px;
 }
+@media (max-width: 992px) {
+  .about-grooming__author {
+    gap: 10px;
+  }
+}
 .about-grooming__author-img {
   width: 60px;
   height: 60px;
@@ -8900,6 +8911,11 @@ i[class*=fa] {
   display: flex;
   gap: 5px;
   flex-direction: column;
+}
+@media (max-width: 992px) {
+  .about-grooming__author-info {
+    gap: 2px;
+  }
 }
 .about-grooming__author-name {
   font-size: 18px;
@@ -9095,6 +9111,11 @@ i[class*=fa] {
 .parent-testimonial__name {
   font-size: 30px;
   margin-bottom: 15px;
+}
+@media (max-width: 768px) {
+  .parent-testimonial__name {
+    margin-bottom: 10px;
+  }
 }
 .parent-testimonial__designation {
   display: block;
@@ -9594,9 +9615,9 @@ i[class*=fa] {
     font-size: 26px;
   }
 }
-@media (max-width: 1600px) {
+@media (max-width: 768px) {
   .grooming-choose-us__feature-title {
-    font-size: 24px;
+    margin-bottom: 5px;
   }
 }
 .grooming-choose-us__feature-text {
@@ -9688,7 +9709,7 @@ i[class*=fa] {
 }
 @media (max-width: 992px) {
   .grooming-team__desc {
-    margin: 10px 0 25px;
+    margin: 20px 0 30px;
   }
 }
 @media (max-width: 1400px) {
@@ -9821,9 +9842,9 @@ i[class*=fa] {
   font-size: 30px;
   color: var(--white-color);
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .grooming-team__card-name {
-    font-size: clamp(16px, 5vw, 30px);
+    font-size: 26px;
   }
 }
 .grooming-team__card-role {
@@ -10936,7 +10957,7 @@ i[class*=fa] {
 @media (max-width: 1400px) {
   .boarding-about__deco-right {
     top: 18%;
-    right: 6%;
+    right: 2%;
     width: 200px;
   }
 }
@@ -10948,45 +10969,35 @@ i[class*=fa] {
 .boarding-about__main-title {
   font-size: 48px;
   line-height: 54px;
-  max-width: 1005px;
+  max-width: 903px;
   margin: 0 auto;
   text-transform: none;
 }
 @media (max-width: 1700px) {
   .boarding-about__main-title {
     font-size: 44px;
-    max-width: 950px;
   }
 }
 @media (max-width: 1600px) {
   .boarding-about__main-title {
     font-size: 40px;
-    max-width: 900px;
+    line-height: 44px;
   }
 }
 @media (max-width: 1400px) {
   .boarding-about__main-title {
     font-size: 36px;
-    max-width: 850px;
+    line-height: 40px;
   }
 }
 @media (max-width: 1200px) {
   .boarding-about__main-title {
     font-size: 32px;
-    max-width: 700px;
   }
 }
 @media (max-width: 992px) {
   .boarding-about__main-title {
-    font-size: 28px;
-    max-width: 600px;
-    line-height: 1.3;
-  }
-}
-@media (max-width: 768px) {
-  .boarding-about__main-title {
-    font-size: 24px;
-    line-height: 1.35;
+    line-height: 36px;
   }
 }
 .boarding-about__btn-wrap {
@@ -11002,7 +11013,7 @@ i[class*=fa] {
 }
 @media (max-width: 768px) {
   .boarding-about__btn-wrap {
-    margin-top: 30px;
+    margin-top: 25px;
     margin-bottom: 30px;
   }
 }
@@ -11091,11 +11102,6 @@ i[class*=fa] {
   line-height: 24px;
   max-width: 170px;
 }
-@media (max-width: 768px) {
-  .boarding-about__icon-title {
-    font-size: 15px;
-  }
-}
 .boarding-about__cards {
   display: flex;
   gap: 30px;
@@ -11142,16 +11148,21 @@ i[class*=fa] {
     padding: 20px;
   }
 }
+@media (max-width: 768px) {
+  .boarding-about__dark-card {
+    max-width: 50%;
+  }
+}
 @media (max-width: 576px) {
   .boarding-about__dark-card {
-    width: 100%;
+    max-width: 100%;
   }
 }
 .boarding-about__dark-avatars {
   display: flex;
   margin-bottom: 50px;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .boarding-about__dark-avatars {
     margin-bottom: 30px;
   }
@@ -11205,9 +11216,15 @@ i[class*=fa] {
 }
 .boarding-about__main-img-wrap {
   flex: 1 1 0%;
-  width: 50%;
+  width: 100%;
+  max-width: 50%;
   border-radius: 12px;
   overflow: hidden;
+}
+@media (max-width: 768px) {
+  .boarding-about__main-img-wrap {
+    flex: 1 1 4%;
+  }
 }
 @media (max-width: 576px) {
   .boarding-about__main-img-wrap {
@@ -11217,10 +11234,7 @@ i[class*=fa] {
 .boarding-about__main-img {
   width: 100%;
   height: 100%;
-  max-width: 100%;
-  max-height: 100%;
   object-fit: cover;
-  display: block;
 }
 .boarding-about__white-card {
   background-color: var(--white-color);
@@ -11237,15 +11251,8 @@ i[class*=fa] {
 }
 @media (max-width: 1700px) {
   .boarding-about__white-card {
-    width: 290px;
-    left: calc(100% - 274px);
+    left: calc(100% - 275px);
     padding: 20px;
-  }
-}
-@media (max-width: 1600px) {
-  .boarding-about__white-card {
-    width: 290px;
-    left: calc(100% - 280px);
   }
 }
 @media (max-width: 1400px) {
@@ -11263,17 +11270,16 @@ i[class*=fa] {
   font-size: 18px;
   font-weight: 700;
   color: var(--heading-color);
-  margin-bottom: 90px;
-  text-transform: uppercase;
+  margin-bottom: 95px;
 }
 @media (max-width: 1700px) {
   .boarding-about__white-title {
-    margin-bottom: 90px;
+    margin-bottom: 120px;
   }
 }
 @media (max-width: 1600px) {
   .boarding-about__white-title {
-    margin-bottom: 95px;
+    margin-bottom: 125px;
   }
 }
 @media (max-width: 1400px) {

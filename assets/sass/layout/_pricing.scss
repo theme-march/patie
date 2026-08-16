@@ -9,8 +9,9 @@
     flex-wrap: wrap;
     gap: 30px;
 
-    @include respond(md) {
+    @include respond(lg) {
       margin-bottom: 40px;
+      gap: 20px;
     }
   }
 

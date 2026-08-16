@@ -16,16 +16,14 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     flex-wrap: wrap;
     gap: 30px;
 
-    @include respond(xl) {
-      margin-bottom: 50px;
-    }
 
     @include respond(lg) {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
+      gap: 20px;
       flex-direction: column;
       align-items: center;
       text-align: center;
@@ -148,8 +146,8 @@
     color: var(--theme-color);
     font-size: 30px;
 
-    @include respond(md) {
-      font-size: 24px;
+    @include respond(lg) {
+      font-size: 26px;
     }
   }
 

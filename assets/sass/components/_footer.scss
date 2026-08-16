@@ -364,6 +364,9 @@
     @include respond(md) {
       padding: 20px 0;
     }
+    @include respond(sm) {
+      padding: 0;
+    }
   }
 
   &__big-text {

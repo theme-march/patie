@@ -7541,6 +7541,11 @@ i[class*=fa] {
     padding: 20px 0;
   }
 }
+@media (max-width: 576px) {
+  .footer__middle {
+    padding: 0;
+  }
+}
 .footer__big-text {
   font-size: clamp(72px, 6.7vw, 128px);
   line-height: 84px;

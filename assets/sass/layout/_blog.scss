@@ -102,6 +102,10 @@
 
     .blog-card__title {
       line-height: 40px;
+
+      @include respond(md) {
+        line-height: 30px;
+      }
     }
 
     .blog-card__date {
@@ -160,6 +164,10 @@
 
     .blog-card__title {
       line-height: 40px;
+
+      @include respond(md) {
+        line-height: 30px;
+      }
     }
 
     .blog-card__date {
@@ -171,7 +179,7 @@
   &__img-wrap {
     position: relative;
     overflow: hidden;
-    margin:  20px;
+    margin: 20px;
     display: flex;
     align-items: center;
     justify-content: center;

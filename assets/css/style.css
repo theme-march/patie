@@ -7463,11 +7463,6 @@ i[class*=fa] {
   font-size: 16px;
   line-height: 26px;
 }
-@media (max-width: 992px) {
-  .footer__contact-text {
-    font-size: 14px;
-  }
-}
 .footer__middle {
   padding: 60px 0;
   position: relative;

@@ -342,10 +342,6 @@
     font-size: 16px;
     line-height: 26px;
 
-    @include respond(lg) {
-      font-size: 14px;
-    }
-
   }
 
   &__middle {

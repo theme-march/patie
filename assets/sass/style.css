@@ -2559,7 +2559,7 @@ i[class*=fa] {
 }
 @media (max-width: 992px) {
   .site-header {
-    padding: 20px 35px;
+    padding: 20px 20px;
   }
 }
 .site-header__container {
@@ -2902,7 +2902,7 @@ i[class*=fa] {
     margin: 0;
     border-radius: 0;
     transform: none;
-    padding: 20px 35px;
+    padding: 20px 20px;
     background-color: var(--primary-color);
   }
 }
@@ -2923,7 +2923,7 @@ i[class*=fa] {
 }
 @media (max-width: 992px) {
   .site-header.ak-gescout_sticky {
-    padding: 20px 35px;
+    padding: 20px 20px;
   }
 }
 .site-header.ak-gescout_sticky.ak-gescout_show {
@@ -2968,7 +2968,7 @@ i[class*=fa] {
     left: 0;
     width: 100%;
     max-width: 100%;
-    padding: 20px 35px;
+    padding: 20px 20px;
     border-radius: 0;
     background-color: var(--primary-color);
     top: 0;
@@ -3227,7 +3227,7 @@ i[class*=fa] {
 @media (max-width: 992px) {
   .site-header.boarding-header.ak-gescout_sticky {
     background-color: transparent !important;
-    padding: 20px 35px;
+    padding: 20px 20px;
   }
   .site-header.boarding-header.ak-gescout_sticky .site-header__menu-link {
     color: var(--black-color);

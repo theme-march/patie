@@ -57,10 +57,12 @@
 
     @include respond(xxl) {
       font-size: 56px;
+      line-height: 58px;
     }
 
     @include respond(xl) {
       font-size: 48px;
+      line-height: 50px;
     }
 
     @include respond(lg) {
@@ -70,6 +72,9 @@
 
     @include respond(md) {
       font-size: 40px;
+    }
+    @include respond(md) {
+      line-height: 42px;
     }
 
     &--light {

@@ -1448,11 +1448,13 @@ i[class*=fa] {
 @media (max-width: 1400px) {
   .section-header__title {
     font-size: 56px;
+    line-height: 58px;
   }
 }
 @media (max-width: 1200px) {
   .section-header__title {
     font-size: 48px;
+    line-height: 50px;
   }
 }
 @media (max-width: 992px) {
@@ -1464,6 +1466,11 @@ i[class*=fa] {
 @media (max-width: 768px) {
   .section-header__title {
     font-size: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .section-header__title {
+    line-height: 42px;
   }
 }
 .section-header__title--light {
@@ -9696,6 +9703,11 @@ i[class*=fa] {
   z-index: 10;
   pointer-events: none;
 }
+@media (max-width: 1600px) {
+  .grooming-team__thumb {
+    max-width: 450px;
+  }
+}
 @media (max-width: 1400px) {
   .grooming-team__thumb {
     display: none;
@@ -9703,7 +9715,7 @@ i[class*=fa] {
 }
 .grooming-team__grid {
   display: grid;
-  grid-template-columns: repeat(2, 307px);
+  grid-template-columns: repeat(2, minmax(0, 307px));
   gap: 60px 30px;
   justify-content: center;
 }
@@ -9715,6 +9727,13 @@ i[class*=fa] {
     gap: 40px;
   }
 }
+@media (max-width: 768px) {
+  .grooming-team__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 307px);
+    gap: 40px 0;
+  }
+}
 
 .grooming-team__card {
   position: relative;
@@ -9723,6 +9742,15 @@ i[class*=fa] {
   flex-shrink: 0;
   text-decoration: none;
   display: block;
+}
+@media (max-width: 768px) {
+  .grooming-team__card {
+    width: 100%;
+    max-width: 307px;
+    height: auto;
+    aspect-ratio: 307/500;
+    flex-shrink: 1;
+  }
 }
 .grooming-team__card--1 {
   align-self: flex-end;
@@ -9748,8 +9776,16 @@ i[class*=fa] {
   height: 500px;
   z-index: 1;
 }
+@media (max-width: 768px) {
+  .grooming-team__card-bg {
+    width: 100%;
+    height: 100%;
+  }
+}
 .grooming-team__card-bg-svg {
   display: block;
+  width: 100%;
+  height: auto;
 }
 .grooming-team__card-bg-path {
   fill: currentColor;
@@ -9768,6 +9804,11 @@ i[class*=fa] {
   font-size: 30px;
   color: var(--white-color);
 }
+@media (max-width: 768px) {
+  .grooming-team__card-name {
+    font-size: clamp(16px, 5vw, 30px);
+  }
+}
 .grooming-team__card-role {
   color: var(--white-color);
 }
@@ -9784,6 +9825,11 @@ i[class*=fa] {
   object-position: bottom center;
   display: block;
   transition: all 0.4s ease;
+}
+@media (max-width: 768px) {
+  .grooming-team__card-img {
+    max-height: 76%;
+  }
 }
 .grooming-team__card:hover .grooming-team__card-img {
   transform: translateX(-50%) translateY(-15px);
@@ -9843,6 +9889,16 @@ i[class*=fa] {
     padding: 120px 140px 120px 180px;
   }
 }
+@media (max-width: 1400px) {
+  .before-and-after__left-wrap {
+    padding: 120px;
+  }
+}
+@media (max-width: 1200px) {
+  .before-and-after__left-wrap {
+    padding: 120px 80px;
+  }
+}
 @media (max-width: 992px) {
   .before-and-after__left-wrap {
     padding: 60px;
@@ -9869,17 +9925,12 @@ i[class*=fa] {
   z-index: 1;
   width: 100%;
 }
-@media (max-width: 1600px) {
-  .before-and-after__left-content {
-    max-width: 680px;
-  }
-}
 .before-and-after__desc {
   color: var(--white-color);
   margin-top: 20px;
   margin-bottom: 30px;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .before-and-after__desc {
     margin-top: 10px;
     margin-bottom: 20px;
@@ -9896,10 +9947,15 @@ i[class*=fa] {
     padding: 0 0 0 20px;
   }
 }
+@media (max-width: 992px) {
+  .before-and-after__list {
+    gap: 30px;
+  }
+}
 @media (max-width: 768px) {
   .before-and-after__list {
     gap: 30px;
-    padding: 0;
+    padding: 0 0 0 10px;
   }
 }
 .before-and-after__item {
@@ -9910,6 +9966,7 @@ i[class*=fa] {
 @media (max-width: 768px) {
   .before-and-after__item {
     align-items: flex-start;
+    gap: 15px;
   }
 }
 .before-and-after__icon-wrap {

@@ -20,6 +20,12 @@
         @include respond(xxxl) {
             padding: 120px 140px 120px 180px;
         }
+        @include respond(xxl) {
+            padding: 120px;
+        }
+        @include respond(xl) {
+            padding: 120px 80px;
+        }
 
         @include respond(lg) {
             padding: 60px;
@@ -47,10 +53,6 @@
         z-index: 1;
         width: 100%;
 
-        @include respond(xxxl) {
-            max-width: 680px;
-        }
-
     }
 
     &__desc {
@@ -58,7 +60,7 @@
         margin-top: 20px;
         margin-bottom: 30px;
 
-        @include respond(md) {
+        @include respond(lg) {
             margin-top: 10px;
             margin-bottom: 20px;
         }
@@ -73,10 +75,13 @@
         @include respond(xxxl) {
             padding: 0 0 0 20px;
         }
+        @include respond(lg) {
+            gap: 30px;
+        }
 
         @include respond(md) {
             gap: 30px;
-            padding: 0;
+            padding: 0 0 0 10px;
         }
     }
 
@@ -87,6 +92,7 @@
 
         @include respond(md) {
             align-items: flex-start;
+            gap: 15px;
         }
     }
 
@@ -129,7 +135,6 @@
             height: 32px;
         }
     }
-
 
     &__item-title {
         color: var(--white-color);

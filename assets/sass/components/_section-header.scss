@@ -61,7 +61,7 @@
     }
 
     @include respond(xl) {
-      font-size: 48px;
+      font-size: 52px;
       line-height: 50px;
     }
 
@@ -72,10 +72,9 @@
 
     @include respond(md) {
       font-size: 40px;
-    }
-    @include respond(md) {
       line-height: 42px;
     }
+
 
     &--light {
       color: var(--white-color);

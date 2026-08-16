@@ -129,6 +129,9 @@
       @include respond(md) {
         line-height: 48px;
       }
+      @include respond(sm) {
+        line-height: 42px;
+      }
     }
   }
 

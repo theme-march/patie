@@ -1453,7 +1453,7 @@ i[class*=fa] {
 }
 @media (max-width: 1200px) {
   .section-header__title {
-    font-size: 48px;
+    font-size: 52px;
     line-height: 50px;
   }
 }
@@ -1466,10 +1466,6 @@ i[class*=fa] {
 @media (max-width: 768px) {
   .section-header__title {
     font-size: 40px;
-  }
-}
-@media (max-width: 768px) {
-  .section-header__title {
     line-height: 42px;
   }
 }
@@ -3822,6 +3818,11 @@ i[class*=fa] {
 @media (max-width: 768px) {
   .about__content-col .section-header__title {
     line-height: 48px;
+  }
+}
+@media (max-width: 576px) {
+  .about__content-col .section-header__title {
+    line-height: 42px;
   }
 }
 .about__stats {

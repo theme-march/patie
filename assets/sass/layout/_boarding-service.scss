@@ -10,10 +10,9 @@
     flex-wrap: wrap;
     gap: 30px;
 
-    @include respond(md) {
-      flex-direction: column;
-      align-items: flex-start;
-      margin-bottom: 40px;
+    @include respond(lg) {
+      gap: 20px;
+      margin-bottom: 30px;
     }
   }
 
@@ -33,11 +32,11 @@
 
     @include respond(lg) {
       grid-template-columns: repeat(2, 1fr);
-      gap: 60px;
     }
 
     @include respond(md) {
       grid-template-columns: repeat(1, 1fr);
+      gap: 60px;
     }
   }
 }
@@ -53,19 +52,17 @@
     width: 100%;
     margin-bottom: 60px;
 
-    @include respond(xl) {
+    @include respond(xxl) {
       margin-bottom: 45px;
     }
     @include respond(lg) {
-      margin-bottom: 80px;
-      max-width: 85%;
+      margin-bottom: 60px;
     }
     @include respond(md) {
-      margin-bottom: 80px;
-      max-width: 80%;
+      margin-bottom: 90px;
     }
     @include respond(sm) {
-      margin-bottom: 60px;
+      margin-bottom: 70px;
     }
   }
 
@@ -98,12 +95,7 @@
     display: block;
 
     @include respond(xxl) {
-      font-size: 26px;
-      margin-bottom: 15px;
-    }
-
-    @include respond(xl) {
-      font-size: 24px;
+      font-size: 28px;
     }
     @include respond(lg) {
       font-size: 26px;
@@ -125,7 +117,6 @@
 
   &__desc {
     margin-bottom: 20px;
-    padding: 0 30px;
   }
 
 

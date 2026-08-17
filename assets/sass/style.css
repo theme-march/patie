@@ -7925,8 +7925,8 @@ i[class*=fa] {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: none;
+     object-fit: none;
   -o-object-position: top center;
      object-position: top center;
   z-index: 1;
@@ -7956,7 +7956,7 @@ i[class*=fa] {
 }
 @media (max-width: 768px) {
   .footer-v3__top {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 }
 @media (max-width: 576px) {
@@ -11412,11 +11412,10 @@ i[class*=fa] {
   flex-wrap: wrap;
   gap: 30px;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .boarding-service__top {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 40px;
+    gap: 20px;
+    margin-bottom: 30px;
   }
 }
 .boarding-service__header-left {
@@ -11433,12 +11432,12 @@ i[class*=fa] {
 @media (max-width: 992px) {
   .boarding-service__grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 60px;
   }
 }
 @media (max-width: 768px) {
   .boarding-service__grid {
     grid-template-columns: repeat(1, 1fr);
+    gap: 60px;
   }
 }
 
@@ -11453,26 +11452,24 @@ i[class*=fa] {
   width: 100%;
   margin-bottom: 60px;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
   .boarding-service-card__img-wrap {
     margin-bottom: 45px;
   }
 }
 @media (max-width: 992px) {
   .boarding-service-card__img-wrap {
-    margin-bottom: 80px;
-    max-width: 85%;
+    margin-bottom: 60px;
   }
 }
 @media (max-width: 768px) {
   .boarding-service-card__img-wrap {
-    margin-bottom: 80px;
-    max-width: 80%;
+    margin-bottom: 90px;
   }
 }
 @media (max-width: 576px) {
   .boarding-service-card__img-wrap {
-    margin-bottom: 60px;
+    margin-bottom: 70px;
   }
 }
 .boarding-service-card__bg-svg {
@@ -11503,13 +11500,7 @@ i[class*=fa] {
 }
 @media (max-width: 1400px) {
   .boarding-service-card__title {
-    font-size: 26px;
-    margin-bottom: 15px;
-  }
-}
-@media (max-width: 1200px) {
-  .boarding-service-card__title {
-    font-size: 24px;
+    font-size: 28px;
   }
 }
 @media (max-width: 992px) {
@@ -11530,7 +11521,6 @@ i[class*=fa] {
 }
 .boarding-service-card__desc {
   margin-bottom: 20px;
-  padding: 0 30px;
 }
 .boarding-service-card {
   /* Modifiers */
@@ -11857,7 +11847,7 @@ i[class*=fa] {
 }
 @media (max-width: 768px) {
   .boarding-testimonial__stats-wrap {
-    padding-top: 150px;
+    padding-top: 140px;
     padding-bottom: 70px;
   }
 }
@@ -11980,11 +11970,6 @@ i[class*=fa] {
     padding-top: 230px;
   }
 }
-@media (max-width: 768px) {
-  .boarding-choose-us {
-    padding-top: 230px;
-  }
-}
 .boarding-choose-us__shape {
   position: absolute;
   top: 0;
@@ -12071,17 +12056,6 @@ i[class*=fa] {
 }
 .boarding-choose-us__item:last-child .boarding-choose-us__content {
   padding-bottom: 0;
-}
-@media (max-width: 576px) {
-  .boarding-choose-us__item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 15px;
-  }
-  .boarding-choose-us__item .boarding-choose-us__line {
-    display: none;
-  }
 }
 .boarding-choose-us__icon-wrap {
   display: flex;
@@ -12271,19 +12245,9 @@ i[class*=fa] {
   font-size: 24px;
   margin-bottom: 15px;
 }
-@media (max-width: 1200px) {
-  .boarding-pricing-card__title {
-    font-size: 24px;
-  }
-}
 @media (max-width: 768px) {
   .boarding-pricing-card__title {
     margin-bottom: 10px;
-  }
-}
-@media (max-width: 1200px) {
-  .boarding-pricing-card__desc {
-    font-size: 14px;
   }
 }
 .boarding-pricing-card__price-wrap {
@@ -12299,8 +12263,8 @@ i[class*=fa] {
 }
 @media (max-width: 1200px) {
   .boarding-pricing-card__price-wrap {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     margin: 20px 0;
   }
 }
@@ -12371,7 +12335,7 @@ i[class*=fa] {
 }
 @media (max-width: 1200px) {
   .boarding-pricing-card__btn {
-    padding: 12px;
+    padding: 12px 40px;
     font-size: 14px;
   }
 }
@@ -12433,6 +12397,11 @@ i[class*=fa] {
   border-radius: 12px;
   margin-bottom: 30px;
   overflow: hidden;
+}
+@media (max-width: 992px) {
+  .boarding-blog-card__img-wrap {
+    margin-bottom: 20px;
+  }
 }
 .boarding-blog-card__content {
   padding: 0 15px;
@@ -12511,14 +12480,13 @@ i[class*=fa] {
 }
 @media (max-width: 1400px) {
   .boarding-blog-card__title {
-    font-size: 26px;
-    margin-bottom: 25px;
+    line-height: 36px;
   }
 }
 @media (max-width: 1200px) {
   .boarding-blog-card__title {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 26px;
+    line-height: 28px;
   }
 }
 .boarding-blog-card__title-link {

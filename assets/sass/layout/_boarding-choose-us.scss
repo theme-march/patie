@@ -11,10 +11,6 @@
     padding-top: 230px;
   }
 
-  @include respond(md) {
-    padding-top: 230px;
-  }
-
   &__shape {
     position: absolute;
     top: 0;
@@ -102,16 +98,6 @@
       }
     }
 
-    @include respond(sm) {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 15px;
-
-      .boarding-choose-us__line {
-        display: none;
-      }
-    }
   }
 
   &__icon-wrap {

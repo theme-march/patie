@@ -773,7 +773,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: none;
     object-position: top center;
     z-index: 1;
   }
@@ -801,7 +801,7 @@
     }
 
     @include respond(md) {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
 
     @include respond(sm) {

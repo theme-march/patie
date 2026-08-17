@@ -344,8 +344,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 130px;
-  height: 130px;
+  width: 120px;
+  height: 120px;
   background-color: color-mix(in srgb, var(--primary-color), transparent 70%);
   border-radius: 50%;
   display: flex;
@@ -355,6 +355,7 @@
   transition: all 0.3s ease;
   cursor: pointer;
   z-index: 2;
+
 
 
   &__inner {
@@ -373,8 +374,8 @@
   }
 
   @include respond(xl) {
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
 
     .play-btn__inner,
     &__inner {
@@ -384,8 +385,8 @@
   }
 
   @include respond(lg) {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
 
     .play-btn__inner,
     &__inner {
@@ -438,13 +439,38 @@
 
   &--secondary {
     background-color: color-mix(in srgb, var(--secondary-color), transparent 70%);
+    position: relative;
 
     .play-btn__inner {
       background-color: var(--secondary-color);
     }
 
+    .play-btn__ripple-ring {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: color-mix(in srgb, var(--secondary-color), transparent 75%);
+      z-index: -1;
+      pointer-events: none;
+      transform: scale(1);
+      opacity: 0;
+
+      &.ring-1 {
+        animation: pulse-ring-secondary 3s ease-out infinite;
+      }
+
+      &.ring-2 {
+        animation: pulse-ring-secondary 3s ease-out infinite;
+        animation-delay: 1.5s;
+      }
+    }
+
     &:hover {
       background-color: color-mix(in srgb, var(--primary-color), transparent 70%);
+      animation: none;
 
       .play-btn__inner {
         background-color: var(--primary-color);
@@ -485,3 +511,35 @@
     }
   }
 }
+
+// Heartbeat scale pulse — for .play-btn--secondary outer circle
+// Uses standalone CSS `scale` property (not transform: scale) so it
+// never fights or overrides the CSS transform: translate(-50%, -50%) positioning
+@keyframes pulse-heartbeat-secondary {
+  0%   { scale: 1; }
+  12%  { scale: 1.06; }
+  20%  { scale: 0.98; }
+  34%  { scale: 1.08; }
+  50%  { scale: 1; }
+  100% { scale: 1; }
+}
+
+// Expanding ring ripples — for ::before and ::after on .play-btn--secondary
+// These are absolute children so using transform: scale() is safe here —
+// they have no translate to preserve
+@keyframes pulse-ring-secondary {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  80% {
+    transform: scale(1.75);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.75);
+    opacity: 0;
+  }
+}
+
+

@@ -1252,8 +1252,8 @@ i[class*=fa] {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 130px;
-  height: 130px;
+  width: 120px;
+  height: 120px;
   background-color: color-mix(in srgb, var(--primary-color), transparent 70%);
   border-radius: 50%;
   display: flex;
@@ -1287,8 +1287,8 @@ i[class*=fa] {
 }
 @media (max-width: 1200px) {
   .play-btn, .ak-video-open {
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
   }
   .play-btn .play-btn__inner, .play-btn__inner {
     width: 80px;
@@ -1297,8 +1297,8 @@ i[class*=fa] {
 }
 @media (max-width: 992px) {
   .play-btn, .ak-video-open {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
   }
   .play-btn .play-btn__inner, .play-btn__inner {
     width: 70px;
@@ -1342,12 +1342,34 @@ i[class*=fa] {
 }
 .play-btn--secondary {
   background-color: color-mix(in srgb, var(--secondary-color), transparent 70%);
+  position: relative;
 }
 .play-btn--secondary .play-btn__inner {
   background-color: var(--secondary-color);
 }
+.play-btn--secondary .play-btn__ripple-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: color-mix(in srgb, var(--secondary-color), transparent 75%);
+  z-index: -1;
+  pointer-events: none;
+  transform: scale(1);
+  opacity: 0;
+}
+.play-btn--secondary .play-btn__ripple-ring.ring-1 {
+  animation: pulse-ring-secondary 3s ease-out infinite;
+}
+.play-btn--secondary .play-btn__ripple-ring.ring-2 {
+  animation: pulse-ring-secondary 3s ease-out infinite;
+  animation-delay: 1.5s;
+}
 .play-btn--secondary:hover {
   background-color: color-mix(in srgb, var(--primary-color), transparent 70%);
+  animation: none;
 }
 .play-btn--secondary:hover .play-btn__inner {
   background-color: var(--primary-color);
@@ -1384,6 +1406,40 @@ i[class*=fa] {
   }
 }
 
+@keyframes pulse-heartbeat-secondary {
+  0% {
+    scale: 1;
+  }
+  12% {
+    scale: 1.06;
+  }
+  20% {
+    scale: 0.98;
+  }
+  34% {
+    scale: 1.08;
+  }
+  50% {
+    scale: 1;
+  }
+  100% {
+    scale: 1;
+  }
+}
+@keyframes pulse-ring-secondary {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  80% {
+    transform: scale(1.75);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.75);
+    opacity: 0;
+  }
+}
 /* 
 |......................................................................
 | Template Name: CRAS
@@ -4554,6 +4610,7 @@ i[class*=fa] {
   max-height: 610px;
   display: block;
   z-index: -2;
+  will-change: transform;
 }
 @media (max-width: 992px) {
   .video-section__bg-img {
@@ -4575,6 +4632,7 @@ i[class*=fa] {
   text-transform: uppercase;
   width: 100%;
   text-align: center;
+  will-change: transform, opacity;
 }
 @media (max-width: 1600px) {
   .video-section__bg-text {
@@ -4617,7 +4675,7 @@ i[class*=fa] {
 }
 .video-section__content {
   position: absolute;
-  top: 0;
+  top: -30px;
   left: 0;
   width: 100%;
   height: 100%;
@@ -4627,7 +4685,11 @@ i[class*=fa] {
   z-index: 2;
 }
 .video-section__content .play-btn {
-  transform: translate(-50%, -70%);
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+  will-change: transform, opacity;
 }
 
 .ak-video-popup {

@@ -42,6 +42,7 @@
     heroAnimations();
     aboutAnimations();
     serviceAnimations();
+    videoAnimations();
   });
 
   $(function () {
@@ -517,6 +518,60 @@
         clearProps: "all",
       },
       0.75
+    );
+  }
+
+  /*-------------------------------------------------
+   * VIDEO SECTION ANIMATIONS
+   * ScrollTrigger-activated play button & parallax.
+   * Features horizontal text drift, vertical bg offset, and scale-up entrance.
+   *-------------------------------------------------*/
+
+  function videoAnimations() {
+    if (!document.querySelector(".video-section")) return;
+
+    // 1. Watermark fade-in (play-once on section enter)
+    gsap.from(".video-section__bg-text", {
+      opacity: 0,
+      duration: 1.2,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".video-section",
+        start: "top 85%",
+        toggleActions: "play none none none",
+      }
+    });
+
+    // 2. Parallax vertical offset on BG Image (scrub — tied to scroll)
+    gsap.fromTo(
+      ".video-section__bg-img",
+      { y: 0 },
+      {
+        y: -60,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".video-section",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        }
+      }
+    );
+
+    // 3. Parallax horizontal offset on Watermark Text (scrub — tied to scroll)
+    gsap.fromTo(
+      ".video-section__bg-text",
+      { x: -40 },
+      {
+        x: 40,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".video-section",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1.5,
+        }
+      }
     );
   }
 

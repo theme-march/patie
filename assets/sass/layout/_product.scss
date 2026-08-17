@@ -42,7 +42,7 @@
     @include respond(sm) {
       grid-template-columns: 1fr;
       padding: 0 25px;
-      gap: 40px;
+      gap: 60px;
     }
   }
 }
@@ -192,6 +192,10 @@
     font-family: var(--heading-font-family);
     color: var(--primary-color);
     margin-bottom: 20px;
+
+    @include respond(lg) {
+      margin-bottom: 15px;
+    }
   }
 
   &__title {

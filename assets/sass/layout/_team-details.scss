@@ -15,12 +15,8 @@
       border-radius: 15px;
     }
 
-    @include respond(xl) {
+    @include respond(lg) {
       padding: 15px;
-    }
-
-    @include respond(sm) {
-      padding: 10px;
     }
   }
 

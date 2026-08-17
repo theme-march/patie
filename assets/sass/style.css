@@ -1091,9 +1091,8 @@ i[class*=fa] {
   height: 45px;
   min-width: 45px;
   min-height: 45px;
-  aspect-ratio: 1/1;
   background-color: var(--white-color);
-  border-radius: 99px;
+  border-radius: 50px;
   position: relative;
   display: flex;
   align-items: center;
@@ -3398,6 +3397,59 @@ i[class*=fa] {
 | 2. Typography
 
  ................................................................*/
+@keyframes float-bone {
+  0% {
+    transform: translateY(0) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+}
+@keyframes float-paw {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  40% {
+    transform: translateY(-14px) scale(1.1);
+  }
+  80% {
+    transform: translateY(4px) scale(0.95);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes float-bowl {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes float-ball {
+  0% {
+    transform: translateY(0) scaleX(1);
+  }
+  40% {
+    transform: translateY(-22px) scaleX(1);
+  }
+  80% {
+    transform: translateY(2px) scaleX(1.08);
+  }
+  90% {
+    transform: translateY(0) scaleX(0.95);
+  }
+  100% {
+    transform: translateY(0) scaleX(1);
+  }
+}
 .hero {
   position: relative;
   padding: 200px 0 90px;
@@ -3424,11 +3476,13 @@ i[class*=fa] {
   position: absolute;
   z-index: 1;
   pointer-events: none;
+  will-change: transform, opacity;
 }
 .hero__shape--bone {
   top: 30%;
   left: 5%;
   width: 40px;
+  animation: float-bone 5s ease-in-out infinite;
 }
 @media (max-width: 768px) {
   .hero__shape--bone {
@@ -3440,6 +3494,7 @@ i[class*=fa] {
   top: 20%;
   right: 30%;
   width: 30px;
+  animation: float-paw 4s ease-in-out infinite;
 }
 @media (max-width: 768px) {
   .hero__shape--paw {
@@ -3449,7 +3504,8 @@ i[class*=fa] {
 .hero__shape--bowl {
   bottom: 10%;
   left: 30%;
-  width: 20px;
+  width: 45px;
+  animation: float-bowl 6s ease-in-out infinite;
 }
 @media (max-width: 1200px) {
   .hero__shape--bowl {
@@ -3465,6 +3521,7 @@ i[class*=fa] {
   bottom: 32%;
   right: 4%;
   width: 50px;
+  animation: float-ball 3.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
 }
 @media (max-width: 768px) {
   .hero__shape--ball {
@@ -3609,6 +3666,7 @@ i[class*=fa] {
   bottom: 0;
   z-index: 2;
   max-width: 35%;
+  will-change: transform, opacity;
 }
 @media (max-width: 992px) {
   .hero__image-cat, .hero__image-dog {
@@ -3662,6 +3720,12 @@ i[class*=fa] {
   .hero__image-dog {
     max-width: 260px;
   }
+}
+.hero__paws-rating, .hero__title, .hero__subtitle, .hero__actions {
+  will-change: transform, opacity;
+}
+.hero__avatar-img {
+  will-change: transform, opacity;
 }
 
 /* 
@@ -3728,6 +3792,7 @@ i[class*=fa] {
   border-radius: 12px 12px 0 0;
   overflow: hidden;
   width: 100%;
+  will-change: clip-path;
 }
 .about__image-main-wrap .about__image-main {
   width: 100%;
@@ -3736,6 +3801,7 @@ i[class*=fa] {
   display: block;
 }
 .about__mission-card {
+  will-change: transform, opacity;
   position: relative;
   padding: 30px;
   border-radius: 0 0 12px 12px;
@@ -3769,6 +3835,7 @@ i[class*=fa] {
   }
 }
 .about__pet-deco {
+  will-change: transform, opacity;
   max-width: 481px;
   position: absolute;
   bottom: 0px;
@@ -3816,6 +3883,7 @@ i[class*=fa] {
   }
 }
 .about__stats {
+  will-change: transform, opacity;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 35px;
@@ -3829,6 +3897,9 @@ i[class*=fa] {
     margin-top: 30px;
     margin-bottom: 20px;
   }
+}
+.about__stat-item {
+  will-change: transform, opacity;
 }
 .about__stat-item .stat-number {
   font-family: var(--heading-font-family);
@@ -3888,6 +3959,7 @@ i[class*=fa] {
   display: inline-block;
 }
 .about__sofa-deco {
+  will-change: transform, opacity;
   position: absolute;
   bottom: -120px;
   right: -6%;
@@ -3943,6 +4015,7 @@ i[class*=fa] {
   overflow: hidden;
 }
 .service__section-title {
+  will-change: transform, opacity;
   margin-bottom: 50px;
 }
 @media (max-width: 1200px) {
@@ -3983,6 +4056,7 @@ i[class*=fa] {
   flex-direction: column;
   height: 100%;
   transition: all 0.3s ease;
+  will-change: transform, opacity;
 }
 @media (max-width: 768px) {
   .service-card {
@@ -4180,6 +4254,19 @@ i[class*=fa] {
 }
 .service-card--cyan .service-btn__icon {
   color: var(--other-color-5);
+}
+
+@keyframes spin-cw {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.service-btn__dashed-circle {
+  animation: spin-cw 6s linear infinite;
+  transform-origin: 50% 50%;
 }
 
 /* 

@@ -39,6 +39,9 @@
     $(window).trigger("resize");
     // preloader();
     AOS.init();
+    heroAnimations();
+    aboutAnimations();
+    serviceAnimations();
   });
 
   $(function () {
@@ -60,6 +63,462 @@
   });
 
 
+
+  /*-------------------------------------------------
+   * HERO ANIMATIONS
+   * Uses GSAP + SplitText for a premium entrance sequence.
+   * Plays once on window load (above-the-fold, no ScrollTrigger needed).
+   *-------------------------------------------------*/
+
+  function heroAnimations() {
+    // Only run on pages that actually have a hero section
+    if (!document.querySelector(".hero")) return;
+
+    // Register GSAP plugin
+    gsap.registerPlugin(SplitText);
+
+    // ── Safety net: guarantee buttons are always visible ─────────────────────
+    // GSAP `from()` sets opacity:0 immediately. If the timeline ever errors out,
+    // this fallback fires after 2s to make sure nothing stays hidden.
+    var safetyTimer = setTimeout(function () {
+      gsap.set(".hero__actions .common-btn, .hero__subtitle, .hero__title, .hero__paws-rating", {
+        clearProps: "all",
+      });
+    }, 2000);
+
+    // ── 1. SplitText: split the title into words ──────────────────────────────
+    var titleEl = document.querySelector(".hero__title");
+    var splitTitle = null;
+    try {
+      if (titleEl && typeof SplitText !== "undefined") {
+        splitTitle = new SplitText(titleEl, { type: "words" });
+      }
+    } catch (e) {
+      splitTitle = null;
+    }
+
+    // ── 2. Build the main GSAP timeline (all positions are ABSOLUTE seconds) ──
+    var tl = gsap.timeline({
+      defaults: { ease: "power3.out" },
+      onComplete: function () {
+        // Clear safety timer — animation completed cleanly
+        clearTimeout(safetyTimer);
+        // Revert any inline styles GSAP left on split words so CSS takes over
+        if (splitTitle) splitTitle.revert();
+      },
+    });
+
+    // ── 3. Floating shapes: pop in, then CSS loops take over ──────────────────
+    tl.from(
+      [".hero__shape--bone", ".hero__shape--paw", ".hero__shape--bowl", ".hero__shape--ball"],
+      { opacity: 0, scale: 0.3, duration: 0.6, stagger: 0.1, ease: "back.out(2)" },
+      0
+    );
+
+    // ── 4. Avatar images: stagger left-to-right ───────────────────────────────
+    tl.from(
+      ".hero__avatar-img",
+      { opacity: 0, x: -12, scale: 0.7, duration: 0.5, stagger: 0.08, ease: "back.out(1.8)" },
+      0.2
+    );
+
+    // ── 5. Rating text: fade up ───────────────────────────────
+    tl.from(".hero__rating-text", { opacity: 0, y: 15, duration: 0.5 }, 0.4);
+
+    // ── 6. Title: word-by-word cascade (SplitText) ───────────────────────────
+    if (splitTitle && splitTitle.words && splitTitle.words.length) {
+      tl.from(
+        splitTitle.words,
+        {
+          opacity: 0,
+          y: 60,
+          rotateX: -20,
+          transformOrigin: "0% 50% -20",
+          duration: 0.75,
+          stagger: 0.06,
+          ease: "power4.out",
+        },
+        0.45
+      );
+      // Subtle colour-span pulse — at a FIXED time, NOT relative to yoyo
+      tl.fromTo(
+        ".hero__title span",
+        { scale: 1 },
+        { scale: 1.04, duration: 0.18, yoyo: true, repeat: 1, ease: "sine.inOut" },
+        1.6  // fixed timestamp: well after last word lands
+      );
+    } else {
+      // Fallback if SplitText unavailable
+      tl.from(".hero__title", { opacity: 0, y: 50, duration: 0.8 }, 0.45);
+    }
+
+    // ── 7. Subtitle: fade up — FIXED timestamp ────────────────────────────────
+    tl.from(".hero__subtitle", { opacity: 0, y: 25, duration: 0.65 }, 1.25);
+
+    // ── 8. CTA Buttons: pop in — FIXED timestamp ──────────────────────────────
+    tl.from(
+      ".hero__actions .common-btn",
+      {
+        opacity: 0,
+        scale: 0.82,
+        y: 15,
+        duration: 0.55,
+        stagger: 0.15,
+        ease: "back.out(1.7)",
+        clearProps: "opacity,transform",  // ensure final state is clean
+      },
+      1.45
+    );
+
+    // ── 9. Cat slides in from left ────────────────────────────────────────────
+    tl.from(
+      ".hero__image-cat",
+      {
+        opacity: 0,
+        x: -160,
+        duration: 1,
+        ease: "back.out(1.4)",
+      },
+      0.3 // concurrent with content start
+    );
+
+    // ── 10. Dog slides in from right ─────────────────────────────────────────
+    tl.from(
+      ".hero__image-dog",
+      { opacity: 0, x: 160, duration: 1, ease: "back.out(1.4)" },
+      0.4
+    );
+  }
+
+  /*-------------------------------------------------
+   * ABOUT US ANIMATIONS
+   * ScrollTrigger-activated entrance animations.
+   * Features a premium clip-path curtain reveal, and GSAP counter rollup.
+   *-------------------------------------------------*/
+
+  function aboutAnimations() {
+    if (!document.querySelector(".about")) return;
+
+    // Safety net: clean up target values if animation fails
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".about__image-main-wrap, .about__mission-card, .about__pet-deco, .about__sofa-deco .about__sofa-img, .about__content-col .section-header__paw, .about__content-col .section-header__label, .about__content-col .section-header__title, .about__stat-item, .about__description, .about__button .common-btn",
+        { clearProps: "all" }
+      );
+    }, 4000);
+
+    // Initial setup for the clip-path image wrap
+    gsap.set(".about__image-main-wrap", { clipPath: "inset(100% 0% 0% 0%)" });
+
+    // Handle SplitText for About heading
+    var headingEl = document.querySelector(".about__content-col .section-header__title");
+    var splitHeading = null;
+    try {
+      if (headingEl && typeof SplitText !== "undefined") {
+        splitHeading = new SplitText(headingEl, { type: "lines" });
+      }
+    } catch (e) {
+      splitHeading = null;
+    }
+
+    // Main Timeline
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".about",
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        if (splitHeading) splitHeading.revert();
+        // Counter roll-up animation trigger
+        animateCounters();
+      }
+    });
+
+    // 1. Left image curtain wipe
+    tl.to(
+      ".about__image-main-wrap",
+      {
+        clipPath: "inset(0% 0% 0% 0%)",
+        duration: 0.95,
+        ease: "power3.out",
+      },
+      0
+    );
+
+    // 2. Mission card slide up
+    tl.from(
+      ".about__mission-card",
+      {
+        opacity: 0,
+        y: 40,
+        duration: 0.7,
+        ease: "power3.out",
+      },
+      0.2
+    );
+
+    // 3. Paw icon & label
+    tl.from(
+      ".about__content-col .section-header__paw",
+      {
+        rotate: -30,
+        opacity: 0,
+        scale: 0.5,
+        duration: 0.5,
+        ease: "back.out(2)",
+      },
+      0.15
+    );
+    tl.from(
+      ".about__content-col .section-header__label",
+      {
+        x: -15,
+        opacity: 0,
+        duration: 0.5,
+      },
+      0.25
+    );
+
+    // 4. Heading line reveal
+    if (splitHeading && splitHeading.lines && splitHeading.lines.length) {
+      tl.from(
+        splitHeading.lines,
+        {
+          opacity: 0,
+          y: 40,
+          rotateX: -10,
+          transformOrigin: "0% 50% -20",
+          duration: 0.75,
+          stagger: 0.12,
+          ease: "power4.out",
+        },
+        0.3
+      );
+    } else {
+      tl.from(
+        ".about__content-col .section-header__title",
+        {
+          opacity: 0,
+          y: 35,
+          duration: 0.75,
+        },
+        0.3
+      );
+    }
+
+    // 5. Stat items fade up
+    tl.from(
+      ".about__stat-item",
+      {
+        opacity: 0,
+        y: 30,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: "power3.out",
+      },
+      0.55
+    );
+
+    // 6. Description & Button
+    tl.from(
+      ".about__description",
+      {
+        opacity: 0,
+        y: 20,
+        duration: 0.65,
+      },
+      0.85
+    );
+    tl.from(
+      ".about__button .common-btn",
+      {
+        opacity: 0,
+        scale: 0.85,
+        y: 12,
+        duration: 0.55,
+        ease: "back.out(1.7)",
+        clearProps: "opacity,transform",
+      },
+      0.95
+    );
+
+    // 7. Decorative Background Images
+    tl.from(
+      ".about__pet-deco",
+      {
+        opacity: 0,
+        x: -100,
+        duration: 1.2,
+        ease: "power2.out",
+      },
+      0.1
+    );
+    tl.from(
+      ".about__sofa-deco .about__sofa-img",
+      {
+        opacity: 0,
+        y: 80,
+        duration: 1.2,
+        ease: "power2.out",
+      },
+      0.3
+    );
+  }
+
+  // Helper function for counter rollup animation
+  function animateCounters() {
+    var targets = document.querySelectorAll(".about__stat-item .stat-number");
+    targets.forEach(function (el) {
+      var text = el.innerText.trim();
+      var numMatch = text.match(/^([0-9.]+)(.*)$/);
+      if (!numMatch) return;
+
+      var targetVal = parseFloat(numMatch[1]);
+      var suffix = numMatch[2] || "";
+      var obj = { val: 0 };
+
+      gsap.to(obj, {
+        val: targetVal,
+        duration: 1.6,
+        ease: "power2.out",
+        onUpdate: function () {
+          // Format integers or floats nicely
+          var formatted = Math.floor(obj.val);
+          el.innerText = formatted + suffix;
+        }
+      });
+    });
+  }
+
+  /*-------------------------------------------------
+   * SERVICES ANIMATIONS
+   * ScrollTrigger-activated card staggering.
+   * Features interleaved odd/even horizontal sliding.
+   *-------------------------------------------------*/
+
+  function serviceAnimations() {
+    if (!document.querySelector(".service")) return;
+
+    // Safety net fallback
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".service-card, .service__section-title .section-header__paw, .service__section-title .section-header__label, .service__section-title .section-header__title",
+        { clearProps: "all" }
+      );
+    }, 4000);
+
+    // Split text on service title
+    var titleEl = document.querySelector(".service__section-title .section-header__title");
+    var splitTitle = null;
+    try {
+      if (titleEl && typeof SplitText !== "undefined") {
+        splitTitle = new SplitText(titleEl, { type: "words" });
+      }
+    } catch (e) {
+      splitTitle = null;
+    }
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".service",
+        start: "top 75%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        if (splitTitle) splitTitle.revert();
+      }
+    });
+
+    // 1. Paws pop-in
+    tl.from(
+      ".service__section-title .section-header__paw",
+      {
+        opacity: 0,
+        scale: 0.3,
+        rotation: function (i) { return i === 0 ? -30 : 30; },
+        x: function (i) { return i === 0 ? -30 : 30; },
+        duration: 0.55,
+        ease: "back.out(2)",
+      },
+      0
+    );
+
+    // 2. Label fade down
+    tl.from(
+      ".service__section-title .section-header__label",
+      {
+        opacity: 0,
+        y: -15,
+        duration: 0.5,
+      },
+      0.1
+    );
+
+    // 3. Title cascade
+    if (splitTitle && splitTitle.words && splitTitle.words.length) {
+      tl.from(
+        splitTitle.words,
+        {
+          opacity: 0,
+          y: 35,
+          duration: 0.7,
+          stagger: 0.05,
+          ease: "power4.out",
+        },
+        0.2
+      );
+    } else {
+      tl.from(
+        ".service__section-title .section-header__title",
+        {
+          opacity: 0,
+          y: 30,
+          duration: 0.7,
+        },
+        0.2
+      );
+    }
+
+    // 4. Staggered Alternating Cards Reveal
+    var cards = Array.from(document.querySelectorAll(".service-card"));
+    var oddCards = cards.filter(function (_, i) { return i % 2 === 0; }); // index 0,2,4,6 (Odd visual cards 1,3,5,7)
+    var evenCards = cards.filter(function (_, i) { return i % 2 !== 0; }); // index 1,3,5,7 (Even visual cards 2,4,6,8)
+
+    // Odd cards enter from Left (x: -60)
+    tl.from(
+      oddCards,
+      {
+        opacity: 0,
+        x: -60,
+        y: 30,
+        scale: 0.95,
+        duration: 0.75,
+        stagger: 0.12,
+        ease: "power3.out",
+        clearProps: "all",
+      },
+      0.65
+    );
+
+    // Even cards enter from Right (x: 60)
+    tl.from(
+      evenCards,
+      {
+        opacity: 0,
+        x: 60,
+        y: 30,
+        scale: 0.95,
+        duration: 0.75,
+        stagger: 0.12,
+        ease: "power3.out",
+        clearProps: "all",
+      },
+      0.75
+    );
+  }
 
   /*-------------------------------------------------
       1. preloader  

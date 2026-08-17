@@ -4,6 +4,7 @@
   overflow: hidden;
 
   &__section-title {
+    will-change: transform, opacity;
     margin-bottom: 50px;
 
     @include respond(xl) {
@@ -42,6 +43,7 @@
   flex-direction: column;
   height: 100%;
   transition: all 0.3s ease;
+  will-change: transform, opacity;
 
   @include respond(md) {
     padding: 20px 15px 30px;
@@ -255,3 +257,15 @@
     }
   }
 }
+
+// ─── Button Dashed Circle Spin CSS Animation ────────────────────────────────
+@keyframes spin-cw {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.service-btn__dashed-circle {
+  animation: spin-cw 6s linear infinite;
+  transform-origin: 50% 50%;
+}
+

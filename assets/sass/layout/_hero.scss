@@ -1,5 +1,33 @@
 @use "../abstracts" as *;
 
+@keyframes float-bone {
+  0%   { transform: translateY(0)     rotate(-5deg); }
+  50%  { transform: translateY(-18px) rotate(5deg);  }
+  100% { transform: translateY(0)     rotate(-5deg); }
+}
+
+@keyframes float-paw {
+  0%   { transform: translateY(0)    scale(1);   }
+  40%  { transform: translateY(-14px) scale(1.1); }
+  80%  { transform: translateY(4px)  scale(0.95); }
+  100% { transform: translateY(0)    scale(1);   }
+}
+
+@keyframes float-bowl {
+  0%   { transform: translateY(0);    }
+  50%  { transform: translateY(-10px);}
+  100% { transform: translateY(0);    }
+}
+
+@keyframes float-ball {
+  0%   { transform: translateY(0)      scaleX(1);    }
+  40%  { transform: translateY(-22px)  scaleX(1);    }
+  80%  { transform: translateY(2px)   scaleX(1.08); }
+  90%  { transform: translateY(0)      scaleX(0.95); }
+  100% { transform: translateY(0)      scaleX(1);    }
+}
+
+
 .hero {
   position: relative;
   padding: 200px 0 90px;
@@ -22,11 +50,13 @@
     position: absolute;
     z-index: 1;
     pointer-events: none;
+    will-change: transform, opacity;
 
     &--bone {
       top: 30%;
       left: 5%;
       width: 40px;
+      animation: float-bone 5s ease-in-out infinite;
 
       @include respond(md) {
         width: 40px;
@@ -38,6 +68,7 @@
       top: 20%;
       right: 30%;
       width: 30px;
+      animation: float-paw 4s ease-in-out infinite;
 
       @include respond(md) {
         display: none;
@@ -47,7 +78,8 @@
     &--bowl {
       bottom: 10%;
       left: 30%;
-      width: 20px;
+      width: 45px;
+      animation: float-bowl 6s ease-in-out infinite;
 
       @include respond(xl) {
         left: 22%;
@@ -61,6 +93,7 @@
       bottom: 32%;
       right: 4%;
       width: 50px;
+      animation: float-ball 3.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
 
       @include respond(md) {
         width: 35px;
@@ -199,6 +232,7 @@
     bottom: 0;
     z-index: 2;
     max-width: 35%;
+    will-change: transform, opacity;
 
     @include respond(lg) {
       display: none;
@@ -241,5 +275,16 @@
     }
   }
 
+
+ &__paws-rating,
+  &__title,
+  &__subtitle,
+  &__actions {
+    will-change: transform, opacity;
+  }
+
+ &__avatar-img {
+    will-change: transform, opacity;
+  }
 
 }

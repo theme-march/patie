@@ -43,6 +43,9 @@
     aboutAnimations();
     serviceAnimations();
     videoAnimations();
+    testimonialAnimations();
+    teamAnimations();
+    workingProcessAnimations();
   });
 
   $(function () {
@@ -576,6 +579,400 @@
   }
 
   /*-------------------------------------------------
+   * TESTIMONIAL ANIMATIONS
+   * ScrollTrigger-activated typographic slide cascades.
+   * Features scaling backdrops, sliding nav controls, and staggered avatars.
+   *-------------------------------------------------*/
+
+  function testimonialAnimations() {
+    if (!document.querySelector(".testimonial")) return;
+
+    // Safety fallback
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".testimonial__bg, .testimonial__bg-outline, .testimonial__nav, .testimonial__rating, .testimonial__text, .testimonial__quote-icon, .testimonial__author, .testimonial__avatar",
+        { clearProps: "all" }
+      );
+    }, 4000);
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".testimonial",
+        start: "top 75%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+      }
+    });
+
+    // 1. Backgrounds scale in (using individual CSS scale property to protect absolute position translates)
+    tl.from(
+      [".testimonial__bg-outline", ".testimonial__bg"],
+      {
+        scale: 0.75,
+        opacity: 0,
+        duration: 1.2,
+        stagger: 0.2,
+        ease: "power2.out",
+      },
+      0
+    );
+
+    // 2. Navigation slide-in
+    tl.from(
+      ".testimonial__nav--prev",
+      {
+        x: -30,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power3.out",
+        clearProps: "transform,opacity",
+      },
+      0.3
+    );
+
+    tl.from(
+      ".testimonial__nav--next",
+      {
+        x: 30,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power3.out",
+        clearProps: "transform,opacity",
+      },
+      0.3
+    );
+
+    // 3. Review content cascades
+    tl.from(
+      ".testimonial__rating",
+      {
+        scale: 0,
+        opacity: 0,
+        duration: 0.5,
+        ease: "back.out(2)",
+      },
+      0.5
+    );
+
+    tl.from(
+      ".testimonial__text",
+      {
+        y: 25,
+        opacity: 0,
+        duration: 0.7,
+        ease: "power3.out",
+      },
+      0.65
+    );
+
+    tl.from(
+      ".testimonial__quote-icon",
+      {
+        y: -20,
+        rotation: -15,
+        opacity: 0,
+        duration: 0.6,
+        ease: "back.out(1.5)",
+      },
+      0.85
+    );
+
+    tl.from(
+      ".testimonial__author",
+      {
+        y: 20,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power3.out",
+      },
+      1.0
+    );
+
+    // 4. Avatars scale in left-to-right staggered
+    tl.from(
+      ".testimonial__avatar",
+      {
+        scale: 0,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.12,
+        ease: "back.out(2.2)",
+        // Clear inline overrides so CSS hover scale(1.1) takes over cleanly
+        clearProps: "scale,opacity",
+      },
+      1.2
+    );
+  }
+
+  /*-------------------------------------------------
+   * TEAM ANIMATIONS
+   * ScrollTrigger-activated team member card cascades.
+   * Introduces headers and team grids with back easing curves.
+   *-------------------------------------------------*/
+
+  function teamAnimations() {
+    if (!document.querySelector(".team")) return;
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".team",
+        start: "top 75%",
+        toggleActions: "play none none none",
+      }
+    });
+
+    // ── 1. Header left block — wipe reveal and slide-up elements
+    tl.from(
+      ".team__header-left .section-header__paw, .team__header-left .section-header__label",
+      {
+        y: 20,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power2.out",
+        stagger: 0.1,
+      },
+      0
+    );
+
+    tl.from(
+      ".team__header-left .section-header__title",
+      {
+        y: 35,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+      },
+      0.15
+    );
+
+    // ── 2. Header right — "Explore All Team" button elastic slide from right
+    tl.from(
+      ".team__header-right",
+      {
+        x: 50,
+        opacity: 0,
+        duration: 0.7,
+        ease: "back.out(2.2)",
+        clearProps: "transform,opacity",
+      },
+      0.3
+    );
+
+    // ── 3. Card body (colored rectangle) slides UP from below — staggered
+    // These arrive first, setting the stage
+    tl.from(
+      ".team .team-card__content",
+      {
+        y: 90,
+        opacity: 0,
+        duration: 0.7,
+        stagger: 0.15,
+        ease: "power3.out",
+      },
+      0.5
+    );
+
+    // ── 4. Card photo wraps DROP FROM ABOVE with a bounce — staggered to match cards
+    // The image arrives after the card body, "landing" into position
+    // This "self-assembly" sequence is the premium feel
+    tl.from(
+      ".team .team-card__img-wrap",
+      {
+        y: -70,
+        opacity: 0,
+        duration: 0.85,
+        stagger: 0.15,
+        ease: "back.out(2)",
+        clearProps: "transform,opacity",
+      },
+      0.65
+    );
+  }
+
+  /*-------------------------------------------------
+   * WORKING PROCESS ANIMATIONS
+   * ScrollTrigger-activated form, split-dividers, and slides.
+   * Features falling/rising dividers, form row staggers, and vector scrub.
+   *-------------------------------------------------*/
+
+  function workingProcessAnimations() {
+    if (!document.querySelector(".working-process")) return;
+
+    // Safety fallback
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".working-process__divider-part--upper, .working-process__divider-part--lower, .working-process__form-row, .working-process__submit, .working-process__right .section-header, .working-process__right .section-header__title, .working-process__image-box, .working-process__badge, .working-process__slide-title, .working-process__slide-desc, .working-process__slider-nav",
+        { clearProps: "all" }
+      );
+    }, 5000);
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".working-process",
+        start: "top 75%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+      }
+    });
+
+    // 1. Center split-divider parts (upper drops down, lower rises up)
+    tl.from(
+      ".working-process__divider-part--upper",
+      {
+        yPercent: -100,
+        opacity: 0,
+        duration: 0.9,
+        ease: "power3.out",
+      },
+      0
+    );
+
+    tl.from(
+      ".working-process__divider-part--lower",
+      {
+        yPercent: 100,
+        opacity: 0,
+        duration: 0.9,
+        ease: "power3.out",
+      },
+      0
+    );
+
+    // 2. Background vector slow parallax scrub drift (tied to scrolling)
+    gsap.fromTo(
+      ".working-process__bg-vector",
+      { y: -30 },
+      {
+        y: 30,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".working-process",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1.2,
+        }
+      }
+    );
+
+    // 3. Left column form rows slide-in from left (staggered)
+    tl.from(
+      ".working-process__form-row",
+      {
+        x: -40,
+        opacity: 0,
+        duration: 0.65,
+        stagger: 0.12,
+        ease: "power3.out",
+      },
+      0.15
+    );
+
+    tl.from(
+      ".working-process__submit",
+      {
+        y: 20,
+        opacity: 0,
+        duration: 0.6,
+        ease: "back.out(1.8)",
+        clearProps: "transform,opacity",
+      },
+      0.55
+    );
+
+    // 4. Right column headings cascade
+    tl.from(
+      [".working-process__right .section-header .section-header__paw", ".working-process__right .section-header .section-header__label"],
+      {
+        y: 20,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.1,
+        ease: "power2.out",
+      },
+      0.15
+    );
+
+    tl.from(
+      ".working-process__right .section-header__title",
+      {
+        y: 30,
+        opacity: 0,
+        duration: 0.7,
+        ease: "power3.out",
+      },
+      0.3
+    );
+
+    // 5. Slider image box scales + rotates in
+    tl.from(
+      ".working-process__image-circle",
+      {
+        scale: 0.6,
+        rotation: -15,
+        opacity: 0,
+        duration: 0.9,
+        ease: "back.out(1.8)",
+      },
+      0.4
+    );
+
+    // 6. Text details fade and slide-up
+    tl.from(
+      ".working-process__slide-title",
+      {
+        y: 25,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power3.out",
+      },
+      0.8
+    );
+
+    tl.from(
+      ".working-process__slide-desc",
+      {
+        y: 20,
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.out",
+      },
+      0.95
+    );
+
+    // 7. Slider number badge pops in
+    tl.from(
+      ".working-process__badge",
+      {
+        scale: 0,
+        opacity: 0,
+        duration: 0.55,
+        ease: "back.out(2.5)",
+      },
+      0.95
+    );
+
+    // 8. Nav bar container fade up
+    tl.from(
+      ".working-process__slider-nav",
+      {
+        y: 15,
+        opacity: 0,
+        scale: 0.85,
+        duration: 0.5,
+        ease: "back.out(1.8)",
+        clearProps: "transform,opacity",
+      },
+      1.1
+    );
+  }
+
+
+
+  /*-------------------------------------------------
       1. preloader  
  --------------------------------------------------------------*/
 
@@ -967,30 +1364,56 @@
     let currentIndex = 1; // Starting with the middle one (index 1)
     const totalAvatars = $(".testimonial__avatar").length;
 
-    function updateTestimonial(index) {
-      // Fade out and back in to simulate content change
-      $(".testimonial__card").fadeOut(300, function () {
-        // Update Avatars Border
-        $(".testimonial__avatar").removeClass("testimonial__avatar--middle");
-        $(".testimonial__avatar").eq(index).addClass("testimonial__avatar--middle");
-        $(this).fadeIn(300);
+    function updateTestimonial(index, direction) {
+      const card = document.querySelector(".testimonial__card");
+      if (!card) return;
+
+      const slideOutX = direction === "next" ? -50 : 50;
+      const slideInX = direction === "next" ? 50 : -50;
+
+      // Smooth GSAP slide-out transition
+      gsap.to(card, {
+        opacity: 0,
+        x: slideOutX,
+        duration: 0.25,
+        ease: "power2.in",
+        onComplete: function () {
+          // Update Avatars Border in the DOM
+          $(".testimonial__avatar").removeClass("testimonial__avatar--middle");
+          $(".testimonial__avatar").eq(index).addClass("testimonial__avatar--middle");
+
+          // Reset positioning to opposite side before animating back in
+          gsap.set(card, { x: slideInX });
+
+          // Smooth slide-in
+          gsap.to(card, {
+            opacity: 1,
+            x: 0,
+            duration: 0.35,
+            ease: "power2.out",
+            clearProps: "x"
+          });
+        }
       });
     }
 
     $(".testimonial__nav--next").on("click", function () {
       currentIndex = (currentIndex + 1) % totalAvatars;
-      updateTestimonial(currentIndex);
+      updateTestimonial(currentIndex, "next");
     });
 
     $(".testimonial__nav--prev").on("click", function () {
       currentIndex = (currentIndex - 1 + totalAvatars) % totalAvatars;
-      updateTestimonial(currentIndex);
+      updateTestimonial(currentIndex, "prev");
     });
 
     // Also switch on avatar click
     $(".testimonial__avatar").on("click", function () {
-      currentIndex = $(this).index();
-      updateTestimonial(currentIndex);
+      const newIndex = $(this).index();
+      if (newIndex === currentIndex) return;
+      const direction = newIndex > currentIndex ? "next" : "prev";
+      currentIndex = newIndex;
+      updateTestimonial(currentIndex, direction);
     });
   }
 
@@ -1088,28 +1511,76 @@
     const $progress = $(".working-process__progress-bar");
     const $badge = $(".working-process__badge");
     const $title = $(".working-process__slide-title");
-    const $sliderContent = $(".working-process__slider");
+    const $desc = $(".working-process__slide-desc");
+    const $imageBox = $(".working-process__image-box");
 
-    function updateStep(index) {
-      $sliderContent.fadeOut(300, function () {
-        $badge.text(index.toString().padStart(2, "0"));
-        const currentTitle = $title.text().trim();
-        const newTitle = currentTitle.replace(/^\d+/, index.toString().padStart(2, "0"));
-        $title.text(newTitle);
-        const progressPos = ((index - 1) / totalSteps) * 100;
-        $progress.css("left", progressPos + "%");
-        $(this).fadeIn(300);
+    function updateStep(index, direction) {
+      const slideOutX = direction === "next" ? -40 : 40;
+      const slideInX = direction === "next" ? 40 : -40;
+
+      // Group elements to animate together
+      const animElements = [$title[0], $desc[0]];
+
+      // Step 1: Slide out texts and fade out image wrapper
+      gsap.to(animElements, {
+        opacity: 0,
+        x: slideOutX,
+        duration: 0.25,
+        ease: "power2.in",
+        stagger: 0.05
+      });
+
+      gsap.to($imageBox[0], {
+        opacity: 0,
+        scale: 0.85,
+        rotation: direction === "next" ? -15 : 15,
+        duration: 0.3,
+        ease: "power2.in",
+        onComplete: function () {
+          // Update contents inside DOM
+          $badge.text(index.toString().padStart(2, "0"));
+          const currentTitle = $title.text().trim();
+          const newTitle = currentTitle.replace(/^\d+/, index.toString().padStart(2, "0"));
+          $title.text(newTitle);
+
+          // Update progress position bar
+          const progressPos = ((index - 1) / totalSteps) * 100;
+          $progress.css("left", progressPos + "%");
+
+          // Reset element positions on opposite sides
+          gsap.set(animElements, { x: slideInX });
+          gsap.set($imageBox[0], { scale: 0.85, rotation: direction === "next" ? 15 : -15 });
+
+          // Step 2: Slide in texts and bounce/rotate in the image wrapper
+          gsap.to(animElements, {
+            opacity: 1,
+            x: 0,
+            duration: 0.4,
+            stagger: 0.05,
+            ease: "power2.out",
+            clearProps: "x"
+          });
+
+          gsap.to($imageBox[0], {
+            opacity: 1,
+            scale: 1,
+            rotation: 0,
+            duration: 0.5,
+            ease: "back.out(1.5)",
+            clearProps: "scale,rotation"
+          });
+        }
       });
     }
 
     $(".working-process__nav-btn").eq(1).on("click", function () {
       currentIndex = currentIndex < totalSteps ? currentIndex + 1 : 1;
-      updateStep(currentIndex);
+      updateStep(currentIndex, "next");
     });
 
     $(".working-process__nav-btn").eq(0).on("click", function () {
       currentIndex = currentIndex > 1 ? currentIndex - 1 : totalSteps;
-      updateStep(currentIndex);
+      updateStep(currentIndex, "prev");
     });
   }
 

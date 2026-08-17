@@ -4769,6 +4769,7 @@ i[class*=fa] {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -2;
+  will-change: transform, opacity;
 }
 @media (max-width: 1200px) {
   .testimonial__bg-outline {
@@ -4780,6 +4781,7 @@ i[class*=fa] {
   top: 46%;
   left: 50%;
   transform: translate(-50%, -50%);
+  will-change: transform, opacity;
 }
 @media (max-width: 1200px) {
   .testimonial__bg {
@@ -4821,6 +4823,7 @@ i[class*=fa] {
 .testimonial__nav--prev {
   left: 5%;
   top: 30%;
+  will-change: transform, opacity;
 }
 @media (max-width: 1400px) {
   .testimonial__nav--prev {
@@ -4835,6 +4838,7 @@ i[class*=fa] {
 .testimonial__nav--next {
   right: 5%;
   top: 30%;
+  will-change: transform, opacity;
 }
 @media (max-width: 1400px) {
   .testimonial__nav--next {
@@ -4869,16 +4873,16 @@ i[class*=fa] {
   text-align: center;
   max-width: 850px;
   margin: 0 auto;
-  padding: 60px 40px 30px;
+  padding: 60px 40px 50px;
 }
 @media (max-width: 1200px) {
   .testimonial__card {
-    padding: 60px 40px 0;
+    padding: 60px 40px 15px;
   }
 }
 @media (max-width: 992px) {
   .testimonial__card {
-    padding: 40px 45px 0;
+    padding: 40px 45px 10px;
   }
 }
 .testimonial__rating {
@@ -4889,6 +4893,7 @@ i[class*=fa] {
   padding: 5px 15px;
   border-radius: 5px;
   box-shadow: 0 4px 15px rgba(var(--primary-color-rgb, 104, 57, 204), 0.05);
+  will-change: transform, opacity;
 }
 @media (max-width: 1200px) {
   .testimonial__rating {
@@ -4900,6 +4905,7 @@ i[class*=fa] {
 }
 .testimonial__text {
   margin-bottom: 40px;
+  will-change: transform, opacity;
 }
 @media (max-width: 1200px) {
   .testimonial__text {
@@ -4913,6 +4919,7 @@ i[class*=fa] {
 }
 .testimonial__quote-icon {
   margin-bottom: 40px;
+  will-change: transform, opacity;
 }
 @media (max-width: 1200px) {
   .testimonial__quote-icon {
@@ -4925,10 +4932,12 @@ i[class*=fa] {
 }
 .testimonial__author {
   margin-bottom: 30px;
+  will-change: transform, opacity;
 }
 .testimonial__name {
   font-size: 30px;
   margin-bottom: 10px;
+  will-change: transform, opacity;
 }
 @media (max-width: 1200px) {
   .testimonial__name {
@@ -4949,13 +4958,15 @@ i[class*=fa] {
   z-index: 1;
 }
 .testimonial__avatar {
-  max-width: 70px;
-  max-height: 70px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   object-fit: cover;
   background-color: var(--white-color);
   border: 2px solid var(--white-color);
   cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform, border-color, box-shadow;
 }
 .testimonial__avatar:not(:first-child) {
   margin-left: 20px;
@@ -4967,30 +4978,26 @@ i[class*=fa] {
 }
 @media (max-width: 992px) {
   .testimonial__avatar {
-    max-width: 60px;
-    max-height: 60px;
+    width: 60px;
+    height: 60px;
   }
 }
+.testimonial__avatar:hover {
+  transform: scale(1.1);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary-color), transparent 75%);
+}
 .testimonial__avatar--middle {
-  max-width: 90px;
-  max-height: 90px;
-  border: 3px solid var(--primary-color);
+  border: 2px solid var(--primary-color);
   padding: 5px;
   background-color: var(--white-color);
   z-index: 2;
   position: relative;
+  transform: scale(1.28);
 }
-@media (max-width: 992px) {
-  .testimonial__avatar--middle {
-    max-width: 80px;
-    max-height: 80px;
-  }
-}
-@media (max-width: 768px) {
-  .testimonial__avatar--middle {
-    max-width: 75px;
-    max-height: 75px;
-  }
+.testimonial__avatar--middle:hover {
+  transform: scale(1.34);
+  box-shadow: 0 0 0 4px rgba(var(--primary-color-rgb, 104, 57, 204), 0.25);
 }
 
 /* 
@@ -5020,8 +5027,12 @@ i[class*=fa] {
     gap: 20px;
   }
 }
+.team__header-left {
+  will-change: clip-path, transform, opacity;
+}
 .team__header-right {
   margin-bottom: 15px;
+  will-change: transform, opacity;
 }
 .team__header--style2 {
   margin-bottom: 50px;
@@ -5055,6 +5066,7 @@ i[class*=fa] {
   transition: all 0.4s ease;
   margin-top: 60px;
   width: 100%;
+  will-change: transform, opacity;
 }
 @media (max-width: 1200px) {
   .team-card {
@@ -5480,6 +5492,7 @@ i[class*=fa] {
   height: 96%;
   object-fit: cover;
   pointer-events: none;
+  will-change: transform;
 }
 @media (max-width: 768px) {
   .working-process__bg-vector {
@@ -5552,6 +5565,7 @@ i[class*=fa] {
 .working-process__divider-part {
   width: 100%;
   background-color: var(--white-color);
+  will-change: transform, opacity;
 }
 .working-process__divider-part--upper {
   height: 48%;
@@ -5574,6 +5588,7 @@ i[class*=fa] {
   display: flex;
   gap: 30px;
   min-width: 0;
+  will-change: transform, opacity;
 }
 @media (max-width: 768px) {
   .working-process__form-row {
@@ -5694,6 +5709,8 @@ i[class*=fa] {
   inset: 0;
   border: 1px dashed color-mix(in srgb, var(--white-color), transparent 60%);
   border-radius: 50%;
+  animation: working-process-spin 30s linear infinite;
+  will-change: transform;
 }
 .working-process__img {
   max-width: 254px;
@@ -5714,11 +5731,13 @@ i[class*=fa] {
   align-items: center;
   justify-content: center;
   font-size: 24px;
+  will-change: transform, opacity;
 }
 .working-process__slide-title {
   color: var(--white-color);
   font-size: 30px;
   margin-bottom: 20px;
+  will-change: transform, opacity;
 }
 @media (max-width: 768px) {
   .working-process__slide-title {
@@ -5729,6 +5748,7 @@ i[class*=fa] {
   color: var(--white-color);
   margin-bottom: 40px;
   max-width: 400px;
+  will-change: transform, opacity;
 }
 @media (max-width: 992px) {
   .working-process__slide-desc {
@@ -5742,6 +5762,7 @@ i[class*=fa] {
   gap: 15px;
   max-width: 100%;
   box-sizing: border-box;
+  will-change: transform, opacity;
 }
 @media (max-width: 992px) {
   .working-process__slider-nav {
@@ -5797,6 +5818,14 @@ i[class*=fa] {
   transition: left 0.4s ease;
 }
 
+@keyframes working-process-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 /* 
 |......................................................................
 | Template Name: CRAS

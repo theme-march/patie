@@ -34,6 +34,9 @@
     return $(selector).length > 0;
   };
 
+  // Register GSAP plugins globally (required for ScrollTrigger & SplitText)
+  gsap.registerPlugin(ScrollTrigger, SplitText);
+
   $(window).on("load", function () {
     $(window).trigger("scroll");
     $(window).trigger("resize");
@@ -46,6 +49,8 @@
     testimonialAnimations();
     teamAnimations();
     workingProcessAnimations();
+    pricingAnimations();
+    chooseUsAnimations();
   });
 
   $(function () {
@@ -1909,6 +1914,238 @@
     }
   }
 
+  /*-------------------------------------------------
+   * PRICING SECTION ANIMATIONS
+   *-------------------------------------------------*/
+  function pricingAnimations() {
+    if (!document.querySelector(".pricing")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".pricing__header-left .section-header__paw, .pricing__header-left .section-header__label, .pricing__header-left .section-header__title, .pricing__toggle, .pricing-col, .pricing-card__ribbon, .pricing-card__price, .pricing-card__info, .pricing-card__list-item, .pricing-btn",
+        { clearProps: "all" }
+      );
+    }, 5000);
+
+    var titleEl = document.querySelector(".pricing__header-left .section-header__title");
+    var splitTitle = null;
+    try {
+      if (titleEl && typeof SplitText !== "undefined") {
+        splitTitle = new SplitText(titleEl, { type: "lines" });
+      }
+    } catch (e) { splitTitle = null; }
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".pricing",
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        if (splitTitle) splitTitle.revert();
+        animatePriceCounters();
+      }
+    });
+
+    tl.from(".pricing__header-left .section-header__paw", { opacity: 0, scale: 0.5, rotation: -30, duration: 0.55, ease: "back.out(2)" }, 0);
+    tl.from(".pricing__header-left .section-header__label", { opacity: 0, x: -20, duration: 0.5, ease: "power2.out" }, 0.1);
+
+    if (splitTitle && splitTitle.lines && splitTitle.lines.length) {
+      tl.from(splitTitle.lines, { opacity: 0, y: 40, rotateX: -10, transformOrigin: "0% 50% -20", duration: 0.75, stagger: 0.12, ease: "power4.out" }, 0.2);
+    } else {
+      tl.from(".pricing__header-left .section-header__title", { opacity: 0, y: 30, duration: 0.7, ease: "power3.out" }, 0.2);
+    }
+
+    tl.from(".pricing__toggle", { opacity: 0, scale: 0.7, duration: 0.6, ease: "back.out(2.2)" }, 0.5);
+
+    tl.from(".pricing-col", { opacity: 0, y: 70, scale: 0.94, duration: 0.75, stagger: 0.18, ease: "power3.out", clearProps: "transform,opacity,scale" }, 0.65);
+
+    tl.from(".pricing-card__ribbon", { opacity: 0, scale: 0, rotation: 90, duration: 0.6, ease: "back.out(1.8)" }, 1.0);
+
+    tl.from(".pricing-card__info", { opacity: 0, y: 20, scaleY: 0.8, duration: 0.6, ease: "power3.out" }, 1.2);
+
+    tl.from(".pricing-card__list-item", { opacity: 0, x: -20, duration: 0.5, stagger: 0.04, ease: "power2.out" }, 1.35);
+
+    tl.from(".pricing-btn", { opacity: 0, y: 15, scale: 0.82, duration: 0.55, stagger: 0.15, ease: "back.out(1.7)", clearProps: "opacity,transform" }, 1.65);
+  }
+
+  function animatePriceCounters() {
+    document.querySelectorAll(".pricing-card__price").forEach(function (el) {
+      var activeBtn = document.querySelector(".pricing__toggle-btn--active");
+      var isYearly = activeBtn && activeBtn.textContent.trim() === "YEARLY";
+      var targetAttr = isYearly ? el.dataset.yearly : el.dataset.monthly;
+      if (!targetAttr) return;
+      var targetVal = parseFloat(targetAttr.replace(/[^0-9.]/g, ""));
+      var obj = { val: 0 };
+      gsap.to(obj, {
+        val: targetVal,
+        duration: 1.4,
+        ease: "power2.out",
+        onUpdate: function () {
+          el.innerText = "$" + obj.val.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+      });
+    });
+  }
+  /*-------------------------------------------------
+   * CHOOSE US ANIMATIONS
+   *-------------------------------------------------*/
+  function chooseUsAnimations() {
+    if (!document.querySelector(".choose-us")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".choose-us__main-wrapper, .choose-us__top-pet, .choose-us__header .section-header__paw, .choose-us__header .section-header__label, .choose-us__header .section-header__title, .choose-us__line, .choose-us__center-ring, .choose-us__center-pet, .choose-us__features--left .choose-us__feature, .choose-us__features--right .choose-us__feature, .choose-us__abstract-bg, .choose-us__triangle-bg, .choose-us__feature-title, .choose-us__feature-text",
+        { clearProps: "all" }
+      );
+    }, 5000);
+
+    var titleEl = document.querySelector(".choose-us__header .section-header__title");
+    var splitTitle = null;
+    try {
+      if (titleEl && typeof SplitText !== "undefined") {
+        splitTitle = new SplitText(titleEl, { type: "lines" });
+      }
+    } catch (e) { splitTitle = null; }
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".choose-us",
+        start: "top 75%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        if (splitTitle) splitTitle.revert();
+        gsap.set(
+          ".choose-us__main-wrapper, .choose-us__top-pet, .choose-us__header .section-header__paw, .choose-us__header .section-header__label, .choose-us__header .section-header__title, .choose-us__line, .choose-us__center-ring, .choose-us__center-pet, .choose-us__features--left .choose-us__feature, .choose-us__features--right .choose-us__feature, .choose-us__abstract-bg, .choose-us__triangle-bg, .choose-us__feature-title, .choose-us__feature-text",
+          { clearProps: "all" }
+        );
+      }
+    });
+
+    tl.from(".choose-us__main-wrapper", {
+      opacity: 0,
+      y: 40,
+      duration: 0.95,
+      ease: "power3.out"
+    }, 0);
+
+    tl.from(".choose-us__triangle-bg", {
+      opacity: 0,
+      scale: 0.85,
+      y: 30,
+      duration: 1.1,
+      ease: "power2.out"
+    }, 0.1);
+
+    tl.from(".choose-us__abstract-bg", {
+      opacity: 0,
+      duration: 1.2,
+      ease: "power2.out"
+    }, 0.15);
+
+    tl.from(".choose-us__top-pet", {
+      opacity: 0,
+      y: -60,
+      scale: 0.8,
+      duration: 0.85,
+      ease: "back.out(1.5)"
+    }, 0.25);
+
+    tl.from(".choose-us__header .section-header__paw", {
+      opacity: 0,
+      scale: 0.5,
+      rotation: -30,
+      duration: 0.55,
+      stagger: 0.1,
+      ease: "back.out(2)"
+    }, 0.3);
+
+    tl.from(".choose-us__header .section-header__label", {
+      opacity: 0,
+      y: -15,
+      duration: 0.5,
+      ease: "power2.out"
+    }, 0.4);
+
+    if (splitTitle && splitTitle.lines && splitTitle.lines.length) {
+      tl.from(splitTitle.lines, {
+        opacity: 0,
+        y: 35,
+        rotateX: -10,
+        transformOrigin: "0% 50% -20",
+        duration: 0.75,
+        stagger: 0.12,
+        ease: "power4.out"
+      }, 0.45);
+    } else {
+      tl.from(".choose-us__header .section-header__title", {
+        opacity: 0,
+        y: 25,
+        duration: 0.7,
+        ease: "power3.out"
+      }, 0.45);
+    }
+
+    tl.from(".choose-us__center-ring", {
+      opacity: 0,
+      scale: 0.7,
+      rotation: -10,
+      duration: 0.8,
+      ease: "back.out(1.6)"
+    }, 0.55);
+
+    tl.from(".choose-us__center-pet", {
+      opacity: 0,
+      y: 20,
+      duration: 0.7,
+      ease: "power2.out"
+    }, 0.8);
+
+    tl.from(".choose-us__line", {
+      opacity: 0,
+      scaleX: 0,
+      scaleY: 0,
+      duration: 0.65,
+      stagger: 0.08,
+      ease: "power2.out"
+    }, 0.7);
+
+    // Symmetrical Features Slide
+    tl.from(".choose-us__features--left .choose-us__feature", {
+      opacity: 0,
+      x: -50,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: "power3.out"
+    }, 0.85);
+
+    tl.from(".choose-us__features--left .choose-us__feature-title, .choose-us__features--left .choose-us__feature-text", {
+      opacity: 0,
+      y: 15,
+      stagger: 0.1,
+      duration: 0.6,
+      ease: "power2.out"
+    }, 1.05);
+
+    tl.from(".choose-us__features--right .choose-us__feature", {
+      opacity: 0,
+      x: 50,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: "power3.out"
+    }, 0.85);
+
+    tl.from(".choose-us__features--right .choose-us__feature-title, .choose-us__features--right .choose-us__feature-text", {
+      opacity: 0,
+      y: 15,
+      stagger: 0.1,
+      duration: 0.6,
+      ease: "power2.out"
+    }, 1.05);
+  }
 })(jQuery);
 
 if ($.exists(".working-process__item")) {

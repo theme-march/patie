@@ -6450,6 +6450,7 @@ i[class*=fa] {
   max-width: 563px;
   height: auto;
   display: block;
+  will-change: transform, opacity;
 }
 @media (max-width: 1600px) {
   .choose-us__top-pet {
@@ -6528,6 +6529,11 @@ i[class*=fa] {
 }
 .choose-us__feature {
   position: relative;
+  will-change: transform, opacity;
+  transition: transform 0.35s ease;
+}
+.choose-us__feature:hover {
+  transform: translateY(-5px);
 }
 .choose-us__feature-title {
   color: var(--white-color);
@@ -6547,6 +6553,7 @@ i[class*=fa] {
   position: absolute;
   pointer-events: none;
   z-index: 1;
+  will-change: transform, opacity;
 }
 @media (max-width: 992px) {
   .choose-us__line {
@@ -6556,18 +6563,22 @@ i[class*=fa] {
 .choose-us__line--tl {
   top: 10%;
   left: 0%;
+  transform-origin: right bottom;
 }
 .choose-us__line--bl {
   bottom: 19%;
   left: 0%;
+  transform-origin: right top;
 }
 .choose-us__line--tr {
   top: 10%;
   right: 0%;
+  transform-origin: left bottom;
 }
 .choose-us__line--br {
   bottom: 19%;
   right: 0%;
+  transform-origin: left top;
 }
 .choose-us__center-ring {
   max-width: 415px;
@@ -6575,6 +6586,8 @@ i[class*=fa] {
   z-index: 2;
   flex-shrink: 0;
   margin: 0 -40px;
+  will-change: transform, opacity;
+  transform-origin: center center;
 }
 @media (max-width: 992px) {
   .choose-us__center-ring {
@@ -6601,6 +6614,7 @@ i[class*=fa] {
   max-width: 413px;
   height: auto;
   display: block;
+  will-change: transform, opacity;
 }
 @media (max-width: 992px) {
   .choose-us__center-pet {

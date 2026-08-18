@@ -113,6 +113,7 @@
     max-width: 563px;
     height: auto;
     display: block;
+    will-change: transform, opacity;
 
     @include respond(xxxl) {
       max-width: 500px;
@@ -196,6 +197,12 @@
 
   &__feature {
     position: relative;
+    will-change: transform, opacity;
+    transition: transform 0.35s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
   }
 
   &__feature-title {
@@ -217,6 +224,7 @@
     position: absolute;
     pointer-events: none;
     z-index: 1;
+    will-change: transform, opacity;
 
     @include respond(lg) {
       display: none;
@@ -226,21 +234,25 @@
     &--tl {
       top: 10%;
       left: 0%;
+      transform-origin: right bottom;
     }
 
     &--bl {
       bottom: 19%;
       left: 0%;
+      transform-origin: right top;
     }
 
     &--tr {
       top: 10%;
       right: 0%;
+      transform-origin: left bottom;
     }
 
     &--br {
       bottom: 19%;
       right: 0%;
+      transform-origin: left top;
     }
   }
 
@@ -250,6 +262,8 @@
     z-index: 2;
     flex-shrink: 0;
     margin: 0 -40px;
+    will-change: transform, opacity;
+    transform-origin: center center;
 
     @include respond(lg) {
       max-width: 60%;
@@ -276,6 +290,7 @@
     max-width: 413px;
     height: auto;
     display: block;
+    will-change: transform, opacity;
 
     @include respond(lg) {
       top: 48%;

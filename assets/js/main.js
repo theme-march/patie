@@ -51,6 +51,14 @@
     workingProcessAnimations();
     pricingAnimations();
     chooseUsAnimations();
+    productAnimations();
+    blogAnimations();
+    footerAnimations();
+    heroGroomingAnimations();
+    aboutGroomingAnimations();
+    groomingServicesAnimations();
+    parentTestimonialAnimations();
+    faqAnimations();
   });
 
   $(function () {
@@ -1426,34 +1434,124 @@
     let currentIndex = 1; // Middle avatar (index 1)
     const totalAvatars = $(".parent-testimonial__avatar").length;
 
-    function updateTestimonial(index) {
+    // Testimonial slides content array
+    var testimonialSlides = [
+      {
+        name: "BROOKLYN SIMMONS",
+        designation: "E-Commerce Solutions",
+        text: "We Work With Trusted Partners And Monitor The Impact Of Every Program To Ensure Transparency And Accountability All Donations To Our Organization Are Tax-Deductible, And We Provide Receipts For Every Contribution Offer Numerous Volunteer Opportunities Both On-Site And Virtually. Visit Our Volunteer Page Donations",
+        rating: 4.5
+      },
+      {
+        name: "ROSEMARY COOPER",
+        designation: "Pet Owner",
+        text: "The grooming team was absolutely fantastic with my cat! She is usually very anxious around strangers, but they treated her with so much care and patience. Her coat has never looked cleaner and shinier. I highly recommend their specialized services!",
+        rating: 5
+      },
+      {
+        name: "DANIEL SMITH",
+        designation: "Dog Trainer",
+        text: "Finding grooming specialists who understand different breeds and hygiene requirements is a challenge, but this team exceeded all expectations. The facility is extremely clean, and their professional approach is top tier.",
+        rating: 5
+      }
+    ];
+
+    function updateTestimonial(index, direction) {
       if (totalAvatars === 0) return;
 
-      // Update Highlight Immediately
-      $(".parent-testimonial__avatar").removeClass("parent-testimonial__avatar--center").addClass("parent-testimonial__avatar--side");
-      $(".parent-testimonial__avatar").eq(index).removeClass("parent-testimonial__avatar--side").addClass("parent-testimonial__avatar--center");
+      const content = document.querySelector(".parent-testimonial__content");
+      const bodyEl = document.querySelector(".parent-testimonial__body");
+      if (!content || !bodyEl) return;
 
-      // Animate Content
-      $(".parent-testimonial__content").fadeOut(300, function () {
-        // In a real app, you'd change the text/name here.
-        // For demonstration, we just fade back in.
-        $(this).fadeIn(300);
+      const slideOutX = direction === "next" ? -50 : 50;
+      const slideInX = direction === "next" ? 50 : -50;
+
+      // 1. Measure and freeze current body height
+      const currentHeight = bodyEl.offsetHeight;
+      gsap.set(bodyEl, { height: currentHeight });
+
+      // Smooth GSAP slide-out transition
+      gsap.to(content, {
+        opacity: 0,
+        x: slideOutX,
+        duration: 0.25,
+        ease: "power2.in",
+        onComplete: function () {
+          // Update Highlight Immediately
+          $(".parent-testimonial__avatar").removeClass("parent-testimonial__avatar--center").addClass("parent-testimonial__avatar--side");
+          $(".parent-testimonial__avatar").eq(index).removeClass("parent-testimonial__avatar--side").addClass("parent-testimonial__avatar--center");
+
+          // Update texts
+          var nextData = testimonialSlides[index % testimonialSlides.length] || testimonialSlides[0];
+          var nameEl = document.querySelector(".parent-testimonial__name");
+          var descEl = document.querySelector(".parent-testimonial__designation");
+          var textEl = document.querySelector(".parent-testimonial__text");
+          if (nameEl) nameEl.textContent = nextData.name;
+          if (descEl) descEl.textContent = nextData.designation;
+          if (textEl) textEl.textContent = nextData.text;
+
+          // Rebuild rating stars
+          var ratingContainer = document.querySelector(".parent-testimonial__rating");
+          if (ratingContainer) {
+            ratingContainer.innerHTML = "";
+            var rating = nextData.rating;
+            for (var i = 1; i <= 5; i++) {
+              var star = document.createElement("i");
+              if (i <= Math.floor(rating)) {
+                star.className = "fas fa-star parent-testimonial__star";
+              } else if (i - 0.5 === rating) {
+                star.className = "fas fa-star-half-alt parent-testimonial__star";
+              } else {
+                star.className = "far fa-star parent-testimonial__star";
+              }
+              ratingContainer.appendChild(star);
+            }
+          }
+
+          // 2. Temporarily set to auto, measure new target height, and restore currentHeight for transition
+          gsap.set(bodyEl, { height: "auto" });
+          const targetHeight = bodyEl.offsetHeight;
+          gsap.set(bodyEl, { height: currentHeight });
+
+          // 3. Animate height smoothly
+          gsap.to(bodyEl, {
+            height: targetHeight,
+            duration: 0.35,
+            ease: "power2.out",
+            clearProps: "height"
+          });
+
+          // Reset positioning to opposite side before animating back in
+          gsap.set(content, { x: slideInX });
+
+          // Smooth slide-in
+          gsap.to(content, {
+            opacity: 1,
+            x: 0,
+            duration: 0.35,
+            ease: "power2.out",
+            clearProps: "x"
+          });
+        }
       });
     }
 
     $(".parent-testimonial__nav--next").on("click", function () {
       currentIndex = (currentIndex + 1) % totalAvatars;
-      updateTestimonial(currentIndex);
+      updateTestimonial(currentIndex, "next");
     });
 
     $(".parent-testimonial__nav--prev").on("click", function () {
       currentIndex = (currentIndex - 1 + totalAvatars) % totalAvatars;
-      updateTestimonial(currentIndex);
+      updateTestimonial(currentIndex, "prev");
     });
 
     $(".parent-testimonial__avatar").on("click", function () {
-      currentIndex = $(this).index();
-      updateTestimonial(currentIndex);
+      const newIndex = $(this).index();
+      if (newIndex === currentIndex) return;
+      const direction = newIndex > currentIndex ? "next" : "prev";
+      currentIndex = newIndex;
+      updateTestimonial(currentIndex, direction);
     });
   }
 
@@ -2146,6 +2244,814 @@
       ease: "power2.out"
     }, 1.05);
   }
+
+  /*-------------------------------------------------
+   * PRODUCT SECTION ANIMATIONS
+   * ScrollTrigger-activated "product shelf reveal".
+   * Cards rise up, badges pop in, info cascades up.
+   *-------------------------------------------------*/
+  function productAnimations() {
+    if (!document.querySelector(".product")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".product__header-left .section-header__paw, .product__header-left .section-header__label, .product__header-left .section-header__title, .product__header-right .common-btn, .product-card, .product-card__badge, .product-card__price, .product-card__title, .product-card__rating",
+        { clearProps: "all" }
+      );
+    }, 5000);
+
+    var titleEl = document.querySelector(".product__header-left .section-header__title");
+    var splitTitle = null;
+    try {
+      if (titleEl && typeof SplitText !== "undefined") {
+        splitTitle = new SplitText(titleEl, { type: "lines" });
+      }
+    } catch (e) { splitTitle = null; }
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".product",
+        start: "top 75%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        if (splitTitle) splitTitle.revert();
+      }
+    });
+
+    // ── 1. Header: paw icon pops in
+    tl.from(".product__header-left .section-header__paw", {
+      opacity: 0, scale: 0.5, rotation: -30, duration: 0.55, ease: "back.out(2)"
+    }, 0);
+
+    // ── 2. Header: label slides in from left
+    tl.from(".product__header-left .section-header__label", {
+      opacity: 0, x: -15, duration: 0.5, ease: "power2.out"
+    }, 0.1);
+
+    // ── 3. Header: title line-by-line cascade (SplitText)
+    if (splitTitle && splitTitle.lines && splitTitle.lines.length) {
+      tl.from(splitTitle.lines, {
+        opacity: 0, y: 40, rotateX: -10, transformOrigin: "0% 50% -20",
+        duration: 0.75, stagger: 0.12, ease: "power4.out"
+      }, 0.2);
+    } else {
+      tl.from(".product__header-left .section-header__title", {
+        opacity: 0, y: 35, duration: 0.75, ease: "power3.out"
+      }, 0.2);
+    }
+
+    // ── 4. Header: "View All" button pops in from right
+    tl.from(".product__header-right .common-btn", {
+      opacity: 0, x: 40, scale: 0.88, duration: 0.6, ease: "back.out(1.8)",
+      clearProps: "transform,opacity"
+    }, 0.4);
+
+    // ── 5. Cards: floating rise stagger (left → right, shelf reveal)
+    tl.from(".product-card", {
+      opacity: 0, y: 60, scale: 0.88,
+      duration: 0.75, stagger: 0.14, ease: "power3.out",
+      clearProps: "transform,opacity,scale"
+    }, 0.55);
+
+    // ── 6. Badges: elastic pop-in after cards land
+    tl.from(".product-card__badge", {
+      opacity: 0, scale: 0,
+      duration: 0.45, stagger: 0.06, ease: "back.out(2.5)"
+    }, 0.9);
+
+    // ── 7. Price: slide up per card (staggered)
+    tl.from(".product-card__price", {
+      opacity: 0, y: 15, duration: 0.55, stagger: 0.12, ease: "power3.out"
+    }, 1.0);
+
+    // ── 8. Title: slide up per card (staggered, slightly after price)
+    tl.from(".product-card__title", {
+      opacity: 0, y: 12, duration: 0.5, stagger: 0.12, ease: "power3.out"
+    }, 1.1);
+
+    // ── 9. Rating: scale + fade, per card — the finishing touch
+    tl.from(".product-card__rating", {
+      opacity: 0, y: 10, scale: 0.8,
+      duration: 0.45, stagger: 0.12, ease: "back.out(1.8)",
+      clearProps: "transform,opacity"
+    }, 1.22);
+  }
+
+  /*-------------------------------------------------
+   * BLOG SECTION ANIMATIONS
+   * ScrollTrigger-activated "magazine reveal".
+   * Large card curtains down, small cards stagger from right.
+   *-------------------------------------------------*/
+  function blogAnimations() {
+    if (!document.querySelector(".blog--homepage")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".blog__header .section-header__paw, .blog__header .section-header__label, .blog__header .section-header__title, .blog-card--lg, .blog-card--lg .blog-card__img, .blog-card--lg .blog-card__date, .blog-card--lg .blog-card__meta, .blog-card--lg .blog-card__title, .blog-card--lg .blog-card__desc, .blog-card--lg .service-btn, .blog-card--sm, .blog-card--sm .blog-card__date, .blog-card--sm .blog-card__meta, .blog-card--sm .blog-card__title, .blog-card--sm .blog-card__desc, .blog-card--sm .service-btn",
+        { clearProps: "all" }
+      );
+    }, 5000);
+
+    // Initial setup for large card curtain reveal
+    gsap.set(".blog-card--lg", { clipPath: "inset(0% 0% 100% 0%)" });
+
+    var titleEl = document.querySelector(".blog__header .section-header__title");
+    var splitTitle = null;
+    try {
+      if (titleEl && typeof SplitText !== "undefined") {
+        splitTitle = new SplitText(titleEl, { type: "words" });
+      }
+    } catch (e) { splitTitle = null; }
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".blog--homepage",
+        start: "top 75%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        if (splitTitle) splitTitle.revert();
+        gsap.set(".blog-card--lg", { clearProps: "clip-path" });
+      }
+    });
+
+    // ── 1. Header: Paw icons fan in symmetrically
+    var paws = document.querySelectorAll(".blog__header .section-header__paw");
+    if (paws.length >= 2) {
+      tl.from(paws[0], { opacity: 0, scale: 0.5, x: -20, rotation: -30, duration: 0.55, ease: "back.out(2)" }, 0);
+      tl.from(paws[1], { opacity: 0, scale: 0.5, x: 20, rotation: 30, duration: 0.55, ease: "back.out(2)" }, 0);
+    } else {
+      tl.from(".blog__header .section-header__paw", { opacity: 0, scale: 0.5, rotation: -30, duration: 0.55, ease: "back.out(2)" }, 0);
+    }
+
+    // ── 2. Header: Label slides down
+    tl.from(".blog__header .section-header__label", {
+      opacity: 0, y: -12, duration: 0.5, ease: "power2.out"
+    }, 0.12);
+
+    // ── 3. Header: Title word cascade (SplitText)
+    if (splitTitle && splitTitle.words && splitTitle.words.length) {
+      tl.from(splitTitle.words, {
+        opacity: 0, y: 40, duration: 0.7, stagger: 0.05, ease: "power4.out"
+      }, 0.22);
+    } else {
+      tl.from(".blog__header .section-header__title", {
+        opacity: 0, y: 30, duration: 0.7, ease: "power3.out"
+      }, 0.22);
+    }
+
+    // ── 4. Large Card: Curtain wipe
+    tl.to(".blog-card--lg", {
+      clipPath: "inset(0% 0% 0% 0%)",
+      duration: 1.0,
+      ease: "power3.out"
+    }, 0.45);
+
+    // ── 5. Large Card Image: Parallax zoom out reveal
+    tl.from(".blog-card--lg .blog-card__img", {
+      scale: 1.08,
+      duration: 1.2,
+      ease: "power2.out"
+    }, 0.45);
+
+    // ── 6. Large Card Date: Elastic stamp pop
+    tl.from(".blog-card--lg .blog-card__date", {
+      opacity: 0, scale: 0, duration: 0.55, ease: "back.out(2.5)"
+    }, 0.85);
+
+    // ── 7. Large Card Content: Sequential text reading-flow cascade
+    tl.from(".blog-card--lg .blog-card__meta", { opacity: 0, y: 15, duration: 0.5, ease: "power2.out", clearProps: "transform,opacity" }, 0.9);
+    tl.from(".blog-card--lg .blog-card__title", { opacity: 0, y: 20, duration: 0.6, ease: "power3.out", clearProps: "transform,opacity" }, 1.0);
+    tl.from(".blog-card--lg .blog-card__desc", { opacity: 0, y: 15, duration: 0.5, ease: "power2.out", clearProps: "transform,opacity" }, 1.1);
+    tl.from(".blog-card--lg .service-btn", {
+      opacity: 0, scale: 0.82, duration: 0.5, ease: "back.out(1.7)",
+      clearProps: "transform,opacity"
+    }, 1.2);
+
+    // ── 8. Small Cards: Staggered entry from right
+    tl.from(".blog-card--sm", {
+      opacity: 0, x: 60, scale: 0.93,
+      duration: 0.8, stagger: 0.2, ease: "power3.out",
+      clearProps: "transform,opacity,scale"
+    }, 0.55);
+
+    // ── 9. Small Cards Dates: Elastic pop
+    tl.from(".blog-card--sm .blog-card__date", {
+      opacity: 0, scale: 0, duration: 0.55, stagger: 0.2, ease: "back.out(2.5)", clearProps: "transform,opacity,scale"
+    }, 0.9);
+
+    // ── 10. Small Cards Content: Cascaded info reveals
+    tl.from(".blog-card--sm .blog-card__meta", { opacity: 0, x: 12, duration: 0.5, stagger: 0.2, ease: "power2.out", clearProps: "transform,opacity" }, 1.0);
+    tl.from(".blog-card--sm .blog-card__title", { opacity: 0, y: 12, duration: 0.55, stagger: 0.2, ease: "power3.out", clearProps: "transform,opacity" }, 1.1);
+    tl.from(".blog-card--sm .blog-card__desc", { opacity: 0, y: 10, duration: 0.5, stagger: 0.2, ease: "power2.out", clearProps: "transform,opacity" }, 1.18);
+    tl.from(".blog-card--sm .service-btn", {
+      opacity: 0, scale: 0.82, duration: 0.5, stagger: 0.2, ease: "back.out(1.7)",
+      clearProps: "transform,opacity"
+    }, 1.28);
+
+    // ── 11. Background Parallax (Independent Scroll Trigger)
+    gsap.fromTo(
+      ".blog--homepage .blog__bg",
+      { y: -40 },
+      {
+        y: 40,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".blog--homepage",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        }
+      }
+    );
+  }
+
+  /*-------------------------------------------------
+   * FOOTER SECTION ANIMATIONS
+   * ScrollTrigger-activated theatrical final sequence.
+   * Pets slide in, columns stagger, middle marquee fades, bottom bar enters.
+   *-------------------------------------------------*/
+  function footerAnimations() {
+    if (!document.querySelector(".footer")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".footer__pet-left, .footer__pet-right, .footer__col, .footer__col--newsletter .footer__title, .footer__col--newsletter .footer__desc, .footer__col--newsletter .footer__form, .footer__col--newsletter .footer__social-link, .footer__col-inner .footer__title, .footer__col-inner .footer__title-line, .footer__list-item, .footer__contact-item, .footer__contact-icon, .footer__middle, .footer__bottom",
+        { clearProps: "all" }
+      );
+    }, 5000);
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".footer",
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+      }
+    });
+
+    // ── 1. Pets: Slide in from outer edges
+    tl.from(".footer__pet-left", { x: -80, opacity: 0, duration: 1.2, ease: "power3.out" }, 0);
+    tl.from(".footer__pet-right", { x: 80, opacity: 0, duration: 1.2, ease: "power3.out" }, 0);
+
+    // ── 2. Columns: Rise up stagger (left to right)
+    tl.from(".footer__col", {
+      y: 50, opacity: 0, scale: 0.96,
+      duration: 0.75, stagger: 0.15, ease: "power3.out",
+      clearProps: "transform,opacity,scale"
+    }, 0.2);
+
+    // ── 3. Newsletter Column Cascade
+    tl.from(".footer__col--newsletter .footer__title", { opacity: 0, y: 20, duration: 0.5, ease: "power3.out" }, 0.45);
+    tl.from(".footer__col--newsletter .footer__desc", { opacity: 0, y: 15, duration: 0.5, ease: "power2.out" }, 0.55);
+    tl.from(".footer__col--newsletter .footer__form", {
+      opacity: 0, y: 15, scale: 0.95, duration: 0.55, ease: "back.out(1.5)",
+      clearProps: "transform,opacity"
+    }, 0.65);
+    tl.from(".footer__col--newsletter .footer__social-link", {
+      opacity: 0, scale: 0, duration: 0.5, stagger: 0.08, ease: "back.out(2.2)",
+      clearProps: "transform,opacity"
+    }, 0.8);
+
+    // ── 4. Underlines & Titles of Links/Services/Contact
+    tl.from(".footer__col-inner .footer__title", {
+      opacity: 0, y: 20, duration: 0.5, stagger: 0.15, ease: "power3.out"
+    }, 0.45);
+    tl.from(".footer__col-inner .footer__title-line", {
+      opacity: 0, scaleX: 0, duration: 0.5, stagger: 0.15, transformOrigin: "left center", ease: "power3.out"
+    }, 0.5);
+
+    // ── 5. List Items (Links + Services)
+    tl.from(".footer__list-item", {
+      opacity: 0, x: -15, duration: 0.4, stagger: 0.06, ease: "power2.out"
+    }, 0.75);
+
+    // ── 6. Contact details
+    tl.from(".footer__contact-item", {
+      opacity: 0, x: -20, duration: 0.55, stagger: 0.1, ease: "power3.out"
+    }, 0.75);
+    tl.from(".footer__contact-icon", {
+      scale: 0, duration: 0.45, stagger: 0.1, ease: "back.out(2)",
+      clearProps: "transform"
+    }, 0.75);
+
+    // ── 7. Middle Zone (Marquee Wrapper Only - avoiding conflict with marquee keyframes)
+    tl.from(".footer__middle", {
+      opacity: 0, duration: 0.8, ease: "power2.out"
+    }, 0.85);
+
+    // ── 8. Bottom bar copyrights & links
+    tl.from(".footer__bottom", {
+      opacity: 0, y: 20, duration: 0.6, ease: "power2.out",
+      clearProps: "transform,opacity"
+    }, 1.0);
+  }
+
+  /*-------------------------------------------------
+   * HERO GROOMING ANIMATIONS
+   * Above-the-fold load entrance for pet-grooming.html.
+   * Title splits, dog rises, side columns sweep inward.
+   *-------------------------------------------------*/
+  function heroGroomingAnimations() {
+    if (!document.querySelector(".hero-grooming")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".hero-grooming__title, .hero-grooming__badge, .hero-grooming__image-wrapper, .hero-grooming__offer-box, .hero-grooming__offer-price, .hero-grooming__specialist-box, .hero-grooming__avatar-img, .hero-grooming__specialist-btn",
+        { clearProps: "all" }
+      );
+    }, 2500);
+
+    var titleEl = document.querySelector(".hero-grooming__title");
+    var splitTitle = null;
+    try {
+      if (titleEl && typeof SplitText !== "undefined") {
+        splitTitle = new SplitText(titleEl, { type: "words" });
+      }
+    } catch (e) { splitTitle = null; }
+
+    var tl = gsap.timeline({
+      defaults: { ease: "power3.out" },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        if (splitTitle) splitTitle.revert();
+      }
+    });
+
+    // ── 1. Title SplitText cascade
+    if (splitTitle && splitTitle.words && splitTitle.words.length) {
+      tl.from(splitTitle.words, {
+        opacity: 0, y: 70, rotateX: -20, transformOrigin: "0% 50% -20",
+        duration: 0.8, stagger: 0.06, ease: "power4.out"
+      }, 0);
+    } else {
+      tl.from(".hero-grooming__title", { opacity: 0, y: 50, duration: 0.8 }, 0);
+    }
+
+    // ── 2. 100% Stamp Badge spin-pop
+    tl.from(".hero-grooming__badge", {
+      opacity: 0, scale: 0, rotation: 90, duration: 0.75, ease: "back.out(2.0)"
+    }, 0.6);
+
+    // ── 3. Dog slide up
+    tl.from(".hero-grooming__image-wrapper", {
+      opacity: 0, y: 120, scale: 0.94, duration: 0.95, ease: "power3.out"
+    }, 0.35);
+
+    // ── 4. Left Offer Box
+    tl.from(".hero-grooming__offer-box", {
+      opacity: 0, x: -70, scale: 0.95, duration: 0.8, ease: "power3.out",
+      clearProps: "transform,opacity"
+    }, 0.7);
+
+    // ── 5. Offer price label bubble pop
+    tl.from(".hero-grooming__offer-price", {
+      opacity: 0, scale: 0, duration: 0.6, ease: "back.out(2.2)",
+      clearProps: "transform,opacity"
+    }, 1.1);
+
+    // ── 6. Right Specialist Box
+    tl.from(".hero-grooming__specialist-box", {
+      opacity: 0, x: 70, scale: 0.95, duration: 0.8, ease: "power3.out",
+      clearProps: "transform,opacity"
+    }, 0.85);
+
+    // ── 7. Specialist Avatars stagger pop
+    tl.from(".hero-grooming__avatar-img", {
+      opacity: 0, scale: 0, duration: 0.5, stagger: 0.1, ease: "back.out(2.0)",
+      clearProps: "transform,opacity"
+    }, 1.2);
+
+    // ── 8. Specialist CTA contact button pop
+    tl.from(".hero-grooming__specialist-btn", {
+      opacity: 0, scale: 0.85, duration: 0.55, ease: "back.out(1.8)",
+      clearProps: "transform,opacity"
+    }, 1.35);
+  }
+
+  /*-------------------------------------------------
+   * ABOUT GROOMING ANIMATIONS
+   * ScrollTrigger-activated entrance sequence.
+   * Image scale-zoom on left, headers and lists stagger.
+   *-------------------------------------------------*/
+  function aboutGroomingAnimations() {
+    if (!document.querySelector(".about-grooming")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".about-grooming__bg, .about-grooming__img, .about-grooming__content-col .section-header__paw, .about-grooming__content-col .section-header__label, .about-grooming__content-col .section-header__title, .about-grooming__desc, .about-grooming__feature-item, .about-grooming__video, .about-grooming__bottom .common-btn, .about-grooming__author-img, .about-grooming__author-info",
+        { clearProps: "all" }
+      );
+    }, 5000);
+
+    var titleEl = document.querySelector(".about-grooming__content-col .section-header__title");
+    var splitTitle = null;
+    try {
+      if (titleEl && typeof SplitText !== "undefined") {
+        splitTitle = new SplitText(titleEl, { type: "lines" });
+      }
+    } catch (e) { splitTitle = null; }
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".about-grooming",
+        start: "top 75%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        if (splitTitle) splitTitle.revert();
+      }
+    });
+
+    // ── 1. Left Images depth reveal
+    tl.from(".about-grooming__bg", { opacity: 0, scale: 0.85, duration: 0.9, ease: "power2.out" }, 0);
+    tl.from(".about-grooming__img", { opacity: 0, x: -40, scale: 0.94, duration: 1.0, ease: "power3.out" }, 0.15);
+
+    // ── 2. Content Header: paw & label
+    tl.from(".about-grooming__content-col .section-header__paw", {
+      opacity: 0, scale: 0.5, rotation: -30, duration: 0.55, ease: "back.out(2.0)"
+    }, 0.2);
+    tl.from(".about-grooming__content-col .section-header__label", {
+      opacity: 0, x: -15, duration: 0.5, ease: "power2.out"
+    }, 0.3);
+
+    // ── 3. Title split reveal
+    if (splitTitle && splitTitle.lines && splitTitle.lines.length) {
+      tl.from(splitTitle.lines, {
+        opacity: 0, y: 35, rotateX: -8, transformOrigin: "0% 50% -20",
+        duration: 0.75, stagger: 0.1, ease: "power4.out"
+      }, 0.4);
+    } else {
+      tl.from(".about-grooming__content-col .section-header__title", {
+        opacity: 0, y: 30, duration: 0.75, ease: "power3.out"
+      }, 0.4);
+    }
+
+    // ── 4. Description
+    tl.from(".about-grooming__desc", {
+      opacity: 0, y: 20, duration: 0.65, ease: "power2.out",
+      clearProps: "transform,opacity"
+    }, 0.65);
+
+    // ── 5. Features & Video
+    tl.from(".about-grooming__feature-item", {
+      opacity: 0, x: -30, duration: 0.5, stagger: 0.1, ease: "power2.out",
+      clearProps: "transform,opacity"
+    }, 0.75);
+    tl.from(".about-grooming__video", {
+      opacity: 0, scale: 0.85, duration: 0.7, ease: "back.out(1.5)"
+    }, 0.85);
+
+    // ── 6. Bottom Button & Author Info
+    tl.from(".about-grooming__bottom .common-btn", {
+      opacity: 0, scale: 0.82, y: 12, duration: 0.6, ease: "back.out(1.7)",
+      clearProps: "transform,opacity"
+    }, 0.95);
+    tl.from(".about-grooming__author-img", {
+      opacity: 0, scale: 0, duration: 0.55, ease: "back.out(2.0)",
+      clearProps: "transform,opacity"
+    }, 1.1);
+    tl.from(".about-grooming__author-info", {
+      opacity: 0, x: 15, duration: 0.5, ease: "power2.out",
+      clearProps: "transform,opacity"
+    }, 1.2);
+  }
+
+  /*-------------------------------------------------
+   * PET GROOMING SERVICES ANIMATIONS
+   * ScrollTrigger-activated carousel slide reveal.
+   * Header cascades, cards float up, backgrounds elastic pop.
+   *-------------------------------------------------*/
+  function groomingServicesAnimations() {
+    if (!document.querySelector(".pet-grooming-service")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".pet-grooming-service__heading .section-header__paw, .pet-grooming-service__heading .section-header__label, .pet-grooming-service__heading .section-header__title, .pet-grooming-service__btn-wrap .common-btn, .swiper-slide .pet-grooming-card, .pet-grooming-card__bg-svg, .pet-grooming-card__img-wrap, .pet-grooming-card__title, .pet-grooming-card__desc, .pet-grooming-card .service-btn",
+        { clearProps: "all" }
+      );
+    }, 5000);
+
+    var titleEl = document.querySelector(".pet-grooming-service__heading .section-header__title");
+    var splitTitle = null;
+    try {
+      if (titleEl && typeof SplitText !== "undefined") {
+        splitTitle = new SplitText(titleEl, { type: "lines" });
+      }
+    } catch (e) { splitTitle = null; }
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".pet-grooming-service",
+        start: "top 75%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        if (splitTitle) splitTitle.revert();
+      }
+    });
+
+    // ── 1. Header: Paw & Label
+    tl.from(".pet-grooming-service__heading .section-header__paw", {
+      opacity: 0, scale: 0.5, rotation: -30, duration: 0.45, ease: "back.out(2.0)"
+    }, 0);
+    tl.from(".pet-grooming-service__heading .section-header__label", {
+      opacity: 0, x: -15, duration: 0.4, ease: "power2.out"
+    }, 0.05);
+
+    // ── 2. Header: Title lines split reveal
+    if (splitTitle && splitTitle.lines && splitTitle.lines.length) {
+      tl.from(splitTitle.lines, {
+        opacity: 0, y: 25, rotateX: -6, transformOrigin: "0% 50% -20",
+        duration: 0.45, stagger: 0.05, ease: "power4.out"
+      }, 0.1);
+    } else {
+      tl.from(".pet-grooming-service__heading .section-header__title", {
+        opacity: 0, y: 15, duration: 0.45, ease: "power3.out"
+      }, 0.1);
+    }
+
+    // ── 3. Header CTA Button
+    tl.from(".pet-grooming-service__btn-wrap .common-btn", {
+      opacity: 0, scale: 0.85, y: 10, duration: 0.4, ease: "back.out(1.7)",
+      clearProps: "transform,opacity"
+    }, 0.1);
+
+    // ── 4. Swiper Slides: Floating wave stagger (y, scale)
+    tl.from(".swiper-slide .pet-grooming-card", {
+      opacity: 0, y: 25, scale: 0.97,
+      duration: 0.45, stagger: 0.04, ease: "power3.out",
+      clearProps: "transform,opacity,scale"
+    }, 0.15);
+
+    // ── 5. Background SVG shape elastic pops
+    tl.from(".pet-grooming-card__bg-svg", {
+      opacity: 0, scale: 0.92, duration: 0.35, stagger: 0.04, ease: "back.out(1.8)"
+    }, 0.25);
+
+    // ── 6. Card Image wrap slide-up
+    tl.from(".pet-grooming-card__img-wrap", {
+      opacity: 0, y: 8, duration: 0.3, stagger: 0.04, ease: "power2.out"
+    }, 0.3);
+
+    // ── 7. Title, Desc, and Arrow icon button sequential slide-ups
+    tl.from(".pet-grooming-card__title", {
+      opacity: 0, y: 6, duration: 0.3, stagger: 0.04, ease: "power3.out",
+      clearProps: "transform,opacity"
+    }, 0.35);
+    tl.from(".pet-grooming-card__desc", {
+      opacity: 0, y: 4, duration: 0.25, stagger: 0.04, ease: "power2.out",
+      clearProps: "transform,opacity"
+    }, 0.38);
+    tl.from(".pet-grooming-card .service-btn", {
+      opacity: 0, scale: 0.85, duration: 0.3, stagger: 0.04, ease: "back.out(2.0)",
+      clearProps: "transform,opacity"
+    }, 0.42);
+  }
+
+  /*-------------------------------------------------
+   * PARENT TESTIMONIAL ANIMATIONS
+   * ScrollTrigger-activated radial sequence.
+   * Paws spin, card body expands, lines draw, avatars pop, nav items sweep.
+   *-------------------------------------------------*/
+  function parentTestimonialAnimations() {
+    if (!document.querySelector(".parent-testimonial")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".parent-testimonial__heading .section-header__paw, .parent-testimonial__heading .section-header__label, .parent-testimonial__heading .section-header__title, .parent-testimonial__body, .parent-testimonial__bg, .parent-testimonial__line, .parent-testimonial__avatar, .parent-testimonial__nav, .parent-testimonial__name, .parent-testimonial__designation, .parent-testimonial__text, .parent-testimonial__star",
+        { clearProps: "all" }
+      );
+    }, 5000);
+
+    var titleEl = document.querySelector(".parent-testimonial__heading .section-header__title");
+    var splitTitle = null;
+    try {
+      if (titleEl && typeof SplitText !== "undefined") {
+        splitTitle = new SplitText(titleEl, { type: "words" });
+      }
+    } catch (e) { splitTitle = null; }
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".parent-testimonial",
+        start: "top 75%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        if (splitTitle) splitTitle.revert();
+      }
+    });
+
+    // ── 1. Header: Flanking Paw icons & Label
+    // Target both paw icons inside the centered header
+    var paws = document.querySelectorAll(".parent-testimonial__heading .section-header__paw");
+    if (paws.length >= 2) {
+      tl.from(paws[0], { opacity: 0, x: -20, scale: 0, rotation: -30, duration: 0.55, ease: "back.out(2.0)" }, 0);
+      tl.from(paws[1], { opacity: 0, x: 20, scale: 0, rotation: 30, duration: 0.55, ease: "back.out(2.0)" }, 0);
+    } else {
+      tl.from(".parent-testimonial__heading .section-header__paw", { opacity: 0, scale: 0, duration: 0.5 }, 0);
+    }
+    tl.from(".parent-testimonial__heading .section-header__label", { opacity: 0, y: -10, duration: 0.4, ease: "power2.out" }, 0.1);
+
+    // ── 2. Header: Title SplitText words cascade
+    if (splitTitle && splitTitle.words && splitTitle.words.length) {
+      tl.from(splitTitle.words, {
+        opacity: 0, y: 30, duration: 0.5, stagger: 0.05, ease: "power4.out"
+      }, 0.15);
+    } else {
+      tl.from(".parent-testimonial__heading .section-header__title", {
+        opacity: 0, y: 20, duration: 0.5, ease: "power3.out"
+      }, 0.15);
+    }
+
+    // ── 3. Testimonial Card Body Expansion
+    tl.from(".parent-testimonial__body", {
+      opacity: 0, scale: 0.94, duration: 0.7, ease: "power3.out",
+      clearProps: "transform,opacity"
+    }, 0.3);
+    tl.from(".parent-testimonial__bg", { opacity: 0, duration: 0.5, ease: "power2.out" }, 0.3);
+
+    // ── 4. Decorative Lines Drawing Outwards
+    tl.from(".parent-testimonial__line", {
+      opacity: 0, scaleX: 0, duration: 0.55, ease: "power3.out",
+      stagger: {
+        amount: 0.1,
+        from: "center"
+      }
+    }, 0.45);
+
+    // ── 5. Nav Arrows Sliding In from outside edges
+    tl.from(".parent-testimonial__nav--prev", {
+      opacity: 0, x: -30, duration: 0.5, ease: "power3.out",
+      clearProps: "transform,opacity"
+    }, 0.45);
+    tl.from(".parent-testimonial__nav--next", {
+      opacity: 0, x: 30, duration: 0.5, ease: "power3.out",
+      clearProps: "transform,opacity"
+    }, 0.45);
+
+    // ── 6. Avatars pop-in staggered
+    tl.from(".parent-testimonial__avatar--side", {
+      opacity: 0, scale: 0, duration: 0.5, stagger: 0.08, ease: "back.out(2.0)",
+      clearProps: "transform,opacity"
+    }, 0.5);
+    tl.from(".parent-testimonial__avatar--center", {
+      opacity: 0, scale: 0, duration: 0.55, ease: "back.out(2.5)",
+      clearProps: "transform,opacity"
+    }, 0.6);
+
+    // ── 7. Text Details & stars cascade
+    tl.from(".parent-testimonial__name", { opacity: 0, y: 15, duration: 0.45, ease: "power3.out" }, 0.65);
+    tl.from(".parent-testimonial__designation", { opacity: 0, y: 10, duration: 0.4, ease: "power2.out" }, 0.72);
+    tl.from(".parent-testimonial__text", {
+      opacity: 0, y: 10, duration: 0.45, ease: "power2.out",
+      clearProps: "transform,opacity"
+    }, 0.78);
+    tl.from(".parent-testimonial__star", {
+      opacity: 0, scale: 0.8, duration: 0.45, stagger: 0.05, ease: "back.out(2.0)",
+      clearProps: "transform"
+    }, 0.85);
+  }
+
+  /*-------------------------------------------------
+   * FAQ SECTION ANIMATIONS
+   * ScrollTrigger-activated premium entrance sequence.
+   * Features: horizontal clip-path curtain on photo, play-button pop-in,
+   * paw/label/SplitText heading cascade, accordion stagger, bg parallax,
+   * and an ambient heartbeat pulse on the play button.
+   *-------------------------------------------------*/
+  function faqAnimations() {
+    if (!document.querySelector(".faq")) return;
+
+    // Safety net: clear all GSAP inline styles if animation errors out
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".faq__video, .play-btn, .faq .section-header__paw, .faq .section-header__label, .faq .section-header__title, .faq-accordion__item",
+        { clearProps: "all" }
+      );
+    }, 5000);
+
+    // SplitText on the FAQ heading
+    var titleEl = document.querySelector(".faq .section-header__title");
+    var splitTitle = null;
+    try {
+      if (titleEl && typeof SplitText !== "undefined") {
+        splitTitle = new SplitText(titleEl, { type: "words" });
+      }
+    } catch (e) { splitTitle = null; }
+
+    // Initial state for the curtain wipe (set by GSAP, not CSS, to avoid flash on pages without scroll)
+    gsap.set(".faq__video", { clipPath: "inset(0% 100% 0% 0%)" });
+
+    // ── Main entrance timeline ───────────────────────────────────────────────
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".faq",
+        start: "top 75%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        if (splitTitle) splitTitle.revert();
+      }
+    });
+
+    // ── Beat 1: Left photo — horizontal curtain wipe (left → right reveal) ──
+    tl.to(
+      ".faq__video",
+      {
+        clipPath: "inset(0% 0% 0% 0%)",
+        duration: 1.0,
+        ease: "power3.out",
+        clearProps: "clip-path",
+      },
+      0
+    );
+
+    // ── Beat 2: Play button — fade in after image arrives ───────────────────
+    tl.from(
+      ".faq .play-btn",
+      {
+        opacity: 0,
+        duration: 0.6,
+        ease: "power2.out",
+        clearProps: "opacity",
+      },
+      0.6
+    );
+
+    // ── Beat 3: Paw icon — rotate + scale pop ───────────────────────────────
+    tl.from(
+      ".faq .section-header__paw",
+      {
+        opacity: 0,
+        scale: 0.5,
+        rotation: -30,
+        duration: 0.55,
+        ease: "back.out(2)",
+      },
+      0.15
+    );
+
+    // ── Beat 4: Label — slide in from left ──────────────────────────────────
+    tl.from(
+      ".faq .section-header__label",
+      {
+        opacity: 0,
+        x: -15,
+        duration: 0.5,
+        ease: "power2.out",
+      },
+      0.25
+    );
+
+    // ── Beat 5: Title — SplitText word cascade ──────────────────────────────
+    if (splitTitle && splitTitle.words && splitTitle.words.length) {
+      tl.from(
+        splitTitle.words,
+        {
+          opacity: 0,
+          y: 40,
+          rotateX: -10,
+          transformOrigin: "0% 50% -20",
+          duration: 0.75,
+          stagger: 0.06,
+          ease: "power4.out",
+        },
+        0.35
+      );
+    } else {
+      tl.from(
+        ".faq .section-header__title",
+        { opacity: 0, y: 35, duration: 0.75, ease: "power3.out" },
+        0.35
+      );
+    }
+
+    // ── Beat 6: Accordion items — staggered slide-up ────────────────────────
+    tl.from(
+      ".faq-accordion__item",
+      {
+        opacity: 0,
+        y: 40,
+        duration: 0.65,
+        stagger: 0.13,
+        ease: "power3.out",
+        clearProps: "transform,opacity",
+      },
+      0.7
+    );
+  }
+
 })(jQuery);
 
 if ($.exists(".working-process__item")) {

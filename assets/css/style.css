@@ -1264,6 +1264,26 @@ i[class*=fa] {
   cursor: pointer;
   z-index: 2;
 }
+.play-btn__ripple-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: color-mix(in srgb, var(--primary-color), transparent 75%);
+  z-index: -1;
+  pointer-events: none;
+  transform: scale(1);
+  opacity: 0;
+}
+.play-btn__ripple-ring.ring-1 {
+  animation: pulse-ring-primary 3s ease-out infinite;
+}
+.play-btn__ripple-ring.ring-2 {
+  animation: pulse-ring-primary 3s ease-out infinite;
+  animation-delay: 1.5s;
+}
 .play-btn__inner {
   width: 90px;
   height: 90px;
@@ -1427,6 +1447,20 @@ i[class*=fa] {
   }
 }
 @keyframes pulse-ring-secondary {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  80% {
+    transform: scale(1.75);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.75);
+    opacity: 0;
+  }
+}
+@keyframes pulse-ring-primary {
   0% {
     transform: scale(1);
     opacity: 0.6;
@@ -9387,6 +9421,7 @@ i[class*=fa] {
 .faq-accordion__item {
   position: relative;
   transition: all 0.3s ease;
+  will-change: transform, opacity;
 }
 .faq-accordion__header {
   position: relative;
@@ -9399,6 +9434,10 @@ i[class*=fa] {
   padding: 15px 15px 15px 30px;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+.faq-accordion__header:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 .faq-accordion__title {
   color: var(--primary-color);

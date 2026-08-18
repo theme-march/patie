@@ -98,6 +98,13 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  will-change: transform;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
 
   &--purple {
     --theme-color: var(--primary-color);
@@ -131,6 +138,7 @@
     background: var(--theme-color);
     border-radius: 50%;
     flex-shrink: 0;
+    will-change: transform, opacity;
 
     @include respond(md) {
       width: 50px;
@@ -183,6 +191,7 @@
       gap: 10px;
       padding: 15px 10px;
       border-top: 1px solid color-mix(in srgb, var(--body-color), transparent 85%);
+      will-change: transform, opacity;
 
       &:first-child {
         border-top: none;

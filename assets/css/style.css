@@ -6239,6 +6239,12 @@ i[class*=fa] {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  will-change: transform;
+}
+.grooming-pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 .grooming-pricing-card--purple {
   --theme-color: var(--primary-color);
@@ -6268,6 +6274,7 @@ i[class*=fa] {
   background: var(--theme-color);
   border-radius: 50%;
   flex-shrink: 0;
+  will-change: transform, opacity;
 }
 @media (max-width: 768px) {
   .grooming-pricing-card__icon {
@@ -6319,6 +6326,7 @@ i[class*=fa] {
   gap: 10px;
   padding: 15px 10px;
   border-top: 1px solid color-mix(in srgb, var(--body-color), transparent 85%);
+  will-change: transform, opacity;
 }
 .grooming-pricing-card__list-item:first-child {
   border-top: none;
@@ -9717,6 +9725,7 @@ i[class*=fa] {
   height: auto;
   z-index: 1;
   pointer-events: none;
+  will-change: transform, opacity;
 }
 .grooming-choose-us__img {
   position: relative;
@@ -9726,11 +9735,13 @@ i[class*=fa] {
   z-index: 2;
   height: auto;
   display: block;
+  will-change: transform, opacity;
 }
 .grooming-choose-us__feature {
   display: flex;
   align-items: self-start;
   gap: 20px;
+  will-change: transform, opacity;
 }
 @media (max-width: 992px) {
   .grooming-choose-us__feature {
@@ -9804,6 +9815,13 @@ i[class*=fa] {
   display: flex;
   justify-content: center;
   align-items: center;
+  will-change: transform, opacity;
+}
+.grooming-choose-us__feature-icon-wrap img {
+  transition: transform 0.35s ease;
+}
+.grooming-choose-us__feature-icon-wrap:hover img {
+  transform: translateY(-5px);
 }
 @media (max-width: 992px) {
   .grooming-choose-us__feature-icon-wrap {
@@ -9840,6 +9858,7 @@ i[class*=fa] {
   max-width: 320px;
   height: auto;
   pointer-events: none;
+  will-change: transform, opacity;
 }
 @media (max-width: 1600px) {
   .grooming-choose-us__dog {

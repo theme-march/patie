@@ -89,6 +89,7 @@
     height: auto;
     z-index: 1;
     pointer-events: none;
+    will-change: transform, opacity;
   }
 
   &__img {
@@ -99,12 +100,14 @@
     z-index: 2;
     height: auto;
     display: block;
+    will-change: transform, opacity;
   }
 
   &__feature {
     display: flex;
     align-items: self-start;
     gap: 20px;
+    will-change: transform, opacity;
 
     @include respond(lg) {
       align-items: center;
@@ -182,6 +185,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    will-change: transform, opacity;
+
+    img {
+      transition: transform 0.35s ease;
+    }
+
+    &:hover img {
+      transform: translateY(-5px);
+    }
 
     @include respond(lg) {
       display: none;
@@ -218,6 +230,7 @@
     max-width: 320px;
     height: auto;
     pointer-events: none;
+    will-change: transform, opacity;
 
     @include respond(xxxl) {
         display: none;

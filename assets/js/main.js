@@ -59,6 +59,8 @@
     groomingServicesAnimations();
     parentTestimonialAnimations();
     faqAnimations();
+    groomingChooseUsAnimations();
+    groomingPricingAnimations();
   });
 
   $(function () {
@@ -3050,6 +3052,250 @@
       },
       0.7
     );
+  }
+
+  /*-------------------------------------------------
+   * GROOMING CHOOSE US ANIMATIONS
+   * ScrollTrigger-activated premium entrance sequence.
+   * Features: dual paw fan-in, SplitText title cascade, blob spin + cat rise,
+   * symmetrical feature stagger (left from left, right from right),
+   * icon elastic pop-ins, and dog decoration slide-up.
+   *
+   * IMPORTANT: Each .grooming-choose-us__feature has a CSS translateX offset
+   * (--1 to --6). GSAP animates only `opacity` so the CSS transform is
+   * never overwritten. clearProps: "opacity" only.
+   *-------------------------------------------------*/
+  function groomingChooseUsAnimations() {
+    if (!document.querySelector(".grooming-choose-us")) return;
+
+    // Safety net
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".grooming-choose-us .section-header__paw, .grooming-choose-us .section-header__label, .grooming-choose-us .section-header__title, .grooming-choose-us__img-bg, .grooming-choose-us__img, .grooming-choose-us__feature, .grooming-choose-us__feature-icon-wrap, .grooming-choose-us__dog",
+        { clearProps: "all" }
+      );
+    }, 5000);
+
+    // SplitText on the heading title
+    var titleEl = document.querySelector(".grooming-choose-us .section-header__title");
+    var splitTitle = null;
+    try {
+      if (titleEl && typeof SplitText !== "undefined") {
+        splitTitle = new SplitText(titleEl, { type: "words" });
+      }
+    } catch (e) { splitTitle = null; }
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".grooming-choose-us",
+        start: "top 75%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        if (splitTitle) splitTitle.revert();
+      }
+    });
+
+    // ── Beat 1: Dual paw icons — fan-in from opposite sides ───────────────
+    var paws = document.querySelectorAll(".grooming-choose-us .section-header__paw");
+    if (paws.length >= 2) {
+      tl.from(paws[0], { opacity: 0, x: -20, scale: 0, rotation: -30, duration: 0.55, ease: "back.out(2)" }, 0);
+      tl.from(paws[1], { opacity: 0, x: 20, scale: 0, rotation: 30, duration: 0.55, ease: "back.out(2)" }, 0);
+    } else {
+      tl.from(".grooming-choose-us .section-header__paw", { opacity: 0, scale: 0, rotation: -30, duration: 0.55, ease: "back.out(2)" }, 0);
+    }
+
+    // ── Beat 2: Label — slide down ─────────────────────────────────────
+    tl.from(
+      ".grooming-choose-us .section-header__label",
+      { opacity: 0, y: -15, duration: 0.5, ease: "power2.out" },
+      0.1
+    );
+
+    // ── Beat 3: Title — SplitText word cascade ──────────────────────────
+    if (splitTitle && splitTitle.words && splitTitle.words.length) {
+      tl.from(
+        splitTitle.words,
+        {
+          opacity: 0,
+          y: 40,
+          rotateX: -10,
+          transformOrigin: "0% 50% -20",
+          duration: 0.75,
+          stagger: 0.06,
+          ease: "power4.out",
+        },
+        0.2
+      );
+    } else {
+      tl.from(
+        ".grooming-choose-us .section-header__title",
+        { opacity: 0, y: 35, duration: 0.75, ease: "power3.out" },
+        0.2
+      );
+    }
+
+    // ── Beat 4: Orange blob SVG — unwrap spin reveal ────────────────────
+    tl.from(
+      ".grooming-choose-us__img-bg",
+      {
+        opacity: 0,
+        scale: 0.8,
+        rotation: -15,
+        duration: 1.1,
+        ease: "power3.out",
+        clearProps: "transform,opacity",
+      },
+      0.3
+    );
+
+    // ── Beat 5: Cat — rises up and lands on blob ───────────────────────
+    tl.from(
+      ".grooming-choose-us__img",
+      {
+        opacity: 0,
+        y: 70,
+        duration: 0.9,
+        ease: "power3.out",
+        clearProps: "transform,opacity",
+      },
+      0.5
+    );
+
+    // ── Beat 6: Left features — stagger slide from left ──────────────────
+    // Animate opacity only — CSS translateX offsets (--1 to --3) must be preserved
+    tl.from(
+      ".grooming-choose-us__col--left .grooming-choose-us__feature",
+      {
+        opacity: 0,
+        x: -60,
+        duration: 0.75,
+        stagger: 0.18,
+        ease: "power3.out",
+        clearProps: "x,opacity",
+      },
+      0.65
+    );
+
+    // ── Beat 7: Right features — stagger slide from right ────────────────
+    tl.from(
+      ".grooming-choose-us__col--right .grooming-choose-us__feature",
+      {
+        opacity: 0,
+        x: 60,
+        duration: 0.75,
+        stagger: 0.18,
+        ease: "power3.out",
+        clearProps: "x,opacity",
+      },
+      0.75
+    );
+
+    // ── Beat 8: Feature icons — elastic pop-in across all 6 ──────────────
+    tl.from(
+      ".grooming-choose-us__feature-icon-wrap",
+      {
+        opacity: 0,
+        scale: 0,
+        duration: 0.45,
+        stagger: 0.08,
+        ease: "back.out(2.5)",
+        clearProps: "transform,opacity",
+      },
+      0.85
+    );
+
+    // ── Beat 9: Dog decoration — slides up from below ──────────────────
+    tl.from(
+      ".grooming-choose-us__dog",
+      {
+        opacity: 0,
+        y: 80,
+        duration: 1.0,
+        ease: "power3.out",
+        clearProps: "transform,opacity",
+      },
+      1.1
+    );
+  }
+
+  /*-------------------------------------------------
+   * GROOMING PRICING ANIMATIONS
+   * ScrollTrigger-activated entrance sequence.
+   * Features: paw pop-in, label slide-in, title line cascade,
+   * toggle pill pop-in, card stagger slide-up, card icon pop,
+   * list item stagger slide-in, CTA button scale-up.
+   * On completion, triggers the price counter rollup.
+   *-------------------------------------------------*/
+  function groomingPricingAnimations() {
+    if (!document.querySelector(".grooming-pricing")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".grooming-pricing__header-left .section-header__paw, .grooming-pricing__header-left .section-header__label, .grooming-pricing__header-left .section-header__title, .grooming-pricing__toggle, .grooming-pricing-card, .grooming-pricing-card__icon, .grooming-pricing-card__list-item, .grooming-pricing-card__btn",
+        { clearProps: "all" }
+      );
+    }, 5000);
+
+    var titleEl = document.querySelector(".grooming-pricing__header-left .section-header__title");
+    var splitTitle = null;
+    try {
+      if (titleEl && typeof SplitText !== "undefined") {
+        splitTitle = new SplitText(titleEl, { type: "lines" });
+      }
+    } catch (e) { splitTitle = null; }
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".grooming-pricing",
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        if (splitTitle) splitTitle.revert();
+        animateGroomingPriceCounters();
+      }
+    });
+
+    tl.from(".grooming-pricing__header-left .section-header__paw", { opacity: 0, scale: 0.5, rotation: -30, duration: 0.55, ease: "back.out(2)" }, 0);
+    tl.from(".grooming-pricing__header-left .section-header__label", { opacity: 0, x: -20, duration: 0.5, ease: "power2.out" }, 0.1);
+
+    if (splitTitle && splitTitle.lines && splitTitle.lines.length) {
+      tl.from(splitTitle.lines, { opacity: 0, y: 40, rotateX: -10, transformOrigin: "0% 50% -20", duration: 0.75, stagger: 0.12, ease: "power4.out" }, 0.2);
+    } else {
+      tl.from(".grooming-pricing__header-left .section-header__title", { opacity: 0, y: 30, duration: 0.7, ease: "power3.out" }, 0.2);
+    }
+
+    tl.from(".grooming-pricing__toggle", { opacity: 0, scale: 0.7, duration: 0.6, ease: "back.out(2.2)" }, 0.5);
+
+    tl.from(".grooming-pricing-card", { opacity: 0, y: 70, scale: 0.94, duration: 0.75, stagger: 0.18, ease: "power3.out", clearProps: "transform,opacity,scale" }, 0.65);
+
+    tl.from(".grooming-pricing-card__icon", { opacity: 0, scale: 0, rotation: 90, duration: 0.6, ease: "back.out(1.8)" }, 1.0);
+
+    tl.from(".grooming-pricing-card__list-item", { opacity: 0, x: -20, duration: 0.5, stagger: 0.04, ease: "power2.out" }, 1.25);
+
+    tl.from(".grooming-pricing-card__btn", { opacity: 0, y: 15, scale: 0.82, duration: 0.55, stagger: 0.15, ease: "back.out(1.7)", clearProps: "opacity,transform" }, 1.55);
+  }
+
+  function animateGroomingPriceCounters() {
+    document.querySelectorAll(".grooming-pricing-card__price").forEach(function (el) {
+      var activeBtn = document.querySelector(".grooming-pricing__toggle-btn--active");
+      var isYearly = activeBtn && activeBtn.textContent.trim() === "YEARLY";
+      var targetAttr = isYearly ? el.dataset.yearly : el.dataset.monthly;
+      if (!targetAttr) return;
+      var targetVal = parseFloat(targetAttr.replace(/[^0-9.]/g, ""));
+      var obj = { val: 0 };
+      gsap.to(obj, {
+        val: targetVal,
+        duration: 1.4,
+        ease: "power2.out",
+        onUpdate: function () {
+          el.innerText = "$" + obj.val.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+        }
+      });
+    });
   }
 
 })(jQuery);

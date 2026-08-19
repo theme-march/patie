@@ -13,6 +13,7 @@
     z-index: 2;
     margin-bottom: -250px;
     align-items: center;
+    will-change: transform, opacity;
 
     @include respond(xxl) {
       padding: 70px;
@@ -77,6 +78,7 @@
     align-items: center;
     justify-content: center;
     z-index: 1;
+    will-change: transform, opacity;
 
     @include respond(md) {
       width: 45px;
@@ -163,6 +165,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    will-change: transform, opacity;
 
     @include respond(lg) {
       flex-direction: column;
@@ -217,6 +220,7 @@
     color: var(--white-color);
     cursor: pointer;
     transition: all 0.3s ease;
+    will-change: transform;
 
     @include respond(xl) {
       width: 40px;
@@ -260,7 +264,7 @@
 
   &__stats-bg {
     position: absolute;
-    object-fit: cover;
+    object-fit: fill;
     top: 0;
     left: 0;
     width: 100%;
@@ -287,6 +291,7 @@
 
   &__stat-item {
     position: relative;
+    will-change: transform, opacity;
   }
 
   &__stat-divider {

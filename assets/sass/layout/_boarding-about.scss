@@ -20,6 +20,7 @@
     left: 5%;
     top: 38%;
     z-index: 1;
+    will-change: transform, opacity;
 
     @include respond(xxxxl) {
       left: 4%;
@@ -47,6 +48,7 @@
     right: 8%;
     top: 18%;
     z-index: 1;
+    will-change: transform, opacity;
 
     @include respond(xxxxl) {
       top: 18%;
@@ -181,6 +183,7 @@
     justify-content: center;
     margin: 0 auto 15px;
     background-color: transparent;
+    will-change: transform, opacity;
 
     @include respond(md) {
       width: 65px;
@@ -237,6 +240,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    will-change: transform, opacity;
 
     @include respond(xxxxl) {
       padding: 25px;
@@ -320,6 +324,7 @@
     max-width: 50%;
     border-radius: 12px;
     overflow: hidden;
+    will-change: clip-path;
 
     @include respond(md) {
       flex: 1 1 4%;
@@ -346,6 +351,7 @@
     z-index: 3;
     position: absolute;
     bottom: 0px;
+    will-change: transform, opacity;
     left: calc(100% - 266px);
 
     @include respond(xxxxl) {

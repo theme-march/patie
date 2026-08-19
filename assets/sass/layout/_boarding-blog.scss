@@ -29,6 +29,7 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
+  will-change: transform, opacity;
 
   @include respond(xxl) {
     padding: 20px 20px 30px;
@@ -58,6 +59,7 @@
     object-fit: cover;
     display: block;
     transition: all 0.5s ease;
+    will-change: clip-path, transform;
   }
 
   &__date {
@@ -77,6 +79,7 @@
     justify-content: center;
     text-align: center;
     z-index: 2;
+    will-change: transform, opacity;
 
     &-day {
       font-size: 28px;
@@ -181,6 +184,7 @@
     transition: all 0.4s ease;
     position: relative;
     z-index: 2;
+    will-change: transform, opacity;
   }
 
   &__share-icon {

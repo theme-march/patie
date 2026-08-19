@@ -65,6 +65,14 @@
     beforeAndAfterAnimations();
     groomingBlogAnimations();
     footerV2Animations();
+    boardingHeroAnimations();
+    boardingAboutAnimations();
+    boardingServiceAnimations();
+    boardingTestimonialAnimations();
+    boardingChooseUsAnimations();
+    boardingPricingAnimations();
+    boardingBlogAnimations();
+    footerV3Animations();
   });
 
   $(function () {
@@ -2638,6 +2646,991 @@
       opacity: 0, scale: 0.85, duration: 0.55, ease: "back.out(1.8)",
       clearProps: "transform,opacity"
     }, 1.35);
+  }
+
+  /*-------------------------------------------------
+   * BOARDING HERO ANIMATIONS
+   * Above-the-fold load entrance for pet-boarding.html.
+   * Background clip wipes, text cascades, character slides.
+   *-------------------------------------------------*/
+  function boardingHeroAnimations() {
+    if (!document.querySelector(".boarding-hero")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".boarding-hero__bg-1, .boarding-hero__bg-2, .boarding-hero .section-header__paw, .boarding-hero .section-header__label, .boarding-hero__title, .boarding-hero__desc, .boarding-hero .common-btn, .boarding-hero__girl, .boarding-hero__line, .boarding-hero__floating--cat, .boarding-hero__floating--dog",
+        { clearProps: "all" }
+      );
+    }, 3000);
+
+    var titleEl = document.querySelector(".boarding-hero__title");
+    var splitTitle = null;
+    try {
+      if (titleEl && typeof SplitText !== "undefined") {
+        splitTitle = new SplitText(titleEl, { type: "words" });
+      }
+    } catch (e) { splitTitle = null; }
+
+    var tl = gsap.timeline({
+      defaults: { ease: "power3.out" },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        if (splitTitle) splitTitle.revert();
+      }
+    });
+
+    // Initial setups for clip wipe
+    gsap.set(".boarding-hero__bg-1", { clipPath: "inset(100% 0% 0% 0%)" });
+
+    // 1. BG wipe
+    tl.to(".boarding-hero__bg-1", {
+      clipPath: "inset(0% 0% 0% 0%)",
+      duration: 0.95,
+      ease: "power3.out"
+    }, 0);
+
+    // 2. BG Inner Card Pop
+    tl.from(".boarding-hero__bg-2", {
+      opacity: 0,
+      scale: 0.92,
+      duration: 0.8,
+      ease: "back.out(1.4)",
+      clearProps: "transform,opacity"
+    }, 0.1);
+
+    // 3. Paw icon
+    tl.from(".boarding-hero .section-header__paw", {
+      opacity: 0,
+      scale: 0,
+      rotation: -30,
+      duration: 0.55,
+      ease: "back.out(2)"
+    }, 0.2);
+
+    // 4. Label
+    tl.from(".boarding-hero .section-header__label", {
+      opacity: 0,
+      y: -12,
+      duration: 0.5,
+      ease: "power2.out"
+    }, 0.3);
+
+    // 5. Title words
+    if (splitTitle && splitTitle.words && splitTitle.words.length) {
+      tl.from(splitTitle.words, {
+        opacity: 0,
+        y: 60,
+        rotateX: -20,
+        transformOrigin: "0% 50% -20",
+        duration: 0.75,
+        stagger: 0.06,
+        ease: "power4.out"
+      }, 0.4);
+
+      // Subtle pulse to highlights
+      tl.fromTo(
+        ".boarding-hero__title-highlight",
+        { scale: 1 },
+        { scale: 1.04, duration: 0.18, yoyo: true, repeat: 1, ease: "sine.inOut" },
+        1.6
+      );
+    } else {
+      tl.from(".boarding-hero__title", { opacity: 0, y: 50, duration: 0.8 }, 0.4);
+    }
+
+    // 6. Desc
+    tl.from(".boarding-hero__desc", {
+      opacity: 0,
+      y: 20,
+      duration: 0.6,
+      ease: "power3.out"
+    }, 1.3);
+
+    // 7. CTA Button
+    tl.from(".boarding-hero .common-btn", {
+      opacity: 0,
+      scale: 0.82,
+      y: 15,
+      duration: 0.55,
+      ease: "back.out(1.7)",
+      clearProps: "transform,opacity"
+    }, 1.45);
+
+    // 8. Girl slide up
+    tl.from(".boarding-hero__girl", {
+      opacity: 0,
+      y: 80,
+      duration: 1.1,
+      ease: "power3.out"
+    }, 0.35);
+
+    // 9. SVG Line circle
+    tl.from(".boarding-hero__line", {
+      opacity: 0,
+      scale: 0.6,
+      duration: 0.8,
+      ease: "power2.out"
+    }, 0.55);
+
+    // 10. Cat floating (preserving vertical centering)
+    tl.from(".boarding-hero__floating--cat", {
+      opacity: 0,
+      x: -60,
+      duration: 0.8,
+      ease: "back.out(1.5)",
+      clearProps: "x,opacity"
+    }, 0.5);
+
+    // 11. Dog floating (preserving positions)
+    tl.from(".boarding-hero__floating--dog", {
+      opacity: 0,
+      y: -50,
+      duration: 0.8,
+      ease: "back.out(1.5)",
+      clearProps: "y,opacity"
+    }, 0.65);
+  }
+
+  /*-------------------------------------------------
+   * BOARDING ABOUT ANIMATIONS
+   * ScrollTrigger-activated entrance sequence.
+   * Elements: Deco photos, dual paws, label, title,
+   * button, icons, dark card, avatars, image curtain,
+   * absolute white stats card.
+   *-------------------------------------------------*/
+  function boardingAboutAnimations() {
+    if (!document.querySelector(".boarding-about")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".boarding-about__deco-left, .boarding-about__deco-right, .boarding-about .section-header__paw, .boarding-about .section-header__label, .boarding-about__main-title, .boarding-about__btn-wrap, .boarding-about__icon-circle, .boarding-about__icon-title, .boarding-about__dark-card, .boarding-about__dark-avatar, .boarding-about__main-img-wrap, .boarding-about__white-card",
+        { clearProps: "all" }
+      );
+    }, 5000);
+
+    var titleEl = document.querySelector(".boarding-about__main-title");
+    var splitTitle = null;
+    try {
+      if (titleEl && typeof SplitText !== "undefined") {
+        splitTitle = new SplitText(titleEl, { type: "words" });
+      }
+    } catch (e) { splitTitle = null; }
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".boarding-about",
+        start: "top 75%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        if (splitTitle) splitTitle.revert();
+      }
+    });
+
+    // Initial setup for image wrap clip-path
+    gsap.set(".boarding-about__main-img-wrap", { clipPath: "inset(0% 0% 100% 0%)" });
+
+    // 1 & 2. Deco images sliding from edges (preserving left/right SASS settings)
+    tl.from(".boarding-about__deco-left", { opacity: 0, x: -80, duration: 0.8, ease: "power3.out", clearProps: "x,opacity" }, 0);
+    tl.from(".boarding-about__deco-right", { opacity: 0, x: 80, duration: 0.8, ease: "power3.out", clearProps: "x,opacity" }, 0);
+
+    // 3. Paw icons
+    var paws = document.querySelectorAll(".boarding-about .section-header__paw");
+    if (paws.length >= 2) {
+      tl.from(paws[0], { opacity: 0, x: -20, scale: 0, rotation: -30, duration: 0.55, ease: "back.out(2)" }, 0.15);
+      tl.from(paws[1], { opacity: 0, x: 20, scale: 0, rotation: 30, duration: 0.55, ease: "back.out(2)" }, 0.15);
+    } else {
+      tl.from(".boarding-about .section-header__paw", { opacity: 0, scale: 0, rotation: -30, duration: 0.55, ease: "back.out(2)" }, 0.15);
+    }
+
+    // 4. Label
+    tl.from(".boarding-about .section-header__label", { opacity: 0, y: -12, duration: 0.5, ease: "power2.out" }, 0.25);
+
+    // 5. Main Title cascade
+    if (splitTitle && splitTitle.words && splitTitle.words.length) {
+      tl.from(splitTitle.words, {
+        opacity: 0,
+        y: 50,
+        rotateX: -15,
+        transformOrigin: "0% 50% -20",
+        duration: 0.75,
+        stagger: 0.05,
+        ease: "power4.out"
+      }, 0.35);
+
+      tl.fromTo(
+        ".boarding-about__main-title span",
+        { scale: 1 },
+        { scale: 1.04, duration: 0.18, yoyo: true, repeat: 1, ease: "sine.inOut" },
+        1.5
+      );
+    } else {
+      tl.from(".boarding-about__main-title", { opacity: 0, y: 40, duration: 0.75, ease: "power3.out" }, 0.35);
+    }
+
+    // 6. CTA Button wrap
+    tl.from(".boarding-about__btn-wrap", { opacity: 0, scale: 0.85, duration: 0.55, ease: "back.out(1.7)", clearProps: "transform,opacity" }, 1.25);
+
+    // 7. Icon circles
+    tl.from(".boarding-about__icon-circle", { opacity: 0, scale: 0, duration: 0.6, stagger: 0.15, ease: "back.out(2.5)", clearProps: "transform,opacity" }, 0.55);
+
+    // 8. Icon titles
+    tl.from(".boarding-about__icon-title", { opacity: 0, y: 12, duration: 0.5, stagger: 0.15, ease: "power2.out", clearProps: "transform,opacity" }, 0.7);
+
+    // 9. Dark Card float-up
+    tl.from(".boarding-about__dark-card", { opacity: 0, y: 50, duration: 0.75, ease: "power3.out", clearProps: "transform,opacity" }, 0.85);
+
+    // 10. Dark Card Avatars stagger pop
+    tl.from(".Ak-boarding-about__dark-avatar, .boarding-about__dark-avatar", { opacity: 0, scale: 0, duration: 0.5, stagger: 0.08, ease: "back.out(2.2)", clearProps: "transform,opacity" }, 0.95);
+
+    // 11. Main photo curtain wipe
+    tl.to(".boarding-about__main-img-wrap", { clipPath: "inset(0% 0% 0% 0%)", duration: 0.85, ease: "power3.out" }, 0.85);
+
+    // 12. White absolute card slide up
+    tl.from(".boarding-about__white-card", { opacity: 0, y: 40, duration: 0.7, ease: "back.out(1.5)", clearProps: "y,opacity" }, 1.1);
+  }
+
+  /*-------------------------------------------------
+   * BOARDING SERVICE ANIMATIONS
+   * ScrollTrigger-activated entrance sequence.
+   * Elements: Paw icon, label, SplitText title cascade,
+   * CTA button, service card float-up, SVG background blob,
+   * card photo slide, and arrow button.
+   *-------------------------------------------------*/
+  function boardingServiceAnimations() {
+    if (!document.querySelector(".boarding-service")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".boarding-service .section-header__paw, .boarding-service .section-header__label, .boarding-service__title, .Ak-boarding-service__header-right .common-btn, .boarding-service__header-right .common-btn, .boarding-service-card, .boarding-service-card__bg-svg, .boarding-service-card__img, .boarding-service-card__btn",
+        { clearProps: "all" }
+      );
+    }, 5000);
+
+    var titleEl = document.querySelector(".boarding-service__title");
+    var splitTitle = null;
+    try {
+      if (titleEl && typeof SplitText !== "undefined") {
+        splitTitle = new SplitText(titleEl, { type: "words" });
+      }
+    } catch (e) { splitTitle = null; }
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".boarding-service",
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        if (splitTitle) splitTitle.revert();
+      }
+    });
+
+    // 1. Paw icon
+    tl.from(".boarding-service .section-header__paw", {
+      opacity: 0,
+      scale: 0,
+      rotation: -30,
+      duration: 0.55,
+      ease: "back.out(2)"
+    }, 0);
+
+    // 2. Label
+    tl.from(".boarding-service .section-header__label", {
+      opacity: 0,
+      y: -12,
+      duration: 0.5,
+      ease: "power2.out"
+    }, 0.1);
+
+    // 3. Title cascade
+    if (splitTitle && splitTitle.words && splitTitle.words.length) {
+      tl.from(splitTitle.words, {
+        opacity: 0,
+        y: 50,
+        rotateX: -15,
+        transformOrigin: "0% 50% -20",
+        duration: 0.75,
+        stagger: 0.06,
+        ease: "power4.out"
+      }, 0.2);
+
+      tl.fromTo(
+        ".boarding-service__title span",
+        { scale: 1 },
+        { scale: 1.04, duration: 0.18, yoyo: true, repeat: 1, ease: "sine.inOut" },
+        1.4
+      );
+    } else {
+      tl.from(".boarding-service__title", { opacity: 0, y: 40, duration: 0.75, ease: "power3.out" }, 0.2);
+    }
+
+    // 4. View all services CTA
+    tl.from(".Ak-boarding-service__header-right .common-btn, .boarding-service__header-right .common-btn", {
+      opacity: 0,
+      scale: 0.85,
+      duration: 0.55,
+      ease: "back.out(1.7)",
+      clearProps: "transform,opacity"
+    }, 1.2);
+
+    // 5. Cards float-up stagger
+    tl.from(".boarding-service-card", {
+      opacity: 0,
+      y: 70,
+      scale: 0.94,
+      duration: 0.75,
+      stagger: 0.15,
+      ease: "power3.out",
+      clearProps: "transform,opacity"
+    }, 0.45);
+
+    // 6. SVG background blobs scale-in
+    tl.from(".boarding-service-card__bg-svg", {
+      opacity: 0,
+      scale: 0,
+      duration: 0.6,
+      stagger: 0.15,
+      ease: "back.out(1.8)",
+      clearProps: "transform,opacity"
+    }, 0.7);
+
+    // 7. Card photos slide-up (preserving CSS top/left positions)
+    tl.from(".boarding-service-card__img", {
+      opacity: 0,
+      y: 30,
+      duration: 0.65,
+      stagger: 0.15,
+      ease: "power3.out",
+      clearProps: "y,opacity"
+    }, 0.85);
+
+    // 8. Arrow buttons pop
+    tl.from(".boarding-service-card__btn", {
+      opacity: 0,
+      scale: 0,
+      duration: 0.55,
+      stagger: 0.15,
+      ease: "back.out(2.2)",
+      clearProps: "transform,opacity"
+    }, 1.05);
+  }
+
+  /*-------------------------------------------------
+   * BOARDING TESTIMONIAL & STATS ANIMATIONS
+   * ScrollTrigger-activated entrance sequence.
+   * Elements: Testimonial box, title cascade, quote pop,
+   * stars drop, user details, navigation, stats item float.
+   * Features: Dynamic numeric counter rollup roll.
+   *-------------------------------------------------*/
+  function boardingTestimonialAnimations() {
+    if (!document.querySelector(".boarding-testimonial")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".boarding-testimonial__box, .boarding-testimonial .section-header__paw, .boarding-testimonial .section-header__label, .boarding-testimonial__left .section-header__title, .boarding-testimonial__rating, .boarding-testimonial__quote-icon, .boarding-testimonial__stars i, .boarding-testimonial__text, .boarding-testimonial__user, .boarding-testimonial__stat-item",
+        { clearProps: "all" }
+      );
+    }, 5000);
+
+    var titleEl = document.querySelector(".boarding-testimonial__left .section-header__title");
+    var splitTitle = null;
+    try {
+      if (titleEl && typeof SplitText !== "undefined") {
+        splitTitle = new SplitText(titleEl, { type: "words" });
+      }
+    } catch (e) { splitTitle = null; }
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".boarding-testimonial",
+        start: "top 75%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        if (splitTitle) splitTitle.revert();
+        // Roll up statistics counters
+        animateBoardingStatsCounters();
+      }
+    });
+
+    // 1. Box container
+    tl.from(".boarding-testimonial__box", {
+      opacity: 0,
+      y: 80,
+      duration: 0.8,
+      ease: "power3.out",
+      clearProps: "transform,opacity"
+    }, 0);
+
+    // 2. Paw icon
+    tl.from(".boarding-testimonial .section-header__paw", {
+      opacity: 0,
+      scale: 0,
+      rotation: -30,
+      duration: 0.5,
+      ease: "back.out(2)"
+    }, 0.25);
+
+    // 3. Label
+    tl.from(".boarding-testimonial .section-header__label", {
+      opacity: 0,
+      y: -12,
+      duration: 0.5,
+      ease: "power2.out"
+    }, 0.35);
+
+    // 4. Title Cascade
+    if (splitTitle && splitTitle.words && splitTitle.words.length) {
+      tl.from(splitTitle.words, {
+        opacity: 0,
+        y: 45,
+        rotateX: -15,
+        transformOrigin: "0% 50% -20",
+        duration: 0.75,
+        stagger: 0.05,
+        ease: "power4.out"
+      }, 0.45);
+
+      tl.fromTo(
+        ".boarding-testimonial__left .section-header__title span",
+        { scale: 1 },
+        { scale: 1.04, duration: 0.18, yoyo: true, repeat: 1, ease: "sine.inOut" },
+        1.5
+      );
+    } else {
+      tl.from(".boarding-testimonial__left .section-header__title", { opacity: 0, y: 35, duration: 0.75, ease: "power3.out" }, 0.45);
+    }
+
+    // 5. Rating block
+    tl.from(".boarding-testimonial__rating", {
+      opacity: 0,
+      y: 20,
+      duration: 0.55,
+      ease: "power2.out",
+      clearProps: "transform,opacity"
+    }, 0.85);
+
+    // 6. Quote icon pop
+    tl.from(".boarding-testimonial__quote-icon", {
+      opacity: 0,
+      scale: 0,
+      duration: 0.6,
+      ease: "back.out(2.2)",
+      clearProps: "transform,opacity"
+    }, 0.55);
+
+    // 7. Stars drop
+    tl.from(".boarding-testimonial__stars i", {
+      opacity: 0,
+      y: -15,
+      duration: 0.45,
+      stagger: 0.06,
+      ease: "back.out(1.8)",
+      clearProps: "transform,opacity"
+    }, 0.65);
+
+    // 8. Testimonial Text
+    tl.from(".boarding-testimonial__text", {
+      opacity: 0,
+      y: 15,
+      duration: 0.6,
+      ease: "power2.out",
+      clearProps: "transform,opacity"
+    }, 0.75);
+
+    // 9. User Info block
+    tl.from(".boarding-testimonial__user", {
+      opacity: 0,
+      y: 20,
+      duration: 0.6,
+      ease: "power3.out",
+      clearProps: "transform,opacity"
+    }, 0.9);
+
+    // 10. Stat Items float-up
+    tl.from(".boarding-testimonial__stat-item", {
+      opacity: 0,
+      y: 50,
+      duration: 0.75,
+      stagger: 0.15,
+      ease: "power3.out",
+      clearProps: "transform,opacity"
+    }, 0.95);
+  }
+
+  /*-------------------------------------------------
+   * STATS COUNTERS ANIMATION
+   * GSAP Snap-numeric rollups for boarding statistics.
+   * Handles formats: 1.5K+, 45+, 12K+, 100%
+   *-------------------------------------------------*/
+  function animateBoardingStatsCounters() {
+    var targets = document.querySelectorAll(".boarding-testimonial__stat-number");
+    if (!targets.length) return;
+
+    targets.forEach(function (el) {
+      var raw = el.textContent.trim();
+      var value = parseFloat(raw.replace(/[^\d.]/g, ""));
+      var isK = raw.indexOf("K") !== -1;
+      var hasPlus = raw.indexOf("+") !== -1;
+      var hasPercent = raw.indexOf("%") !== -1;
+
+      var obj = { val: 0 };
+      gsap.to(obj, {
+        val: value,
+        duration: 1.8,
+        ease: "power2.out",
+        onUpdate: function () {
+          var displayVal = obj.val;
+          // Support decimal rollups for values like 1.5
+          if (isK && value % 1 !== 0) {
+            displayVal = displayVal.toFixed(1);
+          } else {
+            displayVal = Math.floor(displayVal);
+          }
+          el.textContent = displayVal + (isK ? "K" : "") + (hasPlus ? "+" : "") + (hasPercent ? "%" : "");
+        }
+      });
+    });
+  }
+
+  /*-------------------------------------------------
+   * BOARDING CHOOSE US ANIMATIONS
+   * ScrollTrigger-activated entrance sequence.
+   * Elements: Paw icon, label, title, grid rows stagger,
+   * outer icon pop, connector lines scaleY draw, right background,
+   * and right main photo slide-in.
+   *-------------------------------------------------*/
+  function boardingChooseUsAnimations() {
+    if (!document.querySelector(".boarding-choose-us")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".boarding-choose-us .section-header__paw, .boarding-choose-us .section-header__label, .boarding-choose-us .section-header__title, .boarding-choose-us__item, .boarding-choose-us__icon-outer, .boarding-choose-us__line, .boarding-choose-us__img-bg, .boarding-choose-us__img",
+        { clearProps: "all" }
+      );
+    }, 5000);
+
+    var titleEl = document.querySelector(".boarding-choose-us .section-header__title");
+    var splitTitle = null;
+    try {
+      if (titleEl && typeof SplitText !== "undefined") {
+        splitTitle = new SplitText(titleEl, { type: "words" });
+      }
+    } catch (e) { splitTitle = null; }
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".boarding-choose-us",
+        start: "top 75%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        if (splitTitle) splitTitle.revert();
+      }
+    });
+
+    // 1. Paw icon
+    tl.from(".boarding-choose-us .section-header__paw", {
+      opacity: 0,
+      scale: 0,
+      rotation: -30,
+      duration: 0.55,
+      ease: "back.out(2)"
+    }, 0);
+
+    // 2. Label
+    tl.from(".boarding-choose-us .section-header__label", {
+      opacity: 0,
+      y: -12,
+      duration: 0.5,
+      ease: "power2.out"
+    }, 0.1);
+
+    // 3. Title cascade
+    if (splitTitle && splitTitle.words && splitTitle.words.length) {
+      tl.from(splitTitle.words, {
+        opacity: 0,
+        y: 45,
+        rotateX: -15,
+        transformOrigin: "0% 50% -20",
+        duration: 0.75,
+        stagger: 0.06,
+        ease: "power4.out"
+      }, 0.2);
+    } else {
+      tl.from(".boarding-choose-us .section-header__title", { opacity: 0, y: 35, duration: 0.75, ease: "power3.out" }, 0.2);
+    }
+
+    // 4. Feature rows
+    tl.from(".boarding-choose-us__item", {
+      opacity: 0,
+      y: 40,
+      duration: 0.7,
+      stagger: 0.2,
+      ease: "power3.out",
+      clearProps: "transform,opacity"
+    }, 0.45);
+
+    // 5. Circular icon pop
+    tl.from(".boarding-choose-us__icon-outer", {
+      opacity: 0,
+      scale: 0,
+      duration: 0.65,
+      stagger: 0.2,
+      ease: "back.out(2.2)",
+      clearProps: "transform,opacity"
+    }, 0.65);
+
+    // 6. Connector lines drawing
+    tl.from(".boarding-choose-us__line", {
+      scaleY: 0,
+      duration: 0.6,
+      stagger: 0.2,
+      transformOrigin: "top center",
+      ease: "power2.out",
+      clearProps: "transform"
+    }, 0.85);
+
+    // 7. Right side background shape
+    tl.from(".boarding-choose-us__img-bg", {
+      opacity: 0,
+      scale: 0.8,
+      duration: 0.8,
+      ease: "power2.out",
+      clearProps: "transform,opacity"
+    }, 0.5);
+
+    // 8. Right side image slide
+    tl.from(".boarding-choose-us__img", {
+      opacity: 0,
+      x: 80,
+      duration: 0.85,
+      ease: "power3.out",
+      clearProps: "transform,opacity"
+    }, 0.65);
+  }
+
+  /*-------------------------------------------------
+   * BOARDING PRICING ANIMATIONS
+   * ScrollTrigger-activated entrance sequence.
+   * Elements: Paw icons, label, title, cards,
+   * card backgrounds, price circles, features, CTA button.
+   *-------------------------------------------------*/
+  function boardingPricingAnimations() {
+    if (!document.querySelector(".boarding-pricing")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".boarding-pricing .section-header__paw, .boarding-pricing .section-header__label, .boarding-pricing .section-header__title, .boarding-pricing-card, .boarding-pricing-card__bg, .boarding-pricing-card__price-wrap, .boarding-pricing-card__list-item, .boarding-pricing-card__btn",
+        { clearProps: "all" }
+      );
+    }, 5000);
+
+    var titleEl = document.querySelector(".boarding-pricing .section-header__title");
+    var splitTitle = null;
+    try {
+      if (titleEl && typeof SplitText !== "undefined") {
+        splitTitle = new SplitText(titleEl, { type: "words" });
+      }
+    } catch (e) { splitTitle = null; }
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".boarding-pricing",
+        start: "top 75%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        if (splitTitle) splitTitle.revert();
+      }
+    });
+
+    // 1. Paw icons
+    var paws = document.querySelectorAll(".boarding-pricing .section-header__paw");
+    if (paws.length >= 2) {
+      tl.from(paws[0], { opacity: 0, x: -20, scale: 0, rotation: -30, duration: 0.55, ease: "back.out(2)" }, 0);
+      tl.from(paws[1], { opacity: 0, x: 20, scale: 0, rotation: 30, duration: 0.55, ease: "back.out(2)" }, 0);
+    } else {
+      tl.from(".boarding-pricing .section-header__paw", { opacity: 0, scale: 0, rotation: -30, duration: 0.55, ease: "back.out(2)" }, 0);
+    }
+
+    // 2. Label
+    tl.from(".boarding-pricing .section-header__label", { opacity: 0, y: -12, duration: 0.5, ease: "power2.out" }, 0.1);
+
+    // 3. Title cascade
+    if (splitTitle && splitTitle.words && splitTitle.words.length) {
+      tl.from(splitTitle.words, {
+        opacity: 0,
+        y: 45,
+        rotateX: -15,
+        transformOrigin: "0% 50% -20",
+        duration: 0.75,
+        stagger: 0.06,
+        ease: "power4.out"
+      }, 0.2);
+    } else {
+      tl.from(".boarding-pricing .section-header__title", { opacity: 0, y: 35, duration: 0.75, ease: "power3.out" }, 0.2);
+    }
+
+    // 4. Cards float-up stagger
+    tl.from(".boarding-pricing-card", {
+      opacity: 0,
+      y: 70,
+      scale: 0.94,
+      duration: 0.75,
+      stagger: 0.18,
+      ease: "power3.out",
+      clearProps: "transform,opacity"
+    }, 0.45);
+
+    // 5. Card background shapes
+    tl.from(".boarding-pricing-card__bg", {
+      opacity: 0,
+      scale: 0.85,
+      duration: 0.7,
+      stagger: 0.18,
+      ease: "power2.out",
+      clearProps: "transform,opacity"
+    }, 0.7);
+
+    // 6. Price circles pop
+    tl.from(".boarding-pricing-card__price-wrap", {
+      opacity: 0,
+      scale: 0,
+      duration: 0.6,
+      stagger: 0.18,
+      ease: "back.out(2.2)",
+      clearProps: "transform,opacity"
+    }, 0.85);
+
+    // 7. Bullet items slide-in
+    tl.from(".boarding-pricing-card__list-item", {
+      opacity: 0,
+      x: -15,
+      duration: 0.5,
+      stagger: 0.05,
+      ease: "power2.out",
+      clearProps: "transform,opacity"
+    }, 1.0);
+
+    // 8. CTA Buttons pop
+    tl.from(".boarding-pricing-card__btn", {
+      opacity: 0,
+      scale: 0.8,
+      duration: 0.55,
+      stagger: 0.15,
+      ease: "back.out(1.8)",
+      clearProps: "transform,opacity"
+    }, 1.2);
+  }
+
+  /*-------------------------------------------------
+   * BOARDING BLOG ANIMATIONS
+   * ScrollTrigger-activated entrance sequence.
+   * Elements: Paw icons, label, title cascade, cards,
+   * card image curtain, date badge pop, read more button,
+   * and share icon pop.
+   *-------------------------------------------------*/
+  function boardingBlogAnimations() {
+    if (!document.querySelector(".boarding-blog")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".boarding-blog .section-header__paw, .boarding-blog .section-header__label, .boarding-blog .section-header__title, .boarding-blog-card, .boarding-blog-card__img, .boarding-blog-card__date, .boarding-blog-card .service-btn, .boarding-blog-card__share-link",
+        { clearProps: "all" }
+      );
+    }, 5000);
+
+    var titleEl = document.querySelector(".boarding-blog .section-header__title");
+    var splitTitle = null;
+    try {
+      if (titleEl && typeof SplitText !== "undefined") {
+        splitTitle = new SplitText(titleEl, { type: "words" });
+      }
+    } catch (e) { splitTitle = null; }
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".boarding-blog",
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        if (splitTitle) splitTitle.revert();
+      }
+    });
+
+    // Setup initial clipPath on images
+    gsap.set(".boarding-blog-card__img", { clipPath: "inset(0% 0% 100% 0%)" });
+
+    // 1. Paw icons
+    var paws = document.querySelectorAll(".boarding-blog .section-header__paw");
+    if (paws.length >= 2) {
+      tl.from(paws[0], { opacity: 0, x: -20, scale: 0, rotation: -30, duration: 0.55, ease: "back.out(2)" }, 0);
+      tl.from(paws[1], { opacity: 0, x: 20, scale: 0, rotation: 30, duration: 0.55, ease: "back.out(2)" }, 0);
+    } else {
+      tl.from(".boarding-blog .section-header__paw", { opacity: 0, scale: 0, rotation: -30, duration: 0.55, ease: "back.out(2)" }, 0);
+    }
+
+    // 2. Label
+    tl.from(".boarding-blog .section-header__label", { opacity: 0, y: -12, duration: 0.5, ease: "power2.out" }, 0.1);
+
+    // 3. Title cascade
+    if (splitTitle && splitTitle.words && splitTitle.words.length) {
+      tl.from(splitTitle.words, {
+        opacity: 0,
+        y: 45,
+        rotateX: -15,
+        transformOrigin: "0% 50% -20",
+        duration: 0.75,
+        stagger: 0.06,
+        ease: "power4.out"
+      }, 0.2);
+    } else {
+      tl.from(".boarding-blog .section-header__title", { opacity: 0, y: 35, duration: 0.75, ease: "power3.out" }, 0.2);
+    }
+
+    // 4. Cards float-up stagger
+    tl.from(".boarding-blog-card", {
+      opacity: 0,
+      y: 60,
+      duration: 0.75,
+      stagger: 0.18,
+      ease: "power3.out",
+      clearProps: "transform,opacity"
+    }, 0.45);
+
+    // 5. Card images curtain wipe
+    tl.to(".boarding-blog-card__img", {
+      clipPath: "inset(0% 0% 0% 0%)",
+      duration: 0.85,
+      stagger: 0.18,
+      ease: "power3.out",
+      clearProps: "clip-path"
+    }, 0.7);
+
+    // 6. Date badges bounce pop
+    tl.from(".boarding-blog-card__date", {
+      opacity: 0,
+      scale: 0,
+      duration: 0.6,
+      stagger: 0.18,
+      ease: "back.out(2.5)",
+      clearProps: "transform,opacity"
+    }, 0.85);
+
+    // 7. Read more buttons pop
+    tl.from(".boarding-blog-card .service-btn", {
+      opacity: 0,
+      scale: 0.8,
+      duration: 0.55,
+      stagger: 0.18,
+      ease: "back.out(1.8)",
+      clearProps: "transform,opacity"
+    }, 1.0);
+
+    // 8. Share link icons pop
+    tl.from(".boarding-blog-card__share-link", {
+      opacity: 0,
+      scale: 0,
+      duration: 0.55,
+      stagger: 0.18,
+      ease: "back.out(2.2)",
+      clearProps: "transform,opacity"
+    }, 1.1);
+  }
+
+  /*-------------------------------------------------
+   * FOOTER V3 ANIMATIONS
+   * ScrollTrigger-activated entrance sequence.
+   * Elements: Background parallax, subscribe col,
+   * link lists cols, contact info col, bottom brand panel,
+   * and social icon links.
+   *-------------------------------------------------*/
+  function footerV3Animations() {
+    if (!document.querySelector(".footer-v3")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".footer-v3__bg, .footer-v3__col--subscribe, .footer-v3__col, .footer-v3__bottom, .footer-v3__social-link",
+        { clearProps: "all" }
+      );
+    }, 5000);
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".footer-v3",
+        start: "top 90%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+      }
+    });
+
+    // 1. Background image slide
+    tl.from(".footer-v3__bg", {
+      opacity: 0.8,
+      y: -50,
+      scale: 1.05,
+      duration: 1.0,
+      ease: "power2.out",
+      clearProps: "transform,opacity"
+    }, 0);
+
+    // 2. Subscribe newsletter column
+    tl.from(".footer-v3__col--subscribe", {
+      opacity: 0,
+      x: -30,
+      duration: 0.8,
+      ease: "power3.out",
+      clearProps: "transform,opacity"
+    }, 0.2);
+
+    // 3. Middle columns stagger (Links)
+    tl.from(".footer-v3__col:not(.footer-v3__col--subscribe):not(:last-child)", {
+      opacity: 0,
+      y: 30,
+      duration: 0.75,
+      stagger: 0.15,
+      ease: "power2.out",
+      clearProps: "transform,opacity"
+    }, 0.35);
+
+    // 4. Contact column slide-in
+    tl.from(".footer-v3__col:last-child", {
+      opacity: 0,
+      x: 30,
+      duration: 0.8,
+      ease: "power3.out",
+      clearProps: "transform,opacity"
+    }, 0.5);
+
+    // 5. Bottom card panel scale-up
+    tl.from(".footer-v3__bottom", {
+      opacity: 0,
+      scaleY: 0.9,
+      duration: 0.75,
+      ease: "power3.out",
+      clearProps: "transform,opacity"
+    }, 0.65);
+
+    // 6. Social icons pop
+    tl.from(".footer-v3__social-link", {
+      opacity: 0,
+      scale: 0,
+      duration: 0.65,
+      stagger: 0.08,
+      ease: "back.out(2)",
+      clearProps: "transform,opacity"
+    }, 0.85);
   }
 
   /*-------------------------------------------------

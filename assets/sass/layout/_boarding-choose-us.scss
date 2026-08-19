@@ -117,6 +117,7 @@
     justify-content: center;
     background-color: transparent;
     flex-shrink: 0;
+    will-change: transform, opacity;
 
     @include respond(xl) {
       width: 60px;
@@ -156,6 +157,7 @@
     border-left: 2px dotted color-mix(in srgb, var(--primary-color), transparent 50%);
     margin-top: 10px;
     min-height: 30px;
+    will-change: transform;
   }
 
   &__content {
@@ -199,6 +201,7 @@
     height: 120%;
     object-fit: contain;
     z-index: -1;
+    will-change: transform, opacity;
   }
 
   &__img {
@@ -207,5 +210,6 @@
     display: block;
     position: relative;
     z-index: 1;
+    will-change: transform, opacity;
   }
 }

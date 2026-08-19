@@ -28,6 +28,8 @@
   align-items: center;
   text-align: center;
   z-index: 1;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  will-change: transform;
 
   @include respond(xl) {
     padding: 40px 30px 20px;
@@ -39,9 +41,15 @@
   }
 
   &:hover {
+    transform: translateY(-8px);
+
     .boarding-pricing-card__price-wrap {
       background: var(--heading-color);
       color: var(--white-color);
+    }
+
+    .boarding-pricing-card__list-icon {
+      transform: scale(1.15);
     }
   }
 
@@ -65,6 +73,7 @@
     height: 100%;
     object-fit: fill;
     z-index: -1;
+    will-change: transform, opacity;
   }
 
   &__title {
@@ -88,6 +97,7 @@
     align-items: center;
     margin: 40px 0;
     transition: all 0.3s ease;
+    will-change: transform, opacity;
 
     @include respond(xl) {
       width: 90px;
@@ -141,6 +151,8 @@
     align-items: center;
     font-size: 10px;
     flex-shrink: 0;
+    transition: transform 0.3s ease;
+    will-change: transform;
 
     @include respond(xl) {
       font-size: 10px;
@@ -157,6 +169,7 @@
     font-family: var(--heading-font-family);
     border-radius: 100px;
     transition: all 0.3s ease;
+    will-change: transform, opacity;
 
     &:hover {
       background: var(--heading-color);

@@ -778,9 +778,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: none;
+    object-fit: cover;
     object-position: top center;
     z-index: 1;
+    will-change: transform, opacity;
   }
 
   &__container {
@@ -1076,6 +1077,7 @@
     border-radius: 10px;
     padding: 30px;
     margin-bottom: 30px;
+    will-change: transform, opacity;
 
     @include respond(md) {
       padding: 20px;
@@ -1185,6 +1187,7 @@
     align-items: center;
     justify-content: center;
     transition: all 0.3s;
+    will-change: transform, opacity;
 
     &:hover {
       background: var(--white-color);

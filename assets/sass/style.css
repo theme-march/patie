@@ -7901,6 +7901,7 @@ i[class*=fa] {
 .footer-v2__logo {
   display: inline-block;
   margin-bottom: 40px;
+  will-change: transform, opacity;
 }
 @media (max-width: 768px) {
   .footer-v2__logo {
@@ -7921,6 +7922,7 @@ i[class*=fa] {
 .footer-v2__title-line {
   margin-bottom: 30px;
   display: block;
+  will-change: transform, opacity;
 }
 @media (max-width: 768px) {
   .footer-v2__title-line {
@@ -7952,6 +7954,7 @@ i[class*=fa] {
   background-color: var(--secondary-color);
   padding: 30px;
   border-radius: 10px;
+  will-change: transform, opacity;
 }
 .footer-v2__newsletter-title {
   color: var(--white-color);
@@ -8029,6 +8032,7 @@ i[class*=fa] {
   display: flex;
   align-items: center;
   gap: 15px;
+  will-change: transform, opacity;
 }
 .footer-v2__info-item--location {
   align-items: stretch;
@@ -8111,6 +8115,7 @@ i[class*=fa] {
   align-items: center;
   justify-content: center;
   transition: all 0.3s;
+  will-change: transform;
   font-size: 16px;
 }
 .footer-v2__social-link--active {
@@ -8137,8 +8142,8 @@ i[class*=fa] {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: none;
-     object-fit: none;
+  -o-object-fit: cover;
+     object-fit: cover;
   -o-object-position: top center;
      object-position: top center;
   z-index: 1;
@@ -9478,6 +9483,10 @@ i[class*=fa] {
      object-fit: cover;
   display: block;
 }
+.faq__video .play-btn,
+.faq__video .ak-video-open {
+  position: absolute;
+}
 
 .faq-accordion {
   display: flex;
@@ -10501,7 +10510,11 @@ i[class*=fa] {
   height: 100%;
   display: flex;
   flex-direction: column;
-  transition: all 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  will-change: transform;
+}
+.grooming-blog-card:hover {
+  transform: translateY(-6px);
 }
 @media (max-width: 576px) {
   .grooming-blog-card {
@@ -10519,6 +10532,7 @@ i[class*=fa] {
   z-index: -1;
   pointer-events: none;
   display: block;
+  will-change: transform, opacity;
 }
 .grooming-blog-card__img-wrap {
   position: relative;
@@ -10566,6 +10580,7 @@ i[class*=fa] {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  will-change: transform, opacity;
 }
 @media (max-width: 1400px) {
   .grooming-blog-card__date {
@@ -10687,6 +10702,7 @@ i[class*=fa] {
   justify-content: space-between;
   align-items: center;
   margin-top: auto;
+  will-change: transform, opacity;
 }
 .grooming-blog-card__btn-wrap {
   display: flex;
@@ -10870,6 +10886,7 @@ i[class*=fa] {
   -o-object-fit: cover;
      object-fit: cover;
   z-index: 1;
+  will-change: clip-path;
 }
 .boarding-hero__bg-2 {
   position: absolute;
@@ -10881,8 +10898,9 @@ i[class*=fa] {
   height: calc(100% - 70px);
   -o-object-fit: none;
      object-fit: none;
-  border-radius: 20px;
+  border-radius: 40px;
   z-index: 2;
+  will-change: transform, opacity;
 }
 @media (max-width: 1200px) {
   .boarding-hero__bg-2 {
@@ -11066,6 +11084,7 @@ i[class*=fa] {
   height: auto;
   display: block;
   margin: 0 auto;
+  will-change: transform, opacity;
 }
 .boarding-hero__line {
   position: absolute;
@@ -11074,6 +11093,7 @@ i[class*=fa] {
   transform: translate(-50%, -50%);
   max-width: 100%;
   z-index: 1;
+  will-change: transform, opacity;
 }
 @media (max-width: 1700px) {
   .boarding-hero__line {
@@ -11100,6 +11120,7 @@ i[class*=fa] {
 .boarding-hero__floating {
   position: absolute;
   z-index: 4;
+  will-change: transform, opacity;
 }
 .boarding-hero__floating--cat {
   left: 0%;
@@ -11224,6 +11245,7 @@ i[class*=fa] {
   left: 5%;
   top: 38%;
   z-index: 1;
+  will-change: transform, opacity;
 }
 @media (max-width: 1700px) {
   .boarding-about__deco-left {
@@ -11254,6 +11276,7 @@ i[class*=fa] {
   right: 8%;
   top: 18%;
   z-index: 1;
+  will-change: transform, opacity;
 }
 @media (max-width: 1700px) {
   .boarding-about__deco-right {
@@ -11394,6 +11417,7 @@ i[class*=fa] {
   justify-content: center;
   margin: 0 auto 15px;
   background-color: transparent;
+  will-change: transform, opacity;
 }
 @media (max-width: 768px) {
   .boarding-about__icon-circle {
@@ -11452,6 +11476,7 @@ i[class*=fa] {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  will-change: transform, opacity;
 }
 @media (max-width: 1700px) {
   .boarding-about__dark-card {
@@ -11536,6 +11561,7 @@ i[class*=fa] {
   max-width: 50%;
   border-radius: 12px;
   overflow: hidden;
+  will-change: clip-path;
 }
 @media (max-width: 768px) {
   .boarding-about__main-img-wrap {
@@ -11564,6 +11590,7 @@ i[class*=fa] {
   z-index: 3;
   position: absolute;
   bottom: 0px;
+  will-change: transform, opacity;
   left: calc(100% - 266px);
 }
 @media (max-width: 1700px) {
@@ -11685,6 +11712,8 @@ i[class*=fa] {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  transition: transform 0.4s ease;
+  will-change: transform;
 }
 .boarding-service-card__img-wrap {
   position: relative;
@@ -11718,6 +11747,7 @@ i[class*=fa] {
   width: 100%;
   height: auto;
   z-index: 1;
+  will-change: transform, opacity;
 }
 .boarding-service-card__img {
   position: relative;
@@ -11727,7 +11757,8 @@ i[class*=fa] {
   z-index: 2;
   max-width: 93%;
   height: auto;
-  transition: all 0.4s ease;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  will-change: transform, opacity;
 }
 .boarding-service-card__title {
   color: var(--title-color);
@@ -11751,6 +11782,9 @@ i[class*=fa] {
   .boarding-service-card__title {
     margin-bottom: 10px;
   }
+}
+.boarding-service-card:hover {
+  transform: translateY(-6px);
 }
 .boarding-service-card:hover .boarding-service-card__img {
   transform: translateX(10px);
@@ -11843,6 +11877,7 @@ i[class*=fa] {
   z-index: 2;
   margin-bottom: -250px;
   align-items: center;
+  will-change: transform, opacity;
 }
 @media (max-width: 1400px) {
   .boarding-testimonial__box {
@@ -11910,6 +11945,7 @@ i[class*=fa] {
   align-items: center;
   justify-content: center;
   z-index: 1;
+  will-change: transform, opacity;
 }
 @media (max-width: 768px) {
   .boarding-testimonial__quote-icon {
@@ -11997,6 +12033,7 @@ i[class*=fa] {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  will-change: transform, opacity;
 }
 @media (max-width: 992px) {
   .boarding-testimonial__user {
@@ -12049,6 +12086,7 @@ i[class*=fa] {
   color: var(--white-color);
   cursor: pointer;
   transition: all 0.3s ease;
+  will-change: transform;
 }
 @media (max-width: 1200px) {
   .boarding-testimonial__nav-btn {
@@ -12092,8 +12130,8 @@ i[class*=fa] {
 }
 .boarding-testimonial__stats-bg {
   position: absolute;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: fill;
+     object-fit: fill;
   top: 0;
   left: 0;
   width: 100%;
@@ -12119,6 +12157,7 @@ i[class*=fa] {
 }
 .boarding-testimonial__stat-item {
   position: relative;
+  will-change: transform, opacity;
 }
 .boarding-testimonial__stat-divider {
   position: absolute;
@@ -12312,6 +12351,7 @@ i[class*=fa] {
   justify-content: center;
   background-color: transparent;
   flex-shrink: 0;
+  will-change: transform, opacity;
 }
 @media (max-width: 1200px) {
   .boarding-choose-us__icon-outer {
@@ -12352,6 +12392,7 @@ i[class*=fa] {
   border-left: 2px dotted color-mix(in srgb, var(--primary-color), transparent 50%);
   margin-top: 10px;
   min-height: 30px;
+  will-change: transform;
 }
 .boarding-choose-us__content {
   padding-bottom: 50px;
@@ -12393,6 +12434,7 @@ i[class*=fa] {
   -o-object-fit: contain;
      object-fit: contain;
   z-index: -1;
+  will-change: transform, opacity;
 }
 .boarding-choose-us__img {
   width: 97%;
@@ -12400,6 +12442,7 @@ i[class*=fa] {
   display: block;
   position: relative;
   z-index: 1;
+  will-change: transform, opacity;
 }
 
 /* 
@@ -12443,6 +12486,8 @@ i[class*=fa] {
   align-items: center;
   text-align: center;
   z-index: 1;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  will-change: transform;
 }
 @media (max-width: 1200px) {
   .boarding-pricing-card {
@@ -12456,9 +12501,15 @@ i[class*=fa] {
     margin-inline: auto;
   }
 }
+.boarding-pricing-card:hover {
+  transform: translateY(-8px);
+}
 .boarding-pricing-card:hover .boarding-pricing-card__price-wrap {
   background: var(--heading-color);
   color: var(--white-color);
+}
+.boarding-pricing-card:hover .boarding-pricing-card__list-icon {
+  transform: scale(1.15);
 }
 .boarding-pricing-card--purple {
   --theme-color: var(--primary-color);
@@ -12478,6 +12529,7 @@ i[class*=fa] {
   -o-object-fit: fill;
      object-fit: fill;
   z-index: -1;
+  will-change: transform, opacity;
 }
 .boarding-pricing-card__title {
   color: var(--heading-color);
@@ -12499,6 +12551,7 @@ i[class*=fa] {
   align-items: center;
   margin: 40px 0;
   transition: all 0.3s ease;
+  will-change: transform, opacity;
 }
 @media (max-width: 1200px) {
   .boarding-pricing-card__price-wrap {
@@ -12551,6 +12604,8 @@ i[class*=fa] {
   align-items: center;
   font-size: 10px;
   flex-shrink: 0;
+  transition: transform 0.3s ease;
+  will-change: transform;
 }
 @media (max-width: 1200px) {
   .boarding-pricing-card__list-icon {
@@ -12567,6 +12622,7 @@ i[class*=fa] {
   font-family: var(--heading-font-family);
   border-radius: 100px;
   transition: all 0.3s ease;
+  will-change: transform, opacity;
 }
 .boarding-pricing-card__btn:hover {
   background: var(--heading-color);
@@ -12620,6 +12676,7 @@ i[class*=fa] {
   z-index: 1;
   display: flex;
   flex-direction: column;
+  will-change: transform, opacity;
 }
 @media (max-width: 1400px) {
   .boarding-blog-card {
@@ -12651,6 +12708,7 @@ i[class*=fa] {
      object-fit: cover;
   display: block;
   transition: all 0.5s ease;
+  will-change: clip-path, transform;
 }
 .boarding-blog-card__date {
   position: absolute;
@@ -12669,6 +12727,7 @@ i[class*=fa] {
   justify-content: center;
   text-align: center;
   z-index: 2;
+  will-change: transform, opacity;
 }
 .boarding-blog-card__date-day {
   font-size: 28px;
@@ -12765,6 +12824,7 @@ i[class*=fa] {
   transition: all 0.4s ease;
   position: relative;
   z-index: 2;
+  will-change: transform, opacity;
 }
 .boarding-blog-card__share-icon {
   line-height: normal;

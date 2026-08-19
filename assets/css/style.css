@@ -10008,6 +10008,7 @@ i[class*=fa] {
   flex-shrink: 0;
   text-decoration: none;
   display: block;
+  will-change: transform;
 }
 @media (max-width: 768px) {
   .grooming-team__card {
@@ -10041,6 +10042,7 @@ i[class*=fa] {
   width: 307px;
   height: 500px;
   z-index: 1;
+  will-change: transform, opacity;
 }
 @media (max-width: 768px) {
   .grooming-team__card-bg {
@@ -10065,6 +10067,7 @@ i[class*=fa] {
   transform: translateX(-50%);
   width: 100%;
   transition: all 0.3s ease;
+  will-change: transform, opacity;
 }
 .grooming-team__card-name {
   font-size: 30px;
@@ -10091,6 +10094,7 @@ i[class*=fa] {
   object-position: bottom center;
   display: block;
   transition: all 0.4s ease;
+  will-change: transform, opacity;
 }
 @media (max-width: 768px) {
   .grooming-team__card-img {
@@ -10148,7 +10152,6 @@ i[class*=fa] {
   padding: 120px 180px 120px 220px;
   display: flex;
   justify-content: flex-end;
-  z-index: 1;
 }
 @media (max-width: 1600px) {
   .before-and-after__left-wrap {
@@ -10184,7 +10187,7 @@ i[class*=fa] {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
+  will-change: clip-path;
 }
 .before-and-after__left-content {
   position: relative;
@@ -10228,12 +10231,16 @@ i[class*=fa] {
   display: flex;
   align-items: center;
   gap: 20px;
+  will-change: transform, opacity;
 }
 @media (max-width: 768px) {
   .before-and-after__item {
     align-items: flex-start;
     gap: 15px;
   }
+}
+.before-and-after__item:hover .before-and-after__icon-wrap {
+  transform: translateY(-5px);
 }
 .before-and-after__icon-wrap {
   position: relative;
@@ -10243,6 +10250,8 @@ i[class*=fa] {
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+  transition: transform 0.35s ease;
+  will-change: transform;
 }
 @media (max-width: 1200px) {
   .before-and-after__icon-wrap {
@@ -10294,6 +10303,7 @@ i[class*=fa] {
 .before-and-after__right-wrap {
   width: 50%;
   position: relative;
+  will-change: clip-path;
 }
 @media (max-width: 992px) {
   .before-and-after__right-wrap {
@@ -10325,6 +10335,7 @@ i[class*=fa] {
   border-radius: 50px;
   padding: 18px 20px;
   z-index: 10;
+  will-change: transform, opacity;
 }
 @media (max-width: 992px) {
   .before-and-after__slider {

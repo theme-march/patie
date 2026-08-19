@@ -512,6 +512,7 @@
   &__logo {
     display: inline-block;
     margin-bottom: 40px;
+    will-change: transform, opacity;
 
     @include respond(md) {
       margin-bottom: 25px;
@@ -534,6 +535,7 @@
   &__title-line {
     margin-bottom: 30px;
     display: block;
+    will-change: transform, opacity;
 
     @include respond(md) {
       margin-bottom: 20px;
@@ -573,6 +575,7 @@
     background-color: var(--secondary-color);
     padding: 30px;
     border-radius: 10px;
+    will-change: transform, opacity;
   }
 
   &__newsletter-title {
@@ -651,6 +654,7 @@
     display: flex;
     align-items: center;
     gap: 15px;
+    will-change: transform, opacity;
 
     &--location {
       align-items: stretch;
@@ -743,6 +747,7 @@
     align-items: center;
     justify-content: center;
     transition: all 0.3s;
+    will-change: transform;
     font-size: 16px;
 
     &--active {

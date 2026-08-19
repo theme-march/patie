@@ -61,6 +61,10 @@
     faqAnimations();
     groomingChooseUsAnimations();
     groomingPricingAnimations();
+    groomingTeamAnimations();
+    beforeAndAfterAnimations();
+    groomingBlogAnimations();
+    footerV2Animations();
   });
 
   $(function () {
@@ -3296,6 +3300,354 @@
         }
       });
     });
+  }
+
+  /*-------------------------------------------------
+   * GROOMING TEAM ANIMATIONS
+   * ScrollTrigger-activated entrance sequence.
+   *-------------------------------------------------*/
+  function groomingTeamAnimations() {
+    if (!document.querySelector(".grooming-team")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".grooming-team .section-header__paw, .grooming-team .section-header__label, .grooming-team .section-header__title, .grooming-team__desc, .grooming-team__text .common-btn, .grooming-team__thumb, .grooming-team__card-bg, .grooming-team__card-img, .grooming-team__card-info",
+        { clearProps: "all" }
+      );
+    }, 5000);
+
+    var titleEl = document.querySelector(".grooming-team .section-header__title");
+    var splitTitle = null;
+    try {
+      if (titleEl && typeof SplitText !== "undefined") {
+        splitTitle = new SplitText(titleEl, { type: "words" });
+      }
+    } catch (e) { splitTitle = null; }
+
+    // Dog parallax vertical scroll scrub
+    gsap.fromTo(
+      ".grooming-team__thumb",
+      { y: 60 },
+      {
+        y: -60,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".grooming-team",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1.2,
+        }
+      }
+    );
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".grooming-team",
+        start: "top 75%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        if (splitTitle) splitTitle.revert();
+      }
+    });
+
+    tl.from(".grooming-team .section-header__paw", { opacity: 0, scale: 0.5, rotation: -30, duration: 0.55, ease: "back.out(2)" }, 0);
+    tl.from(".grooming-team .section-header__label", { opacity: 0, y: -15, duration: 0.5, ease: "power2.out" }, 0.1);
+
+    if (splitTitle && splitTitle.words && splitTitle.words.length) {
+      tl.from(splitTitle.words, {
+        opacity: 0,
+        y: 35,
+        rotateX: -10,
+        transformOrigin: "0% 50% -20",
+        duration: 0.75,
+        stagger: 0.06,
+        ease: "power4.out"
+      }, 0.18);
+    } else {
+      tl.from(".grooming-team .section-header__title", { opacity: 0, y: 30, duration: 0.7, ease: "power3.out" }, 0.18);
+    }
+
+    tl.from([".grooming-team__desc", ".grooming-team__text .common-btn"], {
+      opacity: 0,
+      y: 20,
+      duration: 0.6,
+      stagger: 0.12,
+      ease: "power3.out",
+      clearProps: "transform,opacity"
+    }, 0.4);
+
+    tl.from(".grooming-team__thumb", { opacity: 0, y: 120, duration: 1.0, ease: "power3.out" }, 0.5);
+
+    tl.from(".grooming-team__card-bg", { opacity: 0, y: 80, duration: 0.7, stagger: 0.12, ease: "power3.out", clearProps: "transform,opacity" }, 0.6);
+
+    tl.from(".grooming-team__card-img", { opacity: 0, y: -60, duration: 0.85, stagger: 0.12, ease: "back.out(1.8)", clearProps: "transform,opacity" }, 0.75);
+
+    tl.from(".grooming-team__card-info", { opacity: 0, scale: 0.9, duration: 0.5, stagger: 0.1, ease: "power2.out", clearProps: "transform,opacity" }, 0.9);
+  }
+
+  /*-------------------------------------------------
+   * BEFORE AND AFTER ANIMATIONS
+   * ScrollTrigger-activated entrance sequence.
+   *-------------------------------------------------*/
+  function beforeAndAfterAnimations() {
+    if (!document.querySelector(".before-and-after")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".before-and-after__bg, .before-and-after__left-content .section-header__paw, .before-and-after__left-content .section-header__label, .before-and-after__left-content .section-header__title, .before-and-after__desc, .before-and-after__right-wrap, .before-and-after__item, .before-and-after__slider",
+        { clearProps: "all" }
+      );
+    }, 5000);
+
+    var titleEl = document.querySelector(".before-and-after__left-content .section-header__title");
+    var splitTitle = null;
+    try {
+      if (titleEl && typeof SplitText !== "undefined") {
+        splitTitle = new SplitText(titleEl, { type: "words" });
+      }
+    } catch (e) { splitTitle = null; }
+
+    gsap.set(".before-and-after__bg", { clipPath: "inset(0% 100% 0% 0%)" });
+    gsap.set(".before-and-after__right-wrap", { clipPath: "inset(0% 0% 0% 100%)" });
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".before-and-after",
+        start: "top 75%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        if (splitTitle) splitTitle.revert();
+      }
+    });
+
+    tl.to(".before-and-after__bg", { clipPath: "inset(0% 0% 0% 0%)", duration: 1.0, ease: "power3.out", clearProps: "clip-path" }, 0);
+
+    tl.from(".before-and-after__left-content .section-header__paw", { opacity: 0, scale: 0.5, rotation: -30, duration: 0.55, ease: "back.out(2)" }, 0.15);
+
+    tl.from(".before-and-after__left-content .section-header__label", { opacity: 0, x: -20, duration: 0.5, ease: "power2.out" }, 0.22);
+
+    if (splitTitle && splitTitle.words && splitTitle.words.length) {
+      tl.from(splitTitle.words, {
+        opacity: 0,
+        y: 35,
+        rotateX: -10,
+        transformOrigin: "0% 50% -20",
+        duration: 0.75,
+        stagger: 0.06,
+        ease: "power4.out"
+      }, 0.3);
+    } else {
+      tl.from(".before-and-after__left-content .section-header__title", { opacity: 0, y: 30, duration: 0.7, ease: "power3.out" }, 0.3);
+    }
+
+    tl.from(".before-and-after__desc", { opacity: 0, y: 15, duration: 0.6, ease: "power2.out", clearProps: "transform,opacity" }, 0.5);
+
+    tl.to(".before-and-after__right-wrap", { clipPath: "inset(0% 0% 0% 0%)", duration: 1.1, ease: "power3.out", clearProps: "clip-path" }, 0.55);
+
+    tl.from(".before-and-after__item", { opacity: 0, y: 35, duration: 0.7, stagger: 0.18, ease: "power3.out", clearProps: "transform,opacity" }, 0.65);
+
+    tl.from(".before-and-after__slider", { opacity: 0, scale: 0, y: "-40%", duration: 0.8, ease: "back.out(2.5)", clearProps: "transform,opacity,scale" }, 0.9);
+  }
+
+  /*-------------------------------------------------
+   * GROOMING BLOG ANIMATIONS
+   * ScrollTrigger-activated entrance sequence.
+   * Features: dual paw fan-in, label slide-down,
+   * title word cascade, card stagger float-up,
+   * card SVG border pop-in, date badge slide-in,
+   * footer button + share icon reveal.
+   *-------------------------------------------------*/
+  function groomingBlogAnimations() {
+    if (!document.querySelector(".grooming-blog")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".grooming-blog .section-header__paw, .grooming-blog .section-header__label, .grooming-blog .section-header__title, .grooming-blog-card, .grooming-blog-card__bg-svg, .grooming-blog-card__date, .grooming-blog-card__footer",
+        { clearProps: "all" }
+      );
+    }, 5000);
+
+    var titleEl = document.querySelector(".grooming-blog .section-header__title");
+    var splitTitle = null;
+    try {
+      if (titleEl && typeof SplitText !== "undefined") {
+        splitTitle = new SplitText(titleEl, { type: "words" });
+      }
+    } catch (e) { splitTitle = null; }
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".grooming-blog",
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        if (splitTitle) splitTitle.revert();
+      }
+    });
+
+    var paws = document.querySelectorAll(".grooming-blog .section-header__paw");
+    if (paws.length >= 2) {
+      tl.from(paws[0], { opacity: 0, x: -20, scale: 0, rotation: -30, duration: 0.55, ease: "back.out(2)" }, 0);
+      tl.from(paws[1], { opacity: 0, x: 20, scale: 0, rotation: 30, duration: 0.55, ease: "back.out(2)" }, 0);
+    } else {
+      tl.from(".grooming-blog .section-header__paw", { opacity: 0, scale: 0, rotation: -30, duration: 0.55, ease: "back.out(2)" }, 0);
+    }
+
+    tl.from(".grooming-blog .section-header__label", { opacity: 0, y: -15, duration: 0.5, ease: "power2.out" }, 0.1);
+
+    if (splitTitle && splitTitle.words && splitTitle.words.length) {
+      tl.from(splitTitle.words, {
+        opacity: 0,
+        y: 40,
+        rotateX: -10,
+        transformOrigin: "0% 50% -20",
+        duration: 0.75,
+        stagger: 0.06,
+        ease: "power4.out"
+      }, 0.2);
+    } else {
+      tl.from(".grooming-blog .section-header__title", { opacity: 0, y: 35, duration: 0.75, ease: "power3.out" }, 0.2);
+    }
+
+    tl.from(".grooming-blog-card", {
+      opacity: 0,
+      y: 70,
+      scale: 0.94,
+      duration: 0.75,
+      stagger: 0.2,
+      ease: "power3.out",
+      clearProps: "transform,opacity,scale"
+    }, 0.45);
+
+    tl.from(".grooming-blog-card__bg-svg", {
+      opacity: 0,
+      scale: 0.85,
+      duration: 0.65,
+      stagger: 0.2,
+      ease: "back.out(1.5)",
+      clearProps: "transform,opacity"
+    }, 0.75);
+
+    tl.from(".grooming-blog-card__date", {
+      opacity: 0,
+      x: -30,
+      duration: 0.6,
+      stagger: 0.2,
+      ease: "power3.out",
+      clearProps: "transform,opacity"
+    }, 0.9);
+
+    tl.from(".grooming-blog-card__footer", {
+      opacity: 0,
+      y: 15,
+      duration: 0.55,
+      stagger: 0.15,
+      ease: "power2.out",
+      clearProps: "transform,opacity"
+    }, 1.15);
+  }
+
+  /*-------------------------------------------------
+   * FOOTER V2 ANIMATIONS
+   * ScrollTrigger-activated entrance sequence.
+   * Features: logo + desc slide-up, title stagger,
+   * underline wipe, nav list stagger, newsletter scale-in,
+   * info items stagger, socials bounce, bottom bar fade.
+   *-------------------------------------------------*/
+  function footerV2Animations() {
+    if (!document.querySelector(".footer-v2")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".footer-v2__logo, .footer-v2__desc, .footer-v2__title, .footer-v2__title-line, .footer-v2__list-item, .footer-v2__newsletter-box, .footer-v2__info-item, .footer-v2__social-link, .footer-v2 .footer__bottom",
+        { clearProps: "all" }
+      );
+    }, 5000);
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".footer-v2",
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+      }
+    });
+
+    // 1. Logo
+    tl.from(".footer-v2__logo", { opacity: 0, y: 20, duration: 0.6, ease: "power3.out", clearProps: "transform,opacity" }, 0);
+
+    // 2. Description
+    tl.from(".footer-v2__desc", { opacity: 0, y: 15, duration: 0.6, ease: "power2.out", clearProps: "transform,opacity" }, 0.1);
+
+    // 3. Titles
+    tl.from(".footer-v2__title", { opacity: 0, y: 20, duration: 0.5, stagger: 0.15, ease: "power3.out", clearProps: "transform,opacity" }, 0.2);
+
+    // 4. Lines
+    tl.from(".footer-v2__title-line", {
+      opacity: 0,
+      scaleX: 0,
+      duration: 0.5,
+      stagger: 0.15,
+      transformOrigin: "left center",
+      ease: "power3.out",
+      clearProps: "transform,opacity"
+    }, 0.25);
+
+    // 5. Lists
+    tl.from(".footer-v2__list-item", {
+      opacity: 0,
+      x: -15,
+      duration: 0.45,
+      stagger: 0.05,
+      ease: "power2.out",
+      clearProps: "transform,opacity"
+    }, 0.45);
+
+    // 6. Newsletter box
+    tl.from(".footer-v2__newsletter-box", {
+      opacity: 0,
+      scale: 0.9,
+      duration: 0.6,
+      ease: "back.out(1.6)",
+      clearProps: "transform,opacity"
+    }, 0.3);
+
+    // 7. Info items
+    tl.from(".footer-v2__info-item", {
+      opacity: 0,
+      y: 25,
+      duration: 0.6,
+      stagger: 0.12,
+      ease: "power3.out",
+      clearProps: "transform,opacity"
+    }, 0.7);
+
+    // 8. Socials
+    tl.from(".footer-v2__social-link", {
+      opacity: 0,
+      scale: 0,
+      duration: 0.5,
+      stagger: 0.08,
+      ease: "back.out(2.2)",
+      clearProps: "transform,opacity"
+    }, 0.85);
+
+    // 9. Copyright / bottom wrap
+    tl.from(".footer-v2 .footer__bottom", {
+      opacity: 0,
+      y: 15,
+      duration: 0.6,
+      ease: "power2.out",
+      clearProps: "transform,opacity"
+    }, 1.05);
   }
 
 })(jQuery);

@@ -7860,6 +7860,7 @@ i[class*=fa] {
 .footer-v2__logo {
   display: inline-block;
   margin-bottom: 40px;
+  will-change: transform, opacity;
 }
 @media (max-width: 768px) {
   .footer-v2__logo {
@@ -7880,6 +7881,7 @@ i[class*=fa] {
 .footer-v2__title-line {
   margin-bottom: 30px;
   display: block;
+  will-change: transform, opacity;
 }
 @media (max-width: 768px) {
   .footer-v2__title-line {
@@ -7911,6 +7913,7 @@ i[class*=fa] {
   background-color: var(--secondary-color);
   padding: 30px;
   border-radius: 10px;
+  will-change: transform, opacity;
 }
 .footer-v2__newsletter-title {
   color: var(--white-color);
@@ -7985,6 +7988,7 @@ i[class*=fa] {
   display: flex;
   align-items: center;
   gap: 15px;
+  will-change: transform, opacity;
 }
 .footer-v2__info-item--location {
   align-items: stretch;
@@ -8067,6 +8071,7 @@ i[class*=fa] {
   align-items: center;
   justify-content: center;
   transition: all 0.3s;
+  will-change: transform;
   font-size: 16px;
 }
 .footer-v2__social-link--active {
@@ -10430,7 +10435,11 @@ i[class*=fa] {
   height: 100%;
   display: flex;
   flex-direction: column;
-  transition: all 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  will-change: transform;
+}
+.grooming-blog-card:hover {
+  transform: translateY(-6px);
 }
 @media (max-width: 576px) {
   .grooming-blog-card {
@@ -10447,6 +10456,7 @@ i[class*=fa] {
   z-index: -1;
   pointer-events: none;
   display: block;
+  will-change: transform, opacity;
 }
 .grooming-blog-card__img-wrap {
   position: relative;
@@ -10493,6 +10503,7 @@ i[class*=fa] {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  will-change: transform, opacity;
 }
 @media (max-width: 1400px) {
   .grooming-blog-card__date {
@@ -10614,6 +10625,7 @@ i[class*=fa] {
   justify-content: space-between;
   align-items: center;
   margin-top: auto;
+  will-change: transform, opacity;
 }
 .grooming-blog-card__btn-wrap {
   display: flex;

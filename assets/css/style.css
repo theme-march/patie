@@ -1742,6 +1742,7 @@ i[class*=fa] {
   overflow: hidden;
   margin-top: 0;
   transition: margin-top 0.4s ease;
+  will-change: background-size, opacity;
 }
 @media (max-width: 1600px) {
   .common-banner {
@@ -1792,6 +1793,7 @@ i[class*=fa] {
 }
 .common-banner__content .section-header__breadcrumb {
   margin-bottom: 15px;
+  will-change: transform, opacity;
 }
 .common-banner__img-wrap {
   position: absolute;
@@ -1801,6 +1803,7 @@ i[class*=fa] {
   max-width: 680px;
   line-height: 0;
   display: block;
+  will-change: transform, opacity;
 }
 @media (max-width: 1700px) {
   .common-banner__img-wrap {

@@ -73,6 +73,7 @@
     boardingPricingAnimations();
     boardingBlogAnimations();
     footerV3Animations();
+    commonBannerAnimations();
   });
 
   $(function () {
@@ -3631,6 +3632,78 @@
       ease: "back.out(2)",
       clearProps: "transform,opacity"
     }, 0.85);
+  }
+
+  /*-------------------------------------------------
+   * COMMON BANNER ANIMATIONS
+   * Above-the-fold load timeline for inner subpages.
+   * Elements: Background scale, breadcrumb slide,
+   * SplitText title cascade, and illustration slide.
+   *-------------------------------------------------*/
+  function commonBannerAnimations() {
+    if (!document.querySelector(".common-banner")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".common-banner, .common-banner .section-header__breadcrumb, .common-banner .section-header__title, .common-banner__img-wrap",
+        { clearProps: "all" }
+      );
+    }, 5000);
+
+    var titleEl = document.querySelector(".common-banner .section-header__title");
+    var splitTitle = null;
+    try {
+      if (titleEl && typeof SplitText !== "undefined") {
+        splitTitle = new SplitText(titleEl, { type: "words" });
+      }
+    } catch (e) { splitTitle = null; }
+
+    var tl = gsap.timeline({
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        if (splitTitle) splitTitle.revert();
+      }
+    });
+
+    // 1. Background image zoom scale-down
+    tl.fromTo(".common-banner", 
+      { backgroundSize: "110%", opacity: 0.8 },
+      { backgroundSize: "100%", opacity: 1, duration: 1.2, ease: "power2.out", clearProps: "background-size,opacity" },
+      0
+    );
+
+    // 2. Breadcrumb links
+    tl.from(".common-banner .section-header__breadcrumb", {
+      opacity: 0,
+      y: 15,
+      duration: 0.6,
+      ease: "power2.out",
+      clearProps: "transform,opacity"
+    }, 0.15);
+
+    // 3. Title cascade
+    if (splitTitle && splitTitle.words && splitTitle.words.length) {
+      tl.from(splitTitle.words, {
+        opacity: 0,
+        y: 40,
+        rotateX: -10,
+        transformOrigin: "0% 50% -20",
+        duration: 0.75,
+        stagger: 0.05,
+        ease: "power4.out"
+      }, 0.25);
+    } else {
+      tl.from(".common-banner .section-header__title", { opacity: 0, y: 30, duration: 0.75, ease: "power3.out" }, 0.25);
+    }
+
+    // 4. Dog/Cat photo slide
+    tl.from(".common-banner__img-wrap", {
+      opacity: 0,
+      x: 60,
+      duration: 0.8,
+      ease: "power3.out",
+      clearProps: "transform,opacity"
+    }, 0.45);
   }
 
   /*-------------------------------------------------

@@ -7,6 +7,7 @@
     overflow: hidden;
     margin-top: 0;
     transition: margin-top 0.4s ease;
+    will-change: background-size, opacity;
 
  
     @include respond(xxxl) {
@@ -47,6 +48,7 @@
 
         .section-header__breadcrumb {
             margin-bottom: 15px;
+            will-change: transform, opacity;
         }
     }
 
@@ -58,6 +60,7 @@
         max-width: 680px;
         line-height: 0;
         display: block;
+        will-change: transform, opacity;
 
 
 

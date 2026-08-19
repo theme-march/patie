@@ -1,4 +1,5 @@
 .antigravityignore
+GEMINI.md
 node_modules/
 .sass-cache/
 *.css.map

@@ -32,8 +32,23 @@
 
     &__main-img-wrap {
         position: relative;
+        overflow: hidden;
+        border-radius: 20px;
         margin-bottom: 30px;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
 
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px color-mix(in srgb, var(--primary-color) 12%, transparent);
+
+            .blog-details__main-img {
+                transform: scale(1.02);
+            }
+
+            .blog-details__img-shine {
+                left: 125%;
+            }
+        }
 
         @include respond(lg) {
             margin-bottom: 20px;
@@ -42,8 +57,29 @@
 
     &__main-img {
         max-width: 100%;
+        width: 100%;
+        display: block;
         border-radius: 20px;
         object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+    &__img-shine {
+        position: absolute;
+        top: 0;
+        left: -75%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+            to right,
+            color-mix(in srgb, var(--white-color) 0%, transparent) 0%,
+            color-mix(in srgb, var(--white-color) 28%, transparent) 50%,
+            color-mix(in srgb, var(--white-color) 0%, transparent) 100%
+        );
+        transform: skewX(-25deg);
+        transition: left 0.65s ease;
+        pointer-events: none;
+        z-index: 1;
     }
 
     &__meta-pill {
@@ -180,7 +216,23 @@
 
     &__video-wrap {
         position: relative;
+        overflow: hidden;
+        border-radius: 20px;
         margin-bottom: 30px;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px color-mix(in srgb, var(--primary-color) 12%, transparent);
+
+            .blog-details__video-img {
+                transform: scale(1.02);
+            }
+
+            .blog-details__img-shine {
+                left: 125%;
+            }
+        }
 
         @include respond(lg) {
             margin-bottom: 20px;
@@ -189,7 +241,10 @@
 
     &__video-img {
         max-width: 100%;
+        width: 100%;
+        display: block;
         border-radius: 20px;
+        transition: transform 0.4s ease;
     }
 
     &__blockquote {
@@ -199,6 +254,12 @@
         position: relative;
         margin-top: 20px;
         margin-bottom: 30px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px color-mix(in srgb, var(--primary-color) 8%, transparent);
+        }
 
         @include respond(lg) {
             margin-bottom: 20px;
@@ -284,11 +345,34 @@
         }
     }
 
+    &__sub-img-wrap {
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        width: 100%;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px color-mix(in srgb, var(--primary-color) 12%, transparent);
+
+            .blog-details__sub-img {
+                transform: scale(1.03);
+            }
+
+            .blog-details__img-shine {
+                left: 125%;
+            }
+        }
+    }
+
     &__sub-img {
         max-width: 100%;
+        width: 100%;
         display: block;
         margin: 0 auto;
         border-radius: 20px;
+        transition: transform 0.4s ease;
     }
 
     &__footer {
@@ -415,6 +499,12 @@
         display: flex;
         gap: 20px;
         margin-bottom: 30px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px color-mix(in srgb, var(--primary-color) 8%, transparent);
+        }
 
         @include respond(lg) {
             padding: 20px;

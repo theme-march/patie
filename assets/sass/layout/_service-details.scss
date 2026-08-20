@@ -16,17 +16,31 @@
         background-color: var(--smoke-bg-color);
         border-radius: 20px;
         padding: 40px;
+        transition: box-shadow 0.4s ease;
 
         @include respond(lg) {
             padding: 20px;
         }
     }
 
-    &__main-img {
-        max-width: 100%;
+    &__main-img-wrap {
+        position: relative;
+        overflow: hidden;
         border-radius: 20px;
         margin-bottom: 40px;
-        object-fit: cover;
+        transition: box-shadow 0.4s ease;
+
+        &:hover {
+            box-shadow: 0 15px 30px color-mix(in srgb, var(--primary-color) 10%, transparent);
+
+            .service-details__main-img {
+                transform: scale(1.01);
+            }
+
+            .service-details__img-shine {
+                left: 125%;
+            }
+        }
 
         @include respond(xxl) {
             margin-bottom: 30px;
@@ -35,6 +49,32 @@
         @include respond(sm) {
             margin-bottom: 20px;
         }
+    }
+
+    &__main-img {
+        max-width: 100%;
+        width: 100%;
+        display: block;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+    &__img-shine {
+        position: absolute;
+        top: 0;
+        left: -75%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+            to right,
+            color-mix(in srgb, var(--white-color) 0%, transparent) 0%,
+            color-mix(in srgb, var(--white-color) 28%, transparent) 50%,
+            color-mix(in srgb, var(--white-color) 0%, transparent) 100%
+        );
+        transform: skewX(-25deg);
+        transition: left 0.65s ease;
+        z-index: 2;
+        pointer-events: none;
     }
 
     &__title {
@@ -140,10 +180,21 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: var(--primary-color);
+
+                .service-details__list-item-icon {
+                    transform: translateX(3px);
+                    color: color-mix(in srgb, var(--primary-color) 80%, white);
+                }
+            }
 
             &-icon {
                 color: var(--primary-color);
                 font-size: 16px;
+                transition: transform 0.3s ease, color 0.3s ease;
             }
         }
     }
@@ -168,9 +219,30 @@
         }
     }
 
+    &__sub-img-wrap {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        transition: box-shadow 0.4s ease;
+
+        &:hover {
+            box-shadow: 0 10px 20px color-mix(in srgb, var(--primary-color) 10%, transparent);
+
+            .service-details__sub-img {
+                transform: scale(1.03);
+            }
+
+            .service-details__img-shine {
+                left: 125%;
+            }
+        }
+    }
+
     &__sub-img {
         max-width: 100%;
-        border-radius: 15px;
+        width: 100%;
+        display: block;
         object-fit: cover;
+        transition: transform 0.4s ease;
     }
 }

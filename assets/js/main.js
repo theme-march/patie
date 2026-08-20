@@ -74,6 +74,11 @@
     boardingBlogAnimations();
     footerV3Animations();
     commonBannerAnimations();
+    blogPageAnimations();
+    serviceDetailsAnimations();
+    teamDetailsAnimations();
+    blogStandardAnimations();
+    blogDetailsAnimations();
   });
 
   $(function () {
@@ -2484,6 +2489,90 @@
     );
   }
 
+  function blogPageAnimations() {
+    if (!document.querySelector(".blog--no-padding")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".blog--no-padding .blog-card--sm, .blog--no-padding .blog-card__img-wrap, .blog--no-padding .blog-card__date, .blog--no-padding .blog-card__meta, .blog--no-padding .blog-card__title, .blog--no-padding .blog-card__desc, .blog--no-padding .service-btn, .blog--no-padding .pagination, .blog--no-padding .pagination__item",
+        { clearProps: "all" }
+      );
+    }, 5000);
+
+    gsap.set(".blog--no-padding .blog-card__img-wrap", { clipPath: "inset(0% 0% 100% 0%)" });
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".blog--no-padding",
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        gsap.set(".blog--no-padding .blog-card__img-wrap", { clearProps: "clip-path" });
+      }
+    });
+
+    // 1. Cards float up stagger
+    tl.from(".blog--no-padding .blog-card--sm", {
+      opacity: 0,
+      y: 70,
+      duration: 0.8,
+      stagger: 0.14,
+      ease: "power3.out",
+      clearProps: "transform,opacity"
+    }, 0);
+
+    // 2. Image curtain wipe
+    tl.to(".blog--no-padding .blog-card__img-wrap", {
+      clipPath: "inset(0% 0% 0% 0%)",
+      duration: 0.85,
+      stagger: 0.14,
+      ease: "power3.out"
+    }, 0.2);
+
+    // 3. Elastic stamp pop for dates
+    tl.from(".blog--no-padding .blog-card__date", {
+      opacity: 0,
+      scale: 0,
+      duration: 0.55,
+      stagger: 0.14,
+      ease: "back.out(2.5)",
+      clearProps: "transform,opacity"
+    }, 0.55);
+
+    // 4. Content cascade
+    tl.from(".blog--no-padding .blog-card__meta", { opacity: 0, x: -15, duration: 0.5, stagger: 0.14, ease: "power2.out", clearProps: "transform,opacity" }, 0.7);
+    tl.from(".blog--no-padding .blog-card__title", { opacity: 0, y: 18, duration: 0.55, stagger: 0.14, ease: "power3.out", clearProps: "transform,opacity" }, 0.82);
+    tl.from(".blog--no-padding .blog-card__desc", { opacity: 0, y: 10, duration: 0.5, stagger: 0.14, ease: "power2.out", clearProps: "transform,opacity" }, 0.94);
+    tl.from(".blog--no-padding .service-btn", {
+      opacity: 0,
+      scale: 0.8,
+      duration: 0.55,
+      stagger: 0.14,
+      ease: "back.out(1.8)",
+      clearProps: "transform,opacity"
+    }, 1.05);
+
+    // 5. Pagination entry
+    tl.from(".blog--no-padding .pagination", {
+      opacity: 0,
+      y: 30,
+      duration: 0.7,
+      ease: "power3.out",
+      clearProps: "transform,opacity"
+    }, 1.2);
+
+    tl.from(".blog--no-padding .pagination__item", {
+      opacity: 0,
+      scale: 0,
+      duration: 0.55,
+      stagger: 0.08,
+      ease: "back.out(2)",
+      clearProps: "transform,opacity"
+    }, 1.35);
+  }
+
   /*-------------------------------------------------
    * FOOTER SECTION ANIMATIONS
    * ScrollTrigger-activated theatrical final sequence.
@@ -4714,6 +4803,720 @@
       ease: "power2.out",
       clearProps: "transform,opacity"
     }, 1.05);
+  }
+
+  function serviceDetailsAnimations() {
+    if (!document.querySelector(".service-details")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".service-details__main-img-wrap, .service-details__main-img, .service-details__title, .service-details__desc, .service-details__subtitle, .service-details__list-item, .service-details__sub-img-wrap, .service-details__subsubtitle, .sidebar__widget, .sidebar__cat-item",
+        { clearProps: "all" }
+      );
+    }, 5000);
+
+    var titleEl = document.querySelector(".service-details__title");
+    var splitTitle = null;
+    try {
+      if (titleEl && typeof SplitText !== "undefined") {
+        splitTitle = new SplitText(titleEl, { type: "words" });
+      }
+    } catch (e) { splitTitle = null; }
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".service-details",
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        if (splitTitle) splitTitle.revert();
+        gsap.set(".service-details__main-img-wrap", { clearProps: "clip-path" });
+      }
+    });
+
+    // 1. Setup elements initial state
+    gsap.set(".service-details__main-img-wrap", { clipPath: "inset(0% 0% 100% 0%)" });
+
+    // 2. Main image curtain wipe + zoom out
+    tl.to(".service-details__main-img-wrap", {
+      clipPath: "inset(0% 0% 0% 0%)",
+      duration: 1.0,
+      ease: "power3.out"
+    }, 0);
+    tl.fromTo(".service-details__main-img", 
+      { scale: 1.06 },
+      { scale: 1.0, duration: 1.2, ease: "power2.out", clearProps: "transform" },
+      0
+    );
+
+    // 3. Title cascade
+    if (splitTitle && splitTitle.words && splitTitle.words.length) {
+      tl.from(splitTitle.words, {
+        opacity: 0,
+        y: 40,
+        duration: 0.7,
+        stagger: 0.05,
+        ease: "power4.out"
+      }, 0.25);
+    } else {
+      tl.from(".service-details__title", { opacity: 0, y: 30, duration: 0.7, ease: "power3.out" }, 0.25);
+    }
+
+    // 4. Description paragraphs stagger in (first two paragraphs)
+    tl.from(".service-details__desc:nth-of-type(1), .service-details__desc:nth-of-type(2)", {
+      opacity: 0,
+      y: 20,
+      duration: 0.6,
+      stagger: 0.15,
+      ease: "power2.out",
+      clearProps: "transform,opacity"
+    }, 0.5);
+
+    // 5. Subtitle slide from left
+    tl.from(".service-details__subtitle", {
+      opacity: 0,
+      x: -30,
+      duration: 0.6,
+      ease: "power3.out",
+      clearProps: "transform,opacity"
+    }, 0.75);
+
+    // 6. Remaining description paragraphs
+    tl.from(".service-details__desc:nth-of-type(3)", {
+      opacity: 0,
+      y: 15,
+      duration: 0.5,
+      ease: "power2.out",
+      clearProps: "transform,opacity"
+    }, 0.85);
+
+    // 7. Checklist items pop in
+    tl.from(".service-details__list--2col .service-details__list-item", {
+      opacity: 0,
+      x: -20,
+      scale: 0.92,
+      duration: 0.55,
+      stagger: 0.08,
+      ease: "back.out(1.5)",
+      clearProps: "transform,opacity,scale"
+    }, 0.95);
+
+    // 8. Sub-images reveal
+    tl.from(".service-details__sub-img-wrap", {
+      opacity: 0,
+      y: 35,
+      scale: 0.95,
+      duration: 0.75,
+      stagger: 0.18,
+      ease: "power3.out",
+      clearProps: "transform,opacity,scale"
+    }, 1.15);
+
+    // 9. Bottom subtitle, desc, and checklist
+    tl.from(".service-details__subsubtitle", { opacity: 0, y: 20, duration: 0.5, ease: "power2.out", clearProps: "transform,opacity" }, 1.35);
+    tl.from(".service-details__desc:nth-of-type(4)", { opacity: 0, y: 15, duration: 0.5, ease: "power2.out", clearProps: "transform,opacity" }, 1.45);
+    tl.from(".service-details__list:not(.service-details__list--2col) .service-details__list-item", {
+      opacity: 0,
+      x: -20,
+      scale: 0.92,
+      duration: 0.55,
+      stagger: 0.08,
+      ease: "back.out(1.5)",
+      clearProps: "transform,opacity,scale"
+    }, 1.55);
+
+    // 10. Sidebar widgets reveal
+    tl.from(".sidebar__widget", {
+      opacity: 0,
+      x: 50,
+      duration: 0.8,
+      stagger: 0.18,
+      ease: "power3.out",
+      clearProps: "transform,opacity"
+    }, 1.25);
+
+    // 11. Category list links stagger in
+    tl.from(".sidebar__cat-item", {
+      opacity: 0,
+      x: 20,
+      duration: 0.55,
+      stagger: 0.06,
+      ease: "power2.out",
+      clearProps: "transform,opacity"
+    }, 1.55);
+  }
+
+  /*-------------------------------------------------
+   * TEAM DETAILS ANIMATIONS
+   * ScrollTrigger timeline for team profile section.
+   * Image col slides left, content cascades right,
+   * progress bars animate from 0% to their set widths.
+   *-------------------------------------------------*/
+  function teamDetailsAnimations() {
+    if (!document.querySelector(".team-details")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".team-details__img-col, .team-details__img-wrap, .team-details__title, .team-details__designation, .team-details__desc, .team-details__list-item, .team-details__contact-item, .team-details__social-link, .team-details__skills-title, .ak-progress",
+        { clearProps: "all" }
+      );
+    }, 5000);
+
+    var titleEl = document.querySelector(".team-details__title");
+    var splitTitle = null;
+    try {
+      if (titleEl && typeof SplitText !== "undefined") {
+        splitTitle = new SplitText(titleEl, { type: "words" });
+      }
+    } catch (e) { splitTitle = null; }
+
+    // Read each progress bar's target width BEFORE we reset it
+    var progressBars = document.querySelectorAll(".ak-progress-bar");
+    var progressTargets = [];
+    progressBars.forEach(function (bar) {
+      progressTargets.push(bar.style.width || "0%");
+      bar.style.width = "0%";
+    });
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".team-details",
+        start: "top 75%",
+        toggleActions: "play none none none",
+      },
+      onComplete: function () {
+        clearTimeout(safetyTimer);
+        if (splitTitle) splitTitle.revert();
+      }
+    });
+
+    // 1. Image col slides in from left
+    tl.from(".team-details__img-col", {
+      opacity: 0,
+      x: -60,
+      duration: 0.9,
+      ease: "power3.out",
+      clearProps: "transform,opacity"
+    }, 0);
+
+    // 2. Image wrap scale pop on top of slide
+    tl.from(".team-details__img-wrap", {
+      scale: 0.92,
+      duration: 0.75,
+      ease: "back.out(1.4)",
+      clearProps: "transform"
+    }, 0.1);
+
+    // 3. Title cascade
+    if (splitTitle && splitTitle.words && splitTitle.words.length) {
+      tl.from(splitTitle.words, {
+        opacity: 0,
+        y: 35,
+        duration: 0.65,
+        stagger: 0.06,
+        ease: "power4.out"
+      }, 0.2);
+    } else {
+      tl.from(".team-details__title", { opacity: 0, y: 30, duration: 0.65, ease: "power3.out" }, 0.2);
+    }
+
+    // 4. Designation fade up
+    tl.from(".team-details__designation", {
+      opacity: 0,
+      y: 20,
+      duration: 0.5,
+      ease: "power2.out",
+      clearProps: "transform,opacity"
+    }, 0.45);
+
+    // 5. Description fade up
+    tl.from(".team-details__desc", {
+      opacity: 0,
+      y: 15,
+      duration: 0.5,
+      ease: "power2.out",
+      clearProps: "transform,opacity"
+    }, 0.55);
+
+    // 6. List items bounce in
+    tl.from(".team-details__list-item", {
+      opacity: 0,
+      x: -15,
+      scale: 0.9,
+      duration: 0.5,
+      stagger: 0.08,
+      ease: "back.out(1.5)",
+      clearProps: "transform,opacity,scale"
+    }, 0.65);
+
+    // 7. Contact items stagger up
+    tl.from(".team-details__contact-item", {
+      opacity: 0,
+      y: 20,
+      duration: 0.55,
+      stagger: 0.15,
+      ease: "power2.out",
+      clearProps: "transform,opacity"
+    }, 0.95);
+
+    // 8. Social icons pop in
+    tl.from(".team-details__social-link", {
+      opacity: 0,
+      scale: 0,
+      duration: 0.5,
+      stagger: 0.07,
+      ease: "back.out(2)",
+      clearProps: "transform,opacity,scale"
+    }, 1.15);
+
+    // 9. Skills title slides in
+    tl.from(".team-details__skills-title", {
+      opacity: 0,
+      x: -20,
+      duration: 0.5,
+      ease: "power2.out",
+      clearProps: "transform,opacity"
+    }, 1.35);
+
+    // 10. Progress bar heading fade in
+    tl.from(".ak-progress", {
+      opacity: 0,
+      y: 10,
+      duration: 0.4,
+      stagger: 0.15,
+      ease: "power2.out",
+      clearProps: "transform,opacity"
+    }, 1.45);
+
+    // 11. Animate each bar from 0% to its target width
+    progressBars.forEach(function (bar, i) {
+      gsap.to(bar, {
+        width: progressTargets[i],
+        duration: 1.2,
+        ease: "power2.out",
+        delay: 1.5 + (i * 0.2)
+      });
+    });
+  }
+
+  /*-------------------------------------------------
+   * BLOG STANDARD PAGE ANIMATIONS
+   * Each card and sidebar widget gets its own independent ScrollTrigger
+   * so animations fire as the user scrolls to each element.
+   *-------------------------------------------------*/
+  function blogStandardAnimations() {
+    if (!document.querySelector(".blog__standard-container")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".blog__standard-list .blog-card--lg, .blog__standard-list .blog-card__img-wrap, .blog__standard-list .blog-card__meta, .blog__standard-list .blog-card__title, .blog__standard-list .blog-card__desc, .blog__standard-list .service-btn, .blog__standard-container .sidebar__widget, .blog__standard-container .sidebar__cat-item, .blog__standard-container .sidebar__news-item",
+        { clearProps: "all" }
+      );
+    }, 8000);
+
+    // — — — BLOG CARDS: each card gets its own ScrollTrigger — — —
+    var cards = document.querySelectorAll(".blog__standard-list .blog-card--lg");
+
+    cards.forEach(function (card) {
+      var imgWrap = card.querySelector(".blog-card__img-wrap");
+      var meta    = card.querySelector(".blog-card__meta");
+      var title   = card.querySelector(".blog-card__title");
+      var desc    = card.querySelector(".blog-card__desc");
+      var btn     = card.querySelector(".service-btn");
+
+      var st = {
+        trigger: card,
+        start: "top 88%",
+        toggleActions: "play none none none",
+      };
+
+      // Card itself slides up
+      gsap.from(card, {
+        opacity: 0,
+        y: 50,
+        duration: 0.75,
+        ease: "power3.out",
+        clearProps: "transform,opacity",
+        scrollTrigger: st
+      });
+
+      // Image curtain wipe
+      if (imgWrap) {
+        gsap.set(imgWrap, { clipPath: "inset(0% 0% 100% 0%)" });
+        gsap.to(imgWrap, {
+          clipPath: "inset(0% 0% 0% 0%)",
+          duration: 0.9,
+          ease: "power3.out",
+          scrollTrigger: st,
+          onComplete: function () { gsap.set(imgWrap, { clearProps: "clip-path" }); }
+        });
+      }
+
+      // Meta fade up
+      if (meta) {
+        gsap.from(meta, {
+          opacity: 0,
+          y: 10,
+          duration: 0.4,
+          delay: 0.25,
+          ease: "power2.out",
+          clearProps: "transform,opacity",
+          scrollTrigger: st
+        });
+      }
+
+      // Title slide left
+      if (title) {
+        gsap.from(title, {
+          opacity: 0,
+          x: -15,
+          duration: 0.5,
+          delay: 0.3,
+          ease: "power2.out",
+          clearProps: "transform,opacity",
+          scrollTrigger: st
+        });
+      }
+
+      // Desc fade
+      if (desc) {
+        gsap.from(desc, {
+          opacity: 0,
+          y: 10,
+          duration: 0.45,
+          delay: 0.38,
+          ease: "power2.out",
+          clearProps: "transform,opacity",
+          scrollTrigger: st
+        });
+      }
+
+      // Read More button pop
+      if (btn) {
+        gsap.from(btn, {
+          opacity: 0,
+          scale: 0.85,
+          duration: 0.5,
+          delay: 0.45,
+          ease: "back.out(1.5)",
+          clearProps: "transform,opacity,scale",
+          scrollTrigger: st
+        });
+      }
+    });
+
+    // — — — SIDEBAR WIDGETS: each independently — — —
+    document.querySelectorAll(".blog__standard-container .sidebar__widget").forEach(function (widget) {
+      gsap.from(widget, {
+        opacity: 0,
+        x: 50,
+        duration: 0.75,
+        ease: "power3.out",
+        clearProps: "transform,opacity",
+        scrollTrigger: {
+          trigger: widget,
+          start: "top 88%",
+          toggleActions: "play none none none",
+        }
+      });
+
+      var cats = widget.querySelectorAll(".sidebar__cat-item");
+      var news = widget.querySelectorAll(".sidebar__news-item");
+      var items = cats.length ? cats : news;
+      if (items.length) {
+        gsap.from(items, {
+          opacity: 0,
+          x: 15,
+          duration: 0.4,
+          stagger: 0.07,
+          delay: 0.25,
+          ease: "power2.out",
+          clearProps: "transform,opacity",
+          scrollTrigger: {
+            trigger: widget,
+            start: "top 88%",
+            toggleActions: "play none none none",
+          }
+        });
+      }
+    });
+  }
+
+  /*--------------------------------------------------------------
+   * Blog Details Animations
+   * Each section has its own independent ScrollTrigger so animations
+   * fire as the user scrolls to each element — not all at once.
+   *-------------------------------------------------------------*/
+  function blogDetailsAnimations() {
+    if (!document.querySelector(".blog-details__layout")) return;
+
+    var safetyTimer = setTimeout(function () {
+      gsap.set(
+        ".blog-details__main-img-wrap, .blog-details__meta-pill, .blog-details__title, .blog-details__desc, .blog-details__list-item, .blog-details__video-wrap, .blog-details__blockquote, .blog-details__blockquote-line, .blog-details__sub-img-wrap, .blog-details__footer, .blog-details__comment-item, .blog-details__form-wrap, .blog-details .sidebar__widget, .blog-details .sidebar__cat-item, .blog-details .sidebar__news-item",
+        { clearProps: "all" }
+      );
+    }, 8000);
+
+    var mainImgWrap = document.querySelector(".blog-details__main-img-wrap");
+    var subImgWraps = document.querySelectorAll(".blog-details__sub-img-wrap");
+    var videoWrap = document.querySelector(".blog-details__video-wrap");
+
+    // — — — GROUP 1: Main Image Wrap — — —
+    if (mainImgWrap) {
+      gsap.set(mainImgWrap, { clipPath: "inset(0% 0% 100% 0%)" });
+
+      gsap.to(mainImgWrap, {
+        clipPath: "inset(0% 0% 0% 0%)",
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: mainImgWrap,
+          start: "top 85%",
+          toggleActions: "play none none none",
+          onComplete: function () { gsap.set(mainImgWrap, { clearProps: "clip-path" }); }
+        },
+        onComplete: function () { gsap.set(mainImgWrap, { clearProps: "clip-path" }); }
+      });
+
+      gsap.from(".blog-details__meta-pill", {
+        opacity: 0,
+        y: 30,
+        scale: 0.9,
+        duration: 0.6,
+        ease: "back.out(1.5)",
+        delay: 0.6,
+        clearProps: "transform,opacity",
+        scrollTrigger: {
+          trigger: mainImgWrap,
+          start: "top 85%",
+          toggleActions: "play none none none",
+        }
+      });
+    }
+
+    // — — — GROUP 2: Title — — —
+    gsap.from(".blog-details__title", {
+      opacity: 0,
+      y: 35,
+      duration: 0.7,
+      ease: "power3.out",
+      clearProps: "transform,opacity",
+      scrollTrigger: {
+        trigger: ".blog-details__title",
+        start: "top 88%",
+        toggleActions: "play none none none",
+      }
+    });
+
+    // — — — GROUP 3: Descriptions (each individually) — — —
+    document.querySelectorAll(".blog-details__content > .blog-details__desc").forEach(function (desc) {
+      gsap.from(desc, {
+        opacity: 0,
+        y: 20,
+        duration: 0.55,
+        ease: "power2.out",
+        clearProps: "transform,opacity",
+        scrollTrigger: {
+          trigger: desc,
+          start: "top 90%",
+          toggleActions: "play none none none",
+        }
+      });
+    });
+
+    // — — — GROUP 4: Checklist Items — — —
+    var listEl = document.querySelector(".blog-details__list");
+    if (listEl) {
+      gsap.from(".blog-details__list-item", {
+        opacity: 0,
+        x: -22,
+        duration: 0.45,
+        stagger: 0.09,
+        ease: "power2.out",
+        clearProps: "transform,opacity",
+        scrollTrigger: {
+          trigger: listEl,
+          start: "top 88%",
+          toggleActions: "play none none none",
+        }
+      });
+    }
+
+    // — — — GROUP 5: Video Wrap — — —
+    if (videoWrap) {
+      gsap.set(videoWrap, { clipPath: "inset(0% 0% 100% 0%)" });
+
+      gsap.to(videoWrap, {
+        clipPath: "inset(0% 0% 0% 0%)",
+        duration: 0.9,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: videoWrap,
+          start: "top 88%",
+          toggleActions: "play none none none",
+          onComplete: function () { gsap.set(videoWrap, { clearProps: "clip-path" }); }
+        },
+        onComplete: function () { gsap.set(videoWrap, { clearProps: "clip-path" }); }
+      });
+
+      gsap.from(".blog-details__video-wrap .play-btn", {
+        opacity: 0,
+        scale: 0.5,
+        duration: 0.55,
+        delay: 0.55,
+        ease: "back.out(1.8)",
+        clearProps: "transform,opacity",
+        scrollTrigger: {
+          trigger: videoWrap,
+          start: "top 88%",
+          toggleActions: "play none none none",
+        }
+      });
+    }
+
+    // — — — GROUP 6: Blockquote — — —
+    var blockquote = document.querySelector(".blog-details__blockquote");
+    if (blockquote) {
+      gsap.from(blockquote, {
+        opacity: 0,
+        y: 30,
+        duration: 0.7,
+        ease: "power3.out",
+        clearProps: "transform,opacity",
+        scrollTrigger: {
+          trigger: blockquote,
+          start: "top 88%",
+          toggleActions: "play none none none",
+        }
+      });
+
+      gsap.from(".blog-details__blockquote-line", {
+        scaleY: 0,
+        transformOrigin: "top center",
+        duration: 0.7,
+        delay: 0.2,
+        ease: "power2.out",
+        clearProps: "transform",
+        scrollTrigger: {
+          trigger: blockquote,
+          start: "top 88%",
+          toggleActions: "play none none none",
+        }
+      });
+    }
+
+    // — — — GROUP 7: Sub Images — — —
+    if (subImgWraps.length) {
+      gsap.set(subImgWraps, { clipPath: "inset(0% 0% 100% 0%)" });
+      var subImgGrid = document.querySelector(".blog-details__sub-images");
+
+      subImgWraps.forEach(function (wrap, i) {
+        gsap.to(wrap, {
+          clipPath: "inset(0% 0% 0% 0%)",
+          duration: 0.85,
+          delay: i * 0.18,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: subImgGrid || wrap,
+            start: "top 88%",
+            toggleActions: "play none none none",
+            onComplete: function () { gsap.set(wrap, { clearProps: "clip-path" }); }
+          },
+          onComplete: function () { gsap.set(wrap, { clearProps: "clip-path" }); }
+        });
+      });
+    }
+
+    // — — — GROUP 8: Footer (Tags + Share) — — —
+    var footerEl = document.querySelector(".blog-details__footer");
+    if (footerEl) {
+      gsap.from(footerEl, {
+        opacity: 0,
+        y: 20,
+        duration: 0.6,
+        ease: "power2.out",
+        clearProps: "transform,opacity",
+        scrollTrigger: {
+          trigger: footerEl,
+          start: "top 90%",
+          toggleActions: "play none none none",
+        }
+      });
+    }
+
+    // — — — GROUP 9: Comments — — —
+    var commentsEl = document.querySelector(".blog-details__comments");
+    if (commentsEl) {
+      gsap.from(".blog-details__comment-item", {
+        opacity: 0,
+        y: 25,
+        duration: 0.6,
+        stagger: 0.16,
+        ease: "power3.out",
+        clearProps: "transform,opacity",
+        scrollTrigger: {
+          trigger: commentsEl,
+          start: "top 88%",
+          toggleActions: "play none none none",
+        }
+      });
+    }
+
+    // — — — GROUP 10: Leave a Comment Form — — —
+    var formWrap = document.querySelector(".blog-details__form-wrap");
+    if (formWrap) {
+      gsap.from(formWrap, {
+        opacity: 0,
+        y: 30,
+        duration: 0.7,
+        ease: "power2.out",
+        clearProps: "transform,opacity",
+        scrollTrigger: {
+          trigger: formWrap,
+          start: "top 88%",
+          toggleActions: "play none none none",
+        }
+      });
+    }
+
+    // — — — GROUP 11: Sidebar Widgets (each independently) — — —
+    document.querySelectorAll(".blog-details .sidebar__widget").forEach(function (widget, i) {
+      gsap.from(widget, {
+        opacity: 0,
+        x: 50,
+        duration: 0.75,
+        ease: "power3.out",
+        clearProps: "transform,opacity",
+        scrollTrigger: {
+          trigger: widget,
+          start: "top 88%",
+          toggleActions: "play none none none",
+        }
+      });
+
+      // Stagger items inside each widget
+      var cats = widget.querySelectorAll(".sidebar__cat-item");
+      var news = widget.querySelectorAll(".sidebar__news-item");
+      var items = cats.length ? cats : news;
+      if (items.length) {
+        gsap.from(items, {
+          opacity: 0,
+          x: 15,
+          duration: 0.4,
+          stagger: 0.07,
+          delay: 0.25,
+          ease: "power2.out",
+          clearProps: "transform,opacity",
+          scrollTrigger: {
+            trigger: widget,
+            start: "top 88%",
+            toggleActions: "play none none none",
+          }
+        });
+      }
+    });
   }
 
 })(jQuery);

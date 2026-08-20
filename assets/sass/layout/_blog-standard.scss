@@ -61,9 +61,20 @@
         width: 100% !important;
         background-color: var(--smoke-bg-color);
         border-radius: 20px;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
 
         &:hover {
             background-color: var(--smoke-bg-color);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px color-mix(in srgb, var(--primary-color) 10%, transparent);
+
+            .blog-card__img {
+                transform: scale(1.03);
+            }
+
+            .blog-card__img-shine {
+                left: 125%;
+            }
         }
 
         .blog-card__img-wrap {
@@ -78,6 +89,7 @@
 
         .blog-card__img {
             border-radius: 0;
+            transition: transform 0.4s ease;
         }
 
         .blog-card__date {
@@ -105,7 +117,5 @@
                 margin-bottom: 25px;
             }
         }
-
-
     }
 }

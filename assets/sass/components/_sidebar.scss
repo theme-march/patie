@@ -15,6 +15,12 @@
     &__widget {
         border-radius: 20px;
         padding: 40px;
+        transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px color-mix(in srgb, var(--primary-color) 8%, transparent);
+        }
 
         @include respond(lg) {
             padding: 30px;
@@ -36,14 +42,10 @@
     &__title {
         color: var(--primary-color);
         font-size: 30px;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
 
         @include respond(lg) {
             font-size: 26px;
-            margin-bottom: 15px;
-        }
-
-        @include respond(md) {
             margin-bottom: 10px;
         }
 
@@ -108,10 +110,12 @@
         &:hover {
             background-color: var(--primary-color);
             color: var(--white-color);
+            transform: translateX(4px);
 
             .sidebar__cat-icon {
                 background-color: var(--white-color);
                 color: var(--primary-color);
+                transform: rotate(45deg);
             }
         }
     }
@@ -317,6 +321,12 @@
         border: none;
         font-size: 14px;
         font-weight: 500;
+        transition: box-shadow 0.3s ease;
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--white-color) 40%, transparent);
+        }
 
         @include respond(lg) {
             padding: 14px 22px;
@@ -353,6 +363,7 @@
             background-color: var(--white-color);
             color: var(--black-color);
             transform: translateY(-2px);
+            box-shadow: 0 8px 16px color-mix(in srgb, var(--heading-color) 25%, transparent);
         }
     }
 

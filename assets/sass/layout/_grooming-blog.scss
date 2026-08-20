@@ -87,6 +87,28 @@
     .grooming-blog-card__img {
       transform: scale(1.05);
     }
+
+    .grooming-blog-card__img-shine {
+      left: 125%;
+    }
+  }
+
+  &__img-shine {
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      color-mix(in srgb, var(--white-color) 0%, transparent) 0%,
+      color-mix(in srgb, var(--white-color) 28%, transparent) 50%,
+      color-mix(in srgb, var(--white-color) 0%, transparent) 100%
+    );
+    transform: skewX(-25deg);
+    transition: left 0.65s ease;
+    z-index: 2;
+    pointer-events: none;
   }
 
   &__date {

@@ -1,4 +1,4 @@
-@use "../abstracts" as *;
+﻿@use "../abstracts" as *;
 
 .common-btn {
   display: inline-flex;
@@ -67,7 +67,9 @@
       stroke-width: 3;
       stroke-dasharray: 5 5;
       stroke-dashoffset: 0;
-      transition: stroke 0.3s ease, opacity 0.65s ease;
+      transition:
+        stroke 0.3s ease,
+        opacity 0.65s ease;
       animation: marchDashes 1.2s linear infinite;
       animation-play-state: paused;
     }
@@ -84,7 +86,9 @@
     .common-btn__inner .common-btn__dash-svg rect {
       stroke: var(--white-color);
       animation-play-state: running;
-      transition: stroke 0.3s ease, opacity 0s;
+      transition:
+        stroke 0.3s ease,
+        opacity 0s;
     }
   }
 
@@ -229,10 +233,11 @@
     z-index: 1;
     overflow: visible;
 
-    path {
+    circle {
       stroke: var(--white-color);
       stroke-dasharray: 3 3;
       stroke-dashoffset: 0;
+      fill: none;
       animation: marchServiceDashes 8s linear infinite; // slow by default; JS speeds up on hover
     }
   }
@@ -241,9 +246,14 @@
     .service-btn__icon {
       transform: scale(1.1);
     }
+    .service-btn__text {
+      transform: scale(1.1);
+    }
+    gap: 25px;
   }
 
   &__text {
+    display: inline-block;
     font-family: var(--heading-font-family);
     color: var(--white-color);
     font-size: 16px;
@@ -271,7 +281,7 @@
       color: var(--white-color);
     }
 
-    .service-btn__dashed-circle path {
+    .service-btn__dashed-circle circle {
       stroke: var(--primary-color);
     }
 
@@ -292,7 +302,7 @@
       color: var(--white-color);
     }
 
-    .service-btn__dashed-circle path {
+    .service-btn__dashed-circle circle {
       stroke: var(--primary-color);
     }
 
@@ -530,7 +540,6 @@
     opacity: 0;
   }
 }
-
 
 @keyframes marchDashes {
   to {

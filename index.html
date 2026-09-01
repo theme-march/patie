@@ -21,24 +21,74 @@
   </head>
 
   <body>
+    <!-- SVG sprite: inline dashed-circle symbol so CSS can style its path -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      focusable="false"
+      style="
+        display: none;
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+      "
+    >
+      <defs>
+        <symbol id="dashed-circle" viewBox="0 0 46 46" fill="none"><circle cx="23" cy="23" r="22"/></symbol>
+      </defs>
+    </svg>
     <!-- ================= Start Preloader ======================== -->
-    <div id="preloader" class="preloader" aria-hidden="true" role="presentation">
-        <div class="preloader__frames">
-            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf0"/></svg>
-            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf1"/></svg>
-            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf2"/></svg>
-            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf3"/></svg>
-            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf4"/></svg>
-            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf5"/></svg>
-            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf6"/></svg>
-            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf7"/></svg>
-            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf8"/></svg>
-            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf9"/></svg>
-            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf10"/></svg>
-            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf11"/></svg>
-            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf12"/></svg>
-            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf13"/></svg>
-        </div>
+    <div
+      id="preloader"
+      class="preloader"
+      aria-hidden="true"
+      role="presentation"
+    >
+      <div class="preloader__frames">
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf0" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf1" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf2" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf3" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf4" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf5" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf6" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf7" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf8" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf9" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf10" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf11" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf12" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf13" />
+        </svg>
+      </div>
     </div>
     <!-- ===================== End Preloader ====================== -->
 
@@ -586,9 +636,7 @@
                     aria-hidden="true"
                     focusable="false"
                   >
-                    <use
-                      href="assets/img/icon/icons-sprite.svg#dashed-circle"
-                    />
+                    <circle cx="23" cy="23" r="22"/>
                   </svg>
                   <i class="fas fa-arrow-right"></i>
                 </span>
@@ -628,9 +676,7 @@
                     aria-hidden="true"
                     focusable="false"
                   >
-                    <use
-                      href="assets/img/icon/icons-sprite.svg#dashed-circle"
-                    />
+                    <circle cx="23" cy="23" r="22"/>
                   </svg>
                   <i class="fas fa-arrow-right"></i>
                 </span>
@@ -671,9 +717,7 @@
                     aria-hidden="true"
                     focusable="false"
                   >
-                    <use
-                      href="assets/img/icon/icons-sprite.svg#dashed-circle"
-                    />
+                    <circle cx="23" cy="23" r="22"/>
                   </svg>
                   <i class="fas fa-arrow-right"></i>
                 </span>
@@ -714,9 +758,7 @@
                     aria-hidden="true"
                     focusable="false"
                   >
-                    <use
-                      href="assets/img/icon/icons-sprite.svg#dashed-circle"
-                    />
+                    <circle cx="23" cy="23" r="22"/>
                   </svg>
                   <i class="fas fa-arrow-right"></i>
                 </span>
@@ -757,9 +799,7 @@
                     aria-hidden="true"
                     focusable="false"
                   >
-                    <use
-                      href="assets/img/icon/icons-sprite.svg#dashed-circle"
-                    />
+                    <circle cx="23" cy="23" r="22"/>
                   </svg>
                   <i class="fas fa-arrow-right"></i>
                 </span>
@@ -800,9 +840,7 @@
                     aria-hidden="true"
                     focusable="false"
                   >
-                    <use
-                      href="assets/img/icon/icons-sprite.svg#dashed-circle"
-                    />
+                    <circle cx="23" cy="23" r="22"/>
                   </svg>
                   <i class="fas fa-arrow-right"></i>
                 </span>
@@ -843,9 +881,7 @@
                     aria-hidden="true"
                     focusable="false"
                   >
-                    <use
-                      href="assets/img/icon/icons-sprite.svg#dashed-circle"
-                    />
+                    <circle cx="23" cy="23" r="22"/>
                   </svg>
                   <i class="fas fa-arrow-right"></i>
                 </span>
@@ -886,9 +922,7 @@
                     aria-hidden="true"
                     focusable="false"
                   >
-                    <use
-                      href="assets/img/icon/icons-sprite.svg#dashed-circle"
-                    />
+                    <circle cx="23" cy="23" r="22"/>
                   </svg>
                   <i class="fas fa-arrow-right"></i>
                 </span>
@@ -2088,9 +2122,7 @@
                     aria-hidden="true"
                     focusable="false"
                   >
-                    <use
-                      href="assets/img/icon/icons-sprite.svg#dashed-circle"
-                    />
+                    <circle cx="23" cy="23" r="22"/>
                   </svg>
                   <i class="fas fa-arrow-right"></i>
                 </span>
@@ -2147,9 +2179,7 @@
                       aria-hidden="true"
                       focusable="false"
                     >
-                      <use
-                        href="assets/img/icon/icons-sprite.svg#dashed-circle"
-                      />
+                      <circle cx="23" cy="23" r="22"/>
                     </svg>
                     <i class="fas fa-arrow-right"></i>
                   </span>
@@ -2204,9 +2234,7 @@
                       aria-hidden="true"
                       focusable="false"
                     >
-                      <use
-                        href="assets/img/icon/icons-sprite.svg#dashed-circle"
-                      />
+                      <circle cx="23" cy="23" r="22"/>
                     </svg>
                     <i class="fas fa-arrow-right"></i>
                   </span>

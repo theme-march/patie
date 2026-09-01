@@ -1,4 +1,4 @@
-@use "../abstracts" as *;
+﻿@use "../abstracts" as *;
 
 .boarding-service {
 
@@ -134,7 +134,7 @@
       color: var(--white-color);
     }
 
-    .service-btn__dashed-circle path {
+    .service-btn__dashed-circle circle {
       stroke: var(--primary-color);
     }
   }
@@ -151,7 +151,7 @@
       color: var(--white-color);
     }
 
-    .service-btn__dashed-circle path {
+    .service-btn__dashed-circle circle {
       stroke: var(--secondary-color);
     }
   }
@@ -168,7 +168,7 @@
       color: var(--white-color);
     }
 
-    .service-btn__dashed-circle path {
+    .service-btn__dashed-circle circle {
       stroke: var(--other-color-1);
     }
   }
@@ -185,7 +185,7 @@
       color: var(--white-color);
     }
 
-    .service-btn__dashed-circle path {
+    .service-btn__dashed-circle circle {
       stroke: var(--other-color-2);
     }
   }

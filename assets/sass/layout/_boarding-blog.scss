@@ -1,4 +1,4 @@
-@use "../abstracts" as *;
+﻿@use "../abstracts" as *;
 
 .boarding-blog {
 
@@ -229,7 +229,7 @@
         color: var(--primary-color);
       }
 
-      &__dashed-circle path {
+      &__dashed-circle circle {
         stroke: var(--white-color);
       }
 

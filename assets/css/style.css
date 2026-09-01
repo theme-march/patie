@@ -1159,16 +1159,24 @@ i[class*=fa] {
   z-index: 1;
   overflow: visible;
 }
-.service-btn__dashed-circle path {
+.service-btn__dashed-circle circle {
   stroke: var(--white-color);
   stroke-dasharray: 3 3;
   stroke-dashoffset: 0;
+  fill: none;
   animation: marchServiceDashes 8s linear infinite;
 }
 .service-btn:hover .service-btn__icon {
   transform: scale(1.1);
 }
+.service-btn:hover .service-btn__text {
+  transform: scale(1.1);
+}
+.service-btn:hover {
+  gap: 25px;
+}
 .service-btn__text {
+  display: inline-block;
   font-family: var(--heading-font-family);
   color: var(--white-color);
   font-size: 16px;
@@ -1196,7 +1204,7 @@ i[class*=fa] {
   background-color: var(--primary-color);
   color: var(--white-color);
 }
-.service-btn--primary .service-btn__dashed-circle path {
+.service-btn--primary .service-btn__dashed-circle circle {
   stroke: var(--primary-color);
 }
 .service-btn--primary .service-btn__text {
@@ -1209,7 +1217,7 @@ i[class*=fa] {
   background-color: var(--primary-color);
   color: var(--white-color);
 }
-.service-btn--primary-secondary .service-btn__dashed-circle path {
+.service-btn--primary-secondary .service-btn__dashed-circle circle {
   stroke: var(--primary-color);
 }
 .service-btn--primary-secondary .service-btn__text {
@@ -10694,7 +10702,7 @@ i[class*=fa] {
   background-color: var(--theme-color);
   color: var(--white-color);
 }
-.grooming-blog-card--purple .service-btn__dashed-circle path {
+.grooming-blog-card--purple .service-btn__dashed-circle circle {
   stroke: var(--theme-color);
 }
 .grooming-blog-card--purple .service-btn__text {
@@ -10717,7 +10725,7 @@ i[class*=fa] {
   background-color: var(--theme-color);
   color: var(--white-color);
 }
-.grooming-blog-card--orange .service-btn__dashed-circle path {
+.grooming-blog-card--orange .service-btn__dashed-circle circle {
   stroke: var(--theme-color);
 }
 .grooming-blog-card--orange .service-btn__text {
@@ -11746,7 +11754,7 @@ i[class*=fa] {
   background-color: var(--primary-color);
   color: var(--white-color);
 }
-.boarding-service-card--purple .service-btn__dashed-circle path {
+.boarding-service-card--purple .service-btn__dashed-circle circle {
   stroke: var(--primary-color);
 }
 .boarding-service-card--orange {
@@ -11759,7 +11767,7 @@ i[class*=fa] {
   background-color: var(--secondary-color);
   color: var(--white-color);
 }
-.boarding-service-card--orange .service-btn__dashed-circle path {
+.boarding-service-card--orange .service-btn__dashed-circle circle {
   stroke: var(--secondary-color);
 }
 .boarding-service-card--pink {
@@ -11772,7 +11780,7 @@ i[class*=fa] {
   background-color: var(--other-color-1);
   color: var(--white-color);
 }
-.boarding-service-card--pink .service-btn__dashed-circle path {
+.boarding-service-card--pink .service-btn__dashed-circle circle {
   stroke: var(--other-color-1);
 }
 .boarding-service-card--green {
@@ -11785,7 +11793,7 @@ i[class*=fa] {
   background-color: var(--other-color-2);
   color: var(--white-color);
 }
-.boarding-service-card--green .service-btn__dashed-circle path {
+.boarding-service-card--green .service-btn__dashed-circle circle {
   stroke: var(--other-color-2);
 }
 
@@ -12768,7 +12776,7 @@ i[class*=fa] {
   background-color: var(--white-color);
   color: var(--primary-color);
 }
-.boarding-blog-card:hover .service-btn__dashed-circle path {
+.boarding-blog-card:hover .service-btn__dashed-circle circle {
   stroke: var(--white-color);
 }
 .boarding-blog-card:hover .service-btn__text {

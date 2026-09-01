@@ -1,4 +1,4 @@
-@use "../abstracts" as *;
+﻿@use "../abstracts" as *;
 
 .grooming-blog {
   &__heading {
@@ -272,7 +272,7 @@
         color: var(--white-color);
       }
 
-      &__dashed-circle path {
+      &__dashed-circle circle {
         stroke: var(--theme-color);
       }
 
@@ -304,7 +304,7 @@
         color: var(--white-color);
       }
 
-      &__dashed-circle path {
+      &__dashed-circle circle {
         stroke: var(--theme-color);
       }
 

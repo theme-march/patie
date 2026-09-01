@@ -486,6 +486,21 @@
     }
   }
 
+  &--primary {
+    .play-btn__ripple-lottie {
+      background-color: var(--primary-color);
+    }
+
+    &:hover {
+      .play-btn__inner {
+        background-color: var(--secondary-color);
+      }
+      .play-btn__ripple-lottie {
+        background-color: var(--secondary-color);
+      }
+    }
+  }
+
   &--lg {
     .play-btn__inner {
       width: 120px;

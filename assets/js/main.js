@@ -51,6 +51,8 @@
       if (aosInitDone) return;
       aosInitDone = true;
       AOS.init();
+      // Trigger CSS keyframe animations that were paused waiting for the preloader
+      document.body.classList.add("preloader-done");
 
       // Hero Grooming Badge — appears last after all AOS hero animations settle
       var heroBadge = document.querySelector(".hero-grooming__badge");
@@ -662,21 +664,22 @@
     function updateTestimonial(index, direction) {
       if (totalAvatars === 0) return;
 
-      const card = $(".testimonial__card")[0];
-      if (!card) return;
+      const content = $(".testimonial__slide-content")[0];
+      const wrapper = $(".testimonial__wrapper")[0];
+      if (!content || !wrapper) return;
 
       const slideOut = direction === "next" ? "-60px" : "60px";
       const slideIn = direction === "next" ? "60px" : "-60px";
 
-      // Phase 1: slide + fade OUT
-      card.style.transition = "opacity 0.22s ease, transform 0.22s ease";
-      card.style.opacity = "0";
-      card.style.transform = "translateX(" + slideOut + ")";
+      // Phase 1: slide + fade OUT (content only, avatars stay put)
+      content.style.transition = "opacity 0.22s ease, transform 0.22s ease";
+      content.style.opacity = "0";
+      content.style.transform = "translateX(" + slideOut + ")";
 
       setTimeout(function () {
         // Swap content while invisible
         const item = data[index] || data[1];
-        const $card = $(card);
+        const $card = $(".testimonial__card");
         $card.find(".testimonial__name").text(item.name);
         $card.find(".testimonial__designation").text(item.role);
         $card.find(".testimonial__text").text('"' + item.text + '"');
@@ -696,23 +699,29 @@
         }
         $card.find(".testimonial__rating").html(starsHtml);
 
-        // Update avatar highlight
-        $(".testimonial__avatar").removeClass("testimonial__avatar--middle");
+        // Update avatar highlight — side/center states (no slide, just resize)
+        $(".testimonial__avatar")
+          .removeClass("testimonial__avatar--center")
+          .addClass("testimonial__avatar--side");
         $(".testimonial__avatar")
           .eq(index)
-          .addClass("testimonial__avatar--middle");
+          .removeClass("testimonial__avatar--side")
+          .addClass("testimonial__avatar--center");
 
-        // Snap to entry-start position instantly (no transition)
-        card.style.transition = "none";
-        card.style.transform = "translateX(" + slideIn + ")";
+        // Snap content to entry-start position instantly (no transition)
+        // Read offsetHeight BEFORE setting the snap position so the reflow
+        // commits the previous state, not the new one — prevents a stale frame
+        content.style.transition = "none";
+        content.offsetHeight; // flush pending styles before snap
 
-        // Phase 2: force reflow then slide + fade IN
-        card.offsetHeight; // trigger reflow
+        content.style.transform = "translateX(" + slideIn + ")";
+        content.style.opacity = "0";
 
+        // Phase 2: rAF — browser has now committed the snap, safe to re-enable
         requestAnimationFrame(function () {
-          card.style.transition = "opacity 0.28s ease, transform 0.28s ease";
-          card.style.opacity = "1";
-          card.style.transform = "translateX(0)";
+          content.style.transition = "opacity 0.28s ease, transform 0.28s ease";
+          content.style.opacity = "1";
+          content.style.transform = "translateX(0)";
         });
       }, 240); // wait for phase 1 to finish
     }

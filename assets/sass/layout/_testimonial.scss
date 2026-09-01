@@ -33,12 +33,12 @@
 
   &__slider-wrap {
     position: relative;
+    overflow: hidden;
   }
 
   &__wrapper {
     width: 100%;
     position: relative;
-    overflow: hidden;
   }
 
   &__nav {
@@ -65,7 +65,8 @@
 
     &--prev {
       left: 5%;
-      top: 30%;
+      top: 160px;
+      transform: none; 
 
       @include respond(xxl) {
         left: -3%;
@@ -78,7 +79,8 @@
 
     &--next {
       right: 5%;
-      top: 30%;
+      top: 160px;
+      transform: none;
 
       @include respond(xxl) {
         right: -3%;
@@ -108,38 +110,40 @@
     }
   }
 
+
   &__card {
     text-align: center;
     max-width: 850px;
     margin: 0 auto;
-    padding: 60px 40px 50px;
+    position: relative;
+    min-height: 540px;
+
+    @include respond(xl) {
+      min-height: 500px;
+    }
+
+    @include respond(lg) {
+      min-height: 460px;
+    }
+
+    @include respond(md) {
+      min-height: 500px;
+    }
+  }
+
+  &__slide-content {
+    position: absolute;
+    top: 60px;
+    left: 40px;
+    right: 40px;
     transition:
       opacity 0.25s ease,
       transform 0.25s ease;
 
-    &.is-leaving {
-      opacity: 0;
-      transform: translateX(-50px);
-    }
-    &.is-leaving-prev {
-      opacity: 0;
-      transform: translateX(50px);
-    }
-    &.is-entering {
-      opacity: 0;
-      transform: translateX(50px);
-    }
-    &.is-entering-prev {
-      opacity: 0;
-      transform: translateX(-50px);
-    }
-
-    @include respond(xl) {
-      padding: 60px 40px 0;
-    }
-
     @include respond(lg) {
-      padding: 40px 45px 0;
+      top: 40px;
+      left: 45px;
+      right: 45px;
     }
   }
 
@@ -203,52 +207,60 @@
     }
   }
 
+
   &__avatars-wrap {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 90px;
     z-index: 1;
 
     @include respond(lg) {
-      height: 90px;
+      height: 70px;
     }
   }
 
   &__avatar {
-    width: 70px;
-    height: 70px;
-    flex-shrink: 0;
     border-radius: 50%;
     object-fit: cover;
     background-color: var(--white-color);
     border: 2px solid transparent;
     cursor: pointer;
+    flex-shrink: 0;
+    width: 90px;
+    height: 90px;
     transition:
-      transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
-      border-color 0.4s ease,
-      box-shadow 0.4s ease;
+      transform 0.3s ease,
+      opacity 0.3s ease,
+      border-color 0.3s ease,
+      padding 0.3s ease;
 
-    &:not(:first-child) {
-      margin-left: 20px;
+    &--side {
+      transform: scale(0.78);
+      opacity: 0.9;
+    }
 
-      @include respond(lg) {
-        margin-left: 10px;
-      }
+    &--center {
+      transform: scale(1);
+      border-color: var(--primary-color);
+      padding: 2px;
+      opacity: 1;
+      z-index: 2;
+      position: relative;
     }
 
     @include respond(lg) {
-      width: 60px;
-      height: 60px;
-    }
+      width: 70px;
+      height: 70px;
 
-    &--middle {
-      transform: scale(1.2);
-      border-color: var(--primary-color);
-      padding: 2px;
-      z-index: 2;
-      position: relative;
+      &--side {
+        transform: scale(0.79);
+      }
     }
   }
 }

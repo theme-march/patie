@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html class="no-js" lang="en">
 
 <head>
@@ -16,11 +16,32 @@
     <link rel="stylesheet" href="assets/css/plugins/aos.css" />
     <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/plugins/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/css/preloader.css" />
 
     <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body>
+        <!-- ================= Start Preloader ======================== -->
+    <div id="preloader" class="preloader" aria-hidden="true" role="presentation">
+        <div class="preloader__frames">
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf0"/></svg>
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf1"/></svg>
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf2"/></svg>
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf3"/></svg>
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf4"/></svg>
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf5"/></svg>
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf6"/></svg>
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf7"/></svg>
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf8"/></svg>
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf9"/></svg>
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf10"/></svg>
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf11"/></svg>
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf12"/></svg>
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf13"/></svg>
+        </div>
+    </div>
+    <!-- ===================== End Preloader ====================== -->
     <div class="boarding-topbar">
         <div class="container boarding-topbar__container">
             <div class="boarding-topbar__left">
@@ -150,7 +171,10 @@
                     </span>
                 </button>
                 <a href="contact.html" class="common-btn site-header__book-btn">
-                    <span class="common-btn__inner">Get in touch</span>
+                    <span class="common-btn__inner">
+                        <svg class="common-btn__dash-svg" viewBox="0 0 170 47" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="167" height="44" rx="22" ry="22"/></svg>
+                        Get in touch
+                    </span>
                 </a>
                 <button class="site-header__mobile-btn">
                     <i class="fas fa-bars"></i>
@@ -170,33 +194,38 @@
         <div class="container">
             <div class="boarding-hero__wrap">
                 <!-- Left Content -->
-                <div class="boarding-hero__content">
-                    <div class="section-header">
+                 <div class="boarding-hero__content">
+                    <div class="section-header" data-aos="fade-right" data-aos-delay="0">
                         <img src="assets/img/icon/paw.svg" alt="paw style" class="section-header__paw">
                         <span class="section-header__label">WHERE HAPPY PETS STAY</span>
                     </div>
-                    <h1 class="boarding-hero__title">
+                    <h1 class="boarding-hero__title" data-aos="fade-right" data-aos-delay="150">
                         GIVE YOUR PET A SAFE AND <span class="boarding-hero__title-highlight">LOVING</span> <span
                             class="boarding-hero__title-highlight">STAY CARE</span>
                     </h1>
-                    <p class="boarding-hero__desc">
+                    <p class="boarding-hero__desc" data-aos="fade-right" data-aos-delay="300">
                         An Award-Winning Pet Boarding Agency Focused On Understanding You And Your Furry Friend
                         Perfectly Always
                     </p>
-                    <a href="service.html" class="common-btn common-btn--primary">
-                        <span class="common-btn__inner">DISCOVER MORE</span>
+                    <a href="service.html" class="common-btn common-btn--primary" data-aos="fade-right" data-aos-delay="450">
+                        <span class="common-btn__inner">
+                            <svg class="common-btn__dash-svg" viewBox="0 0 170 47" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="167" height="44" rx="22" ry="22"/></svg>
+                            DISCOVER MORE
+                        </span>
                     </a>
                 </div>
 
                 <!-- Right Images -->
                 <div class="boarding-hero__images">
-                    <img src="assets/img/hero/pet-boarding-line.svg" alt="" class="boarding-hero__line">
+                    <div class="boarding-hero__line-wrap">
+                        <img src="assets/img/hero/pet-boarding-line.svg" alt="" class="boarding-hero__line" data-aos="zoom-in" data-aos-delay="350">
+                    </div>
                     <img src="assets/img/hero/pet-boarding-hero-girl.png" alt="Girl with Pet Carrier"
-                        class="boarding-hero__girl">
-                    <div class="boarding-hero__floating boarding-hero__floating--cat">
+                        class="boarding-hero__girl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="boarding-hero__floating boarding-hero__floating--cat" data-aos="zoom-in" data-aos-delay="350">
                         <img src="assets/img/hero/pet-boarding-cat.png" alt="Cat" class="boarding-hero__pet-img">
                     </div>
-                    <div class="boarding-hero__floating boarding-hero__floating--dog">
+                    <div class="boarding-hero__floating boarding-hero__floating--dog" data-aos="zoom-in" data-aos-delay="350">
                         <img src="assets/img/hero/pet-boarding-dog.png" alt="Dog" class="boarding-hero__pet-img">
                     </div>
                 </div>
@@ -209,16 +238,17 @@
     <section class="boarding-about">
         <div class="ak-height-120 ak-height-lg-60"></div>
         <img src="assets/img/about-us/boarding-about-us-bg.png" alt="" class="boarding-about__bg">
-        <img src="assets/img/about-us/boarding-about-us-1.png" alt="" class="boarding-about__deco-left">
-        <img src="assets/img/about-us/boarding-about-us-2.png" alt="" class="boarding-about__deco-right">
+        <img src="assets/img/about-us/boarding-about-us-1.png" alt="" class="boarding-about__deco-left" data-aos="fade-right" data-aos-delay="200">
+        <img src="assets/img/about-us/boarding-about-us-2.png" alt="" class="boarding-about__deco-right" data-aos="fade-left" data-aos-delay="200">
 
         <div class="container">
-            <div class="section-header section-header--center">
+            <div class="section-header section-header--center" data-aos="fade-up" data-aos-delay="0">
                 <img src="assets/img/icon/paw.svg" alt="paw style" class="section-header__paw">
                 <span class="section-header__label">ABOUT PAWCARE</span>
                 <img src="assets/img/icon/paw.svg" alt="paw style" class="section-header__paw">
             </div>
 
+            <div data-aos="fade-up" data-aos-delay="100">
             <h2 class="section-header__title section-header__title--center boarding-about__main-title">
                 Patie Provides Safe, Clean, And Comfortable Pet Boarding Where Your Furry Friends Feel <span>Happy And
                     Loved While You're Away.</span>
@@ -226,10 +256,14 @@
 
             <div class="boarding-about__btn-wrap">
                 <a href="about.html" class="common-btn common-btn--primary">
-                    <span class="common-btn__inner">MORE ABOUT US</span>
+                    <span class="common-btn__inner">
+                        <svg class="common-btn__dash-svg" viewBox="0 0 170 47" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="167" height="44" rx="22" ry="22"/></svg>
+                        MORE ABOUT US
+                    </span>
                 </a>
             </div>
-            <div class="boarding-about__content-area">
+            </div>
+            <div class="boarding-about__content-area" data-aos="fade-up" data-aos-delay="200">
                 <div class="boarding-about__combine">
                     <div class="boarding-about__icons">
                         <div class="boarding-about__icon-item">
@@ -298,7 +332,7 @@
     <section class="boarding-service">
         <div class="container">
             <div class="boarding-service__top">
-                <div class="boarding-service__header-left">
+                <div class="boarding-service__header-left" data-aos="fade-right" data-aos-delay="0">
                     <div class="section-header">
                         <img src="assets/img/icon/paw.svg" alt="paw style" class="section-header__paw">
                         <span class="section-header__label">Best Services</span>
@@ -307,16 +341,19 @@
                         COMFORTABLE CARE <span>DESIGNED</span> <span>FOR EVERY PET</span>
                     </h2>
                 </div>
-                <div class="boarding-service__header-right">
+                <div class="boarding-service__header-right" data-aos="fade-left" data-aos-delay="0">
                     <a href="service.html" class="common-btn common-btn--primary">
-                        <span class="common-btn__inner">VIEW ALL SERVICES</span>
+                        <span class="common-btn__inner">
+                            <svg class="common-btn__dash-svg" viewBox="0 0 170 47" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="167" height="44" rx="22" ry="22"/></svg>
+                            VIEW ALL SERVICES
+                        </span>
                     </a>
                 </div>
             </div>
 
             <div class="boarding-service__grid">
                 <!-- Card 1 -->
-                <div class="boarding-service-card boarding-service-card--purple">
+                <div class="boarding-service-card boarding-service-card--purple" data-aos="fade-up" data-aos-delay="150">
                     <div class="boarding-service-card__img-wrap">
                         <svg class="boarding-service-card__bg-svg" width="308" height="243" viewBox="0 0 308 243"
                             fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -340,13 +377,13 @@
                     <a href="service-details.html" class="service-btn boarding-service-card__btn">
                         <span class="service-btn__icon">
                             <i class="fas fa-arrow-right"></i>
-                            <span class="service-btn__dashed-circle"></span>
+                            <svg class="service-btn__dashed-circle" viewBox="0 0 46 46" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M24.4697 0.0498047C25.4826 0.115378 26.4774 0.246591 27.4502 0.439453L27.3047 1.17383C28.2647 1.36417 29.2031 1.61685 30.1143 1.92676L30.3555 1.2168V1.21582C31.3106 1.5407 32.2369 1.92841 33.1309 2.37109L32.7988 3.04199C33.6712 3.474 34.5113 3.9621 35.3145 4.50098L35.7314 3.87793C36.5658 4.43773 37.3611 5.05132 38.1133 5.71289L37.6191 6.27637C38.3477 6.91725 39.0344 7.60482 39.6738 8.33496L40.2363 7.8418C40.8962 8.59529 41.5081 9.39181 42.0664 10.2275L41.4443 10.6436C41.9815 11.4478 42.4678 12.2896 42.8984 13.1631L43.5684 12.8311C44.0095 13.7258 44.396 14.6526 44.7197 15.6084V15.6094L44.0098 15.8496C44.3184 16.7612 44.5692 17.6998 44.7588 18.6602L45.4932 18.5146C45.6852 19.4876 45.8155 20.4823 45.8809 21.4951L45.1348 21.5439C45.1658 22.0252 45.1816 22.5107 45.1816 23C45.1816 23.4893 45.1658 23.9748 45.1348 24.4561L45.8809 24.5039C45.8156 25.5167 45.6852 26.5115 45.4932 27.4844L44.7588 27.3398C44.5692 28.3002 44.3184 29.2388 44.0098 30.1504L44.7197 30.3906C44.396 31.3465 44.0095 32.2732 43.5684 33.168L42.8984 32.8369C42.4678 33.7104 41.9815 34.5522 41.4443 35.3564L42.0664 35.7715C41.5081 36.6073 40.8962 37.4037 40.2363 38.1572L39.6738 37.665C39.0344 38.3952 38.3477 39.0827 37.6191 39.7236L38.1133 40.2861C37.3611 40.9477 36.5658 41.5613 35.7314 42.1211L35.3145 41.499C34.5113 42.0379 33.6712 42.526 32.7988 42.958L33.1309 43.6279C32.2368 44.0707 31.3107 44.4583 30.3555 44.7832L30.1143 44.0732C29.2031 44.3832 28.2647 44.6358 27.3047 44.8262L27.4502 45.5596C26.4773 45.7524 25.4826 45.8836 24.4697 45.9492L24.4219 45.2031C23.9406 45.2343 23.4551 45.25 22.9658 45.25C22.4765 45.25 21.991 45.2343 21.5098 45.2031L21.4609 45.9492C20.4481 45.8836 19.4533 45.7534 18.4805 45.5605L18.626 44.8262C17.6661 44.6358 16.7284 44.3831 15.8174 44.0732L15.5762 44.7832H15.5752C14.62 44.4583 13.6938 44.0707 12.7998 43.6279L13.1328 42.958C12.2604 42.526 11.4203 42.0379 10.6172 41.499L10.1992 42.1211C9.36485 41.5612 8.56953 40.9478 7.81738 40.2861L8.3125 39.7236C7.58392 39.0828 6.89724 38.3952 6.25781 37.665L5.69434 38.1572C5.03449 37.4037 4.4225 36.6072 3.86426 35.7715L4.4873 35.3564C3.95009 34.5522 3.46381 33.7104 3.0332 32.8369L2.36133 33.168C1.92031 32.2733 1.53454 31.3463 1.21094 30.3906L1.92188 30.1504C1.6132 29.2388 1.36145 28.3002 1.17188 27.3398L0.4375 27.4844C0.245506 26.5115 0.115081 25.5167 0.0498047 24.5039L0.796875 24.4561C0.765851 23.9748 0.75 23.4893 0.75 23C0.75 22.5107 0.765851 22.0252 0.796875 21.5439L0.0498047 21.4951C0.115123 20.4823 0.245466 19.4875 0.4375 18.5146L1.17188 18.6602C1.36145 17.6998 1.6132 16.7612 1.92188 15.8496L1.21191 15.6094L1.21094 15.6084C1.53458 14.6527 1.92029 13.7257 2.36133 12.8311L3.0332 13.1631C3.46381 12.2896 3.95009 11.4478 4.4873 10.6436L3.86426 10.2275C4.42251 9.39182 5.03448 8.59528 5.69434 7.8418L6.25781 8.33496C6.89724 7.60482 7.58392 6.91725 8.3125 6.27637L7.81738 5.71289C8.56952 5.05131 9.36487 4.43774 10.1992 3.87793L10.6172 4.50098C11.4203 3.96211 12.2604 3.47399 13.1328 3.04199L12.7998 2.37109C13.6938 1.92838 14.6201 1.54073 15.5752 1.21582L15.5762 1.2168L15.8174 1.92676C16.7284 1.61689 17.6661 1.36417 18.626 1.17383L18.4805 0.438477C19.4532 0.245598 20.4482 0.115413 21.4609 0.0498047L21.5098 0.796875C21.991 0.76571 22.4765 0.75 22.9658 0.75C23.4551 0.750001 23.9406 0.765707 24.4219 0.796875L24.4697 0.0498047Z"/></svg>
                         </span>
                     </a>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="boarding-service-card boarding-service-card--orange">
+                <div class="boarding-service-card boarding-service-card--orange" data-aos="fade-up" data-aos-delay="250">
                     <div class="boarding-service-card__img-wrap">
                         <svg class="boarding-service-card__bg-svg" width="308" height="243" viewBox="0 0 308 243"
                             fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -370,13 +407,13 @@
                     <a href="service-details.html" class="service-btn boarding-service-card__btn">
                         <span class="service-btn__icon">
                             <i class="fas fa-arrow-right"></i>
-                            <span class="service-btn__dashed-circle"></span>
+                            <svg class="service-btn__dashed-circle" viewBox="0 0 46 46" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M24.4697 0.0498047C25.4826 0.115378 26.4774 0.246591 27.4502 0.439453L27.3047 1.17383C28.2647 1.36417 29.2031 1.61685 30.1143 1.92676L30.3555 1.2168V1.21582C31.3106 1.5407 32.2369 1.92841 33.1309 2.37109L32.7988 3.04199C33.6712 3.474 34.5113 3.9621 35.3145 4.50098L35.7314 3.87793C36.5658 4.43773 37.3611 5.05132 38.1133 5.71289L37.6191 6.27637C38.3477 6.91725 39.0344 7.60482 39.6738 8.33496L40.2363 7.8418C40.8962 8.59529 41.5081 9.39181 42.0664 10.2275L41.4443 10.6436C41.9815 11.4478 42.4678 12.2896 42.8984 13.1631L43.5684 12.8311C44.0095 13.7258 44.396 14.6526 44.7197 15.6084V15.6094L44.0098 15.8496C44.3184 16.7612 44.5692 17.6998 44.7588 18.6602L45.4932 18.5146C45.6852 19.4876 45.8155 20.4823 45.8809 21.4951L45.1348 21.5439C45.1658 22.0252 45.1816 22.5107 45.1816 23C45.1816 23.4893 45.1658 23.9748 45.1348 24.4561L45.8809 24.5039C45.8156 25.5167 45.6852 26.5115 45.4932 27.4844L44.7588 27.3398C44.5692 28.3002 44.3184 29.2388 44.0098 30.1504L44.7197 30.3906C44.396 31.3465 44.0095 32.2732 43.5684 33.168L42.8984 32.8369C42.4678 33.7104 41.9815 34.5522 41.4443 35.3564L42.0664 35.7715C41.5081 36.6073 40.8962 37.4037 40.2363 38.1572L39.6738 37.665C39.0344 38.3952 38.3477 39.0827 37.6191 39.7236L38.1133 40.2861C37.3611 40.9477 36.5658 41.5613 35.7314 42.1211L35.3145 41.499C34.5113 42.0379 33.6712 42.526 32.7988 42.958L33.1309 43.6279C32.2368 44.0707 31.3107 44.4583 30.3555 44.7832L30.1143 44.0732C29.2031 44.3832 28.2647 44.6358 27.3047 44.8262L27.4502 45.5596C26.4773 45.7524 25.4826 45.8836 24.4697 45.9492L24.4219 45.2031C23.9406 45.2343 23.4551 45.25 22.9658 45.25C22.4765 45.25 21.991 45.2343 21.5098 45.2031L21.4609 45.9492C20.4481 45.8836 19.4533 45.7534 18.4805 45.5605L18.626 44.8262C17.6661 44.6358 16.7284 44.3831 15.8174 44.0732L15.5762 44.7832H15.5752C14.62 44.4583 13.6938 44.0707 12.7998 43.6279L13.1328 42.958C12.2604 42.526 11.4203 42.0379 10.6172 41.499L10.1992 42.1211C9.36485 41.5612 8.56953 40.9478 7.81738 40.2861L8.3125 39.7236C7.58392 39.0828 6.89724 38.3952 6.25781 37.665L5.69434 38.1572C5.03449 37.4037 4.4225 36.6072 3.86426 35.7715L4.4873 35.3564C3.95009 34.5522 3.46381 33.7104 3.0332 32.8369L2.36133 33.168C1.92031 32.2733 1.53454 31.3463 1.21094 30.3906L1.92188 30.1504C1.6132 29.2388 1.36145 28.3002 1.17188 27.3398L0.4375 27.4844C0.245506 26.5115 0.115081 25.5167 0.0498047 24.5039L0.796875 24.4561C0.765851 23.9748 0.75 23.4893 0.75 23C0.75 22.5107 0.765851 22.0252 0.796875 21.5439L0.0498047 21.4951C0.115123 20.4823 0.245466 19.4875 0.4375 18.5146L1.17188 18.6602C1.36145 17.6998 1.6132 16.7612 1.92188 15.8496L1.21191 15.6094L1.21094 15.6084C1.53458 14.6527 1.92029 13.7257 2.36133 12.8311L3.0332 13.1631C3.46381 12.2896 3.95009 11.4478 4.4873 10.6436L3.86426 10.2275C4.42251 9.39182 5.03448 8.59528 5.69434 7.8418L6.25781 8.33496C6.89724 7.60482 7.58392 6.91725 8.3125 6.27637L7.81738 5.71289C8.56952 5.05131 9.36487 4.43774 10.1992 3.87793L10.6172 4.50098C11.4203 3.96211 12.2604 3.47399 13.1328 3.04199L12.7998 2.37109C13.6938 1.92838 14.6201 1.54073 15.5752 1.21582L15.5762 1.2168L15.8174 1.92676C16.7284 1.61689 17.6661 1.36417 18.626 1.17383L18.4805 0.438477C19.4532 0.245598 20.4482 0.115413 21.4609 0.0498047L21.5098 0.796875C21.991 0.76571 22.4765 0.75 22.9658 0.75C23.4551 0.750001 23.9406 0.765707 24.4219 0.796875L24.4697 0.0498047Z"/></svg>
                         </span>
                     </a>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="boarding-service-card boarding-service-card--pink">
+                <div class="boarding-service-card boarding-service-card--pink" data-aos="fade-up" data-aos-delay="350">
                     <div class="boarding-service-card__img-wrap">
                         <svg class="boarding-service-card__bg-svg" width="308" height="243" viewBox="0 0 308 243"
                             fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -400,13 +437,13 @@
                     <a href="service-details.html" class="service-btn boarding-service-card__btn">
                         <span class="service-btn__icon">
                             <i class="fas fa-arrow-right"></i>
-                            <span class="service-btn__dashed-circle"></span>
+                            <svg class="service-btn__dashed-circle" viewBox="0 0 46 46" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M24.4697 0.0498047C25.4826 0.115378 26.4774 0.246591 27.4502 0.439453L27.3047 1.17383C28.2647 1.36417 29.2031 1.61685 30.1143 1.92676L30.3555 1.2168V1.21582C31.3106 1.5407 32.2369 1.92841 33.1309 2.37109L32.7988 3.04199C33.6712 3.474 34.5113 3.9621 35.3145 4.50098L35.7314 3.87793C36.5658 4.43773 37.3611 5.05132 38.1133 5.71289L37.6191 6.27637C38.3477 6.91725 39.0344 7.60482 39.6738 8.33496L40.2363 7.8418C40.8962 8.59529 41.5081 9.39181 42.0664 10.2275L41.4443 10.6436C41.9815 11.4478 42.4678 12.2896 42.8984 13.1631L43.5684 12.8311C44.0095 13.7258 44.396 14.6526 44.7197 15.6084V15.6094L44.0098 15.8496C44.3184 16.7612 44.5692 17.6998 44.7588 18.6602L45.4932 18.5146C45.6852 19.4876 45.8155 20.4823 45.8809 21.4951L45.1348 21.5439C45.1658 22.0252 45.1816 22.5107 45.1816 23C45.1816 23.4893 45.1658 23.9748 45.1348 24.4561L45.8809 24.5039C45.8156 25.5167 45.6852 26.5115 45.4932 27.4844L44.7588 27.3398C44.5692 28.3002 44.3184 29.2388 44.0098 30.1504L44.7197 30.3906C44.396 31.3465 44.0095 32.2732 43.5684 33.168L42.8984 32.8369C42.4678 33.7104 41.9815 34.5522 41.4443 35.3564L42.0664 35.7715C41.5081 36.6073 40.8962 37.4037 40.2363 38.1572L39.6738 37.665C39.0344 38.3952 38.3477 39.0827 37.6191 39.7236L38.1133 40.2861C37.3611 40.9477 36.5658 41.5613 35.7314 42.1211L35.3145 41.499C34.5113 42.0379 33.6712 42.526 32.7988 42.958L33.1309 43.6279C32.2368 44.0707 31.3107 44.4583 30.3555 44.7832L30.1143 44.0732C29.2031 44.3832 28.2647 44.6358 27.3047 44.8262L27.4502 45.5596C26.4773 45.7524 25.4826 45.8836 24.4697 45.9492L24.4219 45.2031C23.9406 45.2343 23.4551 45.25 22.9658 45.25C22.4765 45.25 21.991 45.2343 21.5098 45.2031L21.4609 45.9492C20.4481 45.8836 19.4533 45.7534 18.4805 45.5605L18.626 44.8262C17.6661 44.6358 16.7284 44.3831 15.8174 44.0732L15.5762 44.7832H15.5752C14.62 44.4583 13.6938 44.0707 12.7998 43.6279L13.1328 42.958C12.2604 42.526 11.4203 42.0379 10.6172 41.499L10.1992 42.1211C9.36485 41.5612 8.56953 40.9478 7.81738 40.2861L8.3125 39.7236C7.58392 39.0828 6.89724 38.3952 6.25781 37.665L5.69434 38.1572C5.03449 37.4037 4.4225 36.6072 3.86426 35.7715L4.4873 35.3564C3.95009 34.5522 3.46381 33.7104 3.0332 32.8369L2.36133 33.168C1.92031 32.2733 1.53454 31.3463 1.21094 30.3906L1.92188 30.1504C1.6132 29.2388 1.36145 28.3002 1.17188 27.3398L0.4375 27.4844C0.245506 26.5115 0.115081 25.5167 0.0498047 24.5039L0.796875 24.4561C0.765851 23.9748 0.75 23.4893 0.75 23C0.75 22.5107 0.765851 22.0252 0.796875 21.5439L0.0498047 21.4951C0.115123 20.4823 0.245466 19.4875 0.4375 18.5146L1.17188 18.6602C1.36145 17.6998 1.6132 16.7612 1.92188 15.8496L1.21191 15.6094L1.21094 15.6084C1.53458 14.6527 1.92029 13.7257 2.36133 12.8311L3.0332 13.1631C3.46381 12.2896 3.95009 11.4478 4.4873 10.6436L3.86426 10.2275C4.42251 9.39182 5.03448 8.59528 5.69434 7.8418L6.25781 8.33496C6.89724 7.60482 7.58392 6.91725 8.3125 6.27637L7.81738 5.71289C8.56952 5.05131 9.36487 4.43774 10.1992 3.87793L10.6172 4.50098C11.4203 3.96211 12.2604 3.47399 13.1328 3.04199L12.7998 2.37109C13.6938 1.92838 14.6201 1.54073 15.5752 1.21582L15.5762 1.2168L15.8174 1.92676C16.7284 1.61689 17.6661 1.36417 18.626 1.17383L18.4805 0.438477C19.4532 0.245598 20.4482 0.115413 21.4609 0.0498047L21.5098 0.796875C21.991 0.76571 22.4765 0.75 22.9658 0.75C23.4551 0.750001 23.9406 0.765707 24.4219 0.796875L24.4697 0.0498047Z"/></svg>
                         </span>
                     </a>
                 </div>
 
                 <!-- Card 4 -->
-                <div class="boarding-service-card boarding-service-card--green">
+                <div class="boarding-service-card boarding-service-card--green" data-aos="fade-up" data-aos-delay="450">
                     <div class="boarding-service-card__img-wrap">
                         <svg class="boarding-service-card__bg-svg" width="308" height="243" viewBox="0 0 308 243"
                             fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -430,7 +467,7 @@
                     <a href="service-details.html" class="service-btn boarding-service-card__btn">
                         <span class="service-btn__icon">
                             <i class="fas fa-arrow-right"></i>
-                            <span class="service-btn__dashed-circle"></span>
+                            <svg class="service-btn__dashed-circle" viewBox="0 0 46 46" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M24.4697 0.0498047C25.4826 0.115378 26.4774 0.246591 27.4502 0.439453L27.3047 1.17383C28.2647 1.36417 29.2031 1.61685 30.1143 1.92676L30.3555 1.2168V1.21582C31.3106 1.5407 32.2369 1.92841 33.1309 2.37109L32.7988 3.04199C33.6712 3.474 34.5113 3.9621 35.3145 4.50098L35.7314 3.87793C36.5658 4.43773 37.3611 5.05132 38.1133 5.71289L37.6191 6.27637C38.3477 6.91725 39.0344 7.60482 39.6738 8.33496L40.2363 7.8418C40.8962 8.59529 41.5081 9.39181 42.0664 10.2275L41.4443 10.6436C41.9815 11.4478 42.4678 12.2896 42.8984 13.1631L43.5684 12.8311C44.0095 13.7258 44.396 14.6526 44.7197 15.6084V15.6094L44.0098 15.8496C44.3184 16.7612 44.5692 17.6998 44.7588 18.6602L45.4932 18.5146C45.6852 19.4876 45.8155 20.4823 45.8809 21.4951L45.1348 21.5439C45.1658 22.0252 45.1816 22.5107 45.1816 23C45.1816 23.4893 45.1658 23.9748 45.1348 24.4561L45.8809 24.5039C45.8156 25.5167 45.6852 26.5115 45.4932 27.4844L44.7588 27.3398C44.5692 28.3002 44.3184 29.2388 44.0098 30.1504L44.7197 30.3906C44.396 31.3465 44.0095 32.2732 43.5684 33.168L42.8984 32.8369C42.4678 33.7104 41.9815 34.5522 41.4443 35.3564L42.0664 35.7715C41.5081 36.6073 40.8962 37.4037 40.2363 38.1572L39.6738 37.665C39.0344 38.3952 38.3477 39.0827 37.6191 39.7236L38.1133 40.2861C37.3611 40.9477 36.5658 41.5613 35.7314 42.1211L35.3145 41.499C34.5113 42.0379 33.6712 42.526 32.7988 42.958L33.1309 43.6279C32.2368 44.0707 31.3107 44.4583 30.3555 44.7832L30.1143 44.0732C29.2031 44.3832 28.2647 44.6358 27.3047 44.8262L27.4502 45.5596C26.4773 45.7524 25.4826 45.8836 24.4697 45.9492L24.4219 45.2031C23.9406 45.2343 23.4551 45.25 22.9658 45.25C22.4765 45.25 21.991 45.2343 21.5098 45.2031L21.4609 45.9492C20.4481 45.8836 19.4533 45.7534 18.4805 45.5605L18.626 44.8262C17.6661 44.6358 16.7284 44.3831 15.8174 44.0732L15.5762 44.7832H15.5752C14.62 44.4583 13.6938 44.0707 12.7998 43.6279L13.1328 42.958C12.2604 42.526 11.4203 42.0379 10.6172 41.499L10.1992 42.1211C9.36485 41.5612 8.56953 40.9478 7.81738 40.2861L8.3125 39.7236C7.58392 39.0828 6.89724 38.3952 6.25781 37.665L5.69434 38.1572C5.03449 37.4037 4.4225 36.6072 3.86426 35.7715L4.4873 35.3564C3.95009 34.5522 3.46381 33.7104 3.0332 32.8369L2.36133 33.168C1.92031 32.2733 1.53454 31.3463 1.21094 30.3906L1.92188 30.1504C1.6132 29.2388 1.36145 28.3002 1.17188 27.3398L0.4375 27.4844C0.245506 26.5115 0.115081 25.5167 0.0498047 24.5039L0.796875 24.4561C0.765851 23.9748 0.75 23.4893 0.75 23C0.75 22.5107 0.765851 22.0252 0.796875 21.5439L0.0498047 21.4951C0.115123 20.4823 0.245466 19.4875 0.4375 18.5146L1.17188 18.6602C1.36145 17.6998 1.6132 16.7612 1.92188 15.8496L1.21191 15.6094L1.21094 15.6084C1.53458 14.6527 1.92029 13.7257 2.36133 12.8311L3.0332 13.1631C3.46381 12.2896 3.95009 11.4478 4.4873 10.6436L3.86426 10.2275C4.42251 9.39182 5.03448 8.59528 5.69434 7.8418L6.25781 8.33496C6.89724 7.60482 7.58392 6.91725 8.3125 6.27637L7.81738 5.71289C8.56952 5.05131 9.36487 4.43774 10.1992 3.87793L10.6172 4.50098C11.4203 3.96211 12.2604 3.47399 13.1328 3.04199L12.7998 2.37109C13.6938 1.92838 14.6201 1.54073 15.5752 1.21582L15.5762 1.2168L15.8174 1.92676C16.7284 1.61689 17.6661 1.36417 18.626 1.17383L18.4805 0.438477C19.4532 0.245598 20.4482 0.115413 21.4609 0.0498047L21.5098 0.796875C21.991 0.76571 22.4765 0.75 22.9658 0.75C23.4551 0.750001 23.9406 0.765707 24.4219 0.796875L24.4697 0.0498047Z"/></svg>
                         </span>
                     </a>
                 </div>
@@ -443,7 +480,7 @@
     <section class="boarding-testimonial">
         <div class="container">
             <div class="boarding-testimonial__box">
-                <div class="boarding-testimonial__left">
+                <div class="boarding-testimonial__left" data-aos="fade-right" data-aos-delay="0">
                     <div class="boarding-testimonial__header">
                         <div class="section-header section-header--light">
                             <img src="assets/img/icon/paw.svg" alt="paw style" class="section-header__paw">
@@ -460,12 +497,12 @@
                     </div>
 
                     <div class="boarding-testimonial__quote-icon">
-                        <img src="assets/img/testimonial/quote.svg" alt="Quote" class="boarding-testimonial__quote-img">
+                        <img src="assets/img/testimonial/quote.svg" alt="Quote" class="boarding-testimonial__quote-img" data-aos="zoom-in" data-aos-delay="300">
                     </div>
                     <span class="boarding-testimonial__divider"></span>
                 </div>
 
-                <div class="boarding-testimonial__right">
+                <div class="boarding-testimonial__right" data-aos="fade-left" data-aos-delay="0">
                     <div class="boarding-testimonial__stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -505,26 +542,34 @@
                 class="boarding-testimonial__stats-bg">
             <div class="container">
                 <div class="boarding-testimonial__stats-grid">
-                    <div class="boarding-testimonial__stat-item">
-                        <div class="boarding-testimonial__stat-number">1.5K+</div>
+                    <div class="boarding-testimonial__stat-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="boarding-testimonial__stat-number">
+                            <span class="count-up" data-target="1.5" data-decimals="1">0</span><span>K+</span>
+                        </div>
                         <div class="boarding-testimonial__stat-title">Happy Pets</div>
                         <p class="boarding-testimonial__stat-desc">Providing a home away from home</p>
                         <span class="boarding-testimonial__stat-divider"></span>
                     </div>
-                    <div class="boarding-testimonial__stat-item">
-                        <div class="boarding-testimonial__stat-number">45+</div>
+                    <div class="boarding-testimonial__stat-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="boarding-testimonial__stat-number">
+                            <span class="count-up" data-target="45">0</span><span>+</span>
+                        </div>
                         <div class="boarding-testimonial__stat-title">Certified Caregivers</div>
                         <p class="boarding-testimonial__stat-desc">Expert attention and round-the-clock care</p>
                         <span class="boarding-testimonial__stat-divider"></span>
                     </div>
-                    <div class="boarding-testimonial__stat-item">
-                        <div class="boarding-testimonial__stat-number">12K+</div>
+                    <div class="boarding-testimonial__stat-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="boarding-testimonial__stat-number">
+                            <span class="count-up" data-target="12">0</span><span>K+</span>
+                        </div>
                         <div class="boarding-testimonial__stat-title">Playtime Hours</div>
                         <p class="boarding-testimonial__stat-desc">Fun, games, and daily exercise routines</p>
                         <span class="boarding-testimonial__stat-divider"></span>
                     </div>
-                    <div class="boarding-testimonial__stat-item">
-                        <div class="boarding-testimonial__stat-number">100%</div>
+                    <div class="boarding-testimonial__stat-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="boarding-testimonial__stat-number">
+                            <span class="count-up" data-target="100">0</span><span>%</span>
+                        </div>
                         <div class="boarding-testimonial__stat-title">Safe & Loved</div>
                         <p class="boarding-testimonial__stat-desc">Cage-free comfort and premium amenities</p>
                     </div>
@@ -538,15 +583,15 @@
         <img src="assets/img/choose-us/boarding-bg-shape.png" alt="" class="boarding-choose-us__shape">
         <div class="container">
             <div class="boarding-choose-us__left">
-                <div class="section-header">
+                <div class="section-header" data-aos="fade-right" data-aos-delay="0">
                     <img src="assets/img/icon/paw.svg" alt="paw style" class="section-header__paw">
                     <span class="section-header__label">Why Choose Us</span>
                 </div>
-                <h2 class="section-header__title">
+                <h2 class="section-header__title" data-aos="fade-right" data-aos-delay="100">
                     PROVIDING THE <span>CARE YOUR PET DESERVES</span>
                 </h2>
 
-                <ul class="boarding-choose-us__list">
+                <ul class="boarding-choose-us__list" data-aos="fade-right" data-aos-delay="200">
                     <li class="boarding-choose-us__item">
                         <div class="boarding-choose-us__icon-wrap">
                             <div class="boarding-choose-us__icon-outer">
@@ -600,7 +645,7 @@
         </div>
         </div>
         <div class="boarding-choose-us__right">
-            <div class="boarding-choose-us__img-wrap">
+            <div class="boarding-choose-us__img-wrap" data-aos="fade-left" data-aos-delay="200">
                 <img src="assets/img/choose-us/boarding-choose-us-image-bg.svg" alt=""
                     class="boarding-choose-us__img-bg">
                 <img src="assets/img/choose-us/boarding-choose-us.png" alt="Happy pet and owner"
@@ -615,18 +660,18 @@
     <!-- start pricing section -->
     <section class="boarding-pricing">
         <div class="container">
-            <div class="section-header section-header--center">
+            <div class="section-header section-header--center" data-aos="fade-up" data-aos-delay="0">
                 <img src="assets/img/icon/paw.svg" alt="paw style" class="section-header__paw">
                 <span class="section-header__label">Pricing Plan</span>
                 <img src="assets/img/icon/paw.svg" alt="paw style" class="section-header__paw">
             </div>
-            <h2 class="section-header__title section-header__title--center">
+            <h2 class="section-header__title section-header__title--center" data-aos="fade-up" data-aos-delay="100">
                 HAPPY PETS <span>SIMPLE PRICES</span>
             </h2>
 
             <div class="boarding-pricing__grid">
                 <!-- Card 1 -->
-                <div class="boarding-pricing-card boarding-pricing-card--purple">
+                <div class="boarding-pricing-card boarding-pricing-card--purple" data-aos="fade-up" data-aos-delay="150">
                     <img src="assets/img/pricing/pricing-badge-1.png" alt="" class="boarding-pricing-card__bg">
                     <div class="boarding-pricing-card__header">
                         <h3 class="boarding-pricing-card__title">HALF-DAY STAY</h3>
@@ -658,7 +703,7 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="boarding-pricing-card boarding-pricing-card--orange">
+                <div class="boarding-pricing-card boarding-pricing-card--orange" data-aos="fade-up" data-aos-delay="250">
                     <img src="assets/img/pricing/pricing-badge-2.png" alt="" class="boarding-pricing-card__bg">
                     <div class="boarding-pricing-card__header">
                         <h3 class="boarding-pricing-card__title">FULL-DAY BOARDING</h3>
@@ -690,7 +735,7 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="boarding-pricing-card boarding-pricing-card--pink">
+                <div class="boarding-pricing-card boarding-pricing-card--pink" data-aos="fade-up" data-aos-delay="350">
                     <img src="assets/img/pricing/pricing-badge-3.png" alt="" class="boarding-pricing-card__bg">
                     <div class="boarding-pricing-card__header">
                         <h3 class="boarding-pricing-card__title">OVERNIGHT LUXURY</h3>
@@ -729,10 +774,11 @@
     <!--Start faq area-->
     <section class="faq">
         <div class="faq__col">
-            <div class="faq__video">
+            <div class="faq__video" data-aos="fade-right" data-aos-delay="100">
                 <img src="assets/img/faq/boarding-faq-video.png" alt="FAQ Video">
-                <a href="https://www.youtube.com/watch?v=Vcp7H2stR9A"
-                    class="play-btn play-btn--secondary ak-video-open">
+                <a href="https://www.youtube.com/watch?v=Vcp7H2stR9A" class="play-btn ak-video-open">
+                    <span class="play-btn__ripple-lottie"></span>
+                    <span class="play-btn__ripple-lottie"></span>
                     <span class="play-btn__inner">
                         <i class="fas fa-play"></i>
                     </span>
@@ -742,16 +788,16 @@
         <div class="faq__col faq__col--bg">
             <img src="assets/img/faq/faq-bg.png" alt="FAQ Background" class="faq__bg-img">
             <div class="faq__heading">
-                <div class="section-header">
+                <div class="section-header" data-aos="fade-up" data-aos-delay="150">
                     <img src="assets/img/icon/paw.svg" alt="Paw" class="section-header__paw">
                     <span class="section-header__label">FAQ</span>
                 </div>
-                <h2 class="section-header__title">FREQUENTLY ASK QUESTIONS</h2>
+                <h2 class="section-header__title" data-aos="fade-up" data-aos-delay="250">FREQUENTLY ASK QUESTIONS</h2>
             </div>
 
-            <div class="faq-accordion">
+            <div class="faq-accordion" data-aos="fade-up" data-aos-delay="350">
                 <!-- Item 1 -->
-                <div class="faq-accordion__item">
+                <div class="faq-accordion__item--active">
                     <div class="faq-accordion__header">
                         <h3 class="faq-accordion__title">WHAT REQUIREMENTS DO YOU HAVE FOR PET BOARDING?</h3>
                         <span class="faq-accordion__icon"><i class="fas fa-plus faq-accordion__icon-i"></i></span>
@@ -762,7 +808,7 @@
                     </div>
                 </div>
                 <!-- Item 2 -->
-                <div class="faq-accordion__item faq-accordion__item--active">
+                <div class="faq-accordion__item faq-accordion__item">
                     <div class="faq-accordion__header">
                         <h3 class="faq-accordion__title">WHAT SHOULD I BRING FOR MY PET'S OVERNIGHT STAY?</h3>
                         <span class="faq-accordion__icon"><i class="fas fa-minus faq-accordion__icon-i"></i></span>
@@ -834,18 +880,18 @@
     <!--Start blog area-->
     <section class="boarding-blog">
         <div class="container">
-            <div class="section-header section-header--center">
+            <div class="section-header section-header--center" data-aos="fade-up" data-aos-delay="0">
                 <img src="assets/img/icon/paw.svg" alt="paw style" class="section-header__paw">
                 <span class="section-header__label">Blog & News</span>
                 <img src="assets/img/icon/paw.svg" alt="paw style" class="section-header__paw">
             </div>
-            <h2 class="section-header__title section-header__title--center">
+            <h2 class="section-header__title section-header__title--center" data-aos="fade-up" data-aos-delay="100">
                 LATEST NEWS FROM <span>THE BLOG</span>
             </h2>
 
             <div class="boarding-blog__grid">
                 <!-- Card 1 -->
-                <div class="boarding-blog-card">
+                <div class="boarding-blog-card" data-aos="fade-up" data-aos-delay="150">
                     <div class="boarding-blog-card__img-wrap">
                         <img src="assets/img/blog/boarding-blog-1.png" alt="Blog Image" class="boarding-blog-card__img">
                         <div class="boarding-blog-card__date">
@@ -869,7 +915,7 @@
                             <div class="boarding-blog-card__btn-wrap">
                                 <a href="blog-details.html" class="service-btn service-btn--primary">
                                     <span class="service-btn__icon">
-                                        <span class="service-btn__dashed-circle"></span>
+                                        <svg class="service-btn__dashed-circle" viewBox="0 0 46 46" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M24.4697 0.0498047C25.4826 0.115378 26.4774 0.246591 27.4502 0.439453L27.3047 1.17383C28.2647 1.36417 29.2031 1.61685 30.1143 1.92676L30.3555 1.2168V1.21582C31.3106 1.5407 32.2369 1.92841 33.1309 2.37109L32.7988 3.04199C33.6712 3.474 34.5113 3.9621 35.3145 4.50098L35.7314 3.87793C36.5658 4.43773 37.3611 5.05132 38.1133 5.71289L37.6191 6.27637C38.3477 6.91725 39.0344 7.60482 39.6738 8.33496L40.2363 7.8418C40.8962 8.59529 41.5081 9.39181 42.0664 10.2275L41.4443 10.6436C41.9815 11.4478 42.4678 12.2896 42.8984 13.1631L43.5684 12.8311C44.0095 13.7258 44.396 14.6526 44.7197 15.6084V15.6094L44.0098 15.8496C44.3184 16.7612 44.5692 17.6998 44.7588 18.6602L45.4932 18.5146C45.6852 19.4876 45.8155 20.4823 45.8809 21.4951L45.1348 21.5439C45.1658 22.0252 45.1816 22.5107 45.1816 23C45.1816 23.4893 45.1658 23.9748 45.1348 24.4561L45.8809 24.5039C45.8156 25.5167 45.6852 26.5115 45.4932 27.4844L44.7588 27.3398C44.5692 28.3002 44.3184 29.2388 44.0098 30.1504L44.7197 30.3906C44.396 31.3465 44.0095 32.2732 43.5684 33.168L42.8984 32.8369C42.4678 33.7104 41.9815 34.5522 41.4443 35.3564L42.0664 35.7715C41.5081 36.6073 40.8962 37.4037 40.2363 38.1572L39.6738 37.665C39.0344 38.3952 38.3477 39.0827 37.6191 39.7236L38.1133 40.2861C37.3611 40.9477 36.5658 41.5613 35.7314 42.1211L35.3145 41.499C34.5113 42.0379 33.6712 42.526 32.7988 42.958L33.1309 43.6279C32.2368 44.0707 31.3107 44.4583 30.3555 44.7832L30.1143 44.0732C29.2031 44.3832 28.2647 44.6358 27.3047 44.8262L27.4502 45.5596C26.4773 45.7524 25.4826 45.8836 24.4697 45.9492L24.4219 45.2031C23.9406 45.2343 23.4551 45.25 22.9658 45.25C22.4765 45.25 21.991 45.2343 21.5098 45.2031L21.4609 45.9492C20.4481 45.8836 19.4533 45.7534 18.4805 45.5605L18.626 44.8262C17.6661 44.6358 16.7284 44.3831 15.8174 44.0732L15.5762 44.7832H15.5752C14.62 44.4583 13.6938 44.0707 12.7998 43.6279L13.1328 42.958C12.2604 42.526 11.4203 42.0379 10.6172 41.499L10.1992 42.1211C9.36485 41.5612 8.56953 40.9478 7.81738 40.2861L8.3125 39.7236C7.58392 39.0828 6.89724 38.3952 6.25781 37.665L5.69434 38.1572C5.03449 37.4037 4.4225 36.6072 3.86426 35.7715L4.4873 35.3564C3.95009 34.5522 3.46381 33.7104 3.0332 32.8369L2.36133 33.168C1.92031 32.2733 1.53454 31.3463 1.21094 30.3906L1.92188 30.1504C1.6132 29.2388 1.36145 28.3002 1.17188 27.3398L0.4375 27.4844C0.245506 26.5115 0.115081 25.5167 0.0498047 24.5039L0.796875 24.4561C0.765851 23.9748 0.75 23.4893 0.75 23C0.75 22.5107 0.765851 22.0252 0.796875 21.5439L0.0498047 21.4951C0.115123 20.4823 0.245466 19.4875 0.4375 18.5146L1.17188 18.6602C1.36145 17.6998 1.6132 16.7612 1.92188 15.8496L1.21191 15.6094L1.21094 15.6084C1.53458 14.6527 1.92029 13.7257 2.36133 12.8311L3.0332 13.1631C3.46381 12.2896 3.95009 11.4478 4.4873 10.6436L3.86426 10.2275C4.42251 9.39182 5.03448 8.59528 5.69434 7.8418L6.25781 8.33496C6.89724 7.60482 7.58392 6.91725 8.3125 6.27637L7.81738 5.71289C8.56952 5.05131 9.36487 4.43774 10.1992 3.87793L10.6172 4.50098C11.4203 3.96211 12.2604 3.47399 13.1328 3.04199L12.7998 2.37109C13.6938 1.92838 14.6201 1.54073 15.5752 1.21582L15.5762 1.2168L15.8174 1.92676C16.7284 1.61689 17.6661 1.36417 18.626 1.17383L18.4805 0.438477C19.4532 0.245598 20.4482 0.115413 21.4609 0.0498047L21.5098 0.796875C21.991 0.76571 22.4765 0.75 22.9658 0.75C23.4551 0.750001 23.9406 0.765707 24.4219 0.796875L24.4697 0.0498047Z"/></svg>
                                         <i class="fas fa-arrow-right"></i>
                                     </span>
                                     <span class="service-btn__text">READ MORE</span>
@@ -885,7 +931,7 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="boarding-blog-card">
+                <div class="boarding-blog-card" data-aos="fade-up" data-aos-delay="250">
                     <div class="boarding-blog-card__img-wrap">
                         <img src="assets/img/blog/boarding-blog-2.png" alt="Blog Image" class="boarding-blog-card__img">
                         <div class="boarding-blog-card__date">
@@ -909,7 +955,7 @@
                             <div class="boarding-blog-card__btn-wrap">
                                 <a href="blog-details.html" class="service-btn service-btn--primary">
                                     <span class="service-btn__icon">
-                                        <span class="service-btn__dashed-circle"></span>
+                                        <svg class="service-btn__dashed-circle" viewBox="0 0 46 46" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M24.4697 0.0498047C25.4826 0.115378 26.4774 0.246591 27.4502 0.439453L27.3047 1.17383C28.2647 1.36417 29.2031 1.61685 30.1143 1.92676L30.3555 1.2168V1.21582C31.3106 1.5407 32.2369 1.92841 33.1309 2.37109L32.7988 3.04199C33.6712 3.474 34.5113 3.9621 35.3145 4.50098L35.7314 3.87793C36.5658 4.43773 37.3611 5.05132 38.1133 5.71289L37.6191 6.27637C38.3477 6.91725 39.0344 7.60482 39.6738 8.33496L40.2363 7.8418C40.8962 8.59529 41.5081 9.39181 42.0664 10.2275L41.4443 10.6436C41.9815 11.4478 42.4678 12.2896 42.8984 13.1631L43.5684 12.8311C44.0095 13.7258 44.396 14.6526 44.7197 15.6084V15.6094L44.0098 15.8496C44.3184 16.7612 44.5692 17.6998 44.7588 18.6602L45.4932 18.5146C45.6852 19.4876 45.8155 20.4823 45.8809 21.4951L45.1348 21.5439C45.1658 22.0252 45.1816 22.5107 45.1816 23C45.1816 23.4893 45.1658 23.9748 45.1348 24.4561L45.8809 24.5039C45.8156 25.5167 45.6852 26.5115 45.4932 27.4844L44.7588 27.3398C44.5692 28.3002 44.3184 29.2388 44.0098 30.1504L44.7197 30.3906C44.396 31.3465 44.0095 32.2732 43.5684 33.168L42.8984 32.8369C42.4678 33.7104 41.9815 34.5522 41.4443 35.3564L42.0664 35.7715C41.5081 36.6073 40.8962 37.4037 40.2363 38.1572L39.6738 37.665C39.0344 38.3952 38.3477 39.0827 37.6191 39.7236L38.1133 40.2861C37.3611 40.9477 36.5658 41.5613 35.7314 42.1211L35.3145 41.499C34.5113 42.0379 33.6712 42.526 32.7988 42.958L33.1309 43.6279C32.2368 44.0707 31.3107 44.4583 30.3555 44.7832L30.1143 44.0732C29.2031 44.3832 28.2647 44.6358 27.3047 44.8262L27.4502 45.5596C26.4773 45.7524 25.4826 45.8836 24.4697 45.9492L24.4219 45.2031C23.9406 45.2343 23.4551 45.25 22.9658 45.25C22.4765 45.25 21.991 45.2343 21.5098 45.2031L21.4609 45.9492C20.4481 45.8836 19.4533 45.7534 18.4805 45.5605L18.626 44.8262C17.6661 44.6358 16.7284 44.3831 15.8174 44.0732L15.5762 44.7832H15.5752C14.62 44.4583 13.6938 44.0707 12.7998 43.6279L13.1328 42.958C12.2604 42.526 11.4203 42.0379 10.6172 41.499L10.1992 42.1211C9.36485 41.5612 8.56953 40.9478 7.81738 40.2861L8.3125 39.7236C7.58392 39.0828 6.89724 38.3952 6.25781 37.665L5.69434 38.1572C5.03449 37.4037 4.4225 36.6072 3.86426 35.7715L4.4873 35.3564C3.95009 34.5522 3.46381 33.7104 3.0332 32.8369L2.36133 33.168C1.92031 32.2733 1.53454 31.3463 1.21094 30.3906L1.92188 30.1504C1.6132 29.2388 1.36145 28.3002 1.17188 27.3398L0.4375 27.4844C0.245506 26.5115 0.115081 25.5167 0.0498047 24.5039L0.796875 24.4561C0.765851 23.9748 0.75 23.4893 0.75 23C0.75 22.5107 0.765851 22.0252 0.796875 21.5439L0.0498047 21.4951C0.115123 20.4823 0.245466 19.4875 0.4375 18.5146L1.17188 18.6602C1.36145 17.6998 1.6132 16.7612 1.92188 15.8496L1.21191 15.6094L1.21094 15.6084C1.53458 14.6527 1.92029 13.7257 2.36133 12.8311L3.0332 13.1631C3.46381 12.2896 3.95009 11.4478 4.4873 10.6436L3.86426 10.2275C4.42251 9.39182 5.03448 8.59528 5.69434 7.8418L6.25781 8.33496C6.89724 7.60482 7.58392 6.91725 8.3125 6.27637L7.81738 5.71289C8.56952 5.05131 9.36487 4.43774 10.1992 3.87793L10.6172 4.50098C11.4203 3.96211 12.2604 3.47399 13.1328 3.04199L12.7998 2.37109C13.6938 1.92838 14.6201 1.54073 15.5752 1.21582L15.5762 1.2168L15.8174 1.92676C16.7284 1.61689 17.6661 1.36417 18.626 1.17383L18.4805 0.438477C19.4532 0.245598 20.4482 0.115413 21.4609 0.0498047L21.5098 0.796875C21.991 0.76571 22.4765 0.75 22.9658 0.75C23.4551 0.750001 23.9406 0.765707 24.4219 0.796875L24.4697 0.0498047Z"/></svg>
                                         <i class="fas fa-arrow-right"></i>
                                     </span>
                                     <span class="service-btn__text">READ MORE</span>
@@ -925,7 +971,7 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="boarding-blog-card">
+                <div class="boarding-blog-card" data-aos="fade-up" data-aos-delay="350">
                     <div class="boarding-blog-card__img-wrap">
                         <img src="assets/img/blog/boarding-blog-3.png" alt="Blog Image" class="boarding-blog-card__img">
                         <div class="boarding-blog-card__date">
@@ -949,7 +995,7 @@
                             <div class="boarding-blog-card__btn-wrap">
                                 <a href="blog-details.html" class="service-btn service-btn--primary">
                                     <span class="service-btn__icon">
-                                        <span class="service-btn__dashed-circle"></span>
+                                        <svg class="service-btn__dashed-circle" viewBox="0 0 46 46" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M24.4697 0.0498047C25.4826 0.115378 26.4774 0.246591 27.4502 0.439453L27.3047 1.17383C28.2647 1.36417 29.2031 1.61685 30.1143 1.92676L30.3555 1.2168V1.21582C31.3106 1.5407 32.2369 1.92841 33.1309 2.37109L32.7988 3.04199C33.6712 3.474 34.5113 3.9621 35.3145 4.50098L35.7314 3.87793C36.5658 4.43773 37.3611 5.05132 38.1133 5.71289L37.6191 6.27637C38.3477 6.91725 39.0344 7.60482 39.6738 8.33496L40.2363 7.8418C40.8962 8.59529 41.5081 9.39181 42.0664 10.2275L41.4443 10.6436C41.9815 11.4478 42.4678 12.2896 42.8984 13.1631L43.5684 12.8311C44.0095 13.7258 44.396 14.6526 44.7197 15.6084V15.6094L44.0098 15.8496C44.3184 16.7612 44.5692 17.6998 44.7588 18.6602L45.4932 18.5146C45.6852 19.4876 45.8155 20.4823 45.8809 21.4951L45.1348 21.5439C45.1658 22.0252 45.1816 22.5107 45.1816 23C45.1816 23.4893 45.1658 23.9748 45.1348 24.4561L45.8809 24.5039C45.8156 25.5167 45.6852 26.5115 45.4932 27.4844L44.7588 27.3398C44.5692 28.3002 44.3184 29.2388 44.0098 30.1504L44.7197 30.3906C44.396 31.3465 44.0095 32.2732 43.5684 33.168L42.8984 32.8369C42.4678 33.7104 41.9815 34.5522 41.4443 35.3564L42.0664 35.7715C41.5081 36.6073 40.8962 37.4037 40.2363 38.1572L39.6738 37.665C39.0344 38.3952 38.3477 39.0827 37.6191 39.7236L38.1133 40.2861C37.3611 40.9477 36.5658 41.5613 35.7314 42.1211L35.3145 41.499C34.5113 42.0379 33.6712 42.526 32.7988 42.958L33.1309 43.6279C32.2368 44.0707 31.3107 44.4583 30.3555 44.7832L30.1143 44.0732C29.2031 44.3832 28.2647 44.6358 27.3047 44.8262L27.4502 45.5596C26.4773 45.7524 25.4826 45.8836 24.4697 45.9492L24.4219 45.2031C23.9406 45.2343 23.4551 45.25 22.9658 45.25C22.4765 45.25 21.991 45.2343 21.5098 45.2031L21.4609 45.9492C20.4481 45.8836 19.4533 45.7534 18.4805 45.5605L18.626 44.8262C17.6661 44.6358 16.7284 44.3831 15.8174 44.0732L15.5762 44.7832H15.5752C14.62 44.4583 13.6938 44.0707 12.7998 43.6279L13.1328 42.958C12.2604 42.526 11.4203 42.0379 10.6172 41.499L10.1992 42.1211C9.36485 41.5612 8.56953 40.9478 7.81738 40.2861L8.3125 39.7236C7.58392 39.0828 6.89724 38.3952 6.25781 37.665L5.69434 38.1572C5.03449 37.4037 4.4225 36.6072 3.86426 35.7715L4.4873 35.3564C3.95009 34.5522 3.46381 33.7104 3.0332 32.8369L2.36133 33.168C1.92031 32.2733 1.53454 31.3463 1.21094 30.3906L1.92188 30.1504C1.6132 29.2388 1.36145 28.3002 1.17188 27.3398L0.4375 27.4844C0.245506 26.5115 0.115081 25.5167 0.0498047 24.5039L0.796875 24.4561C0.765851 23.9748 0.75 23.4893 0.75 23C0.75 22.5107 0.765851 22.0252 0.796875 21.5439L0.0498047 21.4951C0.115123 20.4823 0.245466 19.4875 0.4375 18.5146L1.17188 18.6602C1.36145 17.6998 1.6132 16.7612 1.92188 15.8496L1.21191 15.6094L1.21094 15.6084C1.53458 14.6527 1.92029 13.7257 2.36133 12.8311L3.0332 13.1631C3.46381 12.2896 3.95009 11.4478 4.4873 10.6436L3.86426 10.2275C4.42251 9.39182 5.03448 8.59528 5.69434 7.8418L6.25781 8.33496C6.89724 7.60482 7.58392 6.91725 8.3125 6.27637L7.81738 5.71289C8.56952 5.05131 9.36487 4.43774 10.1992 3.87793L10.6172 4.50098C11.4203 3.96211 12.2604 3.47399 13.1328 3.04199L12.7998 2.37109C13.6938 1.92838 14.6201 1.54073 15.5752 1.21582L15.5762 1.2168L15.8174 1.92676C16.7284 1.61689 17.6661 1.36417 18.626 1.17383L18.4805 0.438477C19.4532 0.245598 20.4482 0.115413 21.4609 0.0498047L21.5098 0.796875C21.991 0.76571 22.4765 0.75 22.9658 0.75C23.4551 0.750001 23.9406 0.765707 24.4219 0.796875L24.4697 0.0498047Z"/></svg>
                                         <i class="fas fa-arrow-right"></i>
                                     </span>
                                     <span class="service-btn__text">READ MORE</span>
@@ -984,7 +1030,7 @@
         <img src="assets/img/footer/footer-bg-3.png" alt="Footer Background" class="footer-v3__bg">
         <div class="container footer-v3__container">
             <div class="footer-v3__top">
-                <div class="footer-v3__col footer-v3__col--subscribe">
+                <div class="footer-v3__col footer-v3__col--subscribe" data-aos="fade-up" data-aos-delay="100">
                     <h2 class="footer-v3__newsletter-title">SUBSCRIBE TO EVENT RIGHT TO BE UPDATED</h2>
                     <form action="#" class="footer-v3__form">
                         <input type="email" placeholder="Your Email Address" class="footer-v3__input">
@@ -1001,7 +1047,7 @@
                     </div>
                 </div>
 
-                <div class="footer-v3__col">
+                <div class="footer-v3__col" data-aos="fade-up" data-aos-delay="200">
                     <h2 class="footer-v3__title">QUICK LINKS</h2>
                     <img src="assets/img/footer/footer-line.svg" alt="" class="footer-v3__title-line">
                     <ul class="footer-v3__list">
@@ -1043,7 +1089,7 @@
                     </ul>
                 </div>
 
-                <div class="footer-v3__col">
+                <div class="footer-v3__col" data-aos="fade-up" data-aos-delay="300">
                     <h2 class="footer-v3__title">SERVICES</h2>
                     <img src="assets/img/footer/footer-line.svg" alt="" class="footer-v3__title-line">
                     <ul class="footer-v3__list">
@@ -1085,7 +1131,7 @@
                     </ul>
                 </div>
 
-                <div class="footer-v3__col">
+                <div class="footer-v3__col" data-aos="fade-up" data-aos-delay="400">
                     <h2 class="footer-v3__title">CONTACT US</h2>
                     <img src="assets/img/footer/footer-line.svg" alt="" class="footer-v3__title-line">
                     <ul class="footer-v3__contact-list">
@@ -1105,7 +1151,7 @@
                 </div>
             </div>
 
-            <div class="footer-v3__bottom">
+            <div class="footer-v3__bottom" data-aos="fade-up" data-aos-delay="200">
                 <div class="footer-v3__bottom-top">
                     <a href="index.html" class="footer-v3__logo-link">
                         <img src="assets/img/logo/logo-together.svg" alt="Patie Logo" class="footer-v3__logo">

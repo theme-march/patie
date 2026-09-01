@@ -272,8 +272,8 @@
         color: var(--white-color);
       }
 
-      &__dashed-circle {
-        border-color: var(--theme-color);
+      &__dashed-circle path {
+        stroke: var(--theme-color);
       }
 
       &__text {
@@ -304,8 +304,8 @@
         color: var(--white-color);
       }
 
-      &__dashed-circle {
-        border-color: var(--theme-color);
+      &__dashed-circle path {
+        stroke: var(--theme-color);
       }
 
       &__text {

@@ -134,8 +134,8 @@
       color: var(--white-color);
     }
 
-    .service-btn__dashed-circle {
-      border-color: var(--primary-color);
+    .service-btn__dashed-circle path {
+      stroke: var(--primary-color);
     }
   }
 
@@ -151,8 +151,8 @@
       color: var(--white-color);
     }
 
-    .service-btn__dashed-circle {
-      border-color: var(--secondary-color);
+    .service-btn__dashed-circle path {
+      stroke: var(--secondary-color);
     }
   }
 
@@ -168,8 +168,8 @@
       color: var(--white-color);
     }
 
-    .service-btn__dashed-circle {
-      border-color: var(--other-color-1);
+    .service-btn__dashed-circle path {
+      stroke: var(--other-color-1);
     }
   }
 
@@ -185,8 +185,8 @@
       color: var(--white-color);
     }
 
-    .service-btn__dashed-circle {
-      border-color: var(--other-color-2);
+    .service-btn__dashed-circle path {
+      stroke: var(--other-color-2);
     }
   }
 }

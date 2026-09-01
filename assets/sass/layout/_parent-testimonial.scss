@@ -176,6 +176,29 @@
   }
 
 
+  &__content {
+    position: relative;
+    left: 0;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+
+    &.is-leaving {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    &.is-leaving-prev {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    &.is-entering {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    &.is-entering-prev {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+  }
+
   &__name {
     font-size: 30px;
     margin-bottom: 15px;

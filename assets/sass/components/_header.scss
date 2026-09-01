@@ -200,10 +200,21 @@
             transition: all 0.3s ease;
             white-space: nowrap;
 
-            &:hover {
+            &:hover,
+            &--active {
                 background-color: var(--secondary-color);
                 color: var(--white-color);
                 padding-left: 30px;
+            }
+        }
+
+        // When any item in this submenu is hovered, suppress the active highlight
+        // on non-hovered items — mirrors the main nav bar behaviour
+        &:has(&-item:hover) {
+            .site-header__submenu-link--active:not(:hover) {
+                background-color: transparent;
+                color: var(--white-color);
+                padding-left: 25px;
             }
         }
     }
@@ -428,6 +439,7 @@
         background-color: color-mix(in srgb, var(--white-color), transparent 90%);
         box-shadow: 0 10px 30px color-mix(in srgb, var(--black-color), transparent 90%);
         visibility: hidden;
+        transition: transform 0.3s ease, visibility 0.3s ease;
 
         @include respond(xxxl) {
             padding: 20px 60px;
@@ -444,7 +456,6 @@
         &.ak-gescout_show {
             transform: translateX(-50%) translateY(0);
             visibility: visible;
-            transition: transform 0.4s ease, visibility 0.4s ease;
             background-color: var(--primary-color) !important;
             box-shadow: 0 10px 30px color-mix(in srgb, var(--black-color), transparent 90%);
         }

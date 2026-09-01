@@ -1,7 +1,6 @@
-<!doctype html>
+﻿<!doctype html>
 <html class="no-js" lang="en">
-
-<head>
+  <head>
     <!-- Meta Tags -->
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
@@ -16,503 +15,978 @@
     <link rel="stylesheet" href="assets/css/plugins/aos.css" />
     <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/plugins/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/css/preloader.css" />
 
     <link rel="stylesheet" href="assets/css/style.css" />
-</head>
+  </head>
 
-<body>
+  <body>
+        <!-- ================= Start Preloader ======================== -->
+    <div id="preloader" class="preloader" aria-hidden="true" role="presentation">
+        <div class="preloader__frames">
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf0"/></svg>
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf1"/></svg>
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf2"/></svg>
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf3"/></svg>
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf4"/></svg>
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf5"/></svg>
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf6"/></svg>
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf7"/></svg>
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf8"/></svg>
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf9"/></svg>
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf10"/></svg>
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf11"/></svg>
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf12"/></svg>
+            <svg class="preloader__frame" aria-hidden="true"><use href="assets/img/preloader/paw-frames.svg#pf13"/></svg>
+        </div>
+    </div>
+    <!-- ===================== End Preloader ====================== -->
     <!-- Start Header Section -->
     <header class="ak-site_header ak-style1 ak-sticky_header site-header">
-        <div class="container site-header__container">
-            <div class="site-header__logo">
-                <a href="index.html" class="site-header__logo-link">
-                    <img src="assets/img/logo/logo-together.svg" alt="Patie Logo" class="site-header__logo-img">
-                </a>
-            </div>
-
-            <nav class="site-header__nav">
-                <ul class="site-header__menu">
-                    <li class="site-header__menu-item menu-item-has-children">
-                        <a href="index.html" class="site-header__menu-link"><span>HOME</span></a>
-                        <img src="assets/img/logo/menu-bg.svg" alt="" class="site-header__menu-bg">
-                        <span class="site-header__submenu-bg site-header__submenu-bridge"></span>
-                        <ul class="site-header__submenu site-header__submenu--left">
-                            <li class="site-header__submenu-item"><a href="index.html"
-                                    class="site-header__submenu-link">Pet Home Care</a></li>
-                            <li class="site-header__submenu-item"><a href="pet-grooming.html"
-                                    class="site-header__submenu-link">Pet Grooming</a></li>
-                            <li class="site-header__submenu-item"><a href="pet-boarding.html"
-                                    class="site-header__submenu-link">Pet Boarding</a></li>
-                        </ul>
-                    </li>
-                    <li class="site-header__menu-item">
-                        <a href="about.html" class="site-header__menu-link"><span>ABOUT</span></a>
-                        <img src="assets/img/logo/menu-bg.svg" alt="" class="site-header__menu-bg">
-                    </li>
-                    <li class="site-header__menu-item menu-item-has-children">
-                        <a href="service.html" class="site-header__menu-link"><span>SERVICE</span></a>
-                        <img src="assets/img/logo/menu-bg.svg" alt="" class="site-header__menu-bg">
-                        <span class="site-header__submenu-bg site-header__submenu-bridge"></span>
-                        <ul class="site-header__submenu site-header__submenu--left">
-                            <li class="site-header__submenu-item"><a href="service.html"
-                                    class="site-header__submenu-link">Service</a></li>
-                            <li class="site-header__submenu-item"><a href="service-details.html"
-                                    class="site-header__submenu-link">Service Details</a></li>
-                        </ul>
-                    </li>
-                    <li class="site-header__menu-item menu-item-has-children">
-                        <a href="team.html" class="site-header__menu-link"><span>TEAM</span></a>
-                        <img src="assets/img/logo/menu-bg.svg" alt="" class="site-header__menu-bg">
-                        <span class="site-header__submenu-bg site-header__submenu-bridge"></span>
-                        <ul class="site-header__submenu site-header__submenu--left">
-                            <li class="site-header__submenu-item"><a href="team.html"
-                                    class="site-header__submenu-link">Team</a></li>
-                            <li class="site-header__submenu-item"><a href="team-details.html"
-                                    class="site-header__submenu-link">Team Details</a></li>
-                        </ul>
-                    </li>
-                    <li class="site-header__menu-item menu-item-has-children site-header__menu-item--active">
-                        <a href="blog.html" class="site-header__menu-link"><span>BLOG</span></a>
-                        <img src="assets/img/logo/menu-bg.svg" alt="" class="site-header__menu-bg">
-                        <span class="site-header__submenu-bg site-header__submenu-bridge"></span>
-                        <ul class="site-header__submenu site-header__submenu--left">
-                            <li class="site-header__submenu-item"><a href="blog.html"
-                                    class="site-header__submenu-link">Blog</a></li>
-                            <li class="site-header__submenu-item"><a href="blog-standard.html"
-                                    class="site-header__submenu-link">Blog Standard</a></li>
-                            <li class="site-header__submenu-item"><a href="blog-details.html"
-                                    class="site-header__submenu-link">Blog Details</a></li>
-                        </ul>
-                    </li>
-                    <li class="site-header__menu-item menu-item-has-children">
-                        <a href="shop.html" class="site-header__menu-link"><span>SHOP</span></a>
-                        <img src="assets/img/logo/menu-bg.svg" alt="" class="site-header__menu-bg">
-                        <span class="site-header__submenu-bg site-header__submenu-bridge"></span>
-                        <ul class="site-header__submenu site-header__submenu--left">
-                            <li class="site-header__submenu-item"><a href="shop.html"
-                                    class="site-header__submenu-link">Shop</a></li>
-                            <li class="site-header__submenu-item"><a href="shop-details.html"
-                                    class="site-header__submenu-link">Shop Details</a></li>
-                        </ul>
-                    </li>
-                    <li class="site-header__menu-item menu-item-has-children">
-                        <a href="cart.html" class="site-header__menu-link"><span>CART</span></a>
-                        <img src="assets/img/logo/menu-bg.svg" alt="" class="site-header__menu-bg">
-                        <span class="site-header__submenu-bg site-header__submenu-bridge"></span>
-                        <ul class="site-header__submenu site-header__submenu--left">
-                            <li class="site-header__submenu-item"><a href="cart.html"
-                                    class="site-header__submenu-link">Cart</a></li>
-                            <li class="site-header__submenu-item"><a href="checkout.html"
-                                    class="site-header__submenu-link">Checkout</a></li>
-                        </ul>
-                    </li>
-                    <li class="site-header__menu-item">
-                        <a href="contact.html" class="site-header__menu-link"><span>CONTACT</span></a>
-                        <img src="assets/img/logo/menu-bg.svg" alt="" class="site-header__menu-bg">
-                    </li>
-                </ul>
-            </nav>
-
-            <div class="site-header__actions">
-                <div class="site-header__search-container">
-                    <input type="text" class="site-header__search-input" placeholder="Search...">
-                </div>
-                <button class="site-header__search-btn">
-                    <span class="site-header__search-inner">
-                        <i class="fas fa-search"></i>
-                    </span>
-                </button>
-                <a href="service.html" class="common-btn site-header__book-btn">
-                    <span class="common-btn__inner">BOOK NOW</span>
-                </a>
-                <button class="site-header__mobile-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
+      <div class="container site-header__container">
+        <div class="site-header__logo">
+          <a href="index.html" class="site-header__logo-link">
+            <img
+              src="assets/img/logo/logo-together.svg"
+              alt="Patie Logo"
+              class="site-header__logo-img"
+            />
+          </a>
         </div>
+
+        <nav class="site-header__nav">
+          <ul class="site-header__menu">
+            <li class="site-header__menu-item menu-item-has-children">
+              <a href="index.html" class="site-header__menu-link"
+                ><span>HOME</span></a
+              >
+              <img
+                src="assets/img/logo/menu-bg.svg"
+                alt=""
+                class="site-header__menu-bg"
+              />
+              <span
+                class="site-header__submenu-bg site-header__submenu-bridge"
+              ></span>
+              <ul class="site-header__submenu site-header__submenu--left">
+                <li class="site-header__submenu-item">
+                  <a href="index.html" class="site-header__submenu-link"
+                    >Pet Home Care</a
+                  >
+                </li>
+                <li class="site-header__submenu-item">
+                  <a href="pet-grooming.html" class="site-header__submenu-link"
+                    >Pet Grooming</a
+                  >
+                </li>
+                <li class="site-header__submenu-item">
+                  <a href="pet-boarding.html" class="site-header__submenu-link"
+                    >Pet Boarding</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="site-header__menu-item">
+              <a href="about.html" class="site-header__menu-link"
+                ><span>ABOUT</span></a
+              >
+              <img
+                src="assets/img/logo/menu-bg.svg"
+                alt=""
+                class="site-header__menu-bg"
+              />
+            </li>
+            <li class="site-header__menu-item menu-item-has-children">
+              <a href="service.html" class="site-header__menu-link"
+                ><span>SERVICE</span></a
+              >
+              <img
+                src="assets/img/logo/menu-bg.svg"
+                alt=""
+                class="site-header__menu-bg"
+              />
+              <span
+                class="site-header__submenu-bg site-header__submenu-bridge"
+              ></span>
+              <ul class="site-header__submenu site-header__submenu--left">
+                <li class="site-header__submenu-item">
+                  <a href="service.html" class="site-header__submenu-link"
+                    >Service</a
+                  >
+                </li>
+                <li class="site-header__submenu-item">
+                  <a
+                    href="service-details.html"
+                    class="site-header__submenu-link"
+                    >Service Details</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="site-header__menu-item menu-item-has-children">
+              <a href="team.html" class="site-header__menu-link"
+                ><span>TEAM</span></a
+              >
+              <img
+                src="assets/img/logo/menu-bg.svg"
+                alt=""
+                class="site-header__menu-bg"
+              />
+              <span
+                class="site-header__submenu-bg site-header__submenu-bridge"
+              ></span>
+              <ul class="site-header__submenu site-header__submenu--left">
+                <li class="site-header__submenu-item">
+                  <a href="team.html" class="site-header__submenu-link">Team</a>
+                </li>
+                <li class="site-header__submenu-item">
+                  <a href="team-details.html" class="site-header__submenu-link"
+                    >Team Details</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li
+              class="site-header__menu-item menu-item-has-children site-header__menu-item--active"
+            >
+              <a href="blog.html" class="site-header__menu-link"
+                ><span>BLOG</span></a
+              >
+              <img
+                src="assets/img/logo/menu-bg.svg"
+                alt=""
+                class="site-header__menu-bg"
+              />
+              <span
+                class="site-header__submenu-bg site-header__submenu-bridge"
+              ></span>
+              <ul class="site-header__submenu site-header__submenu--left">
+                <li class="site-header__submenu-item">
+                  <a href="blog.html" class="site-header__submenu-link">Blog</a>
+                </li>
+                <li class="site-header__submenu-item">
+                  <a href="blog-standard.html" class="site-header__submenu-link"
+                    >Blog Standard</a
+                  >
+                </li>
+                <li class="site-header__submenu-item">
+                  <a href="blog-details.html" class="site-header__submenu-link"
+                    >Blog Details</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="site-header__menu-item menu-item-has-children">
+              <a href="shop.html" class="site-header__menu-link"
+                ><span>SHOP</span></a
+              >
+              <img
+                src="assets/img/logo/menu-bg.svg"
+                alt=""
+                class="site-header__menu-bg"
+              />
+              <span
+                class="site-header__submenu-bg site-header__submenu-bridge"
+              ></span>
+              <ul class="site-header__submenu site-header__submenu--left">
+                <li class="site-header__submenu-item">
+                  <a href="shop.html" class="site-header__submenu-link">Shop</a>
+                </li>
+                <li class="site-header__submenu-item">
+                  <a href="shop-details.html" class="site-header__submenu-link"
+                    >Shop Details</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="site-header__menu-item menu-item-has-children">
+              <a href="cart.html" class="site-header__menu-link"
+                ><span>CART</span></a
+              >
+              <img
+                src="assets/img/logo/menu-bg.svg"
+                alt=""
+                class="site-header__menu-bg"
+              />
+              <span
+                class="site-header__submenu-bg site-header__submenu-bridge"
+              ></span>
+              <ul class="site-header__submenu site-header__submenu--left">
+                <li class="site-header__submenu-item">
+                  <a href="cart.html" class="site-header__submenu-link">Cart</a>
+                </li>
+                <li class="site-header__submenu-item">
+                  <a href="checkout.html" class="site-header__submenu-link"
+                    >Checkout</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="site-header__menu-item">
+              <a href="contact.html" class="site-header__menu-link"
+                ><span>CONTACT</span></a
+              >
+              <img
+                src="assets/img/logo/menu-bg.svg"
+                alt=""
+                class="site-header__menu-bg"
+              />
+            </li>
+          </ul>
+        </nav>
+
+        <div class="site-header__actions">
+          <div class="site-header__search-container">
+            <input
+              type="text"
+              class="site-header__search-input"
+              placeholder="Search..."
+            />
+          </div>
+          <button class="site-header__search-btn">
+            <span class="site-header__search-inner">
+              <i class="fas fa-search"></i>
+            </span>
+          </button>
+          <a href="service.html" class="common-btn site-header__book-btn">
+            <span class="common-btn__inner">
+              <svg
+                class="common-btn__dash-svg"
+                viewBox="0 0 170 47"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <rect x="1.5" y="1.5" width="167" height="44" rx="22" ry="22" />
+              </svg>
+              BOOK NOW
+            </span>
+          </a>
+          <button class="site-header__mobile-btn">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
     </header>
     <!-- End Header Section -->
 
     <!-- Start Common Banner Section -->
-    <section class="common-banner ak-bg" data-src="assets/img/hero/common-hero-bg.png">
-        <div class="container">
-            <div class="common-banner__container">
-                <div class="common-banner__content">
-                    <div class="section-header__breadcrumb">
-                        <a href="index.html"
-                            class="section-header__breadcrumb-item section-header__breadcrumb-item--dark">Home</a>
-                        <span class="section-header__breadcrumb-separator">//</span>
-                        <span class="section-header__breadcrumb-item">Blog Standard</span>
-                    </div>
-                    <h1 class="section-header__title">TRUSTED PET CARE
-                        <span>BLOG STANDARD</span>
-                    </h1>
-                </div>
-                <div class="common-banner__img-wrap">
-                    <img src="assets/img/hero/common-hero-dog-and-cat.png" alt="Dog and Cat" class="common-banner__img">
-                </div>
+    <section
+      class="common-banner ak-bg"
+      data-src="assets/img/hero/common-hero-bg.png"
+    >
+      <div class="container">
+        <div class="common-banner__container">
+          <div class="common-banner__content">
+            <div
+              class="section-header__breadcrumb"
+              data-aos="fade-right"
+              data-aos-delay="0"
+            >
+              <a
+                href="index.html"
+                class="section-header__breadcrumb-item section-header__breadcrumb-item--dark"
+                >Home</a
+              >
+              <span class="section-header__breadcrumb-separator">//</span>
+              <span class="section-header__breadcrumb-item">Blog Standard</span>
             </div>
+            <h1
+              class="section-header__title"
+              data-aos="fade-right"
+              data-aos-delay="150"
+            >
+              TRUSTED PET CARE
+              <span>BLOG STANDARD</span>
+            </h1>
+          </div>
+          <div
+            class="common-banner__img-wrap"
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
+            <img
+              src="assets/img/hero/common-hero-dog-and-cat.png"
+              alt="Dog and Cat"
+              class="common-banner__img"
+            />
+          </div>
         </div>
+      </div>
     </section>
     <!-- End Common Banner Section -->
 
     <div class="ak-height-120 ak-height-lg-60"></div>
     <section class="blog">
-        <div class="container">
-            <div class="blog__standard-container">
-                <!-- Blog List (2fr) -->
-                <div class="blog__standard-list">
-                    <!-- Blog Card 1 -->
-                    <div class="blog-card blog-card--lg">
-                        <div class="blog-card__img-wrap">
-                            <a href="blog-details.html" class="blog-card__img-link">
-                                <div class="blog-card__date">
-                                    <span class="blog-card__date-day">21</span>
-                                    <span class="blog-card__date-month">JUNE</span>
-                                </div>
-                                <img src="assets/img/blog-standard/blog-standard-1.png" alt="Blog 1"
-                                    class="blog-card__img">
-                            </a>
-                        </div>
-                        <div class="blog-card__content">
-                            <div class="blog-card__meta">
-                                <span class="blog-card__meta-item">
-                                    <i class="fas fa-user blog-card__meta-icon"></i> Robert Fox
-                                </span>
-                                <span class="blog-card__meta-item">
-                                    <i class="fas fa-comments blog-card__meta-icon"></i> (23) Comments
-                                </span>
-                            </div>
-                            <h3 class="blog-card__title"><a href="blog-details.html"
-                                    class="blog-card__title-link">HEALTHY PETS BLOG IDEAS FOR BETTER DAILY CARE</a></h3>
-                            <p class="blog-card__desc">The Timeline Varies Depending On The Project's Scope And
-                                Complexity. We Provide Detalle Timeline After Assessing Your Specific Needs.</p>
-                            <a href="blog-details.html" class="service-btn service-btn--primary-secondary">
-                                <span class="service-btn__icon">
-                                    <span class="service-btn__dashed-circle"></span>
-                                    <i class="fas fa-arrow-right"></i>
-                                </span>
-                                <span class="service-btn__text">READ MORE</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Blog Card 2 -->
-                    <div class="blog-card blog-card--lg">
-                        <div class="blog-card__img-wrap">
-                            <a href="blog-details.html" class="blog-card__img-link">
-                                <div class="blog-card__date">
-                                    <span class="blog-card__date-day">21</span>
-                                    <span class="blog-card__date-month">JUNE</span>
-                                </div>
-                                <img src="assets/img/blog-standard/blog-standard-2.png" alt="Blog 2"
-                                    class="blog-card__img">
-                            </a>
-                        </div>
-                        <div class="blog-card__content">
-                            <div class="blog-card__meta">
-                                <span class="blog-card__meta-item">
-                                    <i class="fas fa-user blog-card__meta-icon"></i> Robert Fox
-                                </span>
-                                <span class="blog-card__meta-item">
-                                    <i class="fas fa-comments blog-card__meta-icon"></i> (23) Comments
-                                </span>
-                            </div>
-                            <h3 class="blog-card__title"><a href="blog-details.html" class="blog-card__title-link">PUPPY
-                                    AND KITTEN CARE BLOG FOR NEW PET PARENTS</a></h3>
-                            <p class="blog-card__desc">The Timeline Varies Depending On The Project's Scope And
-                                Complexity. We Provide Detalle Timeline After Assessing Your Specific Needs.</p>
-                            <a href="blog-details.html" class="service-btn service-btn--primary-secondary">
-                                <span class="service-btn__icon">
-                                    <span class="service-btn__dashed-circle"></span>
-                                    <i class="fas fa-arrow-right"></i>
-                                </span>
-                                <span class="service-btn__text">READ MORE</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Blog Card 3 -->
-                    <div class="blog-card blog-card--lg">
-                        <div class="blog-card__img-wrap">
-                            <a href="blog-details.html" class="blog-card__img-link">
-                                <div class="blog-card__date">
-                                    <span class="blog-card__date-day">21</span>
-                                    <span class="blog-card__date-month">JUNE</span>
-                                </div>
-                                <img src="assets/img/blog-standard/blog-standard-3.png" alt="Blog 3"
-                                    class="blog-card__img">
-                            </a>
-                        </div>
-                        <div class="blog-card__content">
-                            <div class="blog-card__meta">
-                                <span class="blog-card__meta-item">
-                                    <i class="fas fa-user blog-card__meta-icon"></i> Robert Fox
-                                </span>
-                                <span class="blog-card__meta-item">
-                                    <i class="fas fa-comments blog-card__meta-icon"></i> (23) Comments
-                                </span>
-                            </div>
-                            <h3 class="blog-card__title"><a href="blog-details.html" class="blog-card__title-link">PET
-                                    HYGIENE AND BATHING BLOG GUIDE FOR CLEAN PETS</a></h3>
-                            <p class="blog-card__desc">The Timeline Varies Depending On The Project's Scope And
-                                Complexity. We Provide Detalle Timeline After Assessing Your Specific Needs.</p>
-                            <a href="blog-details.html" class="service-btn service-btn--primary-secondary">
-                                <span class="service-btn__icon">
-                                    <span class="service-btn__dashed-circle"></span>
-                                    <i class="fas fa-arrow-right"></i>
-                                </span>
-                                <span class="service-btn__text">READ MORE</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Pagination -->
-                    <ul class="pagination">
-                        <li class="pagination__item">
-                            <a href="#" class="pagination__link"><i class="fas fa-arrow-left pagination__icon"></i></a>
-                        </li>
-                        <li class="pagination__item pagination__item--active">
-                            <a href="#" class="pagination__link">1</a>
-                        </li>
-                        <li class="pagination__item">
-                            <a href="#" class="pagination__link">2</a>
-                        </li>
-                        <li class="pagination__item">
-                            <a href="#" class="pagination__link">3</a>
-                        </li>
-                        <li class="pagination__item">
-                            <a href="#" class="pagination__link">4</a>
-                        </li>
-                        <li class="pagination__item">
-                            <a href="#" class="pagination__link"><i class="fas fa-arrow-right pagination__icon"></i></a>
-                        </li>
-                    </ul>
+      <div class="container">
+        <div class="blog__standard-container">
+          <!-- Blog List (2fr) -->
+          <div
+            class="blog__standard-list"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
+            <!-- Blog Card 1 -->
+            <div
+              class="blog-card blog-card--lg"
+              data-aos="fade-up"
+              data-aos-delay="0"
+            >
+              <div class="blog-card__img-wrap">
+                <a href="blog-details.html" class="blog-card__img-link">
+                  <div class="blog-card__date">
+                    <span class="blog-card__date-day">21</span>
+                    <span class="blog-card__date-month">JUNE</span>
+                  </div>
+                  <img
+                    src="assets/img/blog-standard/blog-standard-1.png"
+                    alt="Blog 1"
+                    class="blog-card__img"
+                  />
+                </a>
+              </div>
+              <div class="blog-card__content">
+                <div class="blog-card__meta">
+                  <span class="blog-card__meta-item">
+                    <i class="fas fa-user blog-card__meta-icon"></i> Robert Fox
+                  </span>
+                  <span class="blog-card__meta-item">
+                    <i class="fas fa-comments blog-card__meta-icon"></i> (23)
+                    Comments
+                  </span>
                 </div>
-
-                <!-- Sidebar (1fr) -->
-                <aside class="sidebar">
-                    <!-- Search Widget -->
-                    <div class="sidebar__widget sidebar__widget--purple">
-                        <h2 class="sidebar__title">SEARCH</h2>
-                        <img src="assets/img/icon/sidebar-divider.svg" alt="" class="sidebar__divider">
-                        <form action="#" class="sidebar__search-form">
-                            <input type="text" placeholder="Search Here..." class="sidebar__search-input">
-                            <button type="submit" class="sidebar__search-btn">SEARCH</button>
-                        </form>
-                    </div>
-
-                    <!-- Category Widget -->
-                    <div class="sidebar__widget sidebar__widget--purple">
-                        <h3 class="sidebar__title">CATEGORY</h3>
-                        <img src="assets/img/icon/sidebar-divider.svg" alt="" class="sidebar__divider">
-                        <ul class="sidebar__cat-list">
-                            <li class="sidebar__cat-item"><a href="#" class="sidebar__cat-link">COMFORT PET SITTING
-                                    <span class="sidebar__cat-icon"><i class="fas fa-arrow-right"></i></span></a></li>
-                            <li class="sidebar__cat-item"><a href="#" class="sidebar__cat-link">VACCINATION CARE <span
-                                        class="sidebar__cat-icon"><i class="fas fa-arrow-right"></i></span></a></li>
-                            <li class="sidebar__cat-item"><a href="#" class="sidebar__cat-link">SALON & GROOMING <span
-                                        class="sidebar__cat-icon"><i class="fas fa-arrow-right"></i></span></a></li>
-                            <li class="sidebar__cat-item"><a href="#" class="sidebar__cat-link">CCTV LIVE / SAFETY <span
-                                        class="sidebar__cat-icon"><i class="fas fa-arrow-right"></i></span></a></li>
-                            <li class="sidebar__cat-item"><a href="#" class="sidebar__cat-link">SAFE ADOPTION <span
-                                        class="sidebar__cat-icon"><i class="fas fa-arrow-right"></i></span></a></li>
-                            <li class="sidebar__cat-item"><a href="#" class="sidebar__cat-link">HEALTH CHECKUP <span
-                                        class="sidebar__cat-icon"><i class="fas fa-arrow-right"></i></span></a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Latest News Widget -->
-                    <div class="sidebar__widget sidebar__widget--purple">
-                        <h3 class="sidebar__title">LATEST NEWS</h3>
-                        <img src="assets/img/icon/sidebar-divider.svg" alt="" class="sidebar__divider">
-                        <div class="sidebar__news-list">
-                            <div class="sidebar__news-item">
-                                <img src="assets/img/blog-standard/sidebar-latest-1.png" alt="News 1"
-                                    class="sidebar__news-img">
-                                <div class="sidebar__news-info">
-                                    <span class="sidebar__news-date"><i
-                                            class="fas fa-calendar-alt sidebar__news-date-icon"></i> 22 Aug,
-                                        2025</span>
-                                    <a href="#" class="sidebar__news-title">Daily Pet Care Blog Tips Happy and Healthy
-                                        Pets</a>
-                                </div>
-                            </div>
-                            <div class="sidebar__news-item">
-                                <img src="assets/img/blog-standard/sidebar-latest-2.png" alt="News 2"
-                                    class="sidebar__news-img">
-                                <div class="sidebar__news-info">
-                                    <span class="sidebar__news-date"><i class="fas fa-calendar-alt"></i> 22 Aug,
-                                        2025</span>
-                                    <a href="#" class="sidebar__news-title">Pet Care Blog Every Pet Owner with Expert
-                                        Advice</a>
-                                </div>
-                            </div>
-                            <div class="sidebar__news-item">
-                                <img src="assets/img/blog-standard/sidebar-latest-3.png" alt="News 3"
-                                    class="sidebar__news-img">
-                                <div class="sidebar__news-info">
-                                    <span class="sidebar__news-date"><i class="fas fa-calendar-alt"></i> 22 Aug,
-                                        2025</span>
-                                    <a href="#" class="sidebar__news-title">Pet Health and Safety Blog Tips for Every
-                                        Pet Owner</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Get Updates Widget -->
-                    <div class="sidebar__widget sidebar__widget--primary">
-                        <h2 class="sidebar__title sidebar__title--white">GET UPDATES</h2>
-                        <img src="assets/img/icon/sidebar-divider.svg" alt=""
-                            class="sidebar__divider sidebar__divider--white">
-                        <p class="sidebar__desc">Subscribe Email And Get Recent News And Updates Or Offers.</p>
-                        <form action="#" class="sidebar__form">
-                            <input type="email" placeholder="Email address..." class="sidebar__input" required>
-                            <button type="submit" class="sidebar__submit">SUBSCRIBE</button>
-                        </form>
-                    </div>
-                </aside>
+                <h3 class="blog-card__title">
+                  <a href="blog-details.html" class="blog-card__title-link"
+                    >HEALTHY PETS BLOG IDEAS FOR BETTER DAILY CARE</a
+                  >
+                </h3>
+                <p class="blog-card__desc">
+                  The Timeline Varies Depending On The Project's Scope And
+                  Complexity. We Provide Detalle Timeline After Assessing Your
+                  Specific Needs.
+                </p>
+                <a
+                  href="blog-details.html"
+                  class="service-btn service-btn--primary-secondary"
+                >
+                  <span class="service-btn__icon">
+                    <svg
+                      class="service-btn__dashed-circle"
+                      viewBox="0 0 46 46"
+                      fill="none"
+                      aria-hidden="true"
+                      focusable="false"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M24.4697 0.0498047C25.4826 0.115378 26.4774 0.246591 27.4502 0.439453L27.3047 1.17383C28.2647 1.36417 29.2031 1.61685 30.1143 1.92676L30.3555 1.2168V1.21582C31.3106 1.5407 32.2369 1.92841 33.1309 2.37109L32.7988 3.04199C33.6712 3.474 34.5113 3.9621 35.3145 4.50098L35.7314 3.87793C36.5658 4.43773 37.3611 5.05132 38.1133 5.71289L37.6191 6.27637C38.3477 6.91725 39.0344 7.60482 39.6738 8.33496L40.2363 7.8418C40.8962 8.59529 41.5081 9.39181 42.0664 10.2275L41.4443 10.6436C41.9815 11.4478 42.4678 12.2896 42.8984 13.1631L43.5684 12.8311C44.0095 13.7258 44.396 14.6526 44.7197 15.6084V15.6094L44.0098 15.8496C44.3184 16.7612 44.5692 17.6998 44.7588 18.6602L45.4932 18.5146C45.6852 19.4876 45.8155 20.4823 45.8809 21.4951L45.1348 21.5439C45.1658 22.0252 45.1816 22.5107 45.1816 23C45.1816 23.4893 45.1658 23.9748 45.1348 24.4561L45.8809 24.5039C45.8156 25.5167 45.6852 26.5115 45.4932 27.4844L44.7588 27.3398C44.5692 28.3002 44.3184 29.2388 44.0098 30.1504L44.7197 30.3906C44.396 31.3465 44.0095 32.2732 43.5684 33.168L42.8984 32.8369C42.4678 33.7104 41.9815 34.5522 41.4443 35.3564L42.0664 35.7715C41.5081 36.6073 40.8962 37.4037 40.2363 38.1572L39.6738 37.665C39.0344 38.3952 38.3477 39.0827 37.6191 39.7236L38.1133 40.2861C37.3611 40.9477 36.5658 41.5613 35.7314 42.1211L35.3145 41.499C34.5113 42.0379 33.6712 42.526 32.7988 42.958L33.1309 43.6279C32.2368 44.0707 31.3107 44.4583 30.3555 44.7832L30.1143 44.0732C29.2031 44.3832 28.2647 44.6358 27.3047 44.8262L27.4502 45.5596C26.4773 45.7524 25.4826 45.8836 24.4697 45.9492L24.4219 45.2031C23.9406 45.2343 23.4551 45.25 22.9658 45.25C22.4765 45.25 21.991 45.2343 21.5098 45.2031L21.4609 45.9492C20.4481 45.8836 19.4533 45.7534 18.4805 45.5605L18.626 44.8262C17.6661 44.6358 16.7284 44.3831 15.8174 44.0732L15.5762 44.7832H15.5752C14.62 44.4583 13.6938 44.0707 12.7998 43.6279L13.1328 42.958C12.2604 42.526 11.4203 42.0379 10.6172 41.499L10.1992 42.1211C9.36485 41.5612 8.56953 40.9478 7.81738 40.2861L8.3125 39.7236C7.58392 39.0828 6.89724 38.3952 6.25781 37.665L5.69434 38.1572C5.03449 37.4037 4.4225 36.6072 3.86426 35.7715L4.4873 35.3564C3.95009 34.5522 3.46381 33.7104 3.0332 32.8369L2.36133 33.168C1.92031 32.2733 1.53454 31.3463 1.21094 30.3906L1.92188 30.1504C1.6132 29.2388 1.36145 28.3002 1.17188 27.3398L0.4375 27.4844C0.245506 26.5115 0.115081 25.5167 0.0498047 24.5039L0.796875 24.4561C0.765851 23.9748 0.75 23.4893 0.75 23C0.75 22.5107 0.765851 22.0252 0.796875 21.5439L0.0498047 21.4951C0.115123 20.4823 0.245466 19.4875 0.4375 18.5146L1.17188 18.6602C1.36145 17.6998 1.6132 16.7612 1.92188 15.8496L1.21191 15.6094L1.21094 15.6084C1.53458 14.6527 1.92029 13.7257 2.36133 12.8311L3.0332 13.1631C3.46381 12.2896 3.95009 11.4478 4.4873 10.6436L3.86426 10.2275C4.42251 9.39182 5.03448 8.59528 5.69434 7.8418L6.25781 8.33496C6.89724 7.60482 7.58392 6.91725 8.3125 6.27637L7.81738 5.71289C8.56952 5.05131 9.36487 4.43774 10.1992 3.87793L10.6172 4.50098C11.4203 3.96211 12.2604 3.47399 13.1328 3.04199L12.7998 2.37109C13.6938 1.92838 14.6201 1.54073 15.5752 1.21582L15.5762 1.2168L15.8174 1.92676C16.7284 1.61689 17.6661 1.36417 18.626 1.17383L18.4805 0.438477C19.4532 0.245598 20.4482 0.115413 21.4609 0.0498047L21.5098 0.796875C21.991 0.76571 22.4765 0.75 22.9658 0.75C23.4551 0.750001 23.9406 0.765707 24.4219 0.796875L24.4697 0.0498047Z"
+                      />
+                    </svg>
+                    <i class="fas fa-arrow-right"></i>
+                  </span>
+                  <span class="service-btn__text">READ MORE</span>
+                </a>
+              </div>
             </div>
 
+            <!-- Blog Card 2 -->
+            <div
+              class="blog-card blog-card--lg"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="blog-card__img-wrap">
+                <a href="blog-details.html" class="blog-card__img-link">
+                  <div class="blog-card__date">
+                    <span class="blog-card__date-day">21</span>
+                    <span class="blog-card__date-month">JUNE</span>
+                  </div>
+                  <img
+                    src="assets/img/blog-standard/blog-standard-2.png"
+                    alt="Blog 2"
+                    class="blog-card__img"
+                  />
+                </a>
+              </div>
+              <div class="blog-card__content">
+                <div class="blog-card__meta">
+                  <span class="blog-card__meta-item">
+                    <i class="fas fa-user blog-card__meta-icon"></i> Robert Fox
+                  </span>
+                  <span class="blog-card__meta-item">
+                    <i class="fas fa-comments blog-card__meta-icon"></i> (23)
+                    Comments
+                  </span>
+                </div>
+                <h3 class="blog-card__title">
+                  <a href="blog-details.html" class="blog-card__title-link"
+                    >PUPPY AND KITTEN CARE BLOG FOR NEW PET PARENTS</a
+                  >
+                </h3>
+                <p class="blog-card__desc">
+                  The Timeline Varies Depending On The Project's Scope And
+                  Complexity. We Provide Detalle Timeline After Assessing Your
+                  Specific Needs.
+                </p>
+                <a
+                  href="blog-details.html"
+                  class="service-btn service-btn--primary-secondary"
+                >
+                  <span class="service-btn__icon">
+                    <svg
+                      class="service-btn__dashed-circle"
+                      viewBox="0 0 46 46"
+                      fill="none"
+                      aria-hidden="true"
+                      focusable="false"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M24.4697 0.0498047C25.4826 0.115378 26.4774 0.246591 27.4502 0.439453L27.3047 1.17383C28.2647 1.36417 29.2031 1.61685 30.1143 1.92676L30.3555 1.2168V1.21582C31.3106 1.5407 32.2369 1.92841 33.1309 2.37109L32.7988 3.04199C33.6712 3.474 34.5113 3.9621 35.3145 4.50098L35.7314 3.87793C36.5658 4.43773 37.3611 5.05132 38.1133 5.71289L37.6191 6.27637C38.3477 6.91725 39.0344 7.60482 39.6738 8.33496L40.2363 7.8418C40.8962 8.59529 41.5081 9.39181 42.0664 10.2275L41.4443 10.6436C41.9815 11.4478 42.4678 12.2896 42.8984 13.1631L43.5684 12.8311C44.0095 13.7258 44.396 14.6526 44.7197 15.6084V15.6094L44.0098 15.8496C44.3184 16.7612 44.5692 17.6998 44.7588 18.6602L45.4932 18.5146C45.6852 19.4876 45.8155 20.4823 45.8809 21.4951L45.1348 21.5439C45.1658 22.0252 45.1816 22.5107 45.1816 23C45.1816 23.4893 45.1658 23.9748 45.1348 24.4561L45.8809 24.5039C45.8156 25.5167 45.6852 26.5115 45.4932 27.4844L44.7588 27.3398C44.5692 28.3002 44.3184 29.2388 44.0098 30.1504L44.7197 30.3906C44.396 31.3465 44.0095 32.2732 43.5684 33.168L42.8984 32.8369C42.4678 33.7104 41.9815 34.5522 41.4443 35.3564L42.0664 35.7715C41.5081 36.6073 40.8962 37.4037 40.2363 38.1572L39.6738 37.665C39.0344 38.3952 38.3477 39.0827 37.6191 39.7236L38.1133 40.2861C37.3611 40.9477 36.5658 41.5613 35.7314 42.1211L35.3145 41.499C34.5113 42.0379 33.6712 42.526 32.7988 42.958L33.1309 43.6279C32.2368 44.0707 31.3107 44.4583 30.3555 44.7832L30.1143 44.0732C29.2031 44.3832 28.2647 44.6358 27.3047 44.8262L27.4502 45.5596C26.4773 45.7524 25.4826 45.8836 24.4697 45.9492L24.4219 45.2031C23.9406 45.2343 23.4551 45.25 22.9658 45.25C22.4765 45.25 21.991 45.2343 21.5098 45.2031L21.4609 45.9492C20.4481 45.8836 19.4533 45.7534 18.4805 45.5605L18.626 44.8262C17.6661 44.6358 16.7284 44.3831 15.8174 44.0732L15.5762 44.7832H15.5752C14.62 44.4583 13.6938 44.0707 12.7998 43.6279L13.1328 42.958C12.2604 42.526 11.4203 42.0379 10.6172 41.499L10.1992 42.1211C9.36485 41.5612 8.56953 40.9478 7.81738 40.2861L8.3125 39.7236C7.58392 39.0828 6.89724 38.3952 6.25781 37.665L5.69434 38.1572C5.03449 37.4037 4.4225 36.6072 3.86426 35.7715L4.4873 35.3564C3.95009 34.5522 3.46381 33.7104 3.0332 32.8369L2.36133 33.168C1.92031 32.2733 1.53454 31.3463 1.21094 30.3906L1.92188 30.1504C1.6132 29.2388 1.36145 28.3002 1.17188 27.3398L0.4375 27.4844C0.245506 26.5115 0.115081 25.5167 0.0498047 24.5039L0.796875 24.4561C0.765851 23.9748 0.75 23.4893 0.75 23C0.75 22.5107 0.765851 22.0252 0.796875 21.5439L0.0498047 21.4951C0.115123 20.4823 0.245466 19.4875 0.4375 18.5146L1.17188 18.6602C1.36145 17.6998 1.6132 16.7612 1.92188 15.8496L1.21191 15.6094L1.21094 15.6084C1.53458 14.6527 1.92029 13.7257 2.36133 12.8311L3.0332 13.1631C3.46381 12.2896 3.95009 11.4478 4.4873 10.6436L3.86426 10.2275C4.42251 9.39182 5.03448 8.59528 5.69434 7.8418L6.25781 8.33496C6.89724 7.60482 7.58392 6.91725 8.3125 6.27637L7.81738 5.71289C8.56952 5.05131 9.36487 4.43774 10.1992 3.87793L10.6172 4.50098C11.4203 3.96211 12.2604 3.47399 13.1328 3.04199L12.7998 2.37109C13.6938 1.92838 14.6201 1.54073 15.5752 1.21582L15.5762 1.2168L15.8174 1.92676C16.7284 1.61689 17.6661 1.36417 18.626 1.17383L18.4805 0.438477C19.4532 0.245598 20.4482 0.115413 21.4609 0.0498047L21.5098 0.796875C21.991 0.76571 22.4765 0.75 22.9658 0.75C23.4551 0.750001 23.9406 0.765707 24.4219 0.796875L24.4697 0.0498047Z"
+                      />
+                    </svg>
+                    <i class="fas fa-arrow-right"></i>
+                  </span>
+                  <span class="service-btn__text">READ MORE</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Blog Card 3 -->
+            <div
+              class="blog-card blog-card--lg"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="blog-card__img-wrap">
+                <a href="blog-details.html" class="blog-card__img-link">
+                  <div class="blog-card__date">
+                    <span class="blog-card__date-day">21</span>
+                    <span class="blog-card__date-month">JUNE</span>
+                  </div>
+                  <img
+                    src="assets/img/blog-standard/blog-standard-3.png"
+                    alt="Blog 3"
+                    class="blog-card__img"
+                  />
+                </a>
+              </div>
+              <div class="blog-card__content">
+                <div class="blog-card__meta">
+                  <span class="blog-card__meta-item">
+                    <i class="fas fa-user blog-card__meta-icon"></i> Robert Fox
+                  </span>
+                  <span class="blog-card__meta-item">
+                    <i class="fas fa-comments blog-card__meta-icon"></i> (23)
+                    Comments
+                  </span>
+                </div>
+                <h3 class="blog-card__title">
+                  <a href="blog-details.html" class="blog-card__title-link"
+                    >PET HYGIENE AND BATHING BLOG GUIDE FOR CLEAN PETS</a
+                  >
+                </h3>
+                <p class="blog-card__desc">
+                  The Timeline Varies Depending On The Project's Scope And
+                  Complexity. We Provide Detalle Timeline After Assessing Your
+                  Specific Needs.
+                </p>
+                <a
+                  href="blog-details.html"
+                  class="service-btn service-btn--primary-secondary"
+                >
+                  <span class="service-btn__icon">
+                    <svg
+                      class="service-btn__dashed-circle"
+                      viewBox="0 0 46 46"
+                      fill="none"
+                      aria-hidden="true"
+                      focusable="false"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M24.4697 0.0498047C25.4826 0.115378 26.4774 0.246591 27.4502 0.439453L27.3047 1.17383C28.2647 1.36417 29.2031 1.61685 30.1143 1.92676L30.3555 1.2168V1.21582C31.3106 1.5407 32.2369 1.92841 33.1309 2.37109L32.7988 3.04199C33.6712 3.474 34.5113 3.9621 35.3145 4.50098L35.7314 3.87793C36.5658 4.43773 37.3611 5.05132 38.1133 5.71289L37.6191 6.27637C38.3477 6.91725 39.0344 7.60482 39.6738 8.33496L40.2363 7.8418C40.8962 8.59529 41.5081 9.39181 42.0664 10.2275L41.4443 10.6436C41.9815 11.4478 42.4678 12.2896 42.8984 13.1631L43.5684 12.8311C44.0095 13.7258 44.396 14.6526 44.7197 15.6084V15.6094L44.0098 15.8496C44.3184 16.7612 44.5692 17.6998 44.7588 18.6602L45.4932 18.5146C45.6852 19.4876 45.8155 20.4823 45.8809 21.4951L45.1348 21.5439C45.1658 22.0252 45.1816 22.5107 45.1816 23C45.1816 23.4893 45.1658 23.9748 45.1348 24.4561L45.8809 24.5039C45.8156 25.5167 45.6852 26.5115 45.4932 27.4844L44.7588 27.3398C44.5692 28.3002 44.3184 29.2388 44.0098 30.1504L44.7197 30.3906C44.396 31.3465 44.0095 32.2732 43.5684 33.168L42.8984 32.8369C42.4678 33.7104 41.9815 34.5522 41.4443 35.3564L42.0664 35.7715C41.5081 36.6073 40.8962 37.4037 40.2363 38.1572L39.6738 37.665C39.0344 38.3952 38.3477 39.0827 37.6191 39.7236L38.1133 40.2861C37.3611 40.9477 36.5658 41.5613 35.7314 42.1211L35.3145 41.499C34.5113 42.0379 33.6712 42.526 32.7988 42.958L33.1309 43.6279C32.2368 44.0707 31.3107 44.4583 30.3555 44.7832L30.1143 44.0732C29.2031 44.3832 28.2647 44.6358 27.3047 44.8262L27.4502 45.5596C26.4773 45.7524 25.4826 45.8836 24.4697 45.9492L24.4219 45.2031C23.9406 45.2343 23.4551 45.25 22.9658 45.25C22.4765 45.25 21.991 45.2343 21.5098 45.2031L21.4609 45.9492C20.4481 45.8836 19.4533 45.7534 18.4805 45.5605L18.626 44.8262C17.6661 44.6358 16.7284 44.3831 15.8174 44.0732L15.5762 44.7832H15.5752C14.62 44.4583 13.6938 44.0707 12.7998 43.6279L13.1328 42.958C12.2604 42.526 11.4203 42.0379 10.6172 41.499L10.1992 42.1211C9.36485 41.5612 8.56953 40.9478 7.81738 40.2861L8.3125 39.7236C7.58392 39.0828 6.89724 38.3952 6.25781 37.665L5.69434 38.1572C5.03449 37.4037 4.4225 36.6072 3.86426 35.7715L4.4873 35.3564C3.95009 34.5522 3.46381 33.7104 3.0332 32.8369L2.36133 33.168C1.92031 32.2733 1.53454 31.3463 1.21094 30.3906L1.92188 30.1504C1.6132 29.2388 1.36145 28.3002 1.17188 27.3398L0.4375 27.4844C0.245506 26.5115 0.115081 25.5167 0.0498047 24.5039L0.796875 24.4561C0.765851 23.9748 0.75 23.4893 0.75 23C0.75 22.5107 0.765851 22.0252 0.796875 21.5439L0.0498047 21.4951C0.115123 20.4823 0.245466 19.4875 0.4375 18.5146L1.17188 18.6602C1.36145 17.6998 1.6132 16.7612 1.92188 15.8496L1.21191 15.6094L1.21094 15.6084C1.53458 14.6527 1.92029 13.7257 2.36133 12.8311L3.0332 13.1631C3.46381 12.2896 3.95009 11.4478 4.4873 10.6436L3.86426 10.2275C4.42251 9.39182 5.03448 8.59528 5.69434 7.8418L6.25781 8.33496C6.89724 7.60482 7.58392 6.91725 8.3125 6.27637L7.81738 5.71289C8.56952 5.05131 9.36487 4.43774 10.1992 3.87793L10.6172 4.50098C11.4203 3.96211 12.2604 3.47399 13.1328 3.04199L12.7998 2.37109C13.6938 1.92838 14.6201 1.54073 15.5752 1.21582L15.5762 1.2168L15.8174 1.92676C16.7284 1.61689 17.6661 1.36417 18.626 1.17383L18.4805 0.438477C19.4532 0.245598 20.4482 0.115413 21.4609 0.0498047L21.5098 0.796875C21.991 0.76571 22.4765 0.75 22.9658 0.75C23.4551 0.750001 23.9406 0.765707 24.4219 0.796875L24.4697 0.0498047Z"
+                      />
+                    </svg>
+                    <i class="fas fa-arrow-right"></i>
+                  </span>
+                  <span class="service-btn__text">READ MORE</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Pagination -->
+            <ul class="pagination" data-aos="fade-up" data-aos-delay="0">
+              <li class="pagination__item">
+                <a href="#" class="pagination__link"
+                  ><i class="fas fa-arrow-left pagination__icon"></i
+                ></a>
+              </li>
+              <li class="pagination__item pagination__item--active">
+                <a href="#" class="pagination__link">1</a>
+              </li>
+              <li class="pagination__item">
+                <a href="#" class="pagination__link">2</a>
+              </li>
+              <li class="pagination__item">
+                <a href="#" class="pagination__link">3</a>
+              </li>
+              <li class="pagination__item">
+                <a href="#" class="pagination__link">4</a>
+              </li>
+              <li class="pagination__item">
+                <a href="#" class="pagination__link"
+                  ><i class="fas fa-arrow-right pagination__icon"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Sidebar (1fr) -->
+          <aside class="sidebar" data-aos="fade-up" data-aos-delay="0">
+            <!-- Search Widget -->
+            <div
+              class="sidebar__widget sidebar__widget--purple"
+              data-aos="fade-up"
+              data-aos-delay="0"
+            >
+              <h2 class="sidebar__title">SEARCH</h2>
+              <img
+                src="assets/img/icon/sidebar-divider.svg"
+                alt=""
+                class="sidebar__divider"
+              />
+              <form action="#" class="sidebar__search-form">
+                <input
+                  type="text"
+                  placeholder="Search Here..."
+                  class="sidebar__search-input"
+                />
+                <button type="submit" class="sidebar__search-btn">
+                  SEARCH
+                </button>
+              </form>
+            </div>
+
+            <!-- Category Widget -->
+            <div
+              class="sidebar__widget sidebar__widget--purple"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <h3 class="sidebar__title">CATEGORY</h3>
+              <img
+                src="assets/img/icon/sidebar-divider.svg"
+                alt=""
+                class="sidebar__divider"
+              />
+              <ul class="sidebar__cat-list">
+                <li class="sidebar__cat-item">
+                  <a href="#" class="sidebar__cat-link"
+                    >COMFORT PET SITTING
+                    <span class="sidebar__cat-icon"
+                      ><i class="fas fa-arrow-right"></i></span
+                  ></a>
+                </li>
+                <li class="sidebar__cat-item">
+                  <a href="#" class="sidebar__cat-link"
+                    >VACCINATION CARE
+                    <span class="sidebar__cat-icon"
+                      ><i class="fas fa-arrow-right"></i></span
+                  ></a>
+                </li>
+                <li class="sidebar__cat-item">
+                  <a href="#" class="sidebar__cat-link"
+                    >SALON & GROOMING
+                    <span class="sidebar__cat-icon"
+                      ><i class="fas fa-arrow-right"></i></span
+                  ></a>
+                </li>
+                <li class="sidebar__cat-item">
+                  <a href="#" class="sidebar__cat-link"
+                    >CCTV LIVE / SAFETY
+                    <span class="sidebar__cat-icon"
+                      ><i class="fas fa-arrow-right"></i></span
+                  ></a>
+                </li>
+                <li class="sidebar__cat-item">
+                  <a href="#" class="sidebar__cat-link"
+                    >SAFE ADOPTION
+                    <span class="sidebar__cat-icon"
+                      ><i class="fas fa-arrow-right"></i></span
+                  ></a>
+                </li>
+                <li class="sidebar__cat-item">
+                  <a href="#" class="sidebar__cat-link"
+                    >HEALTH CHECKUP
+                    <span class="sidebar__cat-icon"
+                      ><i class="fas fa-arrow-right"></i></span
+                  ></a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Latest News Widget -->
+            <div
+              class="sidebar__widget sidebar__widget--purple"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <h3 class="sidebar__title">LATEST NEWS</h3>
+              <img
+                src="assets/img/icon/sidebar-divider.svg"
+                alt=""
+                class="sidebar__divider"
+              />
+              <div class="sidebar__news-list">
+                <div class="sidebar__news-item">
+                  <img
+                    src="assets/img/blog-standard/sidebar-latest-1.png"
+                    alt="News 1"
+                    class="sidebar__news-img"
+                  />
+                  <div class="sidebar__news-info">
+                    <span class="sidebar__news-date"
+                      ><i
+                        class="fas fa-calendar-alt sidebar__news-date-icon"
+                      ></i>
+                      22 Aug, 2025</span
+                    >
+                    <a href="#" class="sidebar__news-title"
+                      >Daily Pet Care Blog Tips Happy and Healthy Pets</a
+                    >
+                  </div>
+                </div>
+                <div class="sidebar__news-item">
+                  <img
+                    src="assets/img/blog-standard/sidebar-latest-2.png"
+                    alt="News 2"
+                    class="sidebar__news-img"
+                  />
+                  <div class="sidebar__news-info">
+                    <span class="sidebar__news-date"
+                      ><i class="fas fa-calendar-alt"></i> 22 Aug, 2025</span
+                    >
+                    <a href="#" class="sidebar__news-title"
+                      >Pet Care Blog Every Pet Owner with Expert Advice</a
+                    >
+                  </div>
+                </div>
+                <div class="sidebar__news-item">
+                  <img
+                    src="assets/img/blog-standard/sidebar-latest-3.png"
+                    alt="News 3"
+                    class="sidebar__news-img"
+                  />
+                  <div class="sidebar__news-info">
+                    <span class="sidebar__news-date"
+                      ><i class="fas fa-calendar-alt"></i> 22 Aug, 2025</span
+                    >
+                    <a href="#" class="sidebar__news-title"
+                      >Pet Health and Safety Blog Tips for Every Pet Owner</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Get Updates Widget -->
+            <div
+              class="sidebar__widget sidebar__widget--primary"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <h2 class="sidebar__title sidebar__title--white">GET UPDATES</h2>
+              <img
+                src="assets/img/icon/sidebar-divider.svg"
+                alt=""
+                class="sidebar__divider sidebar__divider--white"
+              />
+              <p class="sidebar__desc">
+                Subscribe Email And Get Recent News And Updates Or Offers.
+              </p>
+              <form action="#" class="sidebar__form">
+                <input
+                  type="email"
+                  placeholder="Email address..."
+                  class="sidebar__input"
+                  required
+                />
+                <button type="submit" class="sidebar__submit">SUBSCRIBE</button>
+              </form>
+            </div>
+          </aside>
         </div>
+      </div>
     </section>
     <div class="ak-height-120 ak-height-lg-60"></div>
     <!-- Start Footer -->
     <footer class="footer">
-        <img class="footer__bg" src="assets/img/footer/footer-bg.png" alt="">
+      <img class="footer__bg" src="assets/img/footer/footer-bg.png" alt="" />
 
-        <div class="container footer__container">
-            <div class="footer__top">
-                <span class="footer__horizontal-line footer__horizontal-line--top"></span>
-                <div class="footer__assets">
-                    <img class="footer__pet-left" src="assets/img/footer/footer-cat-dog-2.png" alt="">
-                    <img class="footer__pet-right" src="assets/img/footer/footer-cat-dog-1.png" alt="">
-                </div>
-                <!-- Column 1 -->
-                <div class="footer__col footer__col--newsletter">
-                    <h2 class="footer__title">SUBSCRIBE NEWSLETTER</h2>
-                    <p class="footer__desc">We Are Dedicated To Crafting High-Quality Fabrics That Combine Innovation,
-                        Sustainability.</p>
-                    <form action="#" class="footer__form">
-                        <input type="email" placeholder="Enter Your Email Address" class="footer__input" required>
-                        <button type="submit" class="footer__submit">
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </form>
-                    <div class="footer__socials">
-                        <a href="#" class="footer__social-link"><i
-                                class="fab fa-facebook-f footer__social-icon"></i></a>
-                        <a href="#" class="footer__social-link"><i class="fab fa-twitter footer__social-icon"></i></a>
-                        <a href="#" class="footer__social-link"><i class="fab fa-instagram footer__social-icon"></i></a>
-                        <a href="#" class="footer__social-link"><i
-                                class="fab fa-pinterest-p footer__social-icon"></i></a>
-                    </div>
-                </div>
-
-                <!-- Column 2 -->
-                <div class="footer__col footer__col--links">
-                    <div class="footer__col-inner">
-                        <h2 class="footer__title">QUICK LINKS</h2>
-                        <img class="footer__title-line" src="assets/img/footer/footer-line.svg" alt="">
-                        <ul class="footer__list">
-                            <li class="footer__list-item"><a href="#" class="footer__list-link"><img
-                                        src="assets/img/footer/footer-paw.svg" alt="" class="footer__list-icon">
-                                    Home</a></li>
-                            <li class="footer__list-item"><a href="#" class="footer__list-link"><img
-                                        src="assets/img/footer/footer-paw.svg" alt="" class="footer__list-icon">
-                                    About</a></li>
-                            <li class="footer__list-item"><a href="#" class="footer__list-link"><img
-                                        src="assets/img/footer/footer-paw.svg" alt="" class="footer__list-icon"> Our
-                                    Services</a></li>
-                            <li class="footer__list-item"><a href="#" class="footer__list-link"><img
-                                        src="assets/img/footer/footer-paw.svg" alt="" class="footer__list-icon"> Book
-                                    Appointment</a></li>
-                            <li class="footer__list-item"><a href="#" class="footer__list-link"><img
-                                        src="assets/img/footer/footer-paw.svg" alt="" class="footer__list-icon">
-                                    Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Column 3 -->
-                <div class="footer__col footer__col--services">
-                    <div class="footer__col-inner">
-                        <h2 class="footer__title">SERVICES</h2>
-                        <img class="footer__title-line" src="assets/img/footer/footer-line.svg" alt="">
-                        <ul class="footer__list">
-                            <li class="footer__list-item"><a href="#" class="footer__list-link"><img
-                                        src="assets/img/footer/footer-paw.svg" alt="" class="footer__list-icon"> Salon &
-                                    Grooming</a></li>
-                            <li class="footer__list-item"><a href="#" class="footer__list-link"><img
-                                        src="assets/img/footer/footer-paw.svg" alt="" class="footer__list-icon"> Safe
-                                    Adoption</a></li>
-                            <li class="footer__list-item"><a href="#" class="footer__list-link"><img
-                                        src="assets/img/footer/footer-paw.svg" alt="" class="footer__list-icon">
-                                    Vaccination Care</a></li>
-                            <li class="footer__list-item"><a href="#" class="footer__list-link"><img
-                                        src="assets/img/footer/footer-paw.svg" alt="" class="footer__list-icon"> Comfort
-                                    Pet Sitting</a></li>
-                            <li class="footer__list-item"><a href="#" class="footer__list-link"><img
-                                        src="assets/img/footer/footer-paw.svg" alt="" class="footer__list-icon"> CCTV
-                                    Live / Safety</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Column 4 -->
-                <div class="footer__col footer__col--contact">
-                    <div class="footer__col-inner">
-                        <h2 class="footer__title">CONTACT US</h2>
-                        <img class="footer__title-line" src="assets/img/footer/footer-line.svg" alt="">
-                        <ul class="footer__contact-list">
-                            <li class="footer__contact-item">
-                                <i class="fas fa-map-marker-alt footer__contact-icon"></i>
-                                <span class="footer__contact-text">8502 Preston Rd. Inglewood<br>Maine 98380</span>
-                            </li>
-                            <li class="footer__contact-item">
-                                <i class="fas fa-phone-alt footer__contact-icon"></i>
-                                <span class="footer__contact-text">+(163)-2654-3654<br>+(163)-2654-3564</span>
-                            </li>
-                            <li class="footer__contact-item">
-                                <i class="fas fa-envelope footer__contact-icon"></i>
-                                <span class="footer__contact-text">Helps24/7@Gmail.Com</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+      <div class="container footer__container">
+        <div class="footer__top">
+          <span
+            class="footer__horizontal-line footer__horizontal-line--top"
+          ></span>
+          <div class="footer__assets">
+            <img
+              class="footer__pet-left"
+              src="assets/img/footer/footer-cat-dog-2.png"
+              alt=""
+              data-aos="fade-right"
+            />
+            <img
+              class="footer__pet-right"
+              src="assets/img/footer/footer-cat-dog-1.png"
+              alt=""
+              data-aos="fade-left"
+            />
+          </div>
+          <!-- Column 1 -->
+          <div
+            class="footer__col footer__col--newsletter"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
+            <h2 class="footer__title">SUBSCRIBE NEWSLETTER</h2>
+            <p class="footer__desc">
+              We Are Dedicated To Crafting High-Quality Fabrics That Combine
+              Innovation, Sustainability.
+            </p>
+            <form action="#" class="footer__form">
+              <input
+                type="email"
+                placeholder="Enter Your Email Address"
+                class="footer__input"
+                required
+              />
+              <button type="submit" class="footer__submit">
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </form>
+            <div class="footer__socials">
+              <a href="#" class="footer__social-link"
+                ><i class="fab fa-facebook-f footer__social-icon"></i
+              ></a>
+              <a href="#" class="footer__social-link"
+                ><i class="fab fa-twitter footer__social-icon"></i
+              ></a>
+              <a href="#" class="footer__social-link"
+                ><i class="fab fa-instagram footer__social-icon"></i
+              ></a>
+              <a href="#" class="footer__social-link"
+                ><i class="fab fa-pinterest-p footer__social-icon"></i
+              ></a>
             </div>
+          </div>
 
-            <div class="footer__middle">
-                <span class="footer__horizontal-line footer__horizontal-line--middle"></span>
-                <h2 class="footer__big-text">TRUSTED CARE FOR HAPPY, HEALTHY PETS &nbsp;&nbsp; TRUSTED
-                    CARE FOR HAPPY, HEALTHY PETS &nbsp;&nbsp; TRUSTED CARE FOR HAPPY, HEALTHY PETS
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TRUSTED CARE FOR HAPPY, HEALTHY PETS</h2>
+          <!-- Column 2 -->
+          <div
+            class="footer__col footer__col--links"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="footer__col-inner">
+              <h2 class="footer__title">QUICK LINKS</h2>
+              <img
+                class="footer__title-line"
+                src="assets/img/footer/footer-line.svg"
+                alt=""
+              />
+              <ul class="footer__list">
+                <li class="footer__list-item">
+                  <a href="#" class="footer__list-link"
+                    ><img
+                      src="assets/img/footer/footer-paw.svg"
+                      alt=""
+                      class="footer__list-icon"
+                    />
+                    Home</a
+                  >
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__list-link"
+                    ><img
+                      src="assets/img/footer/footer-paw.svg"
+                      alt=""
+                      class="footer__list-icon"
+                    />
+                    About</a
+                  >
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__list-link"
+                    ><img
+                      src="assets/img/footer/footer-paw.svg"
+                      alt=""
+                      class="footer__list-icon"
+                    />
+                    Our Services</a
+                  >
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__list-link"
+                    ><img
+                      src="assets/img/footer/footer-paw.svg"
+                      alt=""
+                      class="footer__list-icon"
+                    />
+                    Book Appointment</a
+                  >
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__list-link"
+                    ><img
+                      src="assets/img/footer/footer-paw.svg"
+                      alt=""
+                      class="footer__list-icon"
+                    />
+                    Contact</a
+                  >
+                </li>
+              </ul>
             </div>
+          </div>
 
-            <div class="footer__bottom">
-                <p class="footer__copyright">Copyright &copy; 2026 <span class="footer__copyright-brand">Patie</span>
-                    All Rights Reserved.</p>
-                <div class="footer__bottom-links">
-                    <a href="#" class="footer__bottom-link">Setting & Privacy</a> <span
-                        class="footer__separator">/</span>
-                    <a href="#" class="footer__bottom-link">FAQ</a> <span class="footer__separator">/</span>
-                    <a href="#" class="footer__bottom-link">Support</a>
-                </div>
+          <!-- Column 3 -->
+          <div
+            class="footer__col footer__col--services"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="footer__col-inner">
+              <h2 class="footer__title">SERVICES</h2>
+              <img
+                class="footer__title-line"
+                src="assets/img/footer/footer-line.svg"
+                alt=""
+              />
+              <ul class="footer__list">
+                <li class="footer__list-item">
+                  <a href="#" class="footer__list-link"
+                    ><img
+                      src="assets/img/footer/footer-paw.svg"
+                      alt=""
+                      class="footer__list-icon"
+                    />
+                    Salon & Grooming</a
+                  >
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__list-link"
+                    ><img
+                      src="assets/img/footer/footer-paw.svg"
+                      alt=""
+                      class="footer__list-icon"
+                    />
+                    Safe Adoption</a
+                  >
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__list-link"
+                    ><img
+                      src="assets/img/footer/footer-paw.svg"
+                      alt=""
+                      class="footer__list-icon"
+                    />
+                    Vaccination Care</a
+                  >
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__list-link"
+                    ><img
+                      src="assets/img/footer/footer-paw.svg"
+                      alt=""
+                      class="footer__list-icon"
+                    />
+                    Comfort Pet Sitting</a
+                  >
+                </li>
+                <li class="footer__list-item">
+                  <a href="#" class="footer__list-link"
+                    ><img
+                      src="assets/img/footer/footer-paw.svg"
+                      alt=""
+                      class="footer__list-icon"
+                    />
+                    CCTV Live / Safety</a
+                  >
+                </li>
+              </ul>
             </div>
+          </div>
+
+          <!-- Column 4 -->
+          <div
+            class="footer__col footer__col--contact"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="footer__col-inner">
+              <h2 class="footer__title">CONTACT US</h2>
+              <img
+                class="footer__title-line"
+                src="assets/img/footer/footer-line.svg"
+                alt=""
+              />
+              <ul class="footer__contact-list">
+                <li class="footer__contact-item">
+                  <i class="fas fa-map-marker-alt footer__contact-icon"></i>
+                  <span class="footer__contact-text"
+                    >8502 Preston Rd. Inglewood<br />Maine 98380</span
+                  >
+                </li>
+                <li class="footer__contact-item">
+                  <i class="fas fa-phone-alt footer__contact-icon"></i>
+                  <span class="footer__contact-text"
+                    >+(163)-2654-3654<br />+(163)-2654-3564</span
+                  >
+                </li>
+                <li class="footer__contact-item">
+                  <i class="fas fa-envelope footer__contact-icon"></i>
+                  <span class="footer__contact-text">Helps24/7@Gmail.Com</span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+
+        <div class="footer__middle">
+          <span
+            class="footer__horizontal-line footer__horizontal-line--middle"
+          ></span>
+          <h2 class="footer__big-text">
+            TRUSTED CARE FOR HAPPY, HEALTHY PETS &nbsp;&nbsp; TRUSTED CARE FOR
+            HAPPY, HEALTHY PETS &nbsp;&nbsp; TRUSTED CARE FOR HAPPY, HEALTHY
+            PETS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TRUSTED CARE FOR HAPPY, HEALTHY
+            PETS
+          </h2>
+        </div>
+
+        <div class="footer__bottom">
+          <p class="footer__copyright">
+            Copyright &copy; 2026
+            <span class="footer__copyright-brand">Patie</span> All Rights
+            Reserved.
+          </p>
+          <div class="footer__bottom-links">
+            <a href="#" class="footer__bottom-link">Setting & Privacy</a>
+            <span class="footer__separator">/</span>
+            <a href="#" class="footer__bottom-link">FAQ</a>
+            <span class="footer__separator">/</span>
+            <a href="#" class="footer__bottom-link">Support</a>
+          </div>
+        </div>
+      </div>
     </footer>
     <!-- End Footer -->
 
     <!-- Back to Top Button -->
 
     <button class="ak-scrollup">
-
-        <i class="fas fa-arrow-up ak-scrollup__icon"></i>
-
+      <i class="fas fa-arrow-up ak-scrollup__icon"></i>
     </button>
-
-
 
     <!-- Script -->
     <script src="assets/js/plugins/jquery-3.7.1.min.js"></script>
@@ -524,6 +998,5 @@
     <script src="assets/js/plugins/swiper.min.js"></script>
     <script src="assets/js/plugins/SplitText.min.js"></script>
     <script src="assets/js/main.js"></script>
-</body>
-
+  </body>
 </html>

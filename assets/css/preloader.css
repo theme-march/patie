@@ -1,0 +1,97 @@
+/* =====================================================
+   PATIE – Paw Print Preloader
+   Source: paw-loader-animation-gif-download-5605853_000.zip
+   14 potrace vector SVG frames, ~15 fps → ~0.93 s loop.
+
+   Strategy: all 14 frames stacked in position; one
+   frame is visible at a time. Each frame's opacity is
+   animated with steps(1, end) timing and a per-frame
+   delay so exactly one is visible per step.
+
+   Total cycle  = 14 frames × (1 / 15 fps) = 0.933 s
+   Per-frame dt = 0.933 / 14 ≈ 0.0667 s
+   ===================================================== */
+
+/* -------------------------------------------------------
+   Overlay
+------------------------------------------------------- */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease 0.15s;
+}
+
+.preloader--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.preloader--done {
+  display: none;
+}
+
+/* -------------------------------------------------------
+   Frame container — gives the SVG a fixed size on screen.
+   The SVGs are 1440×1440 pt internally so we let the
+   viewBox handle scaling.
+------------------------------------------------------- */
+.preloader__frames {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+/* -------------------------------------------------------
+   Each frame SVG is absolutely positioned so they stack.
+   All start hidden; the animation makes exactly one
+   visible at a time.
+------------------------------------------------------- */
+.preloader__frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  /* cycle duration = 14 × 0.0667 s = 0.933 s */
+  animation: frameShow 0.933s steps(1, end) infinite;
+}
+
+/* Fill paths with primary color */
+.preloader__frame path {
+  fill: var(--primary-color, #6839cc);
+}
+
+/*
+  Each frame gets a delay that equals its index × 0.0667 s.
+  The animation shows the frame for exactly one step (0.0667 s)
+  then hides it again. With 14 frames staggered this way,
+  exactly one frame is visible at any moment.
+*/
+@keyframes frameShow {
+  /* frame is invisible at the start of its own cycle slot */
+  0%      { opacity: 1; }
+  /* visible for 1/14 of the cycle = 7.14 % */
+  7.15%   { opacity: 0; }
+  100%    { opacity: 0; }
+}
+
+/* Per-frame delays (index × 0.0667 s) */
+.preloader__frame:nth-child(1)  { animation-delay:  0s;      }
+.preloader__frame:nth-child(2)  { animation-delay:  0.0667s; }
+.preloader__frame:nth-child(3)  { animation-delay:  0.1333s; }
+.preloader__frame:nth-child(4)  { animation-delay:  0.2s;    }
+.preloader__frame:nth-child(5)  { animation-delay:  0.2667s; }
+.preloader__frame:nth-child(6)  { animation-delay:  0.3333s; }
+.preloader__frame:nth-child(7)  { animation-delay:  0.4s;    }
+.preloader__frame:nth-child(8)  { animation-delay:  0.4667s; }
+.preloader__frame:nth-child(9)  { animation-delay:  0.5333s; }
+.preloader__frame:nth-child(10) { animation-delay:  0.6s;    }
+.preloader__frame:nth-child(11) { animation-delay:  0.6667s; }
+.preloader__frame:nth-child(12) { animation-delay:  0.7333s; }
+.preloader__frame:nth-child(13) { animation-delay:  0.8s;    }
+.preloader__frame:nth-child(14) { animation-delay:  0.8667s; }

@@ -20,6 +20,7 @@
     left: 5%;
     top: 38%;
     z-index: 1;
+    animation: verticalFloat 4s ease-in-out infinite alternate;
 
     @include respond(xxxxl) {
       left: 4%;
@@ -47,6 +48,7 @@
     right: 8%;
     top: 18%;
     z-index: 1;
+    animation: verticalFloat 4s ease-in-out infinite alternate-reverse;
 
     @include respond(xxxxl) {
       top: 18%;
@@ -68,6 +70,15 @@
 
     @include respond(xl) {
       display: none;
+    }
+  }
+
+  @keyframes verticalFloat {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-15px);
     }
   }
 

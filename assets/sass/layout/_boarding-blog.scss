@@ -229,8 +229,8 @@
         color: var(--primary-color);
       }
 
-      &__dashed-circle {
-        border-color: var(--white-color);
+      &__dashed-circle path {
+        stroke: var(--white-color);
       }
 
       &__text {

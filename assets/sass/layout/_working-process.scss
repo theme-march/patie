@@ -96,6 +96,7 @@
     &-part {
       width: 100%;
       background-color: var(--white-color);
+      opacity: 0; // hidden until AOS triggers
 
       &--upper {
         height: 48%;
@@ -265,6 +266,24 @@
     max-height: 254px;
     object-fit: cover;
     border-radius: 50%;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+
+    &.is-leaving {
+      opacity: 0;
+      transform: rotate(15deg) scale(0.85);
+    }
+    &.is-leaving-prev {
+      opacity: 0;
+      transform: rotate(-15deg) scale(0.85);
+    }
+    &.is-entering {
+      opacity: 0;
+      transform: rotate(-15deg) scale(0.85);
+    }
+    &.is-entering-prev {
+      opacity: 0;
+      transform: rotate(15deg) scale(0.85);
+    }
   }
 
   &__badge {
@@ -280,12 +299,53 @@
     align-items: center;
     justify-content: center;
     font-size: 24px;
+    overflow: hidden;
+  }
+
+  &__badge-text {
+    display: inline-block;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+
+    &.is-leaving {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    &.is-leaving-prev {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    &.is-entering {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    &.is-entering-prev {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
   }
 
   &__slide-title {
     color: var(--white-color);
     font-size: 30px;
     margin-bottom: 20px;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+
+    &.is-leaving {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    &.is-leaving-prev {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    &.is-entering {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    &.is-entering-prev {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
 
     @include respond(md) {
       font-size: 26px;
@@ -296,6 +356,24 @@
     color: var(--white-color);
     margin-bottom: 40px;
     max-width: 400px;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+
+    &.is-leaving {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    &.is-leaving-prev {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    &.is-entering {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    &.is-entering-prev {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
 
     @include respond(lg) {
       margin-bottom: 20px;
@@ -364,4 +442,34 @@
     border-radius: 20px;
     transition: left 0.4s ease;
   }
+}
+
+@keyframes dividerSlideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes dividerSlideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+[data-aos="divider-down"].aos-animate {
+  animation: dividerSlideDown 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+[data-aos="divider-up"].aos-animate {
+  animation: dividerSlideUp 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }

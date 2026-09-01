@@ -269,12 +269,12 @@
 
   }
 
-  &__line {
+  &__line-wrap {
     position: absolute;
     top: 50%;
     left: 53%;
     transform: translate(-50%, -50%);
-    max-width: 100%;
+    width: 100%;
     z-index: 1;
 
     @include respond(xxxxl) {
@@ -296,13 +296,19 @@
     }
   }
 
+  &__line {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+  }
+
   &__floating {
     position: absolute;
     z-index: 4;
 
     &--cat {
       left: 0%;
-      top: 47%;
+      top: 40%;
       transform: translateY(-50%);
 
       @include respond(xxxxl) {

@@ -38,6 +38,7 @@
   &__wrapper {
     width: 100%;
     position: relative;
+    overflow: hidden;
   }
 
   &__nav {
@@ -109,8 +110,25 @@
     text-align: center;
     max-width: 850px;
     margin: 0 auto;
-    padding: 60px 40px 30px;
+    padding: 60px 40px 50px;
+    transition: opacity 0.25s ease, transform 0.25s ease;
 
+    &.is-leaving {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    &.is-leaving-prev {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    &.is-entering {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    &.is-entering-prev {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
 
     @include respond(xl) {
       padding: 60px 40px 0;
@@ -166,7 +184,7 @@
   }
 
   &__author {
-    margin-bottom: 30px;
+    margin-bottom: 35px;
   }
 
   &__name {
@@ -187,19 +205,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: -15px;
+    gap: 10px;
     position: relative;
     z-index: 1;
+
+    @include respond(lg) {
+      height: 90px;
+    }
   }
 
   &__avatar {
-    max-width: 70px;
-    max-height: 70px;
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
     border-radius: 50%;
     object-fit: cover;
     background-color: var(--white-color);
-    border: 2px solid var(--white-color);
+    border: 2px solid transparent;
     cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+                border-color 0.4s ease,
+                box-shadow 0.4s ease;
 
     &:not(:first-child) {
       margin-left: 20px;
@@ -210,31 +236,16 @@
     }
 
     @include respond(lg) {
-      max-width: 60px;
-      max-height: 60px;
+      width: 60px;
+      height: 60px;
     }
-
 
     &--middle {
-      max-width: 90px;
-      max-height: 90px;
-      border: 3px solid var(--primary-color);
-      padding: 5px;
-      background-color: var(--white-color);
+      transform: scale(1.2);
+      border-color: var(--primary-color);
+      padding: 2px;
       z-index: 2;
       position: relative;
-
-      @include respond(lg) {
-        max-width: 80px;
-        max-height: 80px;
-      }
-
-      @include respond(md) {
-        max-width: 75px;
-        max-height: 75px;
-      }
     }
-
-
   }
 }

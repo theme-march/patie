@@ -57,6 +57,23 @@
             display: block;
         }
 
+        .play-btn {
+            &__inner {
+                background-color: var(--primary-color);
+            }
+            &__ripple-lottie {
+                background-color: var(--primary-color);
+            }
+
+            &:hover {
+                .play-btn__inner {
+                    background-color: var(--secondary-color);
+                }
+                .play-btn__ripple-lottie {
+                    background-color: var(--secondary-color);
+                }
+            }
+        }
     }
 }
 

@@ -1,6 +1,11 @@
 (function ($) {
   ("use strict");
 
+  // Register GSAP ScrollTrigger
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+
   /*
 |--------------------------------------------------------------------------
 | Template Name: CRAS
@@ -39,6 +44,14 @@
     $(window).trigger("resize");
     // preloader();
     AOS.init();
+
+    // Hero Grooming Badge — appears last after all AOS hero animations settle
+    var heroBadge = document.querySelector('.hero-grooming__badge');
+    if (heroBadge) {
+      setTimeout(function () {
+        heroBadge.classList.add('hero-grooming__badge--visible');
+      }, 700);
+    }
   });
 
   $(function () {
@@ -53,11 +66,99 @@
     initSearch();
     handleShopSearchFilter();
     initMobileMenu();
+    initCountUp();
+    beforeAndAfterReveal();
+    videoTextParallax();
   });
 
   $(window).on("scroll", function () {
     showScrollUp();
   });
+
+  /*--------------------------------------------------------------
+    Video Section — Background Text Scroll Parallax
+  --------------------------------------------------------------*/
+  function videoTextParallax() {
+    const el = document.querySelector('.video-section__bg-text');
+    if (!el || typeof gsap === 'undefined') return;
+
+    gsap.to(el, {
+      y: 80,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.video-section',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true,
+      }
+    });
+  }
+
+  /*--------------------------------------------------------------
+    Before & After Image GSAP Slide Reveal
+  --------------------------------------------------------------*/
+  function beforeAndAfterReveal() {
+    const img = document.querySelector('.before-and-after__img');
+    if (!img || typeof gsap === 'undefined') return;
+
+    gsap.fromTo(img, 
+      { x: '100%', opacity: 0 },
+      {
+        x: '0%',
+        opacity: 1,
+        duration: 1.1,
+        ease: 'power3.out',
+        clearProps: 'transform,opacity',
+        scrollTrigger: {
+          trigger: '.before-and-after__right-wrap',
+          start: 'top 80%',
+          once: true,
+        }
+      }
+    );
+  }
+
+  /*--------------------------------------------------------------
+    Count Up Animation (GSAP + ScrollTrigger)
+  --------------------------------------------------------------*/
+  function initCountUp() {
+    const countEls = document.querySelectorAll('.count-up');
+    if (!countEls.length || typeof gsap === 'undefined') return;
+
+    countEls.forEach(function (el) {
+      const target = parseFloat(el.getAttribute('data-target') || el.textContent);
+      const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+
+      el.textContent = (0).toFixed(decimals);
+
+      function runCount() {
+        const obj = { val: 0 };
+        gsap.to(obj, {
+          val: target,
+          duration: 2,
+          ease: 'power2.out',
+          onUpdate: function () {
+            el.textContent = obj.val.toFixed(decimals);
+          },
+        });
+      }
+
+      const aosParent = el.closest('[data-aos]');
+      const watchTarget = aosParent || el;
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            observer.unobserve(watchTarget);
+            // small delay so AOS fade-in and count-up start together
+            setTimeout(runCount, 100);
+          }
+        });
+      }, { threshold: 0.3 });
+
+      observer.observe(watchTarget);
+    });
+  }
 
 
 
@@ -134,6 +235,7 @@
 
     var $menuItems = $('.site-header__menu-item');
     var $targetItem = null;
+    var $targetSubmenuLink = null;
 
     // First: try to match via submenu links (covers cart.html, checkout.html, etc.)
     $menuItems.each(function () {
@@ -143,6 +245,7 @@
         var linkPage = href.substring(href.lastIndexOf('/') + 1);
         if (linkPage === page) {
           $targetItem = $item;
+          $targetSubmenuLink = $(this); // capture the matched submenu <a>
           return false;
         }
       });
@@ -175,6 +278,12 @@
       setTimeout(function () {
         $noTransStyle.remove();
       }, 50);
+    }
+
+    // Mark the active submenu link (clear all first, then set the matching one)
+    $('.site-header__submenu-link').removeClass('site-header__submenu-link--active');
+    if ($targetSubmenuLink) {
+      $targetSubmenuLink.addClass('site-header__submenu-link--active');
     }
   }
 
@@ -449,34 +558,101 @@
   /*--------------------------------------------------------------
      Testimonial Slider
   --------------------------------------------------------------*/
+  /*--------------------------------------------------------------
+     Testimonial Slider
+  --------------------------------------------------------------*/
   function testimonialSlider() {
     let currentIndex = 1; // Starting with the middle one (index 1)
     const totalAvatars = $(".testimonial__avatar").length;
 
-    function updateTestimonial(index) {
-      // Fade out and back in to simulate content change
-      $(".testimonial__card").fadeOut(300, function () {
-        // Update Avatars Border
-        $(".testimonial__avatar").removeClass("testimonial__avatar--middle");
-        $(".testimonial__avatar").eq(index).addClass("testimonial__avatar--middle");
-        $(this).fadeIn(300);
-      });
+    // Reviewer data
+    const data = [
+      {
+        name: "JENNY WILSON",
+        role: "Graphic Designer",
+        rating: 5,
+        text: "The grooming staff here is incredibly gentle! My cat is extremely anxious, but they handled her with absolute patience and care. The custom styling recommendations were spot on, and she came back smelling amazing and feeling completely relaxed."
+      },
+      {
+        name: "SAVANNAH NGUYEN",
+        role: "Managing Director",
+        rating: 4.5,
+        text: "I Absolutely Love How Caring, Professional, And Attentive The Entire Team Is! My Dog Feels Completely At Home, Happy, And Safe—And I Can Check On Him Anytime Through Their Reliable CCTV Monitoring Service. Truly Peace Of Mind For Every Pet Parent!"
+      },
+      {
+        name: "KRISTIN WATSON",
+        role: "Marketing Specialist",
+        rating: 5,
+        text: "Highly recommend their services. The de-shedding treatment worked wonders on my Golden Retriever, and the staff's professionalism is unmatched. The scheduling was seamless and the facility is clean, safe, and welcoming. My Cat Feels Completely At Home, Happy"
+      }
+    ];
+
+    function updateTestimonial(index, direction) {
+      if (totalAvatars === 0) return;
+
+      const $card = $(".testimonial__card");
+      const leaveClass = direction === "next" ? "is-leaving" : "is-leaving-prev";
+      const enterClass = direction === "next" ? "is-entering" : "is-entering-prev";
+
+      // 1. Remove old transition state classes & add leaving class
+      $card.removeClass("is-leaving is-leaving-prev is-entering is-entering-prev").addClass(leaveClass);
+
+      // Update Avatars Border (immediate)
+      $(".testimonial__avatar").removeClass("testimonial__avatar--middle");
+      $(".testimonial__avatar").eq(index).addClass("testimonial__avatar--middle");
+
+      setTimeout(function () {
+        // 2. Swapping Content
+        const item = data[index] || data[1];
+        $card.find(".testimonial__name").text(item.name);
+        $card.find(".testimonial__designation").text(item.role);
+        $card.find(".testimonial__text").text(`"${item.text}"`);
+
+        // Build Stars Markup
+        let starsHtml = "";
+        const fullStars = Math.floor(item.rating);
+        const hasHalf = item.rating % 1 !== 0;
+        for (let i = 0; i < 5; i++) {
+          if (i < fullStars) {
+            starsHtml += '<i class="fas fa-star"></i>';
+          } else if (i === fullStars && hasHalf) {
+            starsHtml += '<i class="fas fa-star-half-alt"></i>';
+          } else {
+            starsHtml += '<i class="far fa-star"></i>';
+          }
+        }
+        $card.find(".testimonial__rating").html(starsHtml);
+
+        // 3. Snap to entry-start position WITHOUT transition, then animate in
+        $card.css('transition', 'none');
+        $card.removeClass(leaveClass).addClass(enterClass);
+
+        // Force reflow so browser commits the snap
+        $card[0].offsetHeight;
+
+        // Re-enable transitions, remove enter class → CSS animates back to base state
+        $card.css('transition', '');
+        $card.removeClass(enterClass);
+      }, 280);
     }
 
     $(".testimonial__nav--next").on("click", function () {
       currentIndex = (currentIndex + 1) % totalAvatars;
-      updateTestimonial(currentIndex);
+      updateTestimonial(currentIndex, "next");
     });
 
     $(".testimonial__nav--prev").on("click", function () {
       currentIndex = (currentIndex - 1 + totalAvatars) % totalAvatars;
-      updateTestimonial(currentIndex);
+      updateTestimonial(currentIndex, "prev");
     });
 
     // Also switch on avatar click
     $(".testimonial__avatar").on("click", function () {
-      currentIndex = $(this).index();
-      updateTestimonial(currentIndex);
+      const newIndex = $(this).index();
+      if (newIndex === currentIndex) return;
+      const direction = newIndex > currentIndex ? "next" : "prev";
+      currentIndex = newIndex;
+      updateTestimonial(currentIndex, direction);
     });
   }
 
@@ -484,68 +660,181 @@
     let currentIndex = 1; // Middle avatar (index 1)
     const totalAvatars = $(".parent-testimonial__avatar").length;
 
-    function updateTestimonial(index) {
+    // Testimonial data matching avatars in pet-grooming.html
+    const data = [
+      {
+        name: "JENNY WILSON",
+        role: "Graphic Designer",
+        rating: 5,
+        text: "The grooming staff here is incredibly gentle! My cat is extremely anxious, but they handled her with absolute patience and care. The custom styling recommendations were spot on, and she came back smelling amazing and feeling completely relaxed."
+      },
+      {
+        name: "BROOKLYN SIMMONS",
+        role: "E-Commerce Solutions",
+        rating: 4.5,
+        text: "We Work With Trusted Partners And Monitor The Impact Of Every Program To Ensure Transparency And Accountability All Donations To Our Organization Are Tax-Deductible, And We Provide Receipts For Every Contribution Offer Numerous Volunteer Opportunities Both On-Site And Virtually. Visit Our Volunteer Page Donations"
+      },
+      {
+        name: "KRISTIN WATSON",
+        role: "Marketing Specialist",
+        rating: 5,
+        text: "Highly recommend their services. The de-shedding treatment worked wonders on my Golden Retriever, and the staff's professionalism is unmatched. The scheduling was seamless and the facility is clean, safe, and welcoming. My Cat Feels Completely At Home, Happy"
+      }
+    ];
+
+    function updateTestimonial(index, direction) {
       if (totalAvatars === 0) return;
 
       // Update Highlight Immediately
       $(".parent-testimonial__avatar").removeClass("parent-testimonial__avatar--center").addClass("parent-testimonial__avatar--side");
       $(".parent-testimonial__avatar").eq(index).removeClass("parent-testimonial__avatar--side").addClass("parent-testimonial__avatar--center");
 
-      // Animate Content
-      $(".parent-testimonial__content").fadeOut(300, function () {
-        // In a real app, you'd change the text/name here.
-        // For demonstration, we just fade back in.
-        $(this).fadeIn(300);
-      });
+      const $content = $(".parent-testimonial__content");
+      const leaveClass = direction === "next" ? "is-leaving" : "is-leaving-prev";
+      const enterClass = direction === "next" ? "is-entering" : "is-entering-prev";
+
+      $content.removeClass("is-leaving is-leaving-prev is-entering is-entering-prev").addClass(leaveClass);
+
+      setTimeout(function () {
+        // Swap content text
+        const item = data[index] || data[1];
+        $content.find(".parent-testimonial__name").text(item.name);
+        $content.find(".parent-testimonial__designation").text(item.role);
+        $content.find(".parent-testimonial__text").text(item.text);
+
+        // Build Stars Markup
+        let starsHtml = "";
+        const fullStars = Math.floor(item.rating);
+        const hasHalf = item.rating % 1 !== 0;
+        for (let i = 0; i < 5; i++) {
+          if (i < fullStars) {
+            starsHtml += '<i class="fas fa-star parent-testimonial__star"></i>';
+          } else if (i === fullStars && hasHalf) {
+            starsHtml += '<i class="fas fa-star-half-alt parent-testimonial__star"></i>';
+          } else {
+            starsHtml += '<i class="far fa-star parent-testimonial__star"></i>';
+          }
+        }
+        $content.find(".parent-testimonial__rating").html(starsHtml);
+
+        // Snap to entry-start position WITHOUT transition, then animate in
+        $content.css('transition', 'none');
+        $content.removeClass(leaveClass).addClass(enterClass);
+
+        // Force reflow so browser commits the snap
+        $content[0].offsetHeight;
+
+        // Re-enable transitions, remove enter class → CSS animates back to base state
+        $content.css('transition', '');
+        $content.removeClass(enterClass);
+      }, 280);
     }
 
     $(".parent-testimonial__nav--next").on("click", function () {
       currentIndex = (currentIndex + 1) % totalAvatars;
-      updateTestimonial(currentIndex);
+      updateTestimonial(currentIndex, "next");
     });
 
     $(".parent-testimonial__nav--prev").on("click", function () {
       currentIndex = (currentIndex - 1 + totalAvatars) % totalAvatars;
-      updateTestimonial(currentIndex);
+      updateTestimonial(currentIndex, "prev");
     });
 
     $(".parent-testimonial__avatar").on("click", function () {
-      currentIndex = $(this).index();
-      updateTestimonial(currentIndex);
+      const newIndex = $(this).index();
+      if (newIndex === currentIndex) return;
+      const direction = newIndex > currentIndex ? "next" : "prev";
+      currentIndex = newIndex;
+      updateTestimonial(currentIndex, direction);
     });
   }
 
   function beforeAfterSlider() {
-    let currentIndex = 1; // Starting with the active dot (index 2)
     const dots = $(".before-and-after__dot");
     const totalDots = dots.length;
-    const img = $(".before-and-after__img");
+    const $img = $(".before-and-after__img");
 
-    if (totalDots === 0) return;
+    if (totalDots === 0 || $img.length === 0) return;
 
-    setInterval(function () {
-      currentIndex = (currentIndex + 1) % totalDots;
+    let currentIndex = dots.filter(".before-and-after__dot--active").index();
+    if (currentIndex === -1) currentIndex = 0;
 
-      // Update Dots
+    let isAnimating = false;
+
+    function changeSlide(newIndex, direction) {
+      if (isAnimating) return;
+      isAnimating = true;
+
+      const $current = $(".before-and-after__img--current");
+      const $next    = $(".before-and-after__img--next");
+
+      // Set new src on the incoming image
+      const newSrc = dots.eq(newIndex).data("src");
+      if (newSrc) $next.attr("src", newSrc);
+
+      // Position next image off-screen instantly (no transition)
+      $next.css("transition", "none");
+      if (direction === "next") {
+        $next.css("transform", "translateX(100%)").removeClass("is-entering is-entering-prev");
+      } else {
+        $next.css("transform", "translateX(-100%)").removeClass("is-entering is-entering-prev");
+      }
+      $next[0].offsetHeight; // force reflow
+      $next.css("transition", "");
+
+      // Slide both at the same time
+      if (direction === "next") {
+        $current.addClass("is-leaving");
+        $next.css("transform", "translateX(0)");
+      } else {
+        $current.addClass("is-leaving-prev");
+        $next.css("transform", "translateX(0)");
+      }
+
+      setTimeout(function () {
+        // Swap roles: next becomes current
+        $current.removeClass("is-leaving is-leaving-prev")
+                .addClass("before-and-after__img--next")
+                .removeClass("before-and-after__img--current")
+                .css("transform", "");
+        $next.addClass("before-and-after__img--current")
+             .removeClass("before-and-after__img--next")
+             .css("transform", "");
+
+        isAnimating = false;
+      }, 620);
+    }
+
+    let intervalId = setInterval(function () {
+      const nextIndex = (currentIndex + 1) % totalDots;
       dots.removeClass("before-and-after__dot--active");
-      dots.eq(currentIndex).addClass("before-and-after__dot--active");
-
-      // Animate Image swap (even if it's the same one, we simulate the effect)
-      img.fadeOut(400, function () {
-        // Here you could change img src if you had multiple
-        $(this).fadeIn(400);
-      });
-    }, 3000);
+      dots.eq(nextIndex).addClass("before-and-after__dot--active");
+      changeSlide(nextIndex, "next");
+      currentIndex = nextIndex;
+    }, 4000);
 
     // Allow manual click on dots
     dots.on("click", function () {
-      currentIndex = $(this).index();
+      const newIndex = $(this).index();
+      if (newIndex === currentIndex || isAnimating) return;
+
+      clearInterval(intervalId);
+
+      const direction = newIndex > currentIndex ? "next" : "prev";
       dots.removeClass("before-and-after__dot--active");
       $(this).addClass("before-and-after__dot--active");
-      
-      img.fadeOut(400, function () {
-        $(this).fadeIn(400);
-      });
+
+      changeSlide(newIndex, direction);
+      currentIndex = newIndex;
+
+      // Restart auto play interval
+      intervalId = setInterval(function () {
+        const nextIndex = (currentIndex + 1) % totalDots;
+        dots.removeClass("before-and-after__dot--active");
+        dots.eq(nextIndex).addClass("before-and-after__dot--active");
+        changeSlide(nextIndex, "next");
+        currentIndex = nextIndex;
+      }, 4000);
     });
   }
 
@@ -572,30 +861,86 @@
     let currentIndex = 1;
     const totalSteps = 4;
     const $progress = $(".working-process__progress-bar");
-    const $badge = $(".working-process__badge");
     const $title = $(".working-process__slide-title");
-    const $sliderContent = $(".working-process__slider");
+    const $desc = $(".working-process__slide-desc");
+    const $img = $(".working-process__img");
+    const $badgeText = $(".working-process__badge-text");
 
-    function updateStep(index) {
-      $sliderContent.fadeOut(300, function () {
-        $badge.text(index.toString().padStart(2, "0"));
-        const currentTitle = $title.text().trim();
-        const newTitle = currentTitle.replace(/^\d+/, index.toString().padStart(2, "0"));
-        $title.text(newTitle);
+    // Steps details matching working process slides
+    const stepsData = [
+      {
+        title: "01. CARE & LIVE MONITORING",
+        desc: "We Provide Attentive Care For Your Pet During Their Stay, Grooming, Or Daycare. Our Trained Team Ensures That Your Pet Is Comfortable, Happy, And Safe At All Times."
+      },
+      {
+        title: "02. BOOKING & SCHEDULING",
+        desc: "Easily book appointments online or over the phone. Choose from our flexible slots that suit your calendar, ensuring complete peace of mind."
+      },
+      {
+        title: "03. EXPERT GROOMING CARE",
+        desc: "Our styling professionals provide complete individualized treatment plans including deshedding, nail clipping, skin checks, and deep baths."
+      },
+      {
+        title: "04. HAPPY PET PICKUP",
+        desc: "Once grooming is completed, pick up your clean, happy, and refreshed pet. We provide a post-session summary of their behavior and skin health."
+      }
+    ];
+
+    function updateStep(index, direction) {
+      const leaveClass = direction === "next" ? "is-leaving" : "is-leaving-prev";
+      const enterClass = direction === "next" ? "is-entering" : "is-entering-prev";
+
+      // 1. Slide and Fade out targets
+      $img.removeClass("is-leaving is-leaving-prev is-entering is-entering-prev").addClass(leaveClass);
+      $badgeText.removeClass("is-leaving is-leaving-prev is-entering is-entering-prev").addClass(leaveClass);
+      $title.removeClass("is-leaving is-leaving-prev is-entering is-entering-prev").addClass(leaveClass);
+      $desc.removeClass("is-leaving is-leaving-prev is-entering is-entering-prev").addClass(leaveClass);
+
+      setTimeout(function () {
+        // 2. Change contents
+        const step = stepsData[index - 1] || stepsData[0];
+        $badgeText.text(index.toString().padStart(2, "0"));
+        $title.text(step.title);
+        $desc.text(step.desc);
+
         const progressPos = ((index - 1) / totalSteps) * 100;
         $progress.css("left", progressPos + "%");
-        $(this).fadeIn(300);
-      });
+
+        // 3. Snap targets offscreen instantly
+        $img.css('transition', 'none');
+        $badgeText.css('transition', 'none');
+        $title.css('transition', 'none');
+        $desc.css('transition', 'none');
+
+        $img.removeClass(leaveClass).addClass(enterClass);
+        $badgeText.removeClass(leaveClass).addClass(enterClass);
+        $title.removeClass(leaveClass).addClass(enterClass);
+        $desc.removeClass(leaveClass).addClass(enterClass);
+
+        // Force reflow
+        $img[0].offsetHeight;
+
+        // 4. Slide back in smoothly
+        $img.css('transition', '');
+        $badgeText.css('transition', '');
+        $title.css('transition', '');
+        $desc.css('transition', '');
+
+        $img.removeClass(enterClass);
+        $badgeText.removeClass(enterClass);
+        $title.removeClass(enterClass);
+        $desc.removeClass(enterClass);
+      }, 280);
     }
 
     $(".working-process__nav-btn").eq(1).on("click", function () {
       currentIndex = currentIndex < totalSteps ? currentIndex + 1 : 1;
-      updateStep(currentIndex);
+      updateStep(currentIndex, "next");
     });
 
     $(".working-process__nav-btn").eq(0).on("click", function () {
       currentIndex = currentIndex > 1 ? currentIndex - 1 : totalSteps;
-      updateStep(currentIndex);
+      updateStep(currentIndex, "prev");
     });
   }
 
@@ -1146,5 +1491,129 @@ if ($.exists(".working-process__item")) {
         }, 300);
       }
     });
+  });
+})();
+
+
+// ── service-btn dashed-circle deceleration on mouse-leave ───────────────────
+// On hover: CSS animation drives strokeDashoffset at fast speed.
+// On mouseleave: reads current offset, removes CSS animation, drives offset
+// manually with rAF using exponential easing to decelerate smoothly —
+// dashes stay fully visible and naturally slow to a stop.
+(function () {
+  const FAST_SPEED = 20;   // px per second while hovered (dasharray 3+3=6, so ~3 cycles/sec)
+  const DECEL_TIME = 900;  // ms to decelerate from fast to zero
+
+  document.querySelectorAll('.service-btn').forEach(function (btn) {
+    const path = btn.querySelector('.service-btn__dashed-circle path');
+    if (!path) return;
+
+    let rafId       = null;   // rAF handle during decel
+    let isHovered   = false;
+    let lastTime    = null;
+    let currentSpeed = 0;     // px/s — tracked during decel
+
+    function startCSS() {
+      // Re-attach CSS animation at the current (fast) speed
+      path.style.animation = 'marchServiceDashes 0.6s linear infinite';
+    }
+
+    function stopCSS() {
+      // Snapshot current offset before killing CSS animation
+      const computed = getComputedStyle(path);
+      const offset   = parseFloat(computed.strokeDashoffset) || 0;
+      // Kill CSS animation and hold at snapshotted offset
+      path.style.animation = 'none';
+      path.style.strokeDashoffset = offset;
+      return offset;
+    }
+
+    function decelLoop(timestamp) {
+      if (isHovered) return; // hovered again mid-decel — bail
+
+      if (!lastTime) lastTime = timestamp;
+      const elapsed = timestamp - lastTime;
+      lastTime = timestamp;
+
+      // Exponential decay: speed reduces by ~30% every 100ms
+      currentSpeed *= Math.pow(0.70, elapsed / 100);
+
+      if (currentSpeed < 0.3) {
+        // Settled — restore CSS animation at slow idle speed
+        path.style.animation = 'marchServiceDashes 8s linear infinite';
+        path.style.strokeDashoffset = '';
+        rafId = null;
+        return;
+      }
+
+      // Advance offset by speed × elapsed time (negative = forward march)
+      const current = parseFloat(path.style.strokeDashoffset) || 0;
+      path.style.strokeDashoffset = current - (currentSpeed * elapsed / 1000);
+
+      rafId = requestAnimationFrame(decelLoop);
+    }
+
+    btn.addEventListener('mouseenter', function () {
+      isHovered = true;
+
+      // Cancel any in-progress deceleration rAF
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+
+      // Restore CSS animation at fast speed
+      path.style.animation     = 'marchServiceDashes 0.6s linear infinite';
+      path.style.strokeDashoffset = '';
+      currentSpeed = FAST_SPEED;
+    });
+
+    btn.addEventListener('mouseleave', function () {
+      isHovered = false;
+
+      // Snapshot offset and kill CSS animation
+      stopCSS();
+      currentSpeed = FAST_SPEED;
+      lastTime     = null;
+
+      // Start rAF deceleration loop
+      rafId = requestAnimationFrame(decelLoop);
+    });
+  });
+})();
+
+/* =====================================================
+   Preloader dismissal
+   Matches the CSS in assets/css/preloader.css.
+   MIN_DISPLAY ensures at least one full animation
+   cycle (~0.93 s × 3 ≈ 2.8 s) is always visible.
+   ===================================================== */
+(function () {
+  var preloader = document.getElementById('preloader');
+  if (!preloader) return;
+
+  var scriptStart = Date.now();
+  var MIN_DISPLAY = 2500;
+
+  function dismiss() {
+    preloader.classList.add('preloader--hidden');
+
+    // After the CSS fade-out transition completes, set display:none
+    // so the overlay can never block clicks or hover events.
+    preloader.addEventListener('transitionend', function handler() {
+      preloader.removeEventListener('transitionend', handler);
+      preloader.classList.add('preloader--done');
+    });
+
+    // Fallback for prefers-reduced-motion or browsers that skip transitionend.
+    setTimeout(function () {
+      preloader.classList.add('preloader--done');
+    }, 1000);
+  }
+
+  window.addEventListener('load', function () {
+    var elapsed   = Date.now() - scriptStart;
+    var remaining = Math.max(0, MIN_DISPLAY - elapsed);
+    setTimeout(dismiss, remaining);
   });
 })();

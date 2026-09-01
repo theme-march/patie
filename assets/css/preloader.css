@@ -9,7 +9,7 @@
   position: fixed;
   inset: 0;
   z-index: 99999;
-  background-color: #ffffff;
+  background-color: var(--white-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,28 +40,61 @@
   animation: frameShow 0.933s steps(1, end) infinite;
 }
 
-/* Fill paths with primary color */
-.preloader__frame path {
-  fill: var(--primary-color, #6839cc);
+.preloader__frame {
+  color: var(--primary-color);
 }
 
 @keyframes frameShow {
-  0%      { opacity: 1; }
-  7.15%   { opacity: 0; }
-  100%    { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+  7.15% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
-.preloader__frame:nth-child(1)  { animation-delay:  0s;      }
-.preloader__frame:nth-child(2)  { animation-delay:  0.0667s; }
-.preloader__frame:nth-child(3)  { animation-delay:  0.1333s; }
-.preloader__frame:nth-child(4)  { animation-delay:  0.2s;    }
-.preloader__frame:nth-child(5)  { animation-delay:  0.2667s; }
-.preloader__frame:nth-child(6)  { animation-delay:  0.3333s; }
-.preloader__frame:nth-child(7)  { animation-delay:  0.4s;    }
-.preloader__frame:nth-child(8)  { animation-delay:  0.4667s; }
-.preloader__frame:nth-child(9)  { animation-delay:  0.5333s; }
-.preloader__frame:nth-child(10) { animation-delay:  0.6s;    }
-.preloader__frame:nth-child(11) { animation-delay:  0.6667s; }
-.preloader__frame:nth-child(12) { animation-delay:  0.7333s; }
-.preloader__frame:nth-child(13) { animation-delay:  0.8s;    }
-.preloader__frame:nth-child(14) { animation-delay:  0.8667s; }
+.preloader__frame:nth-child(1) {
+  animation-delay: 0s;
+}
+.preloader__frame:nth-child(2) {
+  animation-delay: 0.0667s;
+}
+.preloader__frame:nth-child(3) {
+  animation-delay: 0.1333s;
+}
+.preloader__frame:nth-child(4) {
+  animation-delay: 0.2s;
+}
+.preloader__frame:nth-child(5) {
+  animation-delay: 0.2667s;
+}
+.preloader__frame:nth-child(6) {
+  animation-delay: 0.3333s;
+}
+.preloader__frame:nth-child(7) {
+  animation-delay: 0.4s;
+}
+.preloader__frame:nth-child(8) {
+  animation-delay: 0.4667s;
+}
+.preloader__frame:nth-child(9) {
+  animation-delay: 0.5333s;
+}
+.preloader__frame:nth-child(10) {
+  animation-delay: 0.6s;
+}
+.preloader__frame:nth-child(11) {
+  animation-delay: 0.6667s;
+}
+.preloader__frame:nth-child(12) {
+  animation-delay: 0.7333s;
+}
+.preloader__frame:nth-child(13) {
+  animation-delay: 0.8s;
+}
+.preloader__frame:nth-child(14) {
+  animation-delay: 0.8667s;
+}

@@ -1309,6 +1309,17 @@
   }
 
   /*--------------------------------------------------------------
+     Sidebar Category — selectable items
+  --------------------------------------------------------------*/
+  $(document).on("click", ".sidebar__category-item", function () {
+    var $list = $(this).closest(".sidebar__category-list");
+    $list
+      .find(".sidebar__category-item")
+      .removeClass("sidebar__category-item--active");
+    $(this).addClass("sidebar__category-item--active");
+  });
+
+  /*--------------------------------------------------------------
      Mobile Menu Sidebar Functionality
   --------------------------------------------------------------*/
   function initMobileMenu() {
@@ -1742,6 +1753,7 @@ if ($.exists(".working-process__item")) {
   document.addEventListener(
     "mouseenter",
     function (e) {
+      if (!(e.target instanceof Element)) return;
       const btn = e.target.closest(".service-btn");
       if (!btn) return;
       const circle = btn.querySelector(".service-btn__dashed-circle circle");
@@ -1765,6 +1777,7 @@ if ($.exists(".working-process__item")) {
   document.addEventListener(
     "mouseleave",
     function (e) {
+      if (!(e.target instanceof Element)) return;
       const btn = e.target.closest(".service-btn");
       if (!btn) return;
       const circle = btn.querySelector(".service-btn__dashed-circle circle");

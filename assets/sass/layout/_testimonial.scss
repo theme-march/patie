@@ -59,7 +59,9 @@
     z-index: 10;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 15px color-mix(in srgb, var(--black-color), transparent 90%), 0 1px 4px color-mix(in srgb, var(--black-color), transparent 94%);
+    box-shadow:
+      0 4px 15px color-mix(in srgb, var(--black-color), transparent 90%),
+      0 1px 4px color-mix(in srgb, var(--black-color), transparent 94%);
 
     &--prev {
       left: 5%;
@@ -111,7 +113,9 @@
     max-width: 850px;
     margin: 0 auto;
     padding: 60px 40px 50px;
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease;
 
     &.is-leaving {
       opacity: 0;
@@ -160,7 +164,6 @@
   &__text {
     margin-bottom: 40px;
 
-
     @include respond(xl) {
       margin-bottom: 30px;
     }
@@ -200,7 +203,6 @@
     }
   }
 
-
   &__avatars-wrap {
     display: flex;
     justify-content: center;
@@ -223,9 +225,10 @@
     background-color: var(--white-color);
     border: 2px solid transparent;
     cursor: pointer;
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
-                border-color 0.4s ease,
-                box-shadow 0.4s ease;
+    transition:
+      transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+      border-color 0.4s ease,
+      box-shadow 0.4s ease;
 
     &:not(:first-child) {
       margin-left: 20px;

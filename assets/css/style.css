@@ -11076,7 +11076,7 @@ i[class*=fa] {
 }
 .boarding-hero__floating--cat {
   left: 0%;
-  top: 40%;
+  top: 47%;
   transform: translateY(-50%);
 }
 @media (max-width: 1700px) {
@@ -11121,7 +11121,7 @@ i[class*=fa] {
 }
 .boarding-hero__floating--dog {
   right: 9%;
-  top: 2%;
+  top: 0;
 }
 @media (max-width: 1700px) {
   .boarding-hero__floating--dog {
@@ -13256,6 +13256,8 @@ i[class*=fa] {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  width: 0;
+  transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .ak-progress-dot {
   width: 20px;
@@ -14673,9 +14675,31 @@ i[class*=fa] {
 }
 .cart__update-btn {
   background-color: color-mix(in srgb, var(--primary-color), transparent 50%);
+  transition: background-color 0.35s ease, transform 0.3s ease, opacity 0.35s ease;
 }
-.cart__update-btn:hover {
+.cart__update-btn:not(.cart__update-btn--active) {
+  cursor: not-allowed;
+}
+.cart__update-btn:not(.cart__update-btn--active):hover {
+  transform: none;
+  background-color: color-mix(in srgb, var(--primary-color), transparent 50%) !important;
+  transition: background-color 0.35s ease, opacity 0.35s ease;
+}
+.cart__update-btn:not(.cart__update-btn--active):hover .common-btn__inner {
+  background-color: color-mix(in srgb, var(--primary-color), transparent 50%) !important;
+  transition: background-color 0.35s ease;
+}
+.cart__update-btn--active {
+  cursor: pointer;
   background-color: var(--primary-color);
+}
+.cart__update-btn--active:hover {
+  background-color: var(--primary-color);
+  transition: background-color 0.35s ease, transform 0.3s ease;
+}
+.cart__update-btn--active:hover .common-btn__inner {
+  background-color: var(--secondary-color);
+  transition: background-color 0.35s ease;
 }
 .cart__actions {
   padding: 30px;

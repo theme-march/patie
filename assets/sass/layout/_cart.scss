@@ -45,7 +45,6 @@
       @include respond(md) {
         padding: 20px;
       }
-
     }
 
     td {
@@ -62,8 +61,6 @@
         font-size: 14px;
       }
     }
-
-
   }
 
   &__remove {
@@ -103,7 +100,6 @@
       max-width: 50px;
     }
 
-
     &__product-img {
       max-width: 100%;
       max-height: 100%;
@@ -127,7 +123,6 @@
       font-size: 16px;
     }
   }
-
 
   &__quantity {
     display: flex;
@@ -235,9 +230,53 @@
 
   &__update-btn {
     background-color: color-mix(in srgb, var(--primary-color), transparent 50%);
+    transition:
+      background-color 0.35s ease,
+      transform 0.3s ease,
+      opacity 0.35s ease;
 
-    &:hover {
+    // Inactive state — lock colour on hover, keep transition smooth
+    &:not(&--active) {
+      cursor: not-allowed;
+
+      &:hover {
+        transform: none; // suppress the lift
+        background-color: color-mix(
+          in srgb,
+          var(--primary-color),
+          transparent 50%
+        ) !important;
+        transition:
+          background-color 0.35s ease,
+          opacity 0.35s ease;
+      }
+
+      &:hover .common-btn__inner {
+        background-color: color-mix(
+          in srgb,
+          var(--primary-color),
+          transparent 50%
+        ) !important;
+        transition: background-color 0.35s ease;
+      }
+    }
+
+    // Active state — full colour with smooth ease on hover
+    &--active {
+      cursor: pointer;
       background-color: var(--primary-color);
+
+      &:hover {
+        background-color: var(--primary-color);
+        transition:
+          background-color 0.35s ease,
+          transform 0.3s ease;
+      }
+
+      &:hover .common-btn__inner {
+        background-color: var(--secondary-color);
+        transition: background-color 0.35s ease;
+      }
     }
   }
 
@@ -415,7 +454,7 @@
         transform: scale(0);
         transition: all 0.3s ease;
 
-        input:checked+.cart__summary-shipping-option-left & {
+        input:checked + .cart__summary-shipping-option-left & {
           transform: scale(1);
         }
       }

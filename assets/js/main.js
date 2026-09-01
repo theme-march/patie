@@ -43,14 +43,31 @@
     $(window).trigger("scroll");
     $(window).trigger("resize");
     // preloader();
-    AOS.init();
 
-    // Hero Grooming Badge — appears last after all AOS hero animations settle
-    var heroBadge = document.querySelector(".hero-grooming__badge");
-    if (heroBadge) {
-      setTimeout(function () {
-        heroBadge.classList.add("hero-grooming__badge--visible");
-      }, 700);
+    // Wait for the preloader to fully fade out before starting AOS,
+    // so first-section animations aren't consumed while hidden.
+    var aosInitDone = false;
+    function initAOS() {
+      if (aosInitDone) return;
+      aosInitDone = true;
+      AOS.init();
+
+      // Hero Grooming Badge — appears last after all AOS hero animations settle
+      var heroBadge = document.querySelector(".hero-grooming__badge");
+      if (heroBadge) {
+        setTimeout(function () {
+          heroBadge.classList.add("hero-grooming__badge--visible");
+        }, 700);
+      }
+    }
+
+    var preloaderEl = document.getElementById("preloader");
+    if (preloaderEl) {
+      // Preloader exists — defer AOS until it signals completion
+      document.addEventListener("preloaderDone", initAOS, { once: true });
+    } else {
+      // No preloader on this page — init immediately
+      initAOS();
     }
   });
 
@@ -67,6 +84,7 @@
     handleShopSearchFilter();
     initMobileMenu();
     initCountUp();
+    initProgressBars();
     beforeAndAfterReveal();
     videoTextParallax();
   });
@@ -163,6 +181,35 @@
       );
 
       observer.observe(watchTarget);
+    });
+  }
+
+  /*--------------------------------------------------------------
+     Progress Bar Animation (scroll-triggered)
+  --------------------------------------------------------------*/
+  function initProgressBars() {
+    var bars = document.querySelectorAll(".ak-progress-bar[data-width]");
+    if (!bars.length) return;
+
+    bars.forEach(function (bar) {
+      var targetWidth = bar.getAttribute("data-width");
+
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              observer.unobserve(bar);
+              // small delay so the bar is visible before expanding
+              setTimeout(function () {
+                bar.style.width = targetWidth;
+              }, 150);
+            }
+          });
+        },
+        { threshold: 0.4 },
+      );
+
+      observer.observe(bar);
     });
   }
 
@@ -615,31 +662,26 @@
     function updateTestimonial(index, direction) {
       if (totalAvatars === 0) return;
 
-      const $card = $(".testimonial__card");
-      const leaveClass =
-        direction === "next" ? "is-leaving" : "is-leaving-prev";
-      const enterClass =
-        direction === "next" ? "is-entering" : "is-entering-prev";
+      const card = $(".testimonial__card")[0];
+      if (!card) return;
 
-      // 1. Remove old transition state classes & add leaving class
-      $card
-        .removeClass("is-leaving is-leaving-prev is-entering is-entering-prev")
-        .addClass(leaveClass);
+      const slideOut = direction === "next" ? "-60px" : "60px";
+      const slideIn = direction === "next" ? "60px" : "-60px";
 
-      // Update Avatars Border (immediate)
-      $(".testimonial__avatar").removeClass("testimonial__avatar--middle");
-      $(".testimonial__avatar")
-        .eq(index)
-        .addClass("testimonial__avatar--middle");
+      // Phase 1: slide + fade OUT
+      card.style.transition = "opacity 0.22s ease, transform 0.22s ease";
+      card.style.opacity = "0";
+      card.style.transform = "translateX(" + slideOut + ")";
 
       setTimeout(function () {
-        // 2. Swapping Content
+        // Swap content while invisible
         const item = data[index] || data[1];
+        const $card = $(card);
         $card.find(".testimonial__name").text(item.name);
         $card.find(".testimonial__designation").text(item.role);
-        $card.find(".testimonial__text").text(`"${item.text}"`);
+        $card.find(".testimonial__text").text('"' + item.text + '"');
 
-        // Build Stars Markup
+        // Build stars
         let starsHtml = "";
         const fullStars = Math.floor(item.rating);
         const hasHalf = item.rating % 1 !== 0;
@@ -654,17 +696,25 @@
         }
         $card.find(".testimonial__rating").html(starsHtml);
 
-        // 3. Snap to entry-start position WITHOUT transition, then animate in
-        $card.css("transition", "none");
-        $card.removeClass(leaveClass).addClass(enterClass);
+        // Update avatar highlight
+        $(".testimonial__avatar").removeClass("testimonial__avatar--middle");
+        $(".testimonial__avatar")
+          .eq(index)
+          .addClass("testimonial__avatar--middle");
 
-        // Force reflow so browser commits the snap
-        $card[0].offsetHeight;
+        // Snap to entry-start position instantly (no transition)
+        card.style.transition = "none";
+        card.style.transform = "translateX(" + slideIn + ")";
 
-        // Re-enable transitions, remove enter class → CSS animates back to base state
-        $card.css("transition", "");
-        $card.removeClass(enterClass);
-      }, 280);
+        // Phase 2: force reflow then slide + fade IN
+        card.offsetHeight; // trigger reflow
+
+        requestAnimationFrame(function () {
+          card.style.transition = "opacity 0.28s ease, transform 0.28s ease";
+          card.style.opacity = "1";
+          card.style.transform = "translateX(0)";
+        });
+      }, 240); // wait for phase 1 to finish
     }
 
     $(".testimonial__nav--next").on("click", function () {
@@ -1571,6 +1621,29 @@ if ($.exists(".working-process__item")) {
   const quantityGroups = document.querySelectorAll(
     ".shop-details__quantity, .cart__quantity",
   );
+
+  // Store original values for cart inputs so we can detect changes
+  const updateBtn = document.querySelector(".cart__update-btn");
+  const originalValues = new Map();
+  quantityGroups.forEach((group) => {
+    const input = group.querySelector("input");
+    if (input && group.closest(".cart__quantity")) {
+      originalValues.set(input, parseInt(input.value));
+    }
+  });
+
+  function syncUpdateBtn() {
+    if (!updateBtn) return;
+    const hasChange = Array.from(originalValues.entries()).some(
+      ([input, orig]) => parseInt(input.value) !== orig,
+    );
+    if (hasChange) {
+      updateBtn.classList.add("cart__update-btn--active");
+    } else {
+      updateBtn.classList.remove("cart__update-btn--active");
+    }
+  }
+
   quantityGroups.forEach((group) => {
     const input = group.querySelector("input");
     const up = group.querySelector(
@@ -1584,6 +1657,7 @@ if ($.exists(".working-process__item")) {
       up.addEventListener("click", (e) => {
         e.preventDefault();
         input.value = parseInt(input.value) + 1;
+        syncUpdateBtn();
       });
 
       down.addEventListener("click", (e) => {
@@ -1592,6 +1666,7 @@ if ($.exists(".working-process__item")) {
         if (val > 1) {
           input.value = val - 1;
         }
+        syncUpdateBtn();
       });
     }
   });
@@ -1723,11 +1798,14 @@ if ($.exists(".working-process__item")) {
     preloader.addEventListener("transitionend", function handler() {
       preloader.removeEventListener("transitionend", handler);
       preloader.classList.add("preloader--done");
+      // Signal that the preloader is fully gone so AOS can start
+      document.dispatchEvent(new CustomEvent("preloaderDone"));
     });
 
     // Fallback for prefers-reduced-motion or browsers that skip transitionend.
     setTimeout(function () {
       preloader.classList.add("preloader--done");
+      document.dispatchEvent(new CustomEvent("preloaderDone"));
     }, 1000);
   }
 

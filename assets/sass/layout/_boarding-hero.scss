@@ -308,7 +308,7 @@
 
     &--cat {
       left: 0%;
-      top: 40%;
+      top: 47%;
       transform: translateY(-50%);
 
       @include respond(xxxxl) {
@@ -347,7 +347,7 @@
 
     &--dog {
       right: 9%;
-      top: 2%;
+      top: 0;
 
       @include respond(xxxxl) {
         max-width: 90%;

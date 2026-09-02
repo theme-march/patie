@@ -34,7 +34,7 @@
 
         @include respond(xxxl) {
             font-size: 230px;
-            bottom: -30px;
+            bottom: 10px;
         }
         @include respond(xxxl) {
             font-size: 200px;
@@ -44,18 +44,16 @@
         }
         @include respond(xl) {
             font-size: 160px;
-            bottom: -25px;
         }
         @include respond(lg) {
             font-size: 140px;
-            bottom: -20px;
+            bottom: 20px;
         }
         @include respond(md) {
             font-size: 130px;
         }
         @include respond(md) {
             font-size: 114px;
-            bottom: -5px;
         }
     }
 
@@ -71,7 +69,7 @@
         z-index: 2;
 
         .play-btn {
-            transform: translate(-50%, -70%);
+            transform: translate(-50%, -80%);
         }
     }
 }

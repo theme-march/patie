@@ -10,8 +10,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -2;
-
-    @include respond(xl) {
+    @include respond(lg) {
       display: none;
     }
   }
@@ -33,7 +32,6 @@
 
   &__slider-wrap {
     position: relative;
-    overflow: hidden;
   }
 
   &__wrapper {
@@ -71,9 +69,16 @@
       @include respond(xxl) {
         left: -3%;
       }
+      @include respond(lg) {
+        top: 185px;
+      }
 
       @include respond(md) {
         margin-left: 10px;
+        top: 220px;
+      }
+      @include respond(sm) {
+        top: 260px;
       }
     }
 
@@ -85,9 +90,15 @@
       @include respond(xxl) {
         right: -3%;
       }
-
+      @include respond(lg) {
+        top: 185px;
+      }
       @include respond(md) {
         margin-right: 10px;
+        top: 220px;
+      }
+      @include respond(sm) {
+        top: 260px;
       }
     }
 
@@ -115,35 +126,22 @@
     text-align: center;
     max-width: 850px;
     margin: 0 auto;
-    position: relative;
-    min-height: 540px;
-
-    @include respond(xl) {
-      min-height: 500px;
-    }
-
-    @include respond(lg) {
-      min-height: 460px;
-    }
-
-    @include respond(md) {
-      min-height: 500px;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   &__slide-content {
-    position: absolute;
-    top: 60px;
-    left: 40px;
-    right: 40px;
+    width: 100%;
+    margin-top: 60px;
+    padding-bottom: 30px;
     transition:
       opacity 0.25s ease,
       transform 0.25s ease;
 
     @include respond(lg) {
-      top: 40px;
-      left: 45px;
-      right: 45px;
+      margin-top: 40px;
+      padding-bottom: 0;
     }
   }
 
@@ -213,15 +211,10 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 90px;
-    z-index: 1;
+    padding-bottom: 45px;
 
     @include respond(lg) {
-      height: 70px;
+      padding-bottom: 0;
     }
   }
 
@@ -248,7 +241,7 @@
     &--center {
       transform: scale(1);
       border-color: var(--primary-color);
-      padding: 2px;
+      padding: 5px;
       opacity: 1;
       z-index: 2;
       position: relative;

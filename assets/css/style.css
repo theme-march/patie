@@ -17016,13 +17016,13 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
   font-size: 12px;
   color: var(--body-color);
 }
-.dashboard-bookings__status-dot::before {
-  content: "";
+.dashboard-bookings__status-dot .dashboard-bookings__dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background-color: #ff781f;
   flex-shrink: 0;
+  display: inline-block;
 }
 .dashboard-bookings__badge {
   display: inline-block;

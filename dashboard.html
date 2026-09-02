@@ -1,0 +1,727 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Thememarch" />
+    <link rel="icon" href="assets/img/logo/favIcon.svg" />
+    <title>Dashboard – Patie</title>
+    <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/css/preloader.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <!-- Preloader -->
+    <div
+      id="preloader"
+      class="preloader"
+      aria-hidden="true"
+      role="presentation"
+    >
+      <div class="preloader__frames">
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf0" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf1" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf2" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf3" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf4" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf5" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf6" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf7" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf8" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf9" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- ================= Dashboard ======================== -->
+    <div class="dashboard">
+      <!-- ── Topbar (full width, above sidebar + main) ──── -->
+      <header class="dashboard-topbar" role="banner">
+        <!-- Logo slot — aligns with the sidebar width -->
+        <div class="dashboard-topbar__logo-slot">
+          <a
+            href="index.html"
+            class="dashboard-topbar__logo-link"
+            aria-label="Patie Home"
+          >
+            <img
+              src="assets/img/logo/dashboard-logo.svg"
+              alt="Paties"
+              width="160"
+              height="38"
+              class="dashboard-topbar__logo-img"
+            />
+          </a>
+        </div>
+
+        <!-- Right side: search + actions + avatar -->
+        <div class="dashboard-topbar__right">
+          <!-- Search -->
+          <div class="dashboard-topbar__search-wrap">
+            <label for="db-search" class="visually-hidden">Search</label>
+            <input
+              id="db-search"
+              class="dashboard-topbar__search-input"
+              type="search"
+              placeholder="Search"
+              autocomplete="off"
+            />
+            <i
+              class="fas fa-search dashboard-topbar__search-icon"
+              aria-hidden="true"
+            ></i>
+          </div>
+
+          <!-- Actions -->
+          <div class="dashboard-topbar__actions">
+            <a
+              href="#"
+              class="dashboard-topbar__action-btn"
+              aria-label="Messages"
+            >
+              <i class="fas fa-comment-dots" aria-hidden="true"></i>
+            </a>
+            <a
+              href="#"
+              class="dashboard-topbar__action-btn"
+              aria-label="Notifications"
+            >
+              <i class="fas fa-bell" aria-hidden="true"></i>
+            </a>
+            <a
+              href="#"
+              class="dashboard-topbar__action-btn"
+              aria-label="Settings"
+            >
+              <i class="fas fa-cog" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="dashboard-topbar__action-btn" aria-label="Apps">
+              <i class="fas fa-th" aria-hidden="true"></i>
+            </a>
+            <img
+              src="assets/img/dashboard/profile-pic.png"
+              alt="Profile"
+              class="dashboard-topbar__avatar"
+              width="42"
+              height="42"
+            />
+          </div>
+        </div>
+      </header>
+
+      <!-- ── Body row (sidebar + main) ─────────────────── -->
+      <div class="dashboard-body-row">
+        <!-- ── Sidebar ──────────────────────────────────── -->
+        <aside class="dashboard-sidebar" aria-label="Sidebar navigation">
+          <!-- Smoke-bg group: profile + nav + logout -->
+          <div class="dashboard-sidebar__group">
+            <!-- Profile -->
+            <div class="dashboard-sidebar__profile">
+              <img
+                src="assets/img/dashboard/profile-pic.png"
+                alt="Nocturne Nyx"
+                class="dashboard-sidebar__avatar"
+                width="88"
+                height="88"
+              />
+              <p class="dashboard-sidebar__name">Nocturne Nyx</p>
+              <p class="dashboard-sidebar__email">Realdrewcone@Test.Com</p>
+            </div>
+
+            <!-- Nav -->
+            <nav class="dashboard-sidebar__nav" aria-label="Dashboard menu">
+              <a
+                href="dashboard.html"
+                class="dashboard-sidebar__nav-item dashboard-sidebar__nav-item--active"
+                aria-current="page"
+              >
+                <i
+                  class="fas fa-home dashboard-sidebar__nav-icon"
+                  aria-hidden="true"
+                ></i>
+                Dashboard
+              </a>
+              <a href="#" class="dashboard-sidebar__nav-item">
+                <i
+                  class="fas fa-shopping-bag dashboard-sidebar__nav-icon"
+                  aria-hidden="true"
+                ></i>
+                Order
+              </a>
+              <a
+                href="set-newpassword.html"
+                class="dashboard-sidebar__nav-item"
+              >
+                <i
+                  class="fas fa-lock dashboard-sidebar__nav-icon"
+                  aria-hidden="true"
+                ></i>
+                Change Password
+              </a>
+              <a href="#" class="dashboard-sidebar__nav-item">
+                <i
+                  class="fas fa-user-tie dashboard-sidebar__nav-icon"
+                  aria-hidden="true"
+                ></i>
+                Lead Management
+              </a>
+            </nav>
+
+            <!-- Logout -->
+            <a href="sign-in.html" class="dashboard-sidebar__logout">
+              <i
+                class="fas fa-sign-out-alt dashboard-sidebar__logout-icon"
+                aria-hidden="true"
+              ></i>
+              Logout
+            </a>
+          </div>
+          <!-- /group -->
+        </aside>
+
+        <!-- ── Main ─────────────────────────────────────── -->
+        <div class="dashboard-main">
+          <!-- Body -->
+          <main class="dashboard-body" id="main-content">
+            <!-- ── Stat Cards ──────────────────────────────── -->
+            <div class="dashboard-stats" aria-label="Statistics overview">
+              <!-- Total Active Customers -->
+              <div class="stat-card stat-card--purple">
+                <div class="stat-card__header">
+                  <div class="stat-card__icon-wrap">
+                    <img
+                      src="assets/img/dashboard/stat-icon-1.png"
+                      alt=""
+                      class="stat-card__icon-img"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <p class="stat-card__label">Total Active Customers</p>
+                </div>
+                <p class="stat-card__value">560+</p>
+                <img
+                  src="assets/img/dashboard/stat-1.png"
+                  alt=""
+                  class="stat-card__photo"
+                  aria-hidden="true"
+                />
+              </div>
+
+              <!-- Total Registered Pets -->
+              <div class="stat-card stat-card--orange">
+                <div class="stat-card__header">
+                  <div class="stat-card__icon-wrap">
+                    <img
+                      src="assets/img/dashboard/stat-icon-2.png"
+                      alt=""
+                      class="stat-card__icon-img"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <p class="stat-card__label">Total Registered Pets</p>
+                </div>
+                <p class="stat-card__value">120+</p>
+                <img
+                  src="assets/img/dashboard/stat-2.png"
+                  alt=""
+                  class="stat-card__photo"
+                  aria-hidden="true"
+                />
+              </div>
+
+              <!-- Today New Bookings -->
+              <div class="stat-card stat-card--maroon">
+                <div class="stat-card__header">
+                  <div class="stat-card__icon-wrap">
+                    <img
+                      src="assets/img/dashboard/stat-icon-3.png"
+                      alt=""
+                      class="stat-card__icon-img"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <p class="stat-card__label">Today New Bookings</p>
+                </div>
+                <p class="stat-card__value">18+</p>
+                <img
+                  src="assets/img/dashboard/stat-3.png"
+                  alt=""
+                  class="stat-card__photo"
+                  aria-hidden="true"
+                />
+              </div>
+
+              <!-- Total Revenue Amount -->
+              <div class="stat-card stat-card--green">
+                <div class="stat-card__header">
+                  <div class="stat-card__icon-wrap">
+                    <img
+                      src="assets/img/dashboard/stat-icon-4.png"
+                      alt=""
+                      class="stat-card__icon-img"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <p class="stat-card__label">Total Revenue Amount</p>
+                </div>
+                <p class="stat-card__value">$2,456</p>
+                <img
+                  src="assets/img/dashboard/stat-4.png"
+                  alt=""
+                  class="stat-card__photo"
+                  aria-hidden="true"
+                />
+              </div>
+            </div>
+            <!-- /stat cards -->
+
+            <!-- ── Middle row ──────────────────────────────── -->
+            <div class="dashboard-mid">
+              <!-- Sales Performance Chart -->
+              <div class="dashboard-chart-card">
+                <h2 class="dashboard-chart-card__title">Sales Performance</h2>
+                <div class="dashboard-chart-card__legend" aria-hidden="true">
+                  <span class="dashboard-chart-card__legend-item">
+                    <span
+                      class="dashboard-chart-card__legend-dot dashboard-chart-card__legend-dot--orange"
+                    ></span>
+                    2020
+                  </span>
+                  <span class="dashboard-chart-card__legend-item">
+                    <span
+                      class="dashboard-chart-card__legend-dot dashboard-chart-card__legend-dot--purple"
+                    ></span>
+                    2021
+                  </span>
+                </div>
+                <div class="dashboard-chart-card__canvas-wrap">
+                  <canvas
+                    id="salesChart"
+                    aria-label="Sales performance chart"
+                    role="img"
+                  ></canvas>
+                </div>
+              </div>
+
+              <!-- Top Services Donut -->
+              <div class="dashboard-services-card">
+                <h2 class="dashboard-services-card__title">Top Services</h2>
+                <div class="dashboard-services-card__donut-wrap">
+                  <canvas
+                    id="servicesChart"
+                    aria-label="Top services donut chart"
+                    role="img"
+                  ></canvas>
+                </div>
+                <div
+                  class="dashboard-services-card__labels"
+                  aria-label="Service legend"
+                >
+                  <div class="dashboard-services-card__label-item">
+                    <span
+                      class="dashboard-services-card__label-dot dashboard-services-card__label-dot--purple"
+                    ></span>
+                    Grooming
+                  </div>
+                  <div class="dashboard-services-card__label-item">
+                    <span
+                      class="dashboard-services-card__label-dot dashboard-services-card__label-dot--maroon"
+                    ></span>
+                    Vet Check
+                  </div>
+                  <div class="dashboard-services-card__label-item">
+                    <span
+                      class="dashboard-services-card__label-dot dashboard-services-card__label-dot--orange"
+                    ></span>
+                    Pet Boarding
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /middle row -->
+
+            <!-- ── Bottom row ──────────────────────────────── -->
+            <div class="dashboard-bottom">
+              <!-- Recent Bookings -->
+              <div class="dashboard-bookings">
+                <h2 class="dashboard-bookings__title">Recent Bookings</h2>
+                <div style="overflow-x: auto">
+                  <table
+                    class="dashboard-bookings__table"
+                    aria-label="Recent bookings"
+                  >
+                    <thead>
+                      <tr>
+                        <th scope="col">Customer</th>
+                        <th scope="col">Service</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="dashboard-bookings__customer">
+                            <img
+                              src="assets/img/dashboard/recent-booking-1.png"
+                              alt=""
+                              class="dashboard-bookings__avatar"
+                              width="40"
+                              height="40"
+                            />
+                            <div>
+                              <span class="dashboard-bookings__customer-name"
+                                >Dianne Russell</span
+                              >
+                              <span class="dashboard-bookings__customer-sub"
+                                >Coeri Doing</span
+                              >
+                            </div>
+                          </div>
+                        </td>
+                        <td>1</td>
+                        <td>
+                          <span class="dashboard-bookings__status-dot"
+                            >Pending</span
+                          >
+                        </td>
+                        <td>
+                          <span class="dashboard-bookings__badge"
+                            >Confirmed</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="dashboard-bookings__customer">
+                            <img
+                              src="assets/img/dashboard/recent-booking-2.png"
+                              alt=""
+                              class="dashboard-bookings__avatar"
+                              width="40"
+                              height="40"
+                            />
+                            <div>
+                              <span class="dashboard-bookings__customer-name"
+                                >Leslie Alexander</span
+                              >
+                              <span class="dashboard-bookings__customer-sub"
+                                >Coer. Snrps tiling</span
+                              >
+                            </div>
+                          </div>
+                        </td>
+                        <td>2</td>
+                        <td>
+                          <span class="dashboard-bookings__status-dot"
+                            >Pending</span
+                          >
+                        </td>
+                        <td>
+                          <span class="dashboard-bookings__badge"
+                            >Confirmed</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="dashboard-bookings__customer">
+                            <img
+                              src="assets/img/dashboard/recent-booking-3.png"
+                              alt=""
+                              class="dashboard-bookings__avatar"
+                              width="40"
+                              height="40"
+                            />
+                            <div>
+                              <span class="dashboard-bookings__customer-name"
+                                >Kristin Watson</span
+                              >
+                              <span class="dashboard-bookings__customer-sub"
+                                >Hori 15thdicy</span
+                              >
+                            </div>
+                          </div>
+                        </td>
+                        <td>3</td>
+                        <td>
+                          <span class="dashboard-bookings__status-dot"
+                            >Pending</span
+                          >
+                        </td>
+                        <td>
+                          <span class="dashboard-bookings__badge"
+                            >Confirmed</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="dashboard-bookings__customer">
+                            <img
+                              src="assets/img/dashboard/recent-booking-4.png"
+                              alt=""
+                              class="dashboard-bookings__avatar"
+                              width="40"
+                              height="40"
+                            />
+                            <div>
+                              <span class="dashboard-bookings__customer-name"
+                                >Ralph Edwards</span
+                              >
+                              <span class="dashboard-bookings__customer-sub"
+                                >Snrpn toing</span
+                              >
+                            </div>
+                          </div>
+                        </td>
+                        <td>1</td>
+                        <td>
+                          <span class="dashboard-bookings__status-dot"
+                            >Today</span
+                          >
+                        </td>
+                        <td>
+                          <span class="dashboard-bookings__badge"
+                            >Confirmed</span
+                          >
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Today's Agenda -->
+              <div class="dashboard-agenda">
+                <h2 class="dashboard-agenda__title">Today's Agenda</h2>
+                <ol
+                  class="dashboard-agenda__list"
+                  aria-label="Today's agenda items"
+                >
+                  <li class="dashboard-agenda__item">Remy Team Plan</li>
+                  <li class="dashboard-agenda__item">Meeting Sprint</li>
+                  <li class="dashboard-agenda__item">Dalily Start Notes</li>
+                </ol>
+              </div>
+            </div>
+            <!-- /bottom row -->
+          </main>
+
+          <!-- Footer -->
+          <footer class="dashboard-footer">
+            Copyright &copy; 2026
+            <a href="index.html" class="dashboard-footer__link">Patie</a> All
+            Rights Reserved.
+          </footer>
+        </div>
+        <!-- /dashboard-main -->
+      </div>
+      <!-- /dashboard-body-row -->
+    </div>
+    <!-- /dashboard -->
+
+    <!-- Scripts -->
+    <script src="assets/js/plugins/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="assets/js/plugins/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+      // ── Sales Performance Line Chart ─────────────────────────────────────────
+      (function () {
+        var ctx = document.getElementById("salesChart").getContext("2d");
+
+        var months = [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+        ];
+
+        // Custom tooltip plugin for the vertical line + bubble
+        var verticalLinePlugin = {
+          id: "verticalLine",
+          afterDraw: function (chart) {
+            if (chart.tooltip._active && chart.tooltip._active.length) {
+              var ctx2 = chart.ctx;
+              var activePoint = chart.tooltip._active[0];
+              var x = activePoint.element.x;
+              var topY = chart.scales.y.top;
+              var bottomY = chart.scales.y.bottom;
+
+              ctx2.save();
+              ctx2.beginPath();
+              ctx2.moveTo(x, topY);
+              ctx2.lineTo(x, bottomY);
+              ctx2.lineWidth = 1.5;
+              ctx2.strokeStyle = "rgba(104, 57, 204, 0.4)";
+              ctx2.setLineDash([4, 4]);
+              ctx2.stroke();
+              ctx2.restore();
+            }
+          },
+        };
+
+        new Chart(ctx, {
+          type: "line",
+          plugins: [verticalLinePlugin],
+          data: {
+            labels: months,
+            datasets: [
+              {
+                label: "2021",
+                data: [
+                  28000, 35000, 25000, 40000, 30000, 62000, 45000, 38000, 50000,
+                  55000,
+                ],
+                borderColor: "#6839cc",
+                backgroundColor: "rgba(104, 57, 204, 0.08)",
+                borderWidth: 2.5,
+                tension: 0.45,
+                fill: true,
+                pointRadius: 0,
+                pointHoverRadius: 6,
+                pointHoverBackgroundColor: "#6839cc",
+                pointHoverBorderColor: "#fff",
+                pointHoverBorderWidth: 2,
+              },
+              {
+                label: "2020",
+                data: [
+                  20000, 45000, 35000, 30000, 50000, 40000, 55000, 48000, 42000,
+                  60000,
+                ],
+                borderColor: "#ff781f",
+                backgroundColor: "rgba(255, 120, 31, 0.05)",
+                borderWidth: 2.5,
+                tension: 0.45,
+                fill: true,
+                pointRadius: 0,
+                pointHoverRadius: 6,
+                pointHoverBackgroundColor: "#ff781f",
+                pointHoverBorderColor: "#fff",
+                pointHoverBorderWidth: 2,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: {
+              mode: "index",
+              intersect: false,
+            },
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                backgroundColor: "#6839cc",
+                titleColor: "#fff",
+                bodyColor: "#fff",
+                padding: 10,
+                displayColors: false,
+                callbacks: {
+                  title: function () {
+                    return "";
+                  },
+                  label: function (ctx2) {
+                    return "$" + (ctx2.raw / 1000).toFixed(0) + "K";
+                  },
+                },
+              },
+            },
+            scales: {
+              x: {
+                grid: { display: false },
+                ticks: {
+                  color: "#aaa",
+                  font: { size: 12, family: "Poppins" },
+                },
+                border: { display: false },
+              },
+              y: {
+                min: 10000,
+                max: 100000,
+                ticks: {
+                  color: "#aaa",
+                  font: { size: 11, family: "Poppins" },
+                  callback: function (val) {
+                    return val / 1000 + "K";
+                  },
+                  stepSize: 20000,
+                },
+                grid: {
+                  color: "rgba(0,0,0,0.05)",
+                },
+                border: { display: false },
+              },
+            },
+          },
+        });
+      })();
+
+      // ── Top Services Donut Chart ──────────────────────────────────────────────
+      (function () {
+        var ctx = document.getElementById("servicesChart").getContext("2d");
+
+        new Chart(ctx, {
+          type: "doughnut",
+          data: {
+            labels: ["Grooming", "Vet Check", "Pet Boarding"],
+            datasets: [
+              {
+                data: [35, 25, 40],
+                backgroundColor: ["#6839cc", "#8b0037", "#ff781f"],
+                borderWidth: 0,
+                hoverOffset: 6,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            cutout: "68%",
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                backgroundColor: "#6839cc",
+                titleColor: "#fff",
+                bodyColor: "#fff",
+                padding: 10,
+                displayColors: false,
+              },
+            },
+          },
+        });
+      })();
+    </script>
+  </body>
+</html>

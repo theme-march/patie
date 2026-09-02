@@ -1837,3 +1837,105 @@ if ($.exists(".working-process__item")) {
     setTimeout(dismiss, remaining);
   });
 })();
+
+/*--------------------------------------------------------------
+    Sign In — Password show/hide toggle
+  --------------------------------------------------------------*/
+$(function () {
+  $(".sign-in__eye-toggle").on("click", function () {
+    var $btn = $(this);
+    var $input = $("#" + $btn.data("target"));
+    var $icon = $btn.find("i");
+    if (!$input.length) return;
+    if ($input.attr("type") === "password") {
+      $input.attr("type", "text");
+      if ($icon.hasClass("fa-lock")) {
+        $icon.removeClass("fa-lock").addClass("fa-lock-open");
+      } else if ($icon.hasClass("fa-eye")) {
+        $icon.removeClass("fa-eye").addClass("fa-eye-slash");
+      }
+      $btn.attr("aria-label", "Hide password");
+    } else {
+      $input.attr("type", "password");
+      if ($icon.hasClass("fa-lock-open")) {
+        $icon.removeClass("fa-lock-open").addClass("fa-lock");
+      } else if ($icon.hasClass("fa-eye-slash")) {
+        $icon.removeClass("fa-eye-slash").addClass("fa-eye");
+      }
+      $btn.attr("aria-label", "Show password");
+    }
+  });
+});
+
+/*--------------------------------------------------------------
+    Sign Up — Password show/hide toggle
+  --------------------------------------------------------------*/
+$(function () {
+  $(".sign-up__eye-toggle").on("click", function () {
+    var $btn = $(this);
+    var $input = $("#" + $btn.data("target"));
+    var $icon = $btn.find("i");
+    if (!$input.length) return;
+    if ($input.attr("type") === "password") {
+      $input.attr("type", "text");
+      $icon.removeClass("fa-lock").addClass("fa-lock-open");
+      $btn.attr("aria-label", "Hide password");
+    } else {
+      $input.attr("type", "password");
+      $icon.removeClass("fa-lock-open").addClass("fa-lock");
+      $btn.attr("aria-label", "Show password");
+    }
+  });
+});
+
+/*--------------------------------------------------------------
+    Password Reset — OTP input auto-advance, backspace, paste
+  --------------------------------------------------------------*/
+$(function () {
+  var $inputs = $(".password-reset__otp-input");
+  if (!$inputs.length) return;
+
+  $inputs.on("input", function () {
+    var $this = $(this);
+    var index = $inputs.index($this);
+    $this.val($this.val().replace(/[^0-9]/g, ""));
+    if ($this.val().length === 1) {
+      $this.addClass("is-filled");
+      if (index < $inputs.length - 1) {
+        $inputs.eq(index + 1).trigger("focus");
+      }
+    } else {
+      $this.removeClass("is-filled");
+    }
+  });
+
+  $inputs.on("keydown", function (e) {
+    var $this = $(this);
+    var index = $inputs.index($this);
+    if (e.key === "Backspace" && $this.val() === "" && index > 0) {
+      $inputs.eq(index - 1).trigger("focus");
+    }
+  });
+
+  $inputs.on("paste", function (e) {
+    e.preventDefault();
+    var $this = $(this);
+    var index = $inputs.index($this);
+    var pasted = (e.originalEvent.clipboardData || window.clipboardData)
+      .getData("text")
+      .replace(/[^0-9]/g, "")
+      .slice(0, $inputs.length - index);
+    $.each(pasted.split(""), function (i, char) {
+      if ($inputs.eq(index + i).length) {
+        $inputs
+          .eq(index + i)
+          .val(char)
+          .addClass("is-filled");
+      }
+    });
+    var nextEmpty = index + pasted.length;
+    if ($inputs.eq(nextEmpty).length) {
+      $inputs.eq(nextEmpty).trigger("focus");
+    }
+  });
+});

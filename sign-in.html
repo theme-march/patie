@@ -1,0 +1,180 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Thememarch" />
+    <link rel="icon" href="assets/img/logo/favIcon.svg" />
+    <title>Sign In – Patie</title>
+    <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/css/preloader.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <!-- Preloader -->
+    <div
+      id="preloader"
+      class="preloader"
+      aria-hidden="true"
+      role="presentation"
+    >
+      <div class="preloader__frames">
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf0" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf1" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf2" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf3" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf4" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf5" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf6" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf7" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf8" />
+        </svg>
+        <svg class="preloader__frame" aria-hidden="true">
+          <use href="assets/img/preloader/paw-frames.svg#pf9" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- ================= Start Sign In ========================== -->
+    <section class="sign-in">
+      <div class="sign-in__inner">
+        <!-- Left: Form Panel -->
+        <div class="sign-in__form-panel">
+          <!-- Logo -->
+          <a href="index.html" class="sign-in__logo" aria-label="Patie Home">
+            <img
+              src="assets/img/logo/dashboard-logo.svg"
+              alt="Paties"
+              width="220"
+              height="52"
+            />
+          </a>
+
+          <!-- Form content vertically centred -->
+          <div class="sign-in__form-content">
+            <h1 class="sign-in__title">Sign In</h1>
+
+            <form
+              class="sign-in__form"
+              action="#"
+              method="post"
+              novalidate
+              aria-label="Sign in"
+            >
+              <!-- Email -->
+              <div class="sign-in__input-wrapper">
+                <input
+                  id="si-email"
+                  class="sign-in__input"
+                  type="email"
+                  name="email"
+                  placeholder="Enter Email Address"
+                  autocomplete="email"
+                  required
+                />
+                <i
+                  class="far fa-envelope sign-in__input-icon"
+                  aria-hidden="true"
+                ></i>
+              </div>
+
+              <!-- Password -->
+              <div class="sign-in__input-wrapper">
+                <input
+                  id="si-password"
+                  class="sign-in__input"
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  autocomplete="current-password"
+                  required
+                />
+                <button
+                  type="button"
+                  class="sign-in__eye-toggle"
+                  aria-label="Show password"
+                  data-target="si-password"
+                >
+                  <i class="fas fa-lock" aria-hidden="true"></i>
+                </button>
+              </div>
+              <a href="forget-password.html" class="sign-in__forgot-link"
+                >Forgot Password?</a
+              >
+
+              <!-- Sign In button -->
+              <button
+                type="submit"
+                class="common-btn common-btn--primary sign-in__submit-btn"
+              >
+                <span class="common-btn__inner">
+                  Sign In
+                  <img
+                    src="assets/img/sign-in/sign-in-border.svg"
+                    class="common-btn__dash-svg"
+                    aria-hidden="true"
+                    alt=""
+                  />
+                </span>
+              </button>
+            </form>
+
+            <!-- Register link -->
+            <p class="sign-in__register-wrap">
+              Don't Have An Account?
+              <a href="sign-up.html" class="sign-in__register-link">Sign Up</a>
+            </p>
+          </div>
+          <!-- /.sign-in__form-content -->
+        </div>
+        <!-- /.sign-in__form-panel -->
+
+        <!-- Right: Image -->
+        <div class="sign-in__image-panel">
+          <div class="sign-in__image-box">
+            <img
+              src="assets/img/sign-in/sign-in.png"
+              alt="Pets"
+              class="sign-in__image"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- /.sign-in__inner -->
+    </section>
+    <!-- ================= End Sign In ============================ -->
+
+    <!-- Scripts -->
+    <script src="assets/js/plugins/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="assets/js/plugins/lightgallery.min.js"></script>
+    <script src="assets/js/plugins/simplePagination.min.js"></script>
+    <script src="assets/js/plugins/aos.js"></script>
+    <script src="assets/js/plugins/swiper.min.js"></script>
+    <script src="assets/js/plugins/SplitText.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+  </body>
+</html>
+</html>

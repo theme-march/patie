@@ -42,6 +42,9 @@
 
   &__btn-wrap {
     margin-bottom: 15px;
+    @include respond(lg) {
+      margin-bottom: 0;
+    }
   }
 
   &__slider {

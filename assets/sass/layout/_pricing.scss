@@ -10,8 +10,11 @@
     gap: 30px;
 
     @include respond(lg) {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       gap: 20px;
+    }
+    @include respond(md) {
+      margin-bottom: 20px;
     }
   }
 
@@ -26,7 +29,9 @@
     border-radius: 100px;
     margin-bottom: 15px;
     overflow: hidden;
-
+@include respond(lg) {
+      margin-bottom: 0;
+    }
     @include respond(md) {
       border-width: 1px;
     }

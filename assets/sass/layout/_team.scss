@@ -17,6 +17,9 @@
 
   &__header-right {
     margin-bottom: 15px;
+    @include respond(lg) {
+      margin-bottom: 0;
+    }
   }
 
   &__header--style2 {

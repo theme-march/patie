@@ -136,16 +136,21 @@
         <!-- ── Sidebar ──────────────────────────────────── -->
         <aside class="dashboard-sidebar" aria-label="Sidebar navigation">
           <!-- Smoke-bg group: profile + nav + logout -->
+
+          <!-- Avatar (half outside the group) -->
+          <div class="dashboard-sidebar__avatar-wrap">
+            <img
+              src="assets/img/dashboard/profile-pic.png"
+              alt="Nocturne Nyx"
+              class="dashboard-sidebar__avatar"
+              width="96"
+              height="96"
+            />
+          </div>
+
           <div class="dashboard-sidebar__group">
-            <!-- Profile -->
+            <!-- Profile (name + email only, no avatar) -->
             <div class="dashboard-sidebar__profile">
-              <img
-                src="assets/img/dashboard/profile-pic.png"
-                alt="Nocturne Nyx"
-                class="dashboard-sidebar__avatar"
-                width="88"
-                height="88"
-              />
               <p class="dashboard-sidebar__name">Nocturne Nyx</p>
               <p class="dashboard-sidebar__email">Realdrewcone@Test.Com</p>
             </div>
@@ -331,32 +336,10 @@
                 <div class="dashboard-services-card__donut-wrap">
                   <canvas
                     id="servicesChart"
+                    class="dashboard-services-card__canvas"
                     aria-label="Top services donut chart"
                     role="img"
                   ></canvas>
-                </div>
-                <div
-                  class="dashboard-services-card__labels"
-                  aria-label="Service legend"
-                >
-                  <div class="dashboard-services-card__label-item">
-                    <span
-                      class="dashboard-services-card__label-dot dashboard-services-card__label-dot--purple"
-                    ></span>
-                    Grooming
-                  </div>
-                  <div class="dashboard-services-card__label-item">
-                    <span
-                      class="dashboard-services-card__label-dot dashboard-services-card__label-dot--maroon"
-                    ></span>
-                    Vet Check
-                  </div>
-                  <div class="dashboard-services-card__label-item">
-                    <span
-                      class="dashboard-services-card__label-dot dashboard-services-card__label-dot--orange"
-                    ></span>
-                    Pet Boarding
-                  </div>
                 </div>
               </div>
             </div>
@@ -562,6 +545,7 @@
     <!-- Scripts -->
     <script src="assets/js/plugins/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
     <script src="assets/js/plugins/aos.js"></script>
     <script src="assets/js/main.js"></script>
 
@@ -616,7 +600,7 @@
               {
                 label: "2021",
                 data: [
-                  28000, 35000, 25000, 40000, 30000, 62000, 45000, 38000, 50000,
+                  28000, 35000, 25000, 80000, 30000, 62000, 95000, 38000, 50000,
                   55000,
                 ],
                 borderColor: "#6839cc",
@@ -633,7 +617,7 @@
               {
                 label: "2020",
                 data: [
-                  20000, 45000, 35000, 30000, 50000, 40000, 55000, 48000, 42000,
+                  20000, 45000, 35000, 30000, 80000, 40000, 55000, 48000, 92000,
                   60000,
                 ],
                 borderColor: "#ff781f",
@@ -704,18 +688,29 @@
         });
       })();
 
-      // ── Top Services Donut Chart ──────────────────────────────────────────────
       (function () {
         var ctx = document.getElementById("servicesChart").getContext("2d");
 
+        Chart.unregister(ChartDataLabels);
+
+        var sliceColors = ["#8b0037", "#6839cc", "#3a6b35", "#ff781f"];
+        var sliceLabels = [
+          "Grooming",
+          "Pet Boarding",
+          "Vet Check",
+          "Vet Check",
+        ];
+        var sliceData = [28, 25, 8, 39];
+
         new Chart(ctx, {
           type: "doughnut",
+          plugins: [ChartDataLabels],
           data: {
-            labels: ["Grooming", "Vet Check", "Pet Boarding"],
+            labels: sliceLabels,
             datasets: [
               {
-                data: [35, 25, 40],
-                backgroundColor: ["#6839cc", "#8b0037", "#ff781f"],
+                data: sliceData,
+                backgroundColor: sliceColors,
                 borderWidth: 0,
                 hoverOffset: 6,
               },
@@ -724,7 +719,16 @@
           options: {
             responsive: true,
             maintainAspectRatio: true,
-            cutout: "68%",
+            cutout: "65%",
+            layout: {
+              // padding gives room for labels to float outside the ring
+              padding: {
+                top: 30,
+                bottom: 30,
+                left: 95,
+                right: 75,
+              },
+            },
             plugins: {
               legend: { display: false },
               tooltip: {
@@ -733,6 +737,23 @@
                 bodyColor: "#fff",
                 padding: 10,
                 displayColors: false,
+              },
+              datalabels: {
+                anchor: "end",
+                align: "end",
+                offset: 12,
+                clip: false,
+                color: function (context) {
+                  return sliceColors[context.dataIndex];
+                },
+                font: {
+                  family: "'Poppins', 'Passion One'",
+                  size: 16,
+                  weight: "600",
+                },
+                formatter: function (value, context) {
+                  return context.chart.data.labels[context.dataIndex];
+                },
               },
             },
           },

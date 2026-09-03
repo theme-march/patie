@@ -55,11 +55,9 @@
       </div>
     </div>
 
-    <!-- ================= Dashboard ======================== -->
+    <!-- ================= Start Dashboard ======================== -->
     <div class="dashboard">
-      <!-- ── Topbar (full width, above sidebar + main) ──── -->
       <header class="dashboard-topbar" role="banner">
-        <!-- Logo slot — aligns with the sidebar width -->
         <div class="dashboard-topbar__logo-slot">
           <a
             href="index.html"
@@ -76,9 +74,7 @@
           </a>
         </div>
 
-        <!-- Right side: search + actions + avatar -->
         <div class="dashboard-topbar__right">
-          <!-- Search -->
           <div class="dashboard-topbar__search-wrap">
             <label for="db-search" class="visually-hidden">Search</label>
             <input
@@ -94,7 +90,6 @@
             ></i>
           </div>
 
-          <!-- Actions -->
           <div class="dashboard-topbar__actions">
             <a
               href="#"
@@ -131,31 +126,25 @@
         </div>
       </header>
 
-      <!-- ── Body row (sidebar + main) ─────────────────── -->
       <div class="dashboard-body-row">
         <!-- ── Sidebar ──────────────────────────────────── -->
         <aside class="dashboard-sidebar" aria-label="Sidebar navigation">
-          <!-- Smoke-bg group: profile + nav + logout -->
-
-          <!-- Avatar (half outside the group) -->
           <div class="dashboard-sidebar__avatar-wrap">
             <img
-              src="assets/img/dashboard/profile-pic.png"
+              src="../assets/img/dashboard/profile-pic.png"
               alt="Nocturne Nyx"
               class="dashboard-sidebar__avatar"
-              width="96"
-              height="96"
+              width="110"
+              height="110"
             />
           </div>
 
           <div class="dashboard-sidebar__group">
-            <!-- Profile (name + email only, no avatar) -->
             <div class="dashboard-sidebar__profile">
               <p class="dashboard-sidebar__name">Nocturne Nyx</p>
               <p class="dashboard-sidebar__email">Realdrewcone@Test.Com</p>
             </div>
 
-            <!-- Nav -->
             <nav class="dashboard-sidebar__nav" aria-label="Dashboard menu">
               <a
                 href="dashboard.html"
@@ -168,7 +157,10 @@
                 ></i>
                 Dashboard
               </a>
-              <a href="#" class="dashboard-sidebar__nav-item">
+              <a
+                href="dashboard/order.html"
+                class="dashboard-sidebar__nav-item"
+              >
                 <i
                   class="fas fa-shopping-bag dashboard-sidebar__nav-icon"
                   aria-hidden="true"
@@ -176,7 +168,7 @@
                 Order
               </a>
               <a
-                href="set-newpassword.html"
+                href="dashboard/change-password.html"
                 class="dashboard-sidebar__nav-item"
               >
                 <i
@@ -185,7 +177,10 @@
                 ></i>
                 Change Password
               </a>
-              <a href="#" class="dashboard-sidebar__nav-item">
+              <a
+                href="dashboard/lead-management.html"
+                class="dashboard-sidebar__nav-item"
+              >
                 <i
                   class="fas fa-user-tie dashboard-sidebar__nav-icon"
                   aria-hidden="true"
@@ -194,7 +189,6 @@
               </a>
             </nav>
 
-            <!-- Logout -->
             <a href="sign-in.html" class="dashboard-sidebar__logout">
               <i
                 class="fas fa-sign-out-alt dashboard-sidebar__logout-icon"
@@ -203,7 +197,6 @@
               Logout
             </a>
           </div>
-          <!-- /group -->
         </aside>
 
         <!-- ── Main ─────────────────────────────────────── -->

@@ -17068,4 +17068,829 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
   text-decoration: underline;
 }
 
+/* 
+|......................................................................
+| Template Name: CRAS
+| Author: Thememarch
+| Version: 1.0.0
+|--------------------------------------------------------------------------
+|--------------------------------------------------------------------------
+| TABLE OF CONTENTS:
+|--------------------------------------------------------------------------
+| 1. Basic Color Variable
+| 2. Typography
+
+ ................................................................*/
+.order-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.order-body {
+  flex: 1;
+  padding: 30px 30px 0 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media (max-width: 992px) {
+  .order-body {
+    padding: 20px 16px;
+  }
+}
+
+.order-header__title {
+  font-family: var(--heading-font-family);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.order-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.order-toolbar__results {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.order-toolbar__results-select-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.order-toolbar__results-select {
+  border: 1px solid color-mix(in srgb, var(--body-color), transparent 90%);
+  border-radius: 6px;
+  padding: 6px 32px 6px 10px;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  font-size: 14px;
+  font-family: var(--body-font-family);
+}
+.order-toolbar__results-select-icon {
+  position: absolute;
+  right: 10px;
+  top: 48%;
+  transform: translateY(-50%);
+  font-size: 11px;
+  color: var(--body-color);
+  pointer-events: none;
+}
+.order-toolbar__search-wrap {
+  flex: 1;
+  max-width: 340px;
+  position: relative;
+}
+.order-toolbar__search-input {
+  width: 100%;
+  background-color: var(--white-color);
+  border: 1px solid color-mix(in srgb, var(--body-color), transparent 90%);
+  border-radius: 6px;
+  padding: 9px 16px 9px 16px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  font-family: var(--body-font-family);
+}
+.order-toolbar__search-input::placeholder {
+  color: color-mix(in srgb, var(--heading-color), transparent 50%);
+}
+.order-toolbar__filter-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  background-color: var(--primary-color);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--white-color);
+  font-size: 15px;
+  flex-shrink: 0;
+  transition: background-color 0.25s ease;
+  text-decoration: none;
+}
+.order-toolbar__filter-btn:hover {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+}
+.order-toolbar__spacer {
+  flex: 1;
+}
+.order-toolbar__icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  border: 1px solid color-mix(in srgb, var(--primary-color), transparent 70%);
+  background-color: var(--white-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--body-color);
+  font-size: 15px;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+.order-toolbar__icon-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-color: var(--primary-color);
+}
+.order-toolbar__icon-btn--excel {
+  color: #1d6f42;
+}
+.order-toolbar__icon-btn--excel:hover {
+  background-color: #1d6f42;
+  border-color: #1d6f42;
+  color: var(--white-color);
+}
+.order-toolbar__add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+  border-radius: 6px;
+  padding: 9px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--body-font-family);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.25s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.order-toolbar__add-btn:hover {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+}
+.order-toolbar__add-btn-icon {
+  font-size: 14px;
+}
+
+.order-table-card {
+  background-color: var(--white-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--body-font-family);
+}
+.order-table__thead {
+  background-color: var(--primary-color);
+}
+.order-table__thead th {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white-color);
+  text-align: left;
+  padding: 14px 16px;
+  white-space: nowrap;
+  border: none;
+}
+.order-table__thead .order-table__check-col {
+  width: 40px;
+  padding-left: 20px;
+}
+.order-table__tbody tr {
+  border-bottom: 1px solid color-mix(in srgb, var(--primary-color), transparent 90%);
+  transition: background-color 0.2s ease;
+}
+.order-table__tbody tr:last-child {
+  border-bottom: none;
+}
+.order-table__tbody tr:hover {
+  background-color: color-mix(in srgb, var(--primary-color), transparent 96%);
+}
+.order-table__tbody td {
+  font-size: 13px;
+  color: var(--body-color);
+  padding: 13px 16px;
+  vertical-align: middle;
+  border: none;
+}
+.order-table__tbody .order-table__check-col {
+  padding-left: 20px;
+  width: 40px;
+}
+.order-table__checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary-color);
+  cursor: pointer;
+}
+.order-table__tracking {
+  font-weight: 600;
+  color: var(--heading-color);
+  font-size: 13px;
+  white-space: nowrap;
+}
+.order-table__product {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.order-table__product-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.order-table__product-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--heading-color);
+  white-space: nowrap;
+}
+.order-table__type {
+  display: inline-block;
+  border: 1px solid color-mix(in srgb, var(--primary-color), transparent 60%);
+  border-radius: 50px;
+  padding: 3px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--heading-color);
+  white-space: nowrap;
+}
+.order-table__price {
+  font-weight: 600;
+  color: var(--heading-color);
+}
+.order-table__status {
+  display: inline-block;
+  border-radius: 50px;
+  padding: 4px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--white-color);
+  white-space: nowrap;
+}
+.order-table__status--delivered {
+  background-color: var(--primary-color);
+}
+.order-table__status--process {
+  background-color: var(--secondary-color);
+}
+.order-table__status--cancelled {
+  background-color: #c0392b;
+}
+.order-table__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.order-table__action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--body-color);
+  padding: 0;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+.order-table__action-btn:hover {
+  color: var(--primary-color);
+}
+.order-table__action-btn--delete:hover {
+  color: #c0392b;
+}
+
+.order-footer {
+  text-align: center;
+  padding: 20px 30px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--body-color);
+  background-color: var(--white-color);
+  margin-top: auto;
+}
+.order-footer__link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+.order-footer__link:hover {
+  text-decoration: underline;
+}
+
+.order-scroll-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.25s ease;
+  z-index: 100;
+}
+.order-scroll-btn:hover {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+}
+
+/* 
+|......................................................................
+| Template Name: CRAS
+| Author: Thememarch
+| Version: 1.0.0
+|--------------------------------------------------------------------------
+|--------------------------------------------------------------------------
+| TABLE OF CONTENTS:
+|--------------------------------------------------------------------------
+| 1. Basic Color Variable
+| 2. Typography
+
+ ................................................................*/
+.lead-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.lead-body {
+  flex: 1;
+  padding: 30px 30px 0 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+@media (max-width: 992px) {
+  .lead-body {
+    padding: 20px 16px;
+  }
+}
+
+.lead-header__title {
+  font-family: var(--heading-font-family);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.lead-header__subtitle {
+  font-size: 13px;
+  color: var(--body-color);
+  font-weight: 400;
+}
+
+.lead-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.lead-toolbar__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--white-color);
+  border: 1px solid color-mix(in srgb, var(--primary-color), transparent 72%);
+  border-radius: 6px;
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--heading-color);
+  font-family: var(--body-font-family);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+.lead-toolbar__btn-icon {
+  font-size: 13px;
+  color: var(--body-color);
+}
+.lead-toolbar__btn:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-color: var(--primary-color);
+}
+.lead-toolbar__btn:hover .lead-toolbar__btn-icon {
+  color: var(--white-color);
+}
+.lead-toolbar__search-wrap {
+  flex: 1;
+  max-width: 380px;
+  position: relative;
+}
+.lead-toolbar__search-input {
+  width: 100%;
+  background-color: var(--white-color);
+  border: 1px solid color-mix(in srgb, var(--primary-color), transparent 72%);
+  border-radius: 6px;
+  padding: 9px 40px 9px 16px;
+  font-size: 13px;
+  color: var(--heading-color);
+  outline: none;
+  box-sizing: border-box;
+  font-family: var(--body-font-family);
+}
+.lead-toolbar__search-input::placeholder {
+  color: color-mix(in srgb, var(--heading-color), transparent 55%);
+}
+.lead-toolbar__search-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13px;
+  color: var(--body-color);
+  pointer-events: none;
+}
+.lead-toolbar__filter-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  background-color: var(--primary-color);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--white-color);
+  font-size: 15px;
+  flex-shrink: 0;
+  transition: background-color 0.25s ease;
+}
+.lead-toolbar__filter-btn:hover {
+  background-color: var(--secondary-color);
+}
+.lead-toolbar__spacer {
+  flex: 1;
+}
+.lead-toolbar__add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+  border-radius: 6px;
+  padding: 9px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--body-font-family);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.25s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.lead-toolbar__add-btn:hover {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+}
+.lead-toolbar__add-btn-icon {
+  font-size: 14px;
+}
+
+.lead-table-card {
+  background-color: var(--white-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.lead-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--body-font-family);
+}
+.lead-table__thead {
+  background-color: var(--primary-color);
+}
+.lead-table__thead th {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white-color);
+  text-align: left;
+  padding: 14px 16px;
+  white-space: nowrap;
+  border: none;
+}
+.lead-table__thead .lead-table__check-col {
+  width: 40px;
+  padding-left: 20px;
+}
+.lead-table__tbody tr {
+  border-bottom: 1px solid color-mix(in srgb, var(--primary-color), transparent 90%);
+  transition: background-color 0.2s ease;
+}
+.lead-table__tbody tr:last-child {
+  border-bottom: none;
+}
+.lead-table__tbody tr:hover {
+  background-color: color-mix(in srgb, var(--primary-color), transparent 96%);
+}
+.lead-table__tbody td {
+  font-size: 13px;
+  color: var(--body-color);
+  padding: 13px 16px;
+  vertical-align: middle;
+  border: none;
+}
+.lead-table__tbody .lead-table__check-col {
+  padding-left: 20px;
+  width: 40px;
+}
+.lead-table__checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary-color);
+  cursor: pointer;
+}
+.lead-table__name {
+  font-weight: 600;
+  color: var(--heading-color);
+  font-size: 13px;
+  white-space: nowrap;
+}
+.lead-table__status {
+  display: inline-block;
+  border-radius: 50px;
+  padding: 4px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--white-color);
+  white-space: nowrap;
+}
+.lead-table__status--ongoing {
+  background-color: var(--primary-color);
+}
+.lead-table__status--new {
+  background-color: var(--secondary-color);
+}
+.lead-table__status--completed {
+  background-color: #8b0037;
+}
+.lead-table__contact {
+  white-space: nowrap;
+  font-size: 13px;
+}
+.lead-table__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.lead-table__action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--body-color);
+  padding: 0;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+.lead-table__action-btn:hover {
+  color: var(--primary-color);
+}
+.lead-table__action-btn--delete:hover {
+  color: #c0392b;
+}
+
+.lead-footer {
+  text-align: center;
+  padding: 20px 30px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--body-color);
+  background-color: var(--white-color);
+  margin-top: auto;
+}
+.lead-footer__link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+.lead-footer__link:hover {
+  text-decoration: underline;
+}
+
+.lead-scroll-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.25s ease;
+  z-index: 100;
+}
+.lead-scroll-btn:hover {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+}
+
+/* 
+|......................................................................
+| Template Name: CRAS
+| Author: Thememarch
+| Version: 1.0.0
+|--------------------------------------------------------------------------
+|--------------------------------------------------------------------------
+| TABLE OF CONTENTS:
+|--------------------------------------------------------------------------
+| 1. Basic Color Variable
+| 2. Typography
+
+ ................................................................*/
+.cp-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background-color: var(--smoke-bg-color);
+  margin: 40px 30px 0 10px;
+  border-radius: 10px;
+}
+
+.cp-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 30px;
+}
+@media (max-width: 992px) {
+  .cp-body {
+    padding: 40px 20px;
+  }
+}
+
+.cp-card {
+  width: 100%;
+  max-width: 560px;
+}
+.cp-card__title {
+  font-family: var(--heading-font-family);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 36px;
+}
+@media (max-width: 576px) {
+  .cp-card__title {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+}
+
+.cp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.cp-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cp-form__label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--heading-color);
+  font-family: var(--body-font-family);
+}
+.cp-form__label--required::after {
+  content: " *";
+  color: #c0392b;
+}
+.cp-form__input {
+  width: 100%;
+  background-color: var(--white-color);
+  border: none;
+  border-radius: 8px;
+  padding: 16px 20px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--heading-color);
+  font-family: var(--body-font-family);
+  outline: none;
+  box-sizing: border-box;
+  transition: box-shadow 0.25s ease;
+}
+.cp-form__input:focus {
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary-color), transparent 70%);
+}
+.cp-form__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+@media (max-width: 576px) {
+  .cp-form__actions {
+    flex-direction: column;
+  }
+}
+.cp-form__cancel-btn {
+  flex: 1;
+  padding: 14px 20px;
+  border-radius: 8px;
+  border: 2px solid var(--primary-color);
+  background-color: transparent;
+  color: var(--primary-color);
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--body-font-family);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+.cp-form__cancel-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+@media (max-width: 576px) {
+  .cp-form__cancel-btn {
+    width: 100%;
+  }
+}
+.cp-form__submit-btn {
+  flex: 1;
+  padding: 14px 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--body-font-family);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+.cp-form__submit-btn:hover {
+  background-color: var(--secondary-color);
+}
+@media (max-width: 576px) {
+  .cp-form__submit-btn {
+    width: 100%;
+  }
+}
+
+.cp-footer {
+  text-align: center;
+  padding: 20px 30px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--body-color);
+  background-color: var(--white-color);
+}
+.cp-footer__link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+.cp-footer__link:hover {
+  text-decoration: underline;
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -133,6 +133,13 @@
     display: flex;
     align-items: center;
     width: 100%;
+
+    input[type="password"]::-ms-reveal,
+    input[type="password"]::-ms-clear,
+    input[type="password"]::-webkit-contacts-auto-fill-button,
+    input[type="password"]::-webkit-credentials-auto-fill-button {
+      display: none;
+    }
   }
 
   &__input,
@@ -220,7 +227,7 @@
 
     .common-btn__inner {
       border: none;
-      padding: 12px 26px;
+      padding: 8px 35px;
       font-size: 16px;
       font-weight: 700;
       line-height: 26px;

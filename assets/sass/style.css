@@ -4939,7 +4939,7 @@ i[class*=fa] {
 }
 .testimonial__bg {
   position: absolute;
-  top: 46%;
+  top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
 }

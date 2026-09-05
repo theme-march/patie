@@ -99,11 +99,21 @@
       .common-btn__inner {
         background-color: var(--primary-color);
       }
+
+      .common-btn__inner .common-btn__dash-svg rect {
+        stroke: var(--white-color);
+        animation-play-state: running;
+        transition:
+          stroke 0.3s ease,
+          opacity 0s;
+      }
     }
 
     &.checkout-section__submit-btn,
     &.contact-section__submit-btn,
     &.cart__summary-checkout-btn,
+    &.sign-in__submit-btn,
+    &.sign-up__submit-btn,
     &.common-btn--style2 {
       &:hover {
         background-color: var(--secondary-color);

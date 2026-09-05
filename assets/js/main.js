@@ -1939,3 +1939,206 @@ $(function () {
     }
   });
 });
+
+// ── Dashboard Charts ──────────────────────────────────────────────────────
+// Sales Performance Line Chart
+(function () {
+  var salesChartEl = document.getElementById("salesChart");
+  if (!salesChartEl || typeof Chart === "undefined") return;
+
+  var ctx = salesChartEl.getContext("2d");
+
+  var months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+  ];
+
+  var verticalLinePlugin = {
+    id: "verticalLine",
+    afterDraw: function (chart) {
+      if (chart.tooltip._active && chart.tooltip._active.length) {
+        var ctx2 = chart.ctx;
+        var activePoint = chart.tooltip._active[0];
+        var x = activePoint.element.x;
+        var topY = chart.scales.y.top;
+        var bottomY = chart.scales.y.bottom;
+
+        ctx2.save();
+        ctx2.beginPath();
+        ctx2.moveTo(x, topY);
+        ctx2.lineTo(x, bottomY);
+        ctx2.lineWidth = 1.5;
+        ctx2.strokeStyle = "rgba(104, 57, 204, 0.4)";
+        ctx2.setLineDash([4, 4]);
+        ctx2.stroke();
+        ctx2.restore();
+      }
+    },
+  };
+
+  new Chart(ctx, {
+    type: "line",
+    plugins: [verticalLinePlugin],
+    data: {
+      labels: months,
+      datasets: [
+        {
+          label: "2021",
+          data: [
+            28000, 35000, 25000, 80000, 30000, 62000, 95000, 38000, 50000,
+            55000,
+          ],
+          borderColor: "#6839cc",
+          backgroundColor: "rgba(104, 57, 204, 0.08)",
+          borderWidth: 2.5,
+          tension: 0.45,
+          fill: true,
+          pointRadius: 0,
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: "#6839cc",
+          pointHoverBorderColor: "#fff",
+          pointHoverBorderWidth: 2,
+        },
+        {
+          label: "2020",
+          data: [
+            20000, 45000, 35000, 30000, 80000, 40000, 55000, 48000, 92000,
+            60000,
+          ],
+          borderColor: "#ff781f",
+          backgroundColor: "rgba(255, 120, 31, 0.05)",
+          borderWidth: 2.5,
+          tension: 0.45,
+          fill: true,
+          pointRadius: 0,
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: "#ff781f",
+          pointHoverBorderColor: "#fff",
+          pointHoverBorderWidth: 2,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: "index", intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: "#6839cc",
+          titleColor: "#fff",
+          bodyColor: "#fff",
+          padding: 10,
+          displayColors: false,
+          callbacks: {
+            title: function () {
+              return "";
+            },
+            label: function (ctx2) {
+              return "$" + (ctx2.raw / 1000).toFixed(0) + "K";
+            },
+          },
+        },
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: { color: "#aaa", font: { size: 12, family: "Poppins" } },
+          border: { display: false },
+        },
+        y: {
+          min: 10000,
+          max: 100000,
+          ticks: {
+            color: "#aaa",
+            font: { size: 11, family: "Poppins" },
+            callback: function (val) {
+              return val / 1000 + "K";
+            },
+            stepSize: 20000,
+          },
+          grid: { color: "rgba(0,0,0,0.05)" },
+          border: { display: false },
+        },
+      },
+    },
+  });
+})();
+
+// Services Doughnut Chart
+(function () {
+  var servicesChartEl = document.getElementById("servicesChart");
+  if (
+    !servicesChartEl ||
+    typeof Chart === "undefined" ||
+    typeof ChartDataLabels === "undefined"
+  )
+    return;
+
+  var ctx = servicesChartEl.getContext("2d");
+
+  Chart.unregister(ChartDataLabels);
+
+  var sliceColors = ["#8b0037", "#6839cc", "#3a6b35", "#ff781f"];
+  var sliceLabels = ["Grooming", "Pet Boarding", "Vet Check", "Vet Check"];
+  var sliceData = [28, 25, 8, 39];
+
+  new Chart(ctx, {
+    type: "doughnut",
+    plugins: [ChartDataLabels],
+    data: {
+      labels: sliceLabels,
+      datasets: [
+        {
+          data: sliceData,
+          backgroundColor: sliceColors,
+          borderWidth: 0,
+          hoverOffset: 6,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      cutout: "65%",
+      layout: {
+        padding: { top: 30, bottom: 30, left: 95, right: 75 },
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: "#6839cc",
+          titleColor: "#fff",
+          bodyColor: "#fff",
+          padding: 10,
+          displayColors: false,
+        },
+        datalabels: {
+          anchor: "end",
+          align: "end",
+          offset: 12,
+          clip: false,
+          color: function (context) {
+            return sliceColors[context.dataIndex];
+          },
+          font: {
+            family: "'Poppins', 'Passion One'",
+            size: 16,
+            weight: "600",
+          },
+          formatter: function (value, context) {
+            return context.chart.data.labels[context.dataIndex];
+          },
+        },
+      },
+    },
+  });
+})();

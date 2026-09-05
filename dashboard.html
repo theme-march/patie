@@ -127,7 +127,6 @@
       </header>
 
       <div class="dashboard-body-row">
-        <!-- ── Sidebar ──────────────────────────────────── -->
         <aside class="dashboard-sidebar" aria-label="Sidebar navigation">
           <div class="dashboard-sidebar__avatar-wrap">
             <img
@@ -199,13 +198,9 @@
           </div>
         </aside>
 
-        <!-- ── Main ─────────────────────────────────────── -->
         <div class="dashboard-main">
-          <!-- Body -->
           <main class="dashboard-body" id="main-content">
-            <!-- ── Stat Cards ──────────────────────────────── -->
             <div class="dashboard-stats" aria-label="Statistics overview">
-              <!-- Total Active Customers -->
               <div class="stat-card stat-card--purple">
                 <div class="stat-card__header">
                   <div class="stat-card__icon-wrap">
@@ -227,7 +222,6 @@
                 />
               </div>
 
-              <!-- Total Registered Pets -->
               <div class="stat-card stat-card--orange">
                 <div class="stat-card__header">
                   <div class="stat-card__icon-wrap">
@@ -249,7 +243,6 @@
                 />
               </div>
 
-              <!-- Today New Bookings -->
               <div class="stat-card stat-card--maroon">
                 <div class="stat-card__header">
                   <div class="stat-card__icon-wrap">
@@ -271,7 +264,6 @@
                 />
               </div>
 
-              <!-- Total Revenue Amount -->
               <div class="stat-card stat-card--green">
                 <div class="stat-card__header">
                   <div class="stat-card__icon-wrap">
@@ -293,11 +285,8 @@
                 />
               </div>
             </div>
-            <!-- /stat cards -->
 
-            <!-- ── Middle row ──────────────────────────────── -->
             <div class="dashboard-mid">
-              <!-- Sales Performance Chart -->
               <div class="dashboard-chart-card">
                 <h2 class="dashboard-chart-card__title">Sales Performance</h2>
                 <div class="dashboard-chart-card__legend" aria-hidden="true">
@@ -323,7 +312,6 @@
                 </div>
               </div>
 
-              <!-- Top Services Donut -->
               <div class="dashboard-services-card">
                 <h2 class="dashboard-services-card__title">Top Services</h2>
                 <div class="dashboard-services-card__donut-wrap">
@@ -336,11 +324,8 @@
                 </div>
               </div>
             </div>
-            <!-- /middle row -->
 
-            <!-- ── Bottom row ──────────────────────────────── -->
             <div class="dashboard-bottom">
-              <!-- Recent Bookings -->
               <div class="dashboard-bookings">
                 <h2 class="dashboard-bookings__title">Recent Bookings</h2>
                 <div style="overflow-x: auto">
@@ -506,7 +491,6 @@
                 </div>
               </div>
 
-              <!-- Today's Agenda -->
               <div class="dashboard-agenda">
                 <h2 class="dashboard-agenda__title">Today's Agenda</h2>
                 <ol
@@ -519,21 +503,16 @@
                 </ol>
               </div>
             </div>
-            <!-- /bottom row -->
           </main>
 
-          <!-- Footer -->
           <footer class="dashboard-footer">
             Copyright &copy; 2026
             <a href="index.html" class="dashboard-footer__link">Patie</a> All
             Rights Reserved.
           </footer>
         </div>
-        <!-- /dashboard-main -->
       </div>
-      <!-- /dashboard-body-row -->
     </div>
-    <!-- /dashboard -->
 
     <!-- Scripts -->
     <script src="assets/js/plugins/jquery-3.7.1.min.js"></script>
@@ -541,217 +520,5 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
     <script src="assets/js/plugins/aos.js"></script>
     <script src="assets/js/main.js"></script>
-
-    <script>
-      // ── Sales Performance Line Chart ─────────────────────────────────────────
-      (function () {
-        var ctx = document.getElementById("salesChart").getContext("2d");
-
-        var months = [
-          "Jan",
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "Jun",
-          "Jul",
-          "Aug",
-          "Sep",
-          "Oct",
-        ];
-
-        // Custom tooltip plugin for the vertical line + bubble
-        var verticalLinePlugin = {
-          id: "verticalLine",
-          afterDraw: function (chart) {
-            if (chart.tooltip._active && chart.tooltip._active.length) {
-              var ctx2 = chart.ctx;
-              var activePoint = chart.tooltip._active[0];
-              var x = activePoint.element.x;
-              var topY = chart.scales.y.top;
-              var bottomY = chart.scales.y.bottom;
-
-              ctx2.save();
-              ctx2.beginPath();
-              ctx2.moveTo(x, topY);
-              ctx2.lineTo(x, bottomY);
-              ctx2.lineWidth = 1.5;
-              ctx2.strokeStyle = "rgba(104, 57, 204, 0.4)";
-              ctx2.setLineDash([4, 4]);
-              ctx2.stroke();
-              ctx2.restore();
-            }
-          },
-        };
-
-        new Chart(ctx, {
-          type: "line",
-          plugins: [verticalLinePlugin],
-          data: {
-            labels: months,
-            datasets: [
-              {
-                label: "2021",
-                data: [
-                  28000, 35000, 25000, 80000, 30000, 62000, 95000, 38000, 50000,
-                  55000,
-                ],
-                borderColor: "#6839cc",
-                backgroundColor: "rgba(104, 57, 204, 0.08)",
-                borderWidth: 2.5,
-                tension: 0.45,
-                fill: true,
-                pointRadius: 0,
-                pointHoverRadius: 6,
-                pointHoverBackgroundColor: "#6839cc",
-                pointHoverBorderColor: "#fff",
-                pointHoverBorderWidth: 2,
-              },
-              {
-                label: "2020",
-                data: [
-                  20000, 45000, 35000, 30000, 80000, 40000, 55000, 48000, 92000,
-                  60000,
-                ],
-                borderColor: "#ff781f",
-                backgroundColor: "rgba(255, 120, 31, 0.05)",
-                borderWidth: 2.5,
-                tension: 0.45,
-                fill: true,
-                pointRadius: 0,
-                pointHoverRadius: 6,
-                pointHoverBackgroundColor: "#ff781f",
-                pointHoverBorderColor: "#fff",
-                pointHoverBorderWidth: 2,
-              },
-            ],
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            interaction: {
-              mode: "index",
-              intersect: false,
-            },
-            plugins: {
-              legend: { display: false },
-              tooltip: {
-                backgroundColor: "#6839cc",
-                titleColor: "#fff",
-                bodyColor: "#fff",
-                padding: 10,
-                displayColors: false,
-                callbacks: {
-                  title: function () {
-                    return "";
-                  },
-                  label: function (ctx2) {
-                    return "$" + (ctx2.raw / 1000).toFixed(0) + "K";
-                  },
-                },
-              },
-            },
-            scales: {
-              x: {
-                grid: { display: false },
-                ticks: {
-                  color: "#aaa",
-                  font: { size: 12, family: "Poppins" },
-                },
-                border: { display: false },
-              },
-              y: {
-                min: 10000,
-                max: 100000,
-                ticks: {
-                  color: "#aaa",
-                  font: { size: 11, family: "Poppins" },
-                  callback: function (val) {
-                    return val / 1000 + "K";
-                  },
-                  stepSize: 20000,
-                },
-                grid: {
-                  color: "rgba(0,0,0,0.05)",
-                },
-                border: { display: false },
-              },
-            },
-          },
-        });
-      })();
-
-      (function () {
-        var ctx = document.getElementById("servicesChart").getContext("2d");
-
-        Chart.unregister(ChartDataLabels);
-
-        var sliceColors = ["#8b0037", "#6839cc", "#3a6b35", "#ff781f"];
-        var sliceLabels = [
-          "Grooming",
-          "Pet Boarding",
-          "Vet Check",
-          "Vet Check",
-        ];
-        var sliceData = [28, 25, 8, 39];
-
-        new Chart(ctx, {
-          type: "doughnut",
-          plugins: [ChartDataLabels],
-          data: {
-            labels: sliceLabels,
-            datasets: [
-              {
-                data: sliceData,
-                backgroundColor: sliceColors,
-                borderWidth: 0,
-                hoverOffset: 6,
-              },
-            ],
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: true,
-            cutout: "65%",
-            layout: {
-              // padding gives room for labels to float outside the ring
-              padding: {
-                top: 30,
-                bottom: 30,
-                left: 95,
-                right: 75,
-              },
-            },
-            plugins: {
-              legend: { display: false },
-              tooltip: {
-                backgroundColor: "#6839cc",
-                titleColor: "#fff",
-                bodyColor: "#fff",
-                padding: 10,
-                displayColors: false,
-              },
-              datalabels: {
-                anchor: "end",
-                align: "end",
-                offset: 12,
-                clip: false,
-                color: function (context) {
-                  return sliceColors[context.dataIndex];
-                },
-                font: {
-                  family: "'Poppins', 'Passion One'",
-                  size: 16,
-                  weight: "600",
-                },
-                formatter: function (value, context) {
-                  return context.chart.data.labels[context.dataIndex];
-                },
-              },
-            },
-          },
-        });
-      })();
-    </script>
   </body>
 </html>

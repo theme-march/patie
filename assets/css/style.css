@@ -1045,10 +1045,15 @@ i[class*=fa] {
 .common-btn--primary:hover .common-btn__inner {
   background-color: var(--primary-color);
 }
-.common-btn--primary.checkout-section__submit-btn:hover, .common-btn--primary.contact-section__submit-btn:hover, .common-btn--primary.cart__summary-checkout-btn:hover, .common-btn--primary.common-btn--style2:hover {
+.common-btn--primary:hover .common-btn__inner .common-btn__dash-svg rect {
+  stroke: var(--white-color);
+  animation-play-state: running;
+  transition: stroke 0.3s ease, opacity 0s;
+}
+.common-btn--primary.checkout-section__submit-btn:hover, .common-btn--primary.contact-section__submit-btn:hover, .common-btn--primary.cart__summary-checkout-btn:hover, .common-btn--primary.sign-in__submit-btn:hover, .common-btn--primary.sign-up__submit-btn:hover, .common-btn--primary.common-btn--style2:hover {
   background-color: var(--secondary-color);
 }
-.common-btn--primary.checkout-section__submit-btn:hover .common-btn__inner, .common-btn--primary.contact-section__submit-btn:hover .common-btn__inner, .common-btn--primary.cart__summary-checkout-btn:hover .common-btn__inner, .common-btn--primary.common-btn--style2:hover .common-btn__inner {
+.common-btn--primary.checkout-section__submit-btn:hover .common-btn__inner, .common-btn--primary.contact-section__submit-btn:hover .common-btn__inner, .common-btn--primary.cart__summary-checkout-btn:hover .common-btn__inner, .common-btn--primary.sign-in__submit-btn:hover .common-btn__inner, .common-btn--primary.sign-up__submit-btn:hover .common-btn__inner, .common-btn--primary.common-btn--style2:hover .common-btn__inner {
   background-color: var(--secondary-color);
 }
 .common-btn--secondary {
@@ -3220,11 +3225,11 @@ i[class*=fa] {
   border-radius: 100px;
   padding: 13px 20px;
   color: var(--white-color);
-  gap: 70px;
+  gap: 60px;
 }
 @media (max-width: 1700px) {
   .boarding-topbar__right {
-    gap: 50px;
+    gap: 40px;
   }
 }
 @media (max-width: 1600px) {
@@ -4916,7 +4921,7 @@ i[class*=fa] {
 }
 .testimonial__bg {
   position: absolute;
-  top: 46%;
+  top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -5112,12 +5117,8 @@ i[class*=fa] {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  padding-bottom: 45px;
-}
-@media (max-width: 992px) {
-  .testimonial__avatars-wrap {
-    padding-bottom: 0;
-  }
+  position: relative;
+  top: -35px;
 }
 .testimonial__avatar {
   border-radius: 50%;
@@ -15385,9 +15386,10 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 }
 .checkout-section__submit-btn {
   width: 100%;
+  padding: 0;
 }
 .checkout-section__submit-btn .common-btn__inner {
-  border: none;
+  padding: 15px 20px;
 }
 
 /* 
@@ -15586,11 +15588,13 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 .contact-section__submit-btn {
   width: 100%;
   border-radius: 10px;
+  padding: 0;
 }
 .contact-section__submit-btn .common-btn__inner {
   border: none;
-  padding: 18px 20px;
+  padding: 20px 20px;
   font-size: 16px;
+  border-radius: 10px;
 }
 
 .map-section {
@@ -15774,6 +15778,12 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
   align-items: center;
   width: 100%;
 }
+.sign-in__input-wrapper input[type=password]::-ms-reveal,
+.sign-in__input-wrapper input[type=password]::-ms-clear,
+.sign-in__input-wrapper input[type=password]::-webkit-contacts-auto-fill-button,
+.sign-in__input-wrapper input[type=password]::-webkit-credentials-auto-fill-button {
+  display: none;
+}
 .sign-in__input-icon {
   position: absolute;
   right: 40px;
@@ -15845,7 +15855,7 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 }
 .sign-in__submit-btn .common-btn__inner {
   border: none;
-  padding: 10px 26px;
+  padding: 8px 35px;
   font-size: 16px;
   font-weight: 700;
   line-height: 26px;
@@ -15870,7 +15880,7 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 }
 .sign-in__image-panel {
   flex: 1.7;
-  padding: 18px 18px 18px 0;
+  padding: 20px 20px 20px 0;
   display: flex;
   box-sizing: border-box;
 }
@@ -16043,6 +16053,12 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
   align-items: center;
   width: 100%;
 }
+.sign-up__input-wrapper input[type=password]::-ms-reveal,
+.sign-up__input-wrapper input[type=password]::-ms-clear,
+.sign-up__input-wrapper input[type=password]::-webkit-contacts-auto-fill-button,
+.sign-up__input-wrapper input[type=password]::-webkit-credentials-auto-fill-button {
+  display: none;
+}
 .sign-up__input, .sign-up__select {
   width: 100%;
   background-color: var(--smoke-bg-color);
@@ -16114,7 +16130,7 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 }
 .sign-up__submit-btn .common-btn__inner {
   border: none;
-  padding: 12px 26px;
+  padding: 8px 35px;
   font-size: 16px;
   font-weight: 700;
   line-height: 26px;
@@ -16273,15 +16289,20 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 .forget-password__submit-btn {
   width: 100%;
   border-radius: 50px;
+  padding: 0;
+}
+.forget-password__submit-btn:hover .common-btn__inner {
+  background-color: var(--secondary-color);
 }
 .forget-password__submit-btn .common-btn__inner {
   border: none;
-  padding: 12px 20px;
+  padding: 15px 20px;
   font-size: 16px;
   font-weight: 700;
   border-radius: 50px;
   justify-content: center;
   letter-spacing: 1px;
+  transition: background-color 0.3s ease;
 }
 .forget-password__back-link {
   display: inline-flex;
@@ -16393,15 +16414,15 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
   }
 }
 .password-reset__otp-input {
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
   background-color: color-mix(in srgb, var(--primary-color), transparent 88%);
   border: 1.5px solid color-mix(in srgb, var(--primary-color), transparent 70%);
   border-radius: 10px;
   text-align: center;
-  font-family: var(--body-font-family);
-  font-size: 20px;
-  font-weight: 700;
+  font-family: var(--heading-font-family);
+  font-size: 24px;
+  font-weight: 400;
   color: var(--heading-color);
   outline: none;
   transition: all 0.3s ease;
@@ -16409,8 +16430,8 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 }
 @media (max-width: 576px) {
   .password-reset__otp-input {
-    width: 44px;
-    height: 44px;
+    width: 45px;
+    height: 45px;
     font-size: 18px;
   }
 }
@@ -16425,10 +16446,14 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 .password-reset__submit-btn {
   width: 100%;
   border-radius: 50px;
+  padding: 0;
+}
+.password-reset__submit-btn:hover .common-btn__inner {
+  background-color: var(--secondary-color);
 }
 .password-reset__submit-btn .common-btn__inner {
   border: none;
-  padding: 12px 20px;
+  padding: 15px 20px;
   font-size: 16px;
   font-weight: 700;
   border-radius: 50px;
@@ -16571,10 +16596,14 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
   width: 100%;
   border-radius: 50px;
   margin-top: 10px;
+  padding: 0;
+}
+.set-newpassword__submit-btn:hover .common-btn__inner {
+  background-color: var(--secondary-color);
 }
 .set-newpassword__submit-btn .common-btn__inner {
   border: none;
-  padding: 12px 20px;
+  padding: 15px 20px;
   font-size: 16px;
   font-weight: 700;
   border-radius: 50px;

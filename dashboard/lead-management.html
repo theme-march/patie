@@ -213,22 +213,33 @@
                 Filter
               </button>
 
-              <button class="lead-toolbar__btn" aria-label="Export date range">
+              <div class="lead-toolbar__export-wrap">
                 <i
-                  class="fas fa-upload lead-toolbar__btn-icon"
+                  class="fas fa-upload lead-toolbar__export-icon"
                   aria-hidden="true"
                 ></i>
-                Export Date
+                <select
+                  class="lead-toolbar__export-select"
+                  aria-label="Export format"
+                >
+                  <option value="" disabled selected>Export Date</option>
+                  <option value="pdf">Export as PDF</option>
+                  <option value="xl">Export as XL</option>
+                </select>
                 <i
-                  class="fas fa-chevron-down lead-toolbar__btn-icon"
+                  class="fas fa-chevron-down lead-toolbar__export-chevron"
                   aria-hidden="true"
                 ></i>
-              </button>
+              </div>
 
               <div class="lead-toolbar__search-wrap">
                 <label for="lead-search" class="visually-hidden"
                   >Search leads</label
                 >
+                <i
+                  class="fas fa-search lead-toolbar__search-icon"
+                  aria-hidden="true"
+                ></i>
                 <input
                   id="lead-search"
                   class="lead-toolbar__search-input"
@@ -236,10 +247,6 @@
                   placeholder="Search By Name, Email, Or Phone Number"
                   autocomplete="off"
                 />
-                <i
-                  class="fas fa-search lead-toolbar__search-icon"
-                  aria-hidden="true"
-                ></i>
               </div>
 
               <button
@@ -267,6 +274,7 @@
                     <th scope="col" class="lead-table__check-col">
                       <input
                         type="checkbox"
+                        id="lead-select-all"
                         class="lead-table__checkbox"
                         aria-label="Select all"
                       />
@@ -282,6 +290,7 @@
                 </thead>
                 <tbody
                   class="lead-table__tbody"
+                  id="lead-table-body"
                   style="--bs-border-color: transparent; border-top: none"
                 >
                   <tr>
@@ -323,6 +332,7 @@
                           href="#"
                           class="lead-table__action-btn lead-table__action-btn--delete"
                           aria-label="Delete"
+                          data-row-delete
                           ><i class="fas fa-trash" aria-hidden="true"></i
                         ></a>
                       </div>
@@ -368,6 +378,7 @@
                           href="#"
                           class="lead-table__action-btn lead-table__action-btn--delete"
                           aria-label="Delete"
+                          data-row-delete
                           ><i class="fas fa-trash" aria-hidden="true"></i
                         ></a>
                       </div>
@@ -414,6 +425,7 @@
                           href="#"
                           class="lead-table__action-btn lead-table__action-btn--delete"
                           aria-label="Delete"
+                          data-row-delete
                           ><i class="fas fa-trash" aria-hidden="true"></i
                         ></a>
                       </div>
@@ -459,6 +471,7 @@
                           href="#"
                           class="lead-table__action-btn lead-table__action-btn--delete"
                           aria-label="Delete"
+                          data-row-delete
                           ><i class="fas fa-trash" aria-hidden="true"></i
                         ></a>
                       </div>
@@ -504,6 +517,7 @@
                           href="#"
                           class="lead-table__action-btn lead-table__action-btn--delete"
                           aria-label="Delete"
+                          data-row-delete
                           ><i class="fas fa-trash" aria-hidden="true"></i
                         ></a>
                       </div>
@@ -551,6 +565,7 @@
                           href="#"
                           class="lead-table__action-btn lead-table__action-btn--delete"
                           aria-label="Delete"
+                          data-row-delete
                           ><i class="fas fa-trash" aria-hidden="true"></i
                         ></a>
                       </div>
@@ -596,6 +611,7 @@
                           href="#"
                           class="lead-table__action-btn lead-table__action-btn--delete"
                           aria-label="Delete"
+                          data-row-delete
                           ><i class="fas fa-trash" aria-hidden="true"></i
                         ></a>
                       </div>
@@ -641,6 +657,7 @@
                           href="#"
                           class="lead-table__action-btn lead-table__action-btn--delete"
                           aria-label="Delete"
+                          data-row-delete
                           ><i class="fas fa-trash" aria-hidden="true"></i
                         ></a>
                       </div>
@@ -659,10 +676,6 @@
         </div>
       </div>
     </div>
-
-    <a href="#" class="lead-scroll-btn" aria-label="Scroll to top">
-      <i class="fas fa-chevron-up" aria-hidden="true"></i>
-    </a>
 
     <!-- Scripts -->
     <script src="../assets/js/plugins/jquery-3.7.1.min.js"></script>

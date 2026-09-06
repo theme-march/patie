@@ -2142,3 +2142,82 @@ $(function () {
     },
   });
 })();
+
+/*--------------------------------------------------------------
+  Dashboard Tables — Select All + Delete Row
+  Works for both the lead-management table and the order table.
+  Each table needs:
+    - A header checkbox with id="lead-select-all" or id="order-select-all"
+    - A tbody with id="lead-table-body" or id="order-table-body"
+    - Delete buttons with the attribute data-row-delete
+--------------------------------------------------------------*/
+(function () {
+  "use strict";
+
+  function initTableControls(selectAllId, tbodyId) {
+    var selectAll = document.getElementById(selectAllId);
+    var tbody = document.getElementById(tbodyId);
+    if (!selectAll || !tbody) return;
+
+    // ── Select / deselect all ──────────────────────────────────────────────
+    selectAll.addEventListener("change", function () {
+      tbody
+        .querySelectorAll(".lead-table__checkbox, .order-table__checkbox")
+        .forEach(function (cb) {
+          cb.checked = selectAll.checked;
+        });
+    });
+
+    // Keep header checkbox in sync when individual rows are toggled
+    tbody.addEventListener("change", function (e) {
+      var isRowCb =
+        e.target.classList.contains("lead-table__checkbox") ||
+        e.target.classList.contains("order-table__checkbox");
+      if (!isRowCb) return;
+
+      var all = tbody.querySelectorAll(
+        ".lead-table__checkbox, .order-table__checkbox",
+      );
+      var checked = tbody.querySelectorAll(
+        ".lead-table__checkbox:checked, .order-table__checkbox:checked",
+      );
+
+      selectAll.checked = checked.length === all.length;
+      selectAll.indeterminate =
+        checked.length > 0 && checked.length < all.length;
+    });
+
+    // ── Delete row ─────────────────────────────────────────────────────────
+    tbody.addEventListener("click", function (e) {
+      var btn = e.target.closest("[data-row-delete]");
+      if (!btn) return;
+      e.preventDefault();
+
+      var row = btn.closest("tr");
+      if (!row) return;
+
+      row.style.transition = "opacity 0.25s ease";
+      row.style.opacity = "0";
+
+      setTimeout(function () {
+        row.remove();
+
+        // Re-sync header checkbox after deletion
+        var all = tbody.querySelectorAll(
+          ".lead-table__checkbox, .order-table__checkbox",
+        );
+        var checked = tbody.querySelectorAll(
+          ".lead-table__checkbox:checked, .order-table__checkbox:checked",
+        );
+
+        selectAll.checked = all.length > 0 && checked.length === all.length;
+        selectAll.indeterminate =
+          checked.length > 0 && checked.length < all.length;
+      }, 250);
+    });
+  }
+
+  // Initialise for both tables (safe — silently skips if element not on page)
+  initTableControls("lead-select-all", "lead-table-body");
+  initTableControls("order-select-all", "order-table-body");
+})();

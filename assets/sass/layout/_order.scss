@@ -9,7 +9,7 @@
 
 .order-body {
   flex: 1;
-  padding: 30px 30px 0 10px;
+  padding: 30px 30px 20px 10px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -20,9 +20,12 @@
 }
 
 .order-header {
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--border-color), transparent 60%);
+  padding-bottom: 10px;
   &__title {
     font-family: var(--heading-font-family);
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 400;
     color: var(--primary-color);
     text-transform: uppercase;
@@ -52,12 +55,13 @@
   &__results-select {
     border: 1px solid color-mix(in srgb, var(--body-color), transparent 90%);
     border-radius: 6px;
-    padding: 6px 32px 6px 10px;
+    padding: 8px 30px 8px 10px;
     outline: none;
     cursor: pointer;
     appearance: none;
     -webkit-appearance: none;
-    font-size: 14px;
+    color: var(--body-color);
+    font-weight: 600;
     font-family: var(--body-font-family);
   }
 
@@ -82,15 +86,25 @@
     background-color: var(--white-color);
     border: 1px solid color-mix(in srgb, var(--body-color), transparent 90%);
     border-radius: 6px;
-    padding: 9px 16px 9px 16px;
-    font-size: 14px;
+    padding: 9px 16px 9px 38px;
+    font-weight: 600;
     outline: none;
     box-sizing: border-box;
     font-family: var(--body-font-family);
 
     &::placeholder {
-      color: color-mix(in srgb, var(--heading-color), transparent 50%);
+      color: color-mix(in srgb, var(--heading-color), transparent 30%);
     }
+  }
+
+  &__search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: var(--body-color);
+    pointer-events: none;
   }
 
   &__filter-btn {
@@ -160,7 +174,7 @@
     color: var(--white-color);
     border: none;
     border-radius: 6px;
-    padding: 9px 18px;
+    padding: 12px 20px;
     font-size: 13px;
     font-weight: 700;
     font-family: var(--body-font-family);
@@ -181,11 +195,12 @@
   }
 }
 
-// ─── Product table card ───────────────────────────────────────────────────────
 .order-table-card {
   background-color: var(--white-color);
   border-radius: 10px;
+  margin-top: 10px;
   overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--primary-color), transparent 90%);
 }
 
 .order-table {
@@ -193,27 +208,24 @@
   border-collapse: collapse;
   font-family: var(--body-font-family);
 
-  // ── Header row ──
   &__thead {
     background-color: var(--primary-color);
 
     th {
-      font-size: 13px;
+      font-size: 16px;
       font-weight: 600;
       color: var(--white-color);
       text-align: left;
-      padding: 14px 16px;
+      padding: 20px 15px;
       white-space: nowrap;
       border: none;
     }
 
     .order-table__check-col {
-      width: 40px;
       padding-left: 20px;
     }
   }
 
-  // ── Body rows ──
   &__tbody {
     tr {
       border-bottom: 1px solid
@@ -234,20 +246,18 @@
     }
 
     td {
-      font-size: 13px;
+      font-size: 16px;
       color: var(--body-color);
-      padding: 13px 16px;
+      padding: 20px 15px;
       vertical-align: middle;
       border: none;
     }
 
     .order-table__check-col {
       padding-left: 20px;
-      width: 40px;
     }
   }
 
-  // ── Checkbox ──
   &__checkbox {
     width: 16px;
     height: 16px;
@@ -255,15 +265,13 @@
     cursor: pointer;
   }
 
-  // ── Tracking ID ──
   &__tracking {
     font-weight: 600;
     color: var(--heading-color);
-    font-size: 13px;
+    font-size: 16px;
     white-space: nowrap;
   }
 
-  // ── Product cell ──
   &__product {
     display: flex;
     align-items: center;
@@ -273,43 +281,40 @@
   &__product-img {
     width: 36px;
     height: 36px;
-    border-radius: 6px;
+    border-radius: 8px;
     object-fit: cover;
     flex-shrink: 0;
   }
 
   &__product-name {
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 600;
     color: var(--heading-color);
     white-space: nowrap;
   }
 
-  // ── Type badge ──
   &__type {
     display: inline-block;
     border: 1px solid color-mix(in srgb, var(--primary-color), transparent 60%);
     border-radius: 50px;
-    padding: 3px 14px;
-    font-size: 12px;
+    padding: 4px 14px;
+    font-size: 14px;
     font-weight: 500;
-    color: var(--heading-color);
+    color: var(--primary-color);
     white-space: nowrap;
   }
 
-  // ── Price ──
   &__price {
     font-weight: 600;
     color: var(--heading-color);
   }
 
-  // ── Status badges ──
   &__status {
     display: inline-block;
     border-radius: 50px;
-    padding: 4px 14px;
-    font-size: 12px;
-    font-weight: 600;
+    padding: 6px 15px;
+    font-size: 14px;
+    font-weight: 500;
     color: var(--white-color);
     white-space: nowrap;
 
@@ -322,15 +327,14 @@
     }
 
     &--cancelled {
-      background-color: #c0392b;
+      background-color: var(--other-color-1);
     }
   }
 
-  // ── Action buttons ──
   &__actions {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
   }
 
   &__action-btn {
@@ -348,12 +352,11 @@
     }
 
     &--delete:hover {
-      color: #c0392b;
+      color: var(--other-color-1);
     }
   }
 }
 
-// ─── Footer ───────────────────────────────────────────────────────────────────
 .order-footer {
   text-align: center;
   padding: 20px 30px;
@@ -371,31 +374,5 @@
     &:hover {
       text-decoration: underline;
     }
-  }
-}
-
-// ─── Floating scroll-to-top button ───────────────────────────────────────────
-.order-scroll-btn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: var(--primary-color);
-  color: var(--white-color);
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background-color 0.25s ease;
-  z-index: 100;
-
-  &:hover {
-    background-color: var(--secondary-color);
-    color: var(--white-color);
   }
 }

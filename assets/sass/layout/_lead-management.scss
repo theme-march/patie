@@ -9,60 +9,48 @@
 
 .lead-body {
   flex: 1;
-  padding: 30px 30px 0 10px;
+  padding: 30px 30px 20px 10px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 30px;
 
   @include respond(lg) {
     padding: 20px 16px;
   }
 }
 
-// ─── Page header ─────────────────────────────────────────────────────────────
 .lead-header {
   &__title {
     font-family: var(--heading-font-family);
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 400;
     color: var(--primary-color);
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
-
-  &__subtitle {
-    font-size: 13px;
-    color: var(--body-color);
-    font-weight: 400;
+    margin-bottom: 5px;
   }
 }
 
-// ─── Toolbar ─────────────────────────────────────────────────────────────────
 .lead-toolbar {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
 
   &__btn {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     background-color: var(--white-color);
-    border: 1px solid color-mix(in srgb, var(--primary-color), transparent 72%);
-    border-radius: 6px;
-    padding: 9px 16px;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--heading-color);
-    font-family: var(--body-font-family);
+    border: 1px solid color-mix(in srgb, var(--border-color), transparent 60%);
+    border-radius: 8px;
+    padding: 12px 15px;
+    font-weight: 600;
     cursor: pointer;
     text-decoration: none;
     transition: all 0.25s ease;
     white-space: nowrap;
 
     &-icon {
-      font-size: 13px;
+      font-size: 16px;
       color: var(--body-color);
     }
 
@@ -77,35 +65,85 @@
     }
   }
 
+  &__export-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--white-color);
+    border: 1px solid color-mix(in srgb, var(--border-color), transparent 60%);
+    border-radius: 8px;
+    padding: 12px 15px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.25s ease;
+
+    &:hover {
+      background-color: color-mix(
+        in srgb,
+        var(--primary-color),
+        transparent 92%
+      );
+      border-color: color-mix(in srgb, var(--primary-color), transparent 80%);
+    }
+  }
+
+  &__export-icon {
+    font-size: 14px;
+    color: var(--body-color);
+    pointer-events: none;
+    flex-shrink: 0;
+  }
+
+  &__export-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: var(--body-font-family);
+    color: var(--body-color);
+    cursor: pointer;
+    padding-right: 20px;
+  }
+
+  &__export-chevron {
+    font-size: 14px;
+    color: var(--body-color);
+    pointer-events: none;
+    flex-shrink: 0;
+  }
+
   &__search-wrap {
     flex: 1;
-    max-width: 380px;
+    max-width: 450px;
     position: relative;
   }
 
   &__search-input {
     width: 100%;
     background-color: var(--white-color);
-    border: 1px solid color-mix(in srgb, var(--primary-color), transparent 72%);
-    border-radius: 6px;
-    padding: 9px 40px 9px 16px;
-    font-size: 13px;
-    color: var(--heading-color);
+    border: 1px solid color-mix(in srgb, var(--border-color), transparent 60%);
+    border-radius: 8px;
+    padding: 10px 16px 10px 38px;
     outline: none;
+    font-weight: 600;
     box-sizing: border-box;
     font-family: var(--body-font-family);
 
     &::placeholder {
-      color: color-mix(in srgb, var(--heading-color), transparent 55%);
+      color: color-mix(in srgb, var(--heading-color), transparent 40%);
     }
   }
 
   &__search-icon {
     position: absolute;
-    right: 14px;
+    left: 15px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 13px;
+    font-size: 16px;
     color: var(--body-color);
     pointer-events: none;
   }
@@ -141,11 +179,12 @@
     background-color: var(--primary-color);
     color: var(--white-color);
     border: none;
-    border-radius: 6px;
-    padding: 9px 18px;
-    font-size: 13px;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 16px;
     font-weight: 700;
-    font-family: var(--body-font-family);
+    text-transform: uppercase;
+    font-family: var(--heading-font-family);
     cursor: pointer;
     text-decoration: none;
     transition: background-color 0.25s ease;
@@ -163,11 +202,11 @@
   }
 }
 
-// ─── Lead table card ──────────────────────────────────────────────────────────
 .lead-table-card {
   background-color: var(--white-color);
   border-radius: 10px;
   overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--primary-color), transparent 90%);
 }
 
 .lead-table {
@@ -175,27 +214,24 @@
   border-collapse: collapse;
   font-family: var(--body-font-family);
 
-  // ── Header ──
   &__thead {
     background-color: var(--primary-color);
 
     th {
-      font-size: 13px;
+      font-size: 16px;
       font-weight: 600;
       color: var(--white-color);
       text-align: left;
-      padding: 14px 16px;
+      padding: 20px 15px;
       white-space: nowrap;
       border: none;
     }
 
     .lead-table__check-col {
-      width: 40px;
       padding-left: 20px;
     }
   }
 
-  // ── Body ──
   &__tbody {
     tr {
       border-bottom: 1px solid
@@ -216,20 +252,18 @@
     }
 
     td {
-      font-size: 13px;
+      font-size: 16px;
       color: var(--body-color);
-      padding: 13px 16px;
+      padding: 20px 15px;
       vertical-align: middle;
       border: none;
     }
 
     .lead-table__check-col {
       padding-left: 20px;
-      width: 40px;
     }
   }
 
-  // ── Checkbox ──
   &__checkbox {
     width: 16px;
     height: 16px;
@@ -237,21 +271,19 @@
     cursor: pointer;
   }
 
-  // ── Lead name ──
   &__name {
     font-weight: 600;
     color: var(--heading-color);
-    font-size: 13px;
+    font-size: 16px;
     white-space: nowrap;
   }
 
-  // ── Status badges ──
   &__status {
     display: inline-block;
     border-radius: 50px;
-    padding: 4px 14px;
-    font-size: 12px;
-    font-weight: 600;
+    padding: 5px 15px;
+    font-size: 14px;
+    font-weight: 500;
     color: var(--white-color);
     white-space: nowrap;
 
@@ -264,21 +296,18 @@
     }
 
     &--completed {
-      background-color: #8b0037;
+      background-color: var(--other-color-1);
     }
   }
 
-  // ── Contact info ──
   &__contact {
     white-space: nowrap;
-    font-size: 13px;
   }
 
-  // ── Action buttons ──
   &__actions {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
   }
 
   &__action-btn {
@@ -296,12 +325,11 @@
     }
 
     &--delete:hover {
-      color: #c0392b;
+      color: var(--other-color-1);
     }
   }
 }
 
-// ─── Footer ───────────────────────────────────────────────────────────────────
 .lead-footer {
   text-align: center;
   padding: 20px 30px;
@@ -319,31 +347,5 @@
     &:hover {
       text-decoration: underline;
     }
-  }
-}
-
-// ─── Floating scroll-to-top ───────────────────────────────────────────────────
-.lead-scroll-btn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: var(--primary-color);
-  color: var(--white-color);
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background-color 0.25s ease;
-  z-index: 100;
-
-  &:hover {
-    background-color: var(--secondary-color);
-    color: var(--white-color);
   }
 }

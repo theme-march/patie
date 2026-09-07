@@ -10965,11 +10965,22 @@ i[class*=fa] {
     padding: 12px 8px;
   }
 }
+@media (max-width: 1200px) {
+  .grooming-blog-card__date {
+    padding: 8px;
+    top: 95px;
+  }
+}
 @media (max-width: 768px) {
   .grooming-blog-card__date {
-    top: 25px;
+    top: 120px;
     left: 10px;
     padding: 10px 5px;
+  }
+}
+@media (max-width: 576px) {
+  .grooming-blog-card__date {
+    top: 100px;
   }
 }
 .grooming-blog-card__date-day {

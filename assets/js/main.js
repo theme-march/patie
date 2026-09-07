@@ -717,7 +717,8 @@
           // First rAF: snap is now committed to the render tree.
           requestAnimationFrame(function () {
             // Second rAF: safe to re-enable transitions and animate to final state.
-            content.style.transition = "opacity 0.28s ease, transform 0.28s ease";
+            content.style.transition =
+              "opacity 0.28s ease, transform 0.28s ease";
             content.style.opacity = "1";
             content.style.transform = "translateX(0)";
           });
@@ -948,20 +949,80 @@
     const $nextBtn = $(".boarding-testimonial__nav-btn--next");
     const $content = $(".boarding-testimonial__right");
 
-    function updateContent() {
-      // Fade out the items that should change
-      // Specifically the avatar, name, role, main text and stars
-      $(
-        ".boarding-testimonial__avatar, .boarding-testimonial__name, .boarding-testimonial__role, .boarding-testimonial__text, .boarding-testimonial__stars",
-      ).fadeOut(300, function () {
-        // In a real application, you would update the text and attributes here
-        // $(this).text(newData.text); etc.
-        $(this).fadeIn(300);
-      });
+    const data = [
+      {
+        name: "BROOKLYN SIMMONS",
+        role: "E-Commerce Solutions",
+        avatar: "assets/img/avatars/hero-avatar-4.png",
+        rating: 4,
+        text: '"Leaving My Pet Here Was The Best Decision. The Caring Staff Clean And Comfortable Environment, And Daily Attention My Furry Friend Feel Safe, Happy, And Relaxed Throughout The Entire Stay."',
+      },
+      {
+        name: "JENNY WILSON",
+        role: "Graphic Designer",
+        avatar: "assets/img/avatars/hero-avatar-5.png",
+        rating: 5,
+        text: '"The boarding facility exceeded all our expectations. Our dog came back happy and well-rested. The staff sent us daily updates and photos, which gave us total peace of mind throughout our trip."',
+      },
+      {
+        name: "KRISTIN WATSON",
+        role: "Marketing Specialist",
+        avatar: "assets/img/avatars/hero-avatar-6.png",
+        rating: 5,
+        text: '"Amazing experience from start to finish. The team is warm, professional, and genuinely passionate about animals. Our pets were treated like family and we could not be more grateful."',
+      },
+    ];
+
+    let currentIndex = 0;
+
+    function buildStars(rating) {
+      let html = "";
+      for (let i = 0; i < 5; i++) {
+        html +=
+          i < rating
+            ? '<i class="fas fa-star"></i>'
+            : '<i class="far fa-star"></i>';
+      }
+      return html;
     }
 
-    $prevBtn.on("click", updateContent);
-    $nextBtn.on("click", updateContent);
+    function updateContent(direction) {
+      const leaveClass =
+        direction === "next" ? "is-leaving" : "is-leaving-prev";
+      const enterClass =
+        direction === "next" ? "is-entering" : "is-entering-prev";
+
+      $content
+        .removeClass("is-leaving is-leaving-prev is-entering is-entering-prev")
+        .addClass(leaveClass);
+
+      setTimeout(function () {
+        const item = data[currentIndex];
+        $content.find(".boarding-testimonial__text").text(item.text);
+        $content.find(".boarding-testimonial__name").text(item.name);
+        $content.find(".boarding-testimonial__role").text(item.role);
+        $content.find(".boarding-testimonial__avatar").attr("src", item.avatar);
+        $content
+          .find(".boarding-testimonial__stars")
+          .html(buildStars(item.rating));
+
+        $content.css("transition", "none");
+        $content.removeClass(leaveClass).addClass(enterClass);
+        $content[0].offsetHeight; // force reflow
+        $content.css("transition", "");
+        $content.removeClass(enterClass);
+      }, 280);
+    }
+
+    $nextBtn.on("click", function () {
+      currentIndex = (currentIndex + 1) % data.length;
+      updateContent("next");
+    });
+
+    $prevBtn.on("click", function () {
+      currentIndex = (currentIndex - 1 + data.length) % data.length;
+      updateContent("prev");
+    });
   }
 
   function workingProcessSlider() {
@@ -1457,7 +1518,7 @@
     var $toggle = $("#sidebarToggle");
     var $sidebar = $("#dashboardSidebar");
     var $overlay = $("#sidebarOverlay");
-    var $close   = $("#sidebarClose");
+    var $close = $("#sidebarClose");
 
     if (!$toggle.length || !$sidebar.length) return;
 
@@ -1479,9 +1540,10 @@
       // they re-measure at the correct container width.
       if (typeof Chart !== "undefined") {
         setTimeout(function () {
-          Chart.instances && Object.values(Chart.instances).forEach(function (chart) {
-            chart.resize();
-          });
+          Chart.instances &&
+            Object.values(Chart.instances).forEach(function (chart) {
+              chart.resize();
+            });
         }, 320);
       }
     }

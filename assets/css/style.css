@@ -10906,7 +10906,7 @@ i[class*=fa] {
 }
 @media (max-width: 576px) {
   .grooming-blog-card__date {
-    top: 105px;
+    top: 100px;
   }
 }
 .grooming-blog-card__date-day {
@@ -12313,6 +12313,24 @@ i[class*=fa] {
 .boarding-testimonial__right {
   flex: 1;
   padding-left: 95px;
+  overflow: hidden;
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+.boarding-testimonial__right.is-leaving {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+.boarding-testimonial__right.is-leaving-prev {
+  opacity: 0;
+  transform: translateX(40px);
+}
+.boarding-testimonial__right.is-entering {
+  opacity: 0;
+  transform: translateX(40px);
+}
+.boarding-testimonial__right.is-entering-prev {
+  opacity: 0;
+  transform: translateX(-40px);
 }
 @media (max-width: 992px) {
   .boarding-testimonial__right {

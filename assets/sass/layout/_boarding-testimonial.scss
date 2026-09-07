@@ -41,7 +41,8 @@
       padding-right: 0;
       padding-bottom: 40px;
       margin-bottom: 40px;
-      border-bottom: 1px solid color-mix(in srgb, var(--white-color), transparent 80%);
+      border-bottom: 1px solid
+        color-mix(in srgb, var(--white-color), transparent 80%);
     }
 
     @include respond(sm) {
@@ -134,6 +135,30 @@
   &__right {
     flex: 1;
     padding-left: 95px;
+    overflow: hidden;
+    transition:
+      opacity 0.28s ease,
+      transform 0.28s ease;
+
+    &.is-leaving {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+
+    &.is-leaving-prev {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+
+    &.is-entering {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+
+    &.is-entering-prev {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
 
     @include respond(lg) {
       padding-left: 60px;
@@ -282,7 +307,6 @@
     @include respond(md) {
       grid-template-columns: repeat(2, 1fr);
     }
-
   }
 
   &__stat-item {

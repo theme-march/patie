@@ -5778,11 +5778,9 @@ i[class*=fa] {
   object-fit: cover;
   pointer-events: none;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .working-process__bg-vector {
-    top: 11px;
-    left: 0;
-    width: 100%;
+    display: none;
   }
 }
 .working-process__container {

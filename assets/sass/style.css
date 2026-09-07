@@ -5193,6 +5193,7 @@ i[class*=fa] {
   width: 100%;
   margin-top: 60px;
   padding-bottom: 30px;
+  min-height: 300px;
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 @media (max-width: 992px) {
@@ -9731,23 +9732,9 @@ i[class*=fa] {
 .parent-testimonial__content {
   position: relative;
   left: 0;
+  height: 280px;
+  overflow: hidden;
   transition: opacity 0.25s ease, transform 0.25s ease;
-}
-.parent-testimonial__content.is-leaving {
-  opacity: 0;
-  transform: translateX(-40px);
-}
-.parent-testimonial__content.is-leaving-prev {
-  opacity: 0;
-  transform: translateX(40px);
-}
-.parent-testimonial__content.is-entering {
-  opacity: 0;
-  transform: translateX(40px);
-}
-.parent-testimonial__content.is-entering-prev {
-  opacity: 0;
-  transform: translateX(-40px);
 }
 .parent-testimonial__name {
   font-size: 30px;
@@ -12266,7 +12253,8 @@ i[class*=fa] {
   position: relative;
   z-index: 2;
   margin-bottom: -250px;
-  align-items: center;
+  align-items: flex-start;
+  overflow: hidden;
 }
 @media (max-width: 1400px) {
   .boarding-testimonial__box {
@@ -12393,23 +12381,8 @@ i[class*=fa] {
   flex: 1;
   padding-left: 95px;
   overflow: hidden;
+  height: 320px;
   transition: opacity 0.28s ease, transform 0.28s ease;
-}
-.boarding-testimonial__right.is-leaving {
-  opacity: 0;
-  transform: translateX(-40px);
-}
-.boarding-testimonial__right.is-leaving-prev {
-  opacity: 0;
-  transform: translateX(40px);
-}
-.boarding-testimonial__right.is-entering {
-  opacity: 0;
-  transform: translateX(40px);
-}
-.boarding-testimonial__right.is-entering-prev {
-  opacity: 0;
-  transform: translateX(-40px);
 }
 @media (max-width: 992px) {
   .boarding-testimonial__right {
@@ -12419,6 +12392,8 @@ i[class*=fa] {
 @media (max-width: 768px) {
   .boarding-testimonial__right {
     padding-left: 0;
+    height: auto;
+    min-height: 320px;
   }
 }
 .boarding-testimonial__stars {

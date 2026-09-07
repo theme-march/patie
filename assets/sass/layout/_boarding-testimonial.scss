@@ -12,7 +12,8 @@
     position: relative;
     z-index: 2;
     margin-bottom: -250px;
-    align-items: center;
+    align-items: flex-start;
+    overflow: hidden;
 
     @include respond(xxl) {
       padding: 70px;
@@ -136,29 +137,10 @@
     flex: 1;
     padding-left: 95px;
     overflow: hidden;
+    height: 320px;
     transition:
       opacity 0.28s ease,
       transform 0.28s ease;
-
-    &.is-leaving {
-      opacity: 0;
-      transform: translateX(-40px);
-    }
-
-    &.is-leaving-prev {
-      opacity: 0;
-      transform: translateX(40px);
-    }
-
-    &.is-entering {
-      opacity: 0;
-      transform: translateX(40px);
-    }
-
-    &.is-entering-prev {
-      opacity: 0;
-      transform: translateX(-40px);
-    }
 
     @include respond(lg) {
       padding-left: 60px;
@@ -166,6 +148,8 @@
 
     @include respond(md) {
       padding-left: 0;
+      height: auto;
+      min-height: 320px;
     }
   }
 

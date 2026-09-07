@@ -15,7 +15,6 @@
 
   &__heading {
     margin-bottom: 80px;
-
   }
 
   &__wrapper {
@@ -27,7 +26,8 @@
   &__body {
     position: relative;
     border-radius: 40px;
-    box-shadow: 0px 10px 50px 0px color-mix(in srgb, var(--black-color), transparent 92%);
+    box-shadow: 0px 10px 50px 0px
+      color-mix(in srgb, var(--black-color), transparent 92%);
     padding: 90px 0 80px;
     display: flex;
     align-items: center;
@@ -74,7 +74,8 @@
     cursor: pointer;
     z-index: 10;
     @include transition;
-    box-shadow: 0px 10px 50px 0px color-mix(in srgb, var(--black-color), transparent 92%);
+    box-shadow: 0px 10px 50px 0px
+      color-mix(in srgb, var(--black-color), transparent 92%);
 
     @include respond(lg) {
       font-size: 16px;
@@ -175,28 +176,14 @@
     }
   }
 
-
   &__content {
     position: relative;
     left: 0;
-    transition: opacity 0.25s ease, transform 0.25s ease;
-
-    &.is-leaving {
-      opacity: 0;
-      transform: translateX(-40px);
-    }
-    &.is-leaving-prev {
-      opacity: 0;
-      transform: translateX(40px);
-    }
-    &.is-entering {
-      opacity: 0;
-      transform: translateX(40px);
-    }
-    &.is-entering-prev {
-      opacity: 0;
-      transform: translateX(-40px);
-    }
+    height: 280px;
+    overflow: hidden;
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease;
   }
 
   &__name {
@@ -222,6 +209,5 @@
   &__rating {
     color: var(--rating-color);
     font-size: 22px;
-
   }
 }

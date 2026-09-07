@@ -1,4 +1,4 @@
-(function ($) {
+﻿(function ($) {
   ("use strict");
 
   // Register GSAP ScrollTrigger
@@ -768,14 +768,14 @@
         name: "KRISTIN WATSON",
         role: "Marketing Specialist",
         rating: 5,
-        text: "Highly recommend their services. The de-shedding treatment worked wonders on my Golden Retriever, and the staff's professionalism is unmatched. The scheduling was seamless and the facility is clean, safe, and welcoming. My Cat Feels Completely At Home, Happy.",
+        text: "Highly recommend their services. The de-shedding treatment worked wonders on my Golden Retriever, and the staff's professionalism is unmatched. The scheduling was seamless and the facility is clean, safe, and welcoming.",
       },
     ];
 
     function updateTestimonial(index, direction) {
       if (totalAvatars === 0) return;
 
-      // Update Highlight Immediately
+      // Update avatar highlight immediately
       $(".parent-testimonial__avatar")
         .removeClass("parent-testimonial__avatar--center")
         .addClass("parent-testimonial__avatar--side");
@@ -784,50 +784,54 @@
         .removeClass("parent-testimonial__avatar--side")
         .addClass("parent-testimonial__avatar--center");
 
-      const $content = $(".parent-testimonial__content");
-      const leaveClass =
-        direction === "next" ? "is-leaving" : "is-leaving-prev";
-      const enterClass =
-        direction === "next" ? "is-entering" : "is-entering-prev";
+      const content = $(".parent-testimonial__content")[0];
+      if (!content) return;
 
-      $content
-        .removeClass("is-leaving is-leaving-prev is-entering is-entering-prev")
-        .addClass(leaveClass);
+      const slideOut = direction === "next" ? "-50px" : "50px";
+      const slideIn  = direction === "next" ?  "50px" : "-50px";
+
+      // Phase 1: fade + slide OUT via inline styles — no class swap, no reflow
+      content.style.transition = "opacity 0.22s ease, transform 0.22s ease";
+      content.style.opacity    = "0";
+      content.style.transform  = "translateX(" + slideOut + ")";
 
       setTimeout(function () {
-        // Swap content text
+        // Swap content while element is invisible
         const item = data[index] || data[1];
-        $content.find(".parent-testimonial__name").text(item.name);
-        $content.find(".parent-testimonial__designation").text(item.role);
-        $content.find(".parent-testimonial__text").text(item.text);
+        const $c = $(content);
+        $c.find(".parent-testimonial__name").text(item.name);
+        $c.find(".parent-testimonial__designation").text(item.role);
+        $c.find(".parent-testimonial__text").text(item.text);
 
-        // Build Stars Markup
+        // Build stars markup
         let starsHtml = "";
         const fullStars = Math.floor(item.rating);
-        const hasHalf = item.rating % 1 !== 0;
+        const hasHalf   = item.rating % 1 !== 0;
         for (let i = 0; i < 5; i++) {
           if (i < fullStars) {
             starsHtml += '<i class="fas fa-star parent-testimonial__star"></i>';
           } else if (i === fullStars && hasHalf) {
-            starsHtml +=
-              '<i class="fas fa-star-half-alt parent-testimonial__star"></i>';
+            starsHtml += '<i class="fas fa-star-half-alt parent-testimonial__star"></i>';
           } else {
             starsHtml += '<i class="far fa-star parent-testimonial__star"></i>';
           }
         }
-        $content.find(".parent-testimonial__rating").html(starsHtml);
+        $c.find(".parent-testimonial__rating").html(starsHtml);
 
-        // Snap to entry-start position WITHOUT transition, then animate in
-        $content.css("transition", "none");
-        $content.removeClass(leaveClass).addClass(enterClass);
+        // Snap to entry position instantly — no offsetHeight, no reflow
+        content.style.transition = "none";
+        content.style.transform  = "translateX(" + slideIn + ")";
+        content.style.opacity    = "0";
 
-        // Force reflow so browser commits the snap
-        $content[0].offsetHeight;
-
-        // Re-enable transitions, remove enter class ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ CSS animates back to base state
-        $content.css("transition", "");
-        $content.removeClass(enterClass);
-      }, 280);
+        // Double rAF: commit snap first frame, animate in second frame
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            content.style.transition = "opacity 0.28s ease, transform 0.28s ease";
+            content.style.opacity    = "1";
+            content.style.transform  = "translateX(0)";
+          });
+        });
+      }, 240);
     }
 
     $(".parent-testimonial__nav--next").on("click", function () {
@@ -947,7 +951,6 @@
   function boardingTestimonialSlider() {
     const $prevBtn = $(".boarding-testimonial__nav-btn--prev");
     const $nextBtn = $(".boarding-testimonial__nav-btn--next");
-    const $content = $(".boarding-testimonial__right");
 
     const data = [
       {
@@ -955,21 +958,21 @@
         role: "E-Commerce Solutions",
         avatar: "assets/img/avatars/hero-avatar-4.png",
         rating: 4,
-        text: '"Leaving My Pet Here Was The Best Decision. The Caring Staff Clean And Comfortable Environment, And Daily Attention My Furry Friend Feel Safe, Happy, And Relaxed Throughout The Entire Stay."',
+        text: "Leaving My Pet Here Was The Best Decision. The Caring Staff Clean And Comfortable Environment, And Daily Attention My Furry Friend Feel Safe, Happy, And Relaxed Throughout The Entire Stay.",
       },
       {
         name: "JENNY WILSON",
         role: "Graphic Designer",
         avatar: "assets/img/avatars/hero-avatar-5.png",
         rating: 5,
-        text: '"The boarding facility exceeded all our expectations. Our dog came back happy and well-rested. The staff sent us daily updates and photos, which gave us total peace of mind throughout our trip."',
+        text: "The boarding facility exceeded all our expectations. Our dog came back happy and well-rested. The staff sent us daily updates and photos, which gave us total peace of mind.",
       },
       {
         name: "KRISTIN WATSON",
         role: "Marketing Specialist",
         avatar: "assets/img/avatars/hero-avatar-6.png",
         rating: 5,
-        text: '"Amazing experience from start to finish. The team is warm, professional, and genuinely passionate about animals. Our pets were treated like family and we could not be more grateful."',
+        text: "Amazing experience from start to finish. The team is warm, professional, and genuinely passionate about animals. Our pets were treated like family and we could not be more grateful.",
       },
     ];
 
@@ -978,40 +981,49 @@
     function buildStars(rating) {
       let html = "";
       for (let i = 0; i < 5; i++) {
-        html +=
-          i < rating
-            ? '<i class="fas fa-star"></i>'
-            : '<i class="far fa-star"></i>';
+        html += i < rating
+          ? '<i class="fas fa-star"></i>'
+          : '<i class="far fa-star"></i>';
       }
       return html;
     }
 
     function updateContent(direction) {
-      const leaveClass =
-        direction === "next" ? "is-leaving" : "is-leaving-prev";
-      const enterClass =
-        direction === "next" ? "is-entering" : "is-entering-prev";
+      const content = $(".boarding-testimonial__right")[0];
+      if (!content) return;
 
-      $content
-        .removeClass("is-leaving is-leaving-prev is-entering is-entering-prev")
-        .addClass(leaveClass);
+      const slideOut = direction === "next" ? "-50px" : "50px";
+      const slideIn  = direction === "next" ?  "50px" : "-50px";
+
+      // Phase 1: fade + slide OUT via inline styles — no class swap, no reflow
+      content.style.transition = "opacity 0.22s ease, transform 0.22s ease";
+      content.style.opacity    = "0";
+      content.style.transform  = "translateX(" + slideOut + ")";
 
       setTimeout(function () {
+        // Swap content while element is invisible
         const item = data[currentIndex];
-        $content.find(".boarding-testimonial__text").text(item.text);
-        $content.find(".boarding-testimonial__name").text(item.name);
-        $content.find(".boarding-testimonial__role").text(item.role);
-        $content.find(".boarding-testimonial__avatar").attr("src", item.avatar);
-        $content
-          .find(".boarding-testimonial__stars")
-          .html(buildStars(item.rating));
+        const $c = $(content);
+        $c.find(".boarding-testimonial__text").text(item.text);
+        $c.find(".boarding-testimonial__name").text(item.name);
+        $c.find(".boarding-testimonial__role").text(item.role);
+        $c.find(".boarding-testimonial__avatar").attr("src", item.avatar);
+        $c.find(".boarding-testimonial__stars").html(buildStars(item.rating));
 
-        $content.css("transition", "none");
-        $content.removeClass(leaveClass).addClass(enterClass);
-        $content[0].offsetHeight; // force reflow
-        $content.css("transition", "");
-        $content.removeClass(enterClass);
-      }, 280);
+        // Snap to entry position instantly — no offsetHeight, no reflow
+        content.style.transition = "none";
+        content.style.transform  = "translateX(" + slideIn + ")";
+        content.style.opacity    = "0";
+
+        // Double rAF: commit snap first frame, animate in second frame
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            content.style.transition = "opacity 0.28s ease, transform 0.28s ease";
+            content.style.opacity    = "1";
+            content.style.transform  = "translateX(0)";
+          });
+        });
+      }, 240);
     }
 
     $nextBtn.on("click", function () {

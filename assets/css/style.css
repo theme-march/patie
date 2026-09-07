@@ -10727,6 +10727,9 @@ i[class*=fa] {
   .before-and-after__slider {
     flex-direction: row;
     left: 50%;
+    top: auto;
+    bottom: 500px;
+    transform: translateX(-50%) translateY(50%);
     padding: 15px;
     margin-top: 0;
   }
@@ -10738,8 +10741,10 @@ i[class*=fa] {
 }
 @media (max-width: 576px) {
   .before-and-after__slider {
+    bottom: 350px;
+    transform: translateX(-50%) translateY(50%);
+    padding: 12px;
     margin-top: 0;
-    padding: 8px;
   }
 }
 .before-and-after__dot {

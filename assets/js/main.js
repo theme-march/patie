@@ -655,7 +655,7 @@
         name: "KRISTIN WATSON",
         role: "Marketing Specialist",
         rating: 5,
-        text: "Highly recommend their services. The de-shedding treatment worked wonders on my Golden Retriever, and the staff's professionalism is unmatched. The scheduling was seamless and the facility is clean, safe, and welcoming. My Cat Feels Completely At Home, Happy",
+        text: "Highly recommend their services. The de-shedding treatment worked wonders on my Golden Retriever, and the staff's professionalism is unmatched. The scheduling was seamless and the facility is clean, safe, and welcoming.",
       },
     ];
 

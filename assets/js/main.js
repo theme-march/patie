@@ -54,7 +54,7 @@
       // Trigger CSS keyframe animations that were paused waiting for the preloader
       document.body.classList.add("preloader-done");
 
-      // Hero Grooming Badge — appears last after all AOS hero animations settle
+      // Hero Grooming Badge Ã¢â‚¬â€ appears last after all AOS hero animations settle
       var heroBadge = document.querySelector(".hero-grooming__badge");
       if (heroBadge) {
         setTimeout(function () {
@@ -65,10 +65,10 @@
 
     var preloaderEl = document.getElementById("preloader");
     if (preloaderEl) {
-      // Preloader exists — defer AOS until it signals completion
+      // Preloader exists Ã¢â‚¬â€ defer AOS until it signals completion
       document.addEventListener("preloaderDone", initAOS, { once: true });
     } else {
-      // No preloader on this page — init immediately
+      // No preloader on this page Ã¢â‚¬â€ init immediately
       initAOS();
     }
   });
@@ -85,6 +85,7 @@
     initSearch();
     handleShopSearchFilter();
     initMobileMenu();
+    initDashboardSidebar();
     initCountUp();
     initProgressBars();
     beforeAndAfterReveal();
@@ -96,7 +97,7 @@
   });
 
   /*--------------------------------------------------------------
-    Video Section — Background Text Scroll Parallax
+    Video Section Ã¢â‚¬â€ Background Text Scroll Parallax
   --------------------------------------------------------------*/
   function videoTextParallax() {
     const el = document.querySelector(".video-section__bg-text");
@@ -424,9 +425,9 @@
         }
 
         if (windowTop < lastScrollTop) {
-          $header.addClass("ak-gescout_show"); // Scrolling UP → reveal
+          $header.addClass("ak-gescout_show"); // Scrolling UP Ã¢â€ â€™ reveal
         } else {
-          $header.removeClass("ak-gescout_show"); // Scrolling DOWN → hide
+          $header.removeClass("ak-gescout_show"); // Scrolling DOWN Ã¢â€ â€™ hide
         }
       }
 
@@ -651,7 +652,7 @@
         name: "SAVANNAH NGUYEN",
         role: "Managing Director",
         rating: 4.5,
-        text: "I Absolutely Love How Caring, Professional, And Attentive The Entire Team Is! My Dog Feels Completely At Home, Happy, And Safe—And I Can Check On Him Anytime Through Their Reliable CCTV Monitoring Service. Truly Peace Of Mind For Every Pet Parent!",
+        text: "I Absolutely Love How Caring, Professional, And Attentive The Entire Team Is! My Dog Feels Completely At Home, Happy, And SafeÃ¢â‚¬â€And I Can Check On Him Anytime Through Their Reliable CCTV Monitoring Service. Truly Peace Of Mind For Every Pet Parent!",
       },
       {
         name: "KRISTIN WATSON",
@@ -699,7 +700,7 @@
         }
         $card.find(".testimonial__rating").html(starsHtml);
 
-        // Update avatar highlight — side/center states (no slide, just resize)
+        // Update avatar highlight Ã¢â‚¬â€ side/center states (no slide, just resize)
         $(".testimonial__avatar")
           .removeClass("testimonial__avatar--center")
           .addClass("testimonial__avatar--side");
@@ -710,14 +711,14 @@
 
         // Snap content to entry-start position instantly (no transition)
         // Read offsetHeight BEFORE setting the snap position so the reflow
-        // commits the previous state, not the new one — prevents a stale frame
+        // commits the previous state, not the new one Ã¢â‚¬â€ prevents a stale frame
         content.style.transition = "none";
         content.offsetHeight; // flush pending styles before snap
 
         content.style.transform = "translateX(" + slideIn + ")";
         content.style.opacity = "0";
 
-        // Phase 2: rAF — browser has now committed the snap, safe to re-enable
+        // Phase 2: rAF Ã¢â‚¬â€ browser has now committed the snap, safe to re-enable
         requestAnimationFrame(function () {
           content.style.transition = "opacity 0.28s ease, transform 0.28s ease";
           content.style.opacity = "1";
@@ -824,7 +825,7 @@
         // Force reflow so browser commits the snap
         $content[0].offsetHeight;
 
-        // Re-enable transitions, remove enter class → CSS animates back to base state
+        // Re-enable transitions, remove enter class Ã¢â€ â€™ CSS animates back to base state
         $content.css("transition", "");
         $content.removeClass(enterClass);
       }, 280);
@@ -1309,7 +1310,7 @@
   }
 
   /*--------------------------------------------------------------
-     Sidebar Category — selectable items
+     Sidebar Category Ã¢â‚¬â€ selectable items
   --------------------------------------------------------------*/
   $(document).on("click", ".sidebar__category-item", function () {
     var $list = $(this).closest(".sidebar__category-list");
@@ -1447,12 +1448,85 @@
       });
     }
   }
+  /*--------------------------------------------------------------
+    Dashboard Mobile Sidebar Toggle
+    Ã¢â‚¬â€œ Avatar button (#sidebarToggle) opens/closes the sidebar
+      as a slide-in drawer below the lg breakpoint.
+    Ã¢â‚¬â€œ Action buttons are hidden via CSS below md; the sidebar
+      shows them inside a dedicated mobile-actions panel instead.
+  --------------------------------------------------------------*/
+  function initDashboardSidebar() {
+    var $toggle = $("#sidebarToggle");
+    var $sidebar = $("#dashboardSidebar");
+    var $overlay = $("#sidebarOverlay");
+    var $close   = $("#sidebarClose");
+
+    if (!$toggle.length || !$sidebar.length) return;
+
+    function openSidebar() {
+      $sidebar.addClass("is-open");
+      $overlay.addClass("is-visible");
+      $toggle.attr("aria-expanded", "true");
+      // Prevent body scroll while drawer is open
+      $("body").css("overflow", "hidden");
+    }
+
+    function closeSidebar() {
+      $sidebar.removeClass("is-open");
+      $overlay.removeClass("is-visible");
+      $toggle.attr("aria-expanded", "false");
+      $("body").css("overflow", "");
+
+      // After the slide transition (300ms), resize all Chart.js instances so
+      // they re-measure at the correct container width.
+      if (typeof Chart !== "undefined") {
+        setTimeout(function () {
+          Chart.instances && Object.values(Chart.instances).forEach(function (chart) {
+            chart.resize();
+          });
+        }, 320);
+      }
+    }
+
+    $toggle.on("click", function (e) {
+      e.stopPropagation();
+      if ($sidebar.hasClass("is-open")) {
+        closeSidebar();
+      } else {
+        openSidebar();
+      }
+    });
+
+    // Clicking the overlay closes the drawer
+    $overlay.on("click", closeSidebar);
+
+    // Close button inside the sidebar
+    $close.on("click", function () {
+      closeSidebar();
+      $toggle.trigger("focus");
+    });
+
+    // Close on Escape key
+    $(document).on("keydown.dashboardSidebar", function (e) {
+      if (e.key === "Escape" && $sidebar.hasClass("is-open")) {
+        closeSidebar();
+        $toggle.trigger("focus");
+      }
+    });
+
+    // When resizing back above lg, reset state so layout isn't broken
+    $(window).on("resize.dashboardSidebar", function () {
+      if (window.innerWidth > 992) {
+        closeSidebar();
+      }
+    });
+  }
 })(jQuery);
 
 if ($.exists(".working-process__item")) {
   const items = document.querySelectorAll(".working-process__item");
 
-  // 👉 Page load fix (important)
+  // Ã°Å¸â€˜â€° Page load fix (important)
   window.addEventListener("load", () => {
     const activeItem = document.querySelector(".working-process__item.active");
 
@@ -1470,7 +1544,7 @@ if ($.exists(".working-process__item")) {
     }
   });
 
-  // 👉 Click accordion logic (same)
+  // Ã°Å¸â€˜â€° Click accordion logic (same)
   items.forEach((item) => {
     const btn = item.querySelector(".working-process__toggle");
     const content = item.querySelector(".working-process__content");
@@ -1559,7 +1633,7 @@ if ($.exists(".working-process__item")) {
       let left = rect.left + rect.width / 2 + window.scrollX;
       let top = rect.top + window.scrollY - tooltipHeight - 12;
 
-      // 🔥 smart flip (top → bottom)
+      // Ã°Å¸â€Â¥ smart flip (top Ã¢â€ â€™ bottom)
       if (top < window.scrollY) {
         top = rect.bottom + window.scrollY + 12;
         tooltip.classList.add("doctor-tooltip--bottom");
@@ -1708,7 +1782,7 @@ if ($.exists(".working-process__item")) {
   });
 })();
 
-// ── service-btn dashed-circle deceleration on mouse-leave ───────────────────
+// Ã¢â€â‚¬Ã¢â€â‚¬ service-btn dashed-circle deceleration on mouse-leave Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 // Uses event delegation on document so Swiper-cloned slides work automatically.
 (function () {
   const FAST_SPEED = 20; // px per second while hovered
@@ -1803,7 +1877,7 @@ if ($.exists(".working-process__item")) {
    Preloader dismissal
    Matches the CSS in assets/css/preloader.css.
    MIN_DISPLAY ensures at least one full animation
-   cycle (~0.93 s × 3 ≈ 2.8 s) is always visible.
+   cycle (~0.93 s Ãƒâ€” 3 Ã¢â€°Ë† 2.8 s) is always visible.
    ===================================================== */
 (function () {
   var preloader = document.getElementById("preloader");
@@ -1839,7 +1913,7 @@ if ($.exists(".working-process__item")) {
 })();
 
 /*--------------------------------------------------------------
-    Sign In — Password show/hide toggle
+    Sign In Ã¢â‚¬â€ Password show/hide toggle
   --------------------------------------------------------------*/
 $(function () {
   $(".sign-in__eye-toggle").on("click", function () {
@@ -1868,7 +1942,7 @@ $(function () {
 });
 
 /*--------------------------------------------------------------
-    Sign Up — Password show/hide toggle
+    Sign Up Ã¢â‚¬â€ Password show/hide toggle
   --------------------------------------------------------------*/
 $(function () {
   $(".sign-up__eye-toggle").on("click", function () {
@@ -1889,7 +1963,7 @@ $(function () {
 });
 
 /*--------------------------------------------------------------
-    Password Reset — OTP input auto-advance, backspace, paste
+    Password Reset Ã¢â‚¬â€ OTP input auto-advance, backspace, paste
   --------------------------------------------------------------*/
 $(function () {
   var $inputs = $(".password-reset__otp-input");
@@ -1940,7 +2014,7 @@ $(function () {
   });
 });
 
-// ── Dashboard Charts ──────────────────────────────────────────────────────
+// Ã¢â€â‚¬Ã¢â€â‚¬ Dashboard Charts Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 // Sales Performance Line Chart
 (function () {
   var salesChartEl = document.getElementById("salesChart");
@@ -2144,7 +2218,7 @@ $(function () {
 })();
 
 /*--------------------------------------------------------------
-  Dashboard Tables — Select All + Delete Row
+  Dashboard Tables Ã¢â‚¬â€ Select All + Delete Row
   Works for both the lead-management table and the order table.
   Each table needs:
     - A header checkbox with id="lead-select-all" or id="order-select-all"
@@ -2159,7 +2233,7 @@ $(function () {
     var tbody = document.getElementById(tbodyId);
     if (!selectAll || !tbody) return;
 
-    // ── Select / deselect all ──────────────────────────────────────────────
+    // Ã¢â€â‚¬Ã¢â€â‚¬ Select / deselect all Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
     selectAll.addEventListener("change", function () {
       tbody
         .querySelectorAll(".lead-table__checkbox, .order-table__checkbox")
@@ -2187,7 +2261,7 @@ $(function () {
         checked.length > 0 && checked.length < all.length;
     });
 
-    // ── Delete row ─────────────────────────────────────────────────────────
+    // Ã¢â€â‚¬Ã¢â€â‚¬ Delete row Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
     tbody.addEventListener("click", function (e) {
       var btn = e.target.closest("[data-row-delete]");
       if (!btn) return;
@@ -2217,7 +2291,7 @@ $(function () {
     });
   }
 
-  // Initialise for both tables (safe — silently skips if element not on page)
+  // Initialise for both tables (safe Ã¢â‚¬â€ silently skips if element not on page)
   initTableControls("lead-select-all", "lead-table-body");
   initTableControls("order-select-all", "order-table-body");
 })();

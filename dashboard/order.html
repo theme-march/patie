@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Thememarch" />
     <link rel="icon" href="../assets/img/logo/favIcon.svg" />
-    <title>Order – Patie Dashboard</title>
+    <title>Order â€“ Patie Dashboard</title>
     <link rel="stylesheet" href="../assets/css/plugins/bootstrap.min.css" />
     <link rel="stylesheet" href="../assets/css/plugins/fontawesome.min.css" />
     <link rel="stylesheet" href="../assets/css/preloader.css" />
@@ -115,19 +115,48 @@
             <a href="#" class="dashboard-topbar__action-btn" aria-label="Apps">
               <i class="fas fa-th" aria-hidden="true"></i>
             </a>
-            <img
-              src="../assets/img/dashboard/profile-pic.png"
-              alt="Profile"
-              class="dashboard-topbar__avatar"
-              width="42"
-              height="42"
-            />
+            <button
+              type="button"
+              class="dashboard-topbar__avatar-btn"
+              id="sidebarToggle"
+              aria-label="Open navigation menu"
+              aria-expanded="false"
+              aria-controls="dashboardSidebar"
+            >
+              <img
+                src="../assets/img/dashboard/profile-pic.png"
+                alt="Profile"
+                class="dashboard-topbar__avatar"
+                width="42"
+                height="42"
+              />
+            </button>
           </div>
         </div>
       </header>
 
+      <!-- Mobile sidebar overlay -->
+      <div
+        class="dashboard-sidebar-overlay"
+        id="sidebarOverlay"
+        aria-hidden="true"
+      ></div>
+
       <div class="dashboard-body-row">
-        <aside class="dashboard-sidebar" aria-label="Sidebar navigation">
+        <aside
+          class="dashboard-sidebar"
+          id="dashboardSidebar"
+          aria-label="Sidebar navigation"
+        >
+          <button
+            type="button"
+            class="dashboard-sidebar__close"
+            id="sidebarClose"
+            aria-label="Close sidebar"
+          >
+            <i class="fas fa-times" aria-hidden="true"></i>
+          </button>
+
           <div class="dashboard-sidebar__avatar-wrap">
             <img
               src="../assets/img/dashboard/profile-pic.png"
@@ -193,9 +222,48 @@
               Logout
             </a>
           </div>
+
+          <!-- Mobile-only action buttons (shown below md breakpoint) -->
+          <div
+            class="dashboard-sidebar__mobile-actions"
+            aria-label="Quick actions"
+          >
+            <a
+              href="#"
+              class="dashboard-sidebar__mobile-action-btn"
+              aria-label="Messages"
+            >
+              <i class="fas fa-comment-dots" aria-hidden="true"></i>
+              <span>Messages</span>
+            </a>
+            <a
+              href="#"
+              class="dashboard-sidebar__mobile-action-btn"
+              aria-label="Notifications"
+            >
+              <i class="fas fa-bell" aria-hidden="true"></i>
+              <span>Notifications</span>
+            </a>
+            <a
+              href="#"
+              class="dashboard-sidebar__mobile-action-btn"
+              aria-label="Settings"
+            >
+              <i class="fas fa-cog" aria-hidden="true"></i>
+              <span>Settings</span>
+            </a>
+            <a
+              href="#"
+              class="dashboard-sidebar__mobile-action-btn"
+              aria-label="Apps"
+            >
+              <i class="fas fa-th" aria-hidden="true"></i>
+              <span>Apps</span>
+            </a>
+          </div>
         </aside>
 
-        <!-- ── Main content ───────────────────────────────── -->
+        <!-- â”€â”€ Main content â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
         <div class="order-page">
           <main class="order-body" id="main-content">
             <div class="order-header">
@@ -207,561 +275,583 @@
             </div>
 
             <div class="order-toolbar">
-              <span class="order-toolbar__results">
-                Results Per Page
-                <div class="order-toolbar__results-select-wrap">
-                  <select
-                    class="order-toolbar__results-select"
-                    aria-label="Results per page"
+              <div class="order-toolbar__row order-toolbar__row--top">
+                <span class="order-toolbar__results">
+                  Results Per Page
+                  <div class="order-toolbar__results-select-wrap">
+                    <select
+                      class="order-toolbar__results-select"
+                      aria-label="Results per page"
+                    >
+                      <option value="10">10</option>
+                      <option value="25">25</option>
+                      <option value="50">50</option>
+                    </select>
+                    <i
+                      class="fas fa-chevron-down order-toolbar__results-select-icon"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
+                </span>
+
+                <div class="order-toolbar__search-wrap">
+                  <label for="product-search" class="visually-hidden"
+                    >Search Product</label
                   >
-                    <option value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
-                  </select>
                   <i
-                    class="fas fa-chevron-down order-toolbar__results-select-icon"
+                    class="fas fa-search order-toolbar__search-icon"
                     aria-hidden="true"
                   ></i>
+                  <input
+                    id="product-search"
+                    class="order-toolbar__search-input"
+                    type="search"
+                    placeholder="Search Product..."
+                    autocomplete="off"
+                  />
                 </div>
-              </span>
-
-              <div class="order-toolbar__search-wrap">
-                <label for="product-search" class="visually-hidden"
-                  >Search Product</label
-                >
-                <i
-                  class="fas fa-search order-toolbar__search-icon"
-                  aria-hidden="true"
-                ></i>
-                <input
-                  id="product-search"
-                  class="order-toolbar__search-input"
-                  type="search"
-                  placeholder="Search Product..."
-                  autocomplete="off"
-                />
               </div>
 
-              <button class="order-toolbar__filter-btn" aria-label="Filter">
-                <i class="fas fa-sliders-h" aria-hidden="true"></i>
-              </button>
+              <div class="order-toolbar__row order-toolbar__row--bottom">
+                <button class="order-toolbar__filter-btn" aria-label="Filter">
+                  <i class="fas fa-sliders-h" aria-hidden="true"></i>
+                </button>
 
-              <div class="order-toolbar__spacer"></div>
+                <div class="order-toolbar__group-right">
+                  <button
+                    class="order-toolbar__icon-btn order-toolbar__icon-btn--excel"
+                    aria-label="Export to Excel"
+                  >
+                    <i class="fas fa-file-excel" aria-hidden="true"></i>
+                  </button>
 
-              <button
-                class="order-toolbar__icon-btn order-toolbar__icon-btn--excel"
-                aria-label="Export to Excel"
-              >
-                <i class="fas fa-file-excel" aria-hidden="true"></i>
-              </button>
+                  <button class="order-toolbar__icon-btn" aria-label="Copy">
+                    <i class="fas fa-copy" aria-hidden="true"></i>
+                  </button>
 
-              <button class="order-toolbar__icon-btn" aria-label="Copy">
-                <i class="fas fa-copy" aria-hidden="true"></i>
-              </button>
-
-              <a href="#" class="order-toolbar__add-btn">
-                <i
-                  class="fas fa-plus order-toolbar__add-btn-icon"
-                  aria-hidden="true"
-                ></i>
-                Add Product
-              </a>
+                  <a href="#" class="order-toolbar__add-btn">
+                    <i
+                      class="fas fa-plus order-toolbar__add-btn-icon"
+                      aria-hidden="true"
+                    ></i>
+                    Add Product
+                  </a>
+                </div>
+              </div>
             </div>
 
             <div class="order-table-card">
-              <table class="order-table" aria-label="Product list">
-                <thead class="order-table__thead">
-                  <tr>
-                    <th scope="col" class="order-table__check-col">
-                      <input
-                        type="checkbox"
-                        id="order-select-all"
-                        class="order-table__checkbox"
-                        aria-label="Select all"
-                      />
-                    </th>
-                    <th scope="col">Tracking ID</th>
-                    <th scope="col">Product</th>
-                    <th scope="col">Type</th>
-                    <th scope="col">Added Date</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Category</th>
-                    <th scope="col">Brand</th>
-                    <th scope="col">Stock</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Action</th>
-                  </tr>
-                </thead>
-                <tbody
-                  class="order-table__tbody"
-                  id="order-table-body"
-                  style="--bs-border-color: transparent; border-top: none"
-                >
-                  <tr>
-                    <td class="order-table__check-col">
-                      <input
-                        type="checkbox"
-                        class="order-table__checkbox"
-                        aria-label="Select row"
-                      />
-                    </td>
-                    <td><span class="order-table__tracking">#20462</span></td>
-                    <td>
-                      <div class="order-table__product">
-                        <img
-                          src="../assets/img/dashboard/recent-booking-1.png"
-                          alt="Paw Bite"
-                          class="order-table__product-img"
-                          width="36"
-                          height="36"
+              <div class="order-table-card__scroll-wrap">
+                <table class="order-table" aria-label="Product list">
+                  <thead class="order-table__thead">
+                    <tr>
+                      <th scope="col" class="order-table__check-col">
+                        <input
+                          type="checkbox"
+                          id="order-select-all"
+                          class="order-table__checkbox"
+                          aria-label="Select all"
                         />
-                        <span class="order-table__product-name">Paw Bite</span>
-                      </div>
-                    </td>
-                    <td><span class="order-table__type">Simple</span></td>
-                    <td>20/05/2021</td>
-                    <td><span class="order-table__price">$4.95</span></td>
-                    <td>N/A</td>
-                    <td>Ironix</td>
-                    <td>10</td>
-                    <td>
-                      <span
-                        class="order-table__status order-table__status--delivered"
-                        >Delivered</span
-                      >
-                    </td>
-                    <td>
-                      <div class="order-table__actions">
-                        <a
-                          href="#"
-                          class="order-table__action-btn"
-                          aria-label="View"
-                          ><i class="fas fa-eye" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="order-table__action-btn"
-                          aria-label="Edit"
-                          ><i class="fas fa-pen" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="order-table__action-btn order-table__action-btn--delete"
-                          aria-label="Delete"
-                          data-row-delete
-                          ><i class="fas fa-trash" aria-hidden="true"></i
-                        ></a>
-                      </div>
-                    </td>
-                  </tr>
+                      </th>
+                      <th scope="col">Tracking ID</th>
+                      <th scope="col">Product</th>
+                      <th scope="col">Type</th>
+                      <th scope="col">Added Date</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Category</th>
+                      <th scope="col">Brand</th>
+                      <th scope="col">Stock</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="order-table__tbody"
+                    id="order-table-body"
+                    style="--bs-border-color: transparent; border-top: none"
+                  >
+                    <tr>
+                      <td class="order-table__check-col">
+                        <input
+                          type="checkbox"
+                          class="order-table__checkbox"
+                          aria-label="Select row"
+                        />
+                      </td>
+                      <td><span class="order-table__tracking">#20462</span></td>
+                      <td>
+                        <div class="order-table__product">
+                          <img
+                            src="../assets/img/dashboard/recent-booking-1.png"
+                            alt="Paw Bite"
+                            class="order-table__product-img"
+                            width="36"
+                            height="36"
+                          />
+                          <span class="order-table__product-name"
+                            >Paw Bite</span
+                          >
+                        </div>
+                      </td>
+                      <td><span class="order-table__type">Simple</span></td>
+                      <td>20/05/2021</td>
+                      <td><span class="order-table__price">$4.95</span></td>
+                      <td>N/A</td>
+                      <td>Ironix</td>
+                      <td>10</td>
+                      <td>
+                        <span
+                          class="order-table__status order-table__status--delivered"
+                          >Delivered</span
+                        >
+                      </td>
+                      <td>
+                        <div class="order-table__actions">
+                          <a
+                            href="#"
+                            class="order-table__action-btn"
+                            aria-label="View"
+                            ><i class="fas fa-eye" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="order-table__action-btn"
+                            aria-label="Edit"
+                            ><i class="fas fa-pen" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="order-table__action-btn order-table__action-btn--delete"
+                            aria-label="Delete"
+                            data-row-delete
+                            ><i class="fas fa-trash" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
 
-                  <tr>
-                    <td class="order-table__check-col">
-                      <input
-                        type="checkbox"
-                        class="order-table__checkbox"
-                        aria-label="Select row"
-                      />
-                    </td>
-                    <td><span class="order-table__tracking">#20462</span></td>
-                    <td>
-                      <div class="order-table__product">
-                        <img
-                          src="../assets/img/dashboard/recent-booking-2.png"
-                          alt="Pet Chow"
-                          class="order-table__product-img"
-                          width="36"
-                          height="36"
+                    <tr>
+                      <td class="order-table__check-col">
+                        <input
+                          type="checkbox"
+                          class="order-table__checkbox"
+                          aria-label="Select row"
                         />
-                        <span class="order-table__product-name">Pet Chow</span>
-                      </div>
-                    </td>
-                    <td><span class="order-table__type">Simple</span></td>
-                    <td>12/05/2023</td>
-                    <td><span class="order-table__price">$06.00</span></td>
-                    <td>N/A</td>
-                    <td>Bulkar</td>
-                    <td>25</td>
-                    <td>
-                      <span
-                        class="order-table__status order-table__status--delivered"
-                        >Delivered</span
-                      >
-                    </td>
-                    <td>
-                      <div class="order-table__actions">
-                        <a
-                          href="#"
-                          class="order-table__action-btn"
-                          aria-label="View"
-                          ><i class="fas fa-eye" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="order-table__action-btn"
-                          aria-label="Edit"
-                          ><i class="fas fa-pen" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="order-table__action-btn order-table__action-btn--delete"
-                          aria-label="Delete"
-                          data-row-delete
-                          ><i class="fas fa-trash" aria-hidden="true"></i
-                        ></a>
-                      </div>
-                    </td>
-                  </tr>
+                      </td>
+                      <td><span class="order-table__tracking">#20462</span></td>
+                      <td>
+                        <div class="order-table__product">
+                          <img
+                            src="../assets/img/dashboard/recent-booking-2.png"
+                            alt="Pet Chow"
+                            class="order-table__product-img"
+                            width="36"
+                            height="36"
+                          />
+                          <span class="order-table__product-name"
+                            >Pet Chow</span
+                          >
+                        </div>
+                      </td>
+                      <td><span class="order-table__type">Simple</span></td>
+                      <td>12/05/2023</td>
+                      <td><span class="order-table__price">$06.00</span></td>
+                      <td>N/A</td>
+                      <td>Bulkar</td>
+                      <td>25</td>
+                      <td>
+                        <span
+                          class="order-table__status order-table__status--delivered"
+                          >Delivered</span
+                        >
+                      </td>
+                      <td>
+                        <div class="order-table__actions">
+                          <a
+                            href="#"
+                            class="order-table__action-btn"
+                            aria-label="View"
+                            ><i class="fas fa-eye" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="order-table__action-btn"
+                            aria-label="Edit"
+                            ><i class="fas fa-pen" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="order-table__action-btn order-table__action-btn--delete"
+                            aria-label="Delete"
+                            data-row-delete
+                            ><i class="fas fa-trash" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
 
-                  <tr>
-                    <td class="order-table__check-col">
-                      <input
-                        type="checkbox"
-                        class="order-table__checkbox"
-                        aria-label="Select row"
-                      />
-                    </td>
-                    <td><span class="order-table__tracking">#20462</span></td>
-                    <td>
-                      <div class="order-table__product">
-                        <img
-                          src="../assets/img/dashboard/recent-booking-3.png"
-                          alt="FurFeast"
-                          class="order-table__product-img"
-                          width="36"
-                          height="36"
+                    <tr>
+                      <td class="order-table__check-col">
+                        <input
+                          type="checkbox"
+                          class="order-table__checkbox"
+                          aria-label="Select row"
                         />
-                        <span class="order-table__product-name">FurFeast</span>
-                      </div>
-                    </td>
-                    <td><span class="order-table__type">Simple</span></td>
-                    <td>15/07/2022</td>
-                    <td><span class="order-table__price">$08.95</span></td>
-                    <td>N/A</td>
-                    <td>Gainox</td>
-                    <td>02</td>
-                    <td>
-                      <span
-                        class="order-table__status order-table__status--process"
-                        >Process</span
-                      >
-                    </td>
-                    <td>
-                      <div class="order-table__actions">
-                        <a
-                          href="#"
-                          class="order-table__action-btn"
-                          aria-label="View"
-                          ><i class="fas fa-eye" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="order-table__action-btn"
-                          aria-label="Edit"
-                          ><i class="fas fa-pen" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="order-table__action-btn order-table__action-btn--delete"
-                          aria-label="Delete"
-                          data-row-delete
-                          ><i class="fas fa-trash" aria-hidden="true"></i
-                        ></a>
-                      </div>
-                    </td>
-                  </tr>
+                      </td>
+                      <td><span class="order-table__tracking">#20462</span></td>
+                      <td>
+                        <div class="order-table__product">
+                          <img
+                            src="../assets/img/dashboard/recent-booking-3.png"
+                            alt="FurFeast"
+                            class="order-table__product-img"
+                            width="36"
+                            height="36"
+                          />
+                          <span class="order-table__product-name"
+                            >FurFeast</span
+                          >
+                        </div>
+                      </td>
+                      <td><span class="order-table__type">Simple</span></td>
+                      <td>15/07/2022</td>
+                      <td><span class="order-table__price">$08.95</span></td>
+                      <td>N/A</td>
+                      <td>Gainox</td>
+                      <td>02</td>
+                      <td>
+                        <span
+                          class="order-table__status order-table__status--process"
+                          >Process</span
+                        >
+                      </td>
+                      <td>
+                        <div class="order-table__actions">
+                          <a
+                            href="#"
+                            class="order-table__action-btn"
+                            aria-label="View"
+                            ><i class="fas fa-eye" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="order-table__action-btn"
+                            aria-label="Edit"
+                            ><i class="fas fa-pen" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="order-table__action-btn order-table__action-btn--delete"
+                            aria-label="Delete"
+                            data-row-delete
+                            ><i class="fas fa-trash" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
 
-                  <tr>
-                    <td class="order-table__check-col">
-                      <input
-                        type="checkbox"
-                        class="order-table__checkbox"
-                        aria-label="Select row"
-                      />
-                    </td>
-                    <td><span class="order-table__tracking">#20462</span></td>
-                    <td>
-                      <div class="order-table__product">
-                        <img
-                          src="../assets/img/dashboard/recent-booking-4.png"
-                          alt="Paw Meal"
-                          class="order-table__product-img"
-                          width="36"
-                          height="36"
+                    <tr>
+                      <td class="order-table__check-col">
+                        <input
+                          type="checkbox"
+                          class="order-table__checkbox"
+                          aria-label="Select row"
                         />
-                        <span class="order-table__product-name">Paw Meal</span>
-                      </div>
-                    </td>
-                    <td><span class="order-table__type">Simple</span></td>
-                    <td>12/06/2022</td>
-                    <td><span class="order-table__price">$05.79</span></td>
-                    <td>N/A</td>
-                    <td>Fitron</td>
-                    <td>06</td>
-                    <td>
-                      <span
-                        class="order-table__status order-table__status--process"
-                        >Process</span
-                      >
-                    </td>
-                    <td>
-                      <div class="order-table__actions">
-                        <a
-                          href="#"
-                          class="order-table__action-btn"
-                          aria-label="View"
-                          ><i class="fas fa-eye" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="order-table__action-btn"
-                          aria-label="Edit"
-                          ><i class="fas fa-pen" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="order-table__action-btn order-table__action-btn--delete"
-                          aria-label="Delete"
-                          data-row-delete
-                          ><i class="fas fa-trash" aria-hidden="true"></i
-                        ></a>
-                      </div>
-                    </td>
-                  </tr>
+                      </td>
+                      <td><span class="order-table__tracking">#20462</span></td>
+                      <td>
+                        <div class="order-table__product">
+                          <img
+                            src="../assets/img/dashboard/recent-booking-4.png"
+                            alt="Paw Meal"
+                            class="order-table__product-img"
+                            width="36"
+                            height="36"
+                          />
+                          <span class="order-table__product-name"
+                            >Paw Meal</span
+                          >
+                        </div>
+                      </td>
+                      <td><span class="order-table__type">Simple</span></td>
+                      <td>12/06/2022</td>
+                      <td><span class="order-table__price">$05.79</span></td>
+                      <td>N/A</td>
+                      <td>Fitron</td>
+                      <td>06</td>
+                      <td>
+                        <span
+                          class="order-table__status order-table__status--process"
+                          >Process</span
+                        >
+                      </td>
+                      <td>
+                        <div class="order-table__actions">
+                          <a
+                            href="#"
+                            class="order-table__action-btn"
+                            aria-label="View"
+                            ><i class="fas fa-eye" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="order-table__action-btn"
+                            aria-label="Edit"
+                            ><i class="fas fa-pen" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="order-table__action-btn order-table__action-btn--delete"
+                            aria-label="Delete"
+                            data-row-delete
+                            ><i class="fas fa-trash" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
 
-                  <tr>
-                    <td class="order-table__check-col">
-                      <input
-                        type="checkbox"
-                        class="order-table__checkbox"
-                        aria-label="Select row"
-                      />
-                    </td>
-                    <td><span class="order-table__tracking">#20462</span></td>
-                    <td>
-                      <div class="order-table__product">
-                        <img
-                          src="../assets/img/dashboard/recent-booking-1.png"
-                          alt="Pet Fuel"
-                          class="order-table__product-img"
-                          width="36"
-                          height="36"
+                    <tr>
+                      <td class="order-table__check-col">
+                        <input
+                          type="checkbox"
+                          class="order-table__checkbox"
+                          aria-label="Select row"
                         />
-                        <span class="order-table__product-name">Pet Fuel</span>
-                      </div>
-                    </td>
-                    <td><span class="order-table__type">Simple</span></td>
-                    <td>21/05/2025</td>
-                    <td><span class="order-table__price">$02.95</span></td>
-                    <td>N/A</td>
-                    <td>Maxon</td>
-                    <td>10</td>
-                    <td>
-                      <span
-                        class="order-table__status order-table__status--delivered"
-                        >Delivered</span
-                      >
-                    </td>
-                    <td>
-                      <div class="order-table__actions">
-                        <a
-                          href="#"
-                          class="order-table__action-btn"
-                          aria-label="View"
-                          ><i class="fas fa-eye" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="order-table__action-btn"
-                          aria-label="Edit"
-                          ><i class="fas fa-pen" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="order-table__action-btn order-table__action-btn--delete"
-                          aria-label="Delete"
-                          data-row-delete
-                          ><i class="fas fa-trash" aria-hidden="true"></i
-                        ></a>
-                      </div>
-                    </td>
-                  </tr>
+                      </td>
+                      <td><span class="order-table__tracking">#20462</span></td>
+                      <td>
+                        <div class="order-table__product">
+                          <img
+                            src="../assets/img/dashboard/recent-booking-1.png"
+                            alt="Pet Fuel"
+                            class="order-table__product-img"
+                            width="36"
+                            height="36"
+                          />
+                          <span class="order-table__product-name"
+                            >Pet Fuel</span
+                          >
+                        </div>
+                      </td>
+                      <td><span class="order-table__type">Simple</span></td>
+                      <td>21/05/2025</td>
+                      <td><span class="order-table__price">$02.95</span></td>
+                      <td>N/A</td>
+                      <td>Maxon</td>
+                      <td>10</td>
+                      <td>
+                        <span
+                          class="order-table__status order-table__status--delivered"
+                          >Delivered</span
+                        >
+                      </td>
+                      <td>
+                        <div class="order-table__actions">
+                          <a
+                            href="#"
+                            class="order-table__action-btn"
+                            aria-label="View"
+                            ><i class="fas fa-eye" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="order-table__action-btn"
+                            aria-label="Edit"
+                            ><i class="fas fa-pen" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="order-table__action-btn order-table__action-btn--delete"
+                            aria-label="Delete"
+                            data-row-delete
+                            ><i class="fas fa-trash" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
 
-                  <tr>
-                    <td class="order-table__check-col">
-                      <input
-                        type="checkbox"
-                        class="order-table__checkbox"
-                        aria-label="Select row"
-                      />
-                    </td>
-                    <td><span class="order-table__tracking">#20462</span></td>
-                    <td>
-                      <div class="order-table__product">
-                        <img
-                          src="../assets/img/dashboard/recent-booking-2.png"
-                          alt="Paw Dish"
-                          class="order-table__product-img"
-                          width="36"
-                          height="36"
+                    <tr>
+                      <td class="order-table__check-col">
+                        <input
+                          type="checkbox"
+                          class="order-table__checkbox"
+                          aria-label="Select row"
                         />
-                        <span class="order-table__product-name">Paw Dish</span>
-                      </div>
-                    </td>
-                    <td><span class="order-table__type">Simple</span></td>
-                    <td>28/02/2021</td>
-                    <td><span class="order-table__price">$03.95</span></td>
-                    <td>N/A</td>
-                    <td>Nitrox</td>
-                    <td>25</td>
-                    <td>
-                      <span
-                        class="order-table__status order-table__status--cancelled"
-                        >Cancelled</span
-                      >
-                    </td>
-                    <td>
-                      <div class="order-table__actions">
-                        <a
-                          href="#"
-                          class="order-table__action-btn"
-                          aria-label="View"
-                          ><i class="fas fa-eye" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="order-table__action-btn"
-                          aria-label="Edit"
-                          ><i class="fas fa-pen" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="order-table__action-btn order-table__action-btn--delete"
-                          aria-label="Delete"
-                          data-row-delete
-                          ><i class="fas fa-trash" aria-hidden="true"></i
-                        ></a>
-                      </div>
-                    </td>
-                  </tr>
+                      </td>
+                      <td><span class="order-table__tracking">#20462</span></td>
+                      <td>
+                        <div class="order-table__product">
+                          <img
+                            src="../assets/img/dashboard/recent-booking-2.png"
+                            alt="Paw Dish"
+                            class="order-table__product-img"
+                            width="36"
+                            height="36"
+                          />
+                          <span class="order-table__product-name"
+                            >Paw Dish</span
+                          >
+                        </div>
+                      </td>
+                      <td><span class="order-table__type">Simple</span></td>
+                      <td>28/02/2021</td>
+                      <td><span class="order-table__price">$03.95</span></td>
+                      <td>N/A</td>
+                      <td>Nitrox</td>
+                      <td>25</td>
+                      <td>
+                        <span
+                          class="order-table__status order-table__status--cancelled"
+                          >Cancelled</span
+                        >
+                      </td>
+                      <td>
+                        <div class="order-table__actions">
+                          <a
+                            href="#"
+                            class="order-table__action-btn"
+                            aria-label="View"
+                            ><i class="fas fa-eye" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="order-table__action-btn"
+                            aria-label="Edit"
+                            ><i class="fas fa-pen" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="order-table__action-btn order-table__action-btn--delete"
+                            aria-label="Delete"
+                            data-row-delete
+                            ><i class="fas fa-trash" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
 
-                  <tr>
-                    <td class="order-table__check-col">
-                      <input
-                        type="checkbox"
-                        class="order-table__checkbox"
-                        aria-label="Select row"
-                      />
-                    </td>
-                    <td><span class="order-table__tracking">#20462</span></td>
-                    <td>
-                      <div class="order-table__product">
-                        <img
-                          src="../assets/img/dashboard/recent-booking-3.png"
-                          alt="Fur Bite"
-                          class="order-table__product-img"
-                          width="36"
-                          height="36"
+                    <tr>
+                      <td class="order-table__check-col">
+                        <input
+                          type="checkbox"
+                          class="order-table__checkbox"
+                          aria-label="Select row"
                         />
-                        <span class="order-table__product-name">Fur Bite</span>
-                      </div>
-                    </td>
-                    <td><span class="order-table__type">Simple</span></td>
-                    <td>13/05/2022</td>
-                    <td><span class="order-table__price">$01.31</span></td>
-                    <td>N/A</td>
-                    <td>Corex</td>
-                    <td>52</td>
-                    <td>
-                      <span
-                        class="order-table__status order-table__status--delivered"
-                        >Delivered</span
-                      >
-                    </td>
-                    <td>
-                      <div class="order-table__actions">
-                        <a
-                          href="#"
-                          class="order-table__action-btn"
-                          aria-label="View"
-                          ><i class="fas fa-eye" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="order-table__action-btn"
-                          aria-label="Edit"
-                          ><i class="fas fa-pen" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="order-table__action-btn order-table__action-btn--delete"
-                          aria-label="Delete"
-                          data-row-delete
-                          ><i class="fas fa-trash" aria-hidden="true"></i
-                        ></a>
-                      </div>
-                    </td>
-                  </tr>
+                      </td>
+                      <td><span class="order-table__tracking">#20462</span></td>
+                      <td>
+                        <div class="order-table__product">
+                          <img
+                            src="../assets/img/dashboard/recent-booking-3.png"
+                            alt="Fur Bite"
+                            class="order-table__product-img"
+                            width="36"
+                            height="36"
+                          />
+                          <span class="order-table__product-name"
+                            >Fur Bite</span
+                          >
+                        </div>
+                      </td>
+                      <td><span class="order-table__type">Simple</span></td>
+                      <td>13/05/2022</td>
+                      <td><span class="order-table__price">$01.31</span></td>
+                      <td>N/A</td>
+                      <td>Corex</td>
+                      <td>52</td>
+                      <td>
+                        <span
+                          class="order-table__status order-table__status--delivered"
+                          >Delivered</span
+                        >
+                      </td>
+                      <td>
+                        <div class="order-table__actions">
+                          <a
+                            href="#"
+                            class="order-table__action-btn"
+                            aria-label="View"
+                            ><i class="fas fa-eye" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="order-table__action-btn"
+                            aria-label="Edit"
+                            ><i class="fas fa-pen" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="order-table__action-btn order-table__action-btn--delete"
+                            aria-label="Delete"
+                            data-row-delete
+                            ><i class="fas fa-trash" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
 
-                  <tr>
-                    <td class="order-table__check-col">
-                      <input
-                        type="checkbox"
-                        class="order-table__checkbox"
-                        aria-label="Select row"
-                      />
-                    </td>
-                    <td><span class="order-table__tracking">#20462</span></td>
-                    <td>
-                      <div class="order-table__product">
-                        <img
-                          src="../assets/img/dashboard/recent-booking-4.png"
-                          alt="Paw Feed"
-                          class="order-table__product-img"
-                          width="36"
-                          height="36"
+                    <tr>
+                      <td class="order-table__check-col">
+                        <input
+                          type="checkbox"
+                          class="order-table__checkbox"
+                          aria-label="Select row"
                         />
-                        <span class="order-table__product-name">Paw Feed</span>
-                      </div>
-                    </td>
-                    <td><span class="order-table__type">Simple</span></td>
-                    <td>10/06/2022</td>
-                    <td><span class="order-table__price">$02.12</span></td>
-                    <td>N/A</td>
-                    <td>Zenith</td>
-                    <td>20</td>
-                    <td>
-                      <span
-                        class="order-table__status order-table__status--delivered"
-                        >Delivered</span
-                      >
-                    </td>
-                    <td>
-                      <div class="order-table__actions">
-                        <a
-                          href="#"
-                          class="order-table__action-btn"
-                          aria-label="View"
-                          ><i class="fas fa-eye" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="order-table__action-btn"
-                          aria-label="Edit"
-                          ><i class="fas fa-pen" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="order-table__action-btn order-table__action-btn--delete"
-                          aria-label="Delete"
-                          data-row-delete
-                          ><i class="fas fa-trash" aria-hidden="true"></i
-                        ></a>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                      </td>
+                      <td><span class="order-table__tracking">#20462</span></td>
+                      <td>
+                        <div class="order-table__product">
+                          <img
+                            src="../assets/img/dashboard/recent-booking-4.png"
+                            alt="Paw Feed"
+                            class="order-table__product-img"
+                            width="36"
+                            height="36"
+                          />
+                          <span class="order-table__product-name"
+                            >Paw Feed</span
+                          >
+                        </div>
+                      </td>
+                      <td><span class="order-table__type">Simple</span></td>
+                      <td>10/06/2022</td>
+                      <td><span class="order-table__price">$02.12</span></td>
+                      <td>N/A</td>
+                      <td>Zenith</td>
+                      <td>20</td>
+                      <td>
+                        <span
+                          class="order-table__status order-table__status--delivered"
+                          >Delivered</span
+                        >
+                      </td>
+                      <td>
+                        <div class="order-table__actions">
+                          <a
+                            href="#"
+                            class="order-table__action-btn"
+                            aria-label="View"
+                            ><i class="fas fa-eye" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="order-table__action-btn"
+                            aria-label="Edit"
+                            ><i class="fas fa-pen" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="order-table__action-btn order-table__action-btn--delete"
+                            aria-label="Delete"
+                            data-row-delete
+                            ><i class="fas fa-trash" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </main>
 

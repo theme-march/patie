@@ -861,3 +861,145 @@
     }
   }
 }
+
+// ─── Dashboard Sidebar – Mobile (below md: 768px) ────────────────────────────
+
+// Override: below lg the sidebar is hidden by default but becomes a slide-in
+// drawer. Below md it also gains the mobile-actions panel.
+@include respond(lg) {
+  .dashboard-sidebar {
+    // Switch from display:none to a positioned off-screen drawer
+    display: flex !important;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 200;
+    transform: translateX(110%);
+    transition: transform 0.3s ease;
+    width: 320px;
+    min-width: 0;
+    padding-top: 20px;
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.12);
+
+    &.is-open {
+      transform: translateX(0);
+    }
+  }
+}
+
+// Overlay backdrop
+.dashboard-sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 199;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
+  &.is-visible {
+    display: block;
+    opacity: 1;
+  }
+}
+
+// Avatar toggle button (wraps the avatar img in the topbar)
+.dashboard-topbar__avatar-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+
+  &:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+  }
+}
+
+// Mobile actions panel – hidden by default, shown only below md
+.dashboard-sidebar__mobile-actions {
+  display: none;
+
+  @include respond(md) {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px 20px 20px;
+    border-top: 1px solid
+      color-mix(in srgb, var(--primary-color), transparent 85%);
+    margin-top: 12px;
+  }
+}
+
+.dashboard-sidebar__mobile-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--heading-color);
+  font-size: 15px;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+
+  i {
+    width: 18px;
+    font-size: 16px;
+    flex-shrink: 0;
+    color: var(--body-color);
+    transition: color 0.2s ease;
+  }
+
+  &:hover {
+    background-color: color-mix(in srgb, var(--primary-color), transparent 90%);
+    color: var(--primary-color);
+
+    i {
+      color: var(--primary-color);
+    }
+  }
+}
+
+
+// Sidebar close button — only shown in drawer mode (below lg)
+.dashboard-sidebar__close {
+  display: none;
+
+  @include respond(lg) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background-color: color-mix(in srgb, var(--primary-color), transparent 90%);
+    color: var(--primary-color);
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    z-index: 10;
+    flex-shrink: 0;
+
+    &:hover {
+      background-color: var(--primary-color);
+      color: var(--white-color);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--primary-color);
+      outline-offset: 2px;
+    }
+  }
+}

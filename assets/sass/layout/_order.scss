@@ -37,7 +37,36 @@
   display: flex;
   align-items: center;
   gap: 15px;
-  flex-wrap: wrap;
+
+  &__row {
+    display: contents;
+
+    @include respond(lg) {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      width: 100%;
+    }
+
+    &--bottom {
+      @include respond(lg) {
+        justify-content: space-between;
+      }
+    }
+  }
+
+  @include respond(lg) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  &__group-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+  }
 
   &__results {
     display: flex;
@@ -95,6 +124,9 @@
     &::placeholder {
       color: color-mix(in srgb, var(--heading-color), transparent 30%);
     }
+    @include respond(md) {
+      padding: 9px 9px 9px 38px;
+    }
   }
 
   &__search-icon {
@@ -127,10 +159,6 @@
       background-color: var(--secondary-color);
       color: var(--white-color);
     }
-  }
-
-  &__spacer {
-    flex: 1;
   }
 
   &__icon-btn {
@@ -199,8 +227,15 @@
   background-color: var(--white-color);
   border-radius: 10px;
   margin-top: 10px;
-  overflow: hidden;
+  min-width: 0;
   border: 1px solid color-mix(in srgb, var(--primary-color), transparent 90%);
+
+  &__scroll-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    border-radius: 10px;
+  }
 }
 
 .order-table {

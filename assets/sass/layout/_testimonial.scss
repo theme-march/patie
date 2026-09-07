@@ -189,6 +189,9 @@
 
   &__author {
     margin-bottom: 35px;
+    @include respond(lg) {
+      margin-bottom: 25px;
+    }
   }
 
   &__name {
@@ -211,6 +214,9 @@
     gap: 10px;
     position: relative;
     top: -35px;
+    @include respond(lg) {
+      top: 0;
+    }
   }
 
   &__avatar {

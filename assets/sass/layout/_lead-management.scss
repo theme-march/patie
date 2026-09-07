@@ -33,7 +33,36 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  flex-wrap: wrap;
+
+  @include respond(lg) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  &__row {
+    display: contents;
+
+    @include respond(lg) {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+    }
+
+    &--bottom {
+      @include respond(lg) {
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &__group-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
 
   &__btn {
     display: inline-flex;
@@ -168,10 +197,6 @@
     }
   }
 
-  &__spacer {
-    flex: 1;
-  }
-
   &__add-btn {
     display: inline-flex;
     align-items: center;
@@ -205,8 +230,15 @@
 .lead-table-card {
   background-color: var(--white-color);
   border-radius: 10px;
-  overflow: hidden;
+  min-width: 0;
   border: 1px solid color-mix(in srgb, var(--primary-color), transparent 90%);
+
+  &__scroll-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    border-radius: 10px;
+  }
 }
 
 .lead-table {

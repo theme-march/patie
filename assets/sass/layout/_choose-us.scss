@@ -70,6 +70,9 @@
     z-index: 0;
     pointer-events: none;
     border-radius: inherit;
+    @include respond(lg) {
+      display: none;
+    }
   }
 
   &__top-pet-wrap {
@@ -143,7 +146,6 @@
 
   &__header {
     text-align: center;
-
   }
 
   &__layout {
@@ -222,7 +224,6 @@
       display: none;
     }
 
-
     &--tl {
       top: 10%;
       left: 0%;
@@ -287,6 +288,4 @@
       max-width: 480px;
     }
   }
-
-
 }

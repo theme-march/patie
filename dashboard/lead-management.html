@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Thememarch" />
     <link rel="icon" href="../assets/img/logo/favIcon.svg" />
-    <title>Lead Management – Patie Dashboard</title>
+    <title>Lead Management â€“ Patie Dashboard</title>
     <link rel="stylesheet" href="../assets/css/plugins/bootstrap.min.css" />
     <link rel="stylesheet" href="../assets/css/plugins/fontawesome.min.css" />
     <link rel="stylesheet" href="../assets/css/preloader.css" />
@@ -117,19 +117,48 @@
             <a href="#" class="dashboard-topbar__action-btn" aria-label="Apps">
               <i class="fas fa-th" aria-hidden="true"></i>
             </a>
-            <img
-              src="../assets/img/dashboard/profile-pic.png"
-              alt="Profile"
-              class="dashboard-topbar__avatar"
-              width="42"
-              height="42"
-            />
+            <button
+              type="button"
+              class="dashboard-topbar__avatar-btn"
+              id="sidebarToggle"
+              aria-label="Open navigation menu"
+              aria-expanded="false"
+              aria-controls="dashboardSidebar"
+            >
+              <img
+                src="../assets/img/dashboard/profile-pic.png"
+                alt="Profile"
+                class="dashboard-topbar__avatar"
+                width="42"
+                height="42"
+              />
+            </button>
           </div>
         </div>
       </header>
 
+      <!-- Mobile sidebar overlay -->
+      <div
+        class="dashboard-sidebar-overlay"
+        id="sidebarOverlay"
+        aria-hidden="true"
+      ></div>
+
       <div class="dashboard-body-row">
-        <aside class="dashboard-sidebar" aria-label="Sidebar navigation">
+        <aside
+          class="dashboard-sidebar"
+          id="dashboardSidebar"
+          aria-label="Sidebar navigation"
+        >
+          <button
+            type="button"
+            class="dashboard-sidebar__close"
+            id="sidebarClose"
+            aria-label="Close sidebar"
+          >
+            <i class="fas fa-times" aria-hidden="true"></i>
+          </button>
+
           <div class="dashboard-sidebar__avatar-wrap">
             <img
               src="../assets/img/dashboard/profile-pic.png"
@@ -192,6 +221,45 @@
               Logout
             </a>
           </div>
+
+          <!-- Mobile-only action buttons (shown below md breakpoint) -->
+          <div
+            class="dashboard-sidebar__mobile-actions"
+            aria-label="Quick actions"
+          >
+            <a
+              href="#"
+              class="dashboard-sidebar__mobile-action-btn"
+              aria-label="Messages"
+            >
+              <i class="fas fa-comment-dots" aria-hidden="true"></i>
+              <span>Messages</span>
+            </a>
+            <a
+              href="#"
+              class="dashboard-sidebar__mobile-action-btn"
+              aria-label="Notifications"
+            >
+              <i class="fas fa-bell" aria-hidden="true"></i>
+              <span>Notifications</span>
+            </a>
+            <a
+              href="#"
+              class="dashboard-sidebar__mobile-action-btn"
+              aria-label="Settings"
+            >
+              <i class="fas fa-cog" aria-hidden="true"></i>
+              <span>Settings</span>
+            </a>
+            <a
+              href="#"
+              class="dashboard-sidebar__mobile-action-btn"
+              aria-label="Apps"
+            >
+              <i class="fas fa-th" aria-hidden="true"></i>
+              <span>Apps</span>
+            </a>
+          </div>
         </aside>
 
         <div class="lead-page">
@@ -205,466 +273,474 @@
             </div>
 
             <div class="lead-toolbar">
-              <button class="lead-toolbar__btn" aria-label="Filter">
-                <i
-                  class="fas fa-filter lead-toolbar__btn-icon"
-                  aria-hidden="true"
-                ></i>
-                Filter
-              </button>
+              <div class="lead-toolbar__row lead-toolbar__row--top">
+                <button class="lead-toolbar__btn" aria-label="Filter">
+                  <i
+                    class="fas fa-filter lead-toolbar__btn-icon"
+                    aria-hidden="true"
+                  ></i>
+                  Filter
+                </button>
 
-              <div class="lead-toolbar__export-wrap">
-                <i
-                  class="fas fa-upload lead-toolbar__export-icon"
-                  aria-hidden="true"
-                ></i>
-                <select
-                  class="lead-toolbar__export-select"
-                  aria-label="Export format"
-                >
-                  <option value="" disabled selected>Export Date</option>
-                  <option value="pdf">Export as PDF</option>
-                  <option value="xl">Export as XL</option>
-                </select>
-                <i
-                  class="fas fa-chevron-down lead-toolbar__export-chevron"
-                  aria-hidden="true"
-                ></i>
+                <div class="lead-toolbar__export-wrap">
+                  <i
+                    class="fas fa-upload lead-toolbar__export-icon"
+                    aria-hidden="true"
+                  ></i>
+                  <select
+                    class="lead-toolbar__export-select"
+                    aria-label="Export format"
+                  >
+                    <option value="" disabled selected>Export Date</option>
+                    <option value="pdf">Export as PDF</option>
+                    <option value="xl">Export as XL</option>
+                  </select>
+                  <i
+                    class="fas fa-chevron-down lead-toolbar__export-chevron"
+                    aria-hidden="true"
+                  ></i>
+                </div>
               </div>
 
-              <div class="lead-toolbar__search-wrap">
-                <label for="lead-search" class="visually-hidden"
-                  >Search leads</label
+              <div class="lead-toolbar__row lead-toolbar__row--bottom">
+                <div class="lead-toolbar__search-wrap">
+                  <label for="lead-search" class="visually-hidden"
+                    >Search leads</label
+                  >
+                  <i
+                    class="fas fa-search lead-toolbar__search-icon"
+                    aria-hidden="true"
+                  ></i>
+                  <input
+                    id="lead-search"
+                    class="lead-toolbar__search-input"
+                    type="search"
+                    placeholder="Search By Name, Email, Or Phone Number"
+                    autocomplete="off"
+                  />
+                </div>
+
+                <button
+                  class="lead-toolbar__filter-btn"
+                  aria-label="Advanced filter"
                 >
-                <i
-                  class="fas fa-search lead-toolbar__search-icon"
-                  aria-hidden="true"
-                ></i>
-                <input
-                  id="lead-search"
-                  class="lead-toolbar__search-input"
-                  type="search"
-                  placeholder="Search By Name, Email, Or Phone Number"
-                  autocomplete="off"
-                />
+                  <i class="fas fa-sliders-h" aria-hidden="true"></i>
+                </button>
+
+                <div class="lead-toolbar__group-right">
+                  <a href="#" class="lead-toolbar__add-btn">
+                    <i
+                      class="fas fa-plus lead-toolbar__add-btn-icon"
+                      aria-hidden="true"
+                    ></i>
+                    Add
+                  </a>
+                </div>
               </div>
-
-              <button
-                class="lead-toolbar__filter-btn"
-                aria-label="Advanced filter"
-              >
-                <i class="fas fa-sliders-h" aria-hidden="true"></i>
-              </button>
-
-              <div class="lead-toolbar__spacer"></div>
-
-              <a href="#" class="lead-toolbar__add-btn">
-                <i
-                  class="fas fa-plus lead-toolbar__add-btn-icon"
-                  aria-hidden="true"
-                ></i>
-                Add
-              </a>
             </div>
 
             <div class="lead-table-card">
-              <table class="lead-table" aria-label="Lead management list">
-                <thead class="lead-table__thead">
-                  <tr>
-                    <th scope="col" class="lead-table__check-col">
-                      <input
-                        type="checkbox"
-                        id="lead-select-all"
-                        class="lead-table__checkbox"
-                        aria-label="Select all"
-                      />
-                    </th>
-                    <th scope="col">Lead Name</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Source</th>
-                    <th scope="col">Assigned To</th>
-                    <th scope="col">Contact Info</th>
-                    <th scope="col">Last Update</th>
-                    <th scope="col">Action</th>
-                  </tr>
-                </thead>
-                <tbody
-                  class="lead-table__tbody"
-                  id="lead-table-body"
-                  style="--bs-border-color: transparent; border-top: none"
-                >
-                  <tr>
-                    <td class="lead-table__check-col">
-                      <input
-                        type="checkbox"
-                        class="lead-table__checkbox"
-                        aria-label="Select row"
-                      />
-                    </td>
-                    <td><span class="lead-table__name">Floyd Miles</span></td>
-                    <td>
-                      <span
-                        class="lead-table__status lead-table__status--ongoing"
-                        >On going</span
-                      >
-                    </td>
-                    <td>Google Ads</td>
-                    <td>Eleanor Pena</td>
-                    <td>
-                      <span class="lead-table__contact">(684) 555-0102</span>
-                    </td>
-                    <td>20/05/2021</td>
-                    <td>
-                      <div class="lead-table__actions">
-                        <a
-                          href="#"
-                          class="lead-table__action-btn"
-                          aria-label="View"
-                          ><i class="fas fa-eye" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="lead-table__action-btn"
-                          aria-label="Edit"
-                          ><i class="fas fa-pen" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="lead-table__action-btn lead-table__action-btn--delete"
-                          aria-label="Delete"
-                          data-row-delete
-                          ><i class="fas fa-trash" aria-hidden="true"></i
-                        ></a>
-                      </div>
-                    </td>
-                  </tr>
+              <div class="lead-table-card__scroll-wrap">
+                <table class="lead-table" aria-label="Lead management list">
+                  <thead class="lead-table__thead">
+                    <tr>
+                      <th scope="col" class="lead-table__check-col">
+                        <input
+                          type="checkbox"
+                          id="lead-select-all"
+                          class="lead-table__checkbox"
+                          aria-label="Select all"
+                        />
+                      </th>
+                      <th scope="col">Lead Name</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Source</th>
+                      <th scope="col">Assigned To</th>
+                      <th scope="col">Contact Info</th>
+                      <th scope="col">Last Update</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="lead-table__tbody"
+                    id="lead-table-body"
+                    style="--bs-border-color: transparent; border-top: none"
+                  >
+                    <tr>
+                      <td class="lead-table__check-col">
+                        <input
+                          type="checkbox"
+                          class="lead-table__checkbox"
+                          aria-label="Select row"
+                        />
+                      </td>
+                      <td><span class="lead-table__name">Floyd Miles</span></td>
+                      <td>
+                        <span
+                          class="lead-table__status lead-table__status--ongoing"
+                          >On going</span
+                        >
+                      </td>
+                      <td>Google Ads</td>
+                      <td>Eleanor Pena</td>
+                      <td>
+                        <span class="lead-table__contact">(684) 555-0102</span>
+                      </td>
+                      <td>20/05/2021</td>
+                      <td>
+                        <div class="lead-table__actions">
+                          <a
+                            href="#"
+                            class="lead-table__action-btn"
+                            aria-label="View"
+                            ><i class="fas fa-eye" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="lead-table__action-btn"
+                            aria-label="Edit"
+                            ><i class="fas fa-pen" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="lead-table__action-btn lead-table__action-btn--delete"
+                            aria-label="Delete"
+                            data-row-delete
+                            ><i class="fas fa-trash" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
 
-                  <tr>
-                    <td class="lead-table__check-col">
-                      <input
-                        type="checkbox"
-                        class="lead-table__checkbox"
-                        aria-label="Select row"
-                      />
-                    </td>
-                    <td><span class="lead-table__name">Guy Hawkins</span></td>
-                    <td>
-                      <span
-                        class="lead-table__status lead-table__status--ongoing"
-                        >On going</span
-                      >
-                    </td>
-                    <td>Instagram Ad</td>
-                    <td>Arlene McCoy</td>
-                    <td>
-                      <span class="lead-table__contact">(684) 555-0102</span>
-                    </td>
-                    <td>12/05/2023</td>
-                    <td>
-                      <div class="lead-table__actions">
-                        <a
-                          href="#"
-                          class="lead-table__action-btn"
-                          aria-label="View"
-                          ><i class="fas fa-eye" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="lead-table__action-btn"
-                          aria-label="Edit"
-                          ><i class="fas fa-pen" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="lead-table__action-btn lead-table__action-btn--delete"
-                          aria-label="Delete"
-                          data-row-delete
-                          ><i class="fas fa-trash" aria-hidden="true"></i
-                        ></a>
-                      </div>
-                    </td>
-                  </tr>
+                    <tr>
+                      <td class="lead-table__check-col">
+                        <input
+                          type="checkbox"
+                          class="lead-table__checkbox"
+                          aria-label="Select row"
+                        />
+                      </td>
+                      <td><span class="lead-table__name">Guy Hawkins</span></td>
+                      <td>
+                        <span
+                          class="lead-table__status lead-table__status--ongoing"
+                          >On going</span
+                        >
+                      </td>
+                      <td>Instagram Ad</td>
+                      <td>Arlene McCoy</td>
+                      <td>
+                        <span class="lead-table__contact">(684) 555-0102</span>
+                      </td>
+                      <td>12/05/2023</td>
+                      <td>
+                        <div class="lead-table__actions">
+                          <a
+                            href="#"
+                            class="lead-table__action-btn"
+                            aria-label="View"
+                            ><i class="fas fa-eye" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="lead-table__action-btn"
+                            aria-label="Edit"
+                            ><i class="fas fa-pen" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="lead-table__action-btn lead-table__action-btn--delete"
+                            aria-label="Delete"
+                            data-row-delete
+                            ><i class="fas fa-trash" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
 
-                  <tr>
-                    <td class="lead-table__check-col">
-                      <input
-                        type="checkbox"
-                        class="lead-table__checkbox"
-                        aria-label="Select row"
-                      />
-                    </td>
-                    <td>
-                      <span class="lead-table__name">Leslie Alexander</span>
-                    </td>
-                    <td>
-                      <span class="lead-table__status lead-table__status--new"
-                        >New</span
-                      >
-                    </td>
-                    <td>YouTube Ad</td>
-                    <td>Theresa Webb</td>
-                    <td>
-                      <span class="lead-table__contact">(684) 555-0102</span>
-                    </td>
-                    <td>15/07/2022</td>
-                    <td>
-                      <div class="lead-table__actions">
-                        <a
-                          href="#"
-                          class="lead-table__action-btn"
-                          aria-label="View"
-                          ><i class="fas fa-eye" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="lead-table__action-btn"
-                          aria-label="Edit"
-                          ><i class="fas fa-pen" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="lead-table__action-btn lead-table__action-btn--delete"
-                          aria-label="Delete"
-                          data-row-delete
-                          ><i class="fas fa-trash" aria-hidden="true"></i
-                        ></a>
-                      </div>
-                    </td>
-                  </tr>
+                    <tr>
+                      <td class="lead-table__check-col">
+                        <input
+                          type="checkbox"
+                          class="lead-table__checkbox"
+                          aria-label="Select row"
+                        />
+                      </td>
+                      <td>
+                        <span class="lead-table__name">Leslie Alexander</span>
+                      </td>
+                      <td>
+                        <span class="lead-table__status lead-table__status--new"
+                          >New</span
+                        >
+                      </td>
+                      <td>YouTube Ad</td>
+                      <td>Theresa Webb</td>
+                      <td>
+                        <span class="lead-table__contact">(684) 555-0102</span>
+                      </td>
+                      <td>15/07/2022</td>
+                      <td>
+                        <div class="lead-table__actions">
+                          <a
+                            href="#"
+                            class="lead-table__action-btn"
+                            aria-label="View"
+                            ><i class="fas fa-eye" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="lead-table__action-btn"
+                            aria-label="Edit"
+                            ><i class="fas fa-pen" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="lead-table__action-btn lead-table__action-btn--delete"
+                            aria-label="Delete"
+                            data-row-delete
+                            ><i class="fas fa-trash" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
 
-                  <tr>
-                    <td class="lead-table__check-col">
-                      <input
-                        type="checkbox"
-                        class="lead-table__checkbox"
-                        aria-label="Select row"
-                      />
-                    </td>
-                    <td><span class="lead-table__name">Jacob Jones</span></td>
-                    <td>
-                      <span
-                        class="lead-table__status lead-table__status--ongoing"
-                        >On going</span
-                      >
-                    </td>
-                    <td>TikTok Ad</td>
-                    <td>Jerome Bell</td>
-                    <td>
-                      <span class="lead-table__contact">(684) 555-0102</span>
-                    </td>
-                    <td>12/06/2022</td>
-                    <td>
-                      <div class="lead-table__actions">
-                        <a
-                          href="#"
-                          class="lead-table__action-btn"
-                          aria-label="View"
-                          ><i class="fas fa-eye" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="lead-table__action-btn"
-                          aria-label="Edit"
-                          ><i class="fas fa-pen" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="lead-table__action-btn lead-table__action-btn--delete"
-                          aria-label="Delete"
-                          data-row-delete
-                          ><i class="fas fa-trash" aria-hidden="true"></i
-                        ></a>
-                      </div>
-                    </td>
-                  </tr>
+                    <tr>
+                      <td class="lead-table__check-col">
+                        <input
+                          type="checkbox"
+                          class="lead-table__checkbox"
+                          aria-label="Select row"
+                        />
+                      </td>
+                      <td><span class="lead-table__name">Jacob Jones</span></td>
+                      <td>
+                        <span
+                          class="lead-table__status lead-table__status--ongoing"
+                          >On going</span
+                        >
+                      </td>
+                      <td>TikTok Ad</td>
+                      <td>Jerome Bell</td>
+                      <td>
+                        <span class="lead-table__contact">(684) 555-0102</span>
+                      </td>
+                      <td>12/06/2022</td>
+                      <td>
+                        <div class="lead-table__actions">
+                          <a
+                            href="#"
+                            class="lead-table__action-btn"
+                            aria-label="View"
+                            ><i class="fas fa-eye" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="lead-table__action-btn"
+                            aria-label="Edit"
+                            ><i class="fas fa-pen" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="lead-table__action-btn lead-table__action-btn--delete"
+                            aria-label="Delete"
+                            data-row-delete
+                            ><i class="fas fa-trash" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
 
-                  <tr>
-                    <td class="lead-table__check-col">
-                      <input
-                        type="checkbox"
-                        class="lead-table__checkbox"
-                        aria-label="Select row"
-                      />
-                    </td>
-                    <td><span class="lead-table__name">Jacob Jones</span></td>
-                    <td>
-                      <span
-                        class="lead-table__status lead-table__status--completed"
-                        >Completed</span
-                      >
-                    </td>
-                    <td>Website Inquiry</td>
-                    <td>Darrell Steward</td>
-                    <td>
-                      <span class="lead-table__contact">(684) 555-0102</span>
-                    </td>
-                    <td>21/05/2025</td>
-                    <td>
-                      <div class="lead-table__actions">
-                        <a
-                          href="#"
-                          class="lead-table__action-btn"
-                          aria-label="View"
-                          ><i class="fas fa-eye" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="lead-table__action-btn"
-                          aria-label="Edit"
-                          ><i class="fas fa-pen" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="lead-table__action-btn lead-table__action-btn--delete"
-                          aria-label="Delete"
-                          data-row-delete
-                          ><i class="fas fa-trash" aria-hidden="true"></i
-                        ></a>
-                      </div>
-                    </td>
-                  </tr>
+                    <tr>
+                      <td class="lead-table__check-col">
+                        <input
+                          type="checkbox"
+                          class="lead-table__checkbox"
+                          aria-label="Select row"
+                        />
+                      </td>
+                      <td><span class="lead-table__name">Jacob Jones</span></td>
+                      <td>
+                        <span
+                          class="lead-table__status lead-table__status--completed"
+                          >Completed</span
+                        >
+                      </td>
+                      <td>Website Inquiry</td>
+                      <td>Darrell Steward</td>
+                      <td>
+                        <span class="lead-table__contact">(684) 555-0102</span>
+                      </td>
+                      <td>21/05/2025</td>
+                      <td>
+                        <div class="lead-table__actions">
+                          <a
+                            href="#"
+                            class="lead-table__action-btn"
+                            aria-label="View"
+                            ><i class="fas fa-eye" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="lead-table__action-btn"
+                            aria-label="Edit"
+                            ><i class="fas fa-pen" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="lead-table__action-btn lead-table__action-btn--delete"
+                            aria-label="Delete"
+                            data-row-delete
+                            ><i class="fas fa-trash" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
 
-                  <tr>
-                    <td class="lead-table__check-col">
-                      <input
-                        type="checkbox"
-                        class="lead-table__checkbox"
-                        aria-label="Select row"
-                      />
-                    </td>
-                    <td>
-                      <span class="lead-table__name">Kristin Watson</span>
-                    </td>
-                    <td>
-                      <span
-                        class="lead-table__status lead-table__status--ongoing"
-                        >On going</span
-                      >
-                    </td>
-                    <td>Google Search</td>
-                    <td>Devon Lane</td>
-                    <td>
-                      <span class="lead-table__contact">(684) 555-0102</span>
-                    </td>
-                    <td>28/02/2021</td>
-                    <td>
-                      <div class="lead-table__actions">
-                        <a
-                          href="#"
-                          class="lead-table__action-btn"
-                          aria-label="View"
-                          ><i class="fas fa-eye" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="lead-table__action-btn"
-                          aria-label="Edit"
-                          ><i class="fas fa-pen" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="lead-table__action-btn lead-table__action-btn--delete"
-                          aria-label="Delete"
-                          data-row-delete
-                          ><i class="fas fa-trash" aria-hidden="true"></i
-                        ></a>
-                      </div>
-                    </td>
-                  </tr>
+                    <tr>
+                      <td class="lead-table__check-col">
+                        <input
+                          type="checkbox"
+                          class="lead-table__checkbox"
+                          aria-label="Select row"
+                        />
+                      </td>
+                      <td>
+                        <span class="lead-table__name">Kristin Watson</span>
+                      </td>
+                      <td>
+                        <span
+                          class="lead-table__status lead-table__status--ongoing"
+                          >On going</span
+                        >
+                      </td>
+                      <td>Google Search</td>
+                      <td>Devon Lane</td>
+                      <td>
+                        <span class="lead-table__contact">(684) 555-0102</span>
+                      </td>
+                      <td>28/02/2021</td>
+                      <td>
+                        <div class="lead-table__actions">
+                          <a
+                            href="#"
+                            class="lead-table__action-btn"
+                            aria-label="View"
+                            ><i class="fas fa-eye" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="lead-table__action-btn"
+                            aria-label="Edit"
+                            ><i class="fas fa-pen" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="lead-table__action-btn lead-table__action-btn--delete"
+                            aria-label="Delete"
+                            data-row-delete
+                            ><i class="fas fa-trash" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
 
-                  <tr>
-                    <td class="lead-table__check-col">
-                      <input
-                        type="checkbox"
-                        class="lead-table__checkbox"
-                        aria-label="Select row"
-                      />
-                    </td>
-                    <td><span class="lead-table__name">Cody Fisher</span></td>
-                    <td>
-                      <span
-                        class="lead-table__status lead-table__status--ongoing"
-                        >On going</span
-                      >
-                    </td>
-                    <td>Google Map</td>
-                    <td>Darrell Steward</td>
-                    <td>
-                      <span class="lead-table__contact">(684) 555-0102</span>
-                    </td>
-                    <td>13/05/2022</td>
-                    <td>
-                      <div class="lead-table__actions">
-                        <a
-                          href="#"
-                          class="lead-table__action-btn"
-                          aria-label="View"
-                          ><i class="fas fa-eye" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="lead-table__action-btn"
-                          aria-label="Edit"
-                          ><i class="fas fa-pen" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="lead-table__action-btn lead-table__action-btn--delete"
-                          aria-label="Delete"
-                          data-row-delete
-                          ><i class="fas fa-trash" aria-hidden="true"></i
-                        ></a>
-                      </div>
-                    </td>
-                  </tr>
+                    <tr>
+                      <td class="lead-table__check-col">
+                        <input
+                          type="checkbox"
+                          class="lead-table__checkbox"
+                          aria-label="Select row"
+                        />
+                      </td>
+                      <td><span class="lead-table__name">Cody Fisher</span></td>
+                      <td>
+                        <span
+                          class="lead-table__status lead-table__status--ongoing"
+                          >On going</span
+                        >
+                      </td>
+                      <td>Google Map</td>
+                      <td>Darrell Steward</td>
+                      <td>
+                        <span class="lead-table__contact">(684) 555-0102</span>
+                      </td>
+                      <td>13/05/2022</td>
+                      <td>
+                        <div class="lead-table__actions">
+                          <a
+                            href="#"
+                            class="lead-table__action-btn"
+                            aria-label="View"
+                            ><i class="fas fa-eye" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="lead-table__action-btn"
+                            aria-label="Edit"
+                            ><i class="fas fa-pen" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="lead-table__action-btn lead-table__action-btn--delete"
+                            aria-label="Delete"
+                            data-row-delete
+                            ><i class="fas fa-trash" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
 
-                  <tr>
-                    <td class="lead-table__check-col">
-                      <input
-                        type="checkbox"
-                        class="lead-table__checkbox"
-                        aria-label="Select row"
-                      />
-                    </td>
-                    <td><span class="lead-table__name">Ralph Edwards</span></td>
-                    <td>
-                      <span
-                        class="lead-table__status lead-table__status--ongoing"
-                        >On going</span
-                      >
-                    </td>
-                    <td>Walk-In Client</td>
-                    <td>Annette Black</td>
-                    <td>
-                      <span class="lead-table__contact">(684) 555-0102</span>
-                    </td>
-                    <td>10/06/2022</td>
-                    <td>
-                      <div class="lead-table__actions">
-                        <a
-                          href="#"
-                          class="lead-table__action-btn"
-                          aria-label="View"
-                          ><i class="fas fa-eye" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="lead-table__action-btn"
-                          aria-label="Edit"
-                          ><i class="fas fa-pen" aria-hidden="true"></i
-                        ></a>
-                        <a
-                          href="#"
-                          class="lead-table__action-btn lead-table__action-btn--delete"
-                          aria-label="Delete"
-                          data-row-delete
-                          ><i class="fas fa-trash" aria-hidden="true"></i
-                        ></a>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                    <tr>
+                      <td class="lead-table__check-col">
+                        <input
+                          type="checkbox"
+                          class="lead-table__checkbox"
+                          aria-label="Select row"
+                        />
+                      </td>
+                      <td>
+                        <span class="lead-table__name">Ralph Edwards</span>
+                      </td>
+                      <td>
+                        <span
+                          class="lead-table__status lead-table__status--ongoing"
+                          >On going</span
+                        >
+                      </td>
+                      <td>Walk-In Client</td>
+                      <td>Annette Black</td>
+                      <td>
+                        <span class="lead-table__contact">(684) 555-0102</span>
+                      </td>
+                      <td>10/06/2022</td>
+                      <td>
+                        <div class="lead-table__actions">
+                          <a
+                            href="#"
+                            class="lead-table__action-btn"
+                            aria-label="View"
+                            ><i class="fas fa-eye" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="lead-table__action-btn"
+                            aria-label="Edit"
+                            ><i class="fas fa-pen" aria-hidden="true"></i
+                          ></a>
+                          <a
+                            href="#"
+                            class="lead-table__action-btn lead-table__action-btn--delete"
+                            aria-label="Delete"
+                            data-row-delete
+                            ><i class="fas fa-trash" aria-hidden="true"></i
+                          ></a>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </main>
 

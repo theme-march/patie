@@ -761,13 +761,13 @@
         name: "BROOKLYN SIMMONS",
         role: "E-Commerce Solutions",
         rating: 4.5,
-        text: "We Work With Trusted Partners And Monitor The Impact Of Every Program To Ensure Transparency And Accountability All Donations To Our Organization Are Tax-Deductible, And We Provide Receipts For Every Contribution Offer Numerous Volunteer Opportunities Both On-Site And Virtually. Visit Our Volunteer Page Donations",
+        text: "We Work With Trusted Partners And Monitor The Impact Of Every Program To Ensure Transparency And Accountability All Donations To Our Organization Are Tax-Deductible, And We Provide Receipts For Every Contribution Offer Numerous Volunteer Opportunities.",
       },
       {
         name: "KRISTIN WATSON",
         role: "Marketing Specialist",
         rating: 5,
-        text: "Highly recommend their services. The de-shedding treatment worked wonders on my Golden Retriever, and the staff's professionalism is unmatched. The scheduling was seamless and the facility is clean, safe, and welcoming. My Cat Feels Completely At Home, Happy",
+        text: "Highly recommend their services. The de-shedding treatment worked wonders on my Golden Retriever, and the staff's professionalism is unmatched. The scheduling was seamless and the facility is clean, safe, and welcoming. My Cat Feels Completely At Home, Happy.",
       },
     ];
 

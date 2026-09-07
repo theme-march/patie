@@ -1309,9 +1309,12 @@ i[class*=fa] {
   z-index: 1;
   pointer-events: none;
   box-sizing: border-box;
-  transform: scale(0);
-  opacity: 0.7;
+  transform: scale(1);
+  opacity: 0;
   animation: playRippleLottie 2s infinite cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.play-btn__ripple-lottie:nth-child(2) {
+  animation-delay: 1s;
 }
 .play-btn:hover, .ak-video-open:hover {
   transform: translate(-50%, -50%) scale(1.2);
@@ -1431,10 +1434,10 @@ i[class*=fa] {
 @keyframes playRippleLottie {
   0% {
     transform: scale(1);
-    opacity: 0.7;
+    opacity: 0.6;
   }
   100% {
-    transform: scale(1.7);
+    transform: scale(2.2);
     opacity: 0;
   }
 }
@@ -9396,7 +9399,6 @@ i[class*=fa] {
   position: relative;
   border-radius: 10px;
   left: -25%;
-  overflow: hidden;
   width: 100%;
   max-width: 200px;
   flex-shrink: 0;
@@ -9416,16 +9418,20 @@ i[class*=fa] {
 @media (max-width: 576px) {
   .about-grooming__video {
     width: 100%;
-    left: 0;
+    max-width: 100%;
   }
   .about-grooming__video .play-btn--sm {
     width: 90px;
     height: 90px;
   }
   .about-grooming__video .play-btn--sm .play-btn__inner {
-    width: 60px;
-    height: 60px;
-    font-size: 15px;
+    width: 70px;
+    height: 70px;
+    font-size: 16px;
+  }
+  .about-grooming__video .play-btn--sm .play-btn__ripple-lottie {
+    width: 70px;
+    height: 70px;
   }
 }
 .about-grooming__video-img {

@@ -131,10 +131,12 @@
 
         @include respond(md) {
             font-size: 36px;
+            line-height: 40px;
         }
 
         @include respond(sm) {
             font-size: 30px;
+            line-height: 36px;
         }
     }
 

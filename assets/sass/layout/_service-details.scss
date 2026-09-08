@@ -1,176 +1,179 @@
 @use "../abstracts" as *;
 
 .service-details {
-    &__layout {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 30px;
-        align-items: start;
+  &__layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: start;
 
-        @include respond(lg) {
-            grid-template-columns: 1fr;
-        }
+    @include respond(lg) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__content {
+    background-color: var(--smoke-bg-color);
+    border-radius: 20px;
+    padding: 40px;
+
+    @include respond(lg) {
+      padding: 20px;
+    }
+  }
+
+  &__main-img {
+    max-width: 100%;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    object-fit: cover;
+
+    @include respond(xxl) {
+      margin-bottom: 30px;
     }
 
-    &__content {
-        background-color: var(--smoke-bg-color);
-        border-radius: 20px;
-        padding: 40px;
+    @include respond(sm) {
+      margin-bottom: 20px;
+    }
+  }
 
-        @include respond(lg) {
-            padding: 20px;
-        }
+  &__title {
+    color: var(--primary-color);
+    font-size: 48px;
+    margin-bottom: 20px;
+
+    @include respond(xxxl) {
+      font-size: 42px;
     }
 
-    &__main-img {
-        max-width: 100%;
-        border-radius: 20px;
-        margin-bottom: 40px;
-        object-fit: cover;
-
-        @include respond(xxl) {
-            margin-bottom: 30px;
-        }
-
-        @include respond(sm) {
-            margin-bottom: 20px;
-        }
+    @include respond(xxl) {
+      font-size: 38px;
+      margin-bottom: 20px;
     }
 
-    &__title {
-        color: var(--primary-color);
-        font-size: 48px;
-        margin-bottom: 20px;
-
-        @include respond(xxxl) {
-            font-size: 42px;
-        }
-
-        @include respond(xxl) {
-            font-size: 38px;
-            margin-bottom: 20px;
-        }
-
-        @include respond(lg) {
-            font-size: 36px;
-        }
-
-        @include respond(md) {
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
+    @include respond(lg) {
+      font-size: 36px;
     }
 
-    &__desc {
-        margin-bottom: 25px;
-        line-height: 26px;
+    @include respond(md) {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+  }
 
-        &:last-child {
-            margin-bottom: 0;
-        }
+  &__desc {
+    margin-bottom: 25px;
+    line-height: 26px;
 
-        @include respond(sm) {
-            margin-bottom: 20px;
-        }
+    &:last-child {
+      margin-bottom: 0;
     }
 
-    &__subtitle {
-        color: var(--primary-color);
-        font-size: 48px;
-        margin-top: 80px;
-        margin-bottom: 25px;
+    @include respond(sm) {
+      margin-bottom: 20px;
+    }
+  }
 
-        @include respond(xxxl) {
-            font-size: 42px;
-        }
+  &__subtitle {
+    color: var(--primary-color);
+    font-size: 48px;
+    margin-top: 80px;
+    margin-bottom: 25px;
 
-        @include respond(xxl) {
-            font-size: 38px;
-            margin-bottom: 20px;
-            margin-top: 60px;
-        }
-
-        @include respond(lg) {
-            font-size: 34px;
-            margin-top: 30px;
-        }
-
-        @include respond(md) {
-            font-size: 30px;
-            margin-bottom: 15px;
-        }
+    @include respond(xxxl) {
+      font-size: 42px;
     }
 
-    &__subsubtitle {
-        color: var(--primary-color);
-        font-size: 36px;
-        margin-top: 60px;
-        margin-bottom: 25px;
-
-        @include respond(xxl) {
-            font-size: 32px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        @include respond(lg) {
-            font-size: 30px;
-        }
-
-        @include respond(md) {
-            font-size: 26px;
-            margin-bottom: 15px;
-        }
+    @include respond(xxl) {
+      font-size: 38px;
+      margin-bottom: 20px;
+      margin-top: 60px;
     }
 
-    &__list {
-        display: grid;
+    @include respond(lg) {
+      font-size: 34px;
+      margin-top: 30px;
+    }
+
+    @include respond(md) {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__subsubtitle {
+    color: var(--primary-color);
+    font-size: 36px;
+    margin-top: 60px;
+    margin-bottom: 25px;
+
+    @include respond(xxl) {
+      font-size: 32px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    @include respond(lg) {
+      font-size: 30px;
+    }
+
+    @include respond(md) {
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px 30px;
+    @include respond(md) {
+      gap: 15px 30px;
+    }
+
+    &--2col {
+      grid-template-columns: repeat(2, 1fr);
+
+      @include respond(md) {
         grid-template-columns: 1fr;
-        gap: 25px 30px;
-
-        &--2col {
-            grid-template-columns: repeat(2, 1fr);
-
-            @include respond(md) {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        &-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-
-            &-icon {
-                color: var(--primary-color);
-                font-size: 16px;
-            }
-        }
+      }
     }
 
-    &__sub-images {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
-        margin: 55px 0;
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
 
-        @include respond(xxl) {
-            gap: 30px;
-            margin: 40px 0;
-        }
+      &-icon {
+        color: var(--primary-color);
+        font-size: 16px;
+      }
+    }
+  }
 
-        @include respond(md) {
-            margin: 30px 0;
-        }
+  &__sub-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin: 55px 0;
 
-        @include respond(sm) {
-            grid-template-columns: 1fr;
-        }
+    @include respond(xxl) {
+      gap: 30px;
+      margin: 40px 0;
     }
 
-    &__sub-img {
-        max-width: 100%;
-        border-radius: 15px;
-        object-fit: cover;
+    @include respond(md) {
+      margin: 30px 0;
     }
+
+    @include respond(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__sub-img {
+    max-width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+  }
 }

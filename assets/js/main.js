@@ -788,12 +788,12 @@
       if (!content) return;
 
       const slideOut = direction === "next" ? "-50px" : "50px";
-      const slideIn  = direction === "next" ?  "50px" : "-50px";
+      const slideIn = direction === "next" ? "50px" : "-50px";
 
       // Phase 1: fade + slide OUT via inline styles — no class swap, no reflow
       content.style.transition = "opacity 0.22s ease, transform 0.22s ease";
-      content.style.opacity    = "0";
-      content.style.transform  = "translateX(" + slideOut + ")";
+      content.style.opacity = "0";
+      content.style.transform = "translateX(" + slideOut + ")";
 
       setTimeout(function () {
         // Swap content while element is invisible
@@ -806,12 +806,13 @@
         // Build stars markup
         let starsHtml = "";
         const fullStars = Math.floor(item.rating);
-        const hasHalf   = item.rating % 1 !== 0;
+        const hasHalf = item.rating % 1 !== 0;
         for (let i = 0; i < 5; i++) {
           if (i < fullStars) {
             starsHtml += '<i class="fas fa-star parent-testimonial__star"></i>';
           } else if (i === fullStars && hasHalf) {
-            starsHtml += '<i class="fas fa-star-half-alt parent-testimonial__star"></i>';
+            starsHtml +=
+              '<i class="fas fa-star-half-alt parent-testimonial__star"></i>';
           } else {
             starsHtml += '<i class="far fa-star parent-testimonial__star"></i>';
           }
@@ -820,15 +821,16 @@
 
         // Snap to entry position instantly — no offsetHeight, no reflow
         content.style.transition = "none";
-        content.style.transform  = "translateX(" + slideIn + ")";
-        content.style.opacity    = "0";
+        content.style.transform = "translateX(" + slideIn + ")";
+        content.style.opacity = "0";
 
         // Double rAF: commit snap first frame, animate in second frame
         requestAnimationFrame(function () {
           requestAnimationFrame(function () {
-            content.style.transition = "opacity 0.28s ease, transform 0.28s ease";
-            content.style.opacity    = "1";
-            content.style.transform  = "translateX(0)";
+            content.style.transition =
+              "opacity 0.28s ease, transform 0.28s ease";
+            content.style.opacity = "1";
+            content.style.transform = "translateX(0)";
           });
         });
       }, 240);
@@ -981,9 +983,10 @@
     function buildStars(rating) {
       let html = "";
       for (let i = 0; i < 5; i++) {
-        html += i < rating
-          ? '<i class="fas fa-star"></i>'
-          : '<i class="far fa-star"></i>';
+        html +=
+          i < rating
+            ? '<i class="fas fa-star"></i>'
+            : '<i class="far fa-star"></i>';
       }
       return html;
     }
@@ -993,12 +996,12 @@
       if (!content) return;
 
       const slideOut = direction === "next" ? "-50px" : "50px";
-      const slideIn  = direction === "next" ?  "50px" : "-50px";
+      const slideIn = direction === "next" ? "50px" : "-50px";
 
       // Phase 1: fade + slide OUT via inline styles — no class swap, no reflow
       content.style.transition = "opacity 0.22s ease, transform 0.22s ease";
-      content.style.opacity    = "0";
-      content.style.transform  = "translateX(" + slideOut + ")";
+      content.style.opacity = "0";
+      content.style.transform = "translateX(" + slideOut + ")";
 
       setTimeout(function () {
         // Swap content while element is invisible
@@ -1012,15 +1015,16 @@
 
         // Snap to entry position instantly — no offsetHeight, no reflow
         content.style.transition = "none";
-        content.style.transform  = "translateX(" + slideIn + ")";
-        content.style.opacity    = "0";
+        content.style.transform = "translateX(" + slideIn + ")";
+        content.style.opacity = "0";
 
         // Double rAF: commit snap first frame, animate in second frame
         requestAnimationFrame(function () {
           requestAnimationFrame(function () {
-            content.style.transition = "opacity 0.28s ease, transform 0.28s ease";
-            content.style.opacity    = "1";
-            content.style.transform  = "translateX(0)";
+            content.style.transition =
+              "opacity 0.28s ease, transform 0.28s ease";
+            content.style.opacity = "1";
+            content.style.transform = "translateX(0)";
           });
         });
       }, 240);

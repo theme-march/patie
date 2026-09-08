@@ -128,6 +128,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include respond(xl) {
+      padding-bottom: 25px;
+    }
+    @include respond(lg) {
+      padding-bottom: 0;
+    }
   }
 
   &__slide-content {

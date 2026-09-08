@@ -40,8 +40,6 @@
     }
   }
 
-
-
   &__sort {
     position: relative;
     display: inline-flex;
@@ -72,7 +70,7 @@
         color: var(--heading-color);
       }
 
-      &:focus+.shop__sort-icon-wrap {
+      &:focus + .shop__sort-icon-wrap {
         .shop__sort-icon {
           transform: rotate(180deg);
         }

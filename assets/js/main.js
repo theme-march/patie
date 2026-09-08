@@ -642,8 +642,8 @@
       {
         name: "JENNY WILSON",
         role: "Graphic Designer",
-        rating: 5,
-        text: "The grooming staff here is incredibly gentle! My cat is extremely anxious, but they handled her with absolute patience and care. The custom styling recommendations were spot on, and she came back smelling amazing and feeling completely relaxed.",
+        rating: 4.8,
+        text: "I Absolutely Love How Caring, Professional, And Attentive The Entire Team Is! My Dog Feels Completely At Home, Happy, And I Can Check On Him Anytime Through Their Reliable CCTV Monitoring Service. Truly Peace Of Mind For Every Pet Parent!",
       },
       {
         name: "SAVANNAH NGUYEN",
@@ -655,7 +655,7 @@
         name: "KRISTIN WATSON",
         role: "Marketing Specialist",
         rating: 5,
-        text: "Highly recommend their services. The de-shedding treatment worked wonders on my Golden Retriever, and the staff's professionalism is unmatched. The scheduling was seamless and the facility is clean, safe, and welcoming.",
+        text: "I Absolutely Love How Caring, Professional, And Attentive The Entire Team Is! My Dog Feels Completely At Home, Happy, And I Can Check On Him Anytime Through Their Reliable CCTV Monitoring Service. Truly Peace Of Mind For Every Pet Parent!",
       },
     ];
 
@@ -755,8 +755,8 @@
       {
         name: "JENNY WILSON",
         role: "Graphic Designer",
-        rating: 5,
-        text: "The grooming staff here is incredibly gentle! My cat is extremely anxious, but they handled her with absolute patience and care. The custom styling recommendations were spot on, and she came back smelling amazing and feeling completely relaxed.",
+        rating: 4.7,
+        text: "We Work With Trusted Partners And Monitor The Impact Of Every Program To Ensure Transparency And Accountability All Donations To Our Organization Are Tax-Deductible, And We Provide Receipts For Every Contribution Offer Numerous Volunteer Opportunities.",
       },
       {
         name: "BROOKLYN SIMMONS",
@@ -768,7 +768,7 @@
         name: "KRISTIN WATSON",
         role: "Marketing Specialist",
         rating: 5,
-        text: "Highly recommend their services. The de-shedding treatment worked wonders on my Golden Retriever, and the staff's professionalism is unmatched. The scheduling was seamless and the facility is clean, safe, and welcoming.",
+        text: "We Work With Trusted Partners And Monitor The Impact Of Every Program To Ensure Transparency And Accountability All Donations To Our Organization Are Tax-Deductible, And We Provide Receipts For Every Contribution Offer Numerous Volunteer Opportunities.",
       },
     ];
 

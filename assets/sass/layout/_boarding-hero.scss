@@ -49,11 +49,11 @@
     }
 
     @include respond(xxl) {
-      max-width: 1240px;
+      max-width: 1050px;
     }
 
     @include respond(xl) {
-      max-width: 1050px;
+      max-width: 860px;
     }
 
     @include respond(lg) {
@@ -231,24 +231,25 @@
 
 
   &__images {
-    width: 52%;
+    width: 100%;
+    max-width: 52%;
     position: relative;
     display: flex;
     justify-content: center;
     align-self: flex-end;
 
     @include respond(xxxxl) {
-      width: 43%;
+      max-width: 43%;
       right: 4%;
     }
 
     @include respond(xl) {
-      width: 50%;
+      max-width: 50%;
       right: -3%;
     }
 
     @include respond(lg) {
-      width: 50%;
+      max-width: 50%;
       align-self: center;
       bottom: 5px;
     }
@@ -266,6 +267,12 @@
     height: auto;
     display: block;
     margin: 0 auto;
+    @include respond(xl) {
+      top: -5px;
+    }
+    @include respond(lg) {
+      top: 0;
+    }
 
   }
 

@@ -11231,12 +11231,12 @@ i[class*=fa] {
 }
 @media (max-width: 1400px) {
   .boarding-hero .container {
-    max-width: 1240px;
+    max-width: 1050px;
   }
 }
 @media (max-width: 1200px) {
   .boarding-hero .container {
-    max-width: 1050px;
+    max-width: 860px;
   }
 }
 @media (max-width: 992px) {
@@ -11429,7 +11429,8 @@ i[class*=fa] {
   }
 }
 .boarding-hero__images {
-  width: 52%;
+  width: 100%;
+  max-width: 52%;
   position: relative;
   display: flex;
   justify-content: center;
@@ -11437,19 +11438,19 @@ i[class*=fa] {
 }
 @media (max-width: 1700px) {
   .boarding-hero__images {
-    width: 43%;
+    max-width: 43%;
     right: 4%;
   }
 }
 @media (max-width: 1200px) {
   .boarding-hero__images {
-    width: 50%;
+    max-width: 50%;
     right: -3%;
   }
 }
 @media (max-width: 992px) {
   .boarding-hero__images {
-    width: 50%;
+    max-width: 50%;
     align-self: center;
     bottom: 5px;
   }
@@ -11467,6 +11468,16 @@ i[class*=fa] {
   height: auto;
   display: block;
   margin: 0 auto;
+}
+@media (max-width: 1200px) {
+  .boarding-hero__girl {
+    top: -5px;
+  }
+}
+@media (max-width: 992px) {
+  .boarding-hero__girl {
+    top: 0;
+  }
 }
 .boarding-hero__line-wrap {
   position: absolute;

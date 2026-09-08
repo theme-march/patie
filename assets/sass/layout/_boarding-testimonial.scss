@@ -13,7 +13,6 @@
     z-index: 2;
     margin-bottom: -250px;
     align-items: flex-start;
-    overflow: hidden;
 
     @include respond(xxl) {
       padding: 70px;
@@ -137,7 +136,7 @@
     flex: 1;
     padding-left: 95px;
     overflow: hidden;
-    height: 320px;
+    align-self: stretch;
     transition:
       opacity 0.28s ease,
       transform 0.28s ease;
@@ -148,8 +147,6 @@
 
     @include respond(md) {
       padding-left: 0;
-      height: auto;
-      min-height: 320px;
     }
   }
 
@@ -165,6 +162,7 @@
 
     @include respond(lg) {
       font-size: 14px;
+      margin-bottom: 30px;
     }
   }
 

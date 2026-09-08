@@ -9560,6 +9560,11 @@ i[class*=fa] {
     gap: 20px;
   }
 }
+@media (max-width: 576px) {
+  .parent-testimonial__body {
+    padding: 80px 0 40px;
+  }
+}
 .parent-testimonial__bg {
   position: absolute;
   top: 0;
@@ -9679,9 +9684,29 @@ i[class*=fa] {
 .parent-testimonial__content {
   position: relative;
   left: 0;
-  height: 280px;
+  height: 240px;
   overflow: hidden;
   transition: opacity 0.25s ease, transform 0.25s ease;
+}
+@media (max-width: 1200px) {
+  .parent-testimonial__content {
+    height: 260px;
+  }
+}
+@media (max-width: 992px) {
+  .parent-testimonial__content {
+    height: 285px;
+  }
+}
+@media (max-width: 768px) {
+  .parent-testimonial__content {
+    height: 300px;
+  }
+}
+@media (max-width: 576px) {
+  .parent-testimonial__content {
+    height: 400px;
+  }
 }
 .parent-testimonial__name {
   font-size: 30px;
@@ -11224,7 +11249,7 @@ i[class*=fa] {
     right: 15px;
     bottom: 15px;
     width: calc(100% - 30px);
-    height: calc(100% - 35px);
+    height: calc(100% - 40px);
   }
 }
 .boarding-hero__wrap {
@@ -12196,7 +12221,6 @@ i[class*=fa] {
   z-index: 2;
   margin-bottom: -250px;
   align-items: flex-start;
-  overflow: hidden;
 }
 @media (max-width: 1400px) {
   .boarding-testimonial__box {
@@ -12323,7 +12347,7 @@ i[class*=fa] {
   flex: 1;
   padding-left: 95px;
   overflow: hidden;
-  height: 320px;
+  align-self: stretch;
   transition: opacity 0.28s ease, transform 0.28s ease;
 }
 @media (max-width: 992px) {
@@ -12334,8 +12358,6 @@ i[class*=fa] {
 @media (max-width: 768px) {
   .boarding-testimonial__right {
     padding-left: 0;
-    height: auto;
-    min-height: 320px;
   }
 }
 .boarding-testimonial__stars {
@@ -12350,6 +12372,7 @@ i[class*=fa] {
 @media (max-width: 992px) {
   .boarding-testimonial__text {
     font-size: 14px;
+    margin-bottom: 30px;
   }
 }
 .boarding-testimonial__user {

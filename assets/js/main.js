@@ -960,21 +960,21 @@
         role: "E-Commerce Solutions",
         avatar: "assets/img/avatars/hero-avatar-4.png",
         rating: 4,
-        text: "Leaving My Pet Here Was The Best Decision. The Caring Staff Clean And Comfortable Environment, And Daily Attention My Furry Friend Feel Safe, Happy, And Relaxed Throughout The Entire Stay.",
+        text: "Leaving My Pet Here Was The Best Decision. The Caring Staff Clean And Comfortable Environment, And Daily Attention My Furry Friend Feel Safe, Happy, And Relaxed.",
       },
       {
         name: "JENNY WILSON",
         role: "Graphic Designer",
         avatar: "assets/img/avatars/hero-avatar-5.png",
         rating: 5,
-        text: "The boarding facility exceeded all our expectations. Our dog came back happy and well-rested. The staff sent us daily updates and photos, which gave us total peace of mind.",
+        text: "The boarding facility exceeded all our expectations. Our dog came back happy and well-rested. The staff sent us daily updates and photos, which gave  peace of mind.",
       },
       {
         name: "KRISTIN WATSON",
         role: "Marketing Specialist",
         avatar: "assets/img/avatars/hero-avatar-6.png",
         rating: 5,
-        text: "Amazing experience from start to finish. The team is warm, professional, and genuinely passionate about animals. Our pets were treated like family and we could not be more grateful.",
+        text: "Amazing experience from start to finish. The team is warm, professional passionate about animals. Our pets were treated like family and we could not be more grateful.",
       },
     ];
 

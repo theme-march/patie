@@ -46,6 +46,9 @@
       padding: 80px 0 60px;
       gap: 20px;
     }
+    @include respond(sm) {
+      padding: 80px 0 40px;
+    }
   }
 
   &__bg {
@@ -136,9 +139,6 @@
   }
 
   &__line {
-    // flex: 1;
-    // max-width: 250px;
-    // height: auto;
 
     @include respond(md) {
       display: none;
@@ -179,11 +179,23 @@
   &__content {
     position: relative;
     left: 0;
-    height: 280px;
+    height: 240px;
     overflow: hidden;
     transition:
       opacity 0.25s ease,
       transform 0.25s ease;
+    @include respond(xl) {
+      height: 260px;
+    }
+    @include respond(lg) {
+      height: 285px;
+    }
+    @include respond(md) {
+      height: 300px;
+    }
+    @include respond(sm) {
+      height: 400px;
+    }
   }
 
   &__name {

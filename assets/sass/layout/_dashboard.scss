@@ -183,6 +183,7 @@
 
   @include respond(sm) {
     grid-template-columns: 1fr;
+    gap: 15px;
   }
 }
 
@@ -472,7 +473,8 @@
   &__customer-name {
     color: var(--heading-color);
     display: block;
-    line-height: 26px;
+    line-height: 20px;
+    margin-bottom: 5px;
   }
 
   &__customer-sub {
@@ -571,7 +573,10 @@
   color: var(--heading-color);
   background-color: var(--white-color);
   margin-top: auto;
-
+  @include respond(md) {
+    font-size: 12px;
+    padding: 15px;
+  }
   &__link {
     color: var(--secondary-color);
     text-decoration: none;

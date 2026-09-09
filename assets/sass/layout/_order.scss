@@ -108,6 +108,10 @@
     flex: 1;
     max-width: 340px;
     position: relative;
+
+    @include respond(sm) {
+      overflow: hidden;
+    }
   }
 
   &__search-input {
@@ -124,19 +128,50 @@
     &::placeholder {
       color: color-mix(in srgb, var(--heading-color), transparent 30%);
     }
-    @include respond(md) {
+
+    @include respond(sm) {
       padding: 9px 9px 9px 38px;
+    }
+
+    &:focus ~ .order-toolbar__search-placeholder,
+    &:not(:placeholder-shown) ~ .order-toolbar__search-placeholder {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  &__search-placeholder {
+    position: absolute;
+    left: 38px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: color-mix(in srgb, var(--heading-color), transparent 30%);
+    font-family: var(--body-font-family);
+    font-weight: 600;
+    font-size: inherit;
+    pointer-events: none;
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+
+    @include respond(sm) {
+      animation: placeholder-reveal 4s linear 0.4s 1 forwards;
     }
   }
 
   &__search-icon {
     position: absolute;
-    left: 15px;
+    left: 10px;
     top: 50%;
     transform: translateY(-50%);
     font-size: 16px;
     color: var(--body-color);
     pointer-events: none;
+    @include respond(sm) {
+      padding: 10px 10px 10px 10px;
+      background-color: var(--white-color);
+      left: -1px;
+      z-index: 10;
+    }
   }
 
   &__filter-btn {
@@ -223,6 +258,15 @@
   }
 }
 
+@keyframes placeholder-reveal {
+  0% {
+    transform: translateY(-50%) translateX(0);
+  }
+  100% {
+    transform: translateY(-50%) translateX(-62px);
+  }
+}
+
 .order-table-card {
   background-color: var(--white-color);
   border-radius: 10px;
@@ -254,6 +298,9 @@
       padding: 20px 15px;
       white-space: nowrap;
       border: none;
+      @include respond(md) {
+        padding: 15px 10px;
+      }
     }
 
     .order-table__check-col {
@@ -286,6 +333,9 @@
       padding: 20px 15px;
       vertical-align: middle;
       border: none;
+      @include respond(md) {
+        padding: 15px 10px;
+      }
     }
 
     .order-table__check-col {

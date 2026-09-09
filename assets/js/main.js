@@ -967,14 +967,14 @@
         role: "Graphic Designer",
         avatar: "assets/img/avatars/hero-avatar-5.png",
         rating: 5,
-        text: "The boarding facility exceeded all our expectations. Our dog came back happy and well-rested. The staff sent us daily updates and photos, which gave  peace of mind.",
+        text: "Leaving My Pet Here Was The Best Decision. The Caring Staff Clean And Comfortable Environment, And Daily Attention My Furry Friend Feel Safe, Happy, And Relaxed.",
       },
       {
         name: "KRISTIN WATSON",
         role: "Marketing Specialist",
         avatar: "assets/img/avatars/hero-avatar-6.png",
         rating: 5,
-        text: "Amazing experience from start to finish. The team is warm, professional passionate about animals. Our pets were treated like family and we could not be more grateful.",
+        text: "Leaving My Pet Here Was The Best Decision. The Caring Staff Clean And Comfortable Environment, And Daily Attention My Furry Friend Feel Safe, Happy, And Relaxed.",
       },
     ];
 
@@ -1471,11 +1471,34 @@
       // Setup active states on the cloned items based on desktop active class
       $(".site-header__menu-item").each(function (index) {
         if ($(this).hasClass("site-header__menu-item--active")) {
-          $(".mobile-menu__item")
-            .eq(index)
-            .addClass("mobile-menu__item--active");
+          var $mobileItem = $(".mobile-menu__item").eq(index);
+          $mobileItem.addClass("mobile-menu__item--active");
+          // Mark the top-level link as active (mirrors navbar active colour)
+          $mobileItem
+            .find("> .mobile-menu__link")
+            .addClass("mobile-menu__link--active");
         }
       });
+
+      // Mirror the active submenu link from the desktop nav into the mobile sidebar
+      var $activeSubmenuLink = $(".site-header__submenu-link--active");
+      if ($activeSubmenuLink.length) {
+        var activeHref = $activeSubmenuLink.attr("href") || "";
+        $(".mobile-menu__submenu-link").each(function () {
+          var href = $(this).attr("href") || "";
+          if (href === activeHref) {
+            $(this).addClass("mobile-menu__submenu-link--active");
+            // Expand the parent submenu so the active item is visible
+            var $parentItem = $(this).closest(".mobile-menu__item");
+            $parentItem.find("> .mobile-menu__submenu").show();
+            $parentItem.addClass("mobile-menu__item--open");
+            $parentItem
+              .find("> .mobile-menu__toggle-btn i")
+              .removeClass("fa-chevron-down")
+              .addClass("fa-chevron-up");
+          }
+        });
+      }
 
       // Overlay & Close handlers
       $(".site-header__mobile-btn").on("click", function (e) {

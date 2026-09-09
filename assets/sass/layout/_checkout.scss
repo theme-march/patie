@@ -1,7 +1,6 @@
 @use "../abstracts" as *;
 
 .checkout-section {
-
   &__layout {
     display: flex;
     flex-wrap: wrap;
@@ -64,6 +63,9 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    @include respond(md) {
+      gap: 20px;
+    }
   }
 
   &__row {
@@ -72,6 +74,7 @@
 
     @include respond(md) {
       flex-direction: column;
+       gap: 20px;
     }
 
     &--full {
@@ -92,7 +95,7 @@
     }
 
     @include respond(md) {
-      padding: 20px ;
+      padding: 20px;
     }
   }
 
@@ -169,7 +172,7 @@
     transform: scale(0);
     transition: all 0.3s ease;
 
-    .checkout-section__checkbox:checked+& {
+    .checkout-section__checkbox:checked + & {
       transform: scale(1);
     }
   }
@@ -311,17 +314,17 @@
     transform: scale(0);
     transition: all 0.3s ease;
 
-    .checkout-section__radio-input:checked+.checkout-section__radio-circle & {
+    .checkout-section__radio-input:checked + .checkout-section__radio-circle & {
       transform: scale(1);
     }
   }
 
-  .checkout-section__radio-input:checked+.checkout-section__radio-circle {
+  .checkout-section__radio-input:checked + .checkout-section__radio-circle {
     border-color: var(--primary-color);
   }
 
   &__radio-text {
-     font-family: var(--heading-font-family);
+    font-family: var(--heading-font-family);
     font-size: 16px;
     font-weight: 100;
     color: color-mix(in srgb, var(--heading-color), transparent 30%);

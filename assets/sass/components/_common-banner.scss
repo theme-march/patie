@@ -42,7 +42,10 @@
         max-width: 679px;
         flex: 1;
         @include respond(xl) {
-            max-width: 5500px;
+            max-width: 550px;
+        }
+        @include respond(lg) {
+            max-width: 100%;
         }
 
         .section-header__breadcrumb {

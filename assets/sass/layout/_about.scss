@@ -21,6 +21,9 @@
     gap: 100px;
     position: relative;
 
+    @include respond(xl) {
+      gap: 60px;
+    }
     @include respond(lg) {
       flex-direction: column;
       gap: 40px;
@@ -89,7 +92,6 @@
         font-size: 24px;
       }
     }
-
   }
 
   &__pet-deco {

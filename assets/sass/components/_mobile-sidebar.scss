@@ -9,8 +9,11 @@
   height: 100%;
   z-index: 1050;
   background-color: var(--primary-color);
-  box-shadow: -2px 0 15px color-mix(in srgb, var(--black-color), transparent 70%);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s ease;
+  box-shadow: -2px 0 15px
+    color-mix(in srgb, var(--black-color), transparent 70%);
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0.3s ease;
   visibility: hidden;
   display: flex;
   flex-direction: column;
@@ -25,7 +28,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    border-bottom: 1px solid color-mix(in srgb, var(--white-color), transparent 90%);
+    border-bottom: 1px solid
+      color-mix(in srgb, var(--white-color), transparent 90%);
   }
 
   &__logo {
@@ -55,7 +59,9 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
 
     &:hover {
       background-color: var(--secondary-color);
@@ -89,7 +95,9 @@
   background-color: color-mix(in srgb, var(--black-color), transparent 40%);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
 
   &--open {
     opacity: 1;
@@ -104,7 +112,8 @@
 
   &__item {
     position: relative;
-    border-bottom: 1px solid color-mix(in srgb, var(--white-color), transparent 95%);
+    border-bottom: 1px solid
+      color-mix(in srgb, var(--white-color), transparent 95%);
 
     &:last-child {
       border-bottom: none;
@@ -127,6 +136,13 @@
     }
   }
 
+  // When any link is hovered, revert the active link back to white (mirrors navbar behaviour)
+  &:has(&__link:hover) {
+    .mobile-menu__link--active:not(:hover) {
+      color: var(--white-color);
+    }
+  }
+
   &__toggle-btn {
     position: absolute;
     right: 15px;
@@ -141,7 +157,9 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
 
     &:hover {
       background-color: transparent;
@@ -168,9 +186,17 @@
       transition: all 0.3s ease;
       text-transform: capitalize;
 
-      &:hover {
+      &:hover,
+      &--active {
         color: var(--secondary-color);
         padding-left: 15px;
+      }
+
+      // When any submenu link is hovered, revert the active one back to its base colour
+      .mobile-menu__submenu:has(.mobile-menu__submenu-link:hover)
+        &--active:not(:hover) {
+        color: color-mix(in srgb, var(--white-color), transparent 20%);
+        padding-left: 10px;
       }
     }
   }

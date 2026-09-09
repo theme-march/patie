@@ -211,8 +211,7 @@
       }
     }
 
-    // When any item in this submenu is hovered, suppress the active highlight
-    // on non-hovered items — mirrors the main nav bar behaviour
+
     &:has(&-item:hover) {
       .site-header__submenu-link--active:not(:hover) {
         background-color: transparent;

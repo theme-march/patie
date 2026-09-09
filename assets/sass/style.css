@@ -16080,7 +16080,7 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 }
 @media (max-width: 768px) {
   .sign-in__title {
-    font-size: 36px;
+    font-size: 40px;
     margin-bottom: 10px;
   }
 }
@@ -16147,6 +16147,11 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
   outline: none;
   box-sizing: border-box;
 }
+@media (max-width: 768px) {
+  .sign-in__input {
+    padding: 15px;
+  }
+}
 .sign-in__input::-moz-placeholder {
   color: color-mix(in srgb, var(--heading-color), transparent 45%);
   font-weight: 600;
@@ -16194,6 +16199,11 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
   font-size: 18px;
   font-weight: 700;
   color: var(--heading-color);
+}
+@media (max-width: 768px) {
+  .sign-in__register-wrap {
+    font-size: 16px;
+  }
 }
 .sign-in__register-link {
   font-weight: 700;
@@ -16330,11 +16340,6 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
   justify-content: center;
   width: 100%;
 }
-@media (max-width: 768px) {
-  .sign-up__form-content {
-    margin: 40px auto;
-  }
-}
 .sign-up__title {
   font-size: 64px;
   font-weight: 400;
@@ -16345,12 +16350,15 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 @media (max-width: 992px) {
   .sign-up__title {
     font-size: 44px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    margin-top: 30px;
   }
 }
 @media (max-width: 768px) {
   .sign-up__title {
-    font-size: 36px;
+    font-size: 40px;
+    margin-bottom: 5px;
+    margin-top: 20px;
   }
 }
 .sign-up__form {
@@ -16410,6 +16418,11 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
   transition: all 0.3s ease;
   outline: none;
   box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .sign-up__input, .sign-up__select {
+    padding: 15px;
+  }
 }
 .sign-up__input::-moz-placeholder, .sign-up__select::-moz-placeholder {
   color: color-mix(in srgb, var(--heading-color), transparent 45%);
@@ -16484,6 +16497,11 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
   font-size: 18px;
   font-weight: 700;
   color: var(--heading-color);
+}
+@media (max-width: 768px) {
+  .sign-up__register-wrap {
+    font-size: 16px;
+  }
 }
 .sign-up__register-link {
   font-weight: 700;

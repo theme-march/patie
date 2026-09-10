@@ -17773,8 +17773,8 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
   gap: 10px;
 }
 .order-table__product-img {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   border-radius: 8px;
   object-fit: cover;
   flex-shrink: 0;

@@ -533,13 +533,17 @@
     display: flex;
     align-items: center;
     gap: 20px;
-    font-size: 14px;
+    font-size: 16px;
     color: var(--heading-color);
     font-family: var(--body-font-family);
-    font-weight: 500;
+    font-weight: 600;
 
     @include respond(xxxxl) {
       padding-left: 20px;
+    }
+    @include respond(xxxl) {
+      font-size: 14px;
+      font-weight: 500;
     }
 
     @include respond(xxl) {

@@ -239,6 +239,12 @@
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+
+    .common-btn {
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: 1.5px;
+    }
   }
 
   &__image-cat,

@@ -12,13 +12,13 @@
   &__left-wrap {
     width: 50%;
     position: relative;
-    padding: 120px 180px 120px 220px;
+    padding: 120px 120px 120px 220px;
     display: flex;
     justify-content: flex-end;
     z-index: 1;
 
     @include respond(xxxl) {
-      padding: 120px 140px 120px 180px;
+      padding: 120px 120px 120px 180px;
     }
     @include respond(xxl) {
       padding: 120px;
@@ -55,19 +55,19 @@
 
   &__desc {
     color: var(--white-color);
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 25px;
 
     @include respond(lg) {
-      margin-top: 10px;
-      margin-bottom: 20px;
+      margin-top: 5px;
+      margin-bottom: 15px;
     }
   }
 
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 30px;
     padding: 0 120px 0 20px;
 
     @include respond(xxxl) {

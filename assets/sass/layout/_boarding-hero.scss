@@ -209,7 +209,11 @@
       color: var(--secondary-color);
     }
   }
-
+  .common-btn {
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: 1.5px;
+    }
   &__desc {
     font-size: 18px;
     color: var(--body-color);
@@ -263,6 +267,7 @@
     position: relative;
     z-index: 3;
     max-width: 100%;
+    top: -3px;
     left: 8%;
     height: auto;
     display: block;

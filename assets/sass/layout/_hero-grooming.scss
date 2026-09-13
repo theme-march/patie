@@ -229,7 +229,7 @@
     position: relative;
     bottom: 70px;
     background-color: var(--white-color);
-    padding: 60px 30px 30px 30px;
+    padding: 50px 30px 30px 30px;
     border-radius: 20px;
     max-width: 415px;
     text-align: left;
@@ -401,6 +401,11 @@
 
   &__specialist-btn {
     width: fit-content;
+    .common-btn {
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: 1.5px;
+    }
 
     @include respond(xxl) {
       .common-btn {

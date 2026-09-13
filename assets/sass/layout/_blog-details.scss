@@ -431,7 +431,6 @@
 
         &--reply {
             margin-left: 100px;
-            background-color: color-mix(in srgb, var(--smoke-bg-color), var(--secondary-color) 5%);
 
             @include respond(md) {
                 margin-left: 50px;

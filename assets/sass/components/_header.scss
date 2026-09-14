@@ -26,7 +26,7 @@
   }
 
   @include respond(lg) {
-    padding: 20px 20px;
+    padding: 20px 10px;
   }
 
   &__container {
@@ -408,7 +408,7 @@
       margin: 0;
       border-radius: 0;
       transform: none;
-      padding: 20px 20px;
+      padding: 20px 10px;
       background-color: var(--primary-color);
     }
   }
@@ -430,7 +430,7 @@
     padding: 20px 40px;
 
     @include respond(lg) {
-      padding: 20px 20px;
+      padding: 20px 10px;
     }
 
     &.ak-gescout_show {
@@ -478,7 +478,7 @@
       left: 0;
       width: 100%;
       max-width: 100%;
-      padding: 20px 20px;
+      padding: 20px 10px;
       border-radius: 0;
       background-color: var(--primary-color);
       top: 0;
@@ -750,7 +750,7 @@
 
   @include respond(lg) {
     background-color: transparent !important;
-    padding: 20px 20px;
+    padding: 20px 10px;
 
     .site-header__menu-link {
       color: var(--black-color);

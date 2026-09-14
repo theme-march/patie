@@ -57,7 +57,7 @@
 
     <!-- ================= Start Dashboard ======================== -->
     <div class="dashboard">
-      <header class="dashboard-topbar" role="banner">
+      <header class="dashboard-topbar">
         <div class="dashboard-topbar__logo-slot">
           <a
             href="index.html"
@@ -229,6 +229,7 @@
           <!-- Mobile-only action buttons (shown below md breakpoint) -->
           <div
             class="dashboard-sidebar__mobile-actions"
+            role="region"
             aria-label="Quick actions"
           >
             <a
@@ -268,7 +269,12 @@
 
         <div class="dashboard-main">
           <main class="dashboard-body" id="main-content">
-            <div class="dashboard-stats" aria-label="Statistics overview">
+            <h1 class="sr-only">Dashboard</h1>
+            <div
+              class="dashboard-stats"
+              role="region"
+              aria-label="Statistics overview"
+            >
               <div class="stat-card stat-card--purple">
                 <div class="stat-card__header">
                   <div class="stat-card__icon-wrap">

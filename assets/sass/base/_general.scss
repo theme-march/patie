@@ -167,7 +167,6 @@
   font-family: var(--heading-font-family);
 }
 
-
 .ak-secondary-font {
   font-family: var(--body-font-family);
 }
@@ -243,4 +242,15 @@
   .ak-font-42-sm {
     font-size: 42px;
   }
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

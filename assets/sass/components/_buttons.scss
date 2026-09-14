@@ -248,7 +248,7 @@
       stroke-dasharray: 3 3;
       stroke-dashoffset: 0;
       fill: none;
-      animation: marchServiceDashes 8s linear infinite; // slow by default; JS speeds up on hover
+      animation: marchServiceDashes 8s linear infinite;
     }
   }
 
@@ -257,9 +257,8 @@
       transform: scale(1.1);
     }
     .service-btn__text {
-      transform: scale(1.1);
+      transform: translateX(4px);
     }
-    gap: 25px;
   }
 
   &__text {

@@ -1123,10 +1123,7 @@ i[class*=fa] {
   transform: scale(1.1);
 }
 .service-btn:hover .service-btn__text {
-  transform: scale(1.1);
-}
-.service-btn:hover {
-  gap: 25px;
+  transform: translateX(4px);
 }
 .service-btn__text {
   display: inline-block;

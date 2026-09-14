@@ -1,6 +1,5 @@
 @use "../abstracts" as *;
 
-
 .boarding-hero {
   position: relative;
   z-index: 1;
@@ -35,7 +34,6 @@
     padding-right: 15px;
     padding-bottom: 15px;
   }
-
 
   .container {
     max-width: 1580px;
@@ -150,6 +148,7 @@
   &__content {
     width: 50%;
     align-self: center;
+    margin-top: -60px;
 
     @include respond(xxxl) {
       margin-top: -85px;
@@ -210,10 +209,14 @@
     }
   }
   .common-btn {
-      font-size: 18px;
-      font-weight: 400;
-      letter-spacing: 1.5px;
+    font-size: 18px;
+    font-weight: 100;
+    letter-spacing: 2px;
+
+    .common-btn__inner {
+      padding: 15px 35px;
     }
+  }
   &__desc {
     font-size: 18px;
     color: var(--body-color);
@@ -232,7 +235,6 @@
       font-size: 15px;
     }
   }
-
 
   &__images {
     width: 100%;
@@ -278,7 +280,6 @@
     @include respond(lg) {
       top: 0;
     }
-
   }
 
   &__line-wrap {
@@ -287,10 +288,10 @@
     left: 53%;
     transform: translate(-50%, -50%);
     width: 100%;
+    max-width: 85%;
     z-index: 1;
 
     @include respond(xxxxl) {
-      max-width: 90%;
       top: 45%;
     }
 
@@ -310,7 +311,6 @@
 
   &__line {
     display: block;
-    max-width: 100%;
     width: 100%;
   }
 
@@ -319,25 +319,25 @@
     z-index: 4;
 
     &--cat {
-      left: 0%;
+      width: 108px;
+      left: 2%;
       top: 47%;
       transform: translateY(-50%);
 
       @include respond(xxxxl) {
-        max-width: 90%;
+        max-width: 90px;
         top: 42%;
       }
 
       @include respond(xxxl) {
-        top: 38%;
+        top: 40%;
       }
 
       @include respond(xxl) {
-        top: 35%;
+        max-width: 70px;
       }
 
       @include respond(xl) {
-        top: 42%;
         width: 90px;
       }
 
@@ -358,20 +358,19 @@
     }
 
     &--dog {
-      right: 9%;
-      top: 0;
+      right: 12%;
+      top: 5%;
 
       @include respond(xxxxl) {
         max-width: 90%;
-        top: -2%;
+        top: 3%;
       }
 
       @include respond(xxxl) {
-        top: -3%;
+        top: 0%;
       }
 
       @include respond(xl) {
-        top: 0%;
         width: 60px;
       }
 

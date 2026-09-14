@@ -1,6 +1,5 @@
 @use "../abstracts" as *;
 
-
 .hero-grooming {
   position: relative;
   padding: 190px 20px 0;
@@ -89,7 +88,9 @@
     justify-content: center;
     opacity: 0;
     transform: translateY(-50%) rotate(0deg);
-    transition: opacity 0.8s ease, transform 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition:
+      opacity 0.8s ease,
+      transform 1s cubic-bezier(0.34, 1.56, 0.64, 1);
 
     &--visible {
       opacity: 1;
@@ -233,7 +234,8 @@
     border-radius: 20px;
     max-width: 415px;
     text-align: left;
-    box-shadow: 0 10px 30px color-mix(in srgb, var(--heading-color), transparent 90%);
+    box-shadow: 0 10px 30px
+      color-mix(in srgb, var(--heading-color), transparent 90%);
     z-index: 10;
     order: 1;
 
@@ -278,9 +280,7 @@
     @include respond(lg) {
       display: none;
     }
-
   }
-
 
   &__offer-title {
     color: var(--heading-color);
@@ -359,8 +359,6 @@
     pointer-events: none;
   }
 
-
-
   &__specialist-title {
     font-size: 36px;
     color: var(--white-color);
@@ -402,10 +400,14 @@
   &__specialist-btn {
     width: fit-content;
     .common-btn {
-      font-size: 18px;
-      font-weight: 400;
-      letter-spacing: 1.5px;
+    font-size: 18px;
+    font-weight: 100;
+    letter-spacing: 2px;
+
+    .common-btn__inner {
+      padding: 15px 35px;
     }
+  }
 
     @include respond(xxl) {
       .common-btn {

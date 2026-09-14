@@ -25,14 +25,12 @@
   &__main-img {
     max-width: 100%;
     border-radius: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     object-fit: cover;
 
-    @include respond(xxl) {
-      margin-bottom: 30px;
-    }
 
-    @include respond(sm) {
+
+    @include respond(lg) {
       margin-bottom: 20px;
     }
   }
@@ -40,7 +38,7 @@
   &__title {
     color: var(--primary-color);
     font-size: 48px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 
     @include respond(xxxl) {
       font-size: 42px;
@@ -48,7 +46,6 @@
 
     @include respond(xxl) {
       font-size: 38px;
-      margin-bottom: 20px;
     }
 
     @include respond(lg) {
@@ -57,7 +54,7 @@
 
     @include respond(md) {
       font-size: 32px;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
   }
 
@@ -78,7 +75,7 @@
     color: var(--primary-color);
     font-size: 48px;
     margin-top: 80px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 
     @include respond(xxxl) {
       font-size: 42px;
@@ -86,7 +83,6 @@
 
     @include respond(xxl) {
       font-size: 38px;
-      margin-bottom: 20px;
       margin-top: 60px;
     }
 
@@ -97,7 +93,7 @@
 
     @include respond(md) {
       font-size: 30px;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
   }
 
@@ -105,12 +101,11 @@
     color: var(--primary-color);
     font-size: 36px;
     margin-top: 60px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 
     @include respond(xxl) {
       font-size: 32px;
       margin-top: 20px;
-      margin-bottom: 20px;
     }
 
     @include respond(lg) {
@@ -119,7 +114,7 @@
 
     @include respond(md) {
       font-size: 26px;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
   }
 

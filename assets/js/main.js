@@ -1,4 +1,4 @@
-﻿(function ($) {
+(function ($) {
   ("use strict");
 
   // Register GSAP ScrollTrigger
@@ -50,7 +50,9 @@
     function initAOS() {
       if (aosInitDone) return;
       aosInitDone = true;
-      AOS.init();
+      AOS.init({
+        once: true,
+      });
       // Trigger CSS keyframe animations that were paused waiting for the preloader
       document.body.classList.add("preloader-done");
 

@@ -68,7 +68,7 @@
   &__menu {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 35px;
 
     @include respond(xxxl) {
       gap: 30px;
@@ -210,7 +210,6 @@
         padding-left: 30px;
       }
     }
-
 
     &:has(&-item:hover) {
       .site-header__submenu-link--active:not(:hover) {
@@ -537,10 +536,8 @@
     color: var(--heading-color);
     font-family: var(--body-font-family);
     font-weight: 600;
+    padding: 20px 0 0 10px;
 
-    @include respond(xxxxl) {
-      padding-left: 20px;
-    }
     @include respond(xxxl) {
       font-size: 14px;
       font-weight: 500;

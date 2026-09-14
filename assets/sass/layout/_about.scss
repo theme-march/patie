@@ -79,6 +79,7 @@
     .mission-title {
       font-size: 30px;
       margin-bottom: 20px;
+      text-transform: capitalize;
 
       @include respond(xl) {
         margin-bottom: 15px;

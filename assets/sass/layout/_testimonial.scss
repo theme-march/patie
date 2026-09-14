@@ -63,7 +63,7 @@
 
     &--prev {
       left: 5%;
-      top: 160px;
+      top: 130px;
       transform: none;
 
       @include respond(xxl) {
@@ -84,7 +84,7 @@
 
     &--next {
       right: 5%;
-      top: 160px;
+      top: 130px;
       transform: none;
 
       @include respond(xxl) {
@@ -153,7 +153,7 @@
 
   &__rating {
     color: var(--primary-color);
-    font-size: 20px;
+    font-size: 15px;
     margin-bottom: 25px;
     display: inline-flex;
     padding: 5px 15px;

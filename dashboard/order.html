@@ -57,7 +57,7 @@
 
     <!-- ================= Order Dashboard ======================== -->
     <div class="dashboard">
-      <header class="dashboard-topbar" role="banner">
+      <header class="dashboard-topbar">
         <div class="dashboard-topbar__logo-slot">
           <a
             href="../index.html"
@@ -226,6 +226,7 @@
           <!-- Mobile-only action buttons (shown below md breakpoint) -->
           <div
             class="dashboard-sidebar__mobile-actions"
+            role="region"
             aria-label="Quick actions"
           >
             <a
@@ -275,7 +276,7 @@
 
             <div class="order-toolbar">
               <div class="order-toolbar__row order-toolbar__row--top">
-                <span class="order-toolbar__results">
+                <div class="order-toolbar__results">
                   Results Per Page
                   <div class="order-toolbar__results-select-wrap">
                     <select
@@ -291,7 +292,7 @@
                       aria-hidden="true"
                     ></i>
                   </div>
-                </span>
+                </div>
 
                 <div class="order-toolbar__search-wrap">
                   <label for="product-search" class="visually-hidden"
@@ -621,6 +622,7 @@
                             src="../assets/img/dashboard/order-food-5.png"
                             alt="Pet Fuel"
                             class="order-table__product-img"
+                          />
                           <span class="order-table__product-name"
                             >Pat Fuel</span
                           >

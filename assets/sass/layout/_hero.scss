@@ -13,9 +13,6 @@
   @include respond(lg) {
     padding: 60px 0;
   }
-  @include respond(sm) {
-    padding: 60px 0 0;
-  }
 
   &__shape {
     position: absolute;

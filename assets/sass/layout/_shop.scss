@@ -35,7 +35,7 @@
     flex-wrap: wrap;
     gap: 20px;
 
-    @include respond(md) {
+    @include respond(lg) {
       margin-bottom: 40px;
     }
   }

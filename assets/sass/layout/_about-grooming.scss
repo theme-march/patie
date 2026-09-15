@@ -58,8 +58,9 @@
     margin-bottom: 30px;
     margin-top: 10px;
 
-    @include respond(md) {
+    @include respond(lg) {
       margin-bottom: 20px;
+      margin-top: 20px;
     }
   }
 

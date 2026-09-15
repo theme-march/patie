@@ -217,7 +217,7 @@
     object-position: bottom;
 
     @include respond(lg) {
-      bottom: -25px;
+      bottom: -20px;
     }
 
     @include respond(sm) {

@@ -10,6 +10,7 @@
   @include respond(lg) {
     position: static;
     margin-top: 30px;
+    gap: 40px;
   }
 
   &__widget {
@@ -89,19 +90,9 @@
     transition: all 0.3s ease;
     line-height: normal;
 
-    @include respond(xxxl) {
-      font-size: 22px;
-      padding: 10px 10px 10px 20px;
-    }
-
     @include respond(lg) {
-      font-size: 20px;
-      padding: 9px 9px 9px 20px;
-    }
-
-    @include respond(md) {
-      font-size: 18px;
-      padding: 5px 9px 5px 20px;
+      font-size: 21px;
+      padding: 10px 10px 10px 20px;
     }
 
     &:hover {

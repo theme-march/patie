@@ -132,6 +132,7 @@
         @include respond(md) {
             font-size: 36px;
             line-height: 40px;
+            margin-bottom: 10px;
         }
 
         @include respond(sm) {
@@ -159,6 +160,10 @@
         @include respond(xl) {
             gap: 15px;
             margin-top: 15px;
+        }
+        @include respond(lg) {
+            gap: 3px;
+            line-height: 22px;
         }
 
         @include respond(md) {
@@ -202,9 +207,6 @@
         margin-top: 20px;
         margin-bottom: 30px;
 
-        @include respond(lg) {
-            margin-bottom: 20px;
-        }
 
         @include respond(md) {
             padding: 30px 30px 20px 40px;

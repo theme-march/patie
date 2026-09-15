@@ -28,7 +28,7 @@
 
     @include respond(lg) {
       gap: 20px;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
   }
 
@@ -65,7 +65,7 @@
   &__pagination {
     margin-top: 60px;
 
-    @include respond(md) {
+    @include respond(lg) {
       margin-top: 40px;
     }
   }

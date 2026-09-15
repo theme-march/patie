@@ -138,6 +138,9 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      @include respond(md) {
+        line-height: 20px;
+      }
 
       &-icon {
         color: var(--primary-color);

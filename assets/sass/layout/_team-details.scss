@@ -103,12 +103,8 @@
     color: var(--body-color);
     font-size: 18px;
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     text-transform: none;
-
-    @include respond(md) {
-      margin-bottom: 15px;
-    }
   }
 
   &__desc {
@@ -121,6 +117,9 @@
     flex-wrap: wrap;
     gap: 25px;
     margin-bottom: 30px;
+    @include respond(lg) {
+      gap: 20px;
+    }
 
     &-item {
       font-family: var(--heading-font-family);
@@ -149,6 +148,9 @@
     gap: 90px;
     margin-bottom: 40px;
 
+    @include respond(lg) {
+      margin-bottom: 30px;
+    }
     @include respond(sm) {
       gap: 30px;
     }
@@ -235,6 +237,7 @@
 
       @include respond(lg) {
         font-size: 28px;
+        margin-bottom: 20px;
       }
     }
   }
@@ -282,7 +285,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    width: 0; // starts at 0; JS animates to data-width
+    width: 0;
     transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 

@@ -11,7 +11,7 @@
 
     @include respond(lg) {
       gap: 20px;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
 
     &--center {
@@ -37,12 +37,13 @@
 
     @include respond(lg) {
       grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
     }
 
     @include respond(sm) {
       grid-template-columns: 1fr;
       padding: 0 25px;
-      gap: 60px;
+      gap: 50px;
     }
   }
 }

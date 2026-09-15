@@ -47,7 +47,7 @@
       animation-duration: 5s;
       animation-delay: 0.8s;
 
-      @include respond(md) {
+      @include respond(lg) {
         display: none;
       }
     }
@@ -61,6 +61,9 @@
 
       @include respond(xl) {
         left: 22%;
+      }
+      @include respond(lg) {
+        left: 10%;
       }
       @include respond(md) {
         display: none;

@@ -126,6 +126,7 @@
 
       @include respond(lg) {
         font-size: 40px;
+        line-height: 50px;
         width: 100%;
       }
 
@@ -144,6 +145,10 @@
     gap: 35px;
     margin-top: 50px;
     margin-bottom: 30px;
+    
+    @include respond(lg) {
+        margin-top: 40px;
+      }
 
     @include respond(md) {
       grid-template-columns: repeat(2, 1fr);

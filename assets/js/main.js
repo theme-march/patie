@@ -1373,6 +1373,9 @@
      Mobile Menu Sidebar Functionality
   --------------------------------------------------------------*/
   function initMobileMenu() {
+    // Only run on pages that have a site header (not dashboard pages)
+    if ($(".site-header").length === 0) return;
+
     // Check if mobile sidebar exists; if not, create it
     if ($(".mobile-sidebar").length === 0) {
       // Get logo source

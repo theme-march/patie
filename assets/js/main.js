@@ -253,8 +253,10 @@
     });
     //  Menu Text Split
     $(".ak-animo_links > li > a").each(function () {
-      let xxx = $(this).html().split("").join("</span><span>");
-      $(this).html(`<span class="ak-animo_text"><span>${xxx}</span></span>`);
+      let splitLetters = $(this).html().split("").join("</span><span>");
+      $(this).html(
+        `<span class="ak-animo_text"><span>${splitLetters}</span></span>`,
+      );
     });
   }
 

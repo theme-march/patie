@@ -216,10 +216,11 @@
   width: 100%;
   line-height: 0;
 
-  iframe {
+  &__iframe {
     width: 100%;
     height: 600px;
     display: block;
+    border: 0;
 
     @include respond(lg) {
       height: 500px;

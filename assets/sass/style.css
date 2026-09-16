@@ -15940,18 +15940,19 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
   width: 100%;
   line-height: 0;
 }
-.map-section iframe {
+.map-section__iframe {
   width: 100%;
   height: 600px;
   display: block;
+  border: 0;
 }
 @media (max-width: 992px) {
-  .map-section iframe {
+  .map-section__iframe {
     height: 500px;
   }
 }
 @media (max-width: 768px) {
-  .map-section iframe {
+  .map-section__iframe {
     height: 400px;
   }
 }
@@ -17462,6 +17463,7 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
   border-bottom: 1px solid var(--body-color);
 }
 .dashboard-bookings__table tbody {
+  --bs-border-color: transparent;
   border-top: none !important;
 }
 .dashboard-bookings__table tbody tr {

@@ -555,7 +555,7 @@
     11. Accordion
  --------------------------------------------------------------*/
   if ($.exists(".ak-accordion-title")) {
-    $(".ak-accordion-title").click(function () {
+    $(".ak-accordion-title").on("click", function () {
       $(this).toggleClass("active");
       var $accordionTab = $(this).next(".ak-accordion-tab");
       $accordionTab.slideToggle();
@@ -1295,8 +1295,8 @@
       });
 
       // Submit query when pressing Enter key
-      $input.on("keypress", function (e) {
-        if (e.which === 13) {
+      $input.on("keydown", function (e) {
+        if (e.key === "Enter") {
           const query = $(this).val().trim();
           if (query) {
             window.location.href = `shop.html?search=${encodeURIComponent(query)}`;

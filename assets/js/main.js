@@ -852,7 +852,7 @@
       const $next = $(".before-and-after__img--next");
 
       // Set new src on the incoming image
-      const newSrc = dots.eq(newIndex).data("src");
+      const newSrc = dots.eq(newIndex).data("img-src");
       if (newSrc) $next.attr("src", newSrc);
 
       // Position next image off-screen instantly (no transition)

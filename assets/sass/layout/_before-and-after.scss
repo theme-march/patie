@@ -260,9 +260,7 @@
     border-radius: 50%;
     cursor: pointer;
     display: block;
-    transition:
-      height 0.3s ease,
-      border-radius 0.3s ease;
+    transition: background-color 0.3s ease;
 
     @include respond(lg) {
       width: 8px;
@@ -271,16 +269,8 @@
 
     &--active {
       background-color: var(--secondary-color) !important;
-      width: 12px;
-      height: 22px;
-      border-radius: 50px;
-      transition: none;
-
-      @include respond(lg) {
-        width: 20px;
-        height: 8px;
-      }
     }
+
     &:not(&--active):hover {
       background-color: var(--secondary-color);
     }

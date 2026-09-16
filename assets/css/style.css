@@ -10354,7 +10354,7 @@ i[class*=fa] {
   border-radius: 50%;
   cursor: pointer;
   display: block;
-  transition: height 0.3s ease, border-radius 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 @media (max-width: 992px) {
   .before-and-after__dot {
@@ -10364,16 +10364,6 @@ i[class*=fa] {
 }
 .before-and-after__dot--active {
   background-color: var(--secondary-color) !important;
-  width: 12px;
-  height: 22px;
-  border-radius: 50px;
-  transition: none;
-}
-@media (max-width: 992px) {
-  .before-and-after__dot--active {
-    width: 20px;
-    height: 8px;
-  }
 }
 .before-and-after__dot:not(.before-and-after__dot--active):hover {
   background-color: var(--secondary-color);
@@ -17673,5 +17663,3 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 .cp-footer__link:hover {
   text-decoration: underline;
 }
-
-/*# sourceMappingURL=style.css.map */

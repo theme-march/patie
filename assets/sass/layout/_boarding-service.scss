@@ -1,4 +1,7 @@
-﻿@use "../abstracts" as *;
+﻿/*--------------------------------------------------------------
+38. Boarding Service
+----------------------------------------------------------------*/
+@use "../abstracts" as *;
 
 .boarding-service {
 
@@ -124,7 +127,6 @@
 
 
 
-  /* Modifiers */
   &--purple {
     --theme-color: var(--primary-color);
 

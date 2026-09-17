@@ -1,3 +1,6 @@
+/*--------------------------------------------------------------
+11. Mobile Sidebar
+----------------------------------------------------------------*/
 @use "../abstracts" as *;
 
 .mobile-sidebar {
@@ -136,7 +139,6 @@
     }
   }
 
-  // When any link is hovered, revert the active link back to white (mirrors navbar behaviour)
   &:has(&__link:hover) {
     .mobile-menu__link--active:not(:hover) {
       color: var(--white-color);
@@ -191,8 +193,6 @@
         color: var(--secondary-color);
         padding-left: 15px;
       }
-
-      // When any submenu link is hovered, revert the active one back to its base colour
       .mobile-menu__submenu:has(.mobile-menu__submenu-link:hover)
         &--active:not(:hover) {
         color: color-mix(in srgb, var(--white-color), transparent 20%);

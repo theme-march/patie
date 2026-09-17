@@ -1,3 +1,6 @@
+/*--------------------------------------------------------------
+39. Boarding Testimonial
+----------------------------------------------------------------*/
 @use "../abstracts" as *;
 
 .boarding-testimonial {
@@ -195,6 +198,7 @@
 
   &__name {
     color: var(--white-color);
+    font-size: 30px;
     margin-bottom: 5px;
 
     @include respond(lg) {

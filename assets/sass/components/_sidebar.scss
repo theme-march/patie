@@ -1,3 +1,6 @@
+/*--------------------------------------------------------------
+8. Sidebar
+----------------------------------------------------------------*/
 @use "../abstracts" as *;
 
 .sidebar {
@@ -684,7 +687,6 @@
   }
 }
 
-// ─── Dashboard Sidebar ────────────────────────────────────────────────────────
 .dashboard-sidebar {
   width: 400px;
   min-width: 400px;
@@ -853,13 +855,8 @@
   }
 }
 
-// ─── Dashboard Sidebar – Mobile (below md: 768px) ────────────────────────────
-
-// Override: below lg the sidebar is hidden by default but becomes a slide-in
-// drawer. Below md it also gains the mobile-actions panel.
 @include respond(lg) {
   .dashboard-sidebar {
-    // Switch from display:none to a positioned off-screen drawer
     display: flex !important;
     position: fixed;
     top: 0;
@@ -879,7 +876,6 @@
   }
 }
 
-// Overlay backdrop
 .dashboard-sidebar-overlay {
   display: none;
   position: fixed;
@@ -895,7 +891,6 @@
   }
 }
 
-// Avatar toggle button (wraps the avatar img in the topbar)
 .dashboard-topbar__avatar-btn {
   background: none;
   border: none;
@@ -913,7 +908,6 @@
   }
 }
 
-// Mobile actions panel – hidden by default, shown only below md
 .dashboard-sidebar__mobile-actions {
   display: none;
 
@@ -960,7 +954,6 @@
 }
 
 
-// Sidebar close button — only shown in drawer mode (below lg)
 .dashboard-sidebar__close {
   display: none;
 

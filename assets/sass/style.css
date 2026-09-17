@@ -7,12 +7,70 @@
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
 /*--------------------------------------------------------------
-2. Typography
+1. Typography
 ----------------------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@100..900&family=Passion+One:wght@400;700;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 /*--------------------------------------------------------------
@@ -53,8 +111,66 @@
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
 html {
@@ -228,12 +344,70 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
 /*--------------------------------------------------------------
-  5. General
+  2. General
 ----------------------------------------------------------------*/
 .ak-light {
   font-weight: 300;
@@ -500,12 +674,70 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
 /*--------------------------------------------------------------
-  4. Spacing
+  3. Spacing
 ----------------------------------------------------------------*/
 .ak-height-0 {
   height: 0px;
@@ -960,10 +1192,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+4. Buttons
+----------------------------------------------------------------*/
 .common-btn {
   display: inline-flex;
   padding: 4px;
@@ -1470,10 +1763,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+5. Section Header
+----------------------------------------------------------------*/
 .section-header {
   display: flex;
   align-items: normal;
@@ -1592,10 +1946,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+6. Pagination
+----------------------------------------------------------------*/
 .common-pagination {
   display: flex;
   justify-content: center;
@@ -1713,10 +2128,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+7. Common Banner
+----------------------------------------------------------------*/
 .common-banner {
   position: relative;
   padding: 250px 0 100px;
@@ -1842,10 +2318,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+8. Sidebar
+----------------------------------------------------------------*/
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -2782,10 +3319,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+9. Scrollup
+----------------------------------------------------------------*/
 .ak-scrollup {
   position: fixed;
   right: 40px;
@@ -2835,10 +3433,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+10. Header
+----------------------------------------------------------------*/
 .site-header {
   background-color: var(--primary-color);
   display: flex;
@@ -3565,10 +4224,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+11. Mobile Sidebar
+----------------------------------------------------------------*/
 .mobile-sidebar {
   position: fixed;
   top: 0;
@@ -3740,10 +4460,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+12. Hero
+----------------------------------------------------------------*/
 .hero {
   position: relative;
   padding: 200px 0 90px;
@@ -4081,10 +4862,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+13. About
+----------------------------------------------------------------*/
 .about {
   position: relative;
   overflow: hidden;
@@ -4355,10 +5197,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+14. Service
+----------------------------------------------------------------*/
 .service {
   overflow: hidden;
 }
@@ -4612,10 +5515,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+15. Pet Grooming Service
+----------------------------------------------------------------*/
 .pet-grooming-service {
   position: relative;
   overflow: hidden;
@@ -4900,10 +5864,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+16. Video
+----------------------------------------------------------------*/
 .video-section {
   position: relative;
   overflow: hidden;
@@ -5068,10 +6093,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+17. Testimonial
+----------------------------------------------------------------*/
 .testimonial {
   position: relative;
   overflow: hidden;
@@ -5353,10 +6439,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+18. Team
+----------------------------------------------------------------*/
 .team__header {
   display: flex;
   justify-content: space-between;
@@ -5812,10 +6959,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+19. Working Process
+----------------------------------------------------------------*/
 .working-process {
   padding: 120px 0;
   margin: 0 20px;
@@ -6274,10 +7482,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+20. Pricing
+----------------------------------------------------------------*/
 .pricing__header {
   display: flex;
   justify-content: space-between;
@@ -6548,10 +7817,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+21. Grooming Pricing
+----------------------------------------------------------------*/
 .grooming-pricing {
   position: relative;
 }
@@ -6774,10 +8104,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+22. Choose Us
+----------------------------------------------------------------*/
 .choose-us {
   padding-bottom: 100px;
 }
@@ -7080,10 +8471,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+23. Product
+----------------------------------------------------------------*/
 .product__header {
   display: flex;
   justify-content: space-between;
@@ -7301,10 +8753,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+24. blog
+----------------------------------------------------------------*/
 .blog {
   position: relative;
   overflow: clip;
@@ -7652,10 +9165,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+25. Blog Standard
+----------------------------------------------------------------*/
 .blog:has(.blog__standard-container) {
   overflow: visible;
 }
@@ -7766,10 +9340,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+26. Footer
+----------------------------------------------------------------*/
 .footer {
   position: relative;
   overflow: hidden;
@@ -8927,10 +10562,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+27. Hero Grooming
+----------------------------------------------------------------*/
 .hero-grooming {
   position: relative;
   padding: 190px 20px 0;
@@ -9409,10 +11105,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+28. About Grooming
+----------------------------------------------------------------*/
 .about-grooming__row {
   display: flex;
   align-items: center;
@@ -9606,10 +11363,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+29. Parent Testimonial
+----------------------------------------------------------------*/
 .parent-testimonial {
   background-color: var(--white-color);
   position: relative;
@@ -9816,10 +11634,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+30. FAQ
+----------------------------------------------------------------*/
 .faq {
   display: flex;
   flex-wrap: wrap;
@@ -10005,10 +11884,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+31. Parent Marquee
+----------------------------------------------------------------*/
 .partner-marquee {
   display: flex;
   background-color: var(--secondary-color);
@@ -10106,10 +12046,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+32. Grooming Choose Us
+----------------------------------------------------------------*/
 .grooming-choose-us {
   position: relative;
 }
@@ -10339,10 +12340,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+33. Grooming Team
+----------------------------------------------------------------*/
 .grooming-team {
   overflow: hidden;
   position: relative;
@@ -10594,10 +12656,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+34. Before And After
+----------------------------------------------------------------*/
 .before-and-after {
   display: flex;
   position: relative;
@@ -10887,10 +13010,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+35. Grooming Blog
+----------------------------------------------------------------*/
 .grooming-blog__heading {
   margin-bottom: 40px;
 }
@@ -11204,10 +13388,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+36. Boarding Hero
+----------------------------------------------------------------*/
 .boarding-hero {
   position: relative;
   z-index: 1;
@@ -11657,10 +13902,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+37. Boarding About
+----------------------------------------------------------------*/
 .boarding-about {
   position: relative;
   overflow: hidden;
@@ -12100,10 +14406,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+38. Boarding Service
+----------------------------------------------------------------*/
 .boarding-service__top {
   display: flex;
   justify-content: space-between;
@@ -12227,9 +14594,6 @@ i[class*=fa] {
 .boarding-service-card__desc {
   margin-bottom: 20px;
 }
-.boarding-service-card {
-  /* Modifiers */
-}
 .boarding-service-card--purple {
   --theme-color: var(--primary-color);
 }
@@ -12292,10 +14656,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+39. Boarding Testimonial
+----------------------------------------------------------------*/
 .boarding-testimonial {
   position: relative;
   z-index: 5;
@@ -12492,6 +14917,7 @@ i[class*=fa] {
 }
 .boarding-testimonial__name {
   color: var(--white-color);
+  font-size: 30px;
   margin-bottom: 5px;
 }
 @media (max-width: 992px) {
@@ -12663,10 +15089,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+40. Boarding Choose Us
+----------------------------------------------------------------*/
 .boarding-choose-us {
   position: relative;
   z-index: 1;
@@ -12881,10 +15368,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+41. Boarding Pricing
+----------------------------------------------------------------*/
 .boarding-pricing__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -13058,10 +15606,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+42. Boarding Blog
+----------------------------------------------------------------*/
 .boarding-blog__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -13289,10 +15898,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+43. Service Details
+----------------------------------------------------------------*/
 .service-details__layout {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -13486,10 +16156,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+44. Team Details
+----------------------------------------------------------------*/
 .team-details__img-wrap {
   background-color: var(--smoke-bg-color);
   padding: 30px;
@@ -13784,10 +16515,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+45. Blog Details
+----------------------------------------------------------------*/
 .blog-details__layout {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -14436,10 +17228,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+46. Shop
+----------------------------------------------------------------*/
 .shop__layout {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -14555,10 +17408,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+47. Shop Details
+----------------------------------------------------------------*/
 .shop-details__layout {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -14959,10 +17873,71 @@ i[class*=fa] {
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+48. Cart
+----------------------------------------------------------------*/
 .cart__container {
   max-width: 1600px;
   margin: 0 auto;
@@ -15408,10 +18383,71 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+49. Checkout
+----------------------------------------------------------------*/
 .checkout-section__layout {
   display: flex;
   flex-wrap: wrap;
@@ -15724,10 +18760,71 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+50. Contact
+----------------------------------------------------------------*/
 .contact-section__layout {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -15955,10 +19052,71 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+51. Error
+----------------------------------------------------------------*/
 .error-section {
   text-align: center;
 }
@@ -15992,10 +19150,71 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+52. Sign In
+----------------------------------------------------------------*/
 .sign-in {
   position: relative;
   overflow: hidden;
@@ -16274,10 +19493,71 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+53. Sign Up
+----------------------------------------------------------------*/
 .sign-up {
   position: relative;
   background-color: var(--white-color);
@@ -16572,10 +19852,71 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+54. Forget Password
+----------------------------------------------------------------*/
 .forget-password {
   position: relative;
   min-height: 100vh;
@@ -16716,10 +20057,71 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+55. Password Reset
+----------------------------------------------------------------*/
 .password-reset {
   position: relative;
   min-height: 100vh;
@@ -16875,10 +20277,71 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+56. Set New Password
+----------------------------------------------------------------*/
 .set-newpassword {
   position: relative;
   min-height: 100vh;
@@ -17030,10 +20493,71 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+57. Dashboard
+----------------------------------------------------------------*/
 .dashboard {
   display: flex;
   flex-direction: column;
@@ -17603,10 +21127,71 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+58. Order
+----------------------------------------------------------------*/
 .order-page {
   flex: 1;
   display: flex;
@@ -18041,10 +21626,71 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+59. Lead Management
+----------------------------------------------------------------*/
 .lead-page {
   flex: 1;
   display: flex;
@@ -18444,10 +22090,71 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
+/*--------------------------------------------------------------
+60. Change Password
+----------------------------------------------------------------*/
 .cp-page {
   flex: 1;
   display: flex;

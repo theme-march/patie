@@ -1,3 +1,6 @@
+/*--------------------------------------------------------------
+10. Header
+----------------------------------------------------------------*/
 @use "../abstracts" as *;
 
 .site-header {
@@ -680,8 +683,6 @@
     color: var(--white-color);
   }
 
-  // The base header hides the bg pill on the active item when another is hovered.
-  // Mirror that here: turn the active link back to black when it loses its bg.
   .site-header__menu:has(.site-header__menu-item:hover) {
     .site-header__menu-item--active:not(:hover) {
       .site-header__menu-link {

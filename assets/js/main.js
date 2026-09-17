@@ -1,12 +1,4 @@
-(function ($) {
-  ("use strict");
-
-  // Register GSAP ScrollTrigger
-  if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
-    gsap.registerPlugin(ScrollTrigger);
-  }
-
-  /*
+/*
 |--------------------------------------------------------------------------
 | Template Name: PATIE
 | Author: Thememarch
@@ -17,23 +9,45 @@
 |--------------------------------------------------------------------------
 | 1. Preloader
 | 2. Mobile Menu
-| 3. Sticky Header
-| 4. Dynamic Background
-| 5. Slick Slider
-| 6. Modal Video
-| 7. Scroll Up
-| 8. Hover text Animation
-| 9. Pagination 
-| 10. Company Tab
-| 11. Accordion
-| 12. Sticky Content
-| 13. Comming Soon Counter
-| 14. Light Gallery
-| 15. Counter
+| 3. Active Navigation State
+| 4. Sticky Header
+| 5. Dynamic Background
+| 6. Swiper Slider
+| 7. Modal Video
+| 8. Scroll Up
+| 9. Before & After Image Reveal
+| 10. Count Up Animation
+| 11. Progress Bar Animation
+| 12. Accordion
+| 13. Testimonial Slider
+| 14. Price Range Slider
+| 15. Search Toggle
+| 16. Shop Search Filter
+| 17. Mobile Menu Sidebar
+| 18. Dashboard Sidebar
+| 19. Working Process Accordion
+| 20. Doctor Tooltip
+| 21. Shop Details Functionality
+| 22. Service Button Dash Animation
+| 23. Password Toggle (Sign In / Sign Up)
+| 24. OTP Input
+| 25. Sales Performance Chart
+| 26. Services Doughnut Chart
+| 27. Table Controls (Select All / Delete)
+|--------------------------------------------------------------------------
+*/
 
-    /*--------------------------------------------------------------
-    Scripts initialization
---------------------------------------------------------------*/
+/*-------------------------------------------------------------------------
+  Scripts initialization
+  ------------------------------------------------------------------------*/
+
+var scriptStart = Date.now();
+(function ($) {
+  ("use strict");
+
+  if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+  }
 
   $.exists = function (selector) {
     return $(selector).length > 0;
@@ -42,22 +56,17 @@
   $(window).on("load", function () {
     $(window).trigger("scroll");
     $(window).trigger("resize");
-    // preloader();
 
-    // Initialize AOS immediately (so it stamps opacity:0 on all [data-aos]
-    // elements right away), but tell it to wait for a custom "aosStart" event
-    // before it begins animating. That event fires once the preloader has
-    // fully faded out, eliminating the flash of unstyled content between the
-    // preloader disappearing and AOS kicking in.
+  /*--------------------------------------------------------------
+       1. Preloader
+  --------------------------------------------------------------*/
     AOS.init({
       once: true,
       startEvent: "aosStart",
     });
 
     function onPreloaderDone() {
-      // Trigger CSS keyframe animations that were paused waiting for the preloader
       document.body.classList.add("preloader-done");
-      // Now let AOS start animating
       document.dispatchEvent(new Event("aosStart"));
 
       var heroBadge = document.querySelector(".hero-grooming__badge");
@@ -117,110 +126,37 @@
     });
   }
 
-  /*--------------------------------------------------------------
-    Before & After Image GSAP Slide Reveal
-  --------------------------------------------------------------*/
-  function beforeAndAfterReveal() {
-    const img = document.querySelector(".before-and-after__img");
-    if (!img || typeof gsap === "undefined") return;
+  (function () {
+    var preloader = document.getElementById("preloader");
+    if (!preloader) return;
 
-    gsap.fromTo(
-      img,
-      { x: "100%", opacity: 0 },
-      {
-        x: "0%",
-        opacity: 1,
-        duration: 1.1,
-        ease: "power3.out",
-        clearProps: "transform,opacity",
-        scrollTrigger: {
-          trigger: ".before-and-after__right-wrap",
-          start: "top 80%",
-          once: true,
-        },
-      },
-    );
-  }
+    var MIN_DISPLAY = 2500;
 
-  /*--------------------------------------------------------------
-    Count Up Animation (GSAP + ScrollTrigger)
-  --------------------------------------------------------------*/
-  function initCountUp() {
-    const countEls = document.querySelectorAll(".count-up");
-    if (!countEls.length || typeof gsap === "undefined") return;
+    function dismiss() {
+      preloader.classList.add("preloader--hidden");
 
-    countEls.forEach(function (el) {
-      const target = parseFloat(
-        el.getAttribute("data-target") || el.textContent,
-      );
-      const decimals = parseInt(el.getAttribute("data-decimals") || "0", 10);
+      document.dispatchEvent(new CustomEvent("preloaderDone"));
 
-      el.textContent = (0).toFixed(decimals);
+      preloader.addEventListener("transitionend", function handler() {
+        preloader.removeEventListener("transitionend", handler);
+        preloader.classList.add("preloader--done");
+      });
 
-      function runCount() {
-        const obj = { val: 0 };
-        gsap.to(obj, {
-          val: target,
-          duration: 2,
-          ease: "power2.out",
-          onUpdate: function () {
-            el.textContent = obj.val.toFixed(decimals);
-          },
-        });
-      }
+      setTimeout(function () {
+        preloader.classList.add("preloader--done");
+      }, 1000);
+    }
 
-      const aosParent = el.closest("[data-aos]");
-      const watchTarget = aosParent || el;
-
-      const observer = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              observer.unobserve(watchTarget);
-              // small delay so AOS fade-in and count-up start together
-              setTimeout(runCount, 100);
-            }
-          });
-        },
-        { threshold: 0.3 },
-      );
-
-      observer.observe(watchTarget);
+    window.addEventListener("load", function () {
+      var elapsed = Date.now() - scriptStart;
+      var remaining = Math.max(0, MIN_DISPLAY - elapsed);
+      setTimeout(dismiss, remaining);
     });
-  }
+  })();
 
   /*--------------------------------------------------------------
-     Progress Bar Animation (scroll-triggered)
-  --------------------------------------------------------------*/
-  function initProgressBars() {
-    var bars = document.querySelectorAll(".ak-progress-bar[data-width]");
-    if (!bars.length) return;
-
-    bars.forEach(function (bar) {
-      var targetWidth = bar.getAttribute("data-width");
-
-      var observer = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              observer.unobserve(bar);
-              // small delay so the bar is visible before expanding
-              setTimeout(function () {
-                bar.style.width = targetWidth;
-              }, 150);
-            }
-          });
-        },
-        { threshold: 0.4 },
-      );
-
-      observer.observe(bar);
-    });
-  }
-
-  /*--------------------------------------------------------------
-     2. Mobile  Menu  
- -----------------------------------------------------------------*/
+     2. Mobile Menu
+  -----------------------------------------------------------------*/
   function mainNav() {
     $(".ak-nav").append('<span class="ak-munu_toggle"><span></span></span>');
     $(".menu-item-has-children").append(
@@ -250,14 +186,12 @@
       $(this).toggleClass("active");
       $("body").toggleClass("ak-dark");
     });
-    // Side Nav
     $(".ak-icon_btn").on("click", function () {
       $(".ak-side_header").addClass("active");
     });
     $(".ak-close, .ak-side_header_overlay").on("click", function () {
       $(".ak-side_header").removeClass("active");
     });
-    //  Menu Text Split
     $(".ak-animo_links > li > a").each(function () {
       let splitLetters = $(this).html().split("").join("</span><span>");
       $(this).html(
@@ -267,7 +201,7 @@
   }
 
   /*--------------------------------------------------------------
-    2b. Active Navigation State
+    3. Active Navigation State
   --------------------------------------------------------------*/
   function setActiveNav() {
     var path = window.location.pathname;
@@ -277,7 +211,6 @@
     var $targetItem = null;
     var $targetSubmenuLink = null;
 
-    // First: try to match via submenu links (covers cart.html, checkout.html, etc.)
     $menuItems.each(function () {
       var $item = $(this);
       $item.find(".site-header__submenu-link").each(function () {
@@ -285,14 +218,13 @@
         var linkPage = href.substring(href.lastIndexOf("/") + 1);
         if (linkPage === page) {
           $targetItem = $item;
-          $targetSubmenuLink = $(this); // capture the matched submenu <a>
+          $targetSubmenuLink = $(this);
           return false;
         }
       });
       if ($targetItem) return false;
     });
 
-    // Second: if no submenu matched, try the top-level link href
     if (!$targetItem) {
       $menuItems.each(function () {
         var $item = $(this);
@@ -305,7 +237,6 @@
       });
     }
 
-    // Only apply class change and style injection if the correct item is not already active
     if (
       $targetItem &&
       !$targetItem.hasClass("site-header__menu-item--active")
@@ -327,7 +258,6 @@
       }, 50);
     }
 
-    // Mark the active submenu link (clear all first, then set the matching one)
     $(".site-header__submenu-link").removeClass(
       "site-header__submenu-link--active",
     );
@@ -337,8 +267,8 @@
   }
 
   /*--------------------------------------------------------------
-    3. Sticky Header
---------------------------------------------------------------*/
+    4. Sticky Header
+  --------------------------------------------------------------*/
   function stickyHeader() {
     var $window = $(window);
     var lastScrollTop = 0;
@@ -346,7 +276,6 @@
     var enterThreshold = 200;
     var scrollDelta = 10;
 
-    // Create spacer to prevent layout jumping when switching to fixed
     var $spacer = $(
       '<div class="ak-sticky-spacer" style="display: none;"></div>',
     );
@@ -386,7 +315,6 @@
 
       if (windowTop >= enterThreshold) {
         if (!$header.hasClass("ak-gescout_sticky")) {
-          // Add spacer height if the header is normally in document flow
           var isOut =
             $header.css("position") === "absolute" ||
             $header.css("position") === "fixed";
@@ -422,8 +350,8 @@
   }
 
   /*--------------------------------------------------------------
-     4. Dynamic Background
--------------------------------------------------------------*/
+     5. Dynamic Background
+  --------------------------------------------------------------*/
   function dynamicBackground() {
     $("[data-src]").each(function () {
       var src = $(this).attr("data-src");
@@ -433,10 +361,9 @@
     });
   }
 
-  /*--------------------------------------------------------------    
-     5. Slick Slider
- --------------------------------------------------------------*/
-
+  /*--------------------------------------------------------------
+     6. Swiper Slider
+  --------------------------------------------------------------*/
   function swiperInit() {
     if ($.exists(".ak-slider-hero-1")) {
       var swiperOptions = {
@@ -512,7 +439,7 @@
   }
 
   /*--------------------------------------------------------------
-     6. Modal Video
+     7. Modal Video
   --------------------------------------------------------------*/
   function modalVideo() {
     $(document).on("click", ".ak-video-open", function (e) {
@@ -534,8 +461,8 @@
   }
 
   /*--------------------------------------------------------------
-     7. Scroll Up
---------------------------------------------------------------*/
+     8. Scroll Up
+  --------------------------------------------------------------*/
   function scrollUp() {
     $(".ak-scrollup").on("click", function (e) {
       e.preventDefault();
@@ -547,7 +474,6 @@
       );
     });
   }
-  // For Scroll Up
   function showScrollUp() {
     let scroll = $(window).scrollTop();
     if (scroll >= 350) {
@@ -558,7 +484,106 @@
   }
 
   /*--------------------------------------------------------------
-    11. Accordion
+    9. Before & After Image GSAP Slide Reveal
+  --------------------------------------------------------------*/
+  function beforeAndAfterReveal() {
+    const img = document.querySelector(".before-and-after__img");
+    if (!img || typeof gsap === "undefined") return;
+
+    gsap.fromTo(
+      img,
+      { x: "100%", opacity: 0 },
+      {
+        x: "0%",
+        opacity: 1,
+        duration: 1.1,
+        ease: "power3.out",
+        clearProps: "transform,opacity",
+        scrollTrigger: {
+          trigger: ".before-and-after__right-wrap",
+          start: "top 80%",
+          once: true,
+        },
+      },
+    );
+  }
+
+  /*--------------------------------------------------------------
+    10. Count Up Animation (GSAP + ScrollTrigger)
+  --------------------------------------------------------------*/
+  function initCountUp() {
+    const countEls = document.querySelectorAll(".count-up");
+    if (!countEls.length || typeof gsap === "undefined") return;
+
+    countEls.forEach(function (el) {
+      const target = parseFloat(
+        el.getAttribute("data-target") || el.textContent,
+      );
+      const decimals = parseInt(el.getAttribute("data-decimals") || "0", 10);
+
+      el.textContent = (0).toFixed(decimals);
+
+      function runCount() {
+        const obj = { val: 0 };
+        gsap.to(obj, {
+          val: target,
+          duration: 2,
+          ease: "power2.out",
+          onUpdate: function () {
+            el.textContent = obj.val.toFixed(decimals);
+          },
+        });
+      }
+
+      const aosParent = el.closest("[data-aos]");
+      const watchTarget = aosParent || el;
+
+      const observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              observer.unobserve(watchTarget);
+              setTimeout(runCount, 100);
+            }
+          });
+        },
+        { threshold: 0.3 },
+      );
+
+      observer.observe(watchTarget);
+    });
+  }
+
+  /*--------------------------------------------------------------
+    11. Progress Bar Animation (scroll-triggered)
+  --------------------------------------------------------------*/
+  function initProgressBars() {
+    var bars = document.querySelectorAll(".ak-progress-bar[data-width]");
+    if (!bars.length) return;
+
+    bars.forEach(function (bar) {
+      var targetWidth = bar.getAttribute("data-width");
+
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              observer.unobserve(bar);
+              setTimeout(function () {
+                bar.style.width = targetWidth;
+              }, 150);
+            }
+          });
+        },
+        { threshold: 0.4 },
+      );
+
+      observer.observe(bar);
+    });
+  }
+
+  /*--------------------------------------------------------------
+    12. Accordion
  --------------------------------------------------------------*/
   if ($.exists(".ak-accordion-title")) {
     $(".ak-accordion-title").on("click", function () {
@@ -575,7 +600,6 @@
     });
   }
 
-  // FAQ Accordion
   if ($.exists(".faq-accordion__header")) {
     $(".faq-accordion__header").on("click", function () {
       var item = $(this).closest(".faq-accordion__item");
@@ -617,13 +641,11 @@
   }
 
   /*--------------------------------------------------------------
-     Testimonial Slider
+     13. Testimonial Slider
   --------------------------------------------------------------*/
   function testimonialSlider() {
-    let currentIndex = 1; // Starting with the middle one (index 1)
+    let currentIndex = 1;
     const totalAvatars = $(".testimonial__avatar").length;
-
-    // Reviewer data
     const data = [
       {
         name: "JENNY WILSON",
@@ -655,20 +677,17 @@
       const slideOut = direction === "next" ? "-60px" : "60px";
       const slideIn = direction === "next" ? "60px" : "-60px";
 
-      // Phase 1: slide + fade OUT (content only, avatars stay put)
       content.style.transition = "opacity 0.22s ease, transform 0.22s ease";
       content.style.opacity = "0";
       content.style.transform = "translateX(" + slideOut + ")";
 
       setTimeout(function () {
-        // Swap content while invisible
         const item = data[index] || data[1];
         const $card = $(".testimonial__card");
         $card.find(".testimonial__name").text(item.name);
         $card.find(".testimonial__designation").text(item.role);
         $card.find(".testimonial__text").text('"' + item.text + '"');
 
-        // Build stars
         let starsHtml = "";
         const fullStars = Math.floor(item.rating);
         const hasHalf = item.rating % 1 !== 0;
@@ -691,22 +710,19 @@
           .removeClass("testimonial__avatar--side")
           .addClass("testimonial__avatar--center");
 
-        // Phase 2: snap to entry position with no transition, then animate in.
         content.style.transition = "none";
         content.style.transform = "translateX(" + slideIn + ")";
         content.style.opacity = "0";
 
         requestAnimationFrame(function () {
-          // First rAF: snap is now committed to the render tree.
           requestAnimationFrame(function () {
-            // Second rAF: safe to re-enable transitions and animate to final state.
             content.style.transition =
               "opacity 0.28s ease, transform 0.28s ease";
             content.style.opacity = "1";
             content.style.transform = "translateX(0)";
           });
         });
-      }, 240); // wait for phase 1 to finish
+      }, 240);
     }
 
     $(".testimonial__nav--next").on("click", function () {
@@ -718,8 +734,6 @@
       currentIndex = (currentIndex - 1 + totalAvatars) % totalAvatars;
       updateTestimonial(currentIndex, "prev");
     });
-
-    // Also switch on avatar click
     $(".testimonial__avatar").on("click", function () {
       const newIndex = $(this).index();
       if (newIndex === currentIndex) return;
@@ -730,10 +744,9 @@
   }
 
   function parentTestimonialSlider() {
-    let currentIndex = 1; // Middle avatar (index 1)
+    let currentIndex = 1;
     const totalAvatars = $(".parent-testimonial__avatar").length;
 
-    // Testimonial data matching avatars in pet-grooming.html
     const data = [
       {
         name: "JENNY WILSON",
@@ -758,7 +771,6 @@
     function updateTestimonial(index, direction) {
       if (totalAvatars === 0) return;
 
-      // Update avatar highlight immediately
       $(".parent-testimonial__avatar")
         .removeClass("parent-testimonial__avatar--center")
         .addClass("parent-testimonial__avatar--side");
@@ -773,20 +785,17 @@
       const slideOut = direction === "next" ? "-50px" : "50px";
       const slideIn = direction === "next" ? "50px" : "-50px";
 
-      // Phase 1: fade + slide OUT via inline styles — no class swap, no reflow
       content.style.transition = "opacity 0.22s ease, transform 0.22s ease";
       content.style.opacity = "0";
       content.style.transform = "translateX(" + slideOut + ")";
 
       setTimeout(function () {
-        // Swap content while element is invisible
         const item = data[index] || data[1];
         const $c = $(content);
         $c.find(".parent-testimonial__name").text(item.name);
         $c.find(".parent-testimonial__designation").text(item.role);
         $c.find(".parent-testimonial__text").text(item.text);
 
-        // Build stars markup
         let starsHtml = "";
         const fullStars = Math.floor(item.rating);
         const hasHalf = item.rating % 1 !== 0;
@@ -802,12 +811,10 @@
         }
         $c.find(".parent-testimonial__rating").html(starsHtml);
 
-        // Snap to entry position instantly — no offsetHeight, no reflow
         content.style.transition = "none";
         content.style.transform = "translateX(" + slideIn + ")";
         content.style.opacity = "0";
 
-        // Double rAF: commit snap first frame, animate in second frame
         requestAnimationFrame(function () {
           requestAnimationFrame(function () {
             content.style.transition =
@@ -857,11 +864,9 @@
       const $current = $(".before-and-after__img--current");
       const $next = $(".before-and-after__img--next");
 
-      // Set new src on the incoming image
       const newSrc = dots.eq(newIndex).data("img-src");
       if (newSrc) $next.attr("src", newSrc);
 
-      // Position next image off-screen instantly (no transition)
       $next.css("transition", "none");
       if (direction === "next") {
         $next
@@ -872,10 +877,9 @@
           .css("transform", "translateX(-100%)")
           .removeClass("is-entering is-entering-prev");
       }
-      $next[0].offsetHeight; // force reflow
+      $next[0].offsetHeight;
       $next.css("transition", "");
 
-      // Slide both at the same time
       if (direction === "next") {
         $current.addClass("is-leaving");
         $next.css("transform", "translateX(0)");
@@ -885,7 +889,6 @@
       }
 
       setTimeout(function () {
-        // Swap roles: next becomes current
         $current
           .removeClass("is-leaving is-leaving-prev")
           .addClass("before-and-after__img--next")
@@ -908,7 +911,6 @@
       currentIndex = nextIndex;
     }, 4000);
 
-    // Allow manual click on dots
     dots.on("click", function () {
       const newIndex = $(this).index();
       if (newIndex === currentIndex || isAnimating) return;
@@ -922,7 +924,6 @@
       changeSlide(newIndex, direction);
       currentIndex = newIndex;
 
-      // Restart auto play interval
       intervalId = setInterval(function () {
         const nextIndex = (currentIndex + 1) % totalDots;
         dots.removeClass("before-and-after__dot--active");
@@ -981,13 +982,11 @@
       const slideOut = direction === "next" ? "-50px" : "50px";
       const slideIn = direction === "next" ? "50px" : "-50px";
 
-      // Phase 1: fade + slide OUT via inline styles — no class swap, no reflow
       content.style.transition = "opacity 0.22s ease, transform 0.22s ease";
       content.style.opacity = "0";
       content.style.transform = "translateX(" + slideOut + ")";
 
       setTimeout(function () {
-        // Swap content while element is invisible
         const item = data[currentIndex];
         const $c = $(content);
         $c.find(".boarding-testimonial__text").text(item.text);
@@ -996,12 +995,10 @@
         $c.find(".boarding-testimonial__avatar").attr("src", item.avatar);
         $c.find(".boarding-testimonial__stars").html(buildStars(item.rating));
 
-        // Snap to entry position instantly — no offsetHeight, no reflow
         content.style.transition = "none";
         content.style.transform = "translateX(" + slideIn + ")";
         content.style.opacity = "0";
 
-        // Double rAF: commit snap first frame, animate in second frame
         requestAnimationFrame(function () {
           requestAnimationFrame(function () {
             content.style.transition =
@@ -1033,7 +1030,6 @@
     const $img = $(".working-process__img");
     const $badgeText = $(".working-process__badge-text");
 
-    // Steps details matching working process slides
     const stepsData = [
       {
         title: "01. CARE & LIVE MONITORING",
@@ -1059,7 +1055,6 @@
       const enterClass =
         direction === "next" ? "is-entering" : "is-entering-prev";
 
-      // 1. Slide and Fade out targets
       $img
         .removeClass("is-leaving is-leaving-prev is-entering is-entering-prev")
         .addClass(leaveClass);
@@ -1074,7 +1069,6 @@
         .addClass(leaveClass);
 
       setTimeout(function () {
-        // 2. Change contents
         const step = stepsData[index - 1] || stepsData[0];
         $badgeText.text(index.toString().padStart(2, "0"));
         $title.text(step.title);
@@ -1083,7 +1077,6 @@
         const progressPos = ((index - 1) / totalSteps) * 100;
         $progress.css("left", progressPos + "%");
 
-        // 3. Snap targets offscreen instantly
         $img.css("transition", "none");
         $badgeText.css("transition", "none");
         $title.css("transition", "none");
@@ -1094,10 +1087,8 @@
         $title.removeClass(leaveClass).addClass(enterClass);
         $desc.removeClass(leaveClass).addClass(enterClass);
 
-        // Force reflow
         $img[0].offsetHeight;
 
-        // 4. Slide back in smoothly
         $img.css("transition", "");
         $badgeText.css("transition", "");
         $title.css("transition", "");
@@ -1138,7 +1129,6 @@
 
         if ($this.hasClass(`${btnClass}--active`)) return;
 
-        // Toggle Active Class
         $(`.${btnClass}`)
           .removeClass(`${btnClass}--active`)
           .addClass(`${btnClass}--inactive`);
@@ -1149,7 +1139,6 @@
         const isYearly = $this.text().trim() === "YEARLY";
         const $section = $this.closest(sectionClass);
 
-        // 1. Update elements with explicit data-monthly and data-yearly attributes
         $section
           .find("[data-monthly][data-yearly], .grooming-pricing-card__desc")
           .fadeOut(200, function () {
@@ -1163,7 +1152,6 @@
             }
           });
 
-        // 2. Update period text (/ Per Month vs / Per Year) for elements without explicit data attributes
         $section
           .find(".pricing-card__period, .grooming-pricing-card__period")
           .not("[data-monthly]")
@@ -1182,7 +1170,6 @@
   beforeAfterSlider();
   boardingTestimonialSlider();
 
-  //end the scripts
   if ($.exists("#tp-btn-black")) {
     const btn = document.querySelector(".tp-btn-black");
     const blur = document.querySelector("#btnBlur");
@@ -1204,7 +1191,7 @@
   }
 
   /*--------------------------------------------------------------
-    16. Price Range Slider
+    14. Price Range Slider
   --------------------------------------------------------------*/
   if ($.exists(".sidebar__filter-slider")) {
     const $slider = $(".sidebar__filter-slider");
@@ -1265,7 +1252,7 @@
   }
 
   /*--------------------------------------------------------------
-     Search Toggle and Box Creation
+     15. Search Toggle and Box Creation
   --------------------------------------------------------------*/
   function initSearch() {
     const $searchBtn = $(".site-header__search-btn");
@@ -1273,21 +1260,17 @@
     if ($searchBtn.length > 0 && $searchContainer.length > 0) {
       const $input = $searchContainer.find(".site-header__search-input");
 
-      // Click behaviour on the search button
       $searchBtn.on("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
 
-        // Toggle the active class
         $searchContainer.toggleClass("site-header__search-container--active");
 
-        // If it was opened, focus the input
         if (
           $searchContainer.hasClass("site-header__search-container--active")
         ) {
           $input.focus();
         } else {
-          // If closed and has query, redirect to search page
           const query = $input.val().trim();
           if (query) {
             window.location.href = `shop.html?search=${encodeURIComponent(query)}`;
@@ -1295,19 +1278,16 @@
         }
       });
 
-      // Prevent closing when clicking inside the input container
       $searchContainer.on("click", function (e) {
         e.stopPropagation();
       });
 
-      // Submit query when pressing Enter key
       $input.on("keydown", function (e) {
         if (e.key === "Enter") {
           const query = $(this).val().trim();
           if (query) {
             window.location.href = `shop.html?search=${encodeURIComponent(query)}`;
           } else {
-            // Close search if empty press enter
             $searchContainer.removeClass(
               "site-header__search-container--active",
             );
@@ -1315,12 +1295,10 @@
         }
       });
 
-      // Close when clicking outside of the search button and input
       $(document).on("click", function () {
         $searchContainer.removeClass("site-header__search-container--active");
       });
 
-      // Close when pressing Escape key
       $(document).on("keydown", function (e) {
         if (e.key === "Escape") {
           $searchContainer.removeClass("site-header__search-container--active");
@@ -1331,7 +1309,7 @@
   }
 
   /*--------------------------------------------------------------
-     Shop Page Client-Side Filter by Search Parameter
+     16. Shop Page Client-Side Filter by Search Parameter
   --------------------------------------------------------------*/
   function handleShopSearchFilter() {
     if (window.location.pathname.includes("shop.html")) {
@@ -1376,21 +1354,17 @@
   });
 
   /*--------------------------------------------------------------
-     Mobile Menu Sidebar Functionality
+     17. Mobile Menu Sidebar Functionality
   --------------------------------------------------------------*/
   function initMobileMenu() {
-    // Only run on pages that have a site header (not dashboard pages)
     if ($(".site-header").length === 0) return;
 
-    // Check if mobile sidebar exists; if not, create it
     if ($(".mobile-sidebar").length === 0) {
-      // Get logo source
       var logoSrc =
         $(".site-header__logo-img").attr("src") ||
         "assets/img/logo/logo-together.svg";
       var logoAlt = $(".site-header__logo-img").attr("alt") || "Patie Logo";
 
-      // Build HTML structure
       var sidebarHtml = `
         <div class="mobile-sidebar">
           <div class="mobile-sidebar__header">
@@ -1412,10 +1386,8 @@
 
       $("body").append(sidebarHtml);
 
-      // Clone & map index navigation links to the sidebar content
       var $clonedMenu = $(".site-header__menu").clone();
 
-      // Clean up cloned structure: convert classes to mobile menu BEM classes to avoid desktop CSS side effects
       $clonedMenu.removeClass("site-header__menu").addClass("mobile-menu");
 
       $clonedMenu.find("> li").each(function () {
@@ -1425,7 +1397,6 @@
         var $link = $item.find("> a");
         $link.removeClass().addClass("mobile-menu__link");
 
-        // Remove hovered bg decor, bridges or submenu bg images
         $item.find("> img, > span").not("a *").remove();
 
         var $submenu = $item.find("> ul");
@@ -1442,7 +1413,6 @@
             .removeClass()
             .addClass("mobile-menu__submenu-link");
 
-          // Append accordion trigger
           $item.append(
             '<button class="mobile-menu__toggle-btn" aria-label="Toggle submenu"><i class="fas fa-chevron-down"></i></button>',
           );
@@ -1451,19 +1421,16 @@
 
       $(".mobile-sidebar__nav-wrapper").append($clonedMenu);
 
-      // Setup active states on the cloned items based on desktop active class
       $(".site-header__menu-item").each(function (index) {
         if ($(this).hasClass("site-header__menu-item--active")) {
           var $mobileItem = $(".mobile-menu__item").eq(index);
           $mobileItem.addClass("mobile-menu__item--active");
-          // Mark the top-level link as active (mirrors navbar active colour)
           $mobileItem
             .find("> .mobile-menu__link")
             .addClass("mobile-menu__link--active");
         }
       });
 
-      // Mirror the active submenu link from the desktop nav into the mobile sidebar
       var $activeSubmenuLink = $(".site-header__submenu-link--active");
       if ($activeSubmenuLink.length) {
         var activeHref = $activeSubmenuLink.attr("href") || "";
@@ -1471,7 +1438,6 @@
           var href = $(this).attr("href") || "";
           if (href === activeHref) {
             $(this).addClass("mobile-menu__submenu-link--active");
-            // Expand the parent submenu so the active item is visible
             var $parentItem = $(this).closest(".mobile-menu__item");
             $parentItem.find("> .mobile-menu__submenu").show();
             $parentItem.addClass("mobile-menu__item--open");
@@ -1483,7 +1449,6 @@
         });
       }
 
-      // Overlay & Close handlers
       $(".site-header__mobile-btn").on("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
@@ -1504,19 +1469,16 @@
         },
       );
 
-      // Dropdown toggle accordion animation
       $(".mobile-menu__toggle-btn").on("click", function (e) {
         e.preventDefault();
         var $btn = $(this);
         var $submenu = $btn.siblings(".mobile-menu__submenu");
         var $parent = $btn.parent();
 
-        // Slide toggle current
         $submenu.slideToggle(300);
         $parent.toggleClass("mobile-menu__item--open");
         $btn.find("i").toggleClass("fa-chevron-down fa-chevron-up");
 
-        // Close others (accordion style)
         $parent.siblings(".mobile-menu__item--open").each(function () {
           var $sibling = $(this);
           $sibling.removeClass("mobile-menu__item--open");
@@ -1530,6 +1492,9 @@
     }
   }
 
+  /*--------------------------------------------------------------
+     18. Dashboard Sidebar
+  --------------------------------------------------------------*/
   function initDashboardSidebar() {
     var $toggle = $("#sidebarToggle");
     var $sidebar = $("#dashboardSidebar");
@@ -1542,7 +1507,6 @@
       $sidebar.addClass("is-open");
       $overlay.addClass("is-visible");
       $toggle.attr("aria-expanded", "true");
-      // Prevent body scroll while drawer is open
       $("body").css("overflow", "hidden");
     }
 
@@ -1571,16 +1535,13 @@
       }
     });
 
-    // Clicking the overlay closes the drawer
     $overlay.on("click", closeSidebar);
 
-    // Close button inside the sidebar
     $close.on("click", function () {
       closeSidebar();
       $toggle.trigger("focus");
     });
 
-    // Close on Escape key
     $(document).on("keydown.dashboardSidebar", function (e) {
       if (e.key === "Escape" && $sidebar.hasClass("is-open")) {
         closeSidebar();
@@ -1588,7 +1549,6 @@
       }
     });
 
-    // When resizing back above lg, reset state so layout isn't broken
     $(window).on("resize.dashboardSidebar", function () {
       if (window.innerWidth > 992) {
         closeSidebar();
@@ -1597,10 +1557,12 @@
   }
 })(jQuery);
 
+/*--------------------------------------------------------------
+  19. Working Process Accordion
+--------------------------------------------------------------*/
 if ($.exists(".working-process__item")) {
   const items = document.querySelectorAll(".working-process__item");
 
-  // ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‹Å“ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â° Page load fix (important)
   window.addEventListener("load", () => {
     const activeItem = document.querySelector(".working-process__item.active");
 
@@ -1618,13 +1580,11 @@ if ($.exists(".working-process__item")) {
     }
   });
 
-  // ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‹Å“ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â° Click accordion logic (same)
   items.forEach((item) => {
     const btn = item.querySelector(".working-process__toggle");
     const content = item.querySelector(".working-process__content");
 
     btn.addEventListener("click", () => {
-      // Close others
       items.forEach((otherItem) => {
         const otherContent = otherItem.querySelector(
           ".working-process__content",
@@ -1636,7 +1596,6 @@ if ($.exists(".working-process__item")) {
         }
       });
 
-      // Toggle current
       if (item.classList.contains("active")) {
         content.style.height = content.scrollHeight + "px";
 
@@ -1674,6 +1633,9 @@ if ($.exists(".working-process__item")) {
   });
 })();
 
+/*--------------------------------------------------------------
+  20. Doctor Tooltip
+--------------------------------------------------------------*/
 (function () {
   "use strict";
 
@@ -1686,7 +1648,6 @@ if ($.exists(".working-process__item")) {
   const showTooltip = (item) => {
     const rect = item.getBoundingClientRect();
 
-    // set content safely
     tooltip.querySelector("img").src =
       item.dataset.img || "assets/img/avatars/doctor-toolt.png";
     tooltip.querySelector(".doctor-tooltip__name").textContent =
@@ -1694,7 +1655,6 @@ if ($.exists(".working-process__item")) {
     tooltip.querySelector(".doctor-tooltip__deg").textContent =
       item.dataset.deg || "";
 
-    // reset for correct height calc
     tooltip.style.left = "-9999px";
     tooltip.style.top = "-9999px";
     tooltip.classList.add("doctor-tooltip--active");
@@ -1707,7 +1667,6 @@ if ($.exists(".working-process__item")) {
       let left = rect.left + rect.width / 2 + window.scrollX;
       let top = rect.top + window.scrollY - tooltipHeight - 12;
 
-      // ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒâ€šÃ‚Â¥ smart flip (top ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ bottom)
       if (top < window.scrollY) {
         top = rect.bottom + window.scrollY + 12;
         tooltip.classList.add("doctor-tooltip--bottom");
@@ -1749,12 +1708,11 @@ if ($.exists(".working-process__item")) {
 })();
 
 /*--------------------------------------------------------------
-  10. Shop Details Functionality
+  21. Shop Details Functionality
 ----------------------------------------------------------------*/
 (function () {
   "use strict";
 
-  // Color Picker
   const colorBtns = document.querySelectorAll(
     ".shop-details__color-picker-btn",
   );
@@ -1769,7 +1727,6 @@ if ($.exists(".working-process__item")) {
     });
   }
 
-  // Gallery Thumbnails
   const thumbItems = document.querySelectorAll(".shop-details__thumb-item");
   const mainImg = document.querySelector(".shop-details__main-img");
   if (thumbItems.length > 0 && mainImg) {
@@ -1785,12 +1742,10 @@ if ($.exists(".working-process__item")) {
     });
   }
 
-  // Quantity Selector (Generic)
   const quantityGroups = document.querySelectorAll(
     ".shop-details__quantity, .cart__quantity",
   );
 
-  // Store original values for cart inputs so we can detect changes
   const updateBtn = document.querySelector(".cart__update-btn");
   const originalValues = new Map();
   quantityGroups.forEach((group) => {
@@ -1839,7 +1794,6 @@ if ($.exists(".working-process__item")) {
     }
   });
 
-  // Remove Item from Cart
   const removeBtns = document.querySelectorAll(".cart__remove");
   removeBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
@@ -1856,11 +1810,13 @@ if ($.exists(".working-process__item")) {
   });
 })();
 
+/*--------------------------------------------------------------
+  22. Service Button Dash Animation
+--------------------------------------------------------------*/
 // Uses event delegation on document so Swiper-cloned slides work automatically.
 (function () {
   const FAST_SPEED = 20;
 
-  // Per-button state keyed by the circle element itself
   const state = new WeakMap();
 
   function getState(circle) {
@@ -1919,7 +1875,7 @@ if ($.exists(".working-process__item")) {
       s.currentSpeed = FAST_SPEED;
     },
     true,
-  ); // capture phase so it fires on every element including clones
+  );
 
   document.addEventListener(
     "mouseleave",
@@ -1933,7 +1889,6 @@ if ($.exists(".working-process__item")) {
       const s = getState(circle);
       s.isHovered = false;
 
-      // Snapshot current offset and kill CSS animation
       const offset = parseFloat(getComputedStyle(circle).strokeDashoffset) || 0;
       circle.style.animation = "none";
       circle.style.strokeDashoffset = offset;
@@ -1943,42 +1898,12 @@ if ($.exists(".working-process__item")) {
       s.rafId = requestAnimationFrame((ts) => decelLoop(circle, ts));
     },
     true,
-  ); // capture phase
+  ); 
 })();
 
-(function () {
-  var preloader = document.getElementById("preloader");
-  if (!preloader) return;
-
-  var scriptStart = Date.now();
-  var MIN_DISPLAY = 2500;
-
-  function dismiss() {
-    preloader.classList.add("preloader--hidden");
-
-    // Fire immediately when the fade-out starts — the preloader's own opacity
-    // covers the hero while it fades, so AOS and CSS animations can begin now
-    // with no visible gap.
-    document.dispatchEvent(new CustomEvent("preloaderDone"));
-
-    preloader.addEventListener("transitionend", function handler() {
-      preloader.removeEventListener("transitionend", handler);
-      preloader.classList.add("preloader--done");
-    });
-
-    // Fallback: fully hide the preloader element after the transition time.
-    setTimeout(function () {
-      preloader.classList.add("preloader--done");
-    }, 1000);
-  }
-
-  window.addEventListener("load", function () {
-    var elapsed = Date.now() - scriptStart;
-    var remaining = Math.max(0, MIN_DISPLAY - elapsed);
-    setTimeout(dismiss, remaining);
-  });
-})();
-
+/*--------------------------------------------------------------
+  23. Password Toggle (Sign In / Sign Up)
+--------------------------------------------------------------*/
 $(function () {
   $(".sign-in__eye-toggle").on("click", function () {
     var $btn = $(this);
@@ -2023,6 +1948,9 @@ $(function () {
   });
 });
 
+/*--------------------------------------------------------------
+  24. OTP Input
+--------------------------------------------------------------*/
 $(function () {
   var $inputs = $(".password-reset__otp-input");
   if (!$inputs.length) return;
@@ -2072,7 +2000,9 @@ $(function () {
   });
 });
 
-// Sales Performance Line Chart
+/*--------------------------------------------------------------
+  25. Sales Performance Chart
+--------------------------------------------------------------*/
 (function () {
   var salesChartEl = document.getElementById("salesChart");
   if (!salesChartEl || typeof Chart === "undefined") return;
@@ -2204,7 +2134,9 @@ $(function () {
   });
 })();
 
-// Services Doughnut Chart
+/*--------------------------------------------------------------
+  26. Services Doughnut Chart
+--------------------------------------------------------------*/
 (function () {
   var servicesChartEl = document.getElementById("servicesChart");
   if (
@@ -2274,6 +2206,9 @@ $(function () {
   });
 })();
 
+/*--------------------------------------------------------------
+  27. Table Controls (Select All / Delete)
+--------------------------------------------------------------*/
 (function () {
   "use strict";
 
@@ -2290,7 +2225,6 @@ $(function () {
         });
     });
 
-    // Keep header checkbox in sync when individual rows are toggled
     tbody.addEventListener("change", function (e) {
       var isRowCb =
         e.target.classList.contains("lead-table__checkbox") ||
@@ -2323,7 +2257,6 @@ $(function () {
       setTimeout(function () {
         row.remove();
 
-        // Re-sync header checkbox after deletion
         var all = tbody.querySelectorAll(
           ".lead-table__checkbox, .order-table__checkbox",
         );

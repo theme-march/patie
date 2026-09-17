@@ -1,3 +1,6 @@
+/*--------------------------------------------------------------
+19. Working Process
+----------------------------------------------------------------*/
 @use "../abstracts" as *;
 
 .working-process {
@@ -94,7 +97,7 @@
     &-part {
       width: 100%;
       background-color: var(--white-color);
-      opacity: 0; // hidden until AOS triggers
+      opacity: 0;
 
       &--upper {
         height: 48%;

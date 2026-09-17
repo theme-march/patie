@@ -7,8 +7,66 @@
 |--------------------------------------------------------------------------
 | TABLE OF CONTENTS:
 |--------------------------------------------------------------------------
-| 1. Basic Color Variable
-| 2. Typography
+    1. Typography
+    2. General
+    3. Spacing
+    4. Buttons
+    5. Section Header
+    6. Pagination
+    7. Common Banner
+    8. Sidebar
+    9. Scrollup
+    10. Header
+    11. Mobile Sidebar
+    12. Hero
+    13. About
+    14. Service
+    15. Pet Grooming Service
+    16. Video
+    17. Testimonial
+    18. Team
+    19. Working Process
+    20. Pricing
+    21. Grooming Pricing
+    22. Choose US
+    23. Product
+    24. Blog
+    25. Blog Standard
+    26. Footer
+    27. Hero Grooming
+    28. About Grooming
+    29. Parent Testimonial
+    30. FAQ
+    31. Parent Marquee
+    32. Grooming Choose Us
+    33. Grooming Team
+    34. Before And After
+    35. Grooming Blog
+    36. Boarding Hero
+    37. Boarding About
+    38. Boarding Service
+    39. Boarding Testimonial
+    40. Boarding Choose Us
+    41. Boarding Pricing
+    42. Boarding BLog
+    43. Service Details
+    44. Team Details
+    45. Blog Details
+    46. Shop
+    47. Shop Details
+    48. Cart
+    49. Checkout
+    50. Contact
+    51. Error
+    52. Sign In
+    53. Sign Up
+    54. Forget Password
+    55. Password Reset
+    56. Set New Password
+    57. Dashboard
+    58. Order
+    59. Lead Management
+    60. Change Password
 
  ................................................................*/
 @use "abstracts" as *;
@@ -25,6 +83,7 @@
 @use "components/scrollup";
 @use "components/header";
 @use "components/mobile-sidebar";
+
 @use "layout/hero";
 @use "layout/about";
 @use "layout/service";
@@ -65,6 +124,7 @@
 @use "layout/checkout";
 @use "layout/contact";
 @use "layout/error";
+
 @use "layout/sign-in";
 @use "layout/sign-up";
 @use "layout/forget-password";

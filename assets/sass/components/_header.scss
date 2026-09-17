@@ -499,11 +499,7 @@
   z-index: 1001;
 
   @include respond(xxxxl) {
-    top: 30px;
-  }
-
-  @include respond(xxxl) {
-    top: 28px;
+    top: 27px;
   }
 
   @include respond(xl) {

@@ -3296,12 +3296,7 @@ i[class*=fa] {
 }
 @media (max-width: 1700px) {
   .boarding-topbar {
-    top: 30px;
-  }
-}
-@media (max-width: 1600px) {
-  .boarding-topbar {
-    top: 28px;
+    top: 27px;
   }
 }
 @media (max-width: 1200px) {

@@ -3151,12 +3151,7 @@ i[class*=fa] {
 }
 @media (max-width: 1700px) {
   .boarding-topbar {
-    top: 30px;
-  }
-}
-@media (max-width: 1600px) {
-  .boarding-topbar {
-    top: 28px;
+    top: 27px;
   }
 }
 @media (max-width: 1200px) {
@@ -17663,3 +17658,5 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 .cp-footer__link:hover {
   text-decoration: underline;
 }
+
+/*# sourceMappingURL=style.css.map */

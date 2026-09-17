@@ -44,17 +44,21 @@
     $(window).trigger("resize");
     // preloader();
 
-    // Wait for the preloader to fully fade out before starting AOS,
-    // so first-section animations aren't consumed while hidden.
-    var aosInitDone = false;
-    function initAOS() {
-      if (aosInitDone) return;
-      aosInitDone = true;
-      AOS.init({
-        once: true,
-      });
+    // Initialize AOS immediately (so it stamps opacity:0 on all [data-aos]
+    // elements right away), but tell it to wait for a custom "aosStart" event
+    // before it begins animating. That event fires once the preloader has
+    // fully faded out, eliminating the flash of unstyled content between the
+    // preloader disappearing and AOS kicking in.
+    AOS.init({
+      once: true,
+      startEvent: "aosStart",
+    });
+
+    function onPreloaderDone() {
       // Trigger CSS keyframe animations that were paused waiting for the preloader
       document.body.classList.add("preloader-done");
+      // Now let AOS start animating
+      document.dispatchEvent(new Event("aosStart"));
 
       var heroBadge = document.querySelector(".hero-grooming__badge");
       if (heroBadge) {
@@ -66,9 +70,11 @@
 
     var preloaderEl = document.getElementById("preloader");
     if (preloaderEl) {
-      document.addEventListener("preloaderDone", initAOS, { once: true });
+      document.addEventListener("preloaderDone", onPreloaderDone, {
+        once: true,
+      });
     } else {
-      initAOS();
+      onPreloaderDone();
     }
   });
 
@@ -1950,17 +1956,19 @@ if ($.exists(".working-process__item")) {
   function dismiss() {
     preloader.classList.add("preloader--hidden");
 
+    // Fire immediately when the fade-out starts — the preloader's own opacity
+    // covers the hero while it fades, so AOS and CSS animations can begin now
+    // with no visible gap.
+    document.dispatchEvent(new CustomEvent("preloaderDone"));
+
     preloader.addEventListener("transitionend", function handler() {
       preloader.removeEventListener("transitionend", handler);
       preloader.classList.add("preloader--done");
-      // Signal that the preloader is fully gone so AOS can start
-      document.dispatchEvent(new CustomEvent("preloaderDone"));
     });
 
-    // Fallback for prefers-reduced-motion or browsers that skip transitionend.
+    // Fallback: fully hide the preloader element after the transition time.
     setTimeout(function () {
       preloader.classList.add("preloader--done");
-      document.dispatchEvent(new CustomEvent("preloaderDone"));
     }, 1000);
   }
 

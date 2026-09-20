@@ -671,6 +671,7 @@
 
     @include respond(xxl) {
       max-width: 1300px;
+      padding: 0 30px;
     }
   }
 

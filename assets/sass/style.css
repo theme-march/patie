@@ -4134,6 +4134,7 @@ i[class*=fa] {
 @media (max-width: 1400px) {
   .site-header.boarding-header .site-header__container {
     max-width: 1300px;
+    padding: 0 30px;
   }
 }
 .site-header.boarding-header .site-header__menu-link {
@@ -16641,14 +16642,14 @@ i[class*=fa] {
 }
 @media (max-width: 1200px) {
   .blog-details__meta-pill {
-    padding: 10px 20px;
+    padding: 15px 25px;
     gap: 15px;
     bottom: 15px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .blog-details__meta-pill {
-    padding: 7px 15px;
+    padding: 12px 15px;
     gap: 10px;
     bottom: 10px;
   }

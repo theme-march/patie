@@ -206,7 +206,7 @@
         );
       }
     });
-    $(".menu-item-has-children").each(function () {
+    $(".ak-nav .menu-item-has-children").each(function () {
       if (!$(this).children(".ak-menu_dropdown_toggle").length) {
         $(this).append(
           '<button type="button" class="ak-menu_dropdown_toggle" aria-label="Toggle submenu" aria-expanded="false"></button>',
@@ -234,7 +234,7 @@
       $btn.parent().toggleClass("active");
     });
 
-    $(".menu-item-has-black-section").each(function () {
+    $(".ak-nav .menu-item-has-black-section").each(function () {
       if (!$(this).children(".ak-menu_dropdown_toggle_1").length) {
         $(this).append(
           '<button type="button" class="ak-menu_dropdown_toggle_1" aria-label="Toggle submenu" aria-expanded="false"></button>',

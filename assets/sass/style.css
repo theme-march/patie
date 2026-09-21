@@ -3967,8 +3967,8 @@ i[class*=fa] {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1800px;
-  width: calc(100% - 110px);
+  max-width: 1830px;
+  width: calc(100% - 90px);
   padding: 0;
   margin: 0 auto;
 }
@@ -4017,7 +4017,7 @@ i[class*=fa] {
   border-radius: 100px;
   padding: 13px 20px;
   color: var(--white-color);
-  gap: 60px;
+  gap: 70px;
 }
 @media (max-width: 1700px) {
   .boarding-topbar__right {

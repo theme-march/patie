@@ -82,7 +82,7 @@
 
   &__search-input {
     width: 100%;
-    background-color: #f6f4fb;
+    background-color: var(--white-color);
     border: none;
     border-radius: 50px;
     padding: 10px 44px 10px 20px;
@@ -326,11 +326,11 @@
     flex-shrink: 0;
 
     &--orange {
-      background-color: #ff781f;
+      background-color: var(--other-color-4);
     }
 
     &--purple {
-      background-color: #6839cc;
+      background-color: var(--other-color-6);
     }
   }
 

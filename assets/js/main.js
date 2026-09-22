@@ -2086,42 +2086,42 @@
     var salesChartEl = document.getElementById("salesChart");
     if (!salesChartEl || typeof Chart === "undefined") return;
 
-    var ctx = salesChartEl.getContext("2d");
+    var rs = getComputedStyle(document.documentElement);
+    var primaryColor = rs.getPropertyValue("--primary-color").trim();
+    var secondaryColor = rs.getPropertyValue("--secondary-color").trim();
+    var whiteColor = rs.getPropertyValue("--white-color").trim();
+    var bodyColor = rs.getPropertyValue("--body-color").trim();
+    var headingColor = rs.getPropertyValue("--heading-color").trim();
 
-    var months = [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-    ];
+    function hexToRgba(hex, alpha) {
+      var r = parseInt(hex.slice(1, 3), 16);
+      var g = parseInt(hex.slice(3, 5), 16);
+      var b = parseInt(hex.slice(5, 7), 16);
+      return "rgba(" + r + "," + g + "," + b + "," + alpha + ")";
+    }
+
+    var ctx = salesChartEl.getContext("2d");
+    var ds = salesChartEl.dataset;
+    var months = ds.labels.split(",");
+    var data2021 = ds["2021"].split(",").map(Number);
+    var data2020 = ds["2020"].split(",").map(Number);
 
     var verticalLinePlugin = {
       id: "verticalLine",
       afterDraw: function (chart) {
-        var activeElements = chart.getActiveElements();
-        if (activeElements && activeElements.length) {
-          var ctx2 = chart.ctx;
-          var activePoint = activeElements[0];
-          var x = activePoint.element.x;
-          var topY = chart.scales.y.top;
-          var bottomY = chart.scales.y.bottom;
-
-          ctx2.save();
-          ctx2.beginPath();
-          ctx2.moveTo(x, topY);
-          ctx2.lineTo(x, bottomY);
-          ctx2.lineWidth = 1.5;
-          ctx2.strokeStyle = "rgba(104, 57, 204, 0.4)";
-          ctx2.setLineDash([4, 4]);
-          ctx2.stroke();
-          ctx2.restore();
-        }
+        var active = chart.getActiveElements();
+        if (!active || !active.length) return;
+        var ctx2 = chart.ctx,
+          x = active[0].element.x;
+        ctx2.save();
+        ctx2.beginPath();
+        ctx2.moveTo(x, chart.scales.y.top);
+        ctx2.lineTo(x, chart.scales.y.bottom);
+        ctx2.lineWidth = 1.5;
+        ctx2.strokeStyle = hexToRgba(primaryColor, 0.4);
+        ctx2.setLineDash([4, 4]);
+        ctx2.stroke();
+        ctx2.restore();
       },
     };
 
@@ -2133,36 +2133,30 @@
         datasets: [
           {
             label: "2021",
-            data: [
-              28000, 35000, 25000, 80000, 30000, 62000, 95000, 38000, 50000,
-              55000,
-            ],
-            borderColor: "#6839cc",
-            backgroundColor: "rgba(104, 57, 204, 0.08)",
+            data: data2021,
+            borderColor: primaryColor,
+            backgroundColor: hexToRgba(primaryColor, 0.08),
             borderWidth: 2.5,
             tension: 0.45,
             fill: true,
             pointRadius: 0,
             pointHoverRadius: 6,
-            pointHoverBackgroundColor: "#6839cc",
-            pointHoverBorderColor: "#fff",
+            pointHoverBackgroundColor: primaryColor,
+            pointHoverBorderColor: whiteColor,
             pointHoverBorderWidth: 2,
           },
           {
             label: "2020",
-            data: [
-              20000, 45000, 35000, 30000, 80000, 40000, 55000, 48000, 92000,
-              60000,
-            ],
-            borderColor: "#ff781f",
-            backgroundColor: "rgba(255, 120, 31, 0.05)",
+            data: data2020,
+            borderColor: secondaryColor,
+            backgroundColor: hexToRgba(secondaryColor, 0.05),
             borderWidth: 2.5,
             tension: 0.45,
             fill: true,
             pointRadius: 0,
             pointHoverRadius: 6,
-            pointHoverBackgroundColor: "#ff781f",
-            pointHoverBorderColor: "#fff",
+            pointHoverBackgroundColor: secondaryColor,
+            pointHoverBorderColor: whiteColor,
             pointHoverBorderWidth: 2,
           },
         ],
@@ -2174,17 +2168,17 @@
         plugins: {
           legend: { display: false },
           tooltip: {
-            backgroundColor: "#6839cc",
-            titleColor: "#fff",
-            bodyColor: "#fff",
+            backgroundColor: primaryColor,
+            titleColor: whiteColor,
+            bodyColor: whiteColor,
             padding: 10,
             displayColors: false,
             callbacks: {
               title: function () {
                 return "";
               },
-              label: function (ctx2) {
-                return "$" + (ctx2.raw / 1000).toFixed(0) + "K";
+              label: function (c) {
+                return "$" + (c.raw / 1000).toFixed(0) + "K";
               },
             },
           },
@@ -2192,21 +2186,21 @@
         scales: {
           x: {
             grid: { display: false },
-            ticks: { color: "#aaa", font: { size: 12, family: "Poppins" } },
+            ticks: { color: bodyColor, font: { size: 12, family: "Poppins" } },
             border: { display: false },
           },
           y: {
             min: 10000,
             max: 100000,
             ticks: {
-              color: "#aaa",
+              color: bodyColor,
               font: { size: 11, family: "Poppins" },
-              callback: function (val) {
-                return val / 1000 + "K";
+              callback: function (v) {
+                return v / 1000 + "K";
               },
               stepSize: 20000,
             },
-            grid: { color: "rgba(0,0,0,0.05)" },
+            grid: { color: hexToRgba(headingColor, 0.05) },
             border: { display: false },
           },
         },
@@ -2223,15 +2217,23 @@
       !servicesChartEl ||
       typeof Chart === "undefined" ||
       typeof ChartDataLabels === "undefined"
-    ) {
+    )
       return;
-    }
+
+    var rs = getComputedStyle(document.documentElement);
+    var primaryColor = rs.getPropertyValue("--primary-color").trim();
+    var whiteColor = rs.getPropertyValue("--white-color").trim();
 
     var ctx = servicesChartEl.getContext("2d");
-
-    var sliceColors = ["#8b0037", "#6839cc", "#3a6b35", "#ff781f"];
-    var sliceLabels = ["Grooming", "Pet Boarding", "Vet Check", "Day Care"];
-    var sliceData = [28, 25, 8, 39];
+    var ds = servicesChartEl.dataset;
+    var sliceLabels = ds.labels.split(",");
+    var sliceData = ds.values.split(",").map(Number);
+    var sliceColors = ds.colors.split(",").map(function (c) {
+      var v = c.trim();
+      return v.startsWith("var(")
+        ? rs.getPropertyValue(v.slice(4, -1).trim()).trim()
+        : v;
+    });
 
     servicesChartInstance = new Chart(ctx, {
       type: "doughnut",
@@ -2251,15 +2253,13 @@
         responsive: true,
         maintainAspectRatio: true,
         cutout: "65%",
-        layout: {
-          padding: { top: 30, bottom: 30, left: 95, right: 75 },
-        },
+        layout: { padding: { top: 30, bottom: 30, left: 95, right: 75 } },
         plugins: {
           legend: { display: false },
           tooltip: {
-            backgroundColor: "#6839cc",
-            titleColor: "#fff",
-            bodyColor: "#fff",
+            backgroundColor: primaryColor,
+            titleColor: whiteColor,
+            bodyColor: whiteColor,
             padding: 10,
             displayColors: false,
           },
@@ -2268,16 +2268,16 @@
             align: "end",
             offset: 12,
             clip: false,
-            color: function (context) {
-              return sliceColors[context.dataIndex];
+            color: function (ctx2) {
+              return sliceColors[ctx2.dataIndex];
             },
             font: {
               family: "'Poppins', 'Passion One'",
               size: 14,
               weight: "600",
             },
-            formatter: function (value, context) {
-              return context.chart.data.labels[context.dataIndex];
+            formatter: function (value, ctx2) {
+              return ctx2.chart.data.labels[ctx2.dataIndex];
             },
           },
         },

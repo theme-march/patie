@@ -82,12 +82,12 @@
   --primary-color: #6839cc;
   --secondary-color: #ff781f;
   --heading-color: #25283d;
-  --title-color:#103741;
+  --title-color: #103741;
   --body-color: #575757;
   --smoke-bg-color: #f6e8ff;
   --smoke-bg-color-2: #ecf1f5;
   --border-color: #d7dce0;
-  --border-color-2: #D8DDE1;
+  --border-color-2: #d8dde1;
   --white-color: #ffffff;
   --black-color: #000000;
   --other-color-1: #a60c56;
@@ -95,7 +95,7 @@
   --other-color-3: #c8a803;
   --other-color-4: #e25e52;
   --other-color-5: #04b9c4;
-  --other-color-6: #792CB9;
+  --other-color-6: #792cb9;
   --rating-color: #ffc107;
 }
 
@@ -20644,7 +20644,7 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 }
 .dashboard-topbar__search-input {
   width: 100%;
-  background-color: #f6f4fb;
+  background-color: var(--white-color);
   border: none;
   border-radius: 50px;
   padding: 10px 44px 10px 20px;
@@ -20878,10 +20878,10 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
   flex-shrink: 0;
 }
 .dashboard-chart-card__legend-dot--orange {
-  background-color: #ff781f;
+  background-color: var(--other-color-4);
 }
 .dashboard-chart-card__legend-dot--purple {
-  background-color: #6839cc;
+  background-color: var(--other-color-6);
 }
 .dashboard-chart-card__canvas-wrap {
   position: relative;

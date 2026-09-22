@@ -336,20 +336,21 @@
   4. Sticky Header
   --------------------------------------------------------------*/
   function stickyHeader() {
+    var $window = $(window);
     var lastScrollTop = 0;
     var $header = $(".ak-sticky_header");
     var enterThreshold = 200;
     var scrollDelta = 10;
-
-    var $spacer = $('<div class="ak-sticky-spacer"></div>');
+    var $spacer = $(
+      '<div class="ak-sticky-spacer" style="display: none;"></div>',
+    );
     if ($header.length) {
       $header.before($spacer);
     }
 
-    function updateSticky() {
+    $window.scroll(function () {
       var windowTop = $window.scrollTop();
       var stickyThreshold = 50;
-
       if ($header.hasClass("boarding-header") && window.innerWidth > 991) {
         stickyThreshold = 40;
         enterThreshold = 200;
@@ -358,8 +359,17 @@
 
       if (windowTop <= stickyThreshold) {
         if ($header.hasClass("ak-gescout_sticky")) {
+          var $noTransStyle = $(
+            '<style id="sticky-no-transition">.site-header { transition: none !important; }</style>',
+          );
+          $("head").append($noTransStyle);
+
           $header.removeClass("ak-gescout_sticky ak-gescout_show");
-          $spacer.removeClass("ak-sticky-spacer--active");
+          $spacer.hide();
+
+          setTimeout(function () {
+            $noTransStyle.remove();
+          }, 50);
         }
         lastScrollTop = windowTop;
         return;
@@ -374,11 +384,23 @@
             $header.css("position") === "absolute" ||
             $header.css("position") === "fixed";
           if (!isOut) {
-            $spacer
-              .height($header.outerHeight())
-              .addClass("ak-sticky-spacer--active");
+            $spacer.css({
+              height: $header.outerHeight() + "px",
+              display: "block",
+              width: "100%",
+            });
           }
+
+          var $noTransStyle = $(
+            '<style id="sticky-no-transition">.site-header { transition: none !important; }</style>',
+          );
+          $("head").append($noTransStyle);
+
           $header.addClass("ak-gescout_sticky");
+
+          setTimeout(function () {
+            $noTransStyle.remove();
+          }, 50);
         }
 
         if (windowTop < lastScrollTop) {
@@ -389,8 +411,7 @@
       }
 
       lastScrollTop = windowTop;
-    }
-    updateStickyHeader = updateSticky;
+    });
   }
 
   /*--------------------------------------------------------------

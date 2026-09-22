@@ -104,6 +104,7 @@
     scrollUp();
     initSearch();
     handleShopSearchFilter();
+    handleCategoryFilter();
     initMobileMenu();
     initDashboardSidebar();
     initCountUp();
@@ -1356,13 +1357,15 @@
     }
   }
 
-  $document.on("click", ".sidebar__category-item", function () {
-    var $list = $(this).closest(".sidebar__category-list");
-    $list
-      .find(".sidebar__category-item")
-      .removeClass("sidebar__category-item--active");
-    $(this).addClass("sidebar__category-item--active");
-  });
+  function handleCategoryFilter() {
+    $document.on("click", ".sidebar__category-item", function () {
+      var $list = $(this).closest(".sidebar__category-list");
+      $list
+        .find(".sidebar__category-item")
+        .removeClass("sidebar__category-item--active");
+      $(this).addClass("sidebar__category-item--active");
+    });
+  }
 
   /*--------------------------------------------------------------
   17. Mobile Menu Sidebar

@@ -82,12 +82,12 @@
   --primary-color: #6839cc;
   --secondary-color: #ff781f;
   --heading-color: #25283d;
-  --title-color: #103741;
+  --title-color:#103741;
   --body-color: #575757;
   --smoke-bg-color: #f6e8ff;
   --smoke-bg-color-2: #ecf1f5;
   --border-color: #d7dce0;
-  --border-color-2: #d8dde1;
+  --border-color-2: #D8DDE1;
   --white-color: #ffffff;
   --black-color: #000000;
   --other-color-1: #a60c56;
@@ -95,84 +95,13 @@
   --other-color-3: #c8a803;
   --other-color-4: #e25e52;
   --other-color-5: #04b9c4;
-  --other-color-6: #792cb9;
+  --other-color-6: #792CB9;
   --rating-color: #ffc107;
 }
 
 /*--------------------------------------------------------------
 2. Breakpoints
 ----------------------------------------------------------------*/
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 html {
   overflow-x: clip;
   scroll-behavior: auto;
@@ -331,81 +260,10 @@ kbd {
   border-radius: 50px;
 }
 
-i[class*="fa"] {
+i[class*=fa] {
   line-height: normal;
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
   2. General
 ----------------------------------------------------------------*/
@@ -552,7 +410,6 @@ i[class*="fa"] {
 }
 
 .object-cover {
-  -o-object-fit: cover;
   object-fit: cover;
 }
 
@@ -665,77 +522,6 @@ i[class*="fa"] {
   border: 0;
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
   3. Spacing
 ----------------------------------------------------------------*/
@@ -1183,77 +969,6 @@ i[class*="fa"] {
     height: 219px;
   }
 }
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 4. Buttons
 ----------------------------------------------------------------*/
@@ -1329,9 +1044,7 @@ i[class*="fa"] {
   stroke-width: 3;
   stroke-dasharray: 5 5;
   stroke-dashoffset: 0;
-  transition:
-    stroke 0.3s ease,
-    opacity 0.65s ease;
+  transition: stroke 0.3s ease, opacity 0.65s ease;
   animation: marchDashes 1.2s linear infinite;
   animation-play-state: paused;
 }
@@ -1345,9 +1058,7 @@ i[class*="fa"] {
 .common-btn:hover .common-btn__inner .common-btn__dash-svg rect {
   stroke: var(--white-color);
   animation-play-state: running;
-  transition:
-    stroke 0.3s ease,
-    opacity 0s;
+  transition: stroke 0.3s ease, opacity 0s;
 }
 .common-btn--primary {
   background-color: var(--primary-color);
@@ -1358,24 +1069,12 @@ i[class*="fa"] {
 .common-btn--primary:hover .common-btn__inner .common-btn__dash-svg rect {
   stroke: var(--white-color);
   animation-play-state: running;
-  transition:
-    stroke 0.3s ease,
-    opacity 0s;
+  transition: stroke 0.3s ease, opacity 0s;
 }
-.common-btn--primary.checkout-section__submit-btn:hover,
-.common-btn--primary.contact-section__submit-btn:hover,
-.common-btn--primary.cart__summary-checkout-btn:hover,
-.common-btn--primary.sign-in__submit-btn:hover,
-.common-btn--primary.sign-up__submit-btn:hover,
-.common-btn--primary.common-btn--style2:hover {
+.common-btn--primary.checkout-section__submit-btn:hover, .common-btn--primary.contact-section__submit-btn:hover, .common-btn--primary.cart__summary-checkout-btn:hover, .common-btn--primary.sign-in__submit-btn:hover, .common-btn--primary.sign-up__submit-btn:hover, .common-btn--primary.common-btn--style2:hover {
   background-color: var(--secondary-color);
 }
-.common-btn--primary.checkout-section__submit-btn:hover .common-btn__inner,
-.common-btn--primary.contact-section__submit-btn:hover .common-btn__inner,
-.common-btn--primary.cart__summary-checkout-btn:hover .common-btn__inner,
-.common-btn--primary.sign-in__submit-btn:hover .common-btn__inner,
-.common-btn--primary.sign-up__submit-btn:hover .common-btn__inner,
-.common-btn--primary.common-btn--style2:hover .common-btn__inner {
+.common-btn--primary.checkout-section__submit-btn:hover .common-btn__inner, .common-btn--primary.contact-section__submit-btn:hover .common-btn__inner, .common-btn--primary.cart__summary-checkout-btn:hover .common-btn__inner, .common-btn--primary.sign-in__submit-btn:hover .common-btn__inner, .common-btn--primary.sign-up__submit-btn:hover .common-btn__inner, .common-btn--primary.common-btn--style2:hover .common-btn__inner {
   background-color: var(--secondary-color);
 }
 .common-btn--secondary {
@@ -1589,8 +1288,7 @@ i[class*="fa"] {
   transform: translateY(-2px);
 }
 
-.play-btn,
-.ak-video-open {
+.play-btn, .ak-video-open {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1636,50 +1334,42 @@ i[class*="fa"] {
 .play-btn__ripple-lottie:nth-child(2) {
   animation-delay: 1s;
 }
-.play-btn:hover,
-.ak-video-open:hover {
+.play-btn:hover, .ak-video-open:hover {
   transform: translate(-50%, -50%) scale(1.2);
 }
-.play-btn:hover .play-btn__inner,
-.ak-video-open:hover .play-btn__inner {
+.play-btn:hover .play-btn__inner, .ak-video-open:hover .play-btn__inner {
   background-color: var(--secondary-color);
   transform: scale(1.05);
   color: var(--white-color);
 }
 @media (max-width: 1200px) {
-  .play-btn .play-btn__inner,
-  .play-btn__inner {
+  .play-btn .play-btn__inner, .play-btn__inner {
     width: 80px;
     height: 80px;
   }
-  .play-btn .play-btn__ripple-lottie,
-  .ak-video-open .play-btn__ripple-lottie {
+  .play-btn .play-btn__ripple-lottie, .ak-video-open .play-btn__ripple-lottie {
     width: 80px;
     height: 80px;
   }
 }
 @media (max-width: 992px) {
-  .play-btn .play-btn__inner,
-  .play-btn__inner {
+  .play-btn .play-btn__inner, .play-btn__inner {
     width: 70px;
     height: 70px;
     font-size: 20px;
   }
-  .play-btn .play-btn__ripple-lottie,
-  .ak-video-open .play-btn__ripple-lottie {
+  .play-btn .play-btn__ripple-lottie, .ak-video-open .play-btn__ripple-lottie {
     width: 70px;
     height: 70px;
   }
 }
 @media (max-width: 768px) {
-  .play-btn .play-btn__inner,
-  .play-btn__inner {
+  .play-btn .play-btn__inner, .play-btn__inner {
     width: 65px;
     height: 65px;
     font-size: 16px;
   }
-  .play-btn .play-btn__ripple-lottie,
-  .ak-video-open .play-btn__ripple-lottie {
+  .play-btn .play-btn__ripple-lottie, .ak-video-open .play-btn__ripple-lottie {
     width: 65px;
     height: 65px;
   }
@@ -1693,8 +1383,7 @@ i[class*="fa"] {
   width: 30px;
   height: 30px;
 }
-.play-btn--md .play-btn__inner,
-.play-btn--md__inner {
+.play-btn--md .play-btn__inner, .play-btn--md__inner {
   width: 60px;
   height: 60px;
   font-size: 15px;
@@ -1780,77 +1469,6 @@ i[class*="fa"] {
     stroke-dashoffset: -6;
   }
 }
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 5. Section Header
 ----------------------------------------------------------------*/
@@ -1963,77 +1581,6 @@ i[class*="fa"] {
   }
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 6. Pagination
 ----------------------------------------------------------------*/
@@ -2145,77 +1692,6 @@ i[class*="fa"] {
   }
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 7. Common Banner
 ----------------------------------------------------------------*/
@@ -2335,77 +1811,6 @@ i[class*="fa"] {
   height: auto;
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 8. Sidebar
 ----------------------------------------------------------------*/
@@ -2558,9 +1963,6 @@ i[class*="fa"] {
     font-size: 14px;
   }
 }
-.sidebar__search-input::-moz-placeholder {
-  color: var(--body-color);
-}
 .sidebar__search-input::placeholder {
   color: var(--body-color);
 }
@@ -2574,7 +1976,6 @@ i[class*="fa"] {
   font-size: 18px;
   cursor: pointer;
   transition: all 0.3s ease;
-  width: -moz-fit-content;
   width: fit-content;
 }
 @media (max-width: 1600px) {
@@ -2616,7 +2017,6 @@ i[class*="fa"] {
 .sidebar__news-img {
   max-width: 100%;
   border-radius: 10px;
-  -o-object-fit: cover;
   object-fit: cover;
   flex-shrink: 0;
   transition: all 0.3s ease;
@@ -2714,9 +2114,6 @@ i[class*="fa"] {
     padding: 14px 22px;
     font-size: 14px;
   }
-}
-.sidebar__input::-moz-placeholder {
-  color: var(--body-color);
 }
 .sidebar__input::placeholder {
   color: var(--body-color);
@@ -3026,7 +2423,6 @@ i[class*="fa"] {
 }
 .sidebar__product-img {
   width: 100%;
-  -o-object-fit: contain;
   object-fit: contain;
 }
 .sidebar__product-info {
@@ -3059,7 +2455,6 @@ i[class*="fa"] {
 .sidebar__instagram-img {
   width: 100%;
   border-radius: 5px;
-  -o-object-fit: cover;
   object-fit: cover;
   aspect-ratio: 1;
   transition: all 0.3s ease;
@@ -3097,7 +2492,6 @@ i[class*="fa"] {
   width: 110px;
   height: 110px;
   border-radius: 50%;
-  -o-object-fit: cover;
   object-fit: cover;
   flex-shrink: 0;
 }
@@ -3115,8 +2509,7 @@ i[class*="fa"] {
   flex-direction: column;
   align-items: center;
   padding: 0 20px 15px;
-  border-bottom: 1px solid
-    color-mix(in srgb, var(--primary-color), transparent 85%);
+  border-bottom: 1px solid color-mix(in srgb, var(--primary-color), transparent 85%);
 }
 .dashboard-sidebar__name {
   font-family: var(--heading-font-family);
@@ -3273,8 +2666,7 @@ i[class*="fa"] {
     flex-direction: column;
     gap: 4px;
     padding: 12px 20px 20px;
-    border-top: 1px solid
-      color-mix(in srgb, var(--primary-color), transparent 85%);
+    border-top: 1px solid color-mix(in srgb, var(--primary-color), transparent 85%);
     margin-top: 12px;
   }
 }
@@ -3288,9 +2680,7 @@ i[class*="fa"] {
   text-decoration: none;
   color: var(--heading-color);
   font-size: 15px;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 .dashboard-sidebar__mobile-action-btn i {
   width: 18px;
@@ -3326,9 +2716,7 @@ i[class*="fa"] {
     color: var(--primary-color);
     font-size: 14px;
     cursor: pointer;
-    transition:
-      background-color 0.2s ease,
-      color 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
     z-index: 10;
     flex-shrink: 0;
   }
@@ -3342,77 +2730,6 @@ i[class*="fa"] {
   }
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 9. Scrollup
 ----------------------------------------------------------------*/
@@ -3456,77 +2773,6 @@ i[class*="fa"] {
   }
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 10. Header
 ----------------------------------------------------------------*/
@@ -3534,18 +2780,13 @@ i[class*="fa"] {
   background-color: var(--primary-color);
   display: flex;
   align-items: center;
-  transition:
-    transform 0.4s ease,
-    visibility 0.4s ease,
-    background-color 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.4s ease, visibility 0.4s ease, background-color 0.3s ease, box-shadow 0.3s ease;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
   z-index: 1000;
   padding: 20px 40px;
-  box-shadow: 0 10px 30px
-    color-mix(in srgb, var(--black-color), transparent 90%);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--black-color), transparent 90%);
 }
 @media (min-width: 1200px) {
   .site-header {
@@ -3609,9 +2850,7 @@ i[class*="fa"] {
     gap: 15px;
   }
 }
-.site-header__menu:has(.site-header__menu-item:hover)
-  .site-header__menu-item--active:not(:hover)
-  .site-header__menu-bg {
+.site-header__menu:has(.site-header__menu-item:hover) .site-header__menu-item--active:not(:hover) .site-header__menu-bg {
   opacity: 0;
   visibility: hidden;
   transform: translate(-50%, -50%) scale(0.85);
@@ -3623,8 +2862,7 @@ i[class*="fa"] {
   justify-content: center;
   padding: 10px 0;
 }
-.site-header__menu-item--active .site-header__menu-bg,
-.site-header__menu-item:hover .site-header__menu-bg {
+.site-header__menu-item--active .site-header__menu-bg, .site-header__menu-item:hover .site-header__menu-bg {
   opacity: 1;
   visibility: visible;
   transform: translate(-50%, -50%) scale(1);
@@ -3692,8 +2930,7 @@ i[class*="fa"] {
   top: 100%;
   background-color: color-mix(in srgb, var(--primary-color), transparent 10%);
   padding: 15px 0;
-  box-shadow: 0 10px 30px
-    color-mix(in srgb, var(--black-color), transparent 70%);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--black-color), transparent 70%);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -3719,14 +2956,12 @@ i[class*="fa"] {
   transition: all 0.3s ease;
   white-space: nowrap;
 }
-.site-header__submenu-link:hover,
-.site-header__submenu-link--active {
+.site-header__submenu-link:hover, .site-header__submenu-link--active {
   background-color: var(--secondary-color);
   color: var(--white-color);
   padding-left: 30px;
 }
-.site-header__submenu:has(.site-header__submenu-item:hover)
-  .site-header__submenu-link--active:not(:hover) {
+.site-header__submenu:has(.site-header__submenu-item:hover) .site-header__submenu-link--active:not(:hover) {
   background-color: transparent;
   color: var(--white-color);
   padding-left: 25px;
@@ -3743,11 +2978,7 @@ i[class*="fa"] {
   opacity: 0;
   visibility: hidden;
   overflow: hidden;
-  transition:
-    width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.3s ease,
-    visibility 0.3s ease,
-    margin-right 0.3s ease;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, visibility 0.3s ease, margin-right 0.3s ease;
   display: flex;
   align-items: center;
 }
@@ -3780,9 +3011,7 @@ i[class*="fa"] {
   font-size: 14px;
   outline: none;
   box-shadow: 0 6px 15px color-mix(in srgb, var(--black-color), transparent 90%);
-  transition:
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 @media (max-width: 576px) {
   .site-header__search-input {
@@ -3794,11 +3023,7 @@ i[class*="fa"] {
 .site-header__search-input:focus {
   border-color: var(--secondary-color);
   background-color: var(--white-color);
-  box-shadow: 0 6px 20px
-    color-mix(in srgb, var(--secondary-color), transparent 80%);
-}
-.site-header__search-input::-moz-placeholder {
-  color: color-mix(in srgb, var(--body-color), transparent 30%);
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--secondary-color), transparent 80%);
 }
 .site-header__search-input::placeholder {
   color: color-mix(in srgb, var(--body-color), transparent 30%);
@@ -3932,8 +3157,7 @@ i[class*="fa"] {
   max-width: 100%;
   box-sizing: border-box;
   background-color: var(--primary-color);
-  box-shadow: 0 10px 30px
-    color-mix(in srgb, var(--black-color), transparent 90%);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--black-color), transparent 90%);
   transform: translateY(-100%);
   z-index: 1000;
   visibility: hidden;
@@ -3956,12 +3180,9 @@ i[class*="fa"] {
   padding: 20px 50px;
   transform: translateX(-50%) translateY(-120%);
   background-color: color-mix(in srgb, var(--white-color), transparent 90%);
-  box-shadow: 0 10px 30px
-    color-mix(in srgb, var(--black-color), transparent 90%);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--black-color), transparent 90%);
   visibility: hidden;
-  transition:
-    transform 0.3s ease,
-    visibility 0.3s ease;
+  transition: transform 0.3s ease, visibility 0.3s ease;
 }
 @media (max-width: 1600px) {
   .site-header--pill.ak-gescout_sticky {
@@ -3982,8 +3203,7 @@ i[class*="fa"] {
   transform: translateX(-50%) translateY(0);
   visibility: visible;
   background-color: var(--primary-color) !important;
-  box-shadow: 0 10px 30px
-    color-mix(in srgb, var(--black-color), transparent 90%);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--black-color), transparent 90%);
 }
 @media (max-width: 992px) {
   .site-header--pill.ak-gescout_sticky {
@@ -4195,18 +3415,11 @@ i[class*="fa"] {
 .site-header.boarding-header .site-header__menu-link {
   color: var(--black-color);
 }
-.site-header.boarding-header
-  .site-header__menu-item:hover
-  .site-header__menu-link,
-.site-header.boarding-header
-  .site-header__menu-item--active
-  .site-header__menu-link {
+.site-header.boarding-header .site-header__menu-item:hover .site-header__menu-link,
+.site-header.boarding-header .site-header__menu-item--active .site-header__menu-link {
   color: var(--white-color);
 }
-.site-header.boarding-header
-  .site-header__menu:has(.site-header__menu-item:hover)
-  .site-header__menu-item--active:not(:hover)
-  .site-header__menu-link {
+.site-header.boarding-header .site-header__menu:has(.site-header__menu-item:hover) .site-header__menu-item--active:not(:hover) .site-header__menu-link {
   color: var(--black-color);
 }
 .site-header.boarding-header .site-header__mobile-btn {
@@ -4230,34 +3443,25 @@ i[class*="fa"] {
   padding: 20px 0;
   transform: translateY(-100%);
   visibility: hidden;
-  transition:
-    transform 0.4s ease,
-    visibility 0.4s ease;
+  transition: transform 0.4s ease, visibility 0.4s ease;
 }
 .site-header.boarding-header.ak-gescout_sticky.ak-gescout_show {
   transform: translateY(0);
   visibility: visible;
   background-color: var(--primary-color) !important;
-  box-shadow: 0 10px 30px
-    color-mix(in srgb, var(--black-color), transparent 90%);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--black-color), transparent 90%);
 }
-.site-header.boarding-header.ak-gescout_sticky.ak-gescout_show
-  .site-header__menu-link {
+.site-header.boarding-header.ak-gescout_sticky.ak-gescout_show .site-header__menu-link {
   color: var(--white-color);
 }
-.site-header.boarding-header.ak-gescout_sticky.ak-gescout_show
-  .site-header__mobile-btn {
+.site-header.boarding-header.ak-gescout_sticky.ak-gescout_show .site-header__mobile-btn {
   color: var(--white-color);
 }
 .site-header.boarding-header.ak-gescout_sticky .site-header__menu-link {
   color: var(--black-color);
 }
-.site-header.boarding-header.ak-gescout_sticky
-  .site-header__menu-item:hover
-  .site-header__menu-link,
-.site-header.boarding-header.ak-gescout_sticky
-  .site-header__menu-item--active
-  .site-header__menu-link {
+.site-header.boarding-header.ak-gescout_sticky .site-header__menu-item:hover .site-header__menu-link,
+.site-header.boarding-header.ak-gescout_sticky .site-header__menu-item--active .site-header__menu-link {
   color: var(--white-color);
 }
 .site-header.boarding-header.ak-gescout_sticky .site-header__mobile-btn {
@@ -4278,89 +3482,15 @@ i[class*="fa"] {
 
 .site-header--pill.boarding-header.ak-gescout_sticky.ak-gescout_show {
   background-color: var(--primary-color) !important;
-  box-shadow: 0 10px 30px
-    color-mix(in srgb, var(--black-color), transparent 90%);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--black-color), transparent 90%);
 }
-.site-header--pill.boarding-header.ak-gescout_sticky.ak-gescout_show
-  .site-header__menu-link {
+.site-header--pill.boarding-header.ak-gescout_sticky.ak-gescout_show .site-header__menu-link {
   color: var(--white-color);
 }
-.site-header--pill.boarding-header.ak-gescout_sticky.ak-gescout_show
-  .site-header__mobile-btn {
+.site-header--pill.boarding-header.ak-gescout_sticky.ak-gescout_show .site-header__mobile-btn {
   color: var(--white-color);
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 11. Mobile Sidebar
 ----------------------------------------------------------------*/
@@ -4373,11 +3503,8 @@ i[class*="fa"] {
   height: 100%;
   z-index: 1050;
   background-color: var(--primary-color);
-  box-shadow: -2px 0 15px
-    color-mix(in srgb, var(--black-color), transparent 70%);
-  transition:
-    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 0.3s ease;
+  box-shadow: -2px 0 15px color-mix(in srgb, var(--black-color), transparent 70%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s ease;
   visibility: hidden;
   display: flex;
   flex-direction: column;
@@ -4391,8 +3518,7 @@ i[class*="fa"] {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  border-bottom: 1px solid
-    color-mix(in srgb, var(--white-color), transparent 90%);
+  border-bottom: 1px solid color-mix(in srgb, var(--white-color), transparent 90%);
 }
 .mobile-sidebar__logo {
   display: flex;
@@ -4418,9 +3544,7 @@ i[class*="fa"] {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .mobile-sidebar__close-btn:hover {
   background-color: var(--secondary-color);
@@ -4450,9 +3574,7 @@ i[class*="fa"] {
   background-color: color-mix(in srgb, var(--black-color), transparent 40%);
   opacity: 0;
   visibility: hidden;
-  transition:
-    opacity 0.3s ease,
-    visibility 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 .mobile-sidebar-overlay--open {
   opacity: 1;
@@ -4466,8 +3588,7 @@ i[class*="fa"] {
 }
 .mobile-menu__item {
   position: relative;
-  border-bottom: 1px solid
-    color-mix(in srgb, var(--white-color), transparent 95%);
+  border-bottom: 1px solid color-mix(in srgb, var(--white-color), transparent 95%);
 }
 .mobile-menu__item:last-child {
   border-bottom: none;
@@ -4482,12 +3603,10 @@ i[class*="fa"] {
   letter-spacing: 0.5px;
   transition: color 0.3s ease;
 }
-.mobile-menu__link:hover,
-.mobile-menu__link--active {
+.mobile-menu__link:hover, .mobile-menu__link--active {
   color: var(--secondary-color);
 }
-.mobile-menu:has(.mobile-menu__link:hover)
-  .mobile-menu__link--active:not(:hover) {
+.mobile-menu:has(.mobile-menu__link:hover) .mobile-menu__link--active:not(:hover) {
   color: var(--white-color);
 }
 .mobile-menu__toggle-btn {
@@ -4504,9 +3623,7 @@ i[class*="fa"] {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .mobile-menu__toggle-btn:hover {
   background-color: transparent;
@@ -4530,88 +3647,15 @@ i[class*="fa"] {
   transition: all 0.3s ease;
   text-transform: capitalize;
 }
-.mobile-menu__submenu-link:hover,
-.mobile-menu__submenu-link--active {
+.mobile-menu__submenu-link:hover, .mobile-menu__submenu-link--active {
   color: var(--secondary-color);
   padding-left: 15px;
 }
-.mobile-menu__submenu:has(.mobile-menu__submenu-link:hover)
-  .mobile-menu__submenu-link--active:not(:hover) {
+.mobile-menu__submenu:has(.mobile-menu__submenu-link:hover) .mobile-menu__submenu-link--active:not(:hover) {
   color: color-mix(in srgb, var(--white-color), transparent 20%);
   padding-left: 10px;
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 12. Hero
 ----------------------------------------------------------------*/
@@ -4745,7 +3789,6 @@ i[class*="fa"] {
   max-width: 50px;
   border-radius: 50%;
   border: 4px solid var(--primary-color);
-  -o-object-fit: cover;
   object-fit: cover;
   margin-left: -20px;
   animation: avatarDropIn 0.45s ease-out both;
@@ -4875,16 +3918,14 @@ i[class*="fa"] {
 .hero__actions .common-btn .common-btn__inner {
   padding: 15px 35px;
 }
-.hero__image-cat,
-.hero__image-dog {
+.hero__image-cat, .hero__image-dog {
   position: absolute;
   bottom: 0;
   z-index: 2;
   max-width: 35%;
 }
 @media (max-width: 992px) {
-  .hero__image-cat,
-  .hero__image-dog {
+  .hero__image-cat, .hero__image-dog {
     display: none;
   }
 }
@@ -4945,77 +3986,6 @@ i[class*="fa"] {
     transform: translateY(-12px);
   }
 }
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 13. About
 ----------------------------------------------------------------*/
@@ -5029,7 +3999,6 @@ i[class*="fa"] {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
   z-index: -1;
   pointer-events: none;
@@ -5078,7 +4047,6 @@ i[class*="fa"] {
 }
 .about__image-main-wrap .about__image-main {
   width: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
   display: block;
 }
@@ -5280,77 +4248,6 @@ i[class*="fa"] {
   }
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 14. Service
 ----------------------------------------------------------------*/
@@ -5598,77 +4495,6 @@ i[class*="fa"] {
   color: var(--other-color-5);
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 15. Pet Grooming Service
 ----------------------------------------------------------------*/
@@ -5682,13 +4508,11 @@ i[class*="fa"] {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: fill;
   object-fit: fill;
   z-index: -1;
 }
 @media (max-width: 1200px) {
   .pet-grooming-service__bg {
-    -o-object-fit: cover;
     object-fit: cover;
   }
 }
@@ -5792,7 +4616,6 @@ i[class*="fa"] {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: fill;
   object-fit: fill;
   z-index: -1;
   pointer-events: none;
@@ -5843,7 +4666,6 @@ i[class*="fa"] {
 }
 .pet-grooming-card__img {
   width: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
   border-radius: 12px;
   transition: transform 0.5s ease;
@@ -5867,9 +4689,7 @@ i[class*="fa"] {
   color: var(--white-color);
   font-size: 30px;
   margin-bottom: 5px;
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 @media (max-width: 1400px) {
   .pet-grooming-card__title {
@@ -5949,77 +4769,6 @@ i[class*="fa"] {
   color: var(--other-color-2);
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 16. Video
 ----------------------------------------------------------------*/
@@ -6037,7 +4786,6 @@ i[class*="fa"] {
 @media (max-width: 992px) {
   .video-section__bg-img {
     min-height: 360px;
-    -o-object-fit: cover;
     object-fit: cover;
   }
 }
@@ -6120,9 +4868,7 @@ i[class*="fa"] {
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition:
-    opacity 0.4s ease,
-    visibility 0.4s ease;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 .ak-video-popup.active {
   opacity: 1;
@@ -6154,9 +4900,7 @@ i[class*="fa"] {
   z-index: 1;
   transform: scale(0.85);
   opacity: 0;
-  transition:
-    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-    opacity 0.4s ease;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
 }
 .ak-video-popup-container iframe {
   width: 100%;
@@ -6182,77 +4926,6 @@ i[class*="fa"] {
   }
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 17. Testimonial
 ----------------------------------------------------------------*/
@@ -6313,9 +4986,7 @@ i[class*="fa"] {
   z-index: 10;
   border: none;
   cursor: pointer;
-  box-shadow:
-    0 4px 15px color-mix(in srgb, var(--black-color), transparent 90%),
-    0 1px 4px color-mix(in srgb, var(--black-color), transparent 94%);
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--black-color), transparent 90%), 0 1px 4px color-mix(in srgb, var(--black-color), transparent 94%);
 }
 .testimonial__nav--prev {
   left: 5%;
@@ -6411,9 +5082,7 @@ i[class*="fa"] {
   margin-top: 60px;
   padding-bottom: 30px;
   min-height: 300px;
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 @media (max-width: 992px) {
   .testimonial__slide-content {
@@ -6500,7 +5169,6 @@ i[class*="fa"] {
 }
 .testimonial__avatar {
   border-radius: 50%;
-  -o-object-fit: cover;
   object-fit: cover;
   background-color: var(--white-color);
   border: 2px solid transparent;
@@ -6508,11 +5176,7 @@ i[class*="fa"] {
   flex-shrink: 0;
   width: 90px;
   height: 90px;
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease,
-    border-color 0.3s ease,
-    padding 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, border-color 0.3s ease, padding 0.3s ease;
 }
 .testimonial__avatar--side {
   transform: scale(0.78);
@@ -6536,77 +5200,6 @@ i[class*="fa"] {
   }
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 18. Team
 ----------------------------------------------------------------*/
@@ -6769,7 +5362,6 @@ i[class*="fa"] {
   top: 0;
   left: 0;
   width: 100%;
-  -o-object-fit: contain;
   object-fit: contain;
   z-index: 1;
   transition: all 0.3s ease;
@@ -7011,130 +5603,51 @@ i[class*="fa"] {
   border: 2px dashed var(--primary-color);
 }
 .team-card:hover.team-card--purple .team-card__social-bg {
-  filter: brightness(0) saturate(100%) invert(20%) sepia(97%) saturate(2363%)
-    hue-rotate(258deg) brightness(88%) contrast(100%);
+  filter: brightness(0) saturate(100%) invert(20%) sepia(97%) saturate(2363%) hue-rotate(258deg) brightness(88%) contrast(100%);
 }
 .team-card:hover.team-card--orange .team-card__social-links {
   border: 2px dashed var(--secondary-color);
 }
 .team-card:hover.team-card--orange .team-card__social-bg {
-  filter: brightness(0) saturate(100%) invert(56%) sepia(21%) saturate(2371%)
-    hue-rotate(338deg) brightness(101%) contrast(97%);
+  filter: brightness(0) saturate(100%) invert(56%) sepia(21%) saturate(2371%) hue-rotate(338deg) brightness(101%) contrast(97%);
 }
 .team-card:hover.team-card--pink .team-card__social-links {
   border: 2px dashed var(--other-color-1);
 }
 .team-card:hover.team-card--pink .team-card__social-bg {
-  filter: brightness(0) saturate(100%) invert(21%) sepia(87%) saturate(2395%)
-    hue-rotate(320deg) brightness(88%) contrast(98%);
+  filter: brightness(0) saturate(100%) invert(21%) sepia(87%) saturate(2395%) hue-rotate(320deg) brightness(88%) contrast(98%);
 }
 .team-card:hover.team-card--green .team-card__social-links {
   border: 2px dashed var(--other-color-2);
 }
 .team-card:hover.team-card--green .team-card__social-bg {
-  filter: brightness(0) saturate(100%) invert(35%) sepia(74%) saturate(840%)
-    hue-rotate(55deg) brightness(97%) contrast(94%);
+  filter: brightness(0) saturate(100%) invert(35%) sepia(74%) saturate(840%) hue-rotate(55deg) brightness(97%) contrast(94%);
 }
 .team-card:hover.team-card--yellow .team-card__social-links {
   border: 2px dashed var(--other-color-3);
 }
 .team-card:hover.team-card--yellow .team-card__social-bg {
-  filter: brightness(0) saturate(100%) invert(71%) sepia(85%) saturate(2337%)
-    hue-rotate(15deg) brightness(85%) contrast(101%);
+  filter: brightness(0) saturate(100%) invert(71%) sepia(85%) saturate(2337%) hue-rotate(15deg) brightness(85%) contrast(101%);
 }
 .team-card:hover.team-card--deep-purple .team-card__social-links {
   border: 2px dashed var(--other-color-6);
 }
 .team-card:hover.team-card--deep-purple .team-card__social-bg {
-  filter: brightness(0) saturate(100%) invert(20%) sepia(71%) saturate(5437%)
-    hue-rotate(264deg) brightness(78%) contrast(93%);
+  filter: brightness(0) saturate(100%) invert(20%) sepia(71%) saturate(5437%) hue-rotate(264deg) brightness(78%) contrast(93%);
 }
 .team-card:hover.team-card--red .team-card__social-links {
   border: 2px dashed var(--other-color-4);
 }
 .team-card:hover.team-card--red .team-card__social-bg {
-  filter: brightness(0) saturate(100%) invert(43%) sepia(16%) saturate(4058%)
-    hue-rotate(318deg) brightness(96%) contrast(83%);
+  filter: brightness(0) saturate(100%) invert(43%) sepia(16%) saturate(4058%) hue-rotate(318deg) brightness(96%) contrast(83%);
 }
 .team-card:hover.team-card--teal .team-card__social-links {
   border: 2px dashed var(--other-color-5);
 }
 .team-card:hover.team-card--teal .team-card__social-bg {
-  filter: brightness(0) saturate(100%) invert(56%) sepia(87%) saturate(2250%)
-    hue-rotate(143deg) brightness(91%) contrast(101%);
+  filter: brightness(0) saturate(100%) invert(56%) sepia(87%) saturate(2250%) hue-rotate(143deg) brightness(91%) contrast(101%);
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 19. Working Process
 ----------------------------------------------------------------*/
@@ -7163,7 +5676,6 @@ i[class*="fa"] {
   left: 24px;
   width: 98%;
   height: 96%;
-  -o-object-fit: cover;
   object-fit: cover;
   pointer-events: none;
 }
@@ -7286,8 +5798,7 @@ i[class*="fa"] {
     right: 18px;
   }
 }
-.working-process__form-group--select:focus-within
-  .working-process__select-icon {
+.working-process__form-group--select:focus-within .working-process__select-icon {
   transform: translateY(-50%) rotate(180deg);
 }
 .working-process__input {
@@ -7310,10 +5821,6 @@ i[class*="fa"] {
   }
 }
 .working-process__input option {
-  color: var(--body-color);
-  font-weight: 600;
-}
-.working-process__input::-moz-placeholder {
   color: var(--body-color);
   font-weight: 600;
 }
@@ -7388,12 +5895,9 @@ i[class*="fa"] {
 .working-process__img {
   max-width: 254px;
   max-height: 254px;
-  -o-object-fit: cover;
   object-fit: cover;
   border-radius: 50%;
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 .working-process__img.is-leaving {
   opacity: 0;
@@ -7428,9 +5932,7 @@ i[class*="fa"] {
 }
 .working-process__badge-text {
   display: inline-block;
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 .working-process__badge-text.is-leaving {
   opacity: 0;
@@ -7452,9 +5954,7 @@ i[class*="fa"] {
   color: var(--white-color);
   font-size: 30px;
   margin-bottom: 20px;
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 .working-process__slide-title.is-leaving {
   opacity: 0;
@@ -7481,9 +5981,7 @@ i[class*="fa"] {
   color: var(--white-color);
   margin-bottom: 40px;
   max-width: 400px;
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 .working-process__slide-desc.is-leaving {
   opacity: 0;
@@ -7588,85 +6086,14 @@ i[class*="fa"] {
     opacity: 1;
   }
 }
-[data-aos="divider-down"].aos-animate {
+[data-aos=divider-down].aos-animate {
   animation: dividerSlideDown 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
-[data-aos="divider-up"].aos-animate {
+[data-aos=divider-up].aos-animate {
   animation: dividerSlideUp 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 20. Pricing
 ----------------------------------------------------------------*/
@@ -7931,77 +6358,6 @@ i[class*="fa"] {
   color: var(--white-color);
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 21. Grooming Pricing
 ----------------------------------------------------------------*/
@@ -8013,7 +6369,6 @@ i[class*="fa"] {
   top: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
   z-index: -1;
 }
@@ -8127,8 +6482,7 @@ i[class*="fa"] {
   align-items: center;
   gap: 15px;
   padding-bottom: 20px;
-  border-bottom: 1px solid
-    color-mix(in srgb, var(--body-color), transparent 90%);
+  border-bottom: 1px solid color-mix(in srgb, var(--body-color), transparent 90%);
 }
 .grooming-pricing-card__icon {
   display: flex;
@@ -8201,8 +6555,7 @@ i[class*="fa"] {
 .grooming-pricing-card__list-item--inactive {
   color: color-mix(in srgb, var(--body-color), transparent 60%);
 }
-.grooming-pricing-card__list-item--inactive
-  .grooming-pricing-card__list-item-icon {
+.grooming-pricing-card__list-item--inactive .grooming-pricing-card__list-item-icon {
   color: color-mix(in srgb, var(--border-color), transparent 0%);
 }
 .grooming-pricing-card__btn {
@@ -8220,77 +6573,6 @@ i[class*="fa"] {
   color: var(--white-color);
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 22. Choose Us
 ----------------------------------------------------------------*/
@@ -8482,8 +6764,7 @@ i[class*="fa"] {
     gap: 30px;
     margin-bottom: 40px;
   }
-  .choose-us__features--left,
-  .choose-us__features--right {
+  .choose-us__features--left, .choose-us__features--right {
     text-align: center;
   }
 }
@@ -8588,77 +6869,6 @@ i[class*="fa"] {
   }
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 23. Product
 ----------------------------------------------------------------*/
@@ -8791,9 +7001,7 @@ i[class*="fa"] {
   -webkit-backdrop-filter: blur(0px);
   border-radius: inherit;
   opacity: 0;
-  transition:
-    opacity 0.35s ease,
-    backdrop-filter 0.35s ease;
+  transition: opacity 0.35s ease, backdrop-filter 0.35s ease, -webkit-backdrop-filter 0.35s ease;
   pointer-events: none;
   z-index: 1;
 }
@@ -8823,11 +7031,7 @@ i[class*="fa"] {
   border-radius: 0 4px 4px 0;
 }
 .product-card__badge--popular {
-  background-color: color-mix(
-    in srgb,
-    var(--primary-color) 35%,
-    var(--white-color)
-  );
+  background-color: color-mix(in srgb, var(--primary-color) 35%, var(--white-color));
   color: var(--body-color);
 }
 .product-card__info-link {
@@ -8876,77 +7080,6 @@ i[class*="fa"] {
   margin-left: 5px;
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 24. blog
 ----------------------------------------------------------------*/
@@ -8960,7 +7093,6 @@ i[class*="fa"] {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
   z-index: -1;
 }
@@ -9140,7 +7272,6 @@ i[class*="fa"] {
 .blog-card__img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
   border-radius: 5px;
   transition: all 0.4s ease;
@@ -9288,77 +7419,6 @@ i[class*="fa"] {
   background-color: var(--white-color);
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 25. Blog Standard
 ----------------------------------------------------------------*/
@@ -9463,77 +7523,6 @@ i[class*="fa"] {
   }
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 26. Footer
 ----------------------------------------------------------------*/
@@ -9560,7 +7549,6 @@ i[class*="fa"] {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
   z-index: 1;
 }
@@ -9676,8 +7664,7 @@ i[class*="fa"] {
   }
 }
 .footer__col {
-  border-right: 1px solid
-    color-mix(in srgb, var(--white-color), transparent 90%);
+  border-right: 1px solid color-mix(in srgb, var(--white-color), transparent 90%);
 }
 .footer__col:last-child {
   border-right: none;
@@ -9759,10 +7746,6 @@ i[class*="fa"] {
   border-radius: 5px;
   color: var(--heading-color);
   outline: none;
-}
-.footer__input::-moz-placeholder {
-  color: color-mix(in srgb, var(--heading-color), transparent 40%);
-  font-weight: 500;
 }
 .footer__input::placeholder {
   color: color-mix(in srgb, var(--heading-color), transparent 40%);
@@ -9874,8 +7857,7 @@ i[class*="fa"] {
 .footer__middle {
   padding: 60px 0;
   position: relative;
-  border-bottom: 2px solid
-    color-mix(in srgb, var(--white-color), transparent 90%);
+  border-bottom: 2px solid color-mix(in srgb, var(--white-color), transparent 90%);
   overflow: hidden;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
@@ -9903,7 +7885,6 @@ i[class*="fa"] {
   white-space: nowrap;
   animation: marquee 30s linear infinite;
   display: inline-block;
-  width: -moz-max-content;
   width: max-content;
 }
 @media (max-width: 992px) {
@@ -10003,13 +7984,11 @@ i[class*="fa"] {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: fill;
   object-fit: fill;
   z-index: 1;
 }
 @media (max-width: 1200px) {
   .footer-v2 .footer__bg {
-    -o-object-fit: cover;
     object-fit: cover;
   }
 }
@@ -10116,9 +8095,6 @@ i[class*="fa"] {
   outline: none;
   font-weight: 600;
 }
-.footer-v2__newsletter-input::-moz-placeholder {
-  color: color-mix(in srgb, var(--heading-color), transparent 20%);
-}
 .footer-v2__newsletter-input::placeholder {
   color: color-mix(in srgb, var(--heading-color), transparent 20%);
 }
@@ -10139,8 +8115,7 @@ i[class*="fa"] {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
-  border-top: 1px solid
-    color-mix(in srgb, var(--secondary-color), transparent 0%);
+  border-top: 1px solid color-mix(in srgb, var(--secondary-color), transparent 0%);
   padding: 0;
   gap: 30px;
   margin-bottom: 60px;
@@ -10284,9 +8259,7 @@ i[class*="fa"] {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
-  -o-object-position: top center;
   object-position: top center;
   z-index: 1;
 }
@@ -10387,11 +8360,6 @@ i[class*="fa"] {
   color: var(--white-color);
   outline: none;
 }
-.footer-v3__input::-moz-placeholder {
-  color: color-mix(in srgb, var(--white-color), transparent 30%);
-  font-weight: 500;
-  font-family: var(--body-font-family);
-}
 .footer-v3__input::placeholder {
   color: color-mix(in srgb, var(--white-color), transparent 30%);
   font-weight: 500;
@@ -10439,7 +8407,6 @@ i[class*="fa"] {
   gap: 10px;
 }
 .footer-v3__checkbox {
-  -moz-appearance: none;
   appearance: none;
   -webkit-appearance: none;
   width: 16px;
@@ -10470,7 +8437,6 @@ i[class*="fa"] {
   flex-shrink: 0;
 }
 .footer-v3__checkbox {
-  -moz-appearance: none;
   appearance: none;
   -webkit-appearance: none;
   width: 16px;
@@ -10582,8 +8548,7 @@ i[class*="fa"] {
     margin-bottom: 20px;
   }
 }
-.footer-v3__bottom-top,
-.footer-v3__bottom-bottom {
+.footer-v3__bottom-top, .footer-v3__bottom-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10591,8 +8556,7 @@ i[class*="fa"] {
   gap: 20px;
 }
 @media (max-width: 768px) {
-  .footer-v3__bottom-top,
-  .footer-v3__bottom-bottom {
+  .footer-v3__bottom-top, .footer-v3__bottom-bottom {
     flex-direction: column;
     text-align: center;
   }
@@ -10690,77 +8654,6 @@ i[class*="fa"] {
   line-height: normal;
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 27. Hero Grooming
 ----------------------------------------------------------------*/
@@ -10781,7 +8674,6 @@ i[class*="fa"] {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
   z-index: -1;
 }
@@ -10856,9 +8748,7 @@ i[class*="fa"] {
   justify-content: center;
   opacity: 0;
   transform: translateY(-50%) rotate(0deg);
-  transition:
-    opacity 0.8s ease,
-    transform 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: opacity 0.8s ease, transform 1s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .hero-grooming__badge--visible {
   opacity: 1;
@@ -10989,9 +8879,7 @@ i[class*="fa"] {
   position: relative;
   bottom: 1px;
   right: -30px;
-  -o-object-fit: contain;
   object-fit: contain;
-  -o-object-position: bottom;
   object-position: bottom;
 }
 @media (max-width: 992px) {
@@ -11013,8 +8901,7 @@ i[class*="fa"] {
   border-radius: 20px;
   max-width: 415px;
   text-align: left;
-  box-shadow: 0 10px 30px
-    color-mix(in srgb, var(--heading-color), transparent 90%);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--heading-color), transparent 90%);
   z-index: 10;
   order: 1;
 }
@@ -11142,7 +9029,6 @@ i[class*="fa"] {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: fill;
   object-fit: fill;
   z-index: -1;
   pointer-events: none;
@@ -11187,7 +9073,6 @@ i[class*="fa"] {
   align-items: center;
 }
 .hero-grooming__specialist-btn {
-  width: -moz-fit-content;
   width: fit-content;
 }
 .hero-grooming__specialist-btn .common-btn {
@@ -11236,77 +9121,6 @@ i[class*="fa"] {
   margin-left: 0;
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 28. About Grooming
 ----------------------------------------------------------------*/
@@ -11442,7 +9256,6 @@ i[class*="fa"] {
 .about-grooming__video-img {
   width: 100%;
   height: auto;
-  -o-object-fit: cover;
   object-fit: cover;
   display: block;
 }
@@ -11466,7 +9279,6 @@ i[class*="fa"] {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  -o-object-fit: cover;
   object-fit: cover;
   border: 1px solid var(--primary-color);
   padding: 5px;
@@ -11494,77 +9306,6 @@ i[class*="fa"] {
   font-weight: 500;
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 29. Parent Testimonial
 ----------------------------------------------------------------*/
@@ -11594,8 +9335,7 @@ i[class*="fa"] {
 .parent-testimonial__body {
   position: relative;
   border-radius: 40px;
-  box-shadow: 0px 10px 50px 0px
-    color-mix(in srgb, var(--black-color), transparent 92%);
+  box-shadow: 0px 10px 50px 0px color-mix(in srgb, var(--black-color), transparent 92%);
   padding: 90px 0 80px;
   display: flex;
   align-items: center;
@@ -11625,7 +9365,6 @@ i[class*="fa"] {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
   pointer-events: none;
   border-radius: inherit;
@@ -11645,8 +9384,7 @@ i[class*="fa"] {
   cursor: pointer;
   z-index: 10;
   transition: all 0.3s ease;
-  box-shadow: 0px 10px 50px 0px
-    color-mix(in srgb, var(--black-color), transparent 92%);
+  box-shadow: 0px 10px 50px 0px color-mix(in srgb, var(--black-color), transparent 92%);
 }
 @media (max-width: 992px) {
   .parent-testimonial__nav {
@@ -11718,7 +9456,6 @@ i[class*="fa"] {
 }
 .parent-testimonial__avatar {
   border-radius: 50%;
-  -o-object-fit: cover;
   object-fit: cover;
   background-color: var(--white-color);
   transition: all 0.3s ease;
@@ -11742,9 +9479,7 @@ i[class*="fa"] {
   position: relative;
   left: 0;
   overflow: hidden;
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 .parent-testimonial__name {
   font-size: 30px;
@@ -11769,77 +9504,6 @@ i[class*="fa"] {
   font-size: 22px;
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 30. FAQ
 ----------------------------------------------------------------*/
@@ -11887,7 +9551,6 @@ i[class*="fa"] {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
   z-index: -1;
 }
@@ -11899,7 +9562,6 @@ i[class*="fa"] {
 .faq__video img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
   display: block;
 }
@@ -11984,9 +9646,7 @@ i[class*="fa"] {
   margin-bottom: 30px;
   height: 0;
   overflow: hidden;
-  transition:
-    height 0.4s ease,
-    margin-bottom 0.4s ease;
+  transition: height 0.4s ease, margin-bottom 0.4s ease;
 }
 .faq-accordion__text {
   background-color: var(--secondary-color);
@@ -12021,77 +9681,6 @@ i[class*="fa"] {
   filter: brightness(0) invert(1);
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 31. Parent Marquee
 ----------------------------------------------------------------*/
@@ -12103,8 +9692,7 @@ i[class*="fa"] {
 }
 .partner-marquee__left {
   padding: 40px 60px;
-  border-right: 1px solid
-    color-mix(in srgb, var(--white-color), transparent 90%);
+  border-right: 1px solid color-mix(in srgb, var(--white-color), transparent 90%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12172,7 +9760,6 @@ i[class*="fa"] {
 }
 .partner-marquee__logo {
   width: auto;
-  -o-object-fit: contain;
   object-fit: contain;
 }
 
@@ -12184,77 +9771,6 @@ i[class*="fa"] {
     transform: translateX(calc(-50% - 30px));
   }
 }
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 32. Grooming Choose Us
 ----------------------------------------------------------------*/
@@ -12287,22 +9803,19 @@ i[class*="fa"] {
     gap: 40px;
   }
 }
-.grooming-choose-us__col--left,
-.grooming-choose-us__col--right {
+.grooming-choose-us__col--left, .grooming-choose-us__col--right {
   width: 32%;
   display: flex;
   flex-direction: column;
   gap: 100px;
 }
 @media (max-width: 1200px) {
-  .grooming-choose-us__col--left,
-  .grooming-choose-us__col--right {
+  .grooming-choose-us__col--left, .grooming-choose-us__col--right {
     gap: 60px;
   }
 }
 @media (max-width: 992px) {
-  .grooming-choose-us__col--left,
-  .grooming-choose-us__col--right {
+  .grooming-choose-us__col--left, .grooming-choose-us__col--right {
     width: calc(50% - 15px);
     gap: 30px;
     align-items: center;
@@ -12310,8 +9823,7 @@ i[class*="fa"] {
   }
 }
 @media (max-width: 576px) {
-  .grooming-choose-us__col--left,
-  .grooming-choose-us__col--right {
+  .grooming-choose-us__col--left, .grooming-choose-us__col--right {
     width: 100%;
     align-items: flex-start;
     text-align: left;
@@ -12447,7 +9959,6 @@ i[class*="fa"] {
 .grooming-choose-us__feature-icon {
   max-width: 100%;
   max-height: 100%;
-  -o-object-fit: contain;
   object-fit: contain;
 }
 .grooming-choose-us__feature-title {
@@ -12482,77 +9993,6 @@ i[class*="fa"] {
   }
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 33. Grooming Team
 ----------------------------------------------------------------*/
@@ -12764,9 +10204,7 @@ i[class*="fa"] {
   max-width: 100%;
   max-height: 380px;
   width: auto;
-  -o-object-fit: contain;
   object-fit: contain;
-  -o-object-position: bottom center;
   object-position: bottom center;
   display: block;
   transition: all 0.4s ease;
@@ -12798,77 +10236,6 @@ i[class*="fa"] {
   color: var(--other-color-2);
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 34. Before And After
 ----------------------------------------------------------------*/
@@ -12922,7 +10289,6 @@ i[class*="fa"] {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
   z-index: -1;
 }
@@ -13007,10 +10373,9 @@ i[class*="fa"] {
 .before-and-after__icon {
   position: relative;
   z-index: 1;
-  -o-object-fit: contain;
   object-fit: contain;
 }
-.before-and-after__icon[src*="icon-1"] {
+.before-and-after__icon[src*=icon-1] {
   width: 32px;
   height: 32px;
 }
@@ -13063,12 +10428,9 @@ i[class*="fa"] {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
   display: block;
-  transition:
-    transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
-    opacity 0.6s ease;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease;
 }
 .before-and-after__img--current {
   transform: translateX(0);
@@ -13154,77 +10516,6 @@ i[class*="fa"] {
   background-color: var(--secondary-color);
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 35. Grooming Blog
 ----------------------------------------------------------------*/
@@ -13273,7 +10564,6 @@ i[class*="fa"] {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: fill;
   object-fit: fill;
   z-index: -1;
   pointer-events: none;
@@ -13304,7 +10594,6 @@ i[class*="fa"] {
 .grooming-blog-card__img {
   width: 100%;
   height: auto;
-  -o-object-fit: cover;
   object-fit: cover;
   display: block;
   transition: all 0.4s ease;
@@ -13532,77 +10821,6 @@ i[class*="fa"] {
   color: var(--theme-color);
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 36. Boarding Hero
 ----------------------------------------------------------------*/
@@ -13698,7 +10916,6 @@ i[class*="fa"] {
   left: 0;
   width: 100%;
   height: calc(100% - 90px);
-  -o-object-fit: cover;
   object-fit: cover;
   z-index: 1;
 }
@@ -13710,7 +10927,6 @@ i[class*="fa"] {
   bottom: 40px;
   width: calc(100% - 80px);
   height: calc(100% - 70px);
-  -o-object-fit: none;
   object-fit: none;
   border-radius: 20px;
   z-index: 2;
@@ -14046,77 +11262,6 @@ i[class*="fa"] {
   display: block;
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 37. Boarding About
 ----------------------------------------------------------------*/
@@ -14130,7 +11275,6 @@ i[class*="fa"] {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
   z-index: -1;
 }
@@ -14408,7 +11552,6 @@ i[class*="fa"] {
   border-radius: 50%;
   border: 1px solid var(--white-color);
   margin-left: -15px;
-  -o-object-fit: cover;
   object-fit: cover;
 }
 .boarding-about__dark-avatar:first-child {
@@ -14470,7 +11613,6 @@ i[class*="fa"] {
 .boarding-about__main-img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
 }
 .boarding-about__white-card {
@@ -14550,77 +11692,6 @@ i[class*="fa"] {
   line-height: 1.5;
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 38. Boarding Service
 ----------------------------------------------------------------*/
@@ -14800,77 +11871,6 @@ i[class*="fa"] {
   stroke: var(--other-color-2);
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 39. Boarding Testimonial
 ----------------------------------------------------------------*/
@@ -14918,8 +11918,7 @@ i[class*="fa"] {
     padding-right: 0;
     padding-bottom: 40px;
     margin-bottom: 40px;
-    border-bottom: 1px solid
-      color-mix(in srgb, var(--white-color), transparent 80%);
+    border-bottom: 1px solid color-mix(in srgb, var(--white-color), transparent 80%);
   }
 }
 @media (max-width: 576px) {
@@ -15015,9 +12014,7 @@ i[class*="fa"] {
   padding-left: 95px;
   overflow: hidden;
   align-self: stretch;
-  transition:
-    opacity 0.28s ease,
-    transform 0.28s ease;
+  transition: opacity 0.28s ease, transform 0.28s ease;
 }
 @media (max-width: 992px) {
   .boarding-testimonial__right {
@@ -15028,6 +12025,12 @@ i[class*="fa"] {
   .boarding-testimonial__right {
     padding-left: 0;
   }
+}
+.boarding-testimonial__slide {
+  display: none;
+}
+.boarding-testimonial__slide--active {
+  display: block;
 }
 .boarding-testimonial__stars {
   color: var(--rating-color);
@@ -15068,7 +12071,6 @@ i[class*="fa"] {
 }
 .boarding-testimonial__avatar {
   border-radius: 50%;
-  -o-object-fit: cover;
   object-fit: cover;
 }
 .boarding-testimonial__name {
@@ -15114,8 +12116,7 @@ i[class*="fa"] {
     height: 30px;
   }
 }
-.boarding-testimonial__nav-btn:hover,
-.boarding-testimonial__nav-btn--active {
+.boarding-testimonial__nav-btn:hover, .boarding-testimonial__nav-btn--active {
   background-color: var(--secondary-color);
 }
 .boarding-testimonial__nav-icon {
@@ -15145,7 +12146,6 @@ i[class*="fa"] {
 }
 .boarding-testimonial__stats-bg {
   position: absolute;
-  -o-object-fit: cover;
   object-fit: cover;
   top: 0;
   left: 0;
@@ -15237,77 +12237,6 @@ i[class*="fa"] {
   }
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 40. Boarding Choose Us
 ----------------------------------------------------------------*/
@@ -15451,7 +12380,6 @@ i[class*="fa"] {
 .boarding-choose-us__icon {
   width: 30px;
   height: 30px;
-  -o-object-fit: contain;
   object-fit: contain;
 }
 @media (max-width: 1200px) {
@@ -15463,8 +12391,7 @@ i[class*="fa"] {
 .boarding-choose-us__line {
   flex-grow: 1;
   width: 1px;
-  border-left: 2px dotted
-    color-mix(in srgb, var(--primary-color), transparent 50%);
+  border-left: 2px dotted color-mix(in srgb, var(--primary-color), transparent 50%);
   margin-top: 10px;
   min-height: 30px;
 }
@@ -15505,7 +12432,6 @@ i[class*="fa"] {
   left: 0;
   width: 100%;
   height: 120%;
-  -o-object-fit: contain;
   object-fit: contain;
   z-index: -1;
 }
@@ -15517,77 +12443,6 @@ i[class*="fa"] {
   z-index: 1;
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 41. Boarding Pricing
 ----------------------------------------------------------------*/
@@ -15651,7 +12506,6 @@ i[class*="fa"] {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: fill;
   object-fit: fill;
   z-index: -1;
 }
@@ -15755,77 +12609,6 @@ i[class*="fa"] {
   }
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 42. Boarding Blog
 ----------------------------------------------------------------*/
@@ -15885,7 +12668,6 @@ i[class*="fa"] {
 }
 .boarding-blog-card__img {
   width: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
   display: block;
   transition: all 0.5s ease;
@@ -15978,8 +12760,7 @@ i[class*="fa"] {
   z-index: 1;
 }
 .boarding-blog-card__divider {
-  border-top: 2px dashed
-    color-mix(in srgb, var(--primary-color), transparent 40%);
+  border-top: 2px dashed color-mix(in srgb, var(--primary-color), transparent 40%);
   margin-bottom: 30px;
   display: block;
   transition: all 0.4s ease;
@@ -16048,77 +12829,6 @@ i[class*="fa"] {
   color: var(--white-color);
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 43. Service Details
 ----------------------------------------------------------------*/
@@ -16147,7 +12857,6 @@ i[class*="fa"] {
   max-width: 100%;
   border-radius: 20px;
   margin-bottom: 30px;
-  -o-object-fit: cover;
   object-fit: cover;
 }
 @media (max-width: 992px) {
@@ -16302,81 +13011,9 @@ i[class*="fa"] {
 .service-details__sub-img {
   max-width: 100%;
   border-radius: 15px;
-  -o-object-fit: cover;
   object-fit: cover;
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 44. Team Details
 ----------------------------------------------------------------*/
@@ -16591,8 +13228,7 @@ i[class*="fa"] {
   justify-content: center;
   transition: all 0.4s ease;
 }
-.team-details__social-link:hover,
-.team-details__social-link--active {
+.team-details__social-link:hover, .team-details__social-link--active {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
   color: var(--white-color);
@@ -16666,77 +13302,6 @@ i[class*="fa"] {
   position: absolute;
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 45. Blog Details
 ----------------------------------------------------------------*/
@@ -16781,7 +13346,6 @@ i[class*="fa"] {
 .blog-details__main-img {
   max-width: 100%;
   border-radius: 20px;
-  -o-object-fit: cover;
   object-fit: cover;
 }
 .blog-details__meta-pill {
@@ -16795,7 +13359,6 @@ i[class*="fa"] {
   display: flex;
   align-items: center;
   gap: 90px;
-  width: -moz-max-content;
   width: max-content;
   z-index: 2;
 }
@@ -17197,7 +13760,6 @@ i[class*="fa"] {
   max-width: 130px;
   max-height: 130px;
   border-radius: 20px;
-  -o-object-fit: cover;
   object-fit: cover;
   flex-shrink: 0;
 }
@@ -17324,8 +13886,7 @@ i[class*="fa"] {
     grid-template-columns: 1fr;
   }
 }
-.blog-details__input,
-.blog-details__textarea {
+.blog-details__input, .blog-details__textarea {
   width: 100%;
   padding: 20px 30px;
   font-weight: 600;
@@ -17334,8 +13895,7 @@ i[class*="fa"] {
   background-color: var(--smoke-bg-color);
   transition: all 0.3s ease;
 }
-.blog-details__input:focus,
-.blog-details__textarea:focus {
+.blog-details__input:focus, .blog-details__textarea:focus {
   border-color: var(--secondary-color);
   outline: none;
 }
@@ -17381,77 +13941,6 @@ i[class*="fa"] {
   transform: translateY(-3px);
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 46. Shop
 ----------------------------------------------------------------*/
@@ -17561,77 +14050,6 @@ i[class*="fa"] {
   }
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 47. Shop Details
 ----------------------------------------------------------------*/
@@ -17695,7 +14113,6 @@ i[class*="fa"] {
 .shop-details__thumb-img {
   max-width: 55%;
   height: auto;
-  -o-object-fit: contain;
   object-fit: contain;
 }
 .shop-details__main-img-wrap {
@@ -17732,7 +14149,6 @@ i[class*="fa"] {
 .shop-details__main-img {
   width: 65%;
   height: auto;
-  -o-object-fit: contain;
   object-fit: contain;
 }
 @media (max-width: 1200px) {
@@ -17892,8 +14308,7 @@ i[class*="fa"] {
   border-radius: 50%;
   display: none;
 }
-.shop-details__color-picker-btn--active
-  .shop-details__color-picker-active-border {
+.shop-details__color-picker-btn--active .shop-details__color-picker-active-border {
   display: block;
 }
 .shop-details__actions {
@@ -17949,8 +14364,7 @@ i[class*="fa"] {
   width: 30px;
   text-align: center;
 }
-.shop-details__quantity-input::-webkit-outer-spin-button,
-.shop-details__quantity-input::-webkit-inner-spin-button {
+.shop-details__quantity-input::-webkit-outer-spin-button, .shop-details__quantity-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -17998,8 +14412,7 @@ i[class*="fa"] {
   color: var(--primary-color);
 }
 .shop-details__meta {
-  border-top: 3px solid
-    color-mix(in srgb, var(--primary-color), transparent 90%);
+  border-top: 3px solid color-mix(in srgb, var(--primary-color), transparent 90%);
   padding-top: 30px;
   display: flex;
   flex-direction: column;
@@ -18029,77 +14442,6 @@ i[class*="fa"] {
   color: var(--primary-color);
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 48. Cart
 ----------------------------------------------------------------*/
@@ -18203,7 +14545,6 @@ i[class*="fa"] {
 .cart__product-img-box__product-img {
   max-width: 100%;
   max-height: 100%;
-  -o-object-fit: contain;
   object-fit: contain;
 }
 .cart__product-title {
@@ -18230,7 +14571,6 @@ i[class*="fa"] {
   border-radius: 30px;
   height: 50px;
   padding: 5px 30px;
-  width: -moz-fit-content;
   width: fit-content;
   gap: 15px;
 }
@@ -18276,8 +14616,7 @@ i[class*="fa"] {
     font-size: 13px;
   }
 }
-.cart__quantity-input::-webkit-outer-spin-button,
-.cart__quantity-input::-webkit-inner-spin-button {
+.cart__quantity-input::-webkit-outer-spin-button, .cart__quantity-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -18334,31 +14673,18 @@ i[class*="fa"] {
 }
 .cart__update-btn {
   background-color: color-mix(in srgb, var(--primary-color), transparent 50%);
-  transition:
-    background-color 0.35s ease,
-    transform 0.3s ease,
-    opacity 0.35s ease;
+  transition: background-color 0.35s ease, transform 0.3s ease, opacity 0.35s ease;
 }
 .cart__update-btn:not(.cart__update-btn--active) {
   cursor: not-allowed;
 }
 .cart__update-btn:not(.cart__update-btn--active):hover {
   transform: none;
-  background-color: color-mix(
-    in srgb,
-    var(--primary-color),
-    transparent 50%
-  ) !important;
-  transition:
-    background-color 0.35s ease,
-    opacity 0.35s ease;
+  background-color: color-mix(in srgb, var(--primary-color), transparent 50%) !important;
+  transition: background-color 0.35s ease, opacity 0.35s ease;
 }
 .cart__update-btn:not(.cart__update-btn--active):hover .common-btn__inner {
-  background-color: color-mix(
-    in srgb,
-    var(--primary-color),
-    transparent 50%
-  ) !important;
+  background-color: color-mix(in srgb, var(--primary-color), transparent 50%) !important;
   transition: background-color 0.35s ease;
 }
 .cart__update-btn--active {
@@ -18367,9 +14693,7 @@ i[class*="fa"] {
 }
 .cart__update-btn--active:hover {
   background-color: var(--primary-color);
-  transition:
-    background-color 0.35s ease,
-    transform 0.3s ease;
+  transition: background-color 0.35s ease, transform 0.3s ease;
 }
 .cart__update-btn--active:hover .common-btn__inner {
   background-color: var(--secondary-color);
@@ -18405,7 +14729,7 @@ i[class*="fa"] {
     grid-template-columns: 1fr 1fr;
   }
   .cart__actions .cart__promo-input {
-    grid-column: 1 / -span 2;
+    grid-column: 1/-span 2;
     width: 100%;
   }
 }
@@ -18435,10 +14759,6 @@ i[class*="fa"] {
   font-weight: 700;
   color: var(--primary-color);
   outline: none;
-}
-.cart__promo-input::-moz-placeholder {
-  color: var(--primary-color);
-  opacity: 0.5;
 }
 .cart__promo-input::placeholder {
   color: var(--primary-color);
@@ -18537,9 +14857,7 @@ i[class*="fa"] {
   transform: scale(0);
   transition: all 0.3s ease;
 }
-input:checked
-  + .cart__summary-shipping-option-left
-  .cart__summary-shipping-option-dot {
+input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-option-dot {
   transform: scale(1);
 }
 .cart__summary-shipping-option-text {
@@ -18557,84 +14875,12 @@ input:checked
   margin-top: 10px;
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 49. Checkout
 ----------------------------------------------------------------*/
 .checkout-section__layout {
   display: flex;
   flex-wrap: wrap;
-  -moz-column-gap: 30px;
   column-gap: 30px;
   row-gap: 50px;
 }
@@ -18711,21 +14957,15 @@ input:checked
 .checkout-section__row--full {
   flex-direction: column;
 }
-.checkout-section__input,
-.checkout-section__select {
+.checkout-section__input, .checkout-section__select {
   width: 100%;
   border: 1px solid var(--border-color);
   border-radius: 5px;
   padding: 15px 20px;
   transition: all 0.3s ease;
 }
-.checkout-section__input:focus,
-.checkout-section__select:focus {
+.checkout-section__input:focus, .checkout-section__select:focus {
   border-color: none;
-}
-.checkout-section__input::-moz-placeholder {
-  font-weight: 600;
-  color: color-mix(in srgb, var(--heading-color), transparent 30%);
 }
 .checkout-section__input::placeholder {
   font-weight: 600;
@@ -18738,7 +14978,6 @@ input:checked
   align-items: center;
 }
 .checkout-section__select {
-  -moz-appearance: none;
   appearance: none;
   -webkit-appearance: none;
   color: color-mix(in srgb, var(--heading-color), transparent 30%);
@@ -18772,7 +15011,6 @@ input:checked
   height: 100%;
   border: 1px solid var(--border-color);
   border-radius: 6px;
-  -moz-appearance: none;
   appearance: none;
   -webkit-appearance: none;
   cursor: pointer;
@@ -18878,7 +15116,6 @@ input:checked
 }
 .checkout-section__card-img {
   height: 35px;
-  -o-object-fit: contain;
   object-fit: contain;
   border-radius: 4px;
 }
@@ -18916,14 +15153,10 @@ input:checked
   transform: scale(0);
   transition: all 0.3s ease;
 }
-.checkout-section__radio-input:checked
-  + .checkout-section__radio-circle
-  .checkout-section__radio-dot {
+.checkout-section__radio-input:checked + .checkout-section__radio-circle .checkout-section__radio-dot {
   transform: scale(1);
 }
-.checkout-section
-  .checkout-section__radio-input:checked
-  + .checkout-section__radio-circle {
+.checkout-section .checkout-section__radio-input:checked + .checkout-section__radio-circle {
   border-color: var(--primary-color);
 }
 .checkout-section__radio-text {
@@ -18940,77 +15173,6 @@ input:checked
   padding: 15px 20px;
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 50. Contact
 ----------------------------------------------------------------*/
@@ -19079,8 +15241,7 @@ input:checked
 }
 .contact-section__info-card:hover {
   background-color: var(--white-color);
-  box-shadow: 0px 10px 50px 0px
-    color-mix(in srgb, var(--black-color), transparent 92%);
+  box-shadow: 0px 10px 50px 0px color-mix(in srgb, var(--black-color), transparent 92%);
 }
 .contact-section__info-card:hover .contact-section__icon-wrap {
   background-color: var(--smoke-bg-color);
@@ -19125,8 +15286,7 @@ input:checked
 .contact-section__form-box {
   border-radius: 20px;
   padding: 40px;
-  box-shadow: 0px 10px 50px 0px
-    color-mix(in srgb, var(--black-color), transparent 92%);
+  box-shadow: 0px 10px 50px 0px color-mix(in srgb, var(--black-color), transparent 92%);
 }
 @media (max-width: 992px) {
   .contact-section__form-box {
@@ -19160,9 +15320,7 @@ input:checked
 .contact-section__input-group--textarea {
   height: 160px;
 }
-.contact-section__input,
-.contact-section__select,
-.contact-section__textarea {
+.contact-section__input, .contact-section__select, .contact-section__textarea {
   width: 100%;
   background-color: var(--smoke-bg-color);
   border: none;
@@ -19171,15 +15329,7 @@ input:checked
   font-weight: 600;
   transition: all 0.3s ease;
 }
-.contact-section__input::-moz-placeholder,
-.contact-section__select::-moz-placeholder,
-.contact-section__textarea::-moz-placeholder {
-  font-weight: 600;
-  color: color-mix(in srgb, var(--heading-color), transparent 20%);
-}
-.contact-section__input::placeholder,
-.contact-section__select::placeholder,
-.contact-section__textarea::placeholder {
+.contact-section__input::placeholder, .contact-section__select::placeholder, .contact-section__textarea::placeholder {
   font-weight: 600;
   color: color-mix(in srgb, var(--heading-color), transparent 20%);
 }
@@ -19188,7 +15338,6 @@ input:checked
   resize: none;
 }
 .contact-section__select {
-  -moz-appearance: none;
   appearance: none;
   -webkit-appearance: none;
   cursor: pointer;
@@ -19240,77 +15389,6 @@ input:checked
   }
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 51. Error
 ----------------------------------------------------------------*/
@@ -19338,77 +15416,6 @@ input:checked
   border-color: var(--white-color);
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 52. Sign In
 ----------------------------------------------------------------*/
@@ -19481,7 +15488,6 @@ input:checked
   align-self: flex-start;
 }
 .sign-in__logo img {
-  -o-object-fit: contain;
   object-fit: contain;
 }
 .sign-in__form-content {
@@ -19532,12 +15538,10 @@ input:checked
   align-items: center;
   width: 100%;
 }
-.sign-in__input-wrapper input[type="password"]::-ms-reveal,
-.sign-in__input-wrapper input[type="password"]::-ms-clear,
-.sign-in__input-wrapper
-  input[type="password"]::-webkit-contacts-auto-fill-button,
-.sign-in__input-wrapper
-  input[type="password"]::-webkit-credentials-auto-fill-button {
+.sign-in__input-wrapper input[type=password]::-ms-reveal,
+.sign-in__input-wrapper input[type=password]::-ms-clear,
+.sign-in__input-wrapper input[type=password]::-webkit-contacts-auto-fill-button,
+.sign-in__input-wrapper input[type=password]::-webkit-credentials-auto-fill-button {
   display: none;
 }
 .sign-in__input-icon {
@@ -19585,24 +15589,14 @@ input:checked
     padding: 15px;
   }
 }
-.sign-in__input::-moz-placeholder {
-  color: color-mix(in srgb, var(--heading-color), transparent 45%);
-  font-weight: 600;
-  font-size: 16px;
-}
 .sign-in__input::placeholder {
   color: color-mix(in srgb, var(--heading-color), transparent 45%);
   font-weight: 600;
   font-size: 16px;
 }
 .sign-in__input:focus {
-  background-color: color-mix(
-    in srgb,
-    var(--smoke-bg-color),
-    var(--primary-color) 8%
-  );
-  box-shadow: 0 0 0 2px
-    color-mix(in srgb, var(--primary-color), transparent 70%);
+  background-color: color-mix(in srgb, var(--smoke-bg-color), var(--primary-color) 8%);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary-color), transparent 70%);
 }
 .sign-in__forgot-link {
   align-self: flex-end;
@@ -19680,85 +15674,12 @@ input:checked
 .sign-in__image {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
-  -o-object-position: center center;
   object-position: center center;
   display: block;
   border-radius: 20px;
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 53. Sign Up
 ----------------------------------------------------------------*/
@@ -19829,7 +15750,6 @@ input:checked
   align-self: flex-start;
 }
 .sign-up__logo img {
-  -o-object-fit: contain;
   object-fit: contain;
 }
 .sign-up__form-content {
@@ -19897,16 +15817,13 @@ input:checked
   align-items: center;
   width: 100%;
 }
-.sign-up__input-wrapper input[type="password"]::-ms-reveal,
-.sign-up__input-wrapper input[type="password"]::-ms-clear,
-.sign-up__input-wrapper
-  input[type="password"]::-webkit-contacts-auto-fill-button,
-.sign-up__input-wrapper
-  input[type="password"]::-webkit-credentials-auto-fill-button {
+.sign-up__input-wrapper input[type=password]::-ms-reveal,
+.sign-up__input-wrapper input[type=password]::-ms-clear,
+.sign-up__input-wrapper input[type=password]::-webkit-contacts-auto-fill-button,
+.sign-up__input-wrapper input[type=password]::-webkit-credentials-auto-fill-button {
   display: none;
 }
-.sign-up__input,
-.sign-up__select {
+.sign-up__input, .sign-up__select {
   width: 100%;
   background-color: var(--smoke-bg-color);
   border: 1.5px solid var(--border-color-2);
@@ -19922,35 +15839,20 @@ input:checked
   box-sizing: border-box;
 }
 @media (max-width: 768px) {
-  .sign-up__input,
-  .sign-up__select {
+  .sign-up__input, .sign-up__select {
     padding: 15px;
   }
 }
-.sign-up__input::-moz-placeholder,
-.sign-up__select::-moz-placeholder {
+.sign-up__input::placeholder, .sign-up__select::placeholder {
   color: color-mix(in srgb, var(--heading-color), transparent 45%);
   font-weight: 600;
   font-size: 16px;
 }
-.sign-up__input::placeholder,
-.sign-up__select::placeholder {
-  color: color-mix(in srgb, var(--heading-color), transparent 45%);
-  font-weight: 600;
-  font-size: 16px;
-}
-.sign-up__input:focus,
-.sign-up__select:focus {
-  background-color: color-mix(
-    in srgb,
-    var(--smoke-bg-color),
-    var(--primary-color) 8%
-  );
-  box-shadow: 0 0 0 2px
-    color-mix(in srgb, var(--primary-color), transparent 70%);
+.sign-up__input:focus, .sign-up__select:focus {
+  background-color: color-mix(in srgb, var(--smoke-bg-color), var(--primary-color) 8%);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary-color), transparent 70%);
 }
 .sign-up__select {
-  -moz-appearance: none;
   appearance: none;
   -webkit-appearance: none;
   cursor: pointer;
@@ -20051,85 +15953,12 @@ input:checked
 .sign-up__image {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
-  -o-object-position: center center;
   object-position: center center;
   display: block;
   border-radius: 20px;
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 54. Forget Password
 ----------------------------------------------------------------*/
@@ -20145,9 +15974,7 @@ input:checked
   inset: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
-  -o-object-position: center;
   object-position: center;
   z-index: 0;
 }
@@ -20221,16 +16048,12 @@ input:checked
   outline: none;
   box-sizing: border-box;
 }
-.forget-password__input::-moz-placeholder {
-  font-weight: 400;
-}
 .forget-password__input::placeholder {
   font-weight: 400;
 }
 .forget-password__input:focus {
   background-color: color-mix(in srgb, var(--primary-color), transparent 83%);
-  box-shadow: 0 0 0 2px
-    color-mix(in srgb, var(--primary-color), transparent 72%);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary-color), transparent 72%);
 }
 .forget-password__submit-btn {
   width: 100%;
@@ -20265,77 +16088,6 @@ input:checked
   color: var(--primary-color);
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 55. Password Reset
 ----------------------------------------------------------------*/
@@ -20352,9 +16104,7 @@ input:checked
   inset: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
-  -o-object-position: center;
   object-position: center;
   z-index: 0;
 }
@@ -20447,8 +16197,7 @@ input:checked
 .password-reset__otp-input:focus {
   border-color: var(--primary-color);
   background-color: color-mix(in srgb, var(--primary-color), transparent 83%);
-  box-shadow: 0 0 0 2px
-    color-mix(in srgb, var(--primary-color), transparent 72%);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary-color), transparent 72%);
 }
 .password-reset__otp-input.is-filled {
   border-color: var(--primary-color);
@@ -20486,77 +16235,6 @@ input:checked
   color: var(--primary-color);
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 56. Set New Password
 ----------------------------------------------------------------*/
@@ -20572,9 +16250,7 @@ input:checked
   inset: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
-  -o-object-position: center;
   object-position: center;
   z-index: 0;
 }
@@ -20656,18 +16332,13 @@ input:checked
   outline: none;
   box-sizing: border-box;
 }
-.set-newpassword__input::-moz-placeholder {
-  font-weight: 400;
-  letter-spacing: 3px;
-}
 .set-newpassword__input::placeholder {
   font-weight: 400;
   letter-spacing: 3px;
 }
 .set-newpassword__input:focus {
   background-color: color-mix(in srgb, var(--primary-color), transparent 83%);
-  box-shadow: 0 0 0 2px
-    color-mix(in srgb, var(--primary-color), transparent 72%);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary-color), transparent 72%);
   border-color: var(--primary-color);
 }
 .set-newpassword__submit-btn {
@@ -20703,77 +16374,6 @@ input:checked
   color: var(--primary-color);
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 57. Dashboard
 ----------------------------------------------------------------*/
@@ -20825,7 +16425,6 @@ input:checked
 .dashboard-topbar__logo-slot__logo-img {
   height: 38px;
   width: auto;
-  -o-object-fit: contain;
   object-fit: contain;
 }
 .dashboard-topbar__right {
@@ -20865,9 +16464,6 @@ input:checked
   outline: none;
   box-sizing: border-box;
   font-family: var(--body-font-family);
-}
-.dashboard-topbar__search-input::-moz-placeholder {
-  color: color-mix(in srgb, var(--heading-color), transparent 55%);
 }
 .dashboard-topbar__search-input::placeholder {
   color: color-mix(in srgb, var(--heading-color), transparent 55%);
@@ -20913,7 +16509,6 @@ input:checked
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  -o-object-fit: cover;
   object-fit: cover;
   cursor: pointer;
 }
@@ -21004,7 +16599,6 @@ input:checked
 .stat-card__icon-wrap .stat-card__icon-img {
   width: 45px;
   height: 45px;
-  -o-object-fit: contain;
   object-fit: contain;
 }
 .stat-card__photo {
@@ -21014,9 +16608,7 @@ input:checked
   height: 100%;
   width: 100%;
   max-width: 120px;
-  -o-object-fit: contain;
   object-fit: contain;
-  -o-object-position: bottom right;
   object-position: bottom right;
 }
 .stat-card__label {
@@ -21184,8 +16776,7 @@ input:checked
   text-align: left;
   padding: 10px;
   border-top: none;
-  border-bottom: 1px solid
-    color-mix(in srgb, var(--primary-color), transparent 92%);
+  border-bottom: 1px solid color-mix(in srgb, var(--primary-color), transparent 92%);
 }
 .dashboard-bookings__table thead {
   border-top: none;
@@ -21205,8 +16796,7 @@ input:checked
 .dashboard-bookings__table td {
   padding: 10px;
   vertical-align: middle;
-  border-bottom: 1px solid
-    color-mix(in srgb, var(--primary-color), transparent 92%);
+  border-bottom: 1px solid color-mix(in srgb, var(--primary-color), transparent 92%);
 }
 .dashboard-bookings__table tr:last-child td {
   border-bottom: none;
@@ -21221,7 +16811,6 @@ input:checked
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  -o-object-fit: cover;
   object-fit: cover;
   flex-shrink: 0;
 }
@@ -21281,8 +16870,7 @@ input:checked
   font-size: 24px;
   font-weight: 400;
   padding-bottom: 10px;
-  border-bottom: 1px solid
-    color-mix(in srgb, var(--primary-color), transparent 92%);
+  border-bottom: 1px solid color-mix(in srgb, var(--primary-color), transparent 92%);
 }
 .dashboard-agenda__list {
   list-style: none;
@@ -21340,77 +16928,6 @@ input:checked
   text-decoration: underline;
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 58. Order
 ----------------------------------------------------------------*/
@@ -21435,8 +16952,7 @@ input:checked
 }
 
 .order-header {
-  border-bottom: 1px solid
-    color-mix(in srgb, var(--border-color), transparent 60%);
+  border-bottom: 1px solid color-mix(in srgb, var(--border-color), transparent 60%);
   padding-bottom: 10px;
 }
 .order-header__title {
@@ -21499,7 +17015,6 @@ input:checked
   padding: 8px 30px 8px 10px;
   outline: none;
   cursor: pointer;
-  -moz-appearance: none;
   appearance: none;
   -webkit-appearance: none;
   color: var(--body-color);
@@ -21536,9 +17051,6 @@ input:checked
   box-sizing: border-box;
   font-family: var(--body-font-family);
 }
-.order-toolbar__search-input::-moz-placeholder {
-  color: color-mix(in srgb, var(--heading-color), transparent 30%);
-}
 .order-toolbar__search-input::placeholder {
   color: color-mix(in srgb, var(--heading-color), transparent 30%);
 }
@@ -21547,14 +17059,7 @@ input:checked
     padding: 9px 9px 9px 38px;
   }
 }
-.order-toolbar__search-input:not(:-moz-placeholder)
-  ~ .order-toolbar__search-placeholder {
-  opacity: 0;
-  pointer-events: none;
-}
-.order-toolbar__search-input:focus ~ .order-toolbar__search-placeholder,
-.order-toolbar__search-input:not(:placeholder-shown)
-  ~ .order-toolbar__search-placeholder {
+.order-toolbar__search-input:focus ~ .order-toolbar__search-placeholder, .order-toolbar__search-input:not(:placeholder-shown) ~ .order-toolbar__search-placeholder {
   opacity: 0;
   pointer-events: none;
 }
@@ -21716,8 +17221,7 @@ input:checked
   padding-left: 20px;
 }
 .order-table__tbody tr {
-  border-bottom: 1px solid
-    color-mix(in srgb, var(--primary-color), transparent 90%);
+  border-bottom: 1px solid color-mix(in srgb, var(--primary-color), transparent 90%);
   transition: background-color 0.2s ease;
 }
 .order-table__tbody tr:last-child {
@@ -21762,7 +17266,6 @@ input:checked
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  -o-object-fit: cover;
   object-fit: cover;
   flex-shrink: 0;
 }
@@ -21844,77 +17347,6 @@ input:checked
   text-decoration: underline;
 }
 
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 59. Lead Management
 ----------------------------------------------------------------*/
@@ -22030,7 +17462,6 @@ input:checked
   flex-shrink: 0;
 }
 .lead-toolbar__export-select {
-  -moz-appearance: none;
   appearance: none;
   -webkit-appearance: none;
   background: transparent;
@@ -22070,20 +17501,10 @@ input:checked
   box-sizing: border-box;
   font-family: var(--body-font-family);
 }
-.lead-toolbar__search-input::-moz-placeholder {
-  color: color-mix(in srgb, var(--heading-color), transparent 40%);
-}
 .lead-toolbar__search-input::placeholder {
   color: color-mix(in srgb, var(--heading-color), transparent 40%);
 }
-.lead-toolbar__search-input:not(:-moz-placeholder)
-  ~ .lead-toolbar__search-placeholder {
-  opacity: 0;
-  pointer-events: none;
-}
-.lead-toolbar__search-input:focus ~ .lead-toolbar__search-placeholder,
-.lead-toolbar__search-input:not(:placeholder-shown)
-  ~ .lead-toolbar__search-placeholder {
+.lead-toolbar__search-input:focus ~ .lead-toolbar__search-placeholder, .lead-toolbar__search-input:not(:placeholder-shown) ~ .lead-toolbar__search-placeholder {
   opacity: 0;
   pointer-events: none;
 }
@@ -22206,8 +17627,7 @@ input:checked
   padding-left: 20px;
 }
 .lead-table__tbody tr {
-  border-bottom: 1px solid
-    color-mix(in srgb, var(--primary-color), transparent 90%);
+  border-bottom: 1px solid color-mix(in srgb, var(--primary-color), transparent 90%);
   transition: background-color 0.2s ease;
 }
 .lead-table__tbody tr:last-child {
@@ -22312,77 +17732,6 @@ input:checked
     transform: translateY(-50%) translateX(-160px);
   }
 }
-/* 
-|......................................................................
-| Template Name: PATIE
-| Author: Thememarch
-| Version: 1.0.0
-|--------------------------------------------------------------------------
-|--------------------------------------------------------------------------
-| TABLE OF CONTENTS:
-|--------------------------------------------------------------------------
-    1. Typography
-    2. General
-    3. Spacing
-    4. Buttons
-    5. Section Header
-    6. Pagination
-    7. Common Banner
-    8. Sidebar
-    9. Scrollup
-    10. Header
-    11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
-
- ................................................................*/
 /*--------------------------------------------------------------
 60. Change Password
 ----------------------------------------------------------------*/
@@ -22462,8 +17811,7 @@ input:checked
   transition: box-shadow 0.25s ease;
 }
 .cp-form__input:focus {
-  box-shadow: 0 0 0 2px
-    color-mix(in srgb, var(--primary-color), transparent 70%);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary-color), transparent 70%);
 }
 .cp-form__actions {
   display: flex;
@@ -22543,4 +17891,6 @@ input:checked
 }
 .cp-footer__link:hover {
   text-decoration: underline;
-} /*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

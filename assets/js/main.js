@@ -623,28 +623,30 @@
   11. Progress Bar Animation (scroll-triggered)
   --------------------------------------------------------------*/
   function initProgressBars() {
-    var bars = document.querySelectorAll(".ak-progress-bar[data-width]");
-    if (!bars.length) return;
+    if ($.exists(".ak-progress-bar")) {
+      var bars = document.querySelectorAll(".ak-progress-bar[data-width]");
+      if (!bars.length) return;
 
-    bars.forEach(function (bar) {
-      var targetWidth = bar.getAttribute("data-width");
+      bars.forEach(function (bar) {
+        var targetWidth = bar.getAttribute("data-width");
 
-      var observer = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              observer.unobserve(bar);
-              setTimeout(function () {
-                bar.style.width = targetWidth;
-              }, 150);
-            }
-          });
-        },
-        { threshold: 0.4 },
-      );
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                observer.unobserve(bar);
+                setTimeout(function () {
+                  bar.style.width = targetWidth;
+                }, 150);
+              }
+            });
+          },
+          { threshold: 0.4 },
+        );
 
-      observer.observe(bar);
-    });
+        observer.observe(bar);
+      });
+    }
   }
 
   /*--------------------------------------------------------------
@@ -708,215 +710,155 @@
   13. Testimonial Slider
   --------------------------------------------------------------*/
   function testimonialSlider() {
-    var currentIndex = 1;
-    var totalAvatars = $(".testimonial__avatar").length;
-    if (!totalAvatars) return;
-    var data = [
-      {
-        name: "JENNY WILSON",
-        role: "Graphic Designer",
-        rating: 4.8,
-        text: "I Absolutely Love How Caring, Professional, And Attentive The Entire Team Is! My Dog Feels Completely At Home, Happy, And I Can Check On Him Anytime Through Their Reliable CCTV Monitoring Service. Truly Peace Of Mind For Every Pet Parent!",
-      },
-      {
-        name: "SAVANNAH NGUYEN",
-        role: "Managing Director",
-        rating: 4.5,
-        text: "I Absolutely Love How Caring, Professional, And Attentive The Entire Team Is! My Dog Feels Completely At Home, Happy, And I Can Check On Him Anytime Through Their Reliable CCTV Monitoring Service. Truly Peace Of Mind For Every Pet Parent!",
-      },
-      {
-        name: "KRISTIN WATSON",
-        role: "Marketing Specialist",
-        rating: 5,
-        text: "I Absolutely Love How Caring, Professional, And Attentive The Entire Team Is! My Dog Feels Completely At Home, Happy, And I Can Check On Him Anytime Through Their Reliable CCTV Monitoring Service. Truly Peace Of Mind For Every Pet Parent!",
-      },
-    ];
+    var $avatars = $(".testimonial__avatar");
+    var $slides = $(".testimonial__slide-content");
+    var total = $avatars.length;
+    if (!total) return;
 
-    function buildStarsHtml(rating) {
-      var html = "";
-      var fullStars = Math.floor(rating);
-      var hasHalf = rating % 1 !== 0;
-      for (var i = 0; i < 5; i++) {
-        if (i < fullStars) {
-          html += '<i class="fas fa-star"></i>';
-        } else if (i === fullStars && hasHalf) {
-          html += '<i class="fas fa-star-half-alt"></i>';
-        } else {
-          html += '<i class="far fa-star"></i>';
-        }
-      }
-      return html;
-    }
+    var currentIndex = $avatars.index(
+      $avatars.filter(".testimonial__avatar--center"),
+    );
+    if (currentIndex < 0) currentIndex = 1;
 
-    function updateTestimonial(index, direction) {
-      if (totalAvatars === 0) return;
-
-      var content = $(".testimonial__slide-content")[0];
-      var wrapper = $(".testimonial__wrapper")[0];
-      if (!content || !wrapper) return;
+    function showSlide(index, direction) {
+      var $current = $slides.filter(":visible");
+      var $next = $slides.eq(index);
+      if ($current.is($next)) return;
 
       var slideOut = direction === "next" ? "-60px" : "60px";
       var slideIn = direction === "next" ? "60px" : "-60px";
 
-      content.style.transition = "opacity 0.22s ease, transform 0.22s ease";
-      content.style.opacity = "0";
-      content.style.transform = "translateX(" + slideOut + ")";
+      $current.css({
+        transition: "opacity 0.22s ease, transform 0.22s ease",
+        opacity: 1,
+        transform: "translateX(0)",
+      });
+      $current[0].style.transition = "opacity 0.22s ease, transform 0.22s ease";
+      $current[0].style.opacity = "0";
+      $current[0].style.transform = "translateX(" + slideOut + ")";
 
       setTimeout(function () {
-        var item = data[index] || data[1];
-        var $card = $(".testimonial__card");
-        $card.find(".testimonial__name").text(item.name);
-        $card.find(".testimonial__designation").text(item.role);
-        $card.find(".testimonial__text").text('"' + item.text + '"');
-        $card.find(".testimonial__rating").html(buildStarsHtml(item.rating));
+        $current.hide().css({ transition: "", opacity: "", transform: "" });
 
-        $(".testimonial__avatar")
+        $avatars
           .removeClass("testimonial__avatar--center")
           .addClass("testimonial__avatar--side");
-        $(".testimonial__avatar")
+        $avatars
           .eq(index)
           .removeClass("testimonial__avatar--side")
           .addClass("testimonial__avatar--center");
 
-        content.style.transition = "none";
-        content.style.transform = "translateX(" + slideIn + ")";
-        content.style.opacity = "0";
+        $next.css({
+          display: "",
+          opacity: "0",
+          transform: "translateX(" + slideIn + ")",
+          transition: "none",
+        });
+        $next.show();
 
         requestAnimationFrame(function () {
           requestAnimationFrame(function () {
-            content.style.transition =
+            $next[0].style.transition =
               "opacity 0.28s ease, transform 0.28s ease";
-            content.style.opacity = "1";
-            content.style.transform = "translateX(0)";
+            $next[0].style.opacity = "1";
+            $next[0].style.transform = "translateX(0)";
           });
         });
       }, 240);
     }
 
+    $slides.hide();
+    $slides.eq(currentIndex).show();
+
     $document.on("click", ".testimonial__nav--next", function () {
-      currentIndex = (currentIndex + 1) % totalAvatars;
-      updateTestimonial(currentIndex, "next");
+      currentIndex = (currentIndex + 1) % total;
+      showSlide(currentIndex, "next");
     });
 
     $document.on("click", ".testimonial__nav--prev", function () {
-      currentIndex = (currentIndex - 1 + totalAvatars) % totalAvatars;
-      updateTestimonial(currentIndex, "prev");
+      currentIndex = (currentIndex - 1 + total) % total;
+      showSlide(currentIndex, "prev");
     });
 
     $document.on("click", ".testimonial__avatar", function () {
-      var newIndex = $(this).index();
+      var newIndex = $avatars.index(this);
       if (newIndex === currentIndex) return;
       var direction = newIndex > currentIndex ? "next" : "prev";
       currentIndex = newIndex;
-      updateTestimonial(currentIndex, direction);
+      showSlide(currentIndex, direction);
     });
   }
 
   function parentTestimonialSlider() {
-    var currentIndex = 1;
-    var totalAvatars = $(".parent-testimonial__avatar").length;
-    if (!totalAvatars) return;
+    var $avatars = $(".parent-testimonial__avatar");
+    var $slides = $(".parent-testimonial__slide");
+    var total = $avatars.length;
+    if (!total) return;
 
-    var data = [
-      {
-        name: "JENNY WILSON",
-        role: "Graphic Designer",
-        rating: 4.7,
-        text: "We Work With Trusted Partners And Monitor The Impact Of Every Program To Ensure Transparency And Accountability All Donations To Our Organization Are Tax-Deductible, And We Provide Receipts For Every Contribution Offer Numerous Volunteer Opportunities.",
-      },
-      {
-        name: "BROOK SIMMONS",
-        role: "E-Commerce",
-        rating: 4.5,
-        text: "We Work With Trusted Partners And Monitor The Impact Of Every Program To Ensure Transparency And Accountability All Donations To Our Organization Are Tax-Deductible, And We Provide Receipts For Every Contribution Offer Numerous Volunteer Opportunities.",
-      },
-      {
-        name: "KRISTIN WATSON",
-        role: "Marketing Specialist",
-        rating: 5,
-        text: "We Work With Trusted Partners And Monitor The Impact Of Every Program To Ensure Transparency And Accountability All Donations To Our Organization Are Tax-Deductible, And We Provide Receipts For Every Contribution Offer Numerous Volunteer Opportunities.",
-      },
-    ];
+    var currentIndex = $avatars.index(
+      $avatars.filter(".parent-testimonial__avatar--center"),
+    );
+    if (currentIndex < 0) currentIndex = 1;
 
-    function buildStarsHtml(rating) {
-      var html = "";
-      var fullStars = Math.floor(rating);
-      var hasHalf = rating % 1 !== 0;
-      for (var i = 0; i < 5; i++) {
-        if (i < fullStars) {
-          html += '<i class="fas fa-star parent-testimonial__star"></i>';
-        } else if (i === fullStars && hasHalf) {
-          html +=
-            '<i class="fas fa-star-half-alt parent-testimonial__star"></i>';
-        } else {
-          html += '<i class="far fa-star parent-testimonial__star"></i>';
-        }
-      }
-      return html;
-    }
-
-    function updateTestimonial(index, direction) {
-      if (totalAvatars === 0) return;
-
-      $(".parent-testimonial__avatar")
-        .removeClass("parent-testimonial__avatar--center")
-        .addClass("parent-testimonial__avatar--side");
-      $(".parent-testimonial__avatar")
-        .eq(index)
-        .removeClass("parent-testimonial__avatar--side")
-        .addClass("parent-testimonial__avatar--center");
-
-      var content = $(".parent-testimonial__content")[0];
-      if (!content) return;
+    function showSlide(index, direction) {
+      var $current = $slides.filter(":visible");
+      var $next = $slides.eq(index);
+      if ($current.is($next)) return;
 
       var slideOut = direction === "next" ? "-50px" : "50px";
       var slideIn = direction === "next" ? "50px" : "-50px";
 
-      content.style.transition = "opacity 0.22s ease, transform 0.22s ease";
-      content.style.opacity = "0";
-      content.style.transform = "translateX(" + slideOut + ")";
+      $current[0].style.transition = "opacity 0.22s ease, transform 0.22s ease";
+      $current[0].style.opacity = "0";
+      $current[0].style.transform = "translateX(" + slideOut + ")";
 
       setTimeout(function () {
-        var item = data[index] || data[1];
-        var $c = $(content);
-        $c.find(".parent-testimonial__name").text(item.name);
-        $c.find(".parent-testimonial__designation").text(item.role);
-        $c.find(".parent-testimonial__text").text(item.text);
-        $c.find(".parent-testimonial__rating").html(
-          buildStarsHtml(item.rating),
-        );
+        $current.hide().css({ transition: "", opacity: "", transform: "" });
 
-        content.style.transition = "none";
-        content.style.transform = "translateX(" + slideIn + ")";
-        content.style.opacity = "0";
+        $avatars
+          .removeClass("parent-testimonial__avatar--center")
+          .addClass("parent-testimonial__avatar--side");
+        $avatars
+          .eq(index)
+          .removeClass("parent-testimonial__avatar--side")
+          .addClass("parent-testimonial__avatar--center");
+
+        $next.show().css({
+          opacity: "0",
+          transform: "translateX(" + slideIn + ")",
+          transition: "none",
+        });
 
         requestAnimationFrame(function () {
           requestAnimationFrame(function () {
-            content.style.transition =
+            $next[0].style.transition =
               "opacity 0.28s ease, transform 0.28s ease";
-            content.style.opacity = "1";
-            content.style.transform = "translateX(0)";
+            $next[0].style.opacity = "1";
+            $next[0].style.transform = "translateX(0)";
           });
         });
       }, 240);
     }
 
+    $slides.hide();
+    $slides.eq(currentIndex).show();
+
     $document.on("click", ".parent-testimonial__nav--next", function () {
-      currentIndex = (currentIndex + 1) % totalAvatars;
-      updateTestimonial(currentIndex, "next");
+      currentIndex = (currentIndex + 1) % total;
+      showSlide(currentIndex, "next");
     });
 
     $document.on("click", ".parent-testimonial__nav--prev", function () {
-      currentIndex = (currentIndex - 1 + totalAvatars) % totalAvatars;
-      updateTestimonial(currentIndex, "prev");
+      currentIndex = (currentIndex - 1 + total) % total;
+      showSlide(currentIndex, "prev");
     });
 
     $document.on("click", ".parent-testimonial__avatar", function () {
-      var newIndex = $(this).index();
+      var newIndex = $avatars.index(this);
       if (newIndex === currentIndex) return;
       var direction = newIndex > currentIndex ? "next" : "prev";
       currentIndex = newIndex;
-      updateTestimonial(currentIndex, direction);
+      showSlide(currentIndex, direction);
     });
   }
 
@@ -1038,118 +980,89 @@
     var $prevBtn = $(".boarding-testimonial__nav-btn--prev");
     var $nextBtn = $(".boarding-testimonial__nav-btn--next");
     if (!$prevBtn.length && !$nextBtn.length) return;
-    var data = [
-      {
-        name: "BROOK SIMMONS",
-        role: "E-Commerce",
-        avatar: "assets/img/avatars/hero-avatar-4.png",
-        rating: 4,
-        text: "Leaving My Pet Here Was The Best Decision. The Caring Staff Clean And Comfortable Environment, And Daily Attention My Furry Friend Feel Safe, Happy, And Relaxed.",
-      },
-      {
-        name: "JENNY WILSON",
-        role: "Graphic Designer",
-        avatar: "assets/img/avatars/hero-avatar-5.png",
-        rating: 5,
-        text: "Leaving My Pet Here Was The Best Decision. The Caring Staff Clean And Comfortable Environment, And Daily Attention My Furry Friend Feel Safe, Happy, And Relaxed.",
-      },
-      {
-        name: "KRISTIN WATSON",
-        role: "Marketing Specialist",
-        avatar: "assets/img/avatars/hero-avatar-6.png",
-        rating: 5,
-        text: "Leaving My Pet Here Was The Best Decision. The Caring Staff Clean And Comfortable Environment, And Daily Attention My Furry Friend Feel Safe, Happy, And Relaxed.",
-      },
-    ];
+
+    var $slides = $(".boarding-testimonial__slide");
+    var total = $slides.length;
+    if (!total) return;
 
     var currentIndex = 0;
+    var animating = false;
 
-    function buildStars(rating) {
-      var html = "";
-      for (var i = 0; i < 5; i++) {
-        html +=
-          i < rating
-            ? '<i class="fas fa-star"></i>'
-            : '<i class="far fa-star"></i>';
-      }
-      return html;
-    }
+    function showSlide(index, direction) {
+      if (animating) return;
+      var $current = $slides.filter(".boarding-testimonial__slide--active");
+      var $next = $slides.eq(index);
+      if ($current.is($next)) return;
 
-    function updateContent(direction) {
-      var content = $(".boarding-testimonial__right")[0];
-      if (!content) return;
+      animating = true;
 
       var slideOut = direction === "next" ? "-50px" : "50px";
       var slideIn = direction === "next" ? "50px" : "-50px";
 
-      content.style.transition = "opacity 0.22s ease, transform 0.22s ease";
-      content.style.opacity = "0";
-      content.style.transform = "translateX(" + slideOut + ")";
+      $current.css({
+        transition: "opacity 0.22s ease, transform 0.22s ease",
+        opacity: "1",
+        transform: "translateX(0)",
+      });
+      requestAnimationFrame(function () {
+        $current.css({
+          opacity: "0",
+          transform: "translateX(" + slideOut + ")",
+        });
+      });
 
       setTimeout(function () {
-        var item = data[currentIndex];
-        var $c = $(content);
-        $c.find(".boarding-testimonial__text").text(item.text);
-        $c.find(".boarding-testimonial__name").text(item.name);
-        $c.find(".boarding-testimonial__role").text(item.role);
-        $c.find(".boarding-testimonial__avatar").attr("src", item.avatar);
-        $c.find(".boarding-testimonial__stars").html(buildStars(item.rating));
+        $current
+          .removeClass("boarding-testimonial__slide--active")
+          .css({ transition: "", opacity: "", transform: "" });
 
-        content.style.transition = "none";
-        content.style.transform = "translateX(" + slideIn + ")";
-        content.style.opacity = "0";
+        $next.css({
+          transition: "none",
+          opacity: "0",
+          transform: "translateX(" + slideIn + ")",
+        });
+        $next.addClass("boarding-testimonial__slide--active");
 
         requestAnimationFrame(function () {
           requestAnimationFrame(function () {
-            content.style.transition =
-              "opacity 0.28s ease, transform 0.28s ease";
-            content.style.opacity = "1";
-            content.style.transform = "translateX(0)";
+            $next.css({
+              transition: "opacity 0.28s ease, transform 0.28s ease",
+              opacity: "1",
+              transform: "translateX(0)",
+            });
+            setTimeout(function () {
+              $next.css({ transition: "", opacity: "", transform: "" });
+              animating = false;
+            }, 300);
           });
         });
       }, 240);
     }
 
-    $nextBtn.on("click", function () {
-      currentIndex = (currentIndex + 1) % data.length;
-      updateContent("next");
+    $document.on("click", ".boarding-testimonial__nav-btn--next", function () {
+      currentIndex = (currentIndex + 1) % total;
+      showSlide(currentIndex, "next");
     });
 
-    $prevBtn.on("click", function () {
-      currentIndex = (currentIndex - 1 + data.length) % data.length;
-      updateContent("prev");
+    $document.on("click", ".boarding-testimonial__nav-btn--prev", function () {
+      currentIndex = (currentIndex - 1 + total) % total;
+      showSlide(currentIndex, "prev");
     });
   }
 
   function workingProcessSlider() {
     if (!$.exists(".working-process__progress-bar")) return;
 
+    var $slides = $(".working-process__slide-data");
+    var totalSteps = $slides.length;
+    if (!totalSteps) return;
+
     var currentIndex = 1;
-    var totalSteps = 4;
     var $progress = $(".working-process__progress-bar");
     var $title = $(".working-process__slide-title");
     var $desc = $(".working-process__slide-desc");
     var $img = $(".working-process__img");
     var $badgeText = $(".working-process__badge-text");
-
-    var stepsData = [
-      {
-        title: "01. CARE & LIVE MONITORING",
-        desc: "We Provide Attentive Care For Your Pet During Their Stay, Grooming, Or Daycare. Our Trained Team Ensures That Your Pet Is Comfortable, Happy, And Safe At All Times.",
-      },
-      {
-        title: "02. BOOKING & SCHEDULING",
-        desc: "We Provide Attentive Care For Your Pet During Their Stay, Grooming, Or Daycare. Our Trained Team Ensures That Your Pet Is Comfortable, Happy, And Safe At All Times.",
-      },
-      {
-        title: "03. EXPERT GROOMING CARE",
-        desc: "We Provide Attentive Care For Your Pet During Their Stay, Grooming, Or Daycare. Our Trained Team Ensures That Your Pet Is Comfortable, Happy, And Safe At All Times.",
-      },
-      {
-        title: "04. HAPPY PET PICKUP",
-        desc: "We Provide Attentive Care For Your Pet During Their Stay, Grooming, Or Daycare. Our Trained Team Ensures That Your Pet Is Comfortable, Happy, And Safe At All Times.",
-      },
-    ];
 
     function updateStep(index, direction) {
       var leaveClass = direction === "next" ? "is-leaving" : "is-leaving-prev";
@@ -1170,10 +1083,14 @@
         .addClass(leaveClass);
 
       setTimeout(function () {
-        var step = stepsData[index - 1] || stepsData[0];
-        $badgeText.text(index.toString().padStart(2, "0"));
-        $title.text(step.title);
-        $desc.text(step.desc);
+        var $slide = $slides.eq(index - 1);
+        var badge = $slide.data("badge");
+        var slideTitle = $slide.data("title");
+        var slideDesc = $slide.data("desc");
+
+        $badgeText.text(badge);
+        $title.text(slideTitle);
+        $desc.text(slideDesc);
 
         var progressPos = ((index - 1) / totalSteps) * 100;
         $progress.css("left", progressPos + "%");

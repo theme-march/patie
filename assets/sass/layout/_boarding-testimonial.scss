@@ -153,6 +153,14 @@
     }
   }
 
+  &__slide {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+
   &__stars {
     color: var(--rating-color);
     font-size: 20px;

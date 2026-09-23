@@ -158,7 +158,7 @@
               </ul>
             </li>
             <li class="site-header__menu-item menu-item-has-children">
-              <a href="#" class="site-header__menu-link"><span>PAGES</span></a>
+              <a href="team.html" class="site-header__menu-link"><span>PAGES</span></a>
               <img
                 src="assets/img/logo/menu-bg.svg"
                 alt="menu bg"
@@ -234,7 +234,9 @@
                   >
                 </li>
                 <li class="site-header__submenu-item">
-                  <a href="404.html" class="site-header__submenu-link">404 Error Page</a>
+                  <a href="404.html" class="site-header__submenu-link"
+                    >404 Error Page</a
+                  >
                 </li>
               </ul>
             </li>
@@ -314,6 +316,9 @@
           <div class="site-header__search-container">
             <input
               type="text"
+              id="header-search"
+              name="header-search"
+              autocomplete="off"
               class="site-header__search-input"
               placeholder="Search..."
             />
@@ -1040,8 +1045,7 @@
                   </div>
                 </div>
               </div>
-              <div
-                class="testimonial__slide-content testimonial__slide-content--active"
+              <div class="testimonial__slide-content testimonial__slide-content--active"
               >
                 <div>
                   <div class="testimonial__rating">
@@ -1384,6 +1388,9 @@
                 <div class="working-process__form-group">
                   <input
                     type="text"
+                    id="wp-full-name"
+                    name="full-name"
+                    autocomplete="name"
                     class="working-process__input"
                     placeholder="Full Name*"
                   />
@@ -1391,6 +1398,9 @@
                 <div class="working-process__form-group">
                   <input
                     type="tel"
+                    id="wp-phone"
+                    name="phone"
+                    autocomplete="tel"
                     class="working-process__input"
                     placeholder="Phone Number"
                   />
@@ -1400,6 +1410,9 @@
                 <div class="working-process__form-group">
                   <input
                     type="email"
+                    id="wp-email"
+                    name="email"
+                    autocomplete="email"
                     class="working-process__input"
                     placeholder="Email Address"
                   />
@@ -1407,6 +1420,9 @@
                 <div class="working-process__form-group">
                   <input
                     type="text"
+                    id="wp-date"
+                    name="date"
+                    autocomplete="off"
                     class="working-process__input"
                     placeholder="Date"
                   />
@@ -1416,7 +1432,12 @@
                 <div
                   class="working-process__form-group working-process__form-group--select"
                 >
-                  <select class="working-process__input">
+                  <select
+                    id="wp-service"
+                    name="service"
+                    autocomplete="off"
+                    class="working-process__input"
+                  >
                     <option value="" disabled selected>Services</option>
                     <option value="grooming">Grooming</option>
                     <option value="sitting">Pet Sitting</option>
@@ -1428,6 +1449,9 @@
               <div class="working-process__form-row">
                 <div class="working-process__form-group">
                   <textarea
+                    id="wp-message"
+                    name="message"
+                    autocomplete="off"
                     class="working-process__input working-process__input--textarea"
                     placeholder="Message"
                   ></textarea>
@@ -2389,6 +2413,9 @@
             <form action="#" class="footer__form">
               <input
                 type="email"
+                id="footer-newsletter"
+                name="newsletter-email"
+                autocomplete="email"
                 placeholder="Enter Your Email Address"
                 class="footer__input"
                 required

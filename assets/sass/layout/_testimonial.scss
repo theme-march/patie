@@ -13,14 +13,15 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -2;
-    @include respond(lg) {
+
+    @include respond(xl) {
       display: none;
     }
   }
 
   &__bg {
     position: absolute;
-    top: 42%;
+    top: 46%;
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -40,6 +41,7 @@
   &__wrapper {
     width: 100%;
     position: relative;
+    overflow: hidden;
   }
 
   &__nav {
@@ -66,42 +68,27 @@
 
     &--prev {
       left: 5%;
-      top: 130px;
-      transform: none;
+      top: 30%;
 
       @include respond(xxl) {
         left: -3%;
       }
-      @include respond(lg) {
-        top: 185px;
-      }
 
       @include respond(md) {
         margin-left: 10px;
-        top: 220px;
-      }
-      @include respond(sm) {
-        top: 260px;
       }
     }
 
     &--next {
       right: 5%;
-      top: 130px;
-      transform: none;
+      top: 30%;
 
       @include respond(xxl) {
         right: -3%;
       }
-      @include respond(lg) {
-        top: 185px;
-      }
+
       @include respond(md) {
         margin-right: 10px;
-        top: 220px;
-      }
-      @include respond(sm) {
-        top: 260px;
       }
     }
 
@@ -128,35 +115,27 @@
     text-align: center;
     max-width: 850px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 60px 40px 25px;
+
     @include respond(xl) {
-      padding-bottom: 25px;
+      padding: 60px 40px 0;
     }
+
     @include respond(lg) {
-      padding-bottom: 0;
+      padding: 40px 45px 0;
     }
   }
 
   &__slide-content {
     width: 100%;
-    margin-top: 60px;
-    padding-bottom: 30px;
-    min-height: 300px;
     transition:
       opacity 0.25s ease,
       transform 0.25s ease;
-
-    @include respond(lg) {
-      margin-top: 40px;
-      padding-bottom: 0;
-    }
   }
 
   &__rating {
     color: var(--primary-color);
-    font-size: 15px;
+    font-size: 20px;
     margin-bottom: 25px;
     display: inline-flex;
     padding: 5px 15px;
@@ -199,6 +178,7 @@
 
   &__author {
     margin-bottom: 35px;
+
     @include respond(lg) {
       margin-bottom: 25px;
     }
@@ -223,9 +203,10 @@
     align-items: center;
     gap: 10px;
     position: relative;
-    top: -35px;
+    z-index: 1;
+
     @include respond(lg) {
-      top: 0;
+      height: 90px;
     }
   }
 

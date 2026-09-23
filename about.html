@@ -158,7 +158,7 @@
               </ul>
             </li>
             <li class="site-header__menu-item menu-item-has-children">
-              <a href="#" class="site-header__menu-link"><span>PAGES</span></a>
+              <a href="team.html" class="site-header__menu-link"><span>PAGES</span></a>
               <img
                 src="assets/img/logo/menu-bg.svg"
                 alt="menu bg"
@@ -316,6 +316,9 @@
           <div class="site-header__search-container">
             <input
               type="text"
+              id="header-search"
+              name="header-search"
+              autocomplete="off"
               class="site-header__search-input"
               placeholder="Search..."
             />
@@ -545,12 +548,12 @@
     <section class="testimonial">
       <img
         src="assets/img/testimonial/testimonial-bg-outline.png"
-        alt="bg outline"
+        alt="testimonial outline"
         class="testimonial__bg-outline"
       />
       <img
         src="assets/img/testimonial/testimonial-bg.png"
-        alt="testimonail bg"
+        alt="testimonial bg"
         class="testimonial__bg"
       />
       <div class="container">
@@ -582,6 +585,38 @@
                   <p class="testimonial__text">
                     "I Absolutely Love How Caring, Professional, And Attentive
                     The Entire Team Is! My Dog Feels Completely At Home, Happy,
+                    And I Can Check On Him Anytime Through Their Reliable CCTV
+                    Monitoring Service. Truly Peace Of Mind For Every Pet
+                    Parent!"
+                  </p>
+                </div>
+                <div class="testimonial__quote-icon">
+                  <img
+                    src="assets/img/testimonial/quote.svg"
+                    alt="Quote"
+                    class="testimonial__quote-svg"
+                  />
+                </div>
+                <div>
+                  <div class="testimonial__author">
+                    <h3 class="testimonial__name">JENNY WILSON</h3>
+                    <p class="testimonial__designation">Graphic Designer</p>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonial__slide-content testimonial__slide-content--active"
+              >
+                <div>
+                  <div class="testimonial__rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                  </div>
+                  <p class="testimonial__text">
+                    "I Absolutely Love How Caring, Professional, And Attentive
+                    The Entire Team Is! My Dog Feels Completely At Home, Happy,
                     And Safe-And I Can Check On Him Anytime Through Their
                     Reliable CCTV Monitoring Service. Truly Peace Of Mind For
                     Every Pet Parent!"
@@ -598,6 +633,37 @@
                   <div class="testimonial__author">
                     <h3 class="testimonial__name">SAVANNAH NGUYEN</h3>
                     <p class="testimonial__designation">Managing Director</p>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonial__slide-content">
+                <div>
+                  <div class="testimonial__rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <p class="testimonial__text">
+                    "I Absolutely Love How Caring, Professional, And Attentive
+                    The Entire Team Is! My Dog Feels Completely At Home, Happy,
+                    And I Can Check On Him Anytime Through Their Reliable CCTV
+                    Monitoring Service. Truly Peace Of Mind For Every Pet
+                    Parent!"
+                  </p>
+                </div>
+                <div class="testimonial__quote-icon">
+                  <img
+                    src="assets/img/testimonial/quote.svg"
+                    alt="Quote"
+                    class="testimonial__quote-svg"
+                  />
+                </div>
+                <div>
+                  <div class="testimonial__author">
+                    <h3 class="testimonial__name">KRISTIN WATSON</h3>
+                    <p class="testimonial__designation">Marketing Specialist</p>
                   </div>
                 </div>
               </div>
@@ -919,6 +985,9 @@
             <form action="#" class="footer__form">
               <input
                 type="email"
+                id="footer-newsletter"
+                name="newsletter-email"
+                autocomplete="email"
                 placeholder="Enter Your Email Address"
                 class="footer__input"
                 required

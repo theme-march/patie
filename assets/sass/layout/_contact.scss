@@ -29,8 +29,11 @@
     max-width: 450px;
 
     @include respond(lg) {
-      font-size: 36px;
+      font-size: 32px;
       margin-bottom: 20px;
+    }
+    @include respond(md) {
+      margin-bottom: 10px;
     }
   }
 

@@ -12951,9 +12951,9 @@ i[class*=fa] {
 .service-details__desc:last-child {
   margin-bottom: 0;
 }
-@media (max-width: 576px) {
+@media (max-width: 992px) {
   .service-details__desc {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 }
 .service-details__subtitle {
@@ -15277,8 +15277,13 @@ input:checked + .cart__summary-shipping-option-left .cart__summary-shipping-opti
 }
 @media (max-width: 992px) {
   .contact-section__title {
-    font-size: 36px;
+    font-size: 32px;
     margin-bottom: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .contact-section__title {
+    margin-bottom: 10px;
   }
 }
 .contact-section__text {

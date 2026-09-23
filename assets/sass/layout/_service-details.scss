@@ -69,8 +69,8 @@
       margin-bottom: 0;
     }
 
-    @include respond(sm) {
-      margin-bottom: 20px;
+    @include respond(lg) {
+      margin-bottom: 15px;
     }
   }
 

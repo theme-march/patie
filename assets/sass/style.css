@@ -9850,13 +9850,13 @@ i[class*=fa] {
 }
 @media (max-width: 992px) {
   .grooming-choose-us__col--left, .grooming-choose-us__col--right {
-    width: calc(50% - 15px);
+    width: calc(50% - 20px);
     gap: 30px;
     align-items: center;
     text-align: center;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .grooming-choose-us__col--left, .grooming-choose-us__col--right {
     width: 100%;
     align-items: flex-start;
@@ -9920,7 +9920,7 @@ i[class*=fa] {
     transform: none !important;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .grooming-choose-us__feature {
     align-items: flex-start;
     text-align: left;
@@ -9936,7 +9936,7 @@ i[class*=fa] {
     text-align: left;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .grooming-choose-us__feature--right-align {
     justify-content: flex-start;
     text-align: left;
@@ -9952,7 +9952,7 @@ i[class*=fa] {
     flex-direction: column-reverse;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .grooming-choose-us__feature--left-align {
     justify-content: flex-start;
     flex-direction: column;

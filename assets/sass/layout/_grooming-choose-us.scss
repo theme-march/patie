@@ -31,7 +31,6 @@
   }
 
   &__col {
-
     &--left,
     &--right {
       width: 32%;
@@ -44,13 +43,13 @@
       }
 
       @include respond(lg) {
-        width: calc(50% - 15px);
+        width: calc(50% - 20px);
         gap: 30px;
         align-items: center;
         text-align: center;
       }
 
-      @include respond(sm) {
+      @include respond(md) {
         width: 100%;
         align-items: flex-start;
         text-align: left;
@@ -116,7 +115,7 @@
       transform: none !important;
     }
 
-    @include respond(sm) {
+    @include respond(md) {
       align-items: flex-start;
       text-align: left;
     }
@@ -130,7 +129,7 @@
         text-align: left;
       }
 
-      @include respond(sm) {
+      @include respond(md) {
         justify-content: flex-start;
         text-align: left;
       }
@@ -145,7 +144,7 @@
         flex-direction: column-reverse;
       }
 
-      @include respond(sm) {
+      @include respond(md) {
         justify-content: flex-start;
         flex-direction: column;
       }
@@ -223,7 +222,7 @@
     pointer-events: none;
 
     @include respond(xxxl) {
-        display: none;
+      display: none;
     }
   }
 }

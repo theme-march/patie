@@ -12897,6 +12897,8 @@ body.lg-on {
   gap: 20px;
 }
 .boarding-testimonial__avatar {
+  width: 100%;
+  max-width: 68px;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;

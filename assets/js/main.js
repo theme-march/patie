@@ -1048,13 +1048,16 @@
         var slideOut = direction === "next" ? "-50px" : "50px";
         var slideIn = direction === "next" ? "50px" : "-50px";
 
-        $current.css({
+        var $currentContent = $current.find("> *:not(.boarding-testimonial__user), .boarding-testimonial__user-info");
+        var $nextContent = $next.find("> *:not(.boarding-testimonial__user), .boarding-testimonial__user-info");
+
+        $currentContent.css({
           transition: "opacity 0.22s ease, transform 0.22s ease",
           opacity: "1",
           transform: "translateX(0)",
         });
         requestAnimationFrame(function () {
-          $current.css({
+          $currentContent.css({
             opacity: "0",
             transform: "translateX(" + slideOut + ")",
           });
@@ -1062,10 +1065,10 @@
 
         setTimeout(function () {
           $current
-            .removeClass("boarding-testimonial__slide--active")
-            .css({ transition: "", opacity: "", transform: "" });
+            .removeClass("boarding-testimonial__slide--active");
+          $currentContent.css({ transition: "", opacity: "", transform: "" });
 
-          $next.css({
+          $nextContent.css({
             transition: "none",
             opacity: "0",
             transform: "translateX(" + slideIn + ")",
@@ -1074,13 +1077,13 @@
 
           requestAnimationFrame(function () {
             requestAnimationFrame(function () {
-              $next.css({
+              $nextContent.css({
                 transition: "opacity 0.28s ease, transform 0.28s ease",
                 opacity: "1",
                 transform: "translateX(0)",
               });
               setTimeout(function () {
-                $next.css({ transition: "", opacity: "", transform: "" });
+                $nextContent.css({ transition: "", opacity: "", transform: "" });
                 animating = false;
               }, 300);
             });

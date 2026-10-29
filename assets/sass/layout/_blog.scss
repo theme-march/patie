@@ -91,15 +91,15 @@
     .blog-card__img-wrap {
       height: 100%;
 
-      &:hover {
-        .blog-card__img {
-          transform: scale(1.02) translateY(-10px);
-        }
-      }
-
       @include respond(md) {
         max-height: 250px;
         height: 250px;
+      }
+    }
+
+    &:hover {
+      .blog-card__img {
+        transform: scale(1.02) translateY(-10px);
       }
     }
 
@@ -130,12 +130,6 @@
       max-width: 250px;
       flex-shrink: 0;
 
-      &:hover {
-        .blog-card__img {
-          transform: scale(1.04) translateY(-5px);
-        }
-      }
-
       @include respond(xl) {
         width: 28%;
       }
@@ -150,6 +144,12 @@
         height: 250px;
         max-height: 250px;
         flex-shrink: 0;
+      }
+    }
+
+    &:hover {
+      .blog-card__img {
+        transform: scale(1.04) translateY(-5px);
       }
     }
 

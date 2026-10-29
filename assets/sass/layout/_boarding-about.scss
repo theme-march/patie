@@ -190,7 +190,11 @@
     justify-content: center;
     margin: 0 auto 15px;
     background-color: transparent;
-
+    &:hover{
+      background-color: var(--white-color);
+      transition: all 0.3s ease;
+    }
+    
     @include respond(md) {
       width: 65px;
       height: 65px;

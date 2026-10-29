@@ -153,18 +153,46 @@
   }
 
   &__btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    display: inline-block;
     padding: 18px 60px;
     margin-bottom: 50px;
     background: var(--theme-color);
-    color: var(--white-color);
     font-family: var(--heading-font-family);
     border-radius: 100px;
-    transition: all 0.3s ease;
+
+    &-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--heading-color);
+      z-index: -1;
+      transform: translateX(-100%);
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &-text {
+      position: relative;
+      z-index: 2;
+      display: inline-block;
+      color: var(--white-color);
+      transition: color 0.4s ease;
+    }
 
     &:hover {
-      background: var(--heading-color);
-      color: var(--white-color);
+      .boarding-pricing-card__btn-bg {
+        transform: translateX(0);
+      }
+
+      .boarding-pricing-card__btn-text {
+        color: var(--white-color);
+      }
     }
+
     @include respond(xl) {
       padding: 12px 40px;
       font-size: 14px;

@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------
-46. Shop
+49. Shop
 ----------------------------------------------------------------*/
 @use "../abstracts" as *;
 
@@ -58,7 +58,8 @@
       color: var(--white-color);
       font-family: var(--body-font-family);
       font-weight: 600;
-      padding: 25px 35px 25px 25px;
+      line-height: 22px;
+      padding: 25px 70px 25px 25px;
       border: none;
       cursor: pointer;
       position: relative;
@@ -112,5 +113,34 @@
 
   @include respond(sm) {
     grid-template-columns: 1fr;
+  }
+}
+
+.shop__empty-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  background-color: var(--white-color);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+
+  &-icon {
+    font-size: 50px;
+    color: color-mix(in srgb, var(--primary-color), transparent 40%);
+    margin-bottom: 20px;
+  }
+
+  &-title {
+    font-family: var(--heading-font-family);
+    font-size: 28px;
+    color: var(--heading-color);
+    margin-bottom: 10px;
+  }
+
+  &-text {
+    font-family: var(--body-font-family);
+    font-size: 16px;
+    color: var(--body-color);
+    margin-bottom: 25px;
   }
 }

@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html class="no-js" lang="en">
   <head>
     <!-- Meta Tags -->
@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="assets/css/plugins/fontawesome.min.css" />
     <link rel="stylesheet" href="assets/css/plugins/aos.css" />
     <link rel="stylesheet" href="assets/css/plugins/swiper.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/toastr.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/lightgallery.min.css" />
 
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
@@ -112,28 +114,28 @@
 
           <div class="dashboard-topbar__actions">
             <a
-              href="javascript:void(0)"
+              href="#"
               class="dashboard-topbar__action-btn"
               aria-label="Messages"
             >
               <i class="fas fa-comment-dots" aria-hidden="true"></i>
             </a>
             <a
-              href="javascript:void(0)"
+              href="#"
               class="dashboard-topbar__action-btn"
               aria-label="Notifications"
             >
               <i class="fas fa-bell" aria-hidden="true"></i>
             </a>
             <a
-              href="javascript:void(0)"
+              href="#"
               class="dashboard-topbar__action-btn"
               aria-label="Settings"
             >
               <i class="fas fa-cog" aria-hidden="true"></i>
             </a>
             <a
-              href="javascript:void(0)"
+              href="#"
               class="dashboard-topbar__action-btn"
               aria-label="Apps"
             >
@@ -197,7 +199,10 @@
             </div>
 
             <nav class="dashboard-sidebar__nav" aria-label="Dashboard menu">
-              <a href="dashboard.html" class="dashboard-sidebar__nav-item">
+              <a
+                href="dashboard.html"
+                class="dashboard-sidebar__nav-item"
+              >
                 <i
                   class="fas fa-home dashboard-sidebar__nav-icon"
                   aria-hidden="true"
@@ -216,6 +221,16 @@
                 Order
               </a>
               <a
+                href="dashboard-lead-management.html"
+                class="dashboard-sidebar__nav-item"
+              >
+                <i
+                  class="fas fa-user-tie dashboard-sidebar__nav-icon"
+                  aria-hidden="true"
+                ></i>
+                Lead Management
+              </a>
+              <a
                 href="dashboard-change-password.html"
                 class="dashboard-sidebar__nav-item"
               >
@@ -226,14 +241,24 @@
                 Change Password
               </a>
               <a
-                href="dashboard-lead-management.html"
+                href="password-reset.html"
                 class="dashboard-sidebar__nav-item"
               >
                 <i
-                  class="fas fa-user-tie dashboard-sidebar__nav-icon"
+                  class="fas fa-key dashboard-sidebar__nav-icon"
                   aria-hidden="true"
                 ></i>
-                Lead Management
+                Password Reset
+              </a>
+              <a
+                href="set-newpassword.html"
+                class="dashboard-sidebar__nav-item"
+              >
+                <i
+                  class="fas fa-shield-alt dashboard-sidebar__nav-icon"
+                  aria-hidden="true"
+                ></i>
+                Set New Password
               </a>
             </nav>
 
@@ -252,7 +277,7 @@
             aria-label="Quick actions"
           >
             <a
-              href="javascript:void(0)"
+              href="#"
               class="dashboard-sidebar__mobile-action-btn"
               aria-label="Messages"
             >
@@ -260,7 +285,7 @@
               <span>Messages</span>
             </a>
             <a
-              href="javascript:void(0)"
+              href="#"
               class="dashboard-sidebar__mobile-action-btn"
               aria-label="Notifications"
             >
@@ -268,7 +293,7 @@
               <span>Notifications</span>
             </a>
             <a
-              href="javascript:void(0)"
+              href="#"
               class="dashboard-sidebar__mobile-action-btn"
               aria-label="Settings"
             >
@@ -276,7 +301,7 @@
               <span>Settings</span>
             </a>
             <a
-              href="javascript:void(0)"
+              href="#"
               class="dashboard-sidebar__mobile-action-btn"
               aria-label="Apps"
             >
@@ -341,23 +366,35 @@
               </div>
 
               <div class="order-toolbar__row order-toolbar__row--bottom">
-                <button class="order-toolbar__filter-btn" aria-label="Filter">
-                  <i class="fas fa-sliders-h" aria-hidden="true"></i>
-                </button>
+                <div class="dashboard-filter-dropdown" id="orderFilterDropdown">
+                  <button class="order-toolbar__filter-btn" id="orderFilterBtn" aria-label="Filter orders" aria-expanded="false" aria-haspopup="true">
+                    <i class="fas fa-sliders-h" aria-hidden="true"></i>
+                  </button>
+                  <div class="dashboard-filter-menu" id="orderFilterMenu" role="menu" aria-labelledby="orderFilterBtn">
+                    <div class="dashboard-filter-menu__header">
+                      <span>Filter By Status</span>
+                      <button type="button" class="dashboard-filter-menu__reset" id="orderFilterReset">Reset</button>
+                    </div>
+                    <ul class="dashboard-filter-menu__list">
+                      <li><button type="button" class="dashboard-filter-menu__item is-active" data-filter="all">All Orders</button></li>
+                      <li><button type="button" class="dashboard-filter-menu__item" data-filter="delivered">Delivered</button></li>
+                      <li><button type="button" class="dashboard-filter-menu__item" data-filter="process">Process</button></li>
+                      <li><button type="button" class="dashboard-filter-menu__item" data-filter="cancelled">Cancelled</button></li>
+                    </ul>
+                  </div>
+                </div>
 
                 <div class="order-toolbar__group-right">
                   <button
                     class="order-toolbar__icon-btn order-toolbar__icon-btn--excel"
                     aria-label="Export to Excel"
+                    data-success-message="Exported {count} products to Excel successfully!"
+                    data-warning-message="No product data available to export."
                   >
                     <i class="fas fa-file-excel" aria-hidden="true"></i>
                   </button>
 
-                  <button class="order-toolbar__icon-btn" aria-label="Copy">
-                    <i class="fas fa-copy" aria-hidden="true"></i>
-                  </button>
-
-                  <a href="javascript:void(0)" class="order-toolbar__add-btn">
+                  <a href="#" class="order-toolbar__add-btn" data-success-message="Product has been added successfully!">
                     <i
                       class="fas fa-plus order-toolbar__add-btn-icon"
                       aria-hidden="true"
@@ -431,20 +468,12 @@
                       </td>
                       <td>
                         <div class="order-table__actions">
-                          <a
-                            href="javascript:void(0)"
-                            class="order-table__action-btn"
-                            aria-label="View"
+                          <a href="shop-details.html" class="order-table__action-btn" aria-label="View"
                             ><i class="fas fa-eye" aria-hidden="true"></i
                           ></a>
+                          <button type="button" class="order-table__action-btn" aria-label="Edit" data-row-edit><i class="fas fa-pen" aria-hidden="true"></i></button>
                           <a
-                            href="javascript:void(0)"
-                            class="order-table__action-btn"
-                            aria-label="Edit"
-                            ><i class="fas fa-pen" aria-hidden="true"></i
-                          ></a>
-                          <a
-                            href="javascript:void(0)"
+                            href="#"
                             class="order-table__action-btn order-table__action-btn--delete"
                             aria-label="Delete"
                             data-row-delete
@@ -490,20 +519,12 @@
                       </td>
                       <td>
                         <div class="order-table__actions">
-                          <a
-                            href="javascript:void(0)"
-                            class="order-table__action-btn"
-                            aria-label="View"
+                          <a href="shop-details.html" class="order-table__action-btn" aria-label="View"
                             ><i class="fas fa-eye" aria-hidden="true"></i
                           ></a>
+                          <button type="button" class="order-table__action-btn" aria-label="Edit" data-row-edit><i class="fas fa-pen" aria-hidden="true"></i></button>
                           <a
-                            href="javascript:void(0)"
-                            class="order-table__action-btn"
-                            aria-label="Edit"
-                            ><i class="fas fa-pen" aria-hidden="true"></i
-                          ></a>
-                          <a
-                            href="javascript:void(0)"
+                            href="#"
                             class="order-table__action-btn order-table__action-btn--delete"
                             aria-label="Delete"
                             data-row-delete
@@ -549,20 +570,12 @@
                       </td>
                       <td>
                         <div class="order-table__actions">
-                          <a
-                            href="javascript:void(0)"
-                            class="order-table__action-btn"
-                            aria-label="View"
+                          <a href="shop-details.html" class="order-table__action-btn" aria-label="View"
                             ><i class="fas fa-eye" aria-hidden="true"></i
                           ></a>
+                          <button type="button" class="order-table__action-btn" aria-label="Edit" data-row-edit><i class="fas fa-pen" aria-hidden="true"></i></button>
                           <a
-                            href="javascript:void(0)"
-                            class="order-table__action-btn"
-                            aria-label="Edit"
-                            ><i class="fas fa-pen" aria-hidden="true"></i
-                          ></a>
-                          <a
-                            href="javascript:void(0)"
+                            href="#"
                             class="order-table__action-btn order-table__action-btn--delete"
                             aria-label="Delete"
                             data-row-delete
@@ -608,20 +621,12 @@
                       </td>
                       <td>
                         <div class="order-table__actions">
-                          <a
-                            href="javascript:void(0)"
-                            class="order-table__action-btn"
-                            aria-label="View"
+                          <a href="shop-details.html" class="order-table__action-btn" aria-label="View"
                             ><i class="fas fa-eye" aria-hidden="true"></i
                           ></a>
+                          <button type="button" class="order-table__action-btn" aria-label="Edit" data-row-edit><i class="fas fa-pen" aria-hidden="true"></i></button>
                           <a
-                            href="javascript:void(0)"
-                            class="order-table__action-btn"
-                            aria-label="Edit"
-                            ><i class="fas fa-pen" aria-hidden="true"></i
-                          ></a>
-                          <a
-                            href="javascript:void(0)"
+                            href="#"
                             class="order-table__action-btn order-table__action-btn--delete"
                             aria-label="Delete"
                             data-row-delete
@@ -667,20 +672,12 @@
                       </td>
                       <td>
                         <div class="order-table__actions">
-                          <a
-                            href="javascript:void(0)"
-                            class="order-table__action-btn"
-                            aria-label="View"
+                          <a href="shop-details.html" class="order-table__action-btn" aria-label="View"
                             ><i class="fas fa-eye" aria-hidden="true"></i
                           ></a>
+                          <button type="button" class="order-table__action-btn" aria-label="Edit" data-row-edit><i class="fas fa-pen" aria-hidden="true"></i></button>
                           <a
-                            href="javascript:void(0)"
-                            class="order-table__action-btn"
-                            aria-label="Edit"
-                            ><i class="fas fa-pen" aria-hidden="true"></i
-                          ></a>
-                          <a
-                            href="javascript:void(0)"
+                            href="#"
                             class="order-table__action-btn order-table__action-btn--delete"
                             aria-label="Delete"
                             data-row-delete
@@ -726,20 +723,12 @@
                       </td>
                       <td>
                         <div class="order-table__actions">
-                          <a
-                            href="javascript:void(0)"
-                            class="order-table__action-btn"
-                            aria-label="View"
+                          <a href="shop-details.html" class="order-table__action-btn" aria-label="View"
                             ><i class="fas fa-eye" aria-hidden="true"></i
                           ></a>
+                          <button type="button" class="order-table__action-btn" aria-label="Edit" data-row-edit><i class="fas fa-pen" aria-hidden="true"></i></button>
                           <a
-                            href="javascript:void(0)"
-                            class="order-table__action-btn"
-                            aria-label="Edit"
-                            ><i class="fas fa-pen" aria-hidden="true"></i
-                          ></a>
-                          <a
-                            href="javascript:void(0)"
+                            href="#"
                             class="order-table__action-btn order-table__action-btn--delete"
                             aria-label="Delete"
                             data-row-delete
@@ -785,20 +774,12 @@
                       </td>
                       <td>
                         <div class="order-table__actions">
-                          <a
-                            href="javascript:void(0)"
-                            class="order-table__action-btn"
-                            aria-label="View"
+                          <a href="shop-details.html" class="order-table__action-btn" aria-label="View"
                             ><i class="fas fa-eye" aria-hidden="true"></i
                           ></a>
+                          <button type="button" class="order-table__action-btn" aria-label="Edit" data-row-edit><i class="fas fa-pen" aria-hidden="true"></i></button>
                           <a
-                            href="javascript:void(0)"
-                            class="order-table__action-btn"
-                            aria-label="Edit"
-                            ><i class="fas fa-pen" aria-hidden="true"></i
-                          ></a>
-                          <a
-                            href="javascript:void(0)"
+                            href="#"
                             class="order-table__action-btn order-table__action-btn--delete"
                             aria-label="Delete"
                             data-row-delete
@@ -844,20 +825,12 @@
                       </td>
                       <td>
                         <div class="order-table__actions">
-                          <a
-                            href="javascript:void(0)"
-                            class="order-table__action-btn"
-                            aria-label="View"
+                          <a href="shop-details.html" class="order-table__action-btn" aria-label="View"
                             ><i class="fas fa-eye" aria-hidden="true"></i
                           ></a>
+                          <button type="button" class="order-table__action-btn" aria-label="Edit" data-row-edit><i class="fas fa-pen" aria-hidden="true"></i></button>
                           <a
-                            href="javascript:void(0)"
-                            class="order-table__action-btn"
-                            aria-label="Edit"
-                            ><i class="fas fa-pen" aria-hidden="true"></i
-                          ></a>
-                          <a
-                            href="javascript:void(0)"
+                            href="#"
                             class="order-table__action-btn order-table__action-btn--delete"
                             aria-label="Delete"
                             data-row-delete
@@ -881,6 +854,153 @@
       </div>
     </div>
 
+    
+    <!-- Add Product Modal -->
+    <div class="order-modal" id="addProductModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="addProductModalTitle">
+      <div class="order-modal__backdrop" data-modal-close></div>
+      <div class="order-modal__dialog order-modal__dialog--large">
+        <div class="order-modal__header">
+          <h2 class="order-modal__title" id="addProductModalTitle">Add New Product</h2>
+          <button type="button" class="order-modal__close" data-modal-close aria-label="Close dialog">
+            <i class="fas fa-times" aria-hidden="true"></i>
+          </button>
+        </div>
+        <form
+          class="order-modal__form"
+          id="addProductForm"
+          novalidate
+          data-success-message="Product '{name}' added successfully!"
+          data-error-message="Please fill in all required product fields."
+        >
+          <div class="order-modal__body">
+            <div class="dashboard-modal-grid">
+              <div class="dashboard-modal-field dashboard-modal-field--full">
+                <label for="addProductName" class="order-modal__label">Product Name*</label>
+                <input type="text" id="addProductName" name="product_name" class="dashboard-modal-input" placeholder="e.g. Paw Bite Cat Food" required />
+              </div>
+              
+              <div class="dashboard-modal-field">
+                <label for="addProductType" class="order-modal__label">Type</label>
+                <select id="addProductType" name="product_type" class="dashboard-modal-select">
+                  <option value="Simple">Simple</option>
+                  <option value="Variable">Variable</option>
+                  <option value="Grouped">Grouped</option>
+                </select>
+              </div>
+
+              <div class="dashboard-modal-field">
+                <label for="addProductPrice" class="order-modal__label">Price*</label>
+                <input type="text" id="addProductPrice" name="product_price" class="dashboard-modal-input" placeholder="e.g. $4.95" required />
+              </div>
+
+              <div class="dashboard-modal-field">
+                <label for="addProductCategory" class="order-modal__label">Category</label>
+                <input type="text" id="addProductCategory" name="product_category" class="dashboard-modal-input" placeholder="e.g. Pet Food or N/A" value="Pet Care" />
+              </div>
+
+              <div class="dashboard-modal-field">
+                <label for="addProductBrand" class="order-modal__label">Brand</label>
+                <input type="text" id="addProductBrand" name="product_brand" class="dashboard-modal-input" placeholder="e.g. Ironix" value="Ironix" />
+              </div>
+
+              <div class="dashboard-modal-field">
+                <label for="addProductStock" class="order-modal__label">Stock*</label>
+                <input type="number" id="addProductStock" name="product_stock" class="dashboard-modal-input" placeholder="10" min="0" value="15" required />
+              </div>
+
+              <div class="dashboard-modal-field">
+                <label for="addProductStatus" class="order-modal__label">Status</label>
+                <select id="addProductStatus" name="product_status" class="dashboard-modal-select">
+                  <option value="Delivered">Delivered</option>
+                  <option value="Process" selected>Process</option>
+                  <option value="Cancelled">Cancelled</option>
+                </select>
+              </div>
+
+              <div class="dashboard-modal-field dashboard-modal-field--full">
+                <label class="order-modal__label">Product Image</label>
+                <div class="dashboard-modal-image-select">
+                  <label class="dashboard-modal-img-option is-active">
+                    <input type="radio" name="product_img_preset" value="assets/img/dashboard/order-food-1.png" checked />
+                    <img src="assets/img/dashboard/order-food-1.png" alt="Preset 1" />
+                  </label>
+                  <label class="dashboard-modal-img-option">
+                    <input type="radio" name="product_img_preset" value="assets/img/dashboard/order-food-2.png" />
+                    <img src="assets/img/dashboard/order-food-2.png" alt="Preset 2" />
+                  </label>
+                  <label class="dashboard-modal-img-option">
+                    <input type="radio" name="product_img_preset" value="assets/img/dashboard/order-food-3.png" />
+                    <img src="assets/img/dashboard/order-food-3.png" alt="Preset 3" />
+                  </label>
+                  <label class="dashboard-modal-img-option">
+                    <input type="radio" name="product_img_preset" value="assets/img/dashboard/order-food-4.png" />
+                    <img src="assets/img/dashboard/order-food-4.png" alt="Preset 4" />
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="order-modal__footer">
+            <button type="button" class="order-modal__btn order-modal__btn--cancel" data-modal-close>Cancel</button>
+            <button type="submit" class="order-modal__btn order-modal__btn--save">Add Product</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Edit Order Status Modal -->
+    <div class="order-modal" id="orderStatusModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="orderStatusModalTitle">
+      <div class="order-modal__backdrop" data-modal-close></div>
+      <div class="order-modal__dialog">
+        <div class="order-modal__header">
+          <h2 class="order-modal__title" id="orderStatusModalTitle">Update Order Status</h2>
+          <button type="button" class="order-modal__close" data-modal-close aria-label="Close dialog">
+            <i class="fas fa-times" aria-hidden="true"></i>
+          </button>
+        </div>
+        <form
+          class="order-modal__form"
+          id="orderStatusForm"
+          data-success-message="Order status updated to {status} successfully!"
+        >
+          <div class="order-modal__body">
+            <div class="order-modal__product-info">
+              <img src="assets/img/dashboard/order-food-1.png" alt="Product" class="order-modal__product-img" id="modalProductImg" />
+              <div class="order-modal__product-details">
+                <span class="order-modal__product-name" id="modalProductName">Paw Bite</span>
+                <span class="order-modal__product-tracking" id="modalProductTracking">#20462</span>
+              </div>
+            </div>
+            <div class="order-modal__form-group">
+              <label id="orderStatusLabel" class="order-modal__label">Select Status</label>
+              <div class="order-modal__custom-select" id="orderCustomSelect" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="orderStatusLabel">
+                <input type="hidden" name="order_status" id="orderStatusInput" value="Delivered" />
+                <button type="button" class="order-modal__custom-select-trigger" id="orderCustomSelectTrigger" aria-labelledby="orderStatusLabel orderCustomSelectTrigger">
+                  <span id="orderCustomSelectText">Delivered</span>
+                  <i class="fas fa-chevron-down order-modal__custom-select-arrow" aria-hidden="true"></i>
+                </button>
+                <ul class="order-modal__custom-select-menu" role="listbox" aria-labelledby="orderStatusLabel">
+                  <li class="order-modal__custom-select-option is-selected" role="option" data-value="Delivered" aria-selected="true">
+                    Delivered
+                  </li>
+                  <li class="order-modal__custom-select-option" role="option" data-value="Process" aria-selected="false">
+                    Process
+                  </li>
+                  <li class="order-modal__custom-select-option" role="option" data-value="Cancelled" aria-selected="false">
+                    Cancelled
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="order-modal__footer">
+            <button type="button" class="order-modal__btn order-modal__btn--cancel" data-modal-close>Cancel</button>
+            <button type="submit" class="order-modal__btn order-modal__btn--save">Update Status</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
     <!-- Script -->
     <script src="assets/js/plugins/jquery-3.7.1.min.js"></script>
     <script src="assets/js/plugins/gsap.min.js"></script>
@@ -892,6 +1012,8 @@
     <script src="assets/js/plugins/SplitText.min.js"></script>
     <script src="assets/js/paw-sprite.js"></script>
 
+    <script src="assets/js/plugins/toastr.min.js"></script>
+    <script src="assets/js/plugins/lightgallery-all.min.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

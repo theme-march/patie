@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html class="no-js" lang="en">
   <head>
     <!-- Meta Tags -->
@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="assets/css/plugins/fontawesome.min.css" />
     <link rel="stylesheet" href="assets/css/plugins/aos.css" />
     <link rel="stylesheet" href="assets/css/plugins/swiper.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/toastr.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/lightgallery.min.css" />
 
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
@@ -87,7 +89,7 @@
             />
           </a>
         </div>
-        <nav class="site-header__nav">
+                <nav class="site-header__nav">
           <ul class="site-header__menu">
             <li class="site-header__menu-item menu-item-has-children">
               <a href="index.html" class="site-header__menu-link"
@@ -157,7 +159,9 @@
               </ul>
             </li>
             <li class="site-header__menu-item menu-item-has-children">
-              <a href="team.html" class="site-header__menu-link"><span>PAGES</span></a>
+              <a href="team.html" class="site-header__menu-link"
+                ><span>PAGES</span></a
+              >
               <img
                 src="assets/img/logo/menu-bg.svg"
                 alt="menu bg"
@@ -176,60 +180,16 @@
                   >
                 </li>
                 <li class="site-header__submenu-item">
-                  <a href="sign-in.html" class="site-header__submenu-link"
-                    >Sign In</a
+                  <a href="blog.html" class="site-header__submenu-link">Blog</a>
+                </li>
+                <li class="site-header__submenu-item">
+                  <a href="blog-standard.html" class="site-header__submenu-link"
+                    >Blog Standard</a
                   >
                 </li>
                 <li class="site-header__submenu-item">
-                  <a href="sign-up.html" class="site-header__submenu-link"
-                    >Sign Up</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="forget-password.html"
-                    class="site-header__submenu-link"
-                    >Forget Password</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="password-reset.html"
-                    class="site-header__submenu-link"
-                    >Password Reset</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="set-newpassword.html"
-                    class="site-header__submenu-link"
-                    >Set New Password</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="dashboard-change-password.html"
-                    class="site-header__submenu-link"
-                    >Change Password</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a href="dashboard.html" class="site-header__submenu-link"
-                    >Dashboard</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="dashboard-order.html"
-                    class="site-header__submenu-link"
-                    >Dashboard Order</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="dashboard-lead-management.html"
-                    class="site-header__submenu-link"
-                    >Lead Management</a
+                  <a href="blog-details.html" class="site-header__submenu-link"
+                    >Blog Details</a
                   >
                 </li>
                 <li class="site-header__submenu-item">
@@ -239,9 +199,7 @@
                 </li>
               </ul>
             </li>
-            <li
-              class="site-header__menu-item menu-item-has-children site-header__menu-item--active"
-            >
+            <li class="site-header__menu-item menu-item-has-children">
               <a href="shop.html" class="site-header__menu-link"
                 ><span>SHOP</span></a
               >
@@ -272,9 +230,19 @@
                 </li>
               </ul>
             </li>
+            <li class="site-header__menu-item">
+              <a href="contact.html" class="site-header__menu-link"
+                ><span>CONTACT</span></a
+              >
+              <img
+                src="assets/img/logo/menu-bg.svg"
+                alt="menu bg"
+                class="site-header__menu-bg"
+              />
+            </li>
             <li class="site-header__menu-item menu-item-has-children">
-              <a href="blog.html" class="site-header__menu-link"
-                ><span>BLOG</span></a
+              <a href="dashboard.html" class="site-header__menu-link"
+                ><span>DASHBOARD</span></a
               >
               <img
                 src="assets/img/logo/menu-bg.svg"
@@ -286,29 +254,35 @@
               ></span>
               <ul class="site-header__submenu site-header__submenu--left">
                 <li class="site-header__submenu-item">
-                  <a href="blog.html" class="site-header__submenu-link">Blog</a>
-                </li>
-                <li class="site-header__submenu-item">
-                  <a href="blog-standard.html" class="site-header__submenu-link"
-                    >Blog Standard</a
+                  <a href="sign-in.html" class="site-header__submenu-link"
+                    >Sign In</a
                   >
                 </li>
                 <li class="site-header__submenu-item">
-                  <a href="blog-details.html" class="site-header__submenu-link"
-                    >Blog Details</a
+                  <a href="sign-up.html" class="site-header__submenu-link"
+                    >Sign Up</a
+                  >
+                </li>
+                <li class="site-header__submenu-item">
+                  <a href="dashboard.html" class="site-header__submenu-link"
+                    >Dashboard</a
+                  >
+                </li>
+                <li class="site-header__submenu-item">
+                  <a
+                    href="dashboard-order.html"
+                    class="site-header__submenu-link"
+                    >Dashboard Order</a
+                  >
+                </li>
+                <li class="site-header__submenu-item">
+                  <a
+                    href="dashboard-lead-management.html"
+                    class="site-header__submenu-link"
+                    >Dashboard Lead Management</a
                   >
                 </li>
               </ul>
-            </li>
-            <li class="site-header__menu-item">
-              <a href="contact.html" class="site-header__menu-link"
-                ><span>CONTACT</span></a
-              >
-              <img
-                src="assets/img/logo/menu-bg.svg"
-                alt="menu bg"
-                class="site-header__menu-bg"
-              />
             </li>
           </ul>
         </nav>
@@ -411,7 +385,7 @@
               data-aos="fade-up"
               data-aos-delay="0"
             >
-              <div class="shop-details__thumb-item">
+              <div class="shop-details__thumb-item" data-color="blue">
                 <img
                   src="assets/img/shop/shop-7.png"
                   alt="Product"
@@ -420,6 +394,7 @@
               </div>
               <div
                 class="shop-details__thumb-item shop-details__thumb-item--active"
+                data-color="purple"
               >
                 <img
                   src="assets/img/shop/shop-4.png"
@@ -427,7 +402,7 @@
                   class="shop-details__thumb-img"
                 />
               </div>
-              <div class="shop-details__thumb-item">
+              <div class="shop-details__thumb-item" data-color="orange">
                 <img
                   src="assets/img/shop/shop-1.png"
                   alt="Product"
@@ -439,11 +414,27 @@
               class="shop-details__main-img-wrap"
               data-aos="fade-up"
               data-aos-delay="100"
+              role="button"
+              tabindex="0"
+              aria-label="Click to enlarge product image"
+              title="Click to View in Full Screen"
+              data-lightbox-src="assets/img/shop/shop-4.png"
             >
               <img
                 src="assets/img/shop/shop-4.png"
                 alt="Main Product"
                 class="shop-details__main-img"
+              />
+              <span class="shop-details__zoom-btn" aria-hidden="true">
+                <i class="fas fa-search-plus"></i>
+              </span>
+              <div class="shop-details__zoom-lens"></div>
+            </div>
+            <div class="shop-details__zoom-preview">
+              <img
+                src="assets/img/shop/shop-4.png"
+                alt="Zoomed view"
+                class="shop-details__zoom-preview-img"
               />
             </div>
           </div>
@@ -463,32 +454,42 @@
               <span class="shop-details__rating-divider">|</span>
               <span class="shop-details__rating-text">3 Review</span>
             </div>
-            <h2 class="shop-details__title">FANTASTIC PLASTIC CLOCK</h2>
+            <h2 class="shop-details__title">COMFYPAWS ORTHOPEDIC PET BED</h2>
             <div class="shop-details__price-wrap">
-              <span class="shop-details__price">$1250.00</span>
+              <span class="shop-details__price">$250.85</span>
               <span class="shop-details__stock-divider"></span>
               <span class="shop-details__stock-status">In stock</span>
             </div>
             <p class="shop-details__desc">
-              Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do
-              Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua. Ut
-              Enim Ad Minim Veniam, Quis Nostrud Exercitation.
+              Engineered with premium medical orthopedic memory foam to relieve
+              joint pain, arthritis, and muscle stiffness in dogs and cats.
+              Features a water-resistant, ultra-soft plush lining and an easily
+              removable, machine-washable cover.
             </p>
 
             <div class="shop-details__color-picker">
               <div class="shop-details__color-picker-list">
                 <button
                   class="shop-details__color-picker-btn shop-details__color-picker-btn--purple shop-details__color-picker-btn--active"
+                  aria-label="Select Deep Violet"
+                  data-color="purple"
+                  data-image="assets/img/shop/shop-4.png"
                 >
                   <span class="shop-details__color-picker-active-border"></span>
                 </button>
                 <button
                   class="shop-details__color-picker-btn shop-details__color-picker-btn--orange"
+                  aria-label="Select Warm Amber"
+                  data-color="orange"
+                  data-image="assets/img/shop/shop-1.png"
                 >
                   <span class="shop-details__color-picker-active-border"></span>
                 </button>
                 <button
                   class="shop-details__color-picker-btn shop-details__color-picker-btn--blue"
+                  aria-label="Select Aqua Teal"
+                  data-color="blue"
+                  data-image="assets/img/shop/shop-7.png"
                 >
                   <span class="shop-details__color-picker-active-border"></span>
                 </button>
@@ -504,49 +505,82 @@
                   name="quantity"
                   autocomplete="off"
                   value="1"
+                  min="1"
                   class="shop-details__quantity-input"
+                  aria-label="Product quantity"
                 />
                 <div class="shop-details__quantity-controls">
-                  <button class="shop-details__quantity-btn">
+                  <button
+                    class="shop-details__quantity-btn shop-details__quantity-btn--inc"
+                    type="button"
+                    aria-label="Increase quantity"
+                  >
                     <i class="fas fa-chevron-up"></i>
                   </button>
-                  <button class="shop-details__quantity-btn">
+                  <button
+                    class="shop-details__quantity-btn shop-details__quantity-btn--dec"
+                    type="button"
+                    aria-label="Decrease quantity"
+                  >
                     <i class="fas fa-chevron-down"></i>
                   </button>
                 </div>
               </div>
-              <button class="shop-details__add-to-cart">ADD TO CART</button>
+              <button
+                class="shop-details__add-to-cart"
+                type="button"
+                data-success-message='{qty}x Product added successfully! <a href="cart.html" class="toast-link">Go to Cart</a>'
+              >
+                ADD TO CART
+              </button>
             </div>
 
-            <button class="shop-details__wishlist">
+            <button
+              class="shop-details__wishlist"
+              type="button"
+              aria-label="Add to Wishlist"
+              data-active-text="Added to Wishlist"
+              data-inactive-text="Add to Wishlist"
+              data-success-message="Product added to your wishlist!"
+              data-remove-message="Product removed from your wishlist!"
+            >
               <i class="far fa-heart shop-details__wishlist-icon"></i>
-              Add to Wishlist
+              <span class="shop-details__wishlist-text">Add to Wishlist</span>
             </button>
 
             <div class="shop-details__meta">
               <div class="shop-details__meta-item">
                 <span class="shop-details__meta-item-title">Categories:</span>
-                <span>Round, Dial, Class</span>
+                <span>Pet Beds, Orthopedic Care, Comfort Accessories</span>
               </div>
               <div class="shop-details__meta-item">
                 <span class="shop-details__meta-item-title">Tags:</span>
-                <span>Silver, Pink, Green</span>
+                <span>Washable, Memory Foam, Joint Support</span>
               </div>
               <div class="shop-details__meta-item">
                 <span class="shop-details__meta-item-title">Share:</span>
                 <div class="shop-details__meta-socials">
                   <a
-                    href="javascript:void(0)"
+                    href="https://twitter.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Twitter"
                     class="shop-details__meta-social-link"
                     ><i class="fab fa-twitter"></i
                   ></a>
                   <a
-                    href="javascript:void(0)"
+                    href="https://facebook.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
                     class="shop-details__meta-social-link"
                     ><i class="fab fa-facebook-f"></i
                   ></a>
                   <a
-                    href="javascript:void(0)"
+                    href="https://instagram.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
                     class="shop-details__meta-social-link"
                     ><i class="fab fa-instagram"></i
                   ></a>
@@ -568,14 +602,18 @@
             <div
               class="section-header section-header--center"
               data-aos="fade-up"
-              data-aos-delay="0"
             >
               <img
                 src="assets/img/icon/paw.svg"
                 alt="Paw"
                 class="section-header__paw"
               />
-              <span class="section-header__label">Popular Product</span>
+              <span class="section-header__label">Popular Products</span>
+              <img
+                src="assets/img/icon/paw.svg"
+                alt="Paw"
+                class="section-header__paw"
+              />
             </div>
             <h2
               class="section-header__title section-header__title--center"
@@ -777,7 +815,11 @@
               We Are Dedicated To Crafting High-Quality Fabrics That Combine
               Innovation, Sustainability.
             </p>
-            <form action="#" class="footer__form">
+            <form
+              action="#"
+              class="footer__form"
+              data-success-message="Thank you for subscribing to our newsletter!"
+            >
               <input
                 type="email"
                 id="footer-newsletter"
@@ -792,16 +834,36 @@
               </button>
             </form>
             <div class="footer__socials">
-              <a href="javascript:void(0)" class="footer__social-link"
+              <a
+                href="https://facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                class="footer__social-link"
                 ><i class="fab fa-facebook-f footer__social-icon"></i
               ></a>
-              <a href="javascript:void(0)" class="footer__social-link"
+              <a
+                href="https://twitter.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+                class="footer__social-link"
                 ><i class="fab fa-twitter footer__social-icon"></i
               ></a>
-              <a href="javascript:void(0)" class="footer__social-link"
+              <a
+                href="https://instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                class="footer__social-link"
                 ><i class="fab fa-instagram footer__social-icon"></i
               ></a>
-              <a href="javascript:void(0)" class="footer__social-link"
+              <a
+                href="https://pinterest.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Pinterest"
+                class="footer__social-link"
                 ><i class="fab fa-pinterest-p footer__social-icon"></i
               ></a>
             </div>
@@ -1011,6 +1073,8 @@
     <script src="assets/js/plugins/SplitText.min.js"></script>
     <script src="assets/js/paw-sprite.js"></script>
 
+    <script src="assets/js/plugins/toastr.min.js"></script>
+    <script src="assets/js/plugins/lightgallery-all.min.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

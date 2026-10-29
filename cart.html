@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html class="no-js" lang="en">
   <head>
     <!-- Meta Tags -->
@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="assets/css/plugins/fontawesome.min.css" />
     <link rel="stylesheet" href="assets/css/plugins/aos.css" />
     <link rel="stylesheet" href="assets/css/plugins/swiper.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/toastr.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/lightgallery.min.css" />
 
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
@@ -87,7 +89,7 @@
             />
           </a>
         </div>
-        <nav class="site-header__nav">
+                <nav class="site-header__nav">
           <ul class="site-header__menu">
             <li class="site-header__menu-item menu-item-has-children">
               <a href="index.html" class="site-header__menu-link"
@@ -156,10 +158,10 @@
                 </li>
               </ul>
             </li>
-            <li
-              class="site-header__menu-item menu-item-has-children site-header__menu-item--active"
-            >
-              <a href="team.html" class="site-header__menu-link"><span>PAGES</span></a>
+            <li class="site-header__menu-item menu-item-has-children">
+              <a href="team.html" class="site-header__menu-link"
+                ><span>PAGES</span></a
+              >
               <img
                 src="assets/img/logo/menu-bg.svg"
                 alt="menu bg"
@@ -178,60 +180,16 @@
                   >
                 </li>
                 <li class="site-header__submenu-item">
-                  <a href="sign-in.html" class="site-header__submenu-link"
-                    >Sign In</a
+                  <a href="blog.html" class="site-header__submenu-link">Blog</a>
+                </li>
+                <li class="site-header__submenu-item">
+                  <a href="blog-standard.html" class="site-header__submenu-link"
+                    >Blog Standard</a
                   >
                 </li>
                 <li class="site-header__submenu-item">
-                  <a href="sign-up.html" class="site-header__submenu-link"
-                    >Sign Up</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="forget-password.html"
-                    class="site-header__submenu-link"
-                    >Forget Password</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="password-reset.html"
-                    class="site-header__submenu-link"
-                    >Password Reset</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="set-newpassword.html"
-                    class="site-header__submenu-link"
-                    >Set New Password</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="dashboard-change-password.html"
-                    class="site-header__submenu-link"
-                    >Change Password</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a href="dashboard.html" class="site-header__submenu-link"
-                    >Dashboard</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="dashboard-order.html"
-                    class="site-header__submenu-link"
-                    >Dashboard Order</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="dashboard-lead-management.html"
-                    class="site-header__submenu-link"
-                    >Lead Management</a
+                  <a href="blog-details.html" class="site-header__submenu-link"
+                    >Blog Details</a
                   >
                 </li>
                 <li class="site-header__submenu-item">
@@ -272,9 +230,19 @@
                 </li>
               </ul>
             </li>
+            <li class="site-header__menu-item">
+              <a href="contact.html" class="site-header__menu-link"
+                ><span>CONTACT</span></a
+              >
+              <img
+                src="assets/img/logo/menu-bg.svg"
+                alt="menu bg"
+                class="site-header__menu-bg"
+              />
+            </li>
             <li class="site-header__menu-item menu-item-has-children">
-              <a href="blog.html" class="site-header__menu-link"
-                ><span>BLOG</span></a
+              <a href="dashboard.html" class="site-header__menu-link"
+                ><span>DASHBOARD</span></a
               >
               <img
                 src="assets/img/logo/menu-bg.svg"
@@ -286,29 +254,35 @@
               ></span>
               <ul class="site-header__submenu site-header__submenu--left">
                 <li class="site-header__submenu-item">
-                  <a href="blog.html" class="site-header__submenu-link">Blog</a>
-                </li>
-                <li class="site-header__submenu-item">
-                  <a href="blog-standard.html" class="site-header__submenu-link"
-                    >Blog Standard</a
+                  <a href="sign-in.html" class="site-header__submenu-link"
+                    >Sign In</a
                   >
                 </li>
                 <li class="site-header__submenu-item">
-                  <a href="blog-details.html" class="site-header__submenu-link"
-                    >Blog Details</a
+                  <a href="sign-up.html" class="site-header__submenu-link"
+                    >Sign Up</a
+                  >
+                </li>
+                <li class="site-header__submenu-item">
+                  <a href="dashboard.html" class="site-header__submenu-link"
+                    >Dashboard</a
+                  >
+                </li>
+                <li class="site-header__submenu-item">
+                  <a
+                    href="dashboard-order.html"
+                    class="site-header__submenu-link"
+                    >Dashboard Order</a
+                  >
+                </li>
+                <li class="site-header__submenu-item">
+                  <a
+                    href="dashboard-lead-management.html"
+                    class="site-header__submenu-link"
+                    >Dashboard Lead Management</a
                   >
                 </li>
               </ul>
-            </li>
-            <li class="site-header__menu-item">
-              <a href="contact.html" class="site-header__menu-link"
-                ><span>CONTACT</span></a
-              >
-              <img
-                src="assets/img/logo/menu-bg.svg"
-                alt="menu bg"
-                class="site-header__menu-bg"
-              />
             </li>
           </ul>
         </nav>
@@ -421,13 +395,17 @@
                   <tr>
                     <td>
                       <div class="cart__product-item-wrap">
-                        <button class="cart__remove">
+                        <button
+                          class="cart__remove"
+                          type="button"
+                          aria-label="Remove item"
+                        >
                           <i class="fas fa-times"></i>
                         </button>
                         <div class="cart__product-img-box">
                           <img
                             src="assets/img/cart/cart-1.png"
-                            alt="Product"
+                            alt="Nulo Medalseries Grain"
                             class="cart__product-img"
                           />
                         </div>
@@ -448,13 +426,23 @@
                           name="quantity"
                           autocomplete="off"
                           value="1"
+                          min="1"
                           class="cart__quantity-input"
+                          aria-label="Quantity for Nulo Medalseries Grain"
                         />
                         <div class="cart__quantity-controls">
-                          <button class="cart__quantity-btn">
+                          <button
+                            class="cart__quantity-btn cart__quantity-btn--inc"
+                            type="button"
+                            aria-label="Increase quantity"
+                          >
                             <i class="fas fa-plus"></i>
                           </button>
-                          <button class="cart__quantity-btn">
+                          <button
+                            class="cart__quantity-btn cart__quantity-btn--dec"
+                            type="button"
+                            aria-label="Decrease quantity"
+                          >
                             <i class="fas fa-minus"></i>
                           </button>
                         </div>
@@ -467,13 +455,17 @@
                   <tr>
                     <td>
                       <div class="cart__product-item-wrap">
-                        <button class="cart__remove">
+                        <button
+                          class="cart__remove"
+                          type="button"
+                          aria-label="Remove item"
+                        >
                           <i class="fas fa-times"></i>
                         </button>
                         <div class="cart__product-img-box">
                           <img
                             src="assets/img/cart/cart-2.png"
-                            alt="Product"
+                            alt="Kibbles 'N Bits Original Savory"
                             class="cart__product-img"
                           />
                         </div>
@@ -494,13 +486,23 @@
                           name="quantity"
                           autocomplete="off"
                           value="1"
+                          min="1"
                           class="cart__quantity-input"
+                          aria-label="Quantity for Kibbles 'N Bits Original Savory"
                         />
                         <div class="cart__quantity-controls">
-                          <button class="cart__quantity-btn">
+                          <button
+                            class="cart__quantity-btn cart__quantity-btn--inc"
+                            type="button"
+                            aria-label="Increase quantity"
+                          >
                             <i class="fas fa-plus"></i>
                           </button>
-                          <button class="cart__quantity-btn">
+                          <button
+                            class="cart__quantity-btn cart__quantity-btn--dec"
+                            type="button"
+                            aria-label="Decrease quantity"
+                          >
                             <i class="fas fa-minus"></i>
                           </button>
                         </div>
@@ -513,13 +515,17 @@
                   <tr>
                     <td>
                       <div class="cart__product-item-wrap">
-                        <button class="cart__remove">
+                        <button
+                          class="cart__remove"
+                          type="button"
+                          aria-label="Remove item"
+                        >
                           <i class="fas fa-times"></i>
                         </button>
                         <div class="cart__product-img-box">
                           <img
                             src="assets/img/cart/cart-3.png"
-                            alt="Product"
+                            alt="Iams Proactive Health Healthy"
                             class="cart__product-img"
                           />
                         </div>
@@ -540,13 +546,23 @@
                           name="quantity"
                           autocomplete="off"
                           value="1"
+                          min="1"
                           class="cart__quantity-input"
+                          aria-label="Quantity for Iams Proactive Health Healthy"
                         />
                         <div class="cart__quantity-controls">
-                          <button class="cart__quantity-btn">
+                          <button
+                            class="cart__quantity-btn cart__quantity-btn--inc"
+                            type="button"
+                            aria-label="Increase quantity"
+                          >
                             <i class="fas fa-plus"></i>
                           </button>
-                          <button class="cart__quantity-btn">
+                          <button
+                            class="cart__quantity-btn cart__quantity-btn--dec"
+                            type="button"
+                            aria-label="Decrease quantity"
+                          >
                             <i class="fas fa-minus"></i>
                           </button>
                         </div>
@@ -568,9 +584,11 @@
                   autocomplete="off"
                   placeholder="Promo code here"
                   class="cart__promo-input"
+                  aria-label="Promo code"
                 />
                 <button
-                  class="common-btn common-btn--primary common-btn--style2"
+                  type="button"
+                  class="common-btn common-btn--primary common-btn--style2 cart__coupon-btn"
                 >
                   <span class="common-btn__inner">
                     <svg
@@ -594,7 +612,10 @@
                 </button>
               </div>
               <button
+                type="button"
                 class="common-btn common-btn--primary common-btn--style2 cart__update-btn"
+                data-success-message="Cart updated successfully!"
+                disabled
               >
                 <span class="common-btn__inner">
                   <svg
@@ -613,7 +634,7 @@
                       ry="22"
                     />
                   </svg>
-                  UPDATE CARD
+                  UPDATE CART
                 </span>
               </button>
             </div>
@@ -625,7 +646,7 @@
 
             <div class="cart__summary-row">
               <span class="cart__summary-label">Subtotal:</span>
-              <span class="cart__summary-value">$362.98</span>
+              <span class="cart__summary-value">$362.55</span>
             </div>
 
             <div class="cart__summary-shipping">
@@ -636,6 +657,7 @@
                     type="radio"
                     id="shipping-free"
                     name="shipping"
+                    data-price="0"
                     checked
                   />
                   <span class="cart__summary-shipping-option-left">
@@ -651,7 +673,12 @@
                   >
                 </label>
                 <label class="cart__summary-shipping-option">
-                  <input type="radio" id="shipping-flat" name="shipping" />
+                  <input
+                    type="radio"
+                    id="shipping-flat"
+                    name="shipping"
+                    data-price="20"
+                  />
                   <span class="cart__summary-shipping-option-left">
                     <span class="cart__summary-shipping-option-circle">
                       <span class="cart__summary-shipping-option-dot"></span>
@@ -665,7 +692,12 @@
                   >
                 </label>
                 <label class="cart__summary-shipping-option">
-                  <input type="radio" id="shipping-local" name="shipping" />
+                  <input
+                    type="radio"
+                    id="shipping-local"
+                    name="shipping"
+                    data-price="15"
+                  />
                   <span class="cart__summary-shipping-option-left">
                     <span class="cart__summary-shipping-option-circle">
                       <span class="cart__summary-shipping-option-dot"></span>
@@ -683,11 +715,13 @@
 
             <div class="cart__summary-row cart__summary-row--total">
               <span class="cart__summary-label">Total</span>
-              <span class="cart__summary-value">$362.98</span>
+              <span class="cart__summary-value">$362.55</span>
             </div>
 
-            <button
+            <a
+              href="checkout.html"
               class="common-btn common-btn--primary common-btn--style2 cart__summary-checkout-btn"
+              data-success-message="Proceeding to checkout..."
             >
               <span class="common-btn__inner">
                 <svg
@@ -708,7 +742,7 @@
                 </svg>
                 PROCEED TO CHECK OUT
               </span>
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -748,7 +782,11 @@
               We Are Dedicated To Crafting High-Quality Fabrics That Combine
               Innovation, Sustainability.
             </p>
-            <form action="#" class="footer__form">
+            <form
+              action="#"
+              class="footer__form"
+              data-success-message="Thank you for subscribing to our newsletter!"
+            >
               <input
                 type="email"
                 id="footer-newsletter"
@@ -763,16 +801,36 @@
               </button>
             </form>
             <div class="footer__socials">
-              <a href="javascript:void(0)" class="footer__social-link"
+              <a
+                href="https://facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                class="footer__social-link"
                 ><i class="fab fa-facebook-f footer__social-icon"></i
               ></a>
-              <a href="javascript:void(0)" class="footer__social-link"
+              <a
+                href="https://twitter.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+                class="footer__social-link"
                 ><i class="fab fa-twitter footer__social-icon"></i
               ></a>
-              <a href="javascript:void(0)" class="footer__social-link"
+              <a
+                href="https://instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                class="footer__social-link"
                 ><i class="fab fa-instagram footer__social-icon"></i
               ></a>
-              <a href="javascript:void(0)" class="footer__social-link"
+              <a
+                href="https://pinterest.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Pinterest"
+                class="footer__social-link"
                 ><i class="fab fa-pinterest-p footer__social-icon"></i
               ></a>
             </div>
@@ -983,6 +1041,8 @@
     <script src="assets/js/plugins/SplitText.min.js"></script>
     <script src="assets/js/paw-sprite.js"></script>
 
+    <script src="assets/js/plugins/toastr.min.js"></script>
+    <script src="assets/js/plugins/lightgallery-all.min.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

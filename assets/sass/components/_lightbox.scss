@@ -1,0 +1,148 @@
+/*--------------------------------------------------------------
+  13. Lightbox
+----------------------------------------------------------------*/
+@use "../abstracts" as *;
+
+html.lg-on,
+body.lg-on {
+  overflow: hidden !important;
+  height: 100vh !important;
+  touch-action: none;
+}
+
+.lg-backdrop {
+  background-color: var(--black-color) !important;
+  opacity: 0.96 !important;
+}
+
+.lg-outer {
+  background-color: var(--black-color) !important;
+  overflow: hidden !important;
+
+  .lg-item {
+    background: transparent !important;
+  }
+
+  .lg-image {
+    min-width: min(480px, 85vw);
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    cursor: grab;
+    transform-origin: 50% 50% !important;
+    -webkit-transform-origin: 50% 50% !important;
+    transition: transform 0.15s ease-out;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+
+  .lg-toolbar {
+    background: linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--black-color), transparent 30%) 0%,
+      transparent 100%
+    ) !important;
+    padding: 10px 15px !important;
+
+    .lg-icon,
+    button.lg-icon {
+      font-family: lg !important;
+      color: var(--white-color) !important;
+      background: transparent !important;
+      border: none !important;
+      opacity: 0.9 !important;
+      font-size: 24px !important;
+      width: 44px !important;
+      height: 44px !important;
+      line-height: 44px !important;
+      padding: 0 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: opacity 0.2s ease, transform 0.2s ease, color 0.2s ease !important;
+
+      &:after {
+        font-family: lg !important;
+        font-size: 24px !important;
+        color: var(--white-color) !important;
+        display: inline-block !important;
+      }
+
+      &:hover {
+        opacity: 1 !important;
+        color: var(--primary-color) !important;
+        transform: scale(1.1) !important;
+
+        &:after {
+          color: var(--primary-color) !important;
+        }
+      }
+    }
+
+    #lg-counter {
+      color: var(--white-color) !important;
+      opacity: 0.9 !important;
+      font-family: var(--body-font-family) !important;
+      font-size: 14px !important;
+      font-weight: 500 !important;
+      line-height: 44px !important;
+      padding-top: 0 !important;
+      vertical-align: middle !important;
+    }
+  }
+
+  .lg-actions .lg-next,
+  .lg-actions .lg-prev {
+    background-color: color-mix(in srgb, var(--white-color), transparent 85%) !important;
+    color: var(--white-color) !important;
+    border-radius: 50% !important;
+    width: 50px !important;
+    height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    transition: background-color 0.25s ease, transform 0.25s ease, opacity 0.25s ease, border-color 0.25s ease !important;
+    box-shadow: 0 4px 15px color-mix(in srgb, var(--black-color), transparent 50%) !important;
+    opacity: 0.85 !important;
+    cursor: pointer !important;
+    border: 1px solid color-mix(in srgb, var(--white-color), transparent 80%) !important;
+    z-index: 1080 !important;
+    font-family: lg !important;
+
+    &:before,
+    &:after {
+      font-family: lg !important;
+      color: var(--white-color) !important;
+      font-size: 22px !important;
+    }
+
+    &:hover {
+      background-color: var(--primary-color) !important;
+      border-color: var(--primary-color) !important;
+      opacity: 1 !important;
+      transform: translateY(-50%) scale(1.1) !important;
+
+      &:before,
+      &:after {
+        color: var(--white-color) !important;
+      }
+    }
+
+    &:active {
+      transform: translateY(-50%) scale(0.95) !important;
+    }
+  }
+
+  .lg-actions .lg-prev {
+    left: 25px !important;
+  }
+
+  .lg-actions .lg-next {
+    right: 25px !important;
+  }
+}
+

@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------
-45. Blog Details
+48. Blog Details
 ----------------------------------------------------------------*/
 @use "../abstracts" as *;
 
@@ -36,7 +36,7 @@
     &__main-img-wrap {
         position: relative;
         margin-bottom: 30px;
-
+        cursor: zoom-in;
 
         @include respond(lg) {
             margin-bottom: 20px;
@@ -296,6 +296,12 @@
         display: block;
         margin: 0 auto;
         border-radius: 20px;
+        cursor: zoom-in;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.02);
+        }
     }
 
     &__footer {

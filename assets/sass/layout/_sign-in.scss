@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------
-52. Sign In
+55. Sign In
 ----------------------------------------------------------------*/
 @use "../abstracts" as *;
 
@@ -113,8 +113,13 @@
   &__input-wrapper {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     width: 100%;
+
+    .form-error-message {
+      width: 100%;
+    }
 
     input[type="password"]::-ms-reveal,
     input[type="password"]::-ms-clear,
@@ -127,14 +132,22 @@
   &__input-icon {
     position: absolute;
     right: 40px;
+    top: 31px;
+    transform: translateY(-50%);
     font-size: 16px;
     color: var(--primary-color);
     pointer-events: none;
+
+    @include respond(md) {
+      top: 26px;
+    }
   }
 
   &__eye-toggle {
     position: absolute;
     right: 40px;
+    top: 31px;
+    transform: translateY(-50%);
     background: none;
     border: none;
     padding: 0;
@@ -149,6 +162,10 @@
 
     &:hover {
       color: var(--secondary-color);
+    }
+
+    @include respond(md) {
+      top: 26px;
     }
   }
 

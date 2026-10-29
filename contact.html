@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html class="no-js" lang="en">
   <head>
     <!-- Meta Tags -->
@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="assets/css/plugins/fontawesome.min.css" />
     <link rel="stylesheet" href="assets/css/plugins/aos.css" />
     <link rel="stylesheet" href="assets/css/plugins/swiper.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/toastr.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/lightgallery.min.css" />
 
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
@@ -87,7 +89,7 @@
             />
           </a>
         </div>
-        <nav class="site-header__nav">
+                <nav class="site-header__nav">
           <ul class="site-header__menu">
             <li class="site-header__menu-item menu-item-has-children">
               <a href="index.html" class="site-header__menu-link"
@@ -157,7 +159,9 @@
               </ul>
             </li>
             <li class="site-header__menu-item menu-item-has-children">
-              <a href="team.html" class="site-header__menu-link"><span>PAGES</span></a>
+              <a href="team.html" class="site-header__menu-link"
+                ><span>PAGES</span></a
+              >
               <img
                 src="assets/img/logo/menu-bg.svg"
                 alt="menu bg"
@@ -176,60 +180,16 @@
                   >
                 </li>
                 <li class="site-header__submenu-item">
-                  <a href="sign-in.html" class="site-header__submenu-link"
-                    >Sign In</a
+                  <a href="blog.html" class="site-header__submenu-link">Blog</a>
+                </li>
+                <li class="site-header__submenu-item">
+                  <a href="blog-standard.html" class="site-header__submenu-link"
+                    >Blog Standard</a
                   >
                 </li>
                 <li class="site-header__submenu-item">
-                  <a href="sign-up.html" class="site-header__submenu-link"
-                    >Sign Up</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="forget-password.html"
-                    class="site-header__submenu-link"
-                    >Forget Password</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="password-reset.html"
-                    class="site-header__submenu-link"
-                    >Password Reset</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="set-newpassword.html"
-                    class="site-header__submenu-link"
-                    >Set New Password</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="dashboard-change-password.html"
-                    class="site-header__submenu-link"
-                    >Change Password</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a href="dashboard.html" class="site-header__submenu-link"
-                    >Dashboard</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="dashboard-order.html"
-                    class="site-header__submenu-link"
-                    >Dashboard Order</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="dashboard-lead-management.html"
-                    class="site-header__submenu-link"
-                    >Lead Management</a
+                  <a href="blog-details.html" class="site-header__submenu-link"
+                    >Blog Details</a
                   >
                 </li>
                 <li class="site-header__submenu-item">
@@ -270,9 +230,19 @@
                 </li>
               </ul>
             </li>
+            <li class="site-header__menu-item">
+              <a href="contact.html" class="site-header__menu-link"
+                ><span>CONTACT</span></a
+              >
+              <img
+                src="assets/img/logo/menu-bg.svg"
+                alt="menu bg"
+                class="site-header__menu-bg"
+              />
+            </li>
             <li class="site-header__menu-item menu-item-has-children">
-              <a href="blog.html" class="site-header__menu-link"
-                ><span>BLOG</span></a
+              <a href="dashboard.html" class="site-header__menu-link"
+                ><span>DASHBOARD</span></a
               >
               <img
                 src="assets/img/logo/menu-bg.svg"
@@ -284,29 +254,35 @@
               ></span>
               <ul class="site-header__submenu site-header__submenu--left">
                 <li class="site-header__submenu-item">
-                  <a href="blog.html" class="site-header__submenu-link">Blog</a>
-                </li>
-                <li class="site-header__submenu-item">
-                  <a href="blog-standard.html" class="site-header__submenu-link"
-                    >Blog Standard</a
+                  <a href="sign-in.html" class="site-header__submenu-link"
+                    >Sign In</a
                   >
                 </li>
                 <li class="site-header__submenu-item">
-                  <a href="blog-details.html" class="site-header__submenu-link"
-                    >Blog Details</a
+                  <a href="sign-up.html" class="site-header__submenu-link"
+                    >Sign Up</a
+                  >
+                </li>
+                <li class="site-header__submenu-item">
+                  <a href="dashboard.html" class="site-header__submenu-link"
+                    >Dashboard</a
+                  >
+                </li>
+                <li class="site-header__submenu-item">
+                  <a
+                    href="dashboard-order.html"
+                    class="site-header__submenu-link"
+                    >Dashboard Order</a
+                  >
+                </li>
+                <li class="site-header__submenu-item">
+                  <a
+                    href="dashboard-lead-management.html"
+                    class="site-header__submenu-link"
+                    >Dashboard Lead Management</a
                   >
                 </li>
               </ul>
-            </li>
-            <li class="site-header__menu-item site-header__menu-item--active">
-              <a href="contact.html" class="site-header__menu-link"
-                ><span>CONTACT</span></a
-              >
-              <img
-                src="assets/img/logo/menu-bg.svg"
-                alt="menu bg"
-                class="site-header__menu-bg"
-              />
             </li>
           </ul>
         </nav>
@@ -396,7 +372,7 @@
     <div class="ak-height-120 ak-height-lg-60"></div>
 
     <!-- Start Contact Section -->
-    <section class="contact-section">
+    <section class="contact-section" id="appointment">
       <div class="container">
         <div class="contact-section__layout">
           <div
@@ -442,15 +418,25 @@
           >
             <div class="contact-section__form-box">
               <h2 class="contact-section__form-title">BOOK AN APPOINTMENT</h2>
-              <form action="#" class="contact-section__form">
+              <form
+                action="#"
+                method="post"
+                novalidate
+                class="contact-section__form"
+                id="appointment-form"
+                data-success-message="Appointment booked successfully!"
+                data-error-message="Please fill in all required fields correctly."
+              >
                 <div class="contact-section__input-group">
                   <input
                     type="text"
                     id="contact-name"
                     name="name"
                     autocomplete="name"
-                    placeholder="Your Name"
+                    placeholder="Your Name*"
                     class="contact-section__input"
+                    required
+                    data-error-message="Your name is required"
                   />
                   <i class="far fa-user contact-section__input-icon"></i>
                 </div>
@@ -460,8 +446,10 @@
                     id="contact-email"
                     name="email"
                     autocomplete="email"
-                    placeholder="Your Email"
+                    placeholder="Your Email*"
                     class="contact-section__input"
+                    required
+                    data-error-message="Please enter a valid email address"
                   />
                   <i class="far fa-envelope contact-section__input-icon"></i>
                 </div>
@@ -471,11 +459,13 @@
                     name="subject"
                     autocomplete="off"
                     class="contact-section__select"
+                    required
+                    data-error-message="Please select a subject"
                   >
-                    <option>Select Subjects</option>
-                    <option>Pet Boarding</option>
-                    <option>Pet Grooming</option>
-                    <option>Pet Vaccination</option>
+                    <option value="" disabled selected>Select Subjects*</option>
+                    <option value="Pet Boarding">Pet Boarding</option>
+                    <option value="Pet Grooming">Pet Grooming</option>
+                    <option value="Pet Vaccination">Pet Vaccination</option>
                   </select>
                   <i
                     class="fas fa-chevron-down contact-section__input-icon"
@@ -488,15 +478,17 @@
                     id="contact-message"
                     name="message"
                     autocomplete="off"
-                    placeholder="Write Message..."
+                    placeholder="Write Message...*"
                     class="contact-section__textarea"
+                    required
+                    data-error-message="Please enter your message"
                   ></textarea>
                   <i
                     class="fas fa-pencil-alt contact-section__input-icon contact-section__input-icon--textarea"
                   ></i>
                 </div>
                 <button
-                  type="button"
+                  type="submit"
                   class="common-btn common-btn--primary contact-section__submit-btn"
                 >
                   <span class="common-btn__inner"> APPOINTMENT NOW </span>
@@ -556,7 +548,11 @@
               We Are Dedicated To Crafting High-Quality Fabrics That Combine
               Innovation, Sustainability.
             </p>
-            <form action="#" class="footer__form">
+            <form
+              action="#"
+              class="footer__form"
+              data-success-message="Thank you for subscribing to our newsletter!"
+            >
               <input
                 type="email"
                 id="footer-newsletter"
@@ -571,16 +567,36 @@
               </button>
             </form>
             <div class="footer__socials">
-              <a href="javascript:void(0)" class="footer__social-link"
+              <a
+                href="https://facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                class="footer__social-link"
                 ><i class="fab fa-facebook-f footer__social-icon"></i
               ></a>
-              <a href="javascript:void(0)" class="footer__social-link"
+              <a
+                href="https://twitter.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+                class="footer__social-link"
                 ><i class="fab fa-twitter footer__social-icon"></i
               ></a>
-              <a href="javascript:void(0)" class="footer__social-link"
+              <a
+                href="https://instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                class="footer__social-link"
                 ><i class="fab fa-instagram footer__social-icon"></i
               ></a>
-              <a href="javascript:void(0)" class="footer__social-link"
+              <a
+                href="https://pinterest.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Pinterest"
+                class="footer__social-link"
                 ><i class="fab fa-pinterest-p footer__social-icon"></i
               ></a>
             </div>
@@ -791,6 +807,8 @@
     <script src="assets/js/plugins/SplitText.min.js"></script>
     <script src="assets/js/paw-sprite.js"></script>
 
+    <script src="assets/js/plugins/toastr.min.js"></script>
+    <script src="assets/js/plugins/lightgallery-all.min.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

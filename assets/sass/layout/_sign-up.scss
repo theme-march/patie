@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------
-53. Sign Up
+56. Sign Up
 ----------------------------------------------------------------*/
 @use "../abstracts" as *;
 
@@ -136,8 +136,13 @@
   &__input-wrapper {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     width: 100%;
+
+    .form-error-message {
+      width: 100%;
+    }
 
     input[type="password"]::-ms-reveal,
     input[type="password"]::-ms-clear,
@@ -193,23 +198,36 @@
 
   &__select-wrapper {
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     width: 100%;
+
+    .form-error-message {
+      width: 100%;
+    }
   }
 
   &__select-icon {
     position: absolute;
     right: 20px;
-    top: 50%;
+    top: 31px;
     transform: translateY(-50%);
     font-size: 13px;
     color: var(--heading-color);
     pointer-events: none;
     z-index: 2;
+
+    @include respond(md) {
+      top: 26px;
+    }
   }
 
   &__eye-toggle {
     position: absolute;
     right: 20px;
+    top: 31px;
+    transform: translateY(-50%);
     background: none;
     border: none;
     padding: 0;
@@ -224,6 +242,10 @@
 
     &:hover {
       color: var(--secondary-color);
+    }
+
+    @include respond(md) {
+      top: 26px;
     }
   }
 

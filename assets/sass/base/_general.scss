@@ -254,3 +254,16 @@
   white-space: nowrap;
   border: 0;
 }
+
+.is-invalid {
+  border-color: var(--other-color-4) !important;
+}
+
+.form-error-message {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--other-color-4);
+  line-height: 1.4;
+}

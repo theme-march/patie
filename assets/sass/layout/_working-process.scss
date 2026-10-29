@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------
-19. Working Process
+22. Working Process
 ----------------------------------------------------------------*/
 @use "../abstracts" as *;
 
@@ -194,6 +194,10 @@
       border-color: var(--secondary-color);
     }
 
+    &.is-invalid {
+      border: 1px solid var(--other-color-4) !important;
+    }
+
     &--textarea {
       height: 200px;
       padding-top: 30px;
@@ -203,6 +207,15 @@
         padding-top: 25px;
       }
     }
+  }
+
+  &__error-message {
+    display: block;
+    margin-top: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--other-color-4);
+    line-height: 1.4;
   }
 
   &__submit {

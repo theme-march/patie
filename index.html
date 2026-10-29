@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html class="no-js" lang="en">
   <head>
     <!-- Meta Tags -->
@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="assets/css/plugins/fontawesome.min.css" />
     <link rel="stylesheet" href="assets/css/plugins/aos.css" />
     <link rel="stylesheet" href="assets/css/plugins/swiper.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/toastr.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/lightgallery.min.css" />
 
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
@@ -88,7 +90,7 @@
             />
           </a>
         </div>
-        <nav class="site-header__nav">
+                <nav class="site-header__nav">
           <ul class="site-header__menu">
             <li class="site-header__menu-item menu-item-has-children">
               <a href="index.html" class="site-header__menu-link"
@@ -158,7 +160,9 @@
               </ul>
             </li>
             <li class="site-header__menu-item menu-item-has-children">
-              <a href="team.html" class="site-header__menu-link"><span>PAGES</span></a>
+              <a href="team.html" class="site-header__menu-link"
+                ><span>PAGES</span></a
+              >
               <img
                 src="assets/img/logo/menu-bg.svg"
                 alt="menu bg"
@@ -177,60 +181,16 @@
                   >
                 </li>
                 <li class="site-header__submenu-item">
-                  <a href="sign-in.html" class="site-header__submenu-link"
-                    >Sign In</a
+                  <a href="blog.html" class="site-header__submenu-link">Blog</a>
+                </li>
+                <li class="site-header__submenu-item">
+                  <a href="blog-standard.html" class="site-header__submenu-link"
+                    >Blog Standard</a
                   >
                 </li>
                 <li class="site-header__submenu-item">
-                  <a href="sign-up.html" class="site-header__submenu-link"
-                    >Sign Up</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="forget-password.html"
-                    class="site-header__submenu-link"
-                    >Forget Password</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="password-reset.html"
-                    class="site-header__submenu-link"
-                    >Password Reset</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="set-newpassword.html"
-                    class="site-header__submenu-link"
-                    >Set New Password</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="dashboard-change-password.html"
-                    class="site-header__submenu-link"
-                    >Change Password</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a href="dashboard.html" class="site-header__submenu-link"
-                    >Dashboard</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="dashboard-order.html"
-                    class="site-header__submenu-link"
-                    >Dashboard Order</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="dashboard-lead-management.html"
-                    class="site-header__submenu-link"
-                    >Lead Management</a
+                  <a href="blog-details.html" class="site-header__submenu-link"
+                    >Blog Details</a
                   >
                 </li>
                 <li class="site-header__submenu-item">
@@ -271,9 +231,19 @@
                 </li>
               </ul>
             </li>
+            <li class="site-header__menu-item">
+              <a href="contact.html" class="site-header__menu-link"
+                ><span>CONTACT</span></a
+              >
+              <img
+                src="assets/img/logo/menu-bg.svg"
+                alt="menu bg"
+                class="site-header__menu-bg"
+              />
+            </li>
             <li class="site-header__menu-item menu-item-has-children">
-              <a href="blog.html" class="site-header__menu-link"
-                ><span>BLOG</span></a
+              <a href="dashboard.html" class="site-header__menu-link"
+                ><span>DASHBOARD</span></a
               >
               <img
                 src="assets/img/logo/menu-bg.svg"
@@ -285,29 +255,35 @@
               ></span>
               <ul class="site-header__submenu site-header__submenu--left">
                 <li class="site-header__submenu-item">
-                  <a href="blog.html" class="site-header__submenu-link">Blog</a>
-                </li>
-                <li class="site-header__submenu-item">
-                  <a href="blog-standard.html" class="site-header__submenu-link"
-                    >Blog Standard</a
+                  <a href="sign-in.html" class="site-header__submenu-link"
+                    >Sign In</a
                   >
                 </li>
                 <li class="site-header__submenu-item">
-                  <a href="blog-details.html" class="site-header__submenu-link"
-                    >Blog Details</a
+                  <a href="sign-up.html" class="site-header__submenu-link"
+                    >Sign Up</a
+                  >
+                </li>
+                <li class="site-header__submenu-item">
+                  <a href="dashboard.html" class="site-header__submenu-link"
+                    >Dashboard</a
+                  >
+                </li>
+                <li class="site-header__submenu-item">
+                  <a
+                    href="dashboard-order.html"
+                    class="site-header__submenu-link"
+                    >Dashboard Order</a
+                  >
+                </li>
+                <li class="site-header__submenu-item">
+                  <a
+                    href="dashboard-lead-management.html"
+                    class="site-header__submenu-link"
+                    >Dashboard Lead Management</a
                   >
                 </li>
               </ul>
-            </li>
-            <li class="site-header__menu-item">
-              <a href="contact.html" class="site-header__menu-link"
-                ><span>CONTACT</span></a
-              >
-              <img
-                src="assets/img/logo/menu-bg.svg"
-                alt="menu bg"
-                class="site-header__menu-bg"
-              />
             </li>
           </ul>
         </nav>
@@ -1045,7 +1021,8 @@
                   </div>
                 </div>
               </div>
-              <div class="testimonial__slide-content testimonial__slide-content--active"
+              <div
+                class="testimonial__slide-content testimonial__slide-content--active"
               >
                 <div>
                   <div class="testimonial__rating">
@@ -1213,16 +1190,36 @@
                   <i class="fas fa-share-alt team-card__social-icon"></i>
                 </div>
                 <div class="team-card__social-links">
-                  <a href="javascript:void(0)" class="team-card__social-link"
+                  <a
+                    href="https://instagram.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    class="team-card__social-link"
                     ><i class="fab fa-instagram"></i
                   ></a>
-                  <a href="javascript:void(0)" class="team-card__social-link"
+                  <a
+                    href="https://twitter.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Twitter"
+                    class="team-card__social-link"
                     ><i class="fab fa-twitter"></i
                   ></a>
-                  <a href="javascript:void(0)" class="team-card__social-link"
+                  <a
+                    href="https://facebook.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                    class="team-card__social-link"
                     ><i class="fab fa-facebook-f"></i
                   ></a>
-                  <a href="javascript:void(0)" class="team-card__social-link"
+                  <a
+                    href="https://behance.net/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Behance"
+                    class="team-card__social-link"
                     ><i class="fab fa-behance"></i
                   ></a>
                 </div>
@@ -1257,16 +1254,36 @@
                   <i class="fas fa-share-alt team-card__social-icon"></i>
                 </div>
                 <div class="team-card__social-links">
-                  <a href="javascript:void(0)" class="team-card__social-link"
+                  <a
+                    href="https://instagram.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    class="team-card__social-link"
                     ><i class="fab fa-instagram"></i
                   ></a>
-                  <a href="javascript:void(0)" class="team-card__social-link"
+                  <a
+                    href="https://twitter.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Twitter"
+                    class="team-card__social-link"
                     ><i class="fab fa-twitter"></i
                   ></a>
-                  <a href="javascript:void(0)" class="team-card__social-link"
+                  <a
+                    href="https://facebook.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                    class="team-card__social-link"
                     ><i class="fab fa-facebook-f"></i
                   ></a>
-                  <a href="javascript:void(0)" class="team-card__social-link"
+                  <a
+                    href="https://behance.net/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Behance"
+                    class="team-card__social-link"
                     ><i class="fab fa-behance"></i
                   ></a>
                 </div>
@@ -1301,16 +1318,36 @@
                   <i class="fas fa-share-alt team-card__social-icon"></i>
                 </div>
                 <div class="team-card__social-links">
-                  <a href="javascript:void(0)" class="team-card__social-link"
+                  <a
+                    href="https://instagram.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    class="team-card__social-link"
                     ><i class="fab fa-instagram"></i
                   ></a>
-                  <a href="javascript:void(0)" class="team-card__social-link"
+                  <a
+                    href="https://twitter.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Twitter"
+                    class="team-card__social-link"
                     ><i class="fab fa-twitter"></i
                   ></a>
-                  <a href="javascript:void(0)" class="team-card__social-link"
+                  <a
+                    href="https://facebook.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                    class="team-card__social-link"
                     ><i class="fab fa-facebook-f"></i
                   ></a>
-                  <a href="javascript:void(0)" class="team-card__social-link"
+                  <a
+                    href="https://behance.net/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Behance"
+                    class="team-card__social-link"
                     ><i class="fab fa-behance"></i
                   ></a>
                 </div>
@@ -1345,16 +1382,36 @@
                   <i class="fas fa-share-alt team-card__social-icon"></i>
                 </div>
                 <div class="team-card__social-links">
-                  <a href="javascript:void(0)" class="team-card__social-link"
+                  <a
+                    href="https://instagram.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    class="team-card__social-link"
                     ><i class="fab fa-instagram"></i
                   ></a>
-                  <a href="javascript:void(0)" class="team-card__social-link"
+                  <a
+                    href="https://twitter.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Twitter"
+                    class="team-card__social-link"
                     ><i class="fab fa-twitter"></i
                   ></a>
-                  <a href="javascript:void(0)" class="team-card__social-link"
+                  <a
+                    href="https://facebook.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                    class="team-card__social-link"
                     ><i class="fab fa-facebook-f"></i
                   ></a>
-                  <a href="javascript:void(0)" class="team-card__social-link"
+                  <a
+                    href="https://behance.net/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Behance"
+                    class="team-card__social-link"
                     ><i class="fab fa-behance"></i
                   ></a>
                 </div>
@@ -1383,7 +1440,13 @@
       <div class="working-process__container">
         <div class="working-process__wrap">
           <div class="working-process__left" data-aos="fade-right">
-            <form action="#" class="working-process__form">
+            <form
+              action="#"
+              class="working-process__form"
+              novalidate
+              data-success-message="Thank you! Your inquiry has been submitted."
+              data-error-message="Please fill out all required fields correctly."
+            >
               <div class="working-process__form-row">
                 <div class="working-process__form-group">
                   <input
@@ -1393,6 +1456,8 @@
                     autocomplete="name"
                     class="working-process__input"
                     placeholder="Full Name*"
+                    required
+                    data-error-message="Please enter your full name."
                   />
                 </div>
                 <div class="working-process__form-group">
@@ -1402,7 +1467,9 @@
                     name="phone"
                     autocomplete="tel"
                     class="working-process__input"
-                    placeholder="Phone Number"
+                    placeholder="Phone Number*"
+                    required
+                    data-error-message="Please enter a valid phone number."
                   />
                 </div>
               </div>
@@ -1414,12 +1481,14 @@
                     name="email"
                     autocomplete="email"
                     class="working-process__input"
-                    placeholder="Email Address"
+                    placeholder="Email Address*"
+                    required
+                    data-error-message="Please enter a valid email address."
                   />
                 </div>
                 <div class="working-process__form-group">
                   <input
-                    type="text"
+                    type="date"
                     id="wp-date"
                     name="date"
                     autocomplete="off"
@@ -1437,8 +1506,10 @@
                     name="service"
                     autocomplete="off"
                     class="working-process__input"
+                    required
+                    data-error-message="Please select a service."
                   >
-                    <option value="" disabled selected>Services</option>
+                    <option value="" disabled selected>Services*</option>
                     <option value="grooming">Grooming</option>
                     <option value="sitting">Pet Sitting</option>
                     <option value="training">Training</option>
@@ -2005,7 +2076,12 @@
         </div>
 
         <div class="product__grid">
-          <div class="product-card" data-aos="fade-up" data-aos-delay="0">
+          <a
+            href="shop-details.html"
+            class="product-card"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
             <div class="product-card__img-wrap">
               <div class="product-card__badges">
                 <span class="product-card__badge product-card__badge--sale"
@@ -2015,7 +2091,7 @@
                   >Popular</span
                 >
               </div>
-              <a href="shop-details.html" class="product-card__img-link">
+              <div class="product-card__img-link">
                 <img
                   src="assets/img/shop/shop-1.png"
                   alt="Comfypaws Orthopedic"
@@ -2024,14 +2100,14 @@
                 <div class="product-card__overlay">
                   <i class="fas fa-eye"></i>
                 </div>
-              </a>
+              </div>
               <div class="product-card__blur-overlay"></div>
             </div>
             <div class="product-card__info">
-              <a href="shop-details.html" class="product-card__info-link">
+              <div class="product-card__info-link">
                 <div class="product-card__price">$250.85</div>
                 <h3 class="product-card__title">COMFYPAWS ORTHOPEDIC</h3>
-              </a>
+              </div>
               <div class="product-card__rating">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -2041,9 +2117,14 @@
                 <span class="product-card__rating-text">(4.00 Review)</span>
               </div>
             </div>
-          </div>
+          </a>
 
-          <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+          <a
+            href="shop-details.html"
+            class="product-card"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <div class="product-card__img-wrap">
               <div class="product-card__badges">
                 <span class="product-card__badge product-card__badge--new"
@@ -2053,7 +2134,7 @@
                   >Popular</span
                 >
               </div>
-              <a href="shop-details.html" class="product-card__img-link">
+              <div class="product-card__img-link">
                 <img
                   src="assets/img/shop/shop-2.png"
                   alt="Green Papaya Fruit"
@@ -2062,14 +2143,14 @@
                 <div class="product-card__overlay">
                   <i class="fas fa-eye"></i>
                 </div>
-              </a>
+              </div>
               <div class="product-card__blur-overlay"></div>
             </div>
             <div class="product-card__info">
-              <a href="shop-details.html" class="product-card__info-link">
+              <div class="product-card__info-link">
                 <div class="product-card__price">$160.00</div>
                 <h3 class="product-card__title">GREEN PAPAYA FRUIT</h3>
-              </a>
+              </div>
               <div class="product-card__rating">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -2079,9 +2160,14 @@
                 <span class="product-card__rating-text">(4.00 Review)</span>
               </div>
             </div>
-          </div>
+          </a>
 
-          <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+          <a
+            href="shop-details.html"
+            class="product-card"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <div class="product-card__img-wrap">
               <div class="product-card__badges">
                 <span class="product-card__badge product-card__badge--sale"
@@ -2091,7 +2177,7 @@
                   >Popular</span
                 >
               </div>
-              <a href="shop-details.html" class="product-card__img-link">
+              <div class="product-card__img-link">
                 <img
                   src="assets/img/shop/shop-3.png"
                   alt="Royal Canin Kitten"
@@ -2100,14 +2186,14 @@
                 <div class="product-card__overlay">
                   <i class="fas fa-eye"></i>
                 </div>
-              </a>
+              </div>
               <div class="product-card__blur-overlay"></div>
             </div>
             <div class="product-card__info">
-              <a href="shop-details.html" class="product-card__info-link">
+              <div class="product-card__info-link">
                 <div class="product-card__price">$250.11</div>
                 <h3 class="product-card__title">ROYAL CANIN KITTEN</h3>
-              </a>
+              </div>
               <div class="product-card__rating">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -2117,9 +2203,14 @@
                 <span class="product-card__rating-text">(4.00 Review)</span>
               </div>
             </div>
-          </div>
+          </a>
 
-          <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+          <a
+            href="shop-details.html"
+            class="product-card"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
             <div class="product-card__img-wrap">
               <div class="product-card__badges">
                 <span class="product-card__badge product-card__badge--new"
@@ -2129,7 +2220,7 @@
                   >Popular</span
                 >
               </div>
-              <a href="shop-details.html" class="product-card__img-link">
+              <div class="product-card__img-link">
                 <img
                   src="assets/img/shop/shop-4.png"
                   alt="Fantastic Plastic Clock"
@@ -2138,14 +2229,14 @@
                 <div class="product-card__overlay">
                   <i class="fas fa-eye"></i>
                 </div>
-              </a>
+              </div>
               <div class="product-card__blur-overlay"></div>
             </div>
             <div class="product-card__info">
-              <a href="shop-details.html" class="product-card__info-link">
+              <div class="product-card__info-link">
                 <div class="product-card__price">$250.85</div>
                 <h3 class="product-card__title">FANTASTIC PLASTIC CLOCK</h3>
-              </a>
+              </div>
               <div class="product-card__rating">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -2155,7 +2246,7 @@
                 <span class="product-card__rating-text">(4.00 Review)</span>
               </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -2410,7 +2501,11 @@
               We Are Dedicated To Crafting High-Quality Fabrics That Combine
               Innovation, Sustainability.
             </p>
-            <form action="#" class="footer__form">
+            <form
+              action="#"
+              class="footer__form"
+              data-success-message="Thank you for subscribing to our newsletter!"
+            >
               <input
                 type="email"
                 id="footer-newsletter"
@@ -2425,16 +2520,36 @@
               </button>
             </form>
             <div class="footer__socials">
-              <a href="javascript:void(0)" class="footer__social-link"
+              <a
+                href="https://facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                class="footer__social-link"
                 ><i class="fab fa-facebook-f footer__social-icon"></i
               ></a>
-              <a href="javascript:void(0)" class="footer__social-link"
+              <a
+                href="https://twitter.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+                class="footer__social-link"
                 ><i class="fab fa-twitter footer__social-icon"></i
               ></a>
-              <a href="javascript:void(0)" class="footer__social-link"
+              <a
+                href="https://instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                class="footer__social-link"
                 ><i class="fab fa-instagram footer__social-icon"></i
               ></a>
-              <a href="javascript:void(0)" class="footer__social-link"
+              <a
+                href="https://pinterest.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Pinterest"
+                class="footer__social-link"
                 ><i class="fab fa-pinterest-p footer__social-icon"></i
               ></a>
             </div>
@@ -2644,6 +2759,8 @@
     <script src="assets/js/plugins/SplitText.min.js"></script>
     <script src="assets/js/paw-sprite.js"></script>
 
+    <script src="assets/js/plugins/toastr.min.js"></script>
+    <script src="assets/js/plugins/lightgallery-all.min.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

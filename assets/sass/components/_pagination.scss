@@ -57,6 +57,16 @@
         border-color: var(--primary-color);
       }
     }
+
+    &--disabled {
+      pointer-events: none;
+      opacity: 0.45;
+      cursor: not-allowed;
+
+      .pagination__link {
+        cursor: not-allowed;
+      }
+    }
   }
 
   &__link {

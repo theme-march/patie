@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------
-50. Contact
+53. Contact
 ----------------------------------------------------------------*/
 @use "../abstracts" as *;
 
@@ -156,7 +156,17 @@
     width: 100%;
 
     &--textarea {
-      height: 160px;
+      min-height: 160px;
+      height: auto;
+
+      .contact-section__textarea {
+        height: 160px;
+      }
+    }
+
+    .form-error-message {
+      margin-top: 6px;
+      padding-left: 2px;
     }
   }
 
@@ -192,7 +202,7 @@
   &__input-icon {
     position: absolute;
     right: 40px;
-    top: 50%;
+    top: 27px;
     transform: translateY(-50%);
     color: color-mix(in srgb, var(--heading-color), transparent 30%);
     pointer-events: none;

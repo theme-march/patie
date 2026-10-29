@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html class="no-js" lang="en">
   <head>
     <!-- Meta Tags -->
@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="assets/css/plugins/fontawesome.min.css" />
     <link rel="stylesheet" href="assets/css/plugins/aos.css" />
     <link rel="stylesheet" href="assets/css/plugins/swiper.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/toastr.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/lightgallery.min.css" />
 
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
@@ -87,7 +89,7 @@
             />
           </a>
         </div>
-        <nav class="site-header__nav">
+                <nav class="site-header__nav">
           <ul class="site-header__menu">
             <li class="site-header__menu-item menu-item-has-children">
               <a href="index.html" class="site-header__menu-link"
@@ -156,10 +158,10 @@
                 </li>
               </ul>
             </li>
-            <li
-              class="site-header__menu-item menu-item-has-children site-header__menu-item--active"
-            >
-              <a href="team.html" class="site-header__menu-link"><span>PAGES</span></a>
+            <li class="site-header__menu-item menu-item-has-children">
+              <a href="team.html" class="site-header__menu-link"
+                ><span>PAGES</span></a
+              >
               <img
                 src="assets/img/logo/menu-bg.svg"
                 alt="menu bg"
@@ -178,60 +180,16 @@
                   >
                 </li>
                 <li class="site-header__submenu-item">
-                  <a href="sign-in.html" class="site-header__submenu-link"
-                    >Sign In</a
+                  <a href="blog.html" class="site-header__submenu-link">Blog</a>
+                </li>
+                <li class="site-header__submenu-item">
+                  <a href="blog-standard.html" class="site-header__submenu-link"
+                    >Blog Standard</a
                   >
                 </li>
                 <li class="site-header__submenu-item">
-                  <a href="sign-up.html" class="site-header__submenu-link"
-                    >Sign Up</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="forget-password.html"
-                    class="site-header__submenu-link"
-                    >Forget Password</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="password-reset.html"
-                    class="site-header__submenu-link"
-                    >Password Reset</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="set-newpassword.html"
-                    class="site-header__submenu-link"
-                    >Set New Password</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="dashboard-change-password.html"
-                    class="site-header__submenu-link"
-                    >Change Password</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a href="dashboard.html" class="site-header__submenu-link"
-                    >Dashboard</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="dashboard-order.html"
-                    class="site-header__submenu-link"
-                    >Dashboard Order</a
-                  >
-                </li>
-                <li class="site-header__submenu-item">
-                  <a
-                    href="dashboard-lead-management.html"
-                    class="site-header__submenu-link"
-                    >Lead Management</a
+                  <a href="blog-details.html" class="site-header__submenu-link"
+                    >Blog Details</a
                   >
                 </li>
                 <li class="site-header__submenu-item">
@@ -272,9 +230,19 @@
                 </li>
               </ul>
             </li>
+            <li class="site-header__menu-item">
+              <a href="contact.html" class="site-header__menu-link"
+                ><span>CONTACT</span></a
+              >
+              <img
+                src="assets/img/logo/menu-bg.svg"
+                alt="menu bg"
+                class="site-header__menu-bg"
+              />
+            </li>
             <li class="site-header__menu-item menu-item-has-children">
-              <a href="blog.html" class="site-header__menu-link"
-                ><span>BLOG</span></a
+              <a href="dashboard.html" class="site-header__menu-link"
+                ><span>DASHBOARD</span></a
               >
               <img
                 src="assets/img/logo/menu-bg.svg"
@@ -286,29 +254,35 @@
               ></span>
               <ul class="site-header__submenu site-header__submenu--left">
                 <li class="site-header__submenu-item">
-                  <a href="blog.html" class="site-header__submenu-link">Blog</a>
-                </li>
-                <li class="site-header__submenu-item">
-                  <a href="blog-standard.html" class="site-header__submenu-link"
-                    >Blog Standard</a
+                  <a href="sign-in.html" class="site-header__submenu-link"
+                    >Sign In</a
                   >
                 </li>
                 <li class="site-header__submenu-item">
-                  <a href="blog-details.html" class="site-header__submenu-link"
-                    >Blog Details</a
+                  <a href="sign-up.html" class="site-header__submenu-link"
+                    >Sign Up</a
+                  >
+                </li>
+                <li class="site-header__submenu-item">
+                  <a href="dashboard.html" class="site-header__submenu-link"
+                    >Dashboard</a
+                  >
+                </li>
+                <li class="site-header__submenu-item">
+                  <a
+                    href="dashboard-order.html"
+                    class="site-header__submenu-link"
+                    >Dashboard Order</a
+                  >
+                </li>
+                <li class="site-header__submenu-item">
+                  <a
+                    href="dashboard-lead-management.html"
+                    class="site-header__submenu-link"
+                    >Dashboard Lead Management</a
                   >
                 </li>
               </ul>
-            </li>
-            <li class="site-header__menu-item">
-              <a href="contact.html" class="site-header__menu-link"
-                ><span>CONTACT</span></a
-              >
-              <img
-                src="assets/img/logo/menu-bg.svg"
-                alt="menu bg"
-                class="site-header__menu-bg"
-              />
             </li>
           </ul>
         </nav>
@@ -406,98 +380,166 @@
             data-aos-delay="0"
           >
             <h2 class="checkout-section__title">BILLING DETAILS</h2>
-            <form action="#" class="checkout-section__form">
+            <form
+              id="checkoutForm"
+              action="#"
+              method="post"
+              novalidate
+              class="checkout-section__form"
+              data-success-message="Order placed successfully!"
+              data-error-message="Please fill in all required billing fields."
+            >
               <div class="checkout-section__row">
-                <input
-                  type="text"
-                  id="billing-first-name"
-                  name="first-name"
-                  autocomplete="given-name"
-                  placeholder="Fast Name"
-                  class="checkout-section__input"
-                />
-                <input
-                  type="text"
-                  id="billing-last-name"
-                  name="last-name"
-                  autocomplete="family-name"
-                  placeholder="Last Name"
-                  class="checkout-section__input"
-                />
-              </div>
-              <div class="checkout-section__row">
-                <input
-                  type="email"
-                  id="billing-email"
-                  name="email"
-                  autocomplete="email"
-                  placeholder="Email Address"
-                  class="checkout-section__input"
-                />
-                <input
-                  type="tel"
-                  id="billing-phone"
-                  name="phone"
-                  autocomplete="tel"
-                  placeholder="Phone Number"
-                  class="checkout-section__input"
-                />
-              </div>
-              <div class="checkout-section__row">
-                <div class="checkout-section__select-wrap">
-                  <select
-                    id="checkout-county"
-                    name="county"
-                    autocomplete="address-level2"
-                    class="checkout-section__select"
-                  >
-                    <option>County</option>
-                  </select>
-                  <i
-                    class="fas fa-chevron-down checkout-section__select-icon"
-                  ></i>
+                <div class="checkout-section__field">
+                  <div class="checkout-section__input-wrapper">
+                    <input
+                      type="text"
+                      id="billing-first-name"
+                      name="first-name"
+                      autocomplete="given-name"
+                      placeholder="First Name*"
+                      class="checkout-section__input"
+                      required
+                      data-error-message="First name is required"
+                    />
+                  </div>
                 </div>
-                <div class="checkout-section__select-wrap">
-                  <select
-                    id="checkout-state"
-                    name="state"
-                    autocomplete="address-level1"
-                    class="checkout-section__select"
-                  >
-                    <option>State</option>
-                  </select>
-                  <i
-                    class="fas fa-chevron-down checkout-section__select-icon"
-                  ></i>
+                <div class="checkout-section__field">
+                  <div class="checkout-section__input-wrapper">
+                    <input
+                      type="text"
+                      id="billing-last-name"
+                      name="last-name"
+                      autocomplete="family-name"
+                      placeholder="Last Name*"
+                      class="checkout-section__input"
+                      required
+                      data-error-message="Last name is required"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="checkout-section__row">
+                <div class="checkout-section__field">
+                  <div class="checkout-section__input-wrapper">
+                    <input
+                      type="email"
+                      id="billing-email"
+                      name="email"
+                      autocomplete="email"
+                      placeholder="Email Address*"
+                      class="checkout-section__input"
+                      required
+                      data-error-message="Please enter a valid email address"
+                    />
+                  </div>
+                </div>
+                <div class="checkout-section__field">
+                  <div class="checkout-section__input-wrapper">
+                    <input
+                      type="tel"
+                      id="billing-phone"
+                      name="phone"
+                      autocomplete="tel"
+                      placeholder="Phone Number*"
+                      class="checkout-section__input"
+                      required
+                      data-error-message="Phone number is required"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="checkout-section__row">
+                <div class="checkout-section__field">
+                  <div class="checkout-section__select-wrap">
+                    <select
+                      id="checkout-county"
+                      name="county"
+                      autocomplete="address-level2"
+                      class="checkout-section__select"
+                      required
+                      data-error-message="Please select a country"
+                    >
+                      <option value="" disabled selected>Country*</option>
+                      <option value="us">United States</option>
+                      <option value="uk">United Kingdom</option>
+                      <option value="ca">Canada</option>
+                      <option value="au">Australia</option>
+                    </select>
+                    <i
+                      class="fas fa-chevron-down checkout-section__select-icon"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
+                </div>
+                <div class="checkout-section__field">
+                  <div class="checkout-section__select-wrap">
+                    <select
+                      id="checkout-state"
+                      name="state"
+                      autocomplete="address-level1"
+                      class="checkout-section__select"
+                      required
+                      data-error-message="Please select a state"
+                    >
+                      <option value="" disabled selected>State*</option>
+                      <option value="ny">New York</option>
+                      <option value="ca">California</option>
+                      <option value="tx">Texas</option>
+                      <option value="fl">Florida</option>
+                    </select>
+                    <i
+                      class="fas fa-chevron-down checkout-section__select-icon"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
                 </div>
               </div>
               <div class="checkout-section__row checkout-section__row--full">
-                <input
-                  type="text"
-                  id="billing-address"
-                  name="address"
-                  autocomplete="street-address"
-                  placeholder="Address"
-                  class="checkout-section__input"
-                />
+                <div class="checkout-section__field">
+                  <div class="checkout-section__input-wrapper">
+                    <input
+                      type="text"
+                      id="billing-address"
+                      name="address"
+                      autocomplete="street-address"
+                      placeholder="Street Address*"
+                      class="checkout-section__input"
+                      required
+                      data-error-message="Street address is required"
+                    />
+                  </div>
+                </div>
               </div>
               <div class="checkout-section__row">
-                <input
-                  type="text"
-                  id="billing-city"
-                  name="city"
-                  autocomplete="address-level2"
-                  placeholder="Town / City"
-                  class="checkout-section__input"
-                />
-                <input
-                  type="text"
-                  id="billing-postcode"
-                  name="postcode"
-                  autocomplete="postal-code"
-                  placeholder="Postcode / ZIP"
-                  class="checkout-section__input"
-                />
+                <div class="checkout-section__field">
+                  <div class="checkout-section__input-wrapper">
+                    <input
+                      type="text"
+                      id="billing-city"
+                      name="city"
+                      autocomplete="address-level2"
+                      placeholder="Town / City*"
+                      class="checkout-section__input"
+                      required
+                      data-error-message="Town / City is required"
+                    />
+                  </div>
+                </div>
+                <div class="checkout-section__field">
+                  <div class="checkout-section__input-wrapper">
+                    <input
+                      type="text"
+                      id="billing-postcode"
+                      name="postcode"
+                      autocomplete="postal-code"
+                      placeholder="Postcode / ZIP*"
+                      class="checkout-section__input"
+                      required
+                      data-error-message="Postcode / ZIP is required"
+                    />
+                  </div>
+                </div>
               </div>
             </form>
 
@@ -606,38 +648,74 @@
               </div>
 
               <p class="checkout-section__payment-text">
-                Selet Your Credit/Debit Cards or Paypal
+                Select Your Credit/Debit Cards or PayPal
               </p>
 
               <div class="checkout-section__payment-cards">
-                <a href="javascript:void(0)">
-                  <img
-                    src="assets/img/credit-card/Visa.png"
-                    alt="Visa"
-                    class="checkout-section__card-img"
+                <label class="checkout-section__card-label">
+                  <input
+                    type="radio"
+                    id="payment-card-visa"
+                    name="payment_method"
+                    value="visa"
+                    class="checkout-section__card-input"
                   />
-                </a>
-                <a href="javascript:void(0)">
-                  <img
-                    src="assets/img/credit-card/PayPal.png"
-                    alt="PayPal"
-                    class="checkout-section__card-img"
+                  <span class="checkout-section__card-item">
+                    <img
+                      src="assets/img/credit-card/Visa.png"
+                      alt="Visa"
+                      class="checkout-section__card-img"
+                    />
+                  </span>
+                </label>
+                <label class="checkout-section__card-label">
+                  <input
+                    type="radio"
+                    id="payment-card-paypal"
+                    name="payment_method"
+                    value="paypal"
+                    class="checkout-section__card-input"
                   />
-                </a>
-                <a href="javascript:void(0)">
-                  <img
-                    src="assets/img/credit-card/BitPay.png"
-                    alt="BitPay"
-                    class="checkout-section__card-img"
+                  <span class="checkout-section__card-item">
+                    <img
+                      src="assets/img/credit-card/PayPal.png"
+                      alt="PayPal"
+                      class="checkout-section__card-img"
+                    />
+                  </span>
+                </label>
+                <label class="checkout-section__card-label">
+                  <input
+                    type="radio"
+                    id="payment-card-bitpay"
+                    name="payment_method"
+                    value="bitpay"
+                    class="checkout-section__card-input"
                   />
-                </a>
-                <a href="javascript:void(0)">
-                  <img
-                    src="assets/img/credit-card/Payoneer.png"
-                    alt="Payoneer"
-                    class="checkout-section__card-img"
+                  <span class="checkout-section__card-item">
+                    <img
+                      src="assets/img/credit-card/BitPay.png"
+                      alt="BitPay"
+                      class="checkout-section__card-img"
+                    />
+                  </span>
+                </label>
+                <label class="checkout-section__card-label">
+                  <input
+                    type="radio"
+                    id="payment-card-payoneer"
+                    name="payment_method"
+                    value="payoneer"
+                    class="checkout-section__card-input"
                   />
-                </a>
+                  <span class="checkout-section__card-item">
+                    <img
+                      src="assets/img/credit-card/Payoneer.png"
+                      alt="Payoneer"
+                      class="checkout-section__card-img"
+                    />
+                  </span>
+                </label>
               </div>
 
               <div class="checkout-section__payment-methods">
@@ -646,6 +724,7 @@
                     type="radio"
                     id="payment-cod"
                     name="payment_method"
+                    value="cod"
                     class="checkout-section__radio-input"
                     checked
                   />
@@ -661,6 +740,7 @@
                     type="radio"
                     id="payment-bank"
                     name="payment_method"
+                    value="bank"
                     class="checkout-section__radio-input"
                   />
                   <span class="checkout-section__radio-circle">
@@ -673,7 +753,8 @@
               </div>
 
               <button
-                type="button"
+                type="submit"
+                form="checkoutForm"
                 class="common-btn common-btn--primary checkout-section__submit-btn"
               >
                 <span class="common-btn__inner"> MAKE PAYMENT </span>
@@ -719,7 +800,11 @@
               We Are Dedicated To Crafting High-Quality Fabrics That Combine
               Innovation, Sustainability.
             </p>
-            <form action="#" class="footer__form">
+            <form
+              action="#"
+              class="footer__form"
+              data-success-message="Thank you for subscribing to our newsletter!"
+            >
               <input
                 type="email"
                 id="footer-newsletter"
@@ -734,16 +819,36 @@
               </button>
             </form>
             <div class="footer__socials">
-              <a href="javascript:void(0)" class="footer__social-link"
+              <a
+                href="https://facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                class="footer__social-link"
                 ><i class="fab fa-facebook-f footer__social-icon"></i
               ></a>
-              <a href="javascript:void(0)" class="footer__social-link"
+              <a
+                href="https://twitter.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+                class="footer__social-link"
                 ><i class="fab fa-twitter footer__social-icon"></i
               ></a>
-              <a href="javascript:void(0)" class="footer__social-link"
+              <a
+                href="https://instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                class="footer__social-link"
                 ><i class="fab fa-instagram footer__social-icon"></i
               ></a>
-              <a href="javascript:void(0)" class="footer__social-link"
+              <a
+                href="https://pinterest.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Pinterest"
+                class="footer__social-link"
                 ><i class="fab fa-pinterest-p footer__social-icon"></i
               ></a>
             </div>
@@ -954,6 +1059,8 @@
     <script src="assets/js/plugins/SplitText.min.js"></script>
     <script src="assets/js/paw-sprite.js"></script>
 
+    <script src="assets/js/plugins/toastr.min.js"></script>
+    <script src="assets/js/plugins/lightgallery-all.min.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

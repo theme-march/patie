@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="assets/css/plugins/fontawesome.min.css" />
     <link rel="stylesheet" href="assets/css/plugins/aos.css" />
     <link rel="stylesheet" href="assets/css/plugins/swiper.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/toastr.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/lightgallery.min.css" />
 
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
@@ -112,28 +114,28 @@
 
           <div class="dashboard-topbar__actions">
             <a
-              href="javascript:void(0)"
+              href="#"
               class="dashboard-topbar__action-btn"
               aria-label="Messages"
             >
               <i class="fas fa-comment-dots" aria-hidden="true"></i>
             </a>
             <a
-              href="javascript:void(0)"
+              href="#"
               class="dashboard-topbar__action-btn"
               aria-label="Notifications"
             >
               <i class="fas fa-bell" aria-hidden="true"></i>
             </a>
             <a
-              href="javascript:void(0)"
+              href="#"
               class="dashboard-topbar__action-btn"
               aria-label="Settings"
             >
               <i class="fas fa-cog" aria-hidden="true"></i>
             </a>
             <a
-              href="javascript:void(0)"
+              href="#"
               class="dashboard-topbar__action-btn"
               aria-label="Apps"
             >
@@ -219,6 +221,16 @@
                 Order
               </a>
               <a
+                href="dashboard-lead-management.html"
+                class="dashboard-sidebar__nav-item"
+              >
+                <i
+                  class="fas fa-user-tie dashboard-sidebar__nav-icon"
+                  aria-hidden="true"
+                ></i>
+                Lead Management
+              </a>
+              <a
                 href="dashboard-change-password.html"
                 class="dashboard-sidebar__nav-item"
               >
@@ -229,14 +241,24 @@
                 Change Password
               </a>
               <a
-                href="dashboard-lead-management.html"
+                href="password-reset.html"
                 class="dashboard-sidebar__nav-item"
               >
                 <i
-                  class="fas fa-user-tie dashboard-sidebar__nav-icon"
+                  class="fas fa-key dashboard-sidebar__nav-icon"
                   aria-hidden="true"
                 ></i>
-                Lead Management
+                Password Reset
+              </a>
+              <a
+                href="set-newpassword.html"
+                class="dashboard-sidebar__nav-item"
+              >
+                <i
+                  class="fas fa-shield-alt dashboard-sidebar__nav-icon"
+                  aria-hidden="true"
+                ></i>
+                Set New Password
               </a>
             </nav>
 
@@ -255,7 +277,7 @@
             aria-label="Quick actions"
           >
             <a
-              href="javascript:void(0)"
+              href="#"
               class="dashboard-sidebar__mobile-action-btn"
               aria-label="Messages"
             >
@@ -263,7 +285,7 @@
               <span>Messages</span>
             </a>
             <a
-              href="javascript:void(0)"
+              href="#"
               class="dashboard-sidebar__mobile-action-btn"
               aria-label="Notifications"
             >
@@ -271,7 +293,7 @@
               <span>Notifications</span>
             </a>
             <a
-              href="javascript:void(0)"
+              href="#"
               class="dashboard-sidebar__mobile-action-btn"
               aria-label="Settings"
             >
@@ -279,7 +301,7 @@
               <span>Settings</span>
             </a>
             <a
-              href="javascript:void(0)"
+              href="#"
               class="dashboard-sidebar__mobile-action-btn"
               aria-label="Apps"
             >
@@ -405,8 +427,17 @@
                     aria-label="Sales performance chart"
                     role="img"
                     data-labels="Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct"
+                    data-series1-label="2021"
+                    data-series1-values="28000,35000,25000,80000,30000,62000,95000,38000,50000,55000"
                     data-2021="28000,35000,25000,80000,30000,62000,95000,38000,50000,55000"
+                    data-series2-label="2020"
+                    data-series2-values="20000,45000,35000,30000,80000,40000,55000,48000,92000,60000"
                     data-2020="20000,45000,35000,30000,80000,40000,55000,48000,92000,60000"
+                    data-currency="$"
+                    data-unit="K"
+                    data-min="10000"
+                    data-max="100000"
+                    data-step-size="20000"
                   ></canvas>
                 </div>
               </div>
@@ -422,6 +453,11 @@
                     data-labels="Grooming,Pet Boarding,Vet Check,Day Care"
                     data-values="28,25,8,39"
                     data-colors="var(--other-color-1),var(--other-color-6),var(--other-color-2),var(--other-color-4)"
+                    data-cutout="65%"
+                    data-padding-top="30"
+                    data-padding-bottom="30"
+                    data-padding-left="95"
+                    data-padding-right="75"
                   ></canvas>
                 </div>
               </div>
@@ -627,6 +663,8 @@
     <script src="assets/js/plugins/SplitText.min.js"></script>
     <script src="assets/js/paw-sprite.js"></script>
 
+    <script src="assets/js/plugins/toastr.min.js"></script>
+    <script src="assets/js/plugins/lightgallery-all.min.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

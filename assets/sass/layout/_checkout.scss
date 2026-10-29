@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------
-49. Checkout
+52. Checkout
 ----------------------------------------------------------------*/
 @use "../abstracts" as *;
 
@@ -83,6 +83,28 @@
     &--full {
       flex-direction: column;
     }
+
+    .checkout-section__field {
+      flex: 1;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__input-wrapper {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+
+    .form-error-message {
+      width: 100%;
+    }
   }
 
   &__input,
@@ -109,7 +131,12 @@
     width: 100%;
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+
+    .form-error-message {
+      width: 100%;
+    }
   }
 
   &__select {
@@ -123,8 +150,11 @@
   &__select-icon {
     position: absolute;
     right: 20px;
+    top: 25px;
+    transform: translateY(-50%);
     color: color-mix(in srgb, var(--heading-color), transparent 30%);
     pointer-events: none;
+    z-index: 2;
   }
 
   &__checkbox-label {
@@ -260,19 +290,52 @@
 
   &__payment-cards {
     background-color: var(--smoke-bg-color);
-    padding: 20px 15px;
-    border-radius: 5px;
+    padding: 15px;
+    border-radius: 3px;
     display: flex;
     margin-bottom: 25px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: space-around;
+    gap: 5px;
+  }
+
+  &__card-label {
+    display: inline-flex;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  &__card-input {
+    display: none;
+  }
+
+  &__card-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+
+    &:hover {
+      border-color: color-mix(in srgb, var(--primary-color), transparent 50%);
+    }
+
+    .checkout-section__card-input:checked + & {
+      border-color: var(--primary-color);
+      background-color: color-mix(in srgb, var(--primary-color), transparent 92%);
+      box-shadow: 0 4px 12px color-mix(in srgb, var(--primary-color), transparent 85%);
+    }
   }
 
   &__card-img {
     height: 35px;
     object-fit: contain;
     border-radius: 4px;
+    display: block;
   }
 
   &__payment-methods {

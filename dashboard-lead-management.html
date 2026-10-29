@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="assets/css/plugins/fontawesome.min.css" />
     <link rel="stylesheet" href="assets/css/plugins/aos.css" />
     <link rel="stylesheet" href="assets/css/plugins/swiper.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/toastr.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/lightgallery.min.css" />
 
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
@@ -113,28 +115,28 @@
 
           <div class="dashboard-topbar__actions">
             <a
-              href="javascript:void(0)"
+              href="#"
               class="dashboard-topbar__action-btn"
               aria-label="Messages"
             >
               <i class="fas fa-comment-dots" aria-hidden="true"></i>
             </a>
             <a
-              href="javascript:void(0)"
+              href="#"
               class="dashboard-topbar__action-btn"
               aria-label="Notifications"
             >
               <i class="fas fa-bell" aria-hidden="true"></i>
             </a>
             <a
-              href="javascript:void(0)"
+              href="#"
               class="dashboard-topbar__action-btn"
               aria-label="Settings"
             >
               <i class="fas fa-cog" aria-hidden="true"></i>
             </a>
             <a
-              href="javascript:void(0)"
+              href="#"
               class="dashboard-topbar__action-btn"
               aria-label="Apps"
             >
@@ -198,7 +200,10 @@
             </div>
 
             <nav class="dashboard-sidebar__nav" aria-label="Dashboard menu">
-              <a href="dashboard.html" class="dashboard-sidebar__nav-item">
+              <a
+                href="dashboard.html"
+                class="dashboard-sidebar__nav-item"
+              >
                 <i
                   class="fas fa-home dashboard-sidebar__nav-icon"
                   aria-hidden="true"
@@ -216,6 +221,17 @@
                 Order
               </a>
               <a
+                href="dashboard-lead-management.html"
+                class="dashboard-sidebar__nav-item dashboard-sidebar__nav-item--active"
+                aria-current="page"
+              >
+                <i
+                  class="fas fa-user-tie dashboard-sidebar__nav-icon"
+                  aria-hidden="true"
+                ></i>
+                Lead Management
+              </a>
+              <a
                 href="dashboard-change-password.html"
                 class="dashboard-sidebar__nav-item"
               >
@@ -226,15 +242,24 @@
                 Change Password
               </a>
               <a
-                href="dashboard-lead-management.html"
-                class="dashboard-sidebar__nav-item dashboard-sidebar__nav-item--active"
-                aria-current="page"
+                href="password-reset.html"
+                class="dashboard-sidebar__nav-item"
               >
                 <i
-                  class="fas fa-user-tie dashboard-sidebar__nav-icon"
+                  class="fas fa-key dashboard-sidebar__nav-icon"
                   aria-hidden="true"
                 ></i>
-                Lead Management
+                Password Reset
+              </a>
+              <a
+                href="set-newpassword.html"
+                class="dashboard-sidebar__nav-item"
+              >
+                <i
+                  class="fas fa-shield-alt dashboard-sidebar__nav-icon"
+                  aria-hidden="true"
+                ></i>
+                Set New Password
               </a>
             </nav>
 
@@ -253,7 +278,7 @@
             aria-label="Quick actions"
           >
             <a
-              href="javascript:void(0)"
+              href="#"
               class="dashboard-sidebar__mobile-action-btn"
               aria-label="Messages"
             >
@@ -261,7 +286,7 @@
               <span>Messages</span>
             </a>
             <a
-              href="javascript:void(0)"
+              href="#"
               class="dashboard-sidebar__mobile-action-btn"
               aria-label="Notifications"
             >
@@ -269,7 +294,7 @@
               <span>Notifications</span>
             </a>
             <a
-              href="javascript:void(0)"
+              href="#"
               class="dashboard-sidebar__mobile-action-btn"
               aria-label="Settings"
             >
@@ -277,7 +302,7 @@
               <span>Settings</span>
             </a>
             <a
-              href="javascript:void(0)"
+              href="#"
               class="dashboard-sidebar__mobile-action-btn"
               aria-label="Apps"
             >
@@ -351,15 +376,32 @@
                   >
                 </div>
 
-                <button
-                  class="lead-toolbar__filter-btn"
-                  aria-label="Advanced filter"
-                >
-                  <i class="fas fa-sliders-h" aria-hidden="true"></i>
-                </button>
+                <div class="dashboard-filter-dropdown" id="leadFilterDropdown">
+                  <button
+                    class="lead-toolbar__filter-btn"
+                    id="leadFilterBtn"
+                    aria-label="Advanced filter"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                  >
+                    <i class="fas fa-sliders-h" aria-hidden="true"></i>
+                  </button>
+                  <div class="dashboard-filter-menu" id="leadFilterMenu" role="menu" aria-labelledby="leadFilterBtn">
+                    <div class="dashboard-filter-menu__header">
+                      <span>Filter By Status</span>
+                      <button type="button" class="dashboard-filter-menu__reset" id="leadFilterReset">Reset</button>
+                    </div>
+                    <ul class="dashboard-filter-menu__list">
+                      <li><button type="button" class="dashboard-filter-menu__item is-active" data-filter="all">All Leads</button></li>
+                      <li><button type="button" class="dashboard-filter-menu__item" data-filter="ongoing">On going</button></li>
+                      <li><button type="button" class="dashboard-filter-menu__item" data-filter="new">New</button></li>
+                      <li><button type="button" class="dashboard-filter-menu__item" data-filter="completed">Completed</button></li>
+                    </ul>
+                  </div>
+                </div>
 
                 <div class="lead-toolbar__group-right">
-                  <a href="javascript:void(0)" class="lead-toolbar__add-btn">
+                  <a href="#" class="lead-toolbar__add-btn" data-success-message="Lead has been added successfully!">
                     <i
                       class="fas fa-plus lead-toolbar__add-btn-icon"
                       aria-hidden="true"
@@ -418,20 +460,12 @@
                       <td>20/05/2021</td>
                       <td>
                         <div class="lead-table__actions">
-                          <a
-                            href="javascript:void(0)"
-                            class="lead-table__action-btn"
-                            aria-label="View"
+                          <a href="team-details.html" class="lead-table__action-btn" aria-label="View"
                             ><i class="fas fa-eye" aria-hidden="true"></i
                           ></a>
+                          <button type="button" class="lead-table__action-btn" aria-label="Edit" data-row-edit><i class="fas fa-pen" aria-hidden="true"></i></button>
                           <a
-                            href="javascript:void(0)"
-                            class="lead-table__action-btn"
-                            aria-label="Edit"
-                            ><i class="fas fa-pen" aria-hidden="true"></i
-                          ></a>
-                          <a
-                            href="javascript:void(0)"
+                            href="#"
                             class="lead-table__action-btn lead-table__action-btn--delete"
                             aria-label="Delete"
                             data-row-delete
@@ -465,20 +499,12 @@
                       <td>12/05/2023</td>
                       <td>
                         <div class="lead-table__actions">
-                          <a
-                            href="javascript:void(0)"
-                            class="lead-table__action-btn"
-                            aria-label="View"
+                          <a href="team-details.html" class="lead-table__action-btn" aria-label="View"
                             ><i class="fas fa-eye" aria-hidden="true"></i
                           ></a>
+                          <button type="button" class="lead-table__action-btn" aria-label="Edit" data-row-edit><i class="fas fa-pen" aria-hidden="true"></i></button>
                           <a
-                            href="javascript:void(0)"
-                            class="lead-table__action-btn"
-                            aria-label="Edit"
-                            ><i class="fas fa-pen" aria-hidden="true"></i
-                          ></a>
-                          <a
-                            href="javascript:void(0)"
+                            href="#"
                             class="lead-table__action-btn lead-table__action-btn--delete"
                             aria-label="Delete"
                             data-row-delete
@@ -513,20 +539,12 @@
                       <td>15/07/2022</td>
                       <td>
                         <div class="lead-table__actions">
-                          <a
-                            href="javascript:void(0)"
-                            class="lead-table__action-btn"
-                            aria-label="View"
+                          <a href="team-details.html" class="lead-table__action-btn" aria-label="View"
                             ><i class="fas fa-eye" aria-hidden="true"></i
                           ></a>
+                          <button type="button" class="lead-table__action-btn" aria-label="Edit" data-row-edit><i class="fas fa-pen" aria-hidden="true"></i></button>
                           <a
-                            href="javascript:void(0)"
-                            class="lead-table__action-btn"
-                            aria-label="Edit"
-                            ><i class="fas fa-pen" aria-hidden="true"></i
-                          ></a>
-                          <a
-                            href="javascript:void(0)"
+                            href="#"
                             class="lead-table__action-btn lead-table__action-btn--delete"
                             aria-label="Delete"
                             data-row-delete
@@ -560,20 +578,12 @@
                       <td>12/06/2022</td>
                       <td>
                         <div class="lead-table__actions">
-                          <a
-                            href="javascript:void(0)"
-                            class="lead-table__action-btn"
-                            aria-label="View"
+                          <a href="team-details.html" class="lead-table__action-btn" aria-label="View"
                             ><i class="fas fa-eye" aria-hidden="true"></i
                           ></a>
+                          <button type="button" class="lead-table__action-btn" aria-label="Edit" data-row-edit><i class="fas fa-pen" aria-hidden="true"></i></button>
                           <a
-                            href="javascript:void(0)"
-                            class="lead-table__action-btn"
-                            aria-label="Edit"
-                            ><i class="fas fa-pen" aria-hidden="true"></i
-                          ></a>
-                          <a
-                            href="javascript:void(0)"
+                            href="#"
                             class="lead-table__action-btn lead-table__action-btn--delete"
                             aria-label="Delete"
                             data-row-delete
@@ -607,20 +617,12 @@
                       <td>21/05/2025</td>
                       <td>
                         <div class="lead-table__actions">
-                          <a
-                            href="javascript:void(0)"
-                            class="lead-table__action-btn"
-                            aria-label="View"
+                          <a href="team-details.html" class="lead-table__action-btn" aria-label="View"
                             ><i class="fas fa-eye" aria-hidden="true"></i
                           ></a>
+                          <button type="button" class="lead-table__action-btn" aria-label="Edit" data-row-edit><i class="fas fa-pen" aria-hidden="true"></i></button>
                           <a
-                            href="javascript:void(0)"
-                            class="lead-table__action-btn"
-                            aria-label="Edit"
-                            ><i class="fas fa-pen" aria-hidden="true"></i
-                          ></a>
-                          <a
-                            href="javascript:void(0)"
+                            href="#"
                             class="lead-table__action-btn lead-table__action-btn--delete"
                             aria-label="Delete"
                             data-row-delete
@@ -656,20 +658,12 @@
                       <td>28/02/2021</td>
                       <td>
                         <div class="lead-table__actions">
-                          <a
-                            href="javascript:void(0)"
-                            class="lead-table__action-btn"
-                            aria-label="View"
+                          <a href="team-details.html" class="lead-table__action-btn" aria-label="View"
                             ><i class="fas fa-eye" aria-hidden="true"></i
                           ></a>
+                          <button type="button" class="lead-table__action-btn" aria-label="Edit" data-row-edit><i class="fas fa-pen" aria-hidden="true"></i></button>
                           <a
-                            href="javascript:void(0)"
-                            class="lead-table__action-btn"
-                            aria-label="Edit"
-                            ><i class="fas fa-pen" aria-hidden="true"></i
-                          ></a>
-                          <a
-                            href="javascript:void(0)"
+                            href="#"
                             class="lead-table__action-btn lead-table__action-btn--delete"
                             aria-label="Delete"
                             data-row-delete
@@ -703,20 +697,12 @@
                       <td>13/05/2022</td>
                       <td>
                         <div class="lead-table__actions">
-                          <a
-                            href="javascript:void(0)"
-                            class="lead-table__action-btn"
-                            aria-label="View"
+                          <a href="team-details.html" class="lead-table__action-btn" aria-label="View"
                             ><i class="fas fa-eye" aria-hidden="true"></i
                           ></a>
+                          <button type="button" class="lead-table__action-btn" aria-label="Edit" data-row-edit><i class="fas fa-pen" aria-hidden="true"></i></button>
                           <a
-                            href="javascript:void(0)"
-                            class="lead-table__action-btn"
-                            aria-label="Edit"
-                            ><i class="fas fa-pen" aria-hidden="true"></i
-                          ></a>
-                          <a
-                            href="javascript:void(0)"
+                            href="#"
                             class="lead-table__action-btn lead-table__action-btn--delete"
                             aria-label="Delete"
                             data-row-delete
@@ -752,20 +738,12 @@
                       <td>10/06/2022</td>
                       <td>
                         <div class="lead-table__actions">
-                          <a
-                            href="javascript:void(0)"
-                            class="lead-table__action-btn"
-                            aria-label="View"
+                          <a href="team-details.html" class="lead-table__action-btn" aria-label="View"
                             ><i class="fas fa-eye" aria-hidden="true"></i
                           ></a>
+                          <button type="button" class="lead-table__action-btn" aria-label="Edit" data-row-edit><i class="fas fa-pen" aria-hidden="true"></i></button>
                           <a
-                            href="javascript:void(0)"
-                            class="lead-table__action-btn"
-                            aria-label="Edit"
-                            ><i class="fas fa-pen" aria-hidden="true"></i
-                          ></a>
-                          <a
-                            href="javascript:void(0)"
+                            href="#"
                             class="lead-table__action-btn lead-table__action-btn--delete"
                             aria-label="Delete"
                             data-row-delete
@@ -789,6 +767,116 @@
       </div>
     </div>
 
+    
+    <!-- Add Lead Modal -->
+    <div class="lead-modal" id="addLeadModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="addLeadModalTitle">
+      <div class="lead-modal__backdrop" data-modal-close></div>
+      <div class="lead-modal__dialog lead-modal__dialog--large">
+        <div class="lead-modal__header">
+          <h2 class="lead-modal__title" id="addLeadModalTitle">Add New Lead</h2>
+          <button type="button" class="lead-modal__close" data-modal-close aria-label="Close dialog">
+            <i class="fas fa-times" aria-hidden="true"></i>
+          </button>
+        </div>
+        <form
+          class="lead-modal__form"
+          id="addLeadForm"
+          novalidate
+          data-success-message="Lead '{name}' added successfully!"
+          data-error-message="Please fill in lead name and contact info."
+        >
+          <div class="lead-modal__body">
+            <div class="dashboard-modal-grid">
+              <div class="dashboard-modal-field dashboard-modal-field--full">
+                <label for="addLeadName" class="lead-modal__label">Lead Name*</label>
+                <input type="text" id="addLeadName" name="lead_name" class="dashboard-modal-input" placeholder="e.g. Eleanor Pena" required />
+              </div>
+
+              <div class="dashboard-modal-field">
+                <label for="addLeadStatus" class="lead-modal__label">Status</label>
+                <select id="addLeadStatus" name="lead_status" class="dashboard-modal-select">
+                  <option value="On going" selected>On going</option>
+                  <option value="New">New</option>
+                  <option value="Completed">Completed</option>
+                </select>
+              </div>
+
+              <div class="dashboard-modal-field">
+                <label for="addLeadSource" class="lead-modal__label">Source</label>
+                <input type="text" id="addLeadSource" name="lead_source" class="dashboard-modal-input" placeholder="e.g. Website, Facebook" value="Website" />
+              </div>
+
+              <div class="dashboard-modal-field">
+                <label for="addLeadAssigned" class="lead-modal__label">Assigned To</label>
+                <input type="text" id="addLeadAssigned" name="lead_assigned" class="dashboard-modal-input" placeholder="e.g. Jerome Bell" value="Jerome Bell" />
+              </div>
+
+              <div class="dashboard-modal-field">
+                <label for="addLeadContact" class="lead-modal__label">Contact Info*</label>
+                <input type="text" id="addLeadContact" name="lead_contact" class="dashboard-modal-input" placeholder="e.g. (684) 555-0102" required />
+              </div>
+            </div>
+          </div>
+          <div class="lead-modal__footer">
+            <button type="button" class="lead-modal__btn lead-modal__btn--cancel" data-modal-close>Cancel</button>
+            <button type="submit" class="lead-modal__btn lead-modal__btn--save">Add Lead</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Edit Lead Status Modal -->
+    <div class="lead-modal" id="leadStatusModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="leadStatusModalTitle">
+      <div class="lead-modal__backdrop" data-modal-close></div>
+      <div class="lead-modal__dialog">
+        <div class="lead-modal__header">
+          <h2 class="lead-modal__title" id="leadStatusModalTitle">Update Lead Status</h2>
+          <button type="button" class="lead-modal__close" data-modal-close aria-label="Close dialog">
+            <i class="fas fa-times" aria-hidden="true"></i>
+          </button>
+        </div>
+        <form
+          class="lead-modal__form"
+          id="leadStatusForm"
+          data-success-message="Lead status updated to {status} successfully!"
+        >
+          <div class="lead-modal__body">
+            <div class="lead-modal__lead-info">
+              <div class="lead-modal__lead-details">
+                <span class="lead-modal__lead-name" id="modalLeadName">Floyd Miles</span>
+                <span class="lead-modal__lead-meta" id="modalLeadContact">(684) 555-0102</span>
+              </div>
+            </div>
+            <div class="lead-modal__form-group">
+              <label id="leadStatusLabel" class="lead-modal__label">Select Status</label>
+              <div class="lead-modal__custom-select" id="leadCustomSelect" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="leadStatusLabel">
+                <input type="hidden" name="lead_status" id="leadStatusInput" value="On going" />
+                <button type="button" class="lead-modal__custom-select-trigger" id="leadCustomSelectTrigger" aria-labelledby="leadStatusLabel leadCustomSelectTrigger">
+                  <span id="leadCustomSelectText">On going</span>
+                  <i class="fas fa-chevron-down lead-modal__custom-select-arrow" aria-hidden="true"></i>
+                </button>
+                <ul class="lead-modal__custom-select-menu" role="listbox" aria-labelledby="leadStatusLabel">
+                  <li class="lead-modal__custom-select-option is-selected" role="option" data-value="On going" aria-selected="true">
+                    On going
+                  </li>
+                  <li class="lead-modal__custom-select-option" role="option" data-value="New" aria-selected="false">
+                    New
+                  </li>
+                  <li class="lead-modal__custom-select-option" role="option" data-value="Completed" aria-selected="false">
+                    Completed
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="lead-modal__footer">
+            <button type="button" class="lead-modal__btn lead-modal__btn--cancel" data-modal-close>Cancel</button>
+            <button type="submit" class="lead-modal__btn lead-modal__btn--save">Update Status</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
     <!-- Script -->
     <script src="assets/js/plugins/jquery-3.7.1.min.js"></script>
     <script src="assets/js/plugins/gsap.min.js"></script>
@@ -800,6 +888,8 @@
     <script src="assets/js/plugins/SplitText.min.js"></script>
     <script src="assets/js/paw-sprite.js"></script>
 
+    <script src="assets/js/plugins/toastr.min.js"></script>
+    <script src="assets/js/plugins/lightgallery-all.min.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

@@ -18,55 +18,58 @@
     9. Scrollup
     10. Header
     11. Mobile Sidebar
-    12. Hero
-    13. About
-    14. Service
-    15. Pet Grooming Service
-    16. Video
-    17. Testimonial
-    18. Team
-    19. Working Process
-    20. Pricing
-    21. Grooming Pricing
-    22. Choose US
-    23. Product
-    24. Blog
-    25. Blog Standard
-    26. Footer
-    27. Hero Grooming
-    28. About Grooming
-    29. Parent Testimonial
-    30. FAQ
-    31. Parent Marquee
-    32. Grooming Choose Us
-    33. Grooming Team
-    34. Before And After
-    35. Grooming Blog
-    36. Boarding Hero
-    37. Boarding About
-    38. Boarding Service
-    39. Boarding Testimonial
-    40. Boarding Choose Us
-    41. Boarding Pricing
-    42. Boarding BLog
-    43. Service Details
-    44. Team Details
-    45. Blog Details
-    46. Shop
-    47. Shop Details
-    48. Cart
-    49. Checkout
-    50. Contact
-    51. Error
-    52. Sign In
-    53. Sign Up
-    54. Forget Password
-    55. Password Reset
-    56. Set New Password
-    57. Dashboard
-    58. Order
-    59. Lead Management
-    60. Change Password
+    12. Toastr
+    13. Lightbox
+    14. Dashboard Filter Dropdown & Modals
+    15. Hero
+    16. About
+    17. Service
+    18. Pet Grooming Service
+    19. Video
+    20. Testimonial
+    21. Team
+    22. Working Process
+    23. Pricing
+    24. Grooming Pricing
+    25. Choose US
+    26. Product
+    27. Blog
+    28. Blog Standard
+    29. Footer
+    30. Hero Grooming
+    31. About Grooming
+    32. Parent Testimonial
+    33. FAQ
+    34. Parent Marquee
+    35. Grooming Choose Us
+    36. Grooming Team
+    37. Before And After
+    38. Grooming Blog
+    39. Boarding Hero
+    40. Boarding About
+    41. Boarding Service
+    42. Boarding Testimonial
+    43. Boarding Choose Us
+    44. Boarding Pricing
+    45. Boarding BLog
+    46. Service Details
+    47. Team Details
+    48. Blog Details
+    49. Shop
+    50. Shop Details
+    51. Cart
+    52. Checkout
+    53. Contact
+    54. Error
+    55. Sign In
+    56. Sign Up
+    57. Forget Password
+    58. Password Reset
+    59. Set New Password
+    60. Dashboard
+    61. Order
+    62. Lead Management
+    63. Change Password
 
  ................................................................*/
 // @use "abstracts" as *;
@@ -83,6 +86,9 @@
 @use "components/scrollup";
 @use "components/header";
 @use "components/mobile-sidebar";
+@use "components/toast";
+@use "components/lightbox";
+@use "components/dashboard-components";
 
 @use "layout/hero";
 @use "layout/about";

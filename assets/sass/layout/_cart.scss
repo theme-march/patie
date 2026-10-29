@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------
-48. Cart
+51. Cart
 ----------------------------------------------------------------*/
 @use "../abstracts" as *;
 
@@ -477,6 +477,35 @@
     &-checkout-btn {
       width: 100%;
       margin-top: 10px;
+    }
+  }
+
+  &__empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+
+    &-icon {
+      font-size: 56px;
+      color: color-mix(in srgb, var(--primary-color), transparent 40%);
+      margin-bottom: 20px;
+    }
+
+    &-title {
+      font-family: var(--heading-font-family);
+      font-size: 32px;
+      color: var(--heading-color);
+      margin-bottom: 12px;
+    }
+
+    &-text {
+      font-family: var(--body-font-family);
+      font-size: 16px;
+      color: var(--body-color);
+      max-width: 480px;
+      margin: 0 auto 25px auto;
     }
   }
 }

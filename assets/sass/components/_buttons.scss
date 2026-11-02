@@ -112,12 +112,10 @@
       }
     }
 
-    &.checkout-section__submit-btn,
     &.contact-section__submit-btn,
-    &.cart__summary-checkout-btn,
+    &.contact-section__submit-btn,
     &.sign-in__submit-btn,
-    &.sign-up__submit-btn,
-    &.common-btn--style2 {
+    &.sign-up__submit-btn {
       &:hover {
         background-color: var(--secondary-color);
 
@@ -167,18 +165,54 @@
 
   &--style2 {
     padding: 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
 
-    .common-btn__inner .common-btn__dash-svg {
+    .common-btn__dash-svg {
       display: none;
     }
 
     .common-btn__inner {
       border: none;
       padding: 20px 30px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
 
       @include respond(md) {
         padding: 15px 20px;
         font-size: 14px;
+      }
+    }
+
+    .common-btn__bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--secondary-color);
+      z-index: -1;
+      transform: translateX(-100%);
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .common-btn__text {
+      position: relative;
+      z-index: 2;
+      display: inline-block;
+      color: var(--white-color);
+      transition: color 0.4s ease;
+    }
+
+    &:hover {
+      .common-btn__bg {
+        transform: translateX(0);
+      }
+
+      .common-btn__text {
+        color: var(--white-color);
       }
     }
   }

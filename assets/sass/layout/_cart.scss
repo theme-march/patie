@@ -244,43 +244,12 @@
 
       &:hover {
         transform: none;
-        background-color: color-mix(
-          in srgb,
-          var(--primary-color),
-          transparent 50%
-        ) !important;
-        transition:
-          background-color 0.35s ease,
-          opacity 0.35s ease;
       }
 
-      &:hover .common-btn__inner {
-        background-color: color-mix(
-          in srgb,
-          var(--primary-color),
-          transparent 50%
-        ) !important;
-        transition: background-color 0.35s ease;
+      .common-btn__bg {
+        display: none;
       }
     }
-
-    &--active {
-      cursor: pointer;
-      background-color: var(--primary-color);
-
-      &:hover {
-        background-color: var(--primary-color);
-        transition:
-          background-color 0.35s ease,
-          transform 0.3s ease;
-      }
-
-      &:hover .common-btn__inner {
-        background-color: var(--secondary-color);
-        transition: background-color 0.35s ease;
-      }
-    }
-  }
 
   &__actions {
     padding: 30px;

@@ -670,36 +670,47 @@
               <form
                 action="#"
                 class="blog-details__form"
+                novalidate
                 data-success-message="Thank you! Your comment has been submitted."
+                data-error-message="Please fill out all required fields correctly."
               >
                 <div class="blog-details__form-row">
-                  <input
-                    type="text"
-                    id="comment-name"
-                    name="name"
-                    autocomplete="name"
-                    placeholder="Complete Name"
-                    class="blog-details__input"
-                    required
-                  />
-                  <input
-                    type="email"
-                    id="comment-email"
-                    name="email"
-                    autocomplete="email"
-                    placeholder="Email Address"
-                    class="blog-details__input"
-                    required
-                  />
+                  <div class="blog-details__form-group">
+                    <input
+                      type="text"
+                      id="comment-name"
+                      name="name"
+                      autocomplete="name"
+                      placeholder="Complete Name*"
+                      class="blog-details__input"
+                      required
+                      data-error-message="Please enter your full name."
+                    />
+                  </div>
+                  <div class="blog-details__form-group">
+                    <input
+                      type="email"
+                      id="comment-email"
+                      name="email"
+                      autocomplete="email"
+                      placeholder="Email Address*"
+                      class="blog-details__input"
+                      required
+                      data-error-message="Please enter a valid email address."
+                    />
+                  </div>
                 </div>
-                <textarea
-                  id="comment-message"
-                  name="comment"
-                  autocomplete="off"
-                  placeholder="Comment"
-                  class="blog-details__textarea"
-                  required
-                ></textarea>
+                <div class="blog-details__form-group">
+                  <textarea
+                    id="comment-message"
+                    name="comment"
+                    autocomplete="off"
+                    placeholder="Comment*"
+                    class="blog-details__textarea"
+                    required
+                    data-error-message="Please enter your comment."
+                  ></textarea>
+                </div>
                 <div class="blog-details__checkbox-wrap">
                   <input
                     type="checkbox"
@@ -713,7 +724,8 @@
                   >
                 </div>
                 <button type="submit" class="blog-details__submit">
-                  SUBMIT A COMMENT
+                  <span class="blog-details__submit-bg"></span>
+                  <span class="blog-details__submit-text">SUBMIT A COMMENT</span>
                 </button>
               </form>
             </div>
@@ -737,7 +749,8 @@
                   class="sidebar__search-input"
                 />
                 <button type="submit" class="sidebar__search-btn">
-                  SEARCH
+                  <span class="sidebar__search-btn-bg"></span>
+                  <span class="sidebar__search-btn-text">SEARCH</span>
                 </button>
               </form>
             </div>

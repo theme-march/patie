@@ -270,7 +270,7 @@
 
   &__girl {
     position: relative;
-    z-index: 3;
+    z-index: 10;
     max-width: 100%;
     top: -3px;
     left: 8%;
@@ -315,11 +315,15 @@
   &__line {
     display: block;
     width: 100%;
+    transform-origin: center center;
+    will-change: transform;
   }
 
   &__floating {
     position: absolute;
     z-index: 4;
+    transform-origin: center center;
+    will-change: transform;
 
     &--cat {
       width: 108px;

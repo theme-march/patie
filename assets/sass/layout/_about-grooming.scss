@@ -44,6 +44,8 @@
   &__bg {
     position: absolute;
     z-index: -1;
+    transform-origin: center center;
+    will-change: transform;
   }
 
   &__img {
@@ -51,6 +53,8 @@
     left: -5%;
     max-width: 100%;
     z-index: 1;
+    transform-origin: center center;
+    will-change: transform;
   }
 
   &__desc {

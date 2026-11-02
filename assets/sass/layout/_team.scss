@@ -169,8 +169,7 @@
       visibility: hidden;
       width: 0;
       overflow: hidden;
-      height: 45px;
-      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      transition: all 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 
       @include respond(xxl) {
         margin-left: -45px;
@@ -183,13 +182,11 @@
       }
 
       @include respond(md) {
-        height: 38px;
         gap: 10px;
         margin-left: -38px;
       }
 
       @include respond(sm) {
-        height: 45px;
         gap: 18px;
       }
 
@@ -396,26 +393,20 @@
     .team-card__social-links {
       opacity: 1;
       visibility: visible;
-      width: 180px;
-      padding: 0 20px 0 60px;
-
+      padding: 13px 120px 12px 55px;
+      
       @include respond(lg) {
-        width: 200px;
-        padding: 0px 12px 0 45px;
+        padding: 14px 140px 14px 45px;
       }
 
       @include respond(md) {
-        width: 150px;
-      }
-
-      @include respond(sm) {
-        width: 180px;
+        padding: 16px 140px 16px 50px;
       }
     }
 
     &.team-card--purple {
       .team-card__social-links {
-        border: 2px dashed var(--primary-color);
+        border: 1px dashed var(--primary-color);
       }
 
       .team-card__social-bg {
@@ -425,7 +416,7 @@
 
     &.team-card--orange {
       .team-card__social-links {
-        border: 2px dashed var(--secondary-color);
+        border: 1px dashed var(--secondary-color);
       }
 
       .team-card__social-bg {
@@ -435,7 +426,7 @@
 
     &.team-card--pink {
       .team-card__social-links {
-        border: 2px dashed var(--other-color-1);
+        border: 1px dashed var(--other-color-1);
       }
 
       .team-card__social-bg {
@@ -445,7 +436,7 @@
 
     &.team-card--green {
       .team-card__social-links {
-        border: 2px dashed var(--other-color-2);
+        border: 1px dashed var(--other-color-2);
       }
 
       .team-card__social-bg {
@@ -455,7 +446,7 @@
 
     &.team-card--yellow {
       .team-card__social-links {
-        border: 2px dashed var(--other-color-3);
+        border: 1px dashed var(--other-color-3);
       }
 
       .team-card__social-bg {
@@ -465,7 +456,7 @@
 
     &.team-card--deep-purple {
       .team-card__social-links {
-        border: 2px dashed var(--other-color-6);
+        border: 1px dashed var(--other-color-6);
       }
 
       .team-card__social-bg {
@@ -475,7 +466,7 @@
 
     &.team-card--red {
       .team-card__social-links {
-        border: 2px dashed var(--other-color-4);
+        border: 1px dashed var(--other-color-4);
       }
 
       .team-card__social-bg {
@@ -485,7 +476,7 @@
 
     &.team-card--teal {
       .team-card__social-links {
-        border: 2px dashed var(--other-color-5);
+        border: 1px dashed var(--other-color-5);
       }
 
       .team-card__social-bg {

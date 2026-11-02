@@ -23,24 +23,25 @@
 | 11. Progress Bar Animation
 | 12. Accordion
 | 13. Testimonial Slider
-| 14. Shop Page Filter
-| 15. Search Toggle
-| 16. Shop Search Filter
-| 17. Mobile Menu Sidebar
-| 18. Dashboard Sidebar
-| 19. Working Process Accordion
-| 20. Shop Details Functionality
-| 21. Service Button Dash Animation
-| 22. Button Blur Animation
-| 23. Password Toggle (Sign In / Sign Up)
-| 24. OTP Input
-| 25. Sales Performance Chart
-| 26. Services Doughnut Chart
-| 27. Table Controls (Select All / Delete)
-| 28. Image Compare Slider
-| 29. Video Text Parallax
-| 30. Form Validation & Submissions
-| 31. Lightbox Popup
+| 14. Pricing Toggle
+| 15. Shop Page Filter
+| 16. Search Toggle
+| 17. Shop Search Filter
+| 18. Mobile Menu Sidebar
+| 19. Dashboard Sidebar
+| 20. Working Process Accordion
+| 21. Shop Details Functionality
+| 22. Service Button Dash Animation
+| 23. Button Blur Animation
+| 24. Password Toggle (Sign In / Sign Up)
+| 25. OTP Input
+| 26. Sales Performance Chart
+| 27. Services Doughnut Chart
+| 28. Table Controls (Select All / Delete)
+| 29. Image Compare Slider
+| 30. Parallax (GSAP) Animation for Video Text & Image 
+| 31. Form Validation & Submissions
+| 32. Lightbox Popup
 |--------------------------------------------------------------------------
 */
 
@@ -159,6 +160,10 @@
 
       if (typeof AOS !== "undefined") {
         document.dispatchEvent(new Event("aosStart"));
+      }
+
+      if (typeof ScrollTrigger !== "undefined") {
+        ScrollTrigger.refresh();
       }
 
       var heroBadge = document.querySelector(".hero-grooming__badge");
@@ -1048,8 +1053,12 @@
         var slideOut = direction === "next" ? "-50px" : "50px";
         var slideIn = direction === "next" ? "50px" : "-50px";
 
-        var $currentContent = $current.find("> *:not(.boarding-testimonial__user), .boarding-testimonial__user-info");
-        var $nextContent = $next.find("> *:not(.boarding-testimonial__user), .boarding-testimonial__user-info");
+        var $currentContent = $current.find(
+          "> *:not(.boarding-testimonial__user), .boarding-testimonial__user-info",
+        );
+        var $nextContent = $next.find(
+          "> *:not(.boarding-testimonial__user), .boarding-testimonial__user-info",
+        );
 
         $currentContent.css({
           transition: "opacity 0.22s ease, transform 0.22s ease",
@@ -1064,8 +1073,7 @@
         });
 
         setTimeout(function () {
-          $current
-            .removeClass("boarding-testimonial__slide--active");
+          $current.removeClass("boarding-testimonial__slide--active");
           $currentContent.css({ transition: "", opacity: "", transform: "" });
 
           $nextContent.css({
@@ -1083,7 +1091,11 @@
                 transform: "translateX(0)",
               });
               setTimeout(function () {
-                $nextContent.css({ transition: "", opacity: "", transform: "" });
+                $nextContent.css({
+                  transition: "",
+                  opacity: "",
+                  transform: "",
+                });
                 animating = false;
               }, 300);
             });
@@ -1203,6 +1215,10 @@
     }
   }
 
+  /*--------------------------------------------------------------
+  14. Pricing Toggle
+  --------------------------------------------------------------*/
+
   function pricingToggle() {
     if ($.exists(".pricing__toggle-btn, .grooming-pricing__toggle-btn")) {
       $document.on(
@@ -1228,33 +1244,137 @@
           var isYearly = $this.text().trim() === "YEARLY";
           var $section = $this.closest(sectionClass);
 
-          $section
-            .find("[data-monthly][data-yearly], .grooming-pricing-card__desc")
-            .fadeOut(200, function () {
-              var newValue = isYearly
-                ? $(this).attr("data-yearly")
-                : $(this).attr("data-monthly");
-              if (newValue !== undefined && newValue !== false) {
-                $(this).text(newValue).fadeIn(200);
-              } else {
-                $(this).fadeIn(200);
-              }
+          var $targets = $section.find(
+            "[data-monthly][data-yearly], .grooming-pricing-card__desc, .pricing-card__period, .grooming-pricing-card__period",
+          );
+
+          var $cards = $section.find(".pricing-card, .grooming-pricing-card");
+          var $cardInnerBoxes = $section.find(
+            ".pricing-card__info, .grooming-pricing-card__head",
+          );
+
+          if (typeof gsap !== "undefined") {
+            var startHeights = [];
+            $cards.each(function () {
+              startHeights.push($(this).outerHeight());
             });
 
-          $section
-            .find(".pricing-card__period, .grooming-pricing-card__period")
-            .not("[data-monthly]")
-            .fadeOut(200, function () {
-              var newPeriod = isYearly ? "/ Per Year" : "/ Per Month";
-              $(this).text(newPeriod).fadeIn(200);
+            var startInnerHeights = [];
+            $cardInnerBoxes.each(function () {
+              startInnerHeights.push($(this).outerHeight());
             });
+
+            gsap.to($targets.toArray(), {
+              y: -15,
+              opacity: 0,
+              duration: 0.2,
+              ease: "power2.in",
+              onComplete: function () {
+                $targets.each(function () {
+                  var $el = $(this);
+                  if ($el.is("[data-monthly][data-yearly]")) {
+                    var newValue = isYearly
+                      ? $el.attr("data-yearly")
+                      : $el.attr("data-monthly");
+                    if (newValue !== undefined && newValue !== false) {
+                      $el.text(newValue);
+                    }
+                  } else if (
+                    $el.is(
+                      ".pricing-card__period, .grooming-pricing-card__period",
+                    )
+                  ) {
+                    var newPeriod = isYearly ? "/ Per Year" : "/ Per Month";
+                    $el.text(newPeriod);
+                  }
+                });
+
+                $cardInnerBoxes.each(function (index) {
+                  var $box = $(this);
+                  var oldBoxH = startInnerHeights[index];
+                  $box.css("height", "auto");
+                  var newBoxH = $box.outerHeight();
+
+                  if (oldBoxH && newBoxH && oldBoxH !== newBoxH) {
+                    gsap.fromTo(
+                      $box[0],
+                      { height: oldBoxH },
+                      {
+                        height: newBoxH,
+                        delay: 0.1,
+                        duration: 0.45,
+                        ease: "power2.out",
+                        clearProps: "height",
+                      },
+                    );
+                  } else {
+                    $box.css("height", "");
+                  }
+                });
+
+                $cards.each(function (index) {
+                  var $card = $(this);
+                  var oldH = startHeights[index];
+                  $card.css("height", "auto");
+                  var newH = $card.outerHeight();
+
+                  if (oldH && newH && oldH !== newH) {
+                    gsap.fromTo(
+                      $card[0],
+                      { height: oldH },
+                      {
+                        height: newH,
+                        delay: 0.1,
+                        duration: 0.45,
+                        ease: "power2.out",
+                        clearProps: "height",
+                      },
+                    );
+                  } else {
+                    $card.css("height", "");
+                  }
+                });
+
+                gsap.fromTo(
+                  $targets.toArray(),
+                  { y: 15, opacity: 0 },
+                  {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.35,
+                    stagger: 0.03,
+                    ease: "power2.out",
+                    clearProps: "transform,opacity",
+                  },
+                );
+              },
+            });
+          } else {
+            $targets.fadeOut(200, function () {
+              var $el = $(this);
+              if ($el.is("[data-monthly][data-yearly]")) {
+                var newValue = isYearly
+                  ? $el.attr("data-yearly")
+                  : $el.attr("data-monthly");
+                if (newValue !== undefined && newValue !== false) {
+                  $el.text(newValue);
+                }
+              } else if (
+                $el.is(".pricing-card__period, .grooming-pricing-card__period")
+              ) {
+                var newPeriod = isYearly ? "/ Per Year" : "/ Per Month";
+                $el.text(newPeriod);
+              }
+              $el.fadeIn(200);
+            });
+          }
         },
       );
     }
   }
 
   /*--------------------------------------------------------------
-  14. Shop Page Filter
+  15. Shop Page Filter
   --------------------------------------------------------------*/
   function priceRangeSlider() {
     if ($.exists(".sidebar__filter-slider")) {
@@ -1412,7 +1532,7 @@
   }
 
   /*--------------------------------------------------------------
-  15. Search Toggle
+  16. Search Toggle
   --------------------------------------------------------------*/
   function initSearch() {
     if ($.exists(".site-header__search-btn")) {
@@ -1473,7 +1593,7 @@
   }
 
   /*--------------------------------------------------------------
-  16. Shop Search Filter
+  17. Shop Search Filter
   --------------------------------------------------------------*/
   function handleShopSearchFilter() {
     if ($.exists(".product-card")) {
@@ -1654,7 +1774,7 @@
   }
 
   /*--------------------------------------------------------------
-  17. Mobile Menu Sidebar
+  18. Mobile Menu Sidebar
   --------------------------------------------------------------*/
   function initMobileMenu() {
     if ($.exists(".site-header")) {
@@ -1823,7 +1943,7 @@
   }
 
   /*--------------------------------------------------------------
-  18. Dashboard Sidebar
+  19. Dashboard Sidebar
   --------------------------------------------------------------*/
   function initDashboardSidebar() {
     if ($.exists("#sidebarToggle")) {
@@ -1891,7 +2011,7 @@
   }
 
   /*--------------------------------------------------------------
-  19. Working Process Accordion
+  20. Working Process Accordion
   --------------------------------------------------------------*/
   function workingProcessAccordion() {
     if ($.exists(".working-process__item")) {
@@ -1963,7 +2083,7 @@
   }
 
   /*--------------------------------------------------------------
-  20. Shop Details Functionality
+  21. Shop Details Functionality
   --------------------------------------------------------------*/
   function shopDetails() {
     if (
@@ -2399,7 +2519,7 @@
   }
 
   /*--------------------------------------------------------------
-  21. Service Button Dash Animation
+  22. Service Button Dash Animation
   --------------------------------------------------------------*/
   function serviceBtnDashAnimation() {
     if ($.exists(".service-btn")) {
@@ -2496,7 +2616,7 @@
   }
 
   /*--------------------------------------------------------------
-  22. Button Blur Animation
+  23. Button Blur Animation
   --------------------------------------------------------------*/
   function buttonBlurAnimation() {
     if (!$.exists("[data-tp-btn]")) return;
@@ -2547,7 +2667,7 @@
   }
 
   /*--------------------------------------------------------------
-  23. Password Toggle (Sign In / Sign Up)
+  24. Password Toggle (Sign In / Sign Up)
   --------------------------------------------------------------*/
   function passwordToggle() {
     if ($.exists(".sign-in__eye-toggle, .sign-up__eye-toggle")) {
@@ -2596,7 +2716,7 @@
   }
 
   /*--------------------------------------------------------------
-  24. OTP Input
+  25. OTP Input
   --------------------------------------------------------------*/
   function otpInput() {
     if ($.exists(".password-reset__otp-input")) {
@@ -2649,7 +2769,7 @@
   }
 
   /*--------------------------------------------------------------
-  25. Sales Performance Chart
+  26. Sales Performance Chart
   --------------------------------------------------------------*/
   function salesChart() {
     if ($.exists("#salesChart")) {
@@ -2817,7 +2937,7 @@
   }
 
   /*--------------------------------------------------------------
-  26. Services Doughnut Chart
+  27. Services Doughnut Chart
   --------------------------------------------------------------*/
   function servicesDoughnutChart() {
     if ($.exists("#servicesChart")) {
@@ -2911,7 +3031,7 @@
   }
 
   /*--------------------------------------------------------------
-  27. Table Controls (Select All / Delete)
+  28. Table Controls (Select All / Delete)
   --------------------------------------------------------------*/
   function tableControls() {
     if ($.exists("#lead-select-all, #order-select-all")) {
@@ -3744,7 +3864,7 @@
   }
 
   /*--------------------------------------------------------------
-  28. Image Compare Slider
+  29. Image Compare Slider
   --------------------------------------------------------------*/
   function imageCompare() {
     if ($.exists(".tp-compare")) {
@@ -3761,34 +3881,249 @@
   }
 
   /*--------------------------------------------------------------
-  29. Video Text Parallax (GSAP)
+  30. Parallax (GSAP) Animation for Video Text & Image 
   --------------------------------------------------------------*/
   function videoTextParallax() {
-    if ($.exists(".video-section__bg-text")) {
-      var el = document.querySelector(".video-section__bg-text");
-      if (
-        !el ||
-        typeof gsap === "undefined" ||
-        typeof ScrollTrigger === "undefined" ||
-        reduceMotion
-      )
-        return;
+    if (
+      typeof gsap === "undefined" ||
+      typeof ScrollTrigger === "undefined" ||
+      reduceMotion
+    ) {
+      return;
+    }
 
-      gsap.to(el, {
-        y: 80,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".video-section",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
+    var sections = document.querySelectorAll(".video-section");
+    if (sections.length) {
+      sections.forEach(function (section) {
+        var textEl = section.querySelector(".video-section__bg-text");
+        if (textEl) {
+          gsap.to(textEl, {
+            y: 80,
+            ease: "none",
+            scrollTrigger: {
+              trigger: section,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true,
+            },
+          });
+        }
+
+        var imgEl = section.querySelector(".video-section__bg-img");
+        if (imgEl) {
+          gsap.fromTo(
+            imgEl,
+            {
+              yPercent: -20,
+              scale: 1.25,
+            },
+            {
+              yPercent: 20,
+              scale: 1.25,
+              ease: "none",
+              scrollTrigger: {
+                trigger: section,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true,
+              },
+            },
+          );
+        }
+      });
+    }
+
+    var faqVideos = document.querySelectorAll(".faq__video");
+    if (faqVideos.length) {
+      faqVideos.forEach(function (videoWrap) {
+        var faqImg = videoWrap.querySelector("img");
+        if (faqImg) {
+          gsap.fromTo(
+            faqImg,
+            {
+              yPercent: -20,
+              scale: 1.25,
+            },
+            {
+              yPercent: 20,
+              scale: 1.25,
+              ease: "none",
+              scrollTrigger: {
+                trigger: videoWrap,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true,
+              },
+            },
+          );
+        }
+      });
+    }
+
+    var aboutGroomings = document.querySelectorAll(
+      ".about-grooming__image-wrap",
+    );
+    if (aboutGroomings.length) {
+      aboutGroomings.forEach(function (wrap) {
+        var catImg = wrap.querySelector(".about-grooming__img");
+        var bgImg = wrap.querySelector(".about-grooming__bg");
+
+        if (catImg) {
+          gsap.fromTo(
+            catImg,
+            { y: 35 },
+            {
+              y: -35,
+              ease: "none",
+              scrollTrigger: {
+                trigger: wrap,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true,
+              },
+            },
+          );
+        }
+
+        if (bgImg) {
+          gsap.fromTo(
+            bgImg,
+            { y: -25, rotate: -4 },
+            {
+              y: 25,
+              rotate: 4,
+              ease: "none",
+              scrollTrigger: {
+                trigger: wrap,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true,
+              },
+            },
+          );
+        }
+      });
+    }
+
+    var groomingChoose = document.querySelectorAll(
+      ".grooming-choose-us__image-wrap",
+    );
+    if (groomingChoose.length) {
+      groomingChoose.forEach(function (wrap) {
+        var catImg = wrap.querySelector(".grooming-choose-us__img");
+        var bgImg = wrap.querySelector(".grooming-choose-us__img-bg");
+
+        if (catImg) {
+          gsap.fromTo(
+            catImg,
+            { y: 35 },
+            {
+              y: -35,
+              ease: "none",
+              scrollTrigger: {
+                trigger: wrap,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true,
+              },
+            },
+          );
+        }
+
+        if (bgImg) {
+          gsap.fromTo(
+            bgImg,
+            { y: -25, rotate: -5 },
+            {
+              y: 25,
+              rotate: 5,
+              ease: "none",
+              scrollTrigger: {
+                trigger: wrap,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true,
+              },
+            },
+          );
+        }
+      });
+    }
+
+    var boardingChoose = document.querySelectorAll(
+      ".boarding-choose-us__img-wrap",
+    );
+    if (boardingChoose.length) {
+      boardingChoose.forEach(function (wrap) {
+        var petImg = wrap.querySelector(".boarding-choose-us__img");
+        var bgImg = wrap.querySelector(".boarding-choose-us__img-bg");
+
+        var section = wrap.closest(".boarding-choose-us") || wrap;
+
+        if (petImg) {
+          gsap.fromTo(
+            petImg,
+            { y: 35 },
+            {
+              y: -35,
+              ease: "none",
+              scrollTrigger: {
+                trigger: section,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true,
+              },
+            },
+          );
+        }
+
+        if (bgImg) {
+          gsap.fromTo(
+            bgImg,
+            { y: -25, rotate: -5 },
+            {
+              y: 25,
+              rotate: 5,
+              ease: "none",
+              scrollTrigger: {
+                trigger: section,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true,
+              },
+            },
+          );
+        }
+      });
+    }
+
+    var boardingHeroes = document.querySelectorAll(".boarding-hero__images");
+    if (boardingHeroes.length) {
+      boardingHeroes.forEach(function (heroWrap) {
+        var parallaxItems = heroWrap.querySelectorAll(
+          ".boarding-hero__floating--cat, .boarding-hero__floating--dog, .boarding-hero__line",
+        );
+
+        var section = heroWrap.closest(".boarding-hero") || heroWrap;
+
+        if (parallaxItems.length) {
+          gsap.to(parallaxItems, {
+            y: 50,
+            ease: "none",
+            scrollTrigger: {
+              trigger: section,
+              start: "top top",
+              end: "bottom top",
+              scrub: true,
+            },
+          });
+        }
       });
     }
   }
 
   /*--------------------------------------------------------------
-  30. Form Validation & Submissions
+  31. Form Validation & Submissions
   --------------------------------------------------------------*/
   function formHandling() {
     if (typeof toastr !== "undefined") {
@@ -3909,7 +4244,7 @@
   }
 
   /*--------------------------------------------------------------
-  31. Lightbox Popup
+  32. Lightbox Popup
   --------------------------------------------------------------*/
   function initLightbox() {
     $document.on(
@@ -3930,7 +4265,9 @@
         var activeIndex = 0;
 
         if ($el.hasClass("blog-details__sub-img")) {
-          var $subImages = $(".blog-details__sub-images .blog-details__sub-img");
+          var $subImages = $(
+            ".blog-details__sub-images .blog-details__sub-img",
+          );
           $subImages.each(function (i) {
             var src = $(this).attr("src");
             if (src) {

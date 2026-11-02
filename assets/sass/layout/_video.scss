@@ -13,6 +13,8 @@
     max-height: 610px;
     display: block;
     z-index: -2;
+    transform-origin: center center;
+    will-change: transform;
 
     @include respond(lg) {
       min-height: 360px;

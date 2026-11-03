@@ -5378,25 +5378,30 @@ body.lg-on {
 .video-section {
   position: relative;
   overflow: hidden;
+  clip-path: inset(0);
+  -webkit-clip-path: inset(0);
   z-index: 1;
-}
-.video-section__bg-img {
-  width: 100%;
-  max-height: 610px;
-  display: block;
-  z-index: -2;
-  transform-origin: center center;
-  will-change: transform;
+  min-height: 610px;
 }
 @media (max-width: 992px) {
-  .video-section__bg-img {
+  .video-section {
     min-height: 360px;
-    object-fit: cover;
   }
+}
+.video-section__bg-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+  z-index: -2;
+  pointer-events: none;
 }
 .video-section__bg-text {
   position: absolute;
-  bottom: 0;
+  bottom: -25px;
   font-family: var(--heading-font-family);
   font-size: 280px;
   font-weight: 400;
@@ -10476,8 +10481,6 @@ body.lg-on {
   height: 100%;
   object-fit: cover;
   display: block;
-  transform-origin: center center;
-  will-change: transform;
 }
 .faq__video .play-btn__inner {
   background-color: var(--primary-color);

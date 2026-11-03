@@ -18,30 +18,29 @@
 | 6. Swiper Slider
 | 7. Modal Video
 | 8. Scroll Up
-| 9. Before & After Image Reveal
-| 10. Count Up Animation
-| 11. Progress Bar Animation
-| 12. Accordion
-| 13. Testimonial Slider
-| 14. Pricing Toggle
-| 15. Shop Page Filter
-| 16. Search Toggle
-| 17. Shop Search Filter
-| 18. Mobile Menu Sidebar
-| 19. Dashboard Sidebar
-| 20. Working Process Accordion
-| 21. Shop Details Functionality
-| 22. Service Button Dash Animation
-| 23. Button Blur Animation
-| 24. Password Toggle (Sign In / Sign Up)
-| 25. OTP Input
-| 26. Sales Performance Chart
-| 27. Services Doughnut Chart
-| 28. Table Controls (Select All / Delete)
-| 29. Image Compare Slider
-| 30. Parallax (GSAP) Animation for Video Text & Image 
-| 31. Form Validation & Submissions
-| 32. Lightbox Popup
+| 9. Count Up Animation
+| 10. Progress Bar Animation
+| 11. Accordion
+| 12. Testimonial Slider
+| 13. Pricing Toggle
+| 14. Shop Page Filter
+| 15. Search Toggle
+| 16. Shop Search Filter
+| 17. Mobile Menu Sidebar
+| 18. Dashboard Sidebar
+| 19. Working Process Accordion
+| 20. Shop Details Functionality
+| 21. Service Button Dash Animation
+| 22. Button Blur Animation
+| 23. Password Toggle (Sign In / Sign Up)
+| 24. OTP Input
+| 25. Sales Performance Chart
+| 26. Services Doughnut Chart
+| 27. Table Controls (Select All / Delete)
+| 28. Image Compare Slider
+| 29. Parallax (GSAP) Animation
+| 30. Form Validation & Submissions
+| 31. Lightbox Popup
 |--------------------------------------------------------------------------
 */
 
@@ -112,7 +111,6 @@
     initDashboardSidebar();
     initCountUp();
     initProgressBars();
-    beforeAndAfterReveal();
     videoTextParallax();
     testimonialSlider();
     workingProcessSlider();
@@ -580,40 +578,7 @@
   }
 
   /*--------------------------------------------------------------
-  9. Before & After Image GSAP Slide Reveal
-  --------------------------------------------------------------*/
-  function beforeAndAfterReveal() {
-    if ($.exists(".before-and-after__img")) {
-      var img = document.querySelector(".before-and-after__img");
-      if (
-        !img ||
-        typeof gsap === "undefined" ||
-        typeof ScrollTrigger === "undefined" ||
-        reduceMotion
-      )
-        return;
-
-      gsap.fromTo(
-        img,
-        { x: "100%", opacity: 0 },
-        {
-          x: "0%",
-          opacity: 1,
-          duration: 1.1,
-          ease: "power3.out",
-          clearProps: "transform,opacity",
-          scrollTrigger: {
-            trigger: ".before-and-after__right-wrap",
-            start: "top 80%",
-            once: true,
-          },
-        },
-      );
-    }
-  }
-
-  /*--------------------------------------------------------------
-  10. Count Up Animation (GSAP + IntersectionObserver)
+  9. Count Up Animation (GSAP + IntersectionObserver)
   --------------------------------------------------------------*/
   function initCountUp() {
     if ($.exists(".count-up")) {
@@ -661,7 +626,7 @@
   }
 
   /*--------------------------------------------------------------
-  11. Progress Bar Animation (scroll-triggered)
+  10. Progress Bar Animation (scroll-triggered)
   --------------------------------------------------------------*/
   function initProgressBars() {
     if ($.exists(".ak-progress-bar")) {
@@ -691,7 +656,7 @@
   }
 
   /*--------------------------------------------------------------
-  12. Accordion
+  11. Accordion
   --------------------------------------------------------------*/
   function initAccordions() {
     if ($.exists(".ak-accordion-title")) {
@@ -748,7 +713,7 @@
   }
 
   /*--------------------------------------------------------------
-  13. Testimonial Slider
+  12. Testimonial Slider
   --------------------------------------------------------------*/
   function testimonialSlider() {
     if ($.exists(".testimonial__avatar")) {
@@ -1216,7 +1181,7 @@
   }
 
   /*--------------------------------------------------------------
-  14. Pricing Toggle
+  13. Pricing Toggle
   --------------------------------------------------------------*/
 
   function pricingToggle() {
@@ -1374,7 +1339,7 @@
   }
 
   /*--------------------------------------------------------------
-  15. Shop Page Filter
+  14. Shop Page Filter
   --------------------------------------------------------------*/
   function priceRangeSlider() {
     if ($.exists(".sidebar__filter-slider")) {
@@ -1532,7 +1497,7 @@
   }
 
   /*--------------------------------------------------------------
-  16. Search Toggle
+  15. Search Toggle
   --------------------------------------------------------------*/
   function initSearch() {
     if ($.exists(".site-header__search-btn")) {
@@ -1593,7 +1558,7 @@
   }
 
   /*--------------------------------------------------------------
-  17. Shop Search Filter
+  16. Shop Search Filter
   --------------------------------------------------------------*/
   function handleShopSearchFilter() {
     if ($.exists(".product-card")) {
@@ -1774,7 +1739,7 @@
   }
 
   /*--------------------------------------------------------------
-  18. Mobile Menu Sidebar
+  17. Mobile Menu Sidebar
   --------------------------------------------------------------*/
   function initMobileMenu() {
     if ($.exists(".site-header")) {
@@ -1943,7 +1908,7 @@
   }
 
   /*--------------------------------------------------------------
-  19. Dashboard Sidebar
+  18. Dashboard Sidebar
   --------------------------------------------------------------*/
   function initDashboardSidebar() {
     if ($.exists("#sidebarToggle")) {
@@ -2011,7 +1976,7 @@
   }
 
   /*--------------------------------------------------------------
-  20. Working Process Accordion
+  19. Working Process Accordion
   --------------------------------------------------------------*/
   function workingProcessAccordion() {
     if ($.exists(".working-process__item")) {
@@ -2083,7 +2048,7 @@
   }
 
   /*--------------------------------------------------------------
-  21. Shop Details Functionality
+  20. Shop Details Functionality
   --------------------------------------------------------------*/
   function shopDetails() {
     if (
@@ -2519,7 +2484,7 @@
   }
 
   /*--------------------------------------------------------------
-  22. Service Button Dash Animation
+  21. Service Button Dash Animation
   --------------------------------------------------------------*/
   function serviceBtnDashAnimation() {
     if ($.exists(".service-btn")) {
@@ -2616,7 +2581,7 @@
   }
 
   /*--------------------------------------------------------------
-  23. Button Blur Animation
+  22. Button Blur Animation
   --------------------------------------------------------------*/
   function buttonBlurAnimation() {
     if (!$.exists("[data-tp-btn]")) return;
@@ -2667,7 +2632,7 @@
   }
 
   /*--------------------------------------------------------------
-  24. Password Toggle (Sign In / Sign Up)
+  23. Password Toggle (Sign In / Sign Up)
   --------------------------------------------------------------*/
   function passwordToggle() {
     if ($.exists(".sign-in__eye-toggle, .sign-up__eye-toggle")) {
@@ -2716,7 +2681,7 @@
   }
 
   /*--------------------------------------------------------------
-  25. OTP Input
+  24. OTP Input
   --------------------------------------------------------------*/
   function otpInput() {
     if ($.exists(".password-reset__otp-input")) {
@@ -2769,7 +2734,7 @@
   }
 
   /*--------------------------------------------------------------
-  26. Sales Performance Chart
+  25. Sales Performance Chart
   --------------------------------------------------------------*/
   function salesChart() {
     if ($.exists("#salesChart")) {
@@ -2937,7 +2902,7 @@
   }
 
   /*--------------------------------------------------------------
-  27. Services Doughnut Chart
+  26. Services Doughnut Chart
   --------------------------------------------------------------*/
   function servicesDoughnutChart() {
     if ($.exists("#servicesChart")) {
@@ -3031,7 +2996,7 @@
   }
 
   /*--------------------------------------------------------------
-  28. Table Controls (Select All / Delete)
+  27. Table Controls (Select All / Delete)
   --------------------------------------------------------------*/
   function tableControls() {
     if ($.exists("#lead-select-all, #order-select-all")) {
@@ -3864,7 +3829,7 @@
   }
 
   /*--------------------------------------------------------------
-  29. Image Compare Slider
+  28. Image Compare Slider
   --------------------------------------------------------------*/
   function imageCompare() {
     if ($.exists(".tp-compare")) {
@@ -3881,7 +3846,7 @@
   }
 
   /*--------------------------------------------------------------
-  30. Parallax (GSAP) Animation for Video Text & Image 
+  29. Parallax (GSAP) Animation
   --------------------------------------------------------------*/
   function videoTextParallax() {
     if (
@@ -3890,74 +3855,6 @@
       reduceMotion
     ) {
       return;
-    }
-
-    var sections = document.querySelectorAll(".video-section");
-    if (sections.length) {
-      sections.forEach(function (section) {
-        var textEl = section.querySelector(".video-section__bg-text");
-        if (textEl) {
-          gsap.to(textEl, {
-            y: 80,
-            ease: "none",
-            scrollTrigger: {
-              trigger: section,
-              start: "top bottom",
-              end: "bottom top",
-              scrub: true,
-            },
-          });
-        }
-
-        var imgEl = section.querySelector(".video-section__bg-img");
-        if (imgEl) {
-          gsap.fromTo(
-            imgEl,
-            {
-              yPercent: -20,
-              scale: 1.25,
-            },
-            {
-              yPercent: 20,
-              scale: 1.25,
-              ease: "none",
-              scrollTrigger: {
-                trigger: section,
-                start: "top bottom",
-                end: "bottom top",
-                scrub: true,
-              },
-            },
-          );
-        }
-      });
-    }
-
-    var faqVideos = document.querySelectorAll(".faq__video");
-    if (faqVideos.length) {
-      faqVideos.forEach(function (videoWrap) {
-        var faqImg = videoWrap.querySelector("img");
-        if (faqImg) {
-          gsap.fromTo(
-            faqImg,
-            {
-              yPercent: -20,
-              scale: 1.25,
-            },
-            {
-              yPercent: 20,
-              scale: 1.25,
-              ease: "none",
-              scrollTrigger: {
-                trigger: videoWrap,
-                start: "top bottom",
-                end: "bottom top",
-                scrub: true,
-              },
-            },
-          );
-        }
-      });
     }
 
     var aboutGroomings = document.querySelectorAll(
@@ -4123,7 +4020,7 @@
   }
 
   /*--------------------------------------------------------------
-  31. Form Validation & Submissions
+  30. Form Validation & Submissions
   --------------------------------------------------------------*/
   function formHandling() {
     if (typeof toastr !== "undefined") {
@@ -4244,7 +4141,7 @@
   }
 
   /*--------------------------------------------------------------
-  32. Lightbox Popup
+  31. Lightbox Popup
   --------------------------------------------------------------*/
   function initLightbox() {
     $document.on(

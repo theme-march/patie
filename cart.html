@@ -77,6 +77,7 @@
       </div>
     </div>
     <!-- ===================== End Preloader ====================== -->
+
     <!-- Start Header Section -->
     <header class="ak-site_header ak-style1 ak-sticky_header site-header">
       <div class="container site-header__container">
@@ -298,11 +299,17 @@
               placeholder="Search..."
             />
           </div>
-          <button class="site-header__search-btn">
-            <span class="site-header__search-inner"
-              ><i class="fas fa-search"></i
-            ></span>
+          <button class="site-header__search-btn" aria-label="Search">
+            <span class="site-header__search-inner">
+              <i class="fas fa-search"></i>
+            </span>
           </button>
+          <a href="cart.html" class="site-header__cart-btn" aria-label="Cart">
+            <span class="site-header__cart-inner">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </span>
+            <span class="site-header__cart-count">0</span>
+          </a>
           <a href="service.html" class="common-btn site-header__book-btn">
             <span class="common-btn__inner">
               <svg
@@ -691,7 +698,6 @@
             <a
               href="checkout.html"
               class="common-btn common-btn--primary common-btn--style2 cart__summary-checkout-btn"
-              data-success-message="Proceeding to checkout..."
             >
               <span class="common-btn__inner">
                 <span class="common-btn__bg"></span>

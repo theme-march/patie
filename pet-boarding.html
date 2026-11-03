@@ -342,12 +342,18 @@
               placeholder="Search..."
             />
           </div>
-          <button class="site-header__search-btn">
-            <span class="site-header__search-inner"
-              ><i class="fas fa-search"></i
-            ></span>
+          <button class="site-header__search-btn" aria-label="Search">
+            <span class="site-header__search-inner">
+              <i class="fas fa-search"></i>
+            </span>
           </button>
-          <a href="contact.html" class="common-btn site-header__book-btn">
+          <a href="cart.html" class="site-header__cart-btn" aria-label="Cart">
+            <span class="site-header__cart-inner">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </span>
+            <span class="site-header__cart-count">0</span>
+          </a>
+          <a href="service.html" class="common-btn site-header__book-btn">
             <span class="common-btn__inner">
               <svg
                 class="common-btn__dash-svg"
@@ -358,7 +364,7 @@
               >
                 <rect x="1.5" y="1.5" width="167" height="44" rx="22" ry="22" />
               </svg>
-              Get in touch
+              BOOK NOW
             </span>
           </a>
           <button class="site-header__mobile-btn">

@@ -234,20 +234,39 @@
 
   &__update-btn {
     background-color: color-mix(in srgb, var(--primary-color), transparent 50%);
+    opacity: 0.6;
     transition:
       background-color 0.35s ease,
       transform 0.3s ease,
       opacity 0.35s ease;
 
-    &:not(&--active) {
+    &:not(&--active),
+    &:disabled {
       cursor: not-allowed;
+      opacity: 0.6;
+      background-color: color-mix(in srgb, var(--primary-color), transparent 50%) !important;
 
       &:hover {
         transform: none;
       }
 
       .common-btn__bg {
-        display: none;
+        display: none !important;
+      }
+    }
+
+    &--active:not(:disabled) {
+      cursor: pointer;
+      opacity: 1;
+      background-color: var(--primary-color) !important;
+
+      &:hover {
+        transform: translateY(-2px);
+
+        .common-btn__bg {
+          display: block;
+          transform: translateX(0);
+        }
       }
     }
   }

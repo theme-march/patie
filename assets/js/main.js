@@ -24,7 +24,7 @@
 | 12. Testimonial Slider
 | 13. Pricing Toggle
 | 14. Shop Page Filter
-| 15. Search Toggle
+| 15. Search Toggle & Cart Badge
 | 16. Shop Search Filter
 | 17. Mobile Menu Sidebar
 | 18. Dashboard Sidebar
@@ -104,6 +104,7 @@
     modalVideo();
     scrollUp();
     initSearch();
+    initCartBadge();
     handleShopSearchFilter();
     handleCategoryFilter();
     handleShopSort();
@@ -1497,7 +1498,7 @@
   }
 
   /*--------------------------------------------------------------
-  15. Search Toggle
+  15. Search Toggle & Cart Badge
   --------------------------------------------------------------*/
   function initSearch() {
     if ($.exists(".site-header__search-btn")) {
@@ -1555,6 +1556,68 @@
         }
       });
     }
+  }
+
+  function getCartCount() {
+    try {
+      var stored = localStorage.getItem("patie_cart_count");
+      return stored !== null ? parseInt(stored, 10) || 0 : 0;
+    } catch (e) {
+      return 0;
+    }
+  }
+
+  function updateCartCountBadge(newCount, animate) {
+    var $badge = $(".site-header__cart-count");
+    if (!$badge.length) return;
+    if (newCount > 0) {
+      $badge.text(newCount).addClass("site-header__cart-count--active");
+      if (animate) {
+        $badge.addClass("site-header__cart-count--bump");
+        setTimeout(function () {
+          $badge.removeClass("site-header__cart-count--bump");
+        }, 300);
+      }
+    } else {
+      $badge.removeClass(
+        "site-header__cart-count--active site-header__cart-count--bump",
+      );
+      setTimeout(function () {
+        if (!$badge.hasClass("site-header__cart-count--active")) {
+          $badge.text("0");
+        }
+      }, 300);
+    }
+  }
+
+  function addCartCount(qty) {
+    var current = getCartCount();
+    var updated = current + (parseInt(qty, 10) || 1);
+    try {
+      localStorage.setItem("patie_cart_count", updated);
+    } catch (e) {}
+    updateCartCountBadge(updated, true);
+    return updated;
+  }
+
+  function resetCartCount() {
+    try {
+      localStorage.setItem("patie_cart_count", 0);
+    } catch (e) {}
+    updateCartCountBadge(0, false);
+  }
+
+  function initCartBadge() {
+    updateCartCountBadge(getCartCount(), false);
+
+    $document.on("click", ".cart__summary-checkout-btn", function (e) {
+      e.preventDefault();
+      var targetUrl = $(this).attr("href") || "checkout.html";
+      resetCartCount();
+      setTimeout(function () {
+        window.location.href = targetUrl;
+      }, 350);
+    });
   }
 
   /*--------------------------------------------------------------
@@ -2387,10 +2450,8 @@
       $document.on("click", ".cart__remove", function (e) {
         e.preventDefault();
         var $row = $(this).closest("tr");
-        $row.fadeOut(300, function () {
-          $row.remove();
-          checkCartModificationState();
-        });
+        $row.remove();
+        checkCartModificationState();
       });
 
       $document.on("click", ".cart__update-btn", function (e) {
@@ -2430,8 +2491,9 @@
         e.preventDefault();
         var $btn = $(this);
         var successMsg = $btn.data("success-message");
+        var qty = parseInt($("#product-quantity").val(), 10) || 1;
+        addCartCount(qty);
         if (typeof toastr !== "undefined" && successMsg) {
-          var qty = parseInt($("#product-quantity").val(), 10) || 1;
           var finalMsg = successMsg.replace(/{qty}/g, qty);
           toastr.success(finalMsg);
         }

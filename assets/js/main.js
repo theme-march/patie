@@ -28,19 +28,18 @@
 | 16. Shop Filter & Sorting
 | 17. Mobile Menu Sidebar
 | 18. Dashboard Sidebar
-| 19. Working Process Accordion
-| 20. Shop Details Functionality
-| 21. Service Button Dash Animation
-| 22. Button Blur Animation
-| 23. Password Toggle (Sign In / Sign Up)
-| 24. OTP Input
-| 25. Sales Performance Chart
-| 26. Services Doughnut Chart
-| 27. Table Controls (Select All / Delete)
-| 28. Image Compare Slider
-| 29. Parallax (GSAP) Animation
-| 30. Form Validation & Submissions
-| 31. Lightbox Popup
+| 19. Shop Details Functionality
+| 20. Service Button Dash Animation
+| 21. Button Blur Animation
+| 22. Password Toggle (Sign In / Sign Up)
+| 23. OTP Input
+| 24. Sales Performance Chart
+| 25. Services Doughnut Chart
+| 26. Table Controls (Select All / Delete)
+| 27. Image Compare Slider
+| 28. Parallax (GSAP) Animation
+| 29. Form Validation & Submissions
+| 30. Lightbox Popup
 |--------------------------------------------------------------------------
 */
 
@@ -75,7 +74,7 @@
   var reduceMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)",
   ).matches;
-  
+
   var $scrollUpBtn = null;
   var salesChartInstance = null;
   var servicesChartInstance = null;
@@ -122,7 +121,6 @@
     boardingTestimonialSlider();
     buttonBlurAnimation();
     priceRangeSlider();
-    workingProcessAccordion();
     imageCompare();
     shopDetails();
     serviceBtnDashAnimation();
@@ -204,7 +202,10 @@
       preloaderEl.classList.add("preloader--hidden");
       onPreloaderDone();
 
-      preloaderEl.addEventListener("transitionend", finish, { once: true });
+      $document.on("transitionend.preloader", "#preloader", function () {
+        $document.off("transitionend.preloader");
+        finish();
+      });
       doneTimeout = setTimeout(finish, 800);
     }
 
@@ -222,8 +223,8 @@
         if (!$(this).find(".ak-menu_toggle").length) {
           $(this).append(
             '<button type="button" class="ak-menu_toggle" aria-label="Open menu" aria-expanded="false">' +
-              '<span aria-hidden="true"></span>' +
-              "</button>",
+            '<span aria-hidden="true"></span>' +
+            "</button>",
           );
         }
       });
@@ -451,10 +452,10 @@
         autoplay: reduceMotion
           ? false
           : {
-              delay: 3000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            },
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          },
         slidesPerView: 4,
         spaceBetween: 30,
         pagination: {
@@ -778,7 +779,8 @@
         $icon.removeClass("fa-plus").addClass("fa-minus");
 
         $body.css("height", $body[0].scrollHeight + "px");
-        $body.one("transitionend", function () {
+        $body.off("transitionend.faq").on("transitionend.faq", function () {
+          $body.off("transitionend.faq");
           if ($item.hasClass("faq-accordion__item--active")) {
             $body.css("height", "auto");
           }
@@ -1132,10 +1134,10 @@
 
       var sectionEl = document.querySelector(".before-and-after");
       if (sectionEl) {
-        $(sectionEl).on("mouseenter focusin", function () {
+        $document.on("mouseenter focusin", ".before-and-after", function () {
           isHovered = true;
           stopAutoPlay();
-        }).on("mouseleave focusout", function () {
+        }).on("mouseleave focusout", ".before-and-after", function () {
           isHovered = false;
           startAutoPlay();
         });
@@ -1663,7 +1665,7 @@
       if (e.currentTarget.setPointerCapture && e.originalEvent && e.originalEvent.pointerId !== undefined) {
         try {
           e.currentTarget.setPointerCapture(e.originalEvent.pointerId);
-        } catch (err) {}
+        } catch (err) { }
       }
       $body.addClass("user-select-none");
       e.preventDefault();
@@ -1862,7 +1864,7 @@
     var updated = current + (parseInt(qty, 10) || 1);
     try {
       localStorage.setItem("patie_cart_count", updated);
-    } catch (e) {}
+    } catch (e) { }
     updateCartCountBadge(updated, true);
     return updated;
   }
@@ -1870,15 +1872,16 @@
   function resetCartCount() {
     try {
       localStorage.setItem("patie_cart_count", "0");
-    } catch (e) {}
+    } catch (e) { }
     updateCartCountBadge(0, false);
   }
 
   function initCartBadge() {
     updateCartCountBadge(getCartCount(), false);
 
-    window.addEventListener("storage", function (e) {
-      if (e.key === "patie_cart_count") {
+    $window.on("storage", function (e) {
+      var origEvent = e.originalEvent;
+      if (origEvent && origEvent.key === "patie_cart_count") {
         updateCartCountBadge(getCartCount(), false);
       }
     });
@@ -2142,7 +2145,7 @@
         $submenu.find("a").removeClass().addClass("mobile-menu__submenu-link");
         $item.append(
           '<button class="mobile-menu__toggle-btn" aria-label="Toggle submenu" aria-expanded="false">' +
-            '<i class="fas fa-chevron-down"></i>' +
+          '<i class="fas fa-chevron-down"></i>' +
           '</button>',
         );
       }
@@ -2341,117 +2344,7 @@
   }
 
   /*--------------------------------------------------------------
-  19. Working Process Accordion
-  --------------------------------------------------------------*/
-  function workingProcessAccordion() {
-    if (!$.exists(".working-process__item")) return;
-
-    var prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    $(".working-process__item").each(function () {
-      var $item = $(this);
-      var $toggle = $item.find(".working-process__toggle");
-      var $content = $item.find(".working-process__content");
-      var isActive = $item.hasClass("active");
-
-      $toggle.attr({
-        role: "button",
-        tabindex: "0",
-        "aria-expanded": isActive ? "true" : "false"
-      });
-
-      $content.attr("role", "region");
-
-      if (isActive) {
-        $content.css("height", "auto");
-      } else {
-        $content.css("height", "0px");
-      }
-    });
-
-    function openItem(item) {
-      var content = item.querySelector(".working-process__content");
-      var toggle = item.querySelector(".working-process__toggle");
-      if (!content) return;
-
-      item.classList.add("active");
-      if (toggle) toggle.setAttribute("aria-expanded", "true");
-
-      if (prefersReducedMotion) {
-        content.style.height = "auto";
-        return;
-      }
-
-      content.style.height = "0px";
-      content.offsetHeight;
-      content.style.height = content.scrollHeight + "px";
-
-      content.addEventListener(
-        "transitionend",
-        function handleTransitionEnd(e) {
-          if (e.target !== content) return;
-          if (item.classList.contains("active")) {
-            content.style.height = "auto";
-          }
-        },
-        { once: true },
-      );
-    }
-
-    function closeItem(item) {
-      var content = item.querySelector(".working-process__content");
-      var toggle = item.querySelector(".working-process__toggle");
-      if (!content) return;
-
-      item.classList.remove("active");
-      if (toggle) toggle.setAttribute("aria-expanded", "false");
-
-      if (prefersReducedMotion) {
-        content.style.height = "0px";
-        return;
-      }
-
-      content.style.height = content.scrollHeight + "px";
-      content.offsetHeight;
-      content.style.height = "0px";
-    }
-
-    function handleToggle(toggleEl) {
-      var item = toggleEl.closest(".working-process__item");
-      if (!item) return;
-
-      var parentContainer = item.parentElement;
-      var siblingItems = parentContainer ? parentContainer.querySelectorAll(".working-process__item") : [];
-
-      var isActive = item.classList.contains("active");
-
-      siblingItems.forEach(function (otherItem) {
-        if (otherItem !== item && otherItem.classList.contains("active")) {
-          closeItem(otherItem);
-        }
-      });
-
-      if (isActive) {
-        closeItem(item);
-      } else {
-        openItem(item);
-      }
-    }
-
-    $document.on("click", ".working-process__toggle", function () {
-      handleToggle(this);
-    });
-
-    $document.on("keydown", ".working-process__toggle", function (e) {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        handleToggle(this);
-      }
-    });
-  }
-
-  /*--------------------------------------------------------------
-  20. Shop Details Functionality
+  19. Shop Details Functionality
   --------------------------------------------------------------*/
   function shopDetails() {
     if (
@@ -2743,7 +2636,7 @@
       });
       try {
         localStorage.setItem("patie_cart_count", totalQty);
-      } catch (e) {}
+      } catch (e) { }
       if (typeof updateCartCountBadge === "function") {
         updateCartCountBadge(totalQty, true);
       }
@@ -2874,7 +2767,7 @@
   }
 
   /*--------------------------------------------------------------
-  21. Service Button Dash Animation
+  20. Service Button Dash Animation
   --------------------------------------------------------------*/
   function serviceBtnDashAnimation() {
     if (!$.exists(".service-btn")) return;
@@ -2966,7 +2859,7 @@
   }
 
   /*--------------------------------------------------------------
-  22. Button Blur Animation
+  21. Button Blur Animation
   --------------------------------------------------------------*/
   function buttonBlurAnimation() {
     if (!$.exists("[data-tp-btn]")) return;
@@ -3035,7 +2928,7 @@
   }
 
   /*--------------------------------------------------------------
-  23. Password Toggle (Sign In / Sign Up)
+  22. Password Toggle (Sign In / Sign Up)
   --------------------------------------------------------------*/
   function passwordToggle() {
     if (!$.exists(".sign-in__eye-toggle, .sign-up__eye-toggle, .password-toggle-btn")) return;
@@ -3105,7 +2998,7 @@
   }
 
   /*--------------------------------------------------------------
-  24. OTP Input
+  23. OTP Input
   --------------------------------------------------------------*/
   function otpInput() {
     if (!$.exists(".password-reset__otp-input")) return;
@@ -3193,7 +3086,7 @@
   }
 
   /*--------------------------------------------------------------
-  25. Sales Chart
+  24. Sales Chart
   --------------------------------------------------------------*/
   function salesChart() {
     if ($.exists("#salesChart")) {
@@ -3383,7 +3276,7 @@
   }
 
   /*--------------------------------------------------------------
-  26. Services Doughnut Chart
+  25. Services Doughnut Chart
   --------------------------------------------------------------*/
   function servicesDoughnutChart() {
     if ($.exists("#servicesChart")) {
@@ -3413,11 +3306,11 @@
       var sliceData = ds.values ? ds.values.split(",").map(function (v) { return Number(v.trim()); }) : [];
       var sliceColors = ds.colors
         ? ds.colors.split(",").map(function (c) {
-            var v = c.trim();
-            return v.startsWith("var(")
-              ? rs.getPropertyValue(v.slice(4, -1).trim()).trim()
-              : v;
-          })
+          var v = c.trim();
+          return v.startsWith("var(")
+            ? rs.getPropertyValue(v.slice(4, -1).trim()).trim()
+            : v;
+        })
         : [];
 
       var cutoutVal = ds.cutout || "65%";
@@ -3485,7 +3378,7 @@
   }
 
   /*--------------------------------------------------------------
-  27. Table Controls (Select All / Delete)
+  26. Table Controls (Select All / Delete)
   --------------------------------------------------------------*/
   function tableControls() {
     if ($.exists("#lead-select-all, #order-select-all, .order-table, .lead-table")) {
@@ -3579,10 +3472,10 @@
           if ($tbody.find("tr").not("." + emptyClass).length === 0) {
             $tbody.append(
               '<tr class="' +
-                emptyClass +
-                '"><td colspan="' +
-                colCount +
-                '">No records available</td></tr>',
+              emptyClass +
+              '"><td colspan="' +
+              colCount +
+              '">No records available</td></tr>',
             );
           }
         }, 250);
@@ -3926,10 +3819,10 @@
           if (matchCount === 0 && query) {
             $tbody.append(
               '<tr class="' +
-                emptyClass +
-                '"><td colspan="' +
-                colCount +
-                '">No matching records found</td></tr>',
+              emptyClass +
+              '"><td colspan="' +
+              colCount +
+              '">No matching records found</td></tr>',
             );
           }
 
@@ -4021,10 +3914,10 @@
           if (visibleCount === 0) {
             $tbody.append(
               '<tr class="' +
-                emptyClass +
-                '"><td colspan="' +
-                colCount +
-                '">No matching records for selected filter</td></tr>',
+              emptyClass +
+              '"><td colspan="' +
+              colCount +
+              '">No matching records for selected filter</td></tr>',
             );
           }
 
@@ -4132,7 +4025,7 @@
         link.setAttribute("href", url);
         link.setAttribute("download", filename);
         document.body.appendChild(link);
-        link.click();
+        link.dispatchEvent(new MouseEvent("click"));
         document.body.removeChild(link);
         setTimeout(function () {
           URL.revokeObjectURL(url);
@@ -4389,7 +4282,7 @@
   }
 
   /*--------------------------------------------------------------
-  28. Image Compare Slider
+  27. Image Compare Slider
   --------------------------------------------------------------*/
   function imageCompare() {
     if ($.exists(".tp-compare")) {
@@ -4421,7 +4314,7 @@
   }
 
   /*--------------------------------------------------------------
-  29. Parallax (GSAP) Animation
+  28. Parallax (GSAP) Animation
   --------------------------------------------------------------*/
   function videoTextParallax() {
     if (
@@ -4540,7 +4433,7 @@
   }
 
   /*--------------------------------------------------------------
-  30. Form Validation & Submissions
+  29. Form Validation & Submissions
   --------------------------------------------------------------*/
   function formHandling() {
     if (typeof toastr !== "undefined") {
@@ -4637,10 +4530,10 @@
               if (errorText) {
                 getFieldContainer($input).append(
                   '<span class="form-error-message" id="' +
-                    errorId +
-                    '" role="alert">' +
-                    errorText +
-                    "</span>",
+                  errorId +
+                  '" role="alert">' +
+                  errorText +
+                  "</span>",
                 );
               }
 
@@ -4688,7 +4581,7 @@
   }
 
   /*--------------------------------------------------------------
-  31. Lightbox Popup
+  30. Lightbox Popup
   --------------------------------------------------------------*/
   function initLightbox() {
     var lastFocusedTrigger = null;

@@ -1886,15 +1886,12 @@
     $document.on("click", ".cart__summary-checkout-btn", function (e) {
       var $btn = $(this);
       var targetUrl = $btn.attr("href") || "checkout.html";
-      var successMsg = $btn.data("success-message");
-      if (typeof toastr !== "undefined" && successMsg) {
-        toastr.info(successMsg);
-      }
+      resetCartCount();
       if ($btn.is("a")) {
         e.preventDefault();
         setTimeout(function () {
           window.location.href = targetUrl;
-        }, 250);
+        }, 350);
       }
     });
 
